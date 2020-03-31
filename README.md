@@ -1,11 +1,6 @@
----
-output: github_document
----
+
 <!-- rmarkdown v1 -->
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
-
 
 # FluvialGeomorph Technical Manual
 The technical manual for the FluvialGeomorph project. <img src="docs/images/HDQLO-03_h120.jpg" align="right" />
