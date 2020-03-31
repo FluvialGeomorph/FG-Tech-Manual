@@ -5,7 +5,7 @@
 # FluvialGeomorph Technical Manual
 The technical manual for the FluvialGeomorph project. <img src="docs/images/HDQLO-03_h120.jpg" align="right" />
 
-## Package Status
+## Project Status
 [![Maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle)
 [![Project Status: Active The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![packageversion](https://img.shields.io/badge/Package%20version-0.1.19-orange.svg?style=flat-square)](commits/master)
