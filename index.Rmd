@@ -64,7 +64,7 @@ of conversion factors maintained by PTTB. For more information, see
 
 ## Notation List
 A notation list also may be included to define characters, symbols, and abbreviations used to express technical facts or quantities. It appears after
-the unit conversion factors. Figure A4 presents a formatted sample. @R-base
+the unit conversion factors. Figure A4 presents a formatted sample. 
 
 
 ```{r include=FALSE}
