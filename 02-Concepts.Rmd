@@ -1,0 +1,55 @@
+# Concepts
+
+
+# Fluvial Geomorphology
+
+## Reach
+
+## Flowline
+* centerline
+* thalweg
+
+## Position Along River
+
+## Pool-Riffle-Run
+
+## Cross Section
+
+## Bankfull
+
+## Flood Prone
+
+## Planform
+* loops contain bends
+* loops have an apex
+* loops alternate
+* crossovers
+* Valley Line
+
+
+
+# Geospatial
+
+## LiDAR Stream Measurement
+* discuss the difference between water surface and channel bottom
+* diagram of stream
+
+## Terrain Models
+* point cloud
+* raster
+* surface models, terrain models
+
+## Terrain Visualization
+
+## Synthetic Stream Delineation
+
+## Flow Accumulation 
+
+## Hydro Modification
+
+## Detrending
+
+## Spatial Data Clearinghouses
+* 3DEP
+* The National Map
+* State clearinghouses

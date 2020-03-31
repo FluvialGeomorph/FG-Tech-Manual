@@ -1,0 +1,25 @@
+# Introduction
+
+## Purpose
+* Document the methods used in FluvialGeomorph
+* Establish a common set of concepts and terminology between fluvial geomorphologists, geospatial analysts, and biologists/ecologists
+* define terms
+
+## FluvialGeomorph Goals
+* Develop reproducible methods for analyzing streams using remote sensing data
+* Develop a set of fluvial feature extraction tools
+* Develop methods that take advantage of the wealth on new LiDAR survey data
+
+## Design Philosophy
+* Open source
+* Establish a framework to build upon
+* Combine best-of-breed tools
+* Opinionated API
+
+## Previous Work
+* River Bathymetry Toolkit
+* TauDEM
+
+## Other Resources
+* How to use the tools is described in the user manual
+* Application of this approach is described in other technical reports. 

@@ -1,0 +1,39 @@
+# Metrics
+
+
+## Drainage Area
+
+## Slope 
+
+## Sinuosity
+
+## Discharge
+
+## XS Area
+
+## XS Width
+
+## XS Depth
+* maximum depth
+* mean depth
+
+## XS Width to Depth Ratio
+
+## Entrenchment Ratio
+
+## Shear Stress
+* density
+
+## Stream Power
+* unit
+
+
+## Bend Radius of Curvature
+
+## Meander Length
+
+## Meander Bend Width
+
+## Radius of Curvature to Bankfull Width Ratio
+
+## Meander Bend Width to Bankfull Width Ratio
