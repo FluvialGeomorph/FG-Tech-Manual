@@ -1,25 +1,25 @@
 # Concepts
 
 
-# Fluvial Geomorphology
+## Fluvial Geomorphology
 
-## Reach
+### Reach
 
-## Flowline
+### Flowline
 * centerline
 * thalweg
 
-## Position Along River
+### Position Along River
 
-## Pool-Riffle-Run
+### Pool-Riffle-Run
 
-## Cross Section
+### Cross Section
 
-## Bankfull
+### Bankfull
 
-## Flood Prone
+### Flood Prone
 
-## Planform
+### Planform
 * loops contain bends
 * loops have an apex
 * loops alternate
@@ -28,28 +28,31 @@
 
 
 
-# Geospatial
+## Geospatial
 
-## LiDAR Stream Measurement
+### LiDAR Stream Measurement
 * discuss the difference between water surface and channel bottom
 * diagram of stream
 
-## Terrain Models
+### Terrain Models
 * point cloud
 * raster
 * surface models, terrain models
 
-## Terrain Visualization
+### Terrain Visualization
 
-## Synthetic Stream Delineation
+### Synthetic Stream Delineation
 
-## Flow Accumulation 
+### Flow Accumulation 
 
-## Hydro Modification
+### Hydro Modification
 
-## Detrending
+### Detrending
+* "relative bank heght"
+* figure: side-by-side DEM and detrend
+* figure: side-by-side longitudinal profiles
 
-## Spatial Data Clearinghouses
+### Spatial Data Clearinghouses
 * 3DEP
 * The National Map
 * State clearinghouses

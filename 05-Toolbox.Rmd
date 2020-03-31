@@ -16,7 +16,93 @@ FluvialGeomorph defines a standard set of feature classes that are used through 
 
 ### `stream_network`
 
-### 
+### `flowline`
+
+### `flowline_points`
+
+### `detrend`
+
+### `banks_raw_xxx`
+
+### `initial_channel_extent`
+
+### `channel_slope`
+
+### `riffle_floodplain`
+
+### `riffle_channel`
+
+### `riffle_floodplain_points`
+
+### `riffle_channel_points`
+
+### `features`
+
+### `flood_prone`
+
+### `valleyline`
+
+### `bankfull_area`
+
+### `banklines`
+
+### `loop_points`
+
+### `bankline_points`
+
+### `xs_dims`
+
+### `xs_dims_planform`
+
+### `xs_dims_planform_pts`
+
+
+## Reports
+FluvialGeomorph produces a series of reports that help to define stream conditions. 
+
+### Bankfull Estimate Report
+
+### Cross Section Dimension Report
+
 
 
 ## Tools
+FluvialGeomorph contains a set of tools for analyzing streams. These tools are divided into four toolsets. 
+
+### 01 - Install
+
+#### `Install R Packages`
+
+#### `R Session Info`
+
+
+### 02 - Tools
+
+#### `02 - Burn Cutlines`
+
+#### `03 - Contributing Area`
+
+#### `04 - Stream Network`
+
+#### `04a - Stream Network Points`
+
+#### `04b - Slope and Sinuosity`
+
+#### `05 - Create Flowline`
+
+#### ``
+
+#### ``
+
+#### ``
+
+#### ``
+
+#### ``
+
+#### ``
+
+
+### 03 - Graphs and Reports
+
+### 04 - Checking
