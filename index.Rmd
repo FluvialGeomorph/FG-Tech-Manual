@@ -8,8 +8,8 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: rstudio/bookdown-demo
-description: "This document provides the technical details for using FluvialGeomorph."
+github-repo: mpdougherty/FluvialGeomorph-Tech-Manual
+description: "This technical manual documents the methods used in the FluvialGeomorph project."
 ---
 
 ```{r include=FALSE}
@@ -17,6 +17,13 @@ library(knitr)
 library(png)
 ```
 
+# Preface {-}
+This project has been funded by the US Army Corps of Engineers (USACE) [Ecosystem Management and Restoration Research Program (EMRRP)](https://emrrp.el.erdc.dren.mil). 
+
+```{r echo=FALSE}
+knitr::include_graphics("docs/images/HDQLO-03_h120.jpg")
+knitr::include_graphics("docs/images/EMRRP_logo_300.png")
+```
 
 ## Abstract
 The abstract appears on the reverse side of the title page. It summarizes
@@ -45,14 +52,6 @@ of every nonclassified distribution statement and the approved justifica-
 ERDC/ITL SR-04-1 8
 tions for applying each one. Only reports labeled with Statement A shall be
 posted to the World Wide Web for unrestricted public access. 
-
-
-## Preface
-A preface is included in all ERDC reports to present essential nontechnical
-documentation of the research project, such as funding authorization,
-sponsorship, technical contributors to project execution, chain of
-supervision, and the authors’ acknowledgments. Figure A3 presents a
-sample showing all the required elements. 
 
 
 ## Unit Conversion Factors
