@@ -1,7 +1,3 @@
-
-<!-- rmarkdown v1 -->
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # FluvialGeomorph Technical Manual
 The technical manual for the FluvialGeomorph project. <img src="docs/images/HDQLO-03_h120.jpg" align="right" />
 
@@ -19,9 +15,9 @@ This technical manual documents the methods used in the FluvialGeomorph project.
 Funding for development and maintenance of FluvialGeomorph has been provided by the US Army Corps of Engineers (USACE) [Ecosystem Management and Restoration Research Program (EMRRP)](https://emrrp.el.erdc.dren.mil). <img src="docs/images/EMRRP_logo_300.png" align="right" />
 
 ## Authors
-* Michael Dougherty, Geographer, U.S. Army Corps of Engineers
-* Christopher Haring, Fluvial Geomorphologist/Research Physical Scientist, U.S. Army Corps of Engineers
-* Charles Theiling, Ecologist, U.S. Army Corps of Engineers
+* [Michael Dougherty](mailto:Michael.P.Dougherty@usace.army.mil), Geographer, Rock Island District, U.S. Army Corps of Engineers
+* [Christopher Haring](mailto:Christopher.P.Haring@usace.army.mil), Fluvial Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers
+* [Charles Theiling](mailto:Charles.H.Theiling@usace.army.mil), Ecologist, Ecological Laboratory, U.S. Army Corps of Engineers
 
 ## Read the Report
 Read the report here: [https://mpdougherty.github.io/FluvialGeomorph-Tech-Manual/index.html](https://mpdougherty.github.io/FluvialGeomorph-Tech-Manual/index.html)
