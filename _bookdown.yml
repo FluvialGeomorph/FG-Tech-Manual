@@ -1,4 +1,5 @@
-book_filename: "bookdown-demo"
+book_filename: "FG-Tech-Manual"
+output_dir: "docs"
 language:
   ui:
     chapter_name: "Chapter "
