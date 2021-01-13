@@ -4,27 +4,28 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Fluvial Geomorph Technical Manual</title>
-  <meta name="description" content="This technical manual documents the methods used in the FluvialGeomorph project." />
+  <title>FluvialGeomorph Technical Manual</title>
+  <meta name="description" content="This technical manual describes the technical background of the FluvialGeomorph toolbox." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Fluvial Geomorph Technical Manual" />
+  <meta property="og:title" content="FluvialGeomorph Technical Manual" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://techmanual.fluvialgeomorph.org" />
   
-  
-  <meta property="og:description" content="This technical manual documents the methods used in the FluvialGeomorph project." />
-  <meta name="github-repo" content="mpdougherty/FluvialGeomorph-Tech-Manual" />
+  <meta property="og:description" content="This technical manual describes the technical background of the FluvialGeomorph toolbox." />
+  <meta name="github-repo" content="FluvialGeomorph/FG-Tech-Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Fluvial Geomorph Technical Manual" />
+  <meta name="twitter:title" content="FluvialGeomorph Technical Manual" />
   
-  <meta name="twitter:description" content="This technical manual documents the methods used in the FluvialGeomorph project." />
+  <meta name="twitter:description" content="This technical manual describes the technical background of the FluvialGeomorph toolbox." />
   
 
-<meta name="author" content="Chris Haring, Michael Dougherty, Charles Theiling" />
+<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District" />
+<meta name="author" content="Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers" />
 
 
-<meta name="date" content="2021-01-12" />
+<meta name="date" content="2021-01-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -72,10 +73,9 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i><b>0.1</b> Abstract</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>0.2</b> Disclaimer</a></li>
-<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#distribution-statement"><i class="fa fa-check"></i><b>0.3</b> Distribution Statement</a></li>
-<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#unit-conversion-factors"><i class="fa fa-check"></i><b>0.4</b> Unit Conversion Factors</a></li>
-<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#notation-list"><i class="fa fa-check"></i><b>0.5</b> Notation List</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#distribution-statement"><i class="fa fa-check"></i><b>0.2</b> Distribution Statement</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#unit-conversion-factors"><i class="fa fa-check"></i><b>0.3</b> Unit Conversion Factors</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#notation-list"><i class="fa fa-check"></i><b>0.4</b> Notation List</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#purpose"><i class="fa fa-check"></i><b>1.1</b> Purpose</a></li>
@@ -191,7 +191,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Fluvial Geomorph Technical Manual</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">FluvialGeomorph Technical Manual</a>
           </h1>
         </div>
 
@@ -200,55 +200,65 @@
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Fluvial Geomorph Technical Manual</h1>
-<p class="author"><em>Chris Haring, Michael Dougherty, Charles Theiling</em></p>
-<p class="date"><em>2021-01-12</em></p>
+<h1 class="title">FluvialGeomorph Technical Manual</h1>
+<p class="author"><em>Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District</em></p>
+<p class="author"><em>Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers</em></p>
+<p class="date"><em>2021-01-13</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
-<p>This project has been funded by the US Army Corps of Engineers (USACE) <a href="https://emrrp.el.erdc.dren.mil">Ecosystem Management and Restoration Research Program (EMRRP)</a>.</p>
-<p><img src="docs/images/HDQLO-03_h120.jpg" width="78" /><img src="docs/images/EMRRP_logo_300.png" width="86" /></p>
+<p>Funding for development and maintenance of FluvialGeomorph has been provided by the following US Army Corps of Engineers (USACE) programs:</p>
+<ul>
+<li><a href="https://emrrp.el.erdc.dren.mil">Ecosystem Management and Restoration Research Program (EMRRP)</a>.</li>
+<li><a href="https://rsm.usace.army.mil/">Regional Sediment Management Program (RSM)</a></li>
+<li><a href="https://www.mvd.usace.army.mil/Missions/Mississippi-River-Science-Technology/MS-River-Geomorphology-Potamology/">Mississippi River Geomorphology and Potamology Program (MRG&amp;P)</a></li>
+<li><a href="https://www.iwr.usace.army.mil/Missions/Flood-Risk-Management/Flood-Risk-Management-Program/">Flood Risk Management Program (FRM)</a></li>
+<li><a href="https://ewn.el.erdc.dren.mil/">Engineering With Nature (EWN)</a></li>
+</ul>
+<p><img src="docs/images/USACE_200.png" width="130" /><img src="docs/images/EMRRP_logo_200.png" width="146" /><img src="docs/images/RSM_200.png" width="103" /><img src="docs/images/MRG&P_300.png" width="150" /><img src="docs/images/FRMP_200.png" width="100" /><img src="docs/images/SilverJackets_200.png" width="100" /><img src="docs/images/EWN_200.png" width="150" /></p>
 <div id="abstract" class="section level2">
 <h2><span class="header-section-number">0.1</span> Abstract</h2>
 <p>The abstract appears on the reverse side of the title page. It summarizes
 the research problem, project objective, and outcome of the investigation.
 It should run no more than 200 words.</p>
 </div>
-<div id="disclaimer" class="section level2">
-<h2><span class="header-section-number">0.2</span> Disclaimer</h2>
-<p>Also on the reverse side of the title
-page is the standard disclaimer of any implied government endorsement
-of products discussed in text.</p>
-</div>
 <div id="distribution-statement" class="section level2">
-<h2><span class="header-section-number">0.3</span> Distribution Statement</h2>
-<p>The distribution statement is a critical component of both the cover and
-the title page. Every ERDC technical publication must be imprinted with
-one of the seven primary distribution statements required by Department
-of Defense Directive (DoDD) 5230.24. A distribution statement constitutes
-ERDC’s decision on who is authorized to read the report. Most reports
-published by ERDC are intended for unrestricted public access and carry
-Statement A: “Approved for public release; distribution is unlimited.”
-However, access to many reports may need to be restricted for reasons
-ranging from proprietary information content to national security interests
-related to militarily critical technology. Appendix B presents the text
-of every nonclassified distribution statement and the approved justifica-
-ERDC/ITL SR-04-1 8
-tions for applying each one. Only reports labeled with Statement A shall be
-posted to the World Wide Web for unrestricted public access.</p>
+<h2><span class="header-section-number">0.2</span> Distribution Statement</h2>
+<p>Approved for public release; distribution is unlimited</p>
 </div>
 <div id="unit-conversion-factors" class="section level2">
-<h2><span class="header-section-number">0.4</span> Unit Conversion Factors</h2>
-<p>A unit conversion factors table is included in all reports that do not use
-metric units or dual units. The table should include only those U.S. customary
-units used in the report. It should be compiled from the master list
-of conversion factors maintained by PTTB. For more information, see
-“Expressing and converting units of measure” (page 14).</p>
+<h2><span class="header-section-number">0.3</span> Unit Conversion Factors</h2>
+<table>
+<caption>Unit Conversion Factors</caption>
+<thead>
+<tr class="header">
+<th>Multiply</th>
+<th>By</th>
+<th>To Obtain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>feet</td>
+<td>0.3048</td>
+<td>meters</td>
+</tr>
+<tr class="even">
+<td>miles</td>
+<td>1.60934</td>
+<td>kilometers</td>
+</tr>
+<tr class="odd">
+<td>square miles</td>
+<td>2.58999</td>
+<td>square kilometers</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="notation-list" class="section level2">
-<h2><span class="header-section-number">0.5</span> Notation List</h2>
-<p>A notation list also may be included to define characters, symbols, and abbreviations used to express technical facts or quantities. It appears after
-the unit conversion factors. Figure A4 presents a formatted sample.</p>
+<h2><span class="header-section-number">0.4</span> Notation List</h2>
+<hr />
 
 </div>
 </div>
