@@ -1,80 +1,26 @@
 # Toolbox
+The purpose of this chapter is to describe the FluvialGeomorph toolbox structure and the products created. This chapter begins with a description of the platforms used, the structure of the FluvialGeomorph ArcGIS toolbox and concludes with a description of the products created. 
 
 
-## Feature Classes {#feature-classes}
-FluvialGeomorph defines a standard set of feature classes that are used through the tool chain. The definition of a common set of derived features is an important step in standardizing the FluvialGeomorph workflow. These database objects form a tightly linked set of features that work together in a particular order to accomplish the analysis. They are presented here in the approximate order in which they are produced. 
+## Platforms
+The FluvialGeomorph toolbox uses [ESRI](https://www.esri.com/en-us/home) and open source software to combine several platforms, each chosen based on their strengths, to construct a custom toolbox for rapid fluvial geomorphology analysis. 
 
-### Terrain Model Raster
-The GIS analyst uses standard ESRI geoprocessing tools to transform a LiDAR point cloud dataset covering the study area into an appropriately resolute (pixel cell size) digital elevation model (DEM). Only points representing the ground or water surface are selected from the point cloud to derive the terrain surface DEM. This raster dataset is named `dem`, but can also have a suffix added to represent its year of collection in change studies. 
-
-### Cutlines
-The `cutlines` polyline feature class is used to store geometry needed to hydrologically modify a terrain model to ensure that water can accurately flow over the land surface as it does in the real world. LiDAR derived terrain models frequently contain flow blockages (e.g., road berms) that must be "cut-through" to represent the presence of flow structures (e.g., culverts, bridges) that cannot be resolved directly from the LiDAR terrain model. 
-
-### Hydro-Modified Raster
-Before the `dem` terrain model raster can be used for synthetically deriving stream features, it must first be hydrologically modified using the `cutlines` feature class to "burn" flow paths into the `dem` raster. This "hydro-enforced" DEM is named `dem_hydro`. 
-
-### Contributing Area Raster
-The `dem_hydro` raster dataset is used to create a `contributing_area` raster whose values store the drainage area upstream of each pixel. 
-
-### Stream Network
-The `contributing_area` raster dataset is used to derive a synthetic `stream_network` polyline feature class representing the stream network of the study area. 
-
-### Stream Network Points
-The `stream_network_points` point feature class is used to represent regularly spaced points along a `stream_network` feature class. These `stream_network_points` features are used to store elevation and route position (longitudinal stream stationing) information for a `stream_network` feature. `stream_network_points` are used to calculate several stream longitudinal dimensions. 
-
-### Watershed
-The `watershed` polygon feature class is used to represent the upstream drainage area of a single point (aka "pour point") located along a stream network. All pixels within each `watershed` polygon feature flow to the stream network point used to derive the watershed. 
-
-### Flowline
-The `flowline` polyline feature class is used to represent the likely flow path of a stream reach within a study area. This is the primary flow path feature used in the FluvialGeomorph toolbox. Since non-bathymetric LiDAR is often used to derive `flowline` features, this should not be interpreted as the thalweg when water is present in the DEM.  
-
-### Flowline Points
-The `flowline_points` point feature class is used to represent regularly spaced points along a `flowline` feature class. These `flowline_points` features are used to store elevation and route position (longitudinal stream stationing) information for a `flowline` feature. `flowline_points` are used to calculate a series of stream longitudinal dimensions. 
-
-### Detrended Raster
-The `detrend` raster dataset is an elevation model where the downstream slope of the `dem_hydro` has been removed. 
-
-### Channel Slope Raster
-The `channel_slope` raster represents the slope of the `dem_hydro` within the channel. This is not to be confused with the longitudinal slope of the stream reach, but is the pixel-wise, raster surface slope of the channel area. 
-
-### Regular Cross Sections
-Cross sections are polyline feature classes drawn perpendicular to the `flowline` feature and are long enough to extend across some portion of the channel and floodplain. Cross section features are used to define channel cross section dimensions. Regular cross sections are created using a tool and spaced equal distances longitudinally along the `flowline`. Regularly spaced cross sections are used to sample conditions within a stream reach to either display a continuous series of values or calculate aggregate stream values. 
-
-### Riffle Cross Sections
-Riffle cross sections are a unique type of cross section drawn within a riffle stream feature. In contrast to regularly spaced cross sections that are delineated by a script, riffles irregularly spaced along a stream and are manually drawn by a GIS analyst. Analysts are trained to identify riffles using a set of guidelines from the literature and interpretation of the DEM and aerial imagery. The `riffle_floodplain` polyline feature class is drawn longitudinally within riffle features and extend laterally across the active floodplain. The `riffle_channel` polyline feature class is also drawn longitudinally within riffle features, but only extend laterally across the bankfull channel area. 
-
-### Cross Section Points
-Cross sections polyline feature classes (i.e., regularly spaced cross sections, `riffle_floodplain`, `riffle_channel`) can be converted to a set of regularly spaced points along the cross section. These points are used to store elevation and route position (lateral stream stationing) information for a cross section feature class. Cross section points are used to calculate a series of cross section dimensions. 
-
-### Cross Section Dimensions
-Cross section dimension polyline feature classes are used to store the hydraulic dimensions calculated for each cross section. As described above, the FluvialGeomorph workflow is divided into three levels. Based on the level of detail of the analysis at each level, a certain set of dimensions can be calculated. Each level allows for an increasingly complex set of dimensions to be calculated, each level building on the complexity of the previous level. 
-
-### Bankfull Area
-The `bankfull_area` polygon feature class represents the channel area typically inundated during bankfull events. The `detrend` raster dataset is used to "flood" the channel to define this extent. 
-
-### Banklines
-The `banklines` polyline feature class represents the stream banks at bankfull. The edge of the `bankfull_area` polygon features are used to create to banklines, one representing the left descending bank and another the right descending bank. 
-
-### Bankline Points
-The `bankline_points` point feature class is a set of regularly spaced point features located along each `banklines` feature. These points are used to store elevation and route position (longitudinal bankline stationing) information for each bankline. 
-
-### Centerline
-The `centerline` polyline feature class is used to represent a stream flow path that fally roughly equidistant between the banklines at bankfull. 
-
-### Valleyline
-The `valleyline` polyline feature class represents the trend line of the down-valley axis. It bisects stream meanders as the stream swings from side to side across its floodplain. 
-
-### Loop Points
-The `loop_points` point feature class is used to store the longitudinal extents of loops and bends used for planform analysis. Within the FluvialGeomorph toolbox, the term "loop" is defined as a single meander as it swings across the `valleyline`. Moving downstream along a single loop, once the stream swings substantially across the valleyline, another loop begins. The point of maximum distance of a flowline from the valeyline (laterally across the floodplain) defines a loop "apex". Moving to a finer scale, "bends" are defined as stream undulations within a particular loop. Therefore, a single loop may contain many bends. These loop and bend extents and loop apices are used to calculate a set of planform dimensions. 
-
-### Features
-The `features` point feature class is used to identify and label key stream features and their longitudinal position. Instances of features typically include relevant tributaries, localities, and infrastructure built within the floodplain affecting flow. 
+* [ArcGIS Desktop](https://desktop.arcgis.com/en/) -Desktop (ArcMap and ArcGIS Pro) are industry standard enterprise desktop GIS products for conducting geospatial analysis. The ArcGIS desktop applications contain an enormous number of commercial-off-the shelf (COTS) geospatial tools for performing sophisticated analyses and visualization. 
+* [ArcGIS toolbox](https://pro.arcgis.com/en/pro-app/latest/help/analysis/geoprocessing/basics/use-a-custom-geoprocessing-tool.htm) - ArcGIS Desktop allows for the creation of sophisticated custom geospatial toolboxes to be built that combine ESRI's COTS geoprocessing tools with user created tools from several platforms (e.g., Python, R). 
+* [Python](https://www.python.org/) - ArcGIS provides a robust scripting interface to its GIS tools using the Python language. Custom geospatial toolboxes can combine ESRI's COTS geoprocessing tools with tools available within the diverse, mature, and ever-growing Python data science ecosystem. 
+* [R](https://cran.r-project.org/) - ESRI's [ArcGIS R-bridge](https://github.com/R-ArcGIS/r-bridge) product allows R tools to be called within the ArcGIS toolbox interface. This allows ArcGIS tools to take advantage of the mature ecosystem of R data science, statistical, visualization, and report generation packages. 
 
 
-***
+## Packages
+The FluvialGeomorph toolbox is composed of a set of tightly connected packages that work together to complete the analysis. Modular design was a conscious architectural decision made to take advantage of the best tools and to help support long-term maintenance. Links are provided below to each package's online code repository. 
 
-## ArcGIS Toolbox
-FluvialGeomorph contains a set of tools for analyzing streams. These tools are divided into four toolsets. 
+* The [`FluvialGeomorph`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox) toolbox - This is the primary user-facing software component. It is an ArcGIS toolbox organized as a Python package. The custom Python tools in this toolbox perform primarily geospatial operations, where the ESRI platform excels (e.g., linear referencing). It also performs the installation of the needed R packages. 
+* The [`fluvgeo`](https://github.com/FluvialGeomorph/fluvgeo) R package - This custom R package developed for this project contains the bulk of the data science, statistical, visualization, and reporting functions, where the R platform excels. 
+* The [`RegionalCurve`](https://github.com/FluvialGeomorph/RegionalCurve) R package - This custom R package developed for this project contains the data and functions for accessing regional hydraulic geometry studies. 
+
+
+## ArcGIS Toolbox {#arcgis-toolbox}
+The FluvialGeomorph toolbox contains a set of tools for analyzing streams. These tools are divided into four toolsets. 
 
 ### 01 - Install toolset
 The purpose of this toolset is to hold the tools needed to install and troubleshoot the FluvialGeomorph toolbox software components. 
@@ -211,6 +157,78 @@ The purpose of this toolset is to export the tabular data from geospatial datase
 
 #### `Level 3`
 
+
+
+***
+
+## Feature Classes {#feature-classes}
+FluvialGeomorph defines a standard set of feature classes that are used through the tool chain. The definition of a common set of derived features is an important step in standardizing the FluvialGeomorph workflow. These database objects form a tightly linked set of features that work together in a particular order to accomplish the analysis. They are presented here in the approximate order in which they are produced. 
+
+### Terrain Model Raster
+The GIS analyst uses standard ESRI geoprocessing tools to transform a LiDAR point cloud dataset covering the study area into an appropriately resolute (pixel cell size) digital elevation model (DEM). Only points representing the ground or water surface are selected from the point cloud to derive the terrain surface DEM. This raster dataset is named `dem`, but can also have a suffix added to represent its year of collection in change studies. 
+
+### Cutlines
+The `cutlines` polyline feature class is used to store geometry needed to hydrologically modify a terrain model to ensure that water can accurately flow over the land surface as it does in the real world. LiDAR derived terrain models frequently contain flow blockages (e.g., road berms) that must be "cut-through" to represent the presence of flow structures (e.g., culverts, bridges) that cannot be resolved directly from the LiDAR terrain model. 
+
+### Hydro-Modified Raster
+Before the `dem` terrain model raster can be used for synthetically deriving stream features, it must first be hydrologically modified using the `cutlines` feature class to "burn" flow paths into the `dem` raster. This "hydro-enforced" DEM is named `dem_hydro`. 
+
+### Contributing Area Raster
+The `dem_hydro` raster dataset is used to create a `contributing_area` raster whose values store the drainage area upstream of each pixel. 
+
+### Stream Network
+The `contributing_area` raster dataset is used to derive a synthetic `stream_network` polyline feature class representing the stream network of the study area. 
+
+### Stream Network Points
+The `stream_network_points` point feature class is used to represent regularly spaced points along a `stream_network` feature class. These `stream_network_points` features are used to store elevation and route position (longitudinal stream stationing) information for a `stream_network` feature. `stream_network_points` are used to calculate several stream longitudinal dimensions. 
+
+### Watershed
+The `watershed` polygon feature class is used to represent the upstream drainage area of a single point (aka "pour point") located along a stream network. All pixels within each `watershed` polygon feature flow to the stream network point used to derive the watershed. 
+
+### Flowline
+The `flowline` polyline feature class is used to represent the likely flow path of a stream reach within a study area. This is the primary flow path feature used in the FluvialGeomorph toolbox. Since non-bathymetric LiDAR is often used to derive `flowline` features, this should not be interpreted as the thalweg when water is present in the DEM.  
+
+### Flowline Points
+The `flowline_points` point feature class is used to represent regularly spaced points along a `flowline` feature class. These `flowline_points` features are used to store elevation and route position (longitudinal stream stationing) information for a `flowline` feature. `flowline_points` are used to calculate a series of stream longitudinal dimensions. 
+
+### Detrended Raster
+The `detrend` raster dataset is an elevation model where the downstream slope of the `dem_hydro` has been removed. 
+
+### Channel Slope Raster
+The `channel_slope` raster represents the slope of the `dem_hydro` within the channel. This is not to be confused with the longitudinal slope of the stream reach, but is the pixel-wise, raster surface slope of the channel area. 
+
+### Regular Cross Sections
+Cross sections are polyline feature classes drawn perpendicular to the `flowline` feature and are long enough to extend across some portion of the channel and floodplain. Cross section features are used to define channel cross section dimensions. Regular cross sections are created using a tool and spaced equal distances longitudinally along the `flowline`. Regularly spaced cross sections are used to sample conditions within a stream reach to either display a continuous series of values or calculate aggregate stream values. 
+
+### Riffle Cross Sections
+Riffle cross sections are a unique type of cross section drawn within a riffle stream feature. In contrast to regularly spaced cross sections that are delineated by a script, riffles irregularly spaced along a stream and are manually drawn by a GIS analyst. Analysts are trained to identify riffles using a set of guidelines from the literature and interpretation of the DEM and aerial imagery. The `riffle_floodplain` polyline feature class is drawn longitudinally within riffle features and extend laterally across the active floodplain. The `riffle_channel` polyline feature class is also drawn longitudinally within riffle features, but only extend laterally across the bankfull channel area. 
+
+### Cross Section Points
+Cross sections polyline feature classes (i.e., regularly spaced cross sections, `riffle_floodplain`, `riffle_channel`) can be converted to a set of regularly spaced points along the cross section. These points are used to store elevation and route position (lateral stream stationing) information for a cross section feature class. Cross section points are used to calculate a series of cross section dimensions. 
+
+### Cross Section Dimensions
+Cross section dimension polyline feature classes are used to store the hydraulic dimensions calculated for each cross section. As described above, the FluvialGeomorph workflow is divided into three levels. Based on the level of detail of the analysis at each level, a certain set of dimensions can be calculated. Each level allows for an increasingly complex set of dimensions to be calculated, each level building on the complexity of the previous level. 
+
+### Bankfull Area
+The `bankfull_area` polygon feature class represents the channel area typically inundated during bankfull events. The `detrend` raster dataset is used to "flood" the channel to define this extent. 
+
+### Banklines
+The `banklines` polyline feature class represents the stream banks at bankfull. The edge of the `bankfull_area` polygon features are used to create to banklines, one representing the left descending bank and another the right descending bank. 
+
+### Bankline Points
+The `bankline_points` point feature class is a set of regularly spaced point features located along each `banklines` feature. These points are used to store elevation and route position (longitudinal bankline stationing) information for each bankline. 
+
+### Centerline
+The `centerline` polyline feature class is used to represent a stream flow path that fally roughly equidistant between the banklines at bankfull. 
+
+### Valleyline
+The `valleyline` polyline feature class represents the trend line of the down-valley axis. It bisects stream meanders as the stream swings from side to side across its floodplain. 
+
+### Loop Points
+The `loop_points` point feature class is used to store the longitudinal extents of loops and bends used for planform analysis. Within the FluvialGeomorph toolbox, the term "loop" is defined as a single meander as it swings across the `valleyline`. Moving downstream along a single loop, once the stream swings substantially across the valleyline, another loop begins. The point of maximum distance of a flowline from the valeyline (laterally across the floodplain) defines a loop "apex". Moving to a finer scale, "bends" are defined as stream undulations within a particular loop. Therefore, a single loop may contain many bends. These loop and bend extents and loop apices are used to calculate a set of planform dimensions. 
+
+### Features
+The `features` point feature class is used to identify and label key stream features and their longitudinal position. Instances of features typically include relevant tributaries, localities, and infrastructure built within the floodplain affecting flow. 
 
 
 ***
