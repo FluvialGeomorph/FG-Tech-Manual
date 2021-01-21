@@ -19,4 +19,4 @@ Funding for development and maintenance of FluvialGeomorph has been provided by 
 * [Charles Theiling](mailto:Charles.H.Theiling@usace.army.mil), Ecologist, Ecological Laboratory, U.S. Army Corps of Engineers
 
 ## Read the Report
-Read the report here: [https://FluvialGeomorph.github.io/FG-Tech-Manual/index.html](https://mpdougherty.github.io/FG-Tech-Manual/index.html)
+Read the report here: [FG-Tech-Manual](https://techmanual.fluvialgeomorph.org/)

@@ -1,7 +1,7 @@
 # Toolbox
 
 
-## Feature Classes
+## Feature Classes {#feature-classes}
 FluvialGeomorph defines a standard set of feature classes that are used through the tool chain. The definition of a common set of derived features is an important step in standardizing the FluvialGeomorph workflow. These database objects form a tightly linked set of features that work together in a particular order to accomplish the analysis. They are presented here in the approximate order in which they are produced. 
 
 ### Terrain Model Raster
@@ -73,21 +73,26 @@ The `features` point feature class is used to identify and label key stream feat
 
 ***
 
-## Tools
+## ArcGIS Toolbox
 FluvialGeomorph contains a set of tools for analyzing streams. These tools are divided into four toolsets. 
 
-### 01 - Install
+### 01 - Install toolset
+The purpose of this toolset is to hold the tools needed to install and troubleshoot the FluvialGeomorph toolbox software components. 
 
 #### `Install R Packages`
 
 #### `R Session Info`
 
 
-### 02 - Tools
 
-#### `02 - Burn Cutlines`
+### 02 - Tools toolset
+The purpose of this toolset is to hold the tools that perform the FluvialGeomorph analysis. 
+
+#### `02 - Hydro DEM`
 
 #### `03 - Contributing Area`
+
+#### `03a - Contributing Area D8`
 
 #### `04 - Stream Network`
 
@@ -95,24 +100,117 @@ FluvialGeomorph contains a set of tools for analyzing streams. These tools are d
 
 #### `04b - Slope and Sinuosity`
 
-#### `05 - Create Flowline`
+#### `04c - Watershed`
 
-#### ``
+#### `05 - Flowline`
 
-#### ``
+#### `06 - Flowline Points`
 
-#### ``
+#### `07 - Detrend DEM`
 
-#### ``
+#### `08 - Water Surface Extent`
 
-#### ``
+#### `09 - Channel Slope`
 
-#### ``
+#### `10 - Centerline`
+
+#### `11 - XS Layout`
+
+#### `12 - XS Watershed Area`
+
+#### `13 - XS River Position`
+
+#### `13a - XS Resequence`
+
+#### `14 - XS Points`
+
+#### `14b - Bankline Points`
+
+#### `14c - XS Assign Loops`
+
+#### `15a - XS Dimensions, Level 1`
+
+#### `15b - XS Dimensions, Level 2`
+
+#### `15c - XS Planform, Level 3`
+
+#### `16 - XS RAS Watersurface`
 
 
-### 03 - Graphs and Reports
 
-### 04 - Checking
+### 03 - Reports toolset
+The purpose of this toolset is to hold the tools that produce the FluvialGeomorph reports. 
+
+#### `Level 1 Report`
+
+#### `Estimate Bankfull`
+
+#### `Level 2 Report`
+
+#### `Level 3 Report`
+
+
+
+
+### 04 - Symbology toolset
+
+#### `Banklines`
+
+#### `Contibuting Area`
+
+#### `Cross Section`
+
+#### `DEM`
+
+#### `Features`
+
+#### `Flowline`
+
+#### `Flowline Points`
+
+#### `Loop Points`
+
+#### `Valleyline`
+
+
+
+
+### 05 - Check toolset
+The purpose of this toolset is to hold the tools used to check FluvialGeomorph features for errors. 
+
+#### `Check ArcGIS Pro Compatibility`
+
+#### `Check Bankline Points`
+
+#### `Check Banklines`
+
+#### `Check Cross Section Points`
+
+#### `Check Cross Section`
+
+#### `Check Faetures`
+
+#### `Check Flowline`
+
+#### `Check Flowline Points`
+
+#### `Check Loop Points`
+
+#### `Check Valleyline`
+
+#### `Check valleyline Points`
+
+
+
+### 06 - Export toolset
+The purpose of this toolset is to export the tabular data from geospatial datasets for further analysis. 
+
+#### `Level 1`
+
+#### `Level 2`
+
+#### `Level 3`
+
 
 
 ***

@@ -1,39 +1,52 @@
 # Metrics
 
+## Level 1
 
-## Drainage Area
+### Drainage Area
 
-## Slope 
+### Slope 
 
-## Sinuosity
+### Sinuosity
 
-## Discharge
 
-## XS Area
+***
 
-## XS Width
+## Level 2
 
-## XS Depth
+### Discharge
+
+### XS Area
+
+### XS Width
+
+### XS Depth
 * maximum depth
 * mean depth
 
-## XS Width to Depth Ratio
+### XS Width to Depth Ratio
 
-## Entrenchment Ratio
+### Entrenchment Ratio
 
-## Shear Stress
+### Shear Stress
 * density
 
-## Stream Power
+### Stream Power
 * unit
 
 
-## Bend Radius of Curvature
+***
 
-## Meander Length
+## Level 3
 
-## Meander Bend Width
+### Bend Radius of Curvature
 
-## Radius of Curvature to Bankfull Width Ratio
+### Meander Length
 
-## Meander Bend Width to Bankfull Width Ratio
+### Meander Bend Width
+
+### Radius of Curvature to Bankfull Width Ratio
+
+### Meander Bend Width to Bankfull Width Ratio
+
+
+***
