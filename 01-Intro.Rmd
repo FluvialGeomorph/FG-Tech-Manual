@@ -1,10 +1,12 @@
 # Introduction
+This chapter describes the background and approach used in the development of the FluvialGeomorph project. 
 
 ## Purpose
 * Document the methods used in FluvialGeomorph
 * Establish a common set of concepts and terminology between fluvial geomorphologists, geospatial analysts, and biologists/ecologists
 * define terms
-* add another bullet item
+* Describe tools
+* Describe products
 
 ## FluvialGeomorph Goals
 * Develop reproducible methods for analyzing streams using remote sensing data
@@ -16,6 +18,7 @@
 * Establish a framework to build upon
 * Combine best-of-breed tools
 * Opinionated API
+* Standardize reporting products
 
 ## Previous Work
 * River Bathymetry Toolkit

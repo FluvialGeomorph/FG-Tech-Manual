@@ -21,11 +21,11 @@
   <meta name="twitter:description" content="This technical manual describes the technical background of the FluvialGeomorph toolbox." />
   
 
-<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District" />
 <meta name="author" content="Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers" />
+<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District" />
 
 
-<meta name="date" content="2021-01-21" />
+<meta name="date" content="2021-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -148,10 +148,17 @@
 <li class="chapter" data-level="4.4.22" data-path="toolbox.html"><a href="toolbox.html#features-1"><i class="fa fa-check"></i><b>4.4.22</b> Features</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="toolbox.html"><a href="toolbox.html#reports"><i class="fa fa-check"></i><b>4.5</b> Reports</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="toolbox.html"><a href="toolbox.html#level-1-report-1"><i class="fa fa-check"></i><b>4.5.1</b> Level 1 Report</a></li>
-<li class="chapter" data-level="4.5.2" data-path="toolbox.html"><a href="toolbox.html#bankfull-estimate-report"><i class="fa fa-check"></i><b>4.5.2</b> Bankfull Estimate Report</a></li>
-<li class="chapter" data-level="4.5.3" data-path="toolbox.html"><a href="toolbox.html#level-2-report-1"><i class="fa fa-check"></i><b>4.5.3</b> Level 2 Report</a></li>
-<li class="chapter" data-level="4.5.4" data-path="toolbox.html"><a href="toolbox.html#level-3-report-1"><i class="fa fa-check"></i><b>4.5.4</b> Level 3 Report</a></li>
+<li class="chapter" data-level="4.5.1" data-path="toolbox.html"><a href="toolbox.html#graph---longitudinal-profile-compare-1"><i class="fa fa-check"></i><b>4.5.1</b> <code>Graph - Longitudinal Profile Compare</code></a></li>
+<li class="chapter" data-level="4.5.2" data-path="toolbox.html"><a href="toolbox.html#report---l1-1"><i class="fa fa-check"></i><b>4.5.2</b> <code>Report - L1</code></a></li>
+<li class="chapter" data-level="4.5.3" data-path="toolbox.html"><a href="toolbox.html#report---l2-estimate-bankfull-1"><i class="fa fa-check"></i><b>4.5.3</b> <code>Report - L2 Estimate Bankfull</code></a></li>
+<li class="chapter" data-level="4.5.4" data-path="toolbox.html"><a href="toolbox.html#report---l2-1"><i class="fa fa-check"></i><b>4.5.4</b> <code>Report - L2</code></a></li>
+<li class="chapter" data-level="4.5.5" data-path="toolbox.html"><a href="toolbox.html#report---l3-1"><i class="fa fa-check"></i><b>4.5.5</b> <code>Report - L3</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="toolbox.html"><a href="toolbox.html#tables-graphs-and-figures"><i class="fa fa-check"></i><b>4.6</b> Tables, Graphs, and Figures</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="toolbox.html"><a href="toolbox.html#overview-map"><i class="fa fa-check"></i><b>4.6.1</b> Overview Map</a></li>
+<li class="chapter" data-level="4.6.2" data-path="toolbox.html"><a href="toolbox.html#longitudinal-profile"><i class="fa fa-check"></i><b>4.6.2</b> Longitudinal Profile</a></li>
+<li class="chapter" data-level="4.6.3" data-path="toolbox.html"><a href="toolbox.html#cross-section-metrics"><i class="fa fa-check"></i><b>4.6.3</b> Cross Section Metrics</a></li>
+<li class="chapter" data-level="4.6.4" data-path="toolbox.html"><a href="toolbox.html#cross-section-profile"><i class="fa fa-check"></i><b>4.6.4</b> Cross Section Profile</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="metrics.html"><a href="metrics.html"><i class="fa fa-check"></i><b>5</b> Metrics</a><ul>
@@ -207,13 +214,15 @@
             <section class="normal" id="section-">
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<p>This chapter describes the background and approach used in the development of the FluvialGeomorph project.</p>
 <div id="purpose" class="section level2">
 <h2><span class="header-section-number">1.1</span> Purpose</h2>
 <ul>
 <li>Document the methods used in FluvialGeomorph</li>
 <li>Establish a common set of concepts and terminology between fluvial geomorphologists, geospatial analysts, and biologists/ecologists</li>
 <li>define terms</li>
-<li>add another bullet item</li>
+<li>Describe tools</li>
+<li>Describe products</li>
 </ul>
 </div>
 <div id="fluvialgeomorph-goals" class="section level2">
@@ -231,6 +240,7 @@
 <li>Establish a framework to build upon</li>
 <li>Combine best-of-breed tools</li>
 <li>Opinionated API</li>
+<li>Standardize reporting products</li>
 </ul>
 </div>
 <div id="previous-work" class="section level2">

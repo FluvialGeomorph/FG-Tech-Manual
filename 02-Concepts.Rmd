@@ -4,6 +4,7 @@
 ## Fluvial Geomorphology
 
 ### Reach
+hierarchical levels: project study area, site, reach
 
 ### Flowline
 * centerline

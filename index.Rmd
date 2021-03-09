@@ -2,8 +2,8 @@
 title: "FluvialGeomorph Technical Manual"
 date: "`r Sys.Date()`"
 author: 
-  - Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District
   - Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers
+  - Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 url: 'https://techmanual.fluvialgeomorph.org'
@@ -42,9 +42,7 @@ knitr::include_graphics("docs/images/EWN_200.png")
 
 
 ## Abstract
-The abstract appears on the reverse side of the title page. It summarizes
-the research problem, project objective, and outcome of the investigation.
-It should run no more than 200 words. 
+This document describes the methods usedin the development of the FluvialGeomorph project. 
 
 
 ## Distribution Statement

@@ -1,5 +1,5 @@
 # Toolbox
-The purpose of this chapter is to describe the FluvialGeomorph toolbox structure and the products created. This chapter begins with a description of the platforms used, the structure of the FluvialGeomorph ArcGIS toolbox and concludes with a description of the products created. 
+This chapter describes the FluvialGeomorph toolbox structure and the products it creates. This chapter begins with a description of the platforms used, the structure of the FluvialGeomorph ArcGIS toolbox and concludes with a description of the products created. 
 
 
 ## Platforms
@@ -19,7 +19,7 @@ The FluvialGeomorph toolbox is composed of a set of tightly connected packages t
 * The [`RegionalCurve`](https://github.com/FluvialGeomorph/RegionalCurve) R package - This custom R package developed for this project contains the data and functions for accessing regional hydraulic geometry studies. 
 
 
-## ArcGIS Toolbox {#arcgis-toolbox}
+## ArcGIS Toolbox
 The FluvialGeomorph toolbox contains a set of tools for analyzing streams. These tools are divided into four toolsets. 
 
 ### 01 - Install toolset
@@ -36,69 +36,196 @@ The purpose of this toolset is to hold the tools that perform the FluvialGeomorp
 
 #### `02 - Hydro DEM`
 
+```{r echo=FALSE, fig.cap="02 - Hydro DEM Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Hydro_DEM.png")
+```
+
 #### `03 - Contributing Area`
+
+```{r echo=FALSE, fig.cap="03 - Contributing Area Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Contributing_Area.png")
+```
 
 #### `03a - Contributing Area D8`
 
+```{r echo=FALSE, fig.cap="03a - Contributing Area D8 Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Contributing_Area_D8.png")
+```
+
 #### `04 - Stream Network`
+
+```{r echo=FALSE, fig.cap="04 - Stream Network Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Stream_Network.png")
+```
 
 #### `04a - Stream Network Points`
 
+```{r echo=FALSE, fig.cap="04a - Stream Network Point Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Stream_Network_Points.png")
+```
+
 #### `04b - Slope and Sinuosity`
+
+```{r echo=FALSE, fig.cap="04b - Slope and Sinuosity Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Slope_and_Sinuosity.png")
+```
 
 #### `04c - Watershed`
 
+```{r echo=FALSE, fig.cap="04c - Watershed Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Watershed.png")
+```
+
 #### `05 - Flowline`
+
+```{r echo=FALSE, fig.cap="05 - Flowline Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Flowline.png")
+```
 
 #### `06 - Flowline Points`
 
+```{r echo=FALSE, fig.cap="06 - Flowline Points Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Flowline_Points.png")
+```
+
 #### `07 - Detrend DEM`
+
+```{r echo=FALSE, fig.cap="07 - Detrend Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Detrend_DEM.png")
+```
 
 #### `08 - Water Surface Extent`
 
+```{r echo=FALSE, fig.cap="08 - Water Surface Extent Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Water_Surface_Extent.png")
+```
+
 #### `09 - Channel Slope`
+
+```{r echo=FALSE, fig.cap="09 - Channel Slope Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Channel_Slope.png")
+```
 
 #### `10 - Centerline`
 
+```{r echo=FALSE, fig.cap="10 - Centerline Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Centerline.png")
+```
+
 #### `11 - XS Layout`
+
+```{r echo=FALSE, fig.cap="11 - XS Layout Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_XS_Layout.png")
+```
 
 #### `12 - XS Watershed Area`
 
+```{r echo=FALSE, fig.cap="12 - XS Watershed Area Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_XS_Watershed_Area.png")
+```
+
 #### `13 - XS River Position`
+
+```{r echo=FALSE, fig.cap="13 - XS River Position Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_XS_River_Position.png")
+```
 
 #### `13a - XS Resequence`
 
+```{r echo=FALSE, fig.cap="13a - XS Resequence Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_XS_Resequence.png")
+```
+
 #### `14 - XS Points`
+
+```{r echo=FALSE, fig.cap="14 - XS Points Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_XS_Points.png")
+```
 
 #### `14b - Bankline Points`
 
+```{r echo=FALSE, fig.cap="14b - Bankline Points Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Bankline_Points.png")
+```
+
 #### `14c - XS Assign Loops`
+
+```{r echo=FALSE, fig.cap="14c - XS Assign Loops Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_XS_Assign_Loops.png")
+```
 
 #### `15a - XS Dimensions, Level 1`
 
+```{r echo=FALSE, fig.cap="15a - XS Dimensions, Level 1 Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_XS_Dimensions_L1.png")
+```
+
 #### `15b - XS Dimensions, Level 2`
+
+```{r echo=FALSE, fig.cap="15b - XS Dimensions, Level 2 Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_XS_Dimensions_L2.png")
+```
 
 #### `15c - XS Planform, Level 3`
 
+```{r echo=FALSE, fig.cap="15b - XS Dimensions, Level 3 Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_XS_Dimensions_L3.png")
+```
+
 #### `16 - XS RAS Watersurface`
 
-
+```{r echo=FALSE, fig.cap="16 - XS RAS Watersurface Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_XS_RAS_Watersurface.png")
+```
 
 ### 03 - Reports toolset
 The purpose of this toolset is to hold the tools that produce the FluvialGeomorph reports. 
 
-#### `Level 1 Report`
+#### `Graph - Longitudinal Profile Compare`
+The purpose of this tool is to compare longitudinal profile plots from multiple surveys. This tool produces a longitudinal profile plot from the [`flowline_points`](#flowline-points) feature classes of a stream reach taken from one or more surveys. It labels the plot using the [`features`](#features) feature class along the x-axis. This ArcGIS script tool calls the R script [`FluvialGeomorph-toolbox\report\_Longitudinal_Profile_Compare.R`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/report/_Longitudinal_Profile_Compare.R) which calls the function  [`fluvgeo::compare_long_profile`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/compare_long_profile.R). 
 
-#### `Estimate Bankfull`
+```{r echo=FALSE, fig.cap="Graph - Longitudinal Profile Compare Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Graph-Longitudinal_Profile_Compare.png")
+```
 
-#### `Level 2 Report`
+#### `Graph - Longitudinal XS Profile Comapre`
 
-#### `Level 3 Report`
+#### `Map - Reach Overview`
+
+```{r echo=FALSE, fig.cap="Map - Reach Overview Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Map-Reach_Overview.png")
+```
+
+#### `Report - L1`
+The purpose of this tool is produce the Level 1 report. This ArcGIS script tool 
+
+```{r echo=FALSE, fig.cap="Level 1 Report."}
+knitr::include_graphics("docs/figures/toolbox/tool_Report-L1.png")
+```
 
 
+#### `Report - L2 Estimate Bankfull`
+
+```{r echo=FALSE, fig.cap="Map - Reach Overview Tool."}
+knitr::include_graphics("docs/figures/toolbox/tool_Report-L2_Estimate_Bankfull.png")
+```
+
+#### `Report - L2`
+
+```{r echo=FALSE, fig.cap="Level 2 Report."}
+knitr::include_graphics("docs/figures/toolbox/tool_Report-L2.png")
+```
+
+
+#### `Report - L3`
+
+```{r echo=FALSE, fig.cap="Level 3 Report."}
+knitr::include_graphics("docs/figures/toolbox/tool_Report-L3.png")
+```
 
 
 ### 04 - Symbology toolset
+The purpose of this toolset is to hold the tools that standardize the symbolization of FluvialGeomorph datasets. Given the complexity of the datasets involved in this analysis
 
 #### `Banklines`
 
@@ -161,7 +288,7 @@ The purpose of this toolset is to export the tabular data from geospatial datase
 
 ***
 
-## Feature Classes {#feature-classes}
+## Feature Classes
 FluvialGeomorph defines a standard set of feature classes that are used through the tool chain. The definition of a common set of derived features is an important step in standardizing the FluvialGeomorph workflow. These database objects form a tightly linked set of features that work together in a particular order to accomplish the analysis. They are presented here in the approximate order in which they are produced. 
 
 ### Terrain Model Raster
@@ -236,13 +363,54 @@ The `features` point feature class is used to identify and label key stream feat
 ## Reports
 FluvialGeomorph produces a series of reports that help to define stream conditions. 
 
-### Level 1 Report
+### `Graph - Longitudinal Profile Compare`
 
-### Bankfull Estimate Report
+```{r echo=FALSE, fig.cap="Longitudinal Profile Plot.", out.width="100%"}
+knitr::include_graphics("docs/figures/toolbox/Graph-Longitudinal_Profile_Compare.png")
+```
 
-### Level 2 Report
+### `Report - L1`
+The purpose of this tool is produce the Level 1 report. This ArcGIS script tool 
 
-### Level 3 Report
+
+```{r echo=FALSE, fig.cap="Level 1 Report.", out.width="100%"}
+knitr::include_graphics("docs/figures/toolbox/Report_L1.png")
+```
+
+### `Report - L2 Estimate Bankfull`
+
+```{r echo=FALSE, fig.cap="Level 2, Estimate Bankfull Report.", out.width="100%"}
+knitr::include_graphics("docs/figures/toolbox/Report_L2_Estimate_Bankfull.png")
+```
+
+### `Report - L2`
+
+```{r echo=FALSE, fig.cap="Level 2 Report.", out.width="100%"}
+knitr::include_graphics("docs/figures/toolbox/Report_L2.png")
+```
+
+### `Report - L3`
+
+```{r echo=FALSE, fig.cap="Level 3 Report.", out.width="100%"}
+knitr::include_graphics("docs/figures/toolbox/Report_L3.png")
+```
 
 
 ***
+
+## Tables, Graphs, and Figures
+FluvialGeomorph reports are composed of a standard set of tables, graphs, and figures. 
+
+### Overview Map
+
+### Longitudinal Profile
+
+two types: flowline_points, regular cross section
+
+### Cross Section Metrics
+
+level 1, level 2, level 3
+
+### Cross Section Profile
+
+

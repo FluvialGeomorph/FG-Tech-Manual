@@ -21,11 +21,11 @@
   <meta name="twitter:description" content="This technical manual describes the technical background of the FluvialGeomorph toolbox." />
   
 
-<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District" />
 <meta name="author" content="Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers" />
+<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District" />
 
 
-<meta name="date" content="2021-01-21" />
+<meta name="date" content="2021-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -148,10 +148,17 @@
 <li class="chapter" data-level="4.4.22" data-path="toolbox.html"><a href="toolbox.html#features-1"><i class="fa fa-check"></i><b>4.4.22</b> Features</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="toolbox.html"><a href="toolbox.html#reports"><i class="fa fa-check"></i><b>4.5</b> Reports</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="toolbox.html"><a href="toolbox.html#level-1-report-1"><i class="fa fa-check"></i><b>4.5.1</b> Level 1 Report</a></li>
-<li class="chapter" data-level="4.5.2" data-path="toolbox.html"><a href="toolbox.html#bankfull-estimate-report"><i class="fa fa-check"></i><b>4.5.2</b> Bankfull Estimate Report</a></li>
-<li class="chapter" data-level="4.5.3" data-path="toolbox.html"><a href="toolbox.html#level-2-report-1"><i class="fa fa-check"></i><b>4.5.3</b> Level 2 Report</a></li>
-<li class="chapter" data-level="4.5.4" data-path="toolbox.html"><a href="toolbox.html#level-3-report-1"><i class="fa fa-check"></i><b>4.5.4</b> Level 3 Report</a></li>
+<li class="chapter" data-level="4.5.1" data-path="toolbox.html"><a href="toolbox.html#graph---longitudinal-profile-compare-1"><i class="fa fa-check"></i><b>4.5.1</b> <code>Graph - Longitudinal Profile Compare</code></a></li>
+<li class="chapter" data-level="4.5.2" data-path="toolbox.html"><a href="toolbox.html#report---l1-1"><i class="fa fa-check"></i><b>4.5.2</b> <code>Report - L1</code></a></li>
+<li class="chapter" data-level="4.5.3" data-path="toolbox.html"><a href="toolbox.html#report---l2-estimate-bankfull-1"><i class="fa fa-check"></i><b>4.5.3</b> <code>Report - L2 Estimate Bankfull</code></a></li>
+<li class="chapter" data-level="4.5.4" data-path="toolbox.html"><a href="toolbox.html#report---l2-1"><i class="fa fa-check"></i><b>4.5.4</b> <code>Report - L2</code></a></li>
+<li class="chapter" data-level="4.5.5" data-path="toolbox.html"><a href="toolbox.html#report---l3-1"><i class="fa fa-check"></i><b>4.5.5</b> <code>Report - L3</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="toolbox.html"><a href="toolbox.html#tables-graphs-and-figures"><i class="fa fa-check"></i><b>4.6</b> Tables, Graphs, and Figures</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="toolbox.html"><a href="toolbox.html#overview-map"><i class="fa fa-check"></i><b>4.6.1</b> Overview Map</a></li>
+<li class="chapter" data-level="4.6.2" data-path="toolbox.html"><a href="toolbox.html#longitudinal-profile"><i class="fa fa-check"></i><b>4.6.2</b> Longitudinal Profile</a></li>
+<li class="chapter" data-level="4.6.3" data-path="toolbox.html"><a href="toolbox.html#cross-section-metrics"><i class="fa fa-check"></i><b>4.6.3</b> Cross Section Metrics</a></li>
+<li class="chapter" data-level="4.6.4" data-path="toolbox.html"><a href="toolbox.html#cross-section-profile"><i class="fa fa-check"></i><b>4.6.4</b> Cross Section Profile</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="metrics.html"><a href="metrics.html"><i class="fa fa-check"></i><b>5</b> Metrics</a><ul>
@@ -207,7 +214,7 @@
             <section class="normal" id="section-">
 <div id="toolbox" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Toolbox</h1>
-<p>The purpose of this chapter is to describe the FluvialGeomorph toolbox structure and the products created. This chapter begins with a description of the platforms used, the structure of the FluvialGeomorph ArcGIS toolbox and concludes with a description of the products created.</p>
+<p>This chapter describes the FluvialGeomorph toolbox structure and the products it creates. This chapter begins with a description of the platforms used, the structure of the FluvialGeomorph ArcGIS toolbox and concludes with a description of the products created.</p>
 <div id="platforms" class="section level2">
 <h2><span class="header-section-number">4.1</span> Platforms</h2>
 <p>The FluvialGeomorph toolbox uses <a href="https://www.esri.com/en-us/home">ESRI</a> and open source software to combine several platforms, each chosen based on their strengths, to construct a custom toolbox for rapid fluvial geomorphology analysis.</p>
@@ -245,95 +252,287 @@
 <p>The purpose of this toolset is to hold the tools that perform the FluvialGeomorph analysis.</p>
 <div id="hydro-dem" class="section level4">
 <h4><span class="header-section-number">4.3.2.1</span> <code>02 - Hydro DEM</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="docs/figures/toolbox/tool_Hydro_DEM.png" alt="02 - Hydro DEM Tool." width="270" />
+<p class="caption">
+Figure 4.1: 02 - Hydro DEM Tool.
+</p>
+</div>
 </div>
 <div id="contributing-area" class="section level4">
 <h4><span class="header-section-number">4.3.2.2</span> <code>03 - Contributing Area</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="docs/figures/toolbox/tool_Contributing_Area.png" alt="03 - Contributing Area Tool." width="272" />
+<p class="caption">
+Figure 4.2: 03 - Contributing Area Tool.
+</p>
+</div>
 </div>
 <div id="a---contributing-area-d8" class="section level4">
 <h4><span class="header-section-number">4.3.2.3</span> <code>03a - Contributing Area D8</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="docs/figures/toolbox/tool_Contributing_Area_D8.png" alt="03a - Contributing Area D8 Tool." width="270" />
+<p class="caption">
+Figure 4.3: 03a - Contributing Area D8 Tool.
+</p>
+</div>
 </div>
 <div id="stream-network" class="section level4">
 <h4><span class="header-section-number">4.3.2.4</span> <code>04 - Stream Network</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-6"></span>
+<img src="docs/figures/toolbox/tool_Stream_Network.png" alt="04 - Stream Network Tool." width="270" />
+<p class="caption">
+Figure 4.4: 04 - Stream Network Tool.
+</p>
+</div>
 </div>
 <div id="a---stream-network-points" class="section level4">
 <h4><span class="header-section-number">4.3.2.5</span> <code>04a - Stream Network Points</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-7"></span>
+<img src="docs/figures/toolbox/tool_Stream_Network_Points.png" alt="04a - Stream Network Point Tool." width="269" />
+<p class="caption">
+Figure 4.5: 04a - Stream Network Point Tool.
+</p>
+</div>
 </div>
 <div id="b---slope-and-sinuosity" class="section level4">
 <h4><span class="header-section-number">4.3.2.6</span> <code>04b - Slope and Sinuosity</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-8"></span>
+<img src="docs/figures/toolbox/tool_Slope_and_Sinuosity.png" alt="04b - Slope and Sinuosity Tool." width="270" />
+<p class="caption">
+Figure 4.6: 04b - Slope and Sinuosity Tool.
+</p>
+</div>
 </div>
 <div id="c---watershed" class="section level4">
 <h4><span class="header-section-number">4.3.2.7</span> <code>04c - Watershed</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-9"></span>
+<img src="docs/figures/toolbox/tool_Watershed.png" alt="04c - Watershed Tool." width="272" />
+<p class="caption">
+Figure 4.7: 04c - Watershed Tool.
+</p>
+</div>
 </div>
 <div id="flowline-1" class="section level4">
 <h4><span class="header-section-number">4.3.2.8</span> <code>05 - Flowline</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-10"></span>
+<img src="docs/figures/toolbox/tool_Flowline.png" alt="05 - Flowline Tool." width="272" />
+<p class="caption">
+Figure 4.8: 05 - Flowline Tool.
+</p>
+</div>
 </div>
 <div id="flowline-points" class="section level4">
 <h4><span class="header-section-number">4.3.2.9</span> <code>06 - Flowline Points</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-11"></span>
+<img src="docs/figures/toolbox/tool_Flowline_Points.png" alt="06 - Flowline Points Tool." width="272" />
+<p class="caption">
+Figure 4.9: 06 - Flowline Points Tool.
+</p>
+</div>
 </div>
 <div id="detrend-dem" class="section level4">
 <h4><span class="header-section-number">4.3.2.10</span> <code>07 - Detrend DEM</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-12"></span>
+<img src="docs/figures/toolbox/tool_Detrend_DEM.png" alt="07 - Detrend Tool." width="270" />
+<p class="caption">
+Figure 4.10: 07 - Detrend Tool.
+</p>
+</div>
 </div>
 <div id="water-surface-extent" class="section level4">
 <h4><span class="header-section-number">4.3.2.11</span> <code>08 - Water Surface Extent</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-13"></span>
+<img src="docs/figures/toolbox/tool_Water_Surface_Extent.png" alt="08 - Water Surface Extent Tool." width="272" />
+<p class="caption">
+Figure 4.11: 08 - Water Surface Extent Tool.
+</p>
+</div>
 </div>
 <div id="channel-slope" class="section level4">
 <h4><span class="header-section-number">4.3.2.12</span> <code>09 - Channel Slope</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-14"></span>
+<img src="docs/figures/toolbox/tool_Channel_Slope.png" alt="09 - Channel Slope Tool." width="270" />
+<p class="caption">
+Figure 4.12: 09 - Channel Slope Tool.
+</p>
+</div>
 </div>
 <div id="centerline" class="section level4">
 <h4><span class="header-section-number">4.3.2.13</span> <code>10 - Centerline</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-15"></span>
+<img src="docs/figures/toolbox/tool_Centerline.png" alt="10 - Centerline Tool." width="270" />
+<p class="caption">
+Figure 4.13: 10 - Centerline Tool.
+</p>
+</div>
 </div>
 <div id="xs-layout" class="section level4">
 <h4><span class="header-section-number">4.3.2.14</span> <code>11 - XS Layout</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-16"></span>
+<img src="docs/figures/toolbox/tool_XS_Layout.png" alt="11 - XS Layout Tool." width="270" />
+<p class="caption">
+Figure 4.14: 11 - XS Layout Tool.
+</p>
+</div>
 </div>
 <div id="xs-watershed-area" class="section level4">
 <h4><span class="header-section-number">4.3.2.15</span> <code>12 - XS Watershed Area</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-17"></span>
+<img src="docs/figures/toolbox/tool_XS_Watershed_Area.png" alt="12 - XS Watershed Area Tool." width="268" />
+<p class="caption">
+Figure 4.15: 12 - XS Watershed Area Tool.
+</p>
+</div>
 </div>
 <div id="xs-river-position" class="section level4">
 <h4><span class="header-section-number">4.3.2.16</span> <code>13 - XS River Position</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-18"></span>
+<img src="docs/figures/toolbox/tool_XS_River_Position.png" alt="13 - XS River Position Tool." width="270" />
+<p class="caption">
+Figure 4.16: 13 - XS River Position Tool.
+</p>
+</div>
 </div>
 <div id="a---xs-resequence" class="section level4">
 <h4><span class="header-section-number">4.3.2.17</span> <code>13a - XS Resequence</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-19"></span>
+<img src="docs/figures/toolbox/tool_XS_Resequence.png" alt="13a - XS Resequence Tool." width="271" />
+<p class="caption">
+Figure 4.17: 13a - XS Resequence Tool.
+</p>
+</div>
 </div>
 <div id="xs-points" class="section level4">
 <h4><span class="header-section-number">4.3.2.18</span> <code>14 - XS Points</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-20"></span>
+<img src="docs/figures/toolbox/tool_XS_Points.png" alt="14 - XS Points Tool." width="270" />
+<p class="caption">
+Figure 4.18: 14 - XS Points Tool.
+</p>
+</div>
 </div>
 <div id="b---bankline-points" class="section level4">
 <h4><span class="header-section-number">4.3.2.19</span> <code>14b - Bankline Points</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-21"></span>
+<img src="docs/figures/toolbox/tool_Bankline_Points.png" alt="14b - Bankline Points Tool." width="271" />
+<p class="caption">
+Figure 4.19: 14b - Bankline Points Tool.
+</p>
+</div>
 </div>
 <div id="c---xs-assign-loops" class="section level4">
 <h4><span class="header-section-number">4.3.2.20</span> <code>14c - XS Assign Loops</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-22"></span>
+<img src="docs/figures/toolbox/tool_XS_Assign_Loops.png" alt="14c - XS Assign Loops Tool." width="272" />
+<p class="caption">
+Figure 4.20: 14c - XS Assign Loops Tool.
+</p>
+</div>
 </div>
 <div id="a---xs-dimensions-level-1" class="section level4">
 <h4><span class="header-section-number">4.3.2.21</span> <code>15a - XS Dimensions, Level 1</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-23"></span>
+<img src="docs/figures/toolbox/tool_XS_Dimensions_L1.png" alt="15a - XS Dimensions, Level 1 Tool." width="270" />
+<p class="caption">
+Figure 4.21: 15a - XS Dimensions, Level 1 Tool.
+</p>
+</div>
 </div>
 <div id="b---xs-dimensions-level-2" class="section level4">
 <h4><span class="header-section-number">4.3.2.22</span> <code>15b - XS Dimensions, Level 2</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-24"></span>
+<img src="docs/figures/toolbox/tool_XS_Dimensions_L2.png" alt="15b - XS Dimensions, Level 2 Tool." width="268" />
+<p class="caption">
+Figure 4.22: 15b - XS Dimensions, Level 2 Tool.
+</p>
+</div>
 </div>
 <div id="c---xs-planform-level-3" class="section level4">
 <h4><span class="header-section-number">4.3.2.23</span> <code>15c - XS Planform, Level 3</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-25"></span>
+<img src="docs/figures/toolbox/tool_XS_Dimensions_L3.png" alt="15b - XS Dimensions, Level 3 Tool." width="270" />
+<p class="caption">
+Figure 4.23: 15b - XS Dimensions, Level 3 Tool.
+</p>
+</div>
 </div>
 <div id="xs-ras-watersurface" class="section level4">
 <h4><span class="header-section-number">4.3.2.24</span> <code>16 - XS RAS Watersurface</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-26"></span>
+<img src="docs/figures/toolbox/tool_XS_RAS_Watersurface.png" alt="16 - XS RAS Watersurface Tool." width="269" />
+<p class="caption">
+Figure 4.24: 16 - XS RAS Watersurface Tool.
+</p>
+</div>
 </div>
 </div>
 <div id="reports-toolset" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> 03 - Reports toolset</h3>
 <p>The purpose of this toolset is to hold the tools that produce the FluvialGeomorph reports.</p>
-<div id="level-1-report" class="section level4">
-<h4><span class="header-section-number">4.3.3.1</span> <code>Level 1 Report</code></h4>
+<div id="graph---longitudinal-profile-compare" class="section level4">
+<h4><span class="header-section-number">4.3.3.1</span> <code>Graph - Longitudinal Profile Compare</code></h4>
+<p>The purpose of this tool is to compare longitudinal profile plots from multiple surveys. This tool produces a longitudinal profile plot from the <a href="toolbox.html#flowline-points"><code>flowline_points</code></a> feature classes of a stream reach taken from one or more surveys. It labels the plot using the <a href="toolbox.html#features"><code>features</code></a> feature class along the x-axis. This ArcGIS script tool calls the R script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/report/_Longitudinal_Profile_Compare.R"><code>FluvialGeomorph-toolbox\report\_Longitudinal_Profile_Compare.R</code></a> which calls the function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/compare_long_profile.R"><code>fluvgeo::compare_long_profile</code></a>.</p>
+<div class="figure"><span id="fig:unnamed-chunk-27"></span>
+<img src="docs/figures/toolbox/tool_Graph-Longitudinal_Profile_Compare.png" alt="Graph - Longitudinal Profile Compare Tool." width="270" />
+<p class="caption">
+Figure 4.25: Graph - Longitudinal Profile Compare Tool.
+</p>
 </div>
-<div id="estimate-bankfull" class="section level4">
-<h4><span class="header-section-number">4.3.3.2</span> <code>Estimate Bankfull</code></h4>
 </div>
-<div id="level-2-report" class="section level4">
-<h4><span class="header-section-number">4.3.3.3</span> <code>Level 2 Report</code></h4>
+<div id="graph---longitudinal-xs-profile-comapre" class="section level4">
+<h4><span class="header-section-number">4.3.3.2</span> <code>Graph - Longitudinal XS Profile Comapre</code></h4>
 </div>
-<div id="level-3-report" class="section level4">
-<h4><span class="header-section-number">4.3.3.4</span> <code>Level 3 Report</code></h4>
+<div id="map---reach-overview" class="section level4">
+<h4><span class="header-section-number">4.3.3.3</span> <code>Map - Reach Overview</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-28"></span>
+<img src="docs/figures/toolbox/tool_Map-Reach_Overview.png" alt="Map - Reach Overview Tool." width="272" />
+<p class="caption">
+Figure 4.26: Map - Reach Overview Tool.
+</p>
+</div>
+</div>
+<div id="report---l1" class="section level4">
+<h4><span class="header-section-number">4.3.3.4</span> <code>Report - L1</code></h4>
+<p>The purpose of this tool is produce the Level 1 report. This ArcGIS script tool</p>
+<div class="figure"><span id="fig:unnamed-chunk-29"></span>
+<img src="docs/figures/toolbox/tool_Report-L1.png" alt="Level 1 Report." width="272" />
+<p class="caption">
+Figure 4.27: Level 1 Report.
+</p>
+</div>
+</div>
+<div id="report---l2-estimate-bankfull" class="section level4">
+<h4><span class="header-section-number">4.3.3.5</span> <code>Report - L2 Estimate Bankfull</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-30"></span>
+<img src="docs/figures/toolbox/tool_Report-L2_Estimate_Bankfull.png" alt="Map - Reach Overview Tool." width="268" />
+<p class="caption">
+Figure 4.28: Map - Reach Overview Tool.
+</p>
+</div>
+</div>
+<div id="report---l2" class="section level4">
+<h4><span class="header-section-number">4.3.3.6</span> <code>Report - L2</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-31"></span>
+<img src="docs/figures/toolbox/tool_Report-L2.png" alt="Level 2 Report." width="272" />
+<p class="caption">
+Figure 4.29: Level 2 Report.
+</p>
+</div>
+</div>
+<div id="report---l3" class="section level4">
+<h4><span class="header-section-number">4.3.3.7</span> <code>Report - L3</code></h4>
+<div class="figure"><span id="fig:unnamed-chunk-32"></span>
+<img src="docs/figures/toolbox/tool_Report-L3.png" alt="Level 3 Report." width="267" />
+<p class="caption">
+Figure 4.30: Level 3 Report.
+</p>
+</div>
 </div>
 </div>
 <div id="symbology-toolset" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> 04 - Symbology toolset</h3>
+<p>The purpose of this toolset is to hold the tools that standardize the symbolization of FluvialGeomorph datasets. Given the complexity of the datasets involved in this analysis</p>
 <div id="banklines" class="section level4">
 <h4><span class="header-section-number">4.3.4.1</span> <code>Banklines</code></h4>
 </div>
@@ -510,18 +709,70 @@
 <div id="reports" class="section level2">
 <h2><span class="header-section-number">4.5</span> Reports</h2>
 <p>FluvialGeomorph produces a series of reports that help to define stream conditions.</p>
-<div id="level-1-report-1" class="section level3">
-<h3><span class="header-section-number">4.5.1</span> Level 1 Report</h3>
+<div id="graph---longitudinal-profile-compare-1" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> <code>Graph - Longitudinal Profile Compare</code></h3>
+<div class="figure"><span id="fig:unnamed-chunk-33"></span>
+<img src="docs/figures/toolbox/Graph-Longitudinal_Profile_Compare.png" alt="Longitudinal Profile Plot." width="100%" />
+<p class="caption">
+Figure 4.31: Longitudinal Profile Plot.
+</p>
 </div>
-<div id="bankfull-estimate-report" class="section level3">
-<h3><span class="header-section-number">4.5.2</span> Bankfull Estimate Report</h3>
 </div>
-<div id="level-2-report-1" class="section level3">
-<h3><span class="header-section-number">4.5.3</span> Level 2 Report</h3>
+<div id="report---l1-1" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> <code>Report - L1</code></h3>
+<p>The purpose of this tool is produce the Level 1 report. This ArcGIS script tool</p>
+<div class="figure"><span id="fig:unnamed-chunk-34"></span>
+<img src="docs/figures/toolbox/Report_L1.png" alt="Level 1 Report." width="100%" />
+<p class="caption">
+Figure 4.32: Level 1 Report.
+</p>
 </div>
-<div id="level-3-report-1" class="section level3">
-<h3><span class="header-section-number">4.5.4</span> Level 3 Report</h3>
+</div>
+<div id="report---l2-estimate-bankfull-1" class="section level3">
+<h3><span class="header-section-number">4.5.3</span> <code>Report - L2 Estimate Bankfull</code></h3>
+<div class="figure"><span id="fig:unnamed-chunk-35"></span>
+<img src="docs/figures/toolbox/Report_L2_Estimate_Bankfull.png" alt="Level 2, Estimate Bankfull Report." width="100%" />
+<p class="caption">
+Figure 4.33: Level 2, Estimate Bankfull Report.
+</p>
+</div>
+</div>
+<div id="report---l2-1" class="section level3">
+<h3><span class="header-section-number">4.5.4</span> <code>Report - L2</code></h3>
+<div class="figure"><span id="fig:unnamed-chunk-36"></span>
+<img src="docs/figures/toolbox/Report_L2.png" alt="Level 2 Report." width="100%" />
+<p class="caption">
+Figure 4.34: Level 2 Report.
+</p>
+</div>
+</div>
+<div id="report---l3-1" class="section level3">
+<h3><span class="header-section-number">4.5.5</span> <code>Report - L3</code></h3>
+<div class="figure"><span id="fig:unnamed-chunk-37"></span>
+<img src="docs/figures/toolbox/Report_L3.png" alt="Level 3 Report." width="100%" />
+<p class="caption">
+Figure 4.35: Level 3 Report.
+</p>
+</div>
 <hr />
+</div>
+</div>
+<div id="tables-graphs-and-figures" class="section level2">
+<h2><span class="header-section-number">4.6</span> Tables, Graphs, and Figures</h2>
+<p>FluvialGeomorph reports are composed of a standard set of tables, graphs, and figures.</p>
+<div id="overview-map" class="section level3">
+<h3><span class="header-section-number">4.6.1</span> Overview Map</h3>
+</div>
+<div id="longitudinal-profile" class="section level3">
+<h3><span class="header-section-number">4.6.2</span> Longitudinal Profile</h3>
+<p>two types: flowline_points, regular cross section</p>
+</div>
+<div id="cross-section-metrics" class="section level3">
+<h3><span class="header-section-number">4.6.3</span> Cross Section Metrics</h3>
+<p>level 1, level 2, level 3</p>
+</div>
+<div id="cross-section-profile" class="section level3">
+<h3><span class="header-section-number">4.6.4</span> Cross Section Profile</h3>
 
 </div>
 </div>
