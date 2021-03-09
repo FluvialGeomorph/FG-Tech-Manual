@@ -31,13 +31,13 @@ Funding for development and maintenance of FluvialGeomorph has been provided by 
 
 
 ```{r echo=FALSE}
-knitr::include_graphics("docs/images/USACE_200.png")
-knitr::include_graphics("docs/images/EMRRP_logo_200.png")
-knitr::include_graphics("docs/images/RSM_200.png")
-knitr::include_graphics("docs/images/MRG&P_300.png")
-knitr::include_graphics("docs/images/FRMP_200.png")
-knitr::include_graphics("docs/images/SilverJackets_200.png")
-knitr::include_graphics("docs/images/EWN_200.png")
+knitr::include_graphics("images/USACE_200.png")
+knitr::include_graphics("images/EMRRP_logo_200.png")
+knitr::include_graphics("images/RSM_200.png")
+knitr::include_graphics("images/MRG&P_300.png")
+knitr::include_graphics("images/FRMP_200.png")
+knitr::include_graphics("images/SilverJackets_200.png")
+knitr::include_graphics("images/EWN_200.png")
 ```
 
 
