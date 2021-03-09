@@ -293,14 +293,18 @@
 <div id="water-surface-elevation" class="section level3">
 <h3><span class="header-section-number">2.2.8</span> Water Surface Elevation</h3>
 <p>Since water almost completely absorbs LiDAR light pulses, areas of water are usually missing elevation data. However, this does not mean that water surface elevation (WSE) cannot be derived from or accurately represented in LiDAR datasets. The elevation of water areas in DEMs derived from LiDAR point clouds can be represented due to the acquisition of points along the water’s edge. See Figure x1 for an illustration of where these points are located.</p>
-<div class="figure">
-<img src="docs/figures/water_edge_lidar_points.png" alt="" />
-<p class="caption">Figure x1. LiDAR Points Acquired Close to the Water’s Edge Define the Water Surface. Mississippi River, RM 435, Vicksburg, MS</p>
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="figures/water_edge_lidar_points.png" alt="LiDAR Points Acquired Close to the Water's Edge Define the Water Surface. Mississippi River, RM 435, Vicksburg, MS." width="100%" />
+<p class="caption">
+Figure 2.1: LiDAR Points Acquired Close to the Water’s Edge Define the Water Surface. Mississippi River, RM 435, Vicksburg, MS.
+</p>
 </div>
 <p>The point cloud density will largely determine how accurately the water surface is captured, driven by the probability of capturing points as close to the water line as possible. In relatively low point cloud density LiDAR collections (&gt;=1m point cloud spacing) the water surface is often represented with artifacts. These artifacts are commonly referred to as TIN (Triangulated Irregular Networks) artifacts created when the DEM is derived. These occur when LiDAR points were not regularly acquired close to the water’s edge. Sections of the banklines where LiDAR points were not acquired close to the water’s edge will appear as triangular “humps” in the water surface. In Figure x2, these “hump” artifacts are clearly visible as reddish areas, while the lower elevation areas close to the water surface elevation appears as green and blue areas.</p>
-<div class="figure">
-<img src="docs/figures/R1_Detail.png" alt="" />
-<p class="caption">Figure x2. DEM artifacts due to LiDAR points not being captured close enough to the water’s edge. Mississippi River, RM 444-445.</p>
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="figures/R1_Detail.png" alt="DEM artifacts due to LiDAR points not being captured close enough to the water's edge. Mississippi River, RM 444-445." width="100%" />
+<p class="caption">
+Figure 2.2: DEM artifacts due to LiDAR points not being captured close enough to the water’s edge. Mississippi River, RM 444-445.
+</p>
 </div>
 </div>
 <div id="spatial-data-clearinghouses-for-terrain-data" class="section level3">
