@@ -1,0 +1,139 @@
+﻿feature_class,field_name,type,description,units,level
+dem,Z,32 bit float,The z-coordinate value (elevation).,"feet, NAVD88",1
+cutlines,none,,,,1
+dem_hydro,Z,32 bit float,The z-coordinate value (elevation).,"feet, NAVD88",1
+contributing_area,contributing_area,32 bit float,The specific catchment area. ,linear units of fc,1
+stream_network,ReachName,text,Name of the reach.,,1
+stream_network_points,ReachName,text,Name of the reach.,,1
+stream_network_points,POINT_X,double,The x-coordinate value (longitude).,linear units of fc,1
+stream_network_points,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,1
+stream_network_points,POINT_M,double,The m-coordinate value (route position).,linear units of fc,1
+stream_network_points,Watershed_Area_SqMile,double,The upstream watershed drainage area.,square miles,1
+stream_network_points,Z,double,The z-coordinate value (elevation).,"feet, NAVD88",1
+watershed_points,ReachName,text,Name of the reach.,,1
+watershed_points,POINT_X,double,The x-coordinate value (longitude).,linear units of fc,1
+watershed_points,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,1
+watershed_points,POINT_M,double,The m-coordinate value (route position).,linear units of fc,1
+watershed_points,Watershed_Area_SqMile,double,The upstream watershed drainage area.,square miles,1
+watershed_points,Z,double,The z-coordinate value (elevation).,"feet, NAVD88",1
+watershed,ReachName,text,Name of the reach.,,1
+watershed,Shape_Area,double,The area of the watershed. ,linear units of fc,1
+flowline,ReachName,text,Name of the reach.,,1
+flowline,from_measure,double,The start longitudinal stationing value for the reach.,kilometers,1
+flowline,to_measure,double,The end longitudinal stationing value for the reach.,kilometers,1
+flowline_points,ReachName,text,Name of the reach.,,1
+flowline_points,POINT_X,double,The x-coordinate value (longitude).,linear units of fc,1
+flowline_points,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,1
+flowline_points,POINT_M,double,The m-coordinate value (route position).,,1
+flowline_points,Z,double,The z-coordinate value (elevation).,"feet, NAVD88",1
+detrend,detrend_Z,32 bit float,The detrended z-coordinate value (elevation).,"feet, detrended",1
+channel_slope,slope,32 bit float,The terrain slope. ,degree,1
+xs,ReachName,text,Name of the reach.,,1
+xs,Seq,short,The cross section unique identifier. ,,1
+xs,x_start,double,The x-coordinate value at the start of the cross section. ,linear units of fc,1
+xs,y_start,double,The y-coordinate value at the start of the cross section. ,linear units of fc,1
+xs,x_end,double,The x-coordinate value at the end of the cross section. ,linear units of fc,1
+xs,y_end,double,The y-coordinate value at the end of the cross section. ,linear units of fc,1
+xs,Watershed_Area_SqMile,double,The upstream watershed drainage area.,square miles,1
+xs,from_measure,double,The start longitudinal stationing value for the reach.,kilometers,1
+xs,to_measure,double,The end longitudinal stationing value for the reach.,kilometers,1
+xs,POINT_X,double,The x-coordinate value (longitude).,linear units of fc,1
+xs,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,1
+xs,POINT_M,double,The m-coordinate value (route position).,linear units of fc,1
+xs,Z,double,The z-coordinate value (elevation).,"feet, NAVD88",1
+xs,km_to_mouth,double,The distance to the mouth of the site. ,kilometers,1
+xs,loop,long,The loop number. ,,3
+xs,bend,long,The bend number. ,,3
+riffle_floodplain,ReachName,text,Name of the reach.,,2
+riffle_floodplain,Seq,short,The cross section unique identifier. ,,2
+riffle_floodplain,Watershed_Area_SqMile,double,The upstream watershed drainage area.,square miles,2
+riffle_floodplain,from_measure,double,The start longitudinal stationing value for the reach.,kilometers,2
+riffle_floodplain,to_measure,double,The end longitudinal stationing value for the reach.,kilometers,2
+riffle_floodplain,POINT_X,double,The x-coordinate value (longitude).,linear units of fc,2
+riffle_floodplain,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,2
+riffle_floodplain,POINT_M,double,The m-coordinate value (route position).,linear units of fc,2
+riffle_floodplain,Z,double,The z-coordinate value (elevation).,"feet, NAVD88",2
+riffle_floodplain,km_to_mouth,double,The distance to the mouth of the site. ,kilometers,2
+riffle_floodplain,loop,long,The loop number. ,,3
+riffle_floodplain,bend,long,The bend number. ,,3
+riffle_channel,ReachName,text,Name of the reach.,,2
+riffle_channel,Seq,short,The cross section unique identifier. ,,2
+riffle_channel,Watershed_Area_SqMile,double,The upstream watershed drainage area.,square miles,2
+riffle_channel,from_measure,double,The start longitudinal stationing value for the reach.,kilometers,2
+riffle_channel,to_measure,double,The end longitudinal stationing value for the reach.,kilometers,2
+riffle_channel,POINT_X,double,The x-coordinate value (longitude).,linear units of fc,2
+riffle_channel,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,2
+riffle_channel,POINT_M,double,The m-coordinate value (route position).,linear units of fc,2
+riffle_channel,Z,double,The z-coordinate value (elevation).,"feet, NAVD88",2
+riffle_channel,km_to_mouth,double,The distance to the mouth of the site. ,kilometers,2
+riffle_channel,loop,long,The loop number. ,,3
+riffle_channel,bend,long,The bend number. ,,3
+xs_points,ReachName,text,Name of the reach.,,"1,2"
+xs_points,Seq,short,The cross section unique identifier. ,,"1,2"
+xs_points,Watershed_Area_SqMile,double,The upstream watershed drainage area.,square miles,"1,2"
+xs_points,from_measure,double,The start longitudinal stationing value for the reach.,kilometers,"1,2"
+xs_points,to_measure,double,The end longitudinal stationing value for the reach.,kilometers,"1,2"
+xs_points,POINT_X,double,The x-coordinate value (longitude).,linear units of fc,"1,2"
+xs_points,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,"1,2"
+xs_points,POINT_M,double,The m-coordinate value (route position).,linear units of fc,"1,2"
+xs_points,POINT_M_units,text,The units of the POINT_M field. ,,"1,2"
+xs_points,km_to_mouth,double,The distance to the mouth of the site. ,kilometers,"1,2"
+xs_points,DEM_Z,double,The z-coordinate value (elevation).,"feet, NAVD88","1,2"
+xs_points,dem_units,double,The units of theDEM_Z field. ,,"1,2"
+xs_points,Detrend_DEM_Z,double,The z-coordinate value on the detrended raster.,"feet, detrended","1,2"
+xs_points,loop,long,The loop number. ,,3
+xs_points,bend,long,The bend number. ,,3
+_dims_L1,z_smooth,double,The smoothed z-coordinate value (elevation). ,"feet, NAVD88",1
+_dims_L1,upstream_x,double,The x-coordinate value (longitude) of the next upsteam cross section in the moving window. ,linear units of fc,1
+_dims_L1,upstream_y,double,The y-coordinate value (latitude) of the next upsteam cross section in the moving window. ,linear units of fc,1
+_dims_L1,downstream_x,double,The x-coordinate value (longitude) of the next downsteam cross section in the moving window. ,linear units of fc,1
+_dims_L1,downstream_y,double,The y-coordinate value (latitude) of the next downsteam cross section in the moving window. ,linear units of fc,1
+_dims_L1,upstream_z,double,The z-coordinate value (elevation) of the next upstream cross section in the moving window. ,"feet, NAVD88",1
+_dims_L1,downstream_z,double,The z-coordinate value (elevation) of the next downstream cross section in the moving window. ,"feet, NAVD88",1
+_dims_L1,upstream_m,double,The m-coordinate value (route position) of the next upstream cross section in the moving window. ,linear units of fc,1
+_dims_L1,downstream_m,double,The m-coordinate value (route position) of the next downstream cross section in the moving window. ,linear units of fc,1
+_dims_L1,rise,double,The elevation difference between the downstream and upstream cross section in the moving window. ,feet,1
+_dims_L1,run,double,The longitudinal distance along the flowline between the downstream and upstream cross sections in the moving window. ,feet,1
+_dims_L1,stream_length,double,The longitudinal distance along the flowline between the downstream and upstream cross sections in the moving window. ,feet,1
+_dims_L1,valley_length,double,The longitudinal distance along the valleyline between the downstream and upstream cross sections in the moving window. ,feet,1
+_dims_L1,sinuosity,double,The sinuosity of the stream within the moving window (valley_length/stream_length). ,,1
+_dims_L1,sinuosity_gte_one,double,"The sinuosity metric, values greater than or equal to one. ",,1
+_dims_L1,slope,double,The slope of the stream within the moving window (rise/run). ,degree,1
+_dims_L1,slope_gte_zero,double,"The slope metric, values greater than of equal to zero. ",degree,1
+_dims_L2,bankfull_elevation,double,The detrended elevation of the water surface at bankfull discharge. ,"feet, detrended",2
+_dims_L2,drainage_area,double,The upstream watershed drainage area.,square miles,2
+_dims_L2,xs_area,double,The cross sectional area at the estimated bankfull water surface elevation. ,square feet,2
+_dims_L2,xs_width,double,The cross section width at the estimated bankfull water surface elevation. ,square feet,2
+_dims_L2,xs_depth,double,The cross section depth at the estimated bankfull water surface elevation. ,square feet,2
+_dims_L2,discharge,double,The stream discharge. ,cubic m/s,2
+_dims_L2,fp_area,double,The cross sectional area at the estimated floodprone water surface elevation. ,square feet,2
+_dims_L2,fp_width,double,The cross section width at the estimated floodprone water surface elevation. ,feet,2
+_dims_L2,fp_depth,double,The cross sectional depth at the estimated floodprone water surface elevation. ,feet,2
+_dims_L2,xs_width_depth_ratio,double,The width to depth ratio.,,2
+_dims_L2,xs_width_depth_ratio_gte_one,double,"The width to depth ratio metric, gteater than or equal to one.",,2
+_dims_L2,xs_entrenchment_ratio,double,The entrenchment ratio. ,,2
+_dims_L2,xs_entrenchment_ratio_gte_one,double,"The entrenchment ratio metric, greater than or equal to one. ",,2
+_dims_L2,watersurface_elev,double,The as-measured water surface elevation. ,"feet, NAVD88",2
+_dims_L2,bankfull_elev,double,The estimated bankfull water surface elevation. ,"feet, NAVD88",2
+_dims_L2,floodprone_elev,double,The estimated floodprone water surface elevation. ,"feet, NAVD88",2
+_dims_L2,xs_mean_depth,double,The cross section mean depth at the estimated bankfull water surface elevation. ,feet,2
+_dims_L2,shear_stress_density,double,"The fluid shear stress, calculated using the density of water. ",kg/m^2,2
+_dims_L2,shear_stress_density_gte_zero,double,"The fluid shear stress density metric, greater than or equal to zero. ",kg/m^2,2
+_dims_L2,shear_stress_weight,double,"The fluid shear stress, calculated using the specific weight of water. ",lb/ft^2,2
+_dims_L2,shear_stress_weight_gte_zero,double,"The fluid shear stress specific weight metric, greater than or equal to zero. ",lb/ft^2,2
+_dims_L2,shear_stress_lane,double,"The fluid shear stress, calculated using the Lane's Balance method. ",,2
+_dims_L2,shear_stress_lane_gte_zero,double,"The fluid shear stress Lane's metric, greater than or equal to zero. ",,2
+_dims_L2,unit_stream_power,double,The unit stream power. ,kg/m/s,2
+_dims_L2,unit_stream_power_gte_zero,double,"The unit stream power metric, greater than or equal to zero. ",kg/m/s,2
+_dims_L3,bend_num,double,The bend number. ,,3
+_dims_L3,bend_POINT_X,double,The x-coordinate value of the center of the bend. ,linear units of fc,3
+_dims_L3,bend_POINT_Y,double,The y-coordinate value of the center of the bend. ,linear units of fc,3
+_dims_L3,loop_POINT_X,double,The x-coordinate value of the center of the loop. ,linear units of fc,3
+_dims_L3,loop_POINT_Y,double,The y-coordinate value of the center of the loop. ,linear units of fc,3
+_dims_L3,bend_radius,double,The radius of the bend. ,linear units of fc,3
+_dims_L3,meander_length,double,The meander length. ,feet,3
+_dims_L3,meander_width,double,The meander width. ,feet,3
+_dims_L3,rc_bfw_ratio,double,The radius of curvature to bankfull width ratio. ,,3
+_dims_L3,rc_bfw_ratio_lte_30,double,The radius of curvature to bankfull width ratio less than or equale to 30. ,,3
+_dims_L3,mbw_bfw_ratio,double,The meander bend width to bankfull width ratio. ,,3
+_dims_L3,mbw_bfw_ratio_lte_30,double,The meander bend width to bankfull width ratio less than or equal to 30. ,,3

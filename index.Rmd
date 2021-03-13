@@ -15,10 +15,17 @@ link-citations: true
 description: "This technical manual describes the technical background of the FluvialGeomorph toolbox."
 ---
 
-```{r include=FALSE}
+```{r library, include=FALSE}
 library(knitr)
 library(png)
+library(dplyr)
 ```
+
+```{r import, include=FALSE}
+dd <- read.csv("data_dictionary.csv", fileEncoding="UTF-8-BOM")
+dd_col_names <- c("Field Name", "Type", "Description", "Units", "Level")
+```
+
 
 # Preface {-}
 Funding for development and maintenance of FluvialGeomorph has been provided by the following US Army Corps of Engineers (USACE) programs:
