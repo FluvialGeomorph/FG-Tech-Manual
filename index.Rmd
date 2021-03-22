@@ -22,9 +22,56 @@ library(dplyr)
 ```
 
 ```{r import, include=FALSE}
-dd <- read.csv("data_dictionary.csv", fileEncoding="UTF-8-BOM")
-dd_col_names <- c("Field Name", "Type", "Description", "Units", "Level")
+dd_df     <- read.csv("data_dictionary.csv")
+params_df <- read.csv("parameters.csv")
 ```
+
+```{r table_functions, include=FALSE}
+#' @title Creates a table of parameters for a tool.
+#'
+#' @param params_df       data frame; A data frame of parameters. Must have the
+#'                        columns: tool, parameter_name, data_type, description, #'                        required. 
+#' @param tool            character; The name of the tool whose parameters will
+#'                        be displayed. 
+#' @param caption         character; The text of the table caption for the 
+#'                        output table. 
+#'
+#' @return A knitr::kable containing records for each of the parameters for the 
+#' specified tool. Table includes parameter_name, data_type, description, 
+#' required. 
+#'
+params_table <- function(params_df, tool, caption) {
+  param_names <- c("Parameter", "Type", "Description", "Required")
+  tool_dd <- filter(params_df, tool == !!tool) %>%
+             select(parameter_name:required)
+  kable(tool_dd, col.names = param_names,
+        caption = caption)
+
+}
+
+#' @title Creates a table of fields for a feature class. 
+#'
+#' @param dd_df           data frame; A data dictionary data frame. Must have 
+#'                        the columns: feature_class, field_name, type, 
+#'                        description, units, level.
+#' @param feature_class   character; The name of a feature class in the dd_df
+#'                        feature_class.
+#' @param caption         character; The text of the caption for the output 
+#'                        table. 
+#'
+#' @return A knitr::kable containing records for each of the fields for the 
+#' specified feature_class. Table includes field_name, type, description, units,
+#' and level. 
+#'
+dd_table <- function(dd_df, feature_class, caption) {
+  dd_col_names <- c("Field Name", "Type", "Description", "Units", "Level")
+  fc_dd <- filter(dd_df, feature_class == !!feature_class) %>%
+           select(field_name:level)
+  kable(fc_dd, col.names = dd_col_names,
+        caption = caption)
+}
+```
+
 
 
 # Preface {-}

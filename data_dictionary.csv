@@ -1,4 +1,4 @@
-﻿feature_class,field_name,type,description,units,level
+feature_class,field_name,type,description,units,level
 dem,Z,32 bit float,The z-coordinate value (elevation).,"feet, NAVD88",1
 cutlines,none,,,,1
 dem_hydro,Z,32 bit float,The z-coordinate value (elevation).,"feet, NAVD88",1

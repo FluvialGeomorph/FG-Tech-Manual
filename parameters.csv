@@ -1,0 +1,30 @@
+tool,parameter_name,data_type,description,required
+hydro_dem,output_workspace,Workspace,Path to the output workspace. ,required
+hydro_dem,cutlines,Feature Class,Path to the cutlines feature class. ,required
+hydro_dem,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
+hydro_dem,widen_cells,long,Number of cells to widen the cutline by. ,optional
+contributing_area,output_workspace,Workspace,Path to the output workspace. ,required
+contributing_area,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
+contributing_area,processes,long,The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer. ,required
+contributing_area_D8,output_workspace,Workspace,Path to the output workspace. ,required
+contributing_area_D8,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
+contributing_area_D8,processes,long,The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer. ,required
+stream_network,output_workspace,Workspace,Path to the output workspace. ,required
+stream_network,contrib_area,Raster Dataset,Path to the D-Infinity contributing area raster created by the Contributing Area tool. ,required
+stream_network,threshold,long,Flow accumulation threshold to initiate a stream expressed in the units of the source DEM used to accumulate the flow.,required
+stream_network,processes,long,The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer. ,required
+stream_network_points,output_workspace,Workspace,Path to the output workspace. ,required
+stream_network_points,stream_network,Feature Class,Path to the edited stream network feature class.,required
+stream_network_points,flow_accum,Raster Dataset,Path to the flow accumulation model. ,required
+stream_network_points,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
+gradient,flowline_points_fc,Feature Class,The full path to a `flowline_points` feature class. ,required
+gradient,gradient_distance,double,The number of features to lead (upstream) and lag (downstream) to calculate the slope and sinuosity. Must be an integer.,required
+gradient,use_smoothing,Boolean,Determines if smoothed elevation values are used to calculate gradient and sinuosity (default is FALSE).,required
+gradient,loess_span,double,The loess regression span parameter (defaults to 0.05). ,required
+watershed,output_workspace,Workspace,Path to the output workspace. ,required
+watershed,points,Feature Class,,
+watershed,point_ID_field,,,
+watershed,flow_accumulation_d8,,,
+watershed,flow_direction_d8,,,
+watershed,snap_distance,,,
+watershed,landcover,,,
