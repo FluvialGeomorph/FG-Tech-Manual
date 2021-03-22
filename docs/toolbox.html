@@ -25,7 +25,7 @@
 <meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District" />
 
 
-<meta name="date" content="2021-03-13" />
+<meta name="date" content="2021-03-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -243,11 +243,13 @@
 <p>The purpose of this toolset is to hold the tools needed to install and troubleshoot the FluvialGeomorph toolbox software components.</p>
 <div id="install-r-packages" class="section level4">
 <h4><span class="header-section-number">4.3.1.1</span> <code>Install R Packages</code></h4>
-<p>This tool installs the R packages required by the FluvialGeomorph toolbox. This tool also sets several configuration settings. This ArcGIS script tool calls the R script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/install/Install_FG_R.R"><code>FluvialGeomorph-toolbox/install/Install_FG_R.R</code></a>.</p>
+<p><strong>Purpose</strong> - This tool installs the R packages required by the FluvialGeomorph toolbox. This tool also sets several configuration settings.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the R script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/install/Install_FG_R.R"><code>FluvialGeomorph-toolbox/install/Install_FG_R.R</code></a>.</p>
 </div>
 <div id="r-session-info" class="section level4">
 <h4><span class="header-section-number">4.3.1.2</span> <code>R Session Info</code></h4>
-<p>This tool provides the output of the current R session. This is helpful for troubleshooting R environment issues. This ArcGIS script tool calls the R script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/install/session.R"><code>FluvialGeomorph-toolbox/install/session.R</code></a>.</p>
+<p><strong>Purpose</strong> - This tool provides the output of the current R session. This is helpful for troubleshooting R environment issues during installation.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the R script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/install/session.R"><code>FluvialGeomorph-toolbox/install/session.R</code></a>.</p>
 </div>
 </div>
 <div id="tools-toolset" class="section level3">
@@ -255,18 +257,96 @@
 <p>The purpose of this toolset is to hold the tools that perform the FluvialGeomorph analysis.</p>
 <div id="hydro-dem" class="section level4">
 <h4><span class="header-section-number">4.3.2.1</span> <code>02 - Hydro DEM</code></h4>
-<p>This tool burns a <a href="toolbox.html#cutlines"><code>cutlines</code></a> feature class into the supplied DEM and creates the <a href="hydro-modified-raster"><code>dem_hydro</code></a> in the output workspace. See the <a href="hydro-modified-raster"><code>dem_hydro</code></a> section for a description of the raster dataset created. This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_02_HydroDEM.py"><code>FluvialGeomorph-toolbox/tools/_02_HydroDEM.py</code></a></p>
-<div class="figure"><span id="fig:unnamed-chunk-4"></span>
-<img src="figures/toolbox/tool_Hydro_DEM.png" alt="02 - Hydro DEM Tool." width="270" />
+<p><strong>Purpose</strong> - This tool “burns” (sets the elevation to the same value for all pixels along the extent of the polyline feature) a <a href="toolbox.html#cutlines"><code>cutlines</code></a> feature class into the supplied DEM and creates the <a href="hydro-modified-raster"><code>dem_hydro</code></a> in the output workspace.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_02_HydroDEM.py"><code>FluvialGeomorph-toolbox/tools/_02_HydroDEM.py</code></a></p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<table>
+<caption><span id="tab:unnamed-chunk-4">Table 4.1: </span>Hydro DEM Tool Parameters.</caption>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">output_workspace</td>
+<td align="left">Workspace</td>
+<td align="left">Path to the output workspace.</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">cutlines</td>
+<td align="left">Feature Class</td>
+<td align="left">Path to the cutlines feature class.</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">dem</td>
+<td align="left">Raster Dataset</td>
+<td align="left">Path to the digital elevation model (DEM).</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">widen_cells</td>
+<td align="left">long</td>
+<td align="left">Number of cells to widen the cutline by.</td>
+<td align="left">optional</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="figures/toolbox/tool_Hydro_DEM.png" alt="02 - Hydro DEM Tool Dialog." width="270" />
 <p class="caption">
-Figure 4.1: 02 - Hydro DEM Tool.
+Figure 4.1: 02 - Hydro DEM Tool Dialog.
 </p>
 </div>
 </div>
 <div id="contributing-area" class="section level4">
 <h4><span class="header-section-number">4.3.2.2</span> <code>03 - Contributing Area</code></h4>
-<p>This tool calculates the contributing area from an input DEM. This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_03_ContributingArea.py"><code>FluvialGeomorph-toolbox/tools/_03_ContributingArea.py</code></a>. This Python script uses the <a href="https://hydrology.usu.edu/taudem/taudem5/index.html">TauDEM</a> <a href="https://hydrology.usu.edu/taudem/taudem5/help53/DInfinityContributingArea.html">D-Infinity Contributing Area tool</a> to calculate the specific catchment area (which is the contributing area per unit contour length using the multiple flow direction D-infinity approach).</p>
-<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<p><strong>Purpose</strong> - This tool calculates the contributing area from an input DEM.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_03_ContributingArea.py"><code>FluvialGeomorph-toolbox/tools/_03_ContributingArea.py</code></a>. This Python script uses the <a href="https://hydrology.usu.edu/taudem/taudem5/index.html">TauDEM</a> <a href="https://hydrology.usu.edu/taudem/taudem5/help53/DInfinityContributingArea.html">D-Infinity Contributing Area tool</a> to calculate the specific catchment area (which is the contributing area per unit contour length using the multiple flow direction D-infinity approach).</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<table>
+<caption><span id="tab:unnamed-chunk-6">Table 4.2: </span>Contributing Area Tool Parameters.</caption>
+<colgroup>
+<col width="6%" />
+<col width="5%" />
+<col width="84%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">output_workspace</td>
+<td align="left">Workspace</td>
+<td align="left">Path to the output workspace.</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">dem</td>
+<td align="left">Raster Dataset</td>
+<td align="left">Path to the digital elevation model (DEM).</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">processes</td>
+<td align="left">long</td>
+<td align="left">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
+<td align="left">required</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:unnamed-chunk-7"></span>
 <img src="figures/toolbox/tool_Contributing_Area.png" alt="03 - Contributing Area Tool." width="272" />
 <p class="caption">
 Figure 4.2: 03 - Contributing Area Tool.
@@ -275,8 +355,47 @@ Figure 4.2: 03 - Contributing Area Tool.
 </div>
 <div id="a---contributing-area-d8" class="section level4">
 <h4><span class="header-section-number">4.3.2.3</span> <code>03a - Contributing Area D8</code></h4>
-This tool calculates D8 flow accumulation and flow direction rasters from an input DEM. This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_03a_ContributingAreaD8.py"><code>FluvialGeomorph-toolbox/tools/_03a_ContributingAreaD8.py</code></a>.
-<div class="figure"><span id="fig:unnamed-chunk-6"></span>
+<p><strong>Purpose</strong> - This tool calculates D8 flow accumulation and flow direction rasters from an input DEM.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_03a_ContributingAreaD8.py"><code>FluvialGeomorph-toolbox/tools/_03a_ContributingAreaD8.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<table>
+<caption><span id="tab:unnamed-chunk-8">Table 4.3: </span>Contributing Area D8 Tool Parameters.</caption>
+<colgroup>
+<col width="6%" />
+<col width="5%" />
+<col width="84%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">output_workspace</td>
+<td align="left">Workspace</td>
+<td align="left">Path to the output workspace.</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">dem</td>
+<td align="left">Raster Dataset</td>
+<td align="left">Path to the digital elevation model (DEM).</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">processes</td>
+<td align="left">long</td>
+<td align="left">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
+<td align="left">required</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:unnamed-chunk-9"></span>
 <img src="figures/toolbox/tool_Contributing_Area_D8.png" alt="03a - Contributing Area D8 Tool." width="270" />
 <p class="caption">
 Figure 4.3: 03a - Contributing Area D8 Tool.
@@ -285,8 +404,53 @@ Figure 4.3: 03a - Contributing Area D8 Tool.
 </div>
 <div id="stream-network" class="section level4">
 <h4><span class="header-section-number">4.3.2.4</span> <code>04 - Stream Network</code></h4>
-<p>This tool creates a synthetic flow network from a contributing area raster and a stream initiation threshold. The ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04_StreamNetwork.py"><code>FluvialGeomorph-toolbox/tools/_04_StreamNetwork.py</code></a>.</p>
-<div class="figure"><span id="fig:unnamed-chunk-7"></span>
+<p><strong>Purpose</strong> - This tool creates a synthetic flow network from a contributing area raster and a stream initiation threshold.</p>
+<p><strong>Code</strong> - The ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04_StreamNetwork.py"><code>FluvialGeomorph-toolbox/tools/_04_StreamNetwork.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<table>
+<caption><span id="tab:unnamed-chunk-10">Table 4.4: </span>Stream Network Tool Parameters.</caption>
+<colgroup>
+<col width="6%" />
+<col width="5%" />
+<col width="84%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">output_workspace</td>
+<td align="left">Workspace</td>
+<td align="left">Path to the output workspace.</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">contrib_area</td>
+<td align="left">Raster Dataset</td>
+<td align="left">Path to the D-Infinity contributing area raster created by the Contributing Area tool.</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">threshold</td>
+<td align="left">long</td>
+<td align="left">Flow accumulation threshold to initiate a stream expressed in the units of the source DEM used to accumulate the flow.</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">processes</td>
+<td align="left">long</td>
+<td align="left">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
+<td align="left">required</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:unnamed-chunk-11"></span>
 <img src="figures/toolbox/tool_Stream_Network.png" alt="04 - Stream Network Tool." width="270" />
 <p class="caption">
 Figure 4.4: 04 - Stream Network Tool.
@@ -295,8 +459,53 @@ Figure 4.4: 04 - Stream Network Tool.
 </div>
 <div id="a---stream-network-points" class="section level4">
 <h4><span class="header-section-number">4.3.2.5</span> <code>04a - Stream Network Points</code></h4>
-<p>This tool converts a stream network to points and calculates the drainage area. This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04a_StreamNetworkPoints.py"><code>FluvialGeomorph-toolbox/tools/_04a_StreamNetworkPoints.py</code></a>.</p>
-<div class="figure"><span id="fig:unnamed-chunk-8"></span>
+<p><strong>Purpose</strong> - This tool converts a stream network to points and calculates the drainage area.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04a_StreamNetworkPoints.py"><code>FluvialGeomorph-toolbox/tools/_04a_StreamNetworkPoints.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<table style="width:100%;">
+<caption><span id="tab:unnamed-chunk-12">Table 4.5: </span>Stream Network Points Tool Parameters.</caption>
+<colgroup>
+<col width="18%" />
+<col width="16%" />
+<col width="54%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">output_workspace</td>
+<td align="left">Workspace</td>
+<td align="left">Path to the output workspace.</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">stream_network</td>
+<td align="left">Feature Class</td>
+<td align="left">Path to the edited stream network feature class.</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">flow_accum</td>
+<td align="left">Raster Dataset</td>
+<td align="left">Path to the flow accumulation model.</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">dem</td>
+<td align="left">Raster Dataset</td>
+<td align="left">Path to the digital elevation model (DEM).</td>
+<td align="left">required</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:unnamed-chunk-13"></span>
 <img src="figures/toolbox/tool_Stream_Network_Points.png" alt="04a - Stream Network Point Tool." width="269" />
 <p class="caption">
 Figure 4.5: 04a - Stream Network Point Tool.
@@ -305,8 +514,53 @@ Figure 4.5: 04a - Stream Network Point Tool.
 </div>
 <div id="b---slope-and-sinuosity" class="section level4">
 <h4><span class="header-section-number">4.3.2.6</span> <code>04b - Slope and Sinuosity</code></h4>
-<p>This tool calculates stream gradient (or slope) and sinuosity for a <a href="toolbox.html#flowline-points"><code>flowline_points</code></a> or <a href="toolbox.html#stream-network"><code>stream_network</code></a> feature class. This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04b_Gradient.R"><code>FluvialGeomorph-toolbox/tools/_04b_Gradient.R</code></a>.</p>
-<div class="figure"><span id="fig:unnamed-chunk-9"></span>
+<p><strong>Purpose</strong> - This tool calculates stream gradient (or slope) and sinuosity for a <a href="toolbox.html#flowline-points"><code>flowline_points</code></a> or <a href="toolbox.html#stream-network"><code>stream_network</code></a> feature class.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04b_Gradient.R"><code>FluvialGeomorph-toolbox/tools/_04b_Gradient.R</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<table style="width:100%;">
+<caption><span id="tab:unnamed-chunk-14">Table 4.6: </span>Stream Network Points Tool Parameters.</caption>
+<colgroup>
+<col width="18%" />
+<col width="16%" />
+<col width="54%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">output_workspace</td>
+<td align="left">Workspace</td>
+<td align="left">Path to the output workspace.</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">stream_network</td>
+<td align="left">Feature Class</td>
+<td align="left">Path to the edited stream network feature class.</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">flow_accum</td>
+<td align="left">Raster Dataset</td>
+<td align="left">Path to the flow accumulation model.</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">dem</td>
+<td align="left">Raster Dataset</td>
+<td align="left">Path to the digital elevation model (DEM).</td>
+<td align="left">required</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:unnamed-chunk-15"></span>
 <img src="figures/toolbox/tool_Slope_and_Sinuosity.png" alt="04b - Slope and Sinuosity Tool." width="270" />
 <p class="caption">
 Figure 4.6: 04b - Slope and Sinuosity Tool.
@@ -315,8 +569,65 @@ Figure 4.6: 04b - Slope and Sinuosity Tool.
 </div>
 <div id="c---watershed" class="section level4">
 <h4><span class="header-section-number">4.3.2.7</span> <code>04c - Watershed</code></h4>
-<p>This tool calculates the watershed for each input point. This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04c_Watersheds.py"><code>FluvialGeomorph-toolbox/tools/_04c_Watersheds.py</code></a>.</p>
-<div class="figure"><span id="fig:unnamed-chunk-10"></span>
+<p><strong>Purpose</strong> - This tool calculates the watershed for each input point.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04c_Watersheds.py"><code>FluvialGeomorph-toolbox/tools/_04c_Watersheds.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<table>
+<caption><span id="tab:unnamed-chunk-16">Table 4.7: </span>Watershed Tool Parameters.</caption>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">output_workspace</td>
+<td align="left">Workspace</td>
+<td align="left">Path to the output workspace.</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">points</td>
+<td align="left">Feature Class</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">point_ID_field</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">flow_accumulation_d8</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">flow_direction_d8</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">snap_distance</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">landcover</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:unnamed-chunk-17"></span>
 <img src="figures/toolbox/tool_Watershed.png" alt="04c - Watershed Tool." width="272" />
 <p class="caption">
 Figure 4.7: 04c - Watershed Tool.
@@ -326,7 +637,7 @@ Figure 4.7: 04c - Watershed Tool.
 <div id="flowline-1" class="section level4">
 <h4><span class="header-section-number">4.3.2.8</span> <code>05 - Flowline</code></h4>
 <p>This tool creates a <a href="concepts.html#flowline"><code>flowline</code></a> feature class from an edited <code>stream_network</code> feature class. This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_05_Flowline.py"><code>FluvialGeomorph-toolbox/tools/_05_Flowline.py</code></a>.</p>
-<div class="figure"><span id="fig:unnamed-chunk-11"></span>
+<div class="figure"><span id="fig:unnamed-chunk-18"></span>
 <img src="figures/toolbox/tool_Flowline.png" alt="05 - Flowline Tool." width="272" />
 <p class="caption">
 Figure 4.8: 05 - Flowline Tool.
@@ -336,7 +647,7 @@ Figure 4.8: 05 - Flowline Tool.
 <div id="flowline-points" class="section level4">
 <h4><span class="header-section-number">4.3.2.9</span> <code>06 - Flowline Points</code></h4>
 <p>This tool converts a stream <a href="concepts.html#flowline"><code>flowline</code></a> feature class to a route using the distance to mouth parameter and creates a <a href="toolbox.html#flowline-points"><code>flowline_points</code></a> feature class. This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_06_FlowlinePoints.py"><code>FluvialGeomorph-toolbox/tools/_06_FlowlinePoints.py</code></a>.</p>
-<div class="figure"><span id="fig:unnamed-chunk-12"></span>
+<div class="figure"><span id="fig:unnamed-chunk-19"></span>
 <img src="figures/toolbox/tool_Flowline_Points.png" alt="06 - Flowline Points Tool." width="272" />
 <p class="caption">
 Figure 4.9: 06 - Flowline Points Tool.
@@ -346,7 +657,7 @@ Figure 4.9: 06 - Flowline Points Tool.
 <div id="detrend-dem" class="section level4">
 <h4><span class="header-section-number">4.3.2.10</span> <code>07 - Detrend DEM</code></h4>
 <p>This tool creates the <a href="detrended-raster"><code>detrend</code></a> raster, a detrended DEM. This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_07_DetrendDEM.py"><code>FluvialGeomorph-toolbox/tools/_07_DetrendDEM.py</code></a>.</p>
-<div class="figure"><span id="fig:unnamed-chunk-13"></span>
+<div class="figure"><span id="fig:unnamed-chunk-20"></span>
 <img src="figures/toolbox/tool_Detrend_DEM.png" alt="07 - Detrend Tool." width="270" />
 <p class="caption">
 Figure 4.10: 07 - Detrend Tool.
@@ -355,7 +666,7 @@ Figure 4.10: 07 - Detrend Tool.
 </div>
 <div id="water-surface-extent" class="section level4">
 <h4><span class="header-section-number">4.3.2.11</span> <code>08 - Water Surface Extent</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-14"></span>
+<div class="figure"><span id="fig:unnamed-chunk-21"></span>
 <img src="figures/toolbox/tool_Water_Surface_Extent.png" alt="08 - Water Surface Extent Tool." width="272" />
 <p class="caption">
 Figure 4.11: 08 - Water Surface Extent Tool.
@@ -364,7 +675,7 @@ Figure 4.11: 08 - Water Surface Extent Tool.
 </div>
 <div id="channel-slope" class="section level4">
 <h4><span class="header-section-number">4.3.2.12</span> <code>09 - Channel Slope</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-15"></span>
+<div class="figure"><span id="fig:unnamed-chunk-22"></span>
 <img src="figures/toolbox/tool_Channel_Slope.png" alt="09 - Channel Slope Tool." width="270" />
 <p class="caption">
 Figure 4.12: 09 - Channel Slope Tool.
@@ -373,7 +684,7 @@ Figure 4.12: 09 - Channel Slope Tool.
 </div>
 <div id="centerline" class="section level4">
 <h4><span class="header-section-number">4.3.2.13</span> <code>10 - Centerline</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-16"></span>
+<div class="figure"><span id="fig:unnamed-chunk-23"></span>
 <img src="figures/toolbox/tool_Centerline.png" alt="10 - Centerline Tool." width="270" />
 <p class="caption">
 Figure 4.13: 10 - Centerline Tool.
@@ -382,7 +693,7 @@ Figure 4.13: 10 - Centerline Tool.
 </div>
 <div id="xs-layout" class="section level4">
 <h4><span class="header-section-number">4.3.2.14</span> <code>11 - XS Layout</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-17"></span>
+<div class="figure"><span id="fig:unnamed-chunk-24"></span>
 <img src="figures/toolbox/tool_XS_Layout.png" alt="11 - XS Layout Tool." width="270" />
 <p class="caption">
 Figure 4.14: 11 - XS Layout Tool.
@@ -391,7 +702,7 @@ Figure 4.14: 11 - XS Layout Tool.
 </div>
 <div id="xs-watershed-area" class="section level4">
 <h4><span class="header-section-number">4.3.2.15</span> <code>12 - XS Watershed Area</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-18"></span>
+<div class="figure"><span id="fig:unnamed-chunk-25"></span>
 <img src="figures/toolbox/tool_XS_Watershed_Area.png" alt="12 - XS Watershed Area Tool." width="268" />
 <p class="caption">
 Figure 4.15: 12 - XS Watershed Area Tool.
@@ -400,7 +711,7 @@ Figure 4.15: 12 - XS Watershed Area Tool.
 </div>
 <div id="xs-river-position" class="section level4">
 <h4><span class="header-section-number">4.3.2.16</span> <code>13 - XS River Position</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-19"></span>
+<div class="figure"><span id="fig:unnamed-chunk-26"></span>
 <img src="figures/toolbox/tool_XS_River_Position.png" alt="13 - XS River Position Tool." width="270" />
 <p class="caption">
 Figure 4.16: 13 - XS River Position Tool.
@@ -409,7 +720,7 @@ Figure 4.16: 13 - XS River Position Tool.
 </div>
 <div id="a---xs-resequence" class="section level4">
 <h4><span class="header-section-number">4.3.2.17</span> <code>13a - XS Resequence</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-20"></span>
+<div class="figure"><span id="fig:unnamed-chunk-27"></span>
 <img src="figures/toolbox/tool_XS_Resequence.png" alt="13a - XS Resequence Tool." width="271" />
 <p class="caption">
 Figure 4.17: 13a - XS Resequence Tool.
@@ -418,7 +729,7 @@ Figure 4.17: 13a - XS Resequence Tool.
 </div>
 <div id="xs-points" class="section level4">
 <h4><span class="header-section-number">4.3.2.18</span> <code>14 - XS Points</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-21"></span>
+<div class="figure"><span id="fig:unnamed-chunk-28"></span>
 <img src="figures/toolbox/tool_XS_Points.png" alt="14 - XS Points Tool." width="270" />
 <p class="caption">
 Figure 4.18: 14 - XS Points Tool.
@@ -427,7 +738,7 @@ Figure 4.18: 14 - XS Points Tool.
 </div>
 <div id="b---bankline-points" class="section level4">
 <h4><span class="header-section-number">4.3.2.19</span> <code>14b - Bankline Points</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-22"></span>
+<div class="figure"><span id="fig:unnamed-chunk-29"></span>
 <img src="figures/toolbox/tool_Bankline_Points.png" alt="14b - Bankline Points Tool." width="271" />
 <p class="caption">
 Figure 4.19: 14b - Bankline Points Tool.
@@ -436,7 +747,7 @@ Figure 4.19: 14b - Bankline Points Tool.
 </div>
 <div id="c---xs-assign-loops" class="section level4">
 <h4><span class="header-section-number">4.3.2.20</span> <code>14c - XS Assign Loops</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-23"></span>
+<div class="figure"><span id="fig:unnamed-chunk-30"></span>
 <img src="figures/toolbox/tool_XS_Assign_Loops.png" alt="14c - XS Assign Loops Tool." width="272" />
 <p class="caption">
 Figure 4.20: 14c - XS Assign Loops Tool.
@@ -445,7 +756,7 @@ Figure 4.20: 14c - XS Assign Loops Tool.
 </div>
 <div id="a---xs-dimensions-level-1" class="section level4">
 <h4><span class="header-section-number">4.3.2.21</span> <code>15a - XS Dimensions, Level 1</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-24"></span>
+<div class="figure"><span id="fig:unnamed-chunk-31"></span>
 <img src="figures/toolbox/tool_XS_Dimensions_L1.png" alt="15a - XS Dimensions, Level 1 Tool." width="270" />
 <p class="caption">
 Figure 4.21: 15a - XS Dimensions, Level 1 Tool.
@@ -454,7 +765,7 @@ Figure 4.21: 15a - XS Dimensions, Level 1 Tool.
 </div>
 <div id="b---xs-dimensions-level-2" class="section level4">
 <h4><span class="header-section-number">4.3.2.22</span> <code>15b - XS Dimensions, Level 2</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-25"></span>
+<div class="figure"><span id="fig:unnamed-chunk-32"></span>
 <img src="figures/toolbox/tool_XS_Dimensions_L2.png" alt="15b - XS Dimensions, Level 2 Tool." width="268" />
 <p class="caption">
 Figure 4.22: 15b - XS Dimensions, Level 2 Tool.
@@ -463,8 +774,9 @@ Figure 4.22: 15b - XS Dimensions, Level 2 Tool.
 </div>
 <div id="c---xs-planform-level-3" class="section level4">
 <h4><span class="header-section-number">4.3.2.23</span> <code>15c - XS Planform, Level 3</code></h4>
-<p>This tool creates the Level 3 Dimensions. This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_15c_XSPlanform.R"><code>FluvialGeomorph/FluvialGeomorph-toolbox/tools/_15c_XSPlanform.R</code></a> which calls the functions <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/planform_dimensions.R"><code>fluvgeo::planform_dimensions</code></a> to calculate the Level dimensions and <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metric_ratios.R"><code>fluvgeo::xs_metric_ratios</code></a> to calculate the metric ratios.</p>
-<div class="figure"><span id="fig:unnamed-chunk-26"></span>
+<p><strong>Purpose</strong> - This tool creates the Level 3 Dimensions.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_15c_XSPlanform.R"><code>FluvialGeomorph/FluvialGeomorph-toolbox/tools/_15c_XSPlanform.R</code></a> which calls the functions <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/planform_dimensions.R"><code>fluvgeo::planform_dimensions</code></a> to calculate the planform dimensions and <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metric_ratios.R"><code>fluvgeo::xs_metric_ratios</code></a> to calculate the metric ratios.</p>
+<div class="figure"><span id="fig:unnamed-chunk-33"></span>
 <img src="figures/toolbox/tool_XS_Dimensions_L3.png" alt="15b - XS Dimensions, Level 3 Tool." width="270" />
 <p class="caption">
 Figure 4.23: 15b - XS Dimensions, Level 3 Tool.
@@ -473,7 +785,7 @@ Figure 4.23: 15b - XS Dimensions, Level 3 Tool.
 </div>
 <div id="xs-ras-watersurface" class="section level4">
 <h4><span class="header-section-number">4.3.2.24</span> <code>16 - XS RAS Watersurface</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-27"></span>
+<div class="figure"><span id="fig:unnamed-chunk-34"></span>
 <img src="figures/toolbox/tool_XS_RAS_Watersurface.png" alt="16 - XS RAS Watersurface Tool." width="269" />
 <p class="caption">
 Figure 4.24: 16 - XS RAS Watersurface Tool.
@@ -487,7 +799,7 @@ Figure 4.24: 16 - XS RAS Watersurface Tool.
 <div id="graph---longitudinal-profile-compare" class="section level4">
 <h4><span class="header-section-number">4.3.3.1</span> <code>Graph - Longitudinal Profile Compare</code></h4>
 <p>The purpose of this tool is to compare longitudinal profile plots from multiple surveys. This tool produces a longitudinal profile plot from the <a href="toolbox.html#flowline-points"><code>flowline_points</code></a> feature classes of a stream reach taken from one or more surveys. It labels the plot using the <a href="toolbox.html#features"><code>features</code></a> feature class along the x-axis. This ArcGIS script tool calls the R script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/report/_Longitudinal_Profile_Compare.R"><code>FluvialGeomorph-toolbox\report\_Longitudinal_Profile_Compare.R</code></a> which calls the function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/compare_long_profile.R"><code>fluvgeo::compare_long_profile</code></a>.</p>
-<div class="figure"><span id="fig:unnamed-chunk-28"></span>
+<div class="figure"><span id="fig:unnamed-chunk-35"></span>
 <img src="figures/toolbox/tool_Graph-Longitudinal_Profile_Compare.png" alt="Graph - Longitudinal Profile Compare Tool." width="270" />
 <p class="caption">
 Figure 4.25: Graph - Longitudinal Profile Compare Tool.
@@ -499,7 +811,7 @@ Figure 4.25: Graph - Longitudinal Profile Compare Tool.
 </div>
 <div id="map---reach-overview" class="section level4">
 <h4><span class="header-section-number">4.3.3.3</span> <code>Map - Reach Overview</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-29"></span>
+<div class="figure"><span id="fig:unnamed-chunk-36"></span>
 <img src="figures/toolbox/tool_Map-Reach_Overview.png" alt="Map - Reach Overview Tool." width="272" />
 <p class="caption">
 Figure 4.26: Map - Reach Overview Tool.
@@ -509,7 +821,7 @@ Figure 4.26: Map - Reach Overview Tool.
 <div id="report---l1" class="section level4">
 <h4><span class="header-section-number">4.3.3.4</span> <code>Report - L1</code></h4>
 <p>The purpose of this tool is produce the Level 1 report. This ArcGIS script tool</p>
-<div class="figure"><span id="fig:unnamed-chunk-30"></span>
+<div class="figure"><span id="fig:unnamed-chunk-37"></span>
 <img src="figures/toolbox/tool_Report-L1.png" alt="Level 1 Report." width="272" />
 <p class="caption">
 Figure 4.27: Level 1 Report.
@@ -518,7 +830,7 @@ Figure 4.27: Level 1 Report.
 </div>
 <div id="report---l2-estimate-bankfull" class="section level4">
 <h4><span class="header-section-number">4.3.3.5</span> <code>Report - L2 Estimate Bankfull</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-31"></span>
+<div class="figure"><span id="fig:unnamed-chunk-38"></span>
 <img src="figures/toolbox/tool_Report-L2_Estimate_Bankfull.png" alt="Map - Reach Overview Tool." width="268" />
 <p class="caption">
 Figure 4.28: Map - Reach Overview Tool.
@@ -527,7 +839,7 @@ Figure 4.28: Map - Reach Overview Tool.
 </div>
 <div id="report---l2" class="section level4">
 <h4><span class="header-section-number">4.3.3.6</span> <code>Report - L2</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-32"></span>
+<div class="figure"><span id="fig:unnamed-chunk-39"></span>
 <img src="figures/toolbox/tool_Report-L2.png" alt="Level 2 Report." width="272" />
 <p class="caption">
 Figure 4.29: Level 2 Report.
@@ -536,7 +848,7 @@ Figure 4.29: Level 2 Report.
 </div>
 <div id="report---l3" class="section level4">
 <h4><span class="header-section-number">4.3.3.7</span> <code>Report - L3</code></h4>
-<div class="figure"><span id="fig:unnamed-chunk-33"></span>
+<div class="figure"><span id="fig:unnamed-chunk-40"></span>
 <img src="figures/toolbox/tool_Report-L3.png" alt="Level 3 Report." width="267" />
 <p class="caption">
 Figure 4.30: Level 3 Report.
@@ -634,7 +946,14 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.1</span> Terrain Model Raster</h3>
 <p>The GIS analyst uses standard ESRI geoprocessing tools to transform a LiDAR point cloud dataset covering the study area into an appropriately resolute (pixel cell size) digital elevation model (DEM). Only points representing the ground or water surface are selected from the point cloud to derive the terrain surface DEM. This raster dataset is named <code>dem</code>, but can also have a suffix added to represent its year of collection in change studies.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-34">Table 4.1: </span>DEM Raster Pixel Values.</caption>
+<caption><span id="tab:unnamed-chunk-41">Table 4.8: </span>DEM Raster Pixel Values.</caption>
+<colgroup>
+<col width="23%" />
+<col width="7%" />
+<col width="43%" />
+<col width="20%" />
+<col width="6%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Field Name</th>
@@ -646,8 +965,43 @@ Figure 4.30: Level 3 Report.
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">ReachName</td>
+<td align="left">text</td>
+<td align="left">Name of the reach.</td>
+<td align="left"></td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">POINT_X</td>
+<td align="left">double</td>
+<td align="left">The x-coordinate value (longitude).</td>
+<td align="left">linear units of fc</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">POINT_Y</td>
+<td align="left">double</td>
+<td align="left">The y-coordinate value (latitude).</td>
+<td align="left">linear units of fc</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">POINT_M</td>
+<td align="left">double</td>
+<td align="left">The m-coordinate value (route position).</td>
+<td align="left">linear units of fc</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Watershed_Area_SqMile</td>
+<td align="left">double</td>
+<td align="left">The upstream watershed drainage area.</td>
+<td align="left">square miles</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
 <td align="left">Z</td>
-<td align="left">32 bit float</td>
+<td align="left">double</td>
 <td align="left">The z-coordinate value (elevation).</td>
 <td align="left">feet, NAVD88</td>
 <td align="left">1</td>
@@ -659,7 +1013,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.2</span> Cutlines</h3>
 <p>The <code>cutlines</code> polyline feature class is used to store geometry needed to hydrologically modify a terrain model to ensure that water can accurately flow over the land surface as it does in the real world. LiDAR derived terrain models frequently contain flow blockages (e.g., road berms) that must be “cut-through” to represent the presence of flow structures (e.g., culverts, bridges) that cannot be resolved directly from the LiDAR terrain model.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-35">Table 4.2: </span>Cutlines Fields.</caption>
+<caption><span id="tab:unnamed-chunk-42">Table 4.9: </span>Cutlines Fields.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field Name</th>
@@ -684,7 +1038,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.3</span> Hydro-Modified Raster</h3>
 <p>Before the <code>dem</code> terrain model raster can be used for synthetically deriving stream features, it must first be hydrologically modified using the <code>cutlines</code> feature class to “burn” flow paths into the <code>dem</code> raster. This “hydro-enforced” DEM is named <code>dem_hydro</code>.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-36">Table 4.3: </span>Hydro DEM Raster Pixel Values.</caption>
+<caption><span id="tab:unnamed-chunk-43">Table 4.10: </span>Hydro DEM Raster Pixel Values.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field Name</th>
@@ -709,7 +1063,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.4</span> Contributing Area Raster</h3>
 <p>The <code>dem_hydro</code> raster dataset is used to create a <code>contributing_area</code> raster whose values store the drainage area upstream of each pixel.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-37">Table 4.4: </span>Contributing Area Raster Pixel Values.</caption>
+<caption><span id="tab:unnamed-chunk-44">Table 4.11: </span>Contributing Area Raster Pixel Values.</caption>
 <colgroup>
 <col width="21%" />
 <col width="15%" />
@@ -741,7 +1095,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.5</span> Stream Network</h3>
 <p>The <code>contributing_area</code> raster dataset is used to derive a synthetic <code>stream_network</code> polyline feature class representing the stream network of the study area.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-38">Table 4.5: </span>Stream Network Fields.</caption>
+<caption><span id="tab:unnamed-chunk-45">Table 4.12: </span>Stream Network Fields.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field Name</th>
@@ -766,7 +1120,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.6</span> Stream Network Points</h3>
 <p>The <code>stream_network_points</code> point feature class is used to represent regularly spaced points along a <code>stream_network</code> feature class. These <code>stream_network_points</code> features are used to store elevation and route position (longitudinal stream stationing) information for a <code>stream_network</code> feature. <code>stream_network_points</code> are used to calculate several stream longitudinal dimensions.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-39">Table 4.6: </span>Stream Network Points Fields.</caption>
+<caption><span id="tab:unnamed-chunk-46">Table 4.13: </span>Stream Network Points Fields.</caption>
 <colgroup>
 <col width="23%" />
 <col width="7%" />
@@ -833,7 +1187,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.7</span> Watershed Points</h3>
 <p>The <code>watershed_points</code> point feature class is used to represent the downstream location of watersheds whose areal extent is to be calculated. These single points are sometimes referred to as “pour points” located along a stream network.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-40">Table 4.7: </span>Watershed Points Fields.</caption>
+<caption><span id="tab:unnamed-chunk-47">Table 4.14: </span>Watershed Points Fields.</caption>
 <colgroup>
 <col width="23%" />
 <col width="7%" />
@@ -900,7 +1254,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.8</span> Watershed</h3>
 <p>The <code>watershed</code> polygon feature class is used to represent the upstream drainage area of a single point (aka “pour point”) located along a stream network. All pixels within each <code>watershed</code> polygon feature flow to the stream network point used to derive the watershed.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-41">Table 4.8: </span>Watershed Fields.</caption>
+<caption><span id="tab:unnamed-chunk-48">Table 4.15: </span>Watershed Fields.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field Name</th>
@@ -932,7 +1286,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.9</span> Flowline</h3>
 <p>The <code>flowline</code> polyline feature class is used to represent the likely flow path of a stream reach within a study area. This is the primary flow path feature used in the FluvialGeomorph toolbox. Since non-bathymetric LiDAR is often used to derive <code>flowline</code> features, this should not be interpreted as the thalweg when water is present in the DEM.</p>
 <table style="width:100%;">
-<caption><span id="tab:unnamed-chunk-42">Table 4.9: </span>Flowline Fields.</caption>
+<caption><span id="tab:unnamed-chunk-49">Table 4.16: </span>Flowline Fields.</caption>
 <colgroup>
 <col width="14%" />
 <col width="7%" />
@@ -978,7 +1332,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.10</span> Flowline Points</h3>
 <p>The <code>flowline_points</code> point feature class is used to represent regularly spaced points along a <code>flowline</code> feature class. These <code>flowline_points</code> features are used to store elevation and route position (longitudinal stream stationing) information for a <code>flowline</code> feature. <code>flowline_points</code> are used to calculate a series of stream longitudinal dimensions.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-43">Table 4.10: </span>Flowline Points Fields.</caption>
+<caption><span id="tab:unnamed-chunk-50">Table 4.17: </span>Flowline Points Fields.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field Name</th>
@@ -1031,7 +1385,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.11</span> Detrended Raster</h3>
 <p>The <code>detrend</code> raster dataset is an elevation model where the downstream slope of the <code>dem_hydro</code> has been removed.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-44">Table 4.11: </span>Hydro DEM Raster Pixel Values.</caption>
+<caption><span id="tab:unnamed-chunk-51">Table 4.18: </span>Hydro DEM Raster Pixel Values.</caption>
 <colgroup>
 <col width="11%" />
 <col width="14%" />
@@ -1063,7 +1417,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.12</span> Channel Slope Raster</h3>
 <p>The <code>channel_slope</code> raster represents the slope of the <code>dem_hydro</code> within the channel. This is not to be confused with the longitudinal slope of the stream reach, but is the pixel-wise, raster surface slope of the channel area.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-45">Table 4.12: </span>Channel Slope Raster Pixel Values.</caption>
+<caption><span id="tab:unnamed-chunk-52">Table 4.19: </span>Channel Slope Raster Pixel Values.</caption>
 <thead>
 <tr class="header">
 <th align="left">Field Name</th>
@@ -1089,7 +1443,7 @@ Figure 4.30: Level 3 Report.
 <p>Cross sections are polyline feature classes drawn perpendicular to the <code>flowline</code> feature and are long enough to extend across some portion of the channel and floodplain. Cross section features are used to define channel cross section dimensions. Regular cross sections are created using a tool and spaced equal distances longitudinally along the <code>flowline</code>. Regularly spaced cross sections are used to sample conditions within a stream reach to either display a continuous series of values or calculate aggregate stream values.</p>
 <p>Regular cross sections are used during</p>
 <table>
-<caption><span id="tab:unnamed-chunk-46">Table 4.13: </span>Regular Cross Section Fields.</caption>
+<caption><span id="tab:unnamed-chunk-53">Table 4.20: </span>Regular Cross Section Fields.</caption>
 <colgroup>
 <col width="19%" />
 <col width="6%" />
@@ -1226,7 +1580,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.14</span> Riffle Cross Sections</h3>
 <p>Riffle cross sections are a unique type of cross section drawn within a riffle stream feature. In contrast to regularly spaced cross sections that are delineated by a script, riffles irregularly spaced along a stream and are manually drawn by a GIS analyst. Analysts are trained to identify riffles using a set of guidelines from the literature and interpretation of the DEM and aerial imagery. The <code>riffle_floodplain</code> polyline feature class is drawn longitudinally within riffle features and extend laterally across the active floodplain. The <code>riffle_channel</code> polyline feature class is also drawn longitudinally within riffle features, but only extend laterally across the bankfull channel area.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-47">Table 4.14: </span>Riffle Floodplain Riffle Channel Cross Section Fields.</caption>
+<caption><span id="tab:unnamed-chunk-54">Table 4.21: </span>Riffle Floodplain Riffle Channel Cross Section Fields.</caption>
 <colgroup>
 <col width="20%" />
 <col width="6%" />
@@ -1335,7 +1689,7 @@ Figure 4.30: Level 3 Report.
 <h3><span class="header-section-number">4.4.15</span> Cross Section Points</h3>
 <p>Cross sections polyline feature classes (i.e., regularly spaced cross sections and riffle cross sections: <code>riffle_floodplain</code>, <code>riffle_channel</code>) can be converted to a set of regularly spaced points along the cross section. These points are used to store elevation and route position (lateral stream stationing) information for a cross section feature class. Cross section points are used to calculate a series of cross section dimensions.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-48">Table 4.15: </span>Cross Section Points Fields.</caption>
+<caption><span id="tab:unnamed-chunk-55">Table 4.22: </span>Cross Section Points Fields.</caption>
 <colgroup>
 <col width="20%" />
 <col width="6%" />
@@ -1471,7 +1825,7 @@ Figure 4.30: Level 3 Report.
 </ul>
 <p>Cross section dimensions can be calculated for the various types of cross sections (regular cross sections or riffle cross sections). The name of the cross section feature for which dimensions were calculated is prepended to the output dimension feature class. Metrics calculated at previous levels are included in the attribute table of each dimension feature class. Therefore, to avoid repetition only the new fields calculated at each level are included in the tables of fields in this section. The attributes of the original cross section feature class are also omitted since they depend on the cross section type used.</p>
 <table style="width:100%;">
-<caption><span id="tab:unnamed-chunk-49">Table 4.16: </span>Level 1 Cross Section Dimension Fields.</caption>
+<caption><span id="tab:unnamed-chunk-56">Table 4.23: </span>Level 1 Cross Section Dimension Fields.</caption>
 <colgroup>
 <col width="10%" />
 <col width="4%" />
@@ -1611,7 +1965,7 @@ Figure 4.30: Level 3 Report.
 </tbody>
 </table>
 <table>
-<caption><span id="tab:unnamed-chunk-50">Table 4.17: </span>Level 2 Cross Section Dimension Fields.</caption>
+<caption><span id="tab:unnamed-chunk-57">Table 4.24: </span>Level 2 Cross Section Dimension Fields.</caption>
 <colgroup>
 <col width="21%" />
 <col width="5%" />
@@ -1807,7 +2161,7 @@ Figure 4.30: Level 3 Report.
 </tbody>
 </table>
 <table>
-<caption><span id="tab:unnamed-chunk-51">Table 4.18: </span>Level 3 Cross Section Dimension Fields.</caption>
+<caption><span id="tab:unnamed-chunk-58">Table 4.25: </span>Level 3 Cross Section Dimension Fields.</caption>
 <colgroup>
 <col width="16%" />
 <col width="5%" />
@@ -1947,7 +2301,7 @@ Figure 4.30: Level 3 Report.
 <p>FluvialGeomorph produces a series of reports that help to define stream conditions.</p>
 <div id="graph---longitudinal-profile-compare-1" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> <code>Graph - Longitudinal Profile Compare</code></h3>
-<div class="figure"><span id="fig:unnamed-chunk-52"></span>
+<div class="figure"><span id="fig:unnamed-chunk-59"></span>
 <img src="figures/toolbox/Graph-Longitudinal_Profile_Compare.png" alt="Longitudinal Profile Plot." width="100%" />
 <p class="caption">
 Figure 4.31: Longitudinal Profile Plot.
@@ -1957,7 +2311,7 @@ Figure 4.31: Longitudinal Profile Plot.
 <div id="report---l1-1" class="section level3">
 <h3><span class="header-section-number">4.5.2</span> <code>Report - L1</code></h3>
 <p>The purpose of this tool is produce the Level 1 report. This ArcGIS script tool</p>
-<div class="figure"><span id="fig:unnamed-chunk-53"></span>
+<div class="figure"><span id="fig:unnamed-chunk-60"></span>
 <img src="figures/toolbox/Report_L1.png" alt="Level 1 Report." width="100%" />
 <p class="caption">
 Figure 4.32: Level 1 Report.
@@ -1966,7 +2320,7 @@ Figure 4.32: Level 1 Report.
 </div>
 <div id="report---l2-estimate-bankfull-1" class="section level3">
 <h3><span class="header-section-number">4.5.3</span> <code>Report - L2 Estimate Bankfull</code></h3>
-<div class="figure"><span id="fig:unnamed-chunk-54"></span>
+<div class="figure"><span id="fig:unnamed-chunk-61"></span>
 <img src="figures/toolbox/Report_L2_Estimate_Bankfull.png" alt="Level 2, Estimate Bankfull Report." width="100%" />
 <p class="caption">
 Figure 4.33: Level 2, Estimate Bankfull Report.
@@ -1975,7 +2329,7 @@ Figure 4.33: Level 2, Estimate Bankfull Report.
 </div>
 <div id="report---l2-1" class="section level3">
 <h3><span class="header-section-number">4.5.4</span> <code>Report - L2</code></h3>
-<div class="figure"><span id="fig:unnamed-chunk-55"></span>
+<div class="figure"><span id="fig:unnamed-chunk-62"></span>
 <img src="figures/toolbox/Report_L2.png" alt="Level 2 Report." width="100%" />
 <p class="caption">
 Figure 4.34: Level 2 Report.
@@ -1984,7 +2338,7 @@ Figure 4.34: Level 2 Report.
 </div>
 <div id="report---l3-1" class="section level3">
 <h3><span class="header-section-number">4.5.5</span> <code>Report - L3</code></h3>
-<div class="figure"><span id="fig:unnamed-chunk-56"></span>
+<div class="figure"><span id="fig:unnamed-chunk-63"></span>
 <img src="figures/toolbox/Report_L3.png" alt="Level 3 Report." width="100%" />
 <p class="caption">
 Figure 4.35: Level 3 Report.
