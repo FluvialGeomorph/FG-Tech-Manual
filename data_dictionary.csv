@@ -3,6 +3,8 @@ dem,Z,32 bit float,The z-coordinate value (elevation).,"feet, NAVD88",1
 cutlines,none,,,,1
 dem_hydro,Z,32 bit float,The z-coordinate value (elevation).,"feet, NAVD88",1
 contributing_area,contributing_area,32 bit float,The specific catchment area. ,linear units of fc,1
+flow_accumulation_d8,flow_accumulation_d8,32 bit float,The number of accumulated flow for all upstream upstream pixels. ,number of cells,1
+flow_direction_d8,flow_direction_d8,32 bit float,The direction of flow from each cell to its downslope neighbor. ,D8 flow direction,1
 stream_network,ReachName,text,Name of the reach.,,1
 stream_network_points,ReachName,text,Name of the reach.,,1
 stream_network_points,POINT_X,double,The x-coordinate value (longitude).,linear units of fc,1
@@ -126,10 +128,10 @@ _dims_L2,shear_stress_lane_gte_zero,double,"The fluid shear stress Lane's metric
 _dims_L2,unit_stream_power,double,The unit stream power. ,kg/m/s,2
 _dims_L2,unit_stream_power_gte_zero,double,"The unit stream power metric, greater than or equal to zero. ",kg/m/s,2
 _dims_L3,bend_num,double,The bend number. ,,3
-_dims_L3,bend_POINT_X,double,The x-coordinate value of the center of the bend. ,linear units of fc,3
-_dims_L3,bend_POINT_Y,double,The y-coordinate value of the center of the bend. ,linear units of fc,3
-_dims_L3,loop_POINT_X,double,The x-coordinate value of the center of the loop. ,linear units of fc,3
-_dims_L3,loop_POINT_Y,double,The y-coordinate value of the center of the loop. ,linear units of fc,3
+_dims_L3,bend_POINT_X,double,The x-coordinate value (longitude) of the center of the bend. ,linear units of fc,3
+_dims_L3,bend_POINT_Y,double,The y-coordinate value (latitude) of the center of the bend. ,linear units of fc,3
+_dims_L3,loop_POINT_X,double,The x-coordinate value (longitude) of the center of the loop. ,linear units of fc,3
+_dims_L3,loop_POINT_Y,double,The y-coordinate value (latitude) of the center of the loop. ,linear units of fc,3
 _dims_L3,bend_radius,double,The radius of the bend. ,linear units of fc,3
 _dims_L3,meander_length,double,The meander length. ,feet,3
 _dims_L3,meander_width,double,The meander width. ,feet,3
@@ -137,3 +139,34 @@ _dims_L3,rc_bfw_ratio,double,The radius of curvature to bankfull width ratio. ,,
 _dims_L3,rc_bfw_ratio_lte_30,double,The radius of curvature to bankfull width ratio less than or equale to 30. ,,3
 _dims_L3,mbw_bfw_ratio,double,The meander bend width to bankfull width ratio. ,,3
 _dims_L3,mbw_bfw_ratio_lte_30,double,The meander bend width to bankfull width ratio less than or equal to 30. ,,3
+bankfull_area,Id,long,The polygon unique identifier. ,,2
+bankfull_area,gridcode,long,"Indicates if a polygon is innundated at the specified detrended elevation (1 = innundated, 0 = not innundated). ",,2
+bankfull_area,Shape_Area,double,Area of the polygon. ,linear units of fc,2
+banklines,ReachName,text,Name of the reach.,,2
+banklines,bank_id,long,Bankline numeric unique identifier. ,,2
+banklines,bank,text,"Bankline text unique identifier (one of ""left descending"" or ""right descending""). ",,2
+banklines,from_measure,double,The start longitudinal stationing value for the bankline.,,2
+banklines,to_measure,double,The end longitudinal stationing value for the bankline.,,2
+centerline,none,,,,2
+bankline_points,ReachName,text,Name of the reach.,,3
+bankline_points,bank_id,long,Bankline numeric unique identifier. ,,3
+bankline_points,bank,text,"Bankline text unique identifier (one of ""left descending"" or ""right descending""). ",,3
+bankline_points,bank_POINT_X,double,The x-coordinate value (longitude) of the bankline point. ,linear units of fc,3
+bankline_points,bank_POINT_Y,double,The y-coordinate value (latitude) of the bankline point. ,linear units of fc,3
+bankline_points,bank_POINT_M,double,The m-coordinate value (route position) of the bankline point. ,linear units of fc,3
+bankline_points,DEM_Z,double,The z-coordinate value (elevation) of the bankline point.,"feet, NAVD88",3
+bankline_points,loop,long,The loop number. ,,3
+bankline_points,bend,long,The bend number. ,,3
+bankline_points,position,text,"The planform location indicator. Indicates if a bankline point represents the ""start"" of a loop bend, the ""end"" of a loop bend, or the ""apex"" of a loop. ",,3
+bankline_points,valley_POINT_X,double,The x-coordinate value (longitude) of the closest point on the valley line. ,linear units of fc,3
+bankline_points,valley_POINT_Y,double,The y-coordinate value (latitude) of the closest point on the valley line. ,linear units of fc,3
+bankline_points,valley_POINT_M,double,The m-coordinate value (route position) of the closest point on the valley line. ,linear units of fc,3
+valleyline,ReachName,text,Name of the reach.,,3
+valleyline,from_measure,double,The start longitudinal stationing value for the reach.,kilometers,3
+valleyline,to_measure,double,The end longitudinal stationing value for the reach.,kilometers,3
+loop_points,ReachName,text,Name of the reach.,,3
+loop_points,loop,long,The loop number. ,,3
+loop_points,bend,long,The bend number. ,,3
+loop_points,position,text,"The planform location indicator. Indicates if a bankline point represents the ""start"" of a loop bend, the ""end"" of a loop bend, or the ""apex"" of a loop. ",,3
+features,Name,text,Name of the stream feature. ,,1
+features,km_to_mouth,double,The distance to the mouth of the site. ,kilometers,1
