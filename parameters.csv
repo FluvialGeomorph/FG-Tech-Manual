@@ -17,14 +17,66 @@ stream_network_points,output_workspace,Workspace,Path to the output workspace. ,
 stream_network_points,stream_network,Feature Class,Path to the edited stream network feature class.,required
 stream_network_points,flow_accum,Raster Dataset,Path to the flow accumulation model. ,required
 stream_network_points,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
-gradient,flowline_points_fc,Feature Class,The full path to a `flowline_points` feature class. ,required
-gradient,gradient_distance,double,The number of features to lead (upstream) and lag (downstream) to calculate the slope and sinuosity. Must be an integer.,required
-gradient,use_smoothing,Boolean,Determines if smoothed elevation values are used to calculate gradient and sinuosity (default is FALSE).,required
-gradient,loess_span,double,The loess regression span parameter (defaults to 0.05). ,required
+slope_sinuosity,flowline_points_fc,Feature Class,The full path to a `flowline_points` feature class. ,required
+slope_sinuosity,gradient_distance,double,The number of features to lead (upstream) and lag (downstream) to calculate the slope and sinuosity. Must be an integer.,required
+slope_sinuosity,use_smoothing,Boolean,Determines if smoothed elevation values are used to calculate gradient and sinuosity (default is FALSE).,required
+slope_sinuosity,loess_span,double,The loess regression span parameter (defaults to 0.05). ,required
 watershed,output_workspace,Workspace,Path to the output workspace. ,required
-watershed,points,Feature Class,,
-watershed,point_ID_field,,,
-watershed,flow_accumulation_d8,,,
-watershed,flow_direction_d8,,,
-watershed,snap_distance,,,
-watershed,landcover,,,
+watershed,points,Feature Class,Path to the points feature class.,required
+watershed,point_ID_field,Field,Field in the points feature class that contains the point IDs.,required
+watershed,flow_accumulation_d8,Raster Dataset,Path to the flow accumulation model.,required
+watershed,flow_direction_d8,Raster Dataset,Path to the flow direction model (must use D8 method).,required
+watershed,snap_distance,double,The distance the point will be snapped to find the cell of highest flow accumulation.,required
+watershed,landcover,Raster Dataset,Path to a categorical land cover raster.,optional
+flowline,output_workspace,Workspace,Path to the output workspace. ,required
+flowline,stream_network,Feature Class,Path to the edited stream network feature class.,required
+flowline,smooth_tolerance,long,The PAEK smoothing tolerance that controls the calculating of new vertices. Acceptable smoothing occurs with values between 2 - 5.,required
+flowline_points,output_workspace,Workspace,Path to the output workspace. ,required
+flowline_points,flowline,Feature Class,Path to the flowline feature class. ,required
+flowline_points,dem,Raster Dataset,Path to the digital elevation model (DEM). ,required
+flowline_points,km_to_mouth,double,Kilometers to the mouth of the study area outlet.,required
+flowline_points,station_distance,double,Distance between output flowline station points (in the linear units of the flowline feature class). ,required
+flowline_points,calibration_points,Feature Class,A point feature class used to calibrate the output flowline points.,optional
+flowline_points,point_ID_field,Field,"The field that identifies the route on which each calibration point is located.The values in this field match those in the route identifier field. This field can be numeric or character. If using a flowline_points feature class, the id_field is ""ReachName"".",optional
+flowline_points,measure_field,Field,"The field containing the measure value for each calibration point. This field must be numeric. If using a flowline_points feature class, the measure_field is ""POINT_M"".",optional
+flowline_points,search_radius,string,"Limits how far a calibration point can be from a route by specifying the distance and its unit of measure (e.g., ""25 Meters""). If the units of measure are not specified, the same units as the coordinate system of the route feature class will be used.",optional
+detrend_dem,output_workspace,Workspace,Path to the output workspace. ,required
+detrend_dem,flowline,Feature Class,Path to the flowline feature class. ,required
+detrend_dem,flowline_points,Feature Class,Path to the flowline_points feature class.,required
+detrend_dem,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
+detrend_dem,buffer distance,double,Distance the flowline_points feature class will be buffered to define the extent of the output detrended DEM. Units are defined by the coordinate system of the DEM.,required
+water_surface_extent,output_workspace,Workspace,Path to the output workspace. ,required
+water_surface_extent,detrend_dem,Raster Dataset,Path to the detrended digital elevation model (DEM).,required
+water_surface_extent,detrend_value,double,Detrended elevation value used to define the innundated area. All raster values below this value will be extracted to a polygon. ,required
+water_surface_extent,smoothing,double,"Smoothing factor (0, no smoothing - 5, high smoothing)",required
+channel_slope,output_workspace,Workspace,Path to the output workspace. ,required
+channel_slope,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
+channel_slope,banks_poly,Feature Class,Path to a banks polygon representing the channel area for which slope will be calculated. ,required
+channel_slope,z_factor,double,"Number of ground x,y units in one surface z unit.",required
+centerline,output_workspace,Workspace,Path to the output workspace. ,required
+centerline,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
+centerline,banks_poly,Feature Class,Path to a banks polygon representing the channel area for which slope will be calculated. ,required
+centerline,smooth_tolerance,long,The PAEK smoothing tolerance that controls the calculating of new vertices. Acceptable smoothing occurs with values between 2 - 5.,required
+xs_layout,output_workspace,Workspace,Path to the output workspace. ,required
+xs_layout,flowline,Feature Class,Path to the flowline feature class. ,required
+xs_layout,split_type,string,"Method for placing cross sections along the flowline. ""Split at approximate distance"" places cross sections along the flowline at the value of transect_spacing. ""Split at vertices"" places cross sections at the nearest existing flowline vertex. ",required
+xs_layout,transect_spacing,double,The distance between cross sections as measured along the flowline. Uses units of the input flowline. ,required
+xs_layout,transect_width,double,"The width of the cross section as measured from the flowline to its furthest outside point. Therefore, a value of 50 ft for transect_width will result in a cross section with an overall width of 100 ft (50 ft on the right descending bank and 50 ft on the left descending bank).",required
+xs_layout,transect_width_unit,string,The unit of the transect_width.,required
+xs_watershed_area,output_workspace,Workspace,Path to the output workspace. ,required
+xs_watershed_area,cross_section,Feature Class,Path to the cross section line feature class. ,required
+xs_watershed_area,flowline,Feature Class,Path to the flowline feature class. ,required
+xs_watershed_area,flow_accum,Raster Dataset,Path to the flow accumulation model. ,required
+xs_watershed_area,snap_distance,double,The distance the point will be snapped to find the cell of highest flow accumulation.,required
+xs_river_position,output_workspace,Workspace,Path to the output workspace. ,required
+xs_river_position,cross_section,Feature Class,Path to the cross section line feature class. ,required
+xs_river_position,flowline_points,Feature Class,Path to the flowline_points feature class.,required
+xs_resequence,output_workspace,Workspace,Path to the output workspace. ,required
+xs_resequence,xs_fc,Feature Class,Path to a cross section feature class.,required
+xs_resequence,start_seq,long,The starting value of the `Seq` field.,required
+xs_points,output_workspace,Workspace,Path to the output workspace. ,required
+xs_points,cross_section,Feature Class,Path to the cross section line feature class. ,required
+xs_points,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
+xs_points,dem_units,string,"Vertical units of the DEM. Select one of ""m"" or ""ft"".",required
+xs_points,detrend_dem,Raster Dataset,Path to the detrended digital elevation model (DEM).,required
+xs_points,station_distance,double,Distance between output flowline station points (in the linear units of the flowline feature class). ,required

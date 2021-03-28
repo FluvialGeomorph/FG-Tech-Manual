@@ -12,6 +12,28 @@ stream_network_points,POINT_Y,double,The y-coordinate value (latitude).,linear u
 stream_network_points,POINT_M,double,The m-coordinate value (route position).,linear units of fc,1
 stream_network_points,Watershed_Area_SqMile,double,The upstream watershed drainage area.,square miles,1
 stream_network_points,Z,double,The z-coordinate value (elevation).,"feet, NAVD88",1
+gradient,ReachName,text,Name of the reach.,,1
+gradient,POINT_X,double,The x-coordinate value (longitude).,linear units of fc,1
+gradient,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,1
+gradient,POINT_M,double,The m-coordinate value (route position).,linear units of fc,1
+gradient,Z,double,The z-coordinate value (elevation).,"feet, NAVD88",1
+gradient,z_smooth,double,The smoothed z-coordinate value (elevation). ,"feet, NAVD88",1
+gradient,upstream_x,double,The x-coordinate value (longitude) of the next upsteam point in the moving window. ,linear units of fc,1
+gradient,upstream_y,double,The y-coordinate value (latitude) of the next upsteam point in the moving window. ,linear units of fc,1
+gradient,downstream_x,double,The x-coordinate value (longitude) of the next downsteam point in the moving window. ,linear units of fc,1
+gradient,downstream_y,double,The y-coordinate value (latitude) of the next downsteam point in the moving window. ,linear units of fc,1
+gradient,upstream_z,double,The z-coordinate value (elevation) of the next upstream point in the moving window. ,"feet, NAVD88",1
+gradient,downstream_z,double,The z-coordinate value (elevation) of the next downstream point in the moving window. ,"feet, NAVD88",1
+gradient,upstream_m,double,The m-coordinate value (route position) of the next upstream point in the moving window. ,linear units of fc,1
+gradient,downstream_m,double,The m-coordinate value (route position) of the next downstreampoint in the moving window. ,linear units of fc,1
+gradient,rise,double,The elevation difference between the downstream and upstream point in the moving window. ,feet,1
+gradient,run,double,The longitudinal distance along the stream network between the downstream and upstream point in the moving window. ,feet,1
+gradient,stream_length,double,The longitudinal distance along the stream network between the downstream and upstream point in the moving window. ,feet,1
+gradient,valley_length,double,The longitudinal distance along the valleyline between the downstream and upstream stream network point in the moving window. ,feet,1
+gradient,sinuosity,double,The sinuosity of the stream within the moving window (valley_length/stream_length). ,,1
+gradient,sinuosity_gte_one,double,"The sinuosity metric, values greater than or equal to one. ",,1
+gradient,slope,double,The slope of the stream within the moving window (rise/run). ,degree,1
+gradient,slope_gte_zero,double,"The slope metric, values greater than of equal to zero. ",degree,1
 watershed_points,ReachName,text,Name of the reach.,,1
 watershed_points,POINT_X,double,The x-coordinate value (longitude).,linear units of fc,1
 watershed_points,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,1
