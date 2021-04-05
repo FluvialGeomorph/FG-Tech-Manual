@@ -25,7 +25,7 @@
 <meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District" />
 
 
-<meta name="date" content="2021-03-28" />
+<meta name="date" content="2021-04-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,12 +116,74 @@
 <li class="chapter" data-level="4.1" data-path="toolbox.html"><a href="toolbox.html#platforms"><i class="fa fa-check"></i><b>4.1</b> Platforms</a></li>
 <li class="chapter" data-level="4.2" data-path="toolbox.html"><a href="toolbox.html#packages"><i class="fa fa-check"></i><b>4.2</b> Packages</a></li>
 <li class="chapter" data-level="4.3" data-path="toolbox.html"><a href="toolbox.html#arcgis-toolbox"><i class="fa fa-check"></i><b>4.3</b> ArcGIS Toolbox</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="toolbox.html"><a href="toolbox.html#install-toolset"><i class="fa fa-check"></i><b>4.3.1</b> 01 - Install toolset</a></li>
-<li class="chapter" data-level="4.3.2" data-path="toolbox.html"><a href="toolbox.html#tools-toolset"><i class="fa fa-check"></i><b>4.3.2</b> 02 - Tools toolset</a></li>
-<li class="chapter" data-level="4.3.3" data-path="toolbox.html"><a href="toolbox.html#reports-toolset"><i class="fa fa-check"></i><b>4.3.3</b> 03 - Reports toolset</a></li>
-<li class="chapter" data-level="4.3.4" data-path="toolbox.html"><a href="toolbox.html#symbology-toolset"><i class="fa fa-check"></i><b>4.3.4</b> 04 - Symbology toolset</a></li>
-<li class="chapter" data-level="4.3.5" data-path="toolbox.html"><a href="toolbox.html#check-toolset"><i class="fa fa-check"></i><b>4.3.5</b> 05 - Check toolset</a></li>
-<li class="chapter" data-level="4.3.6" data-path="toolbox.html"><a href="toolbox.html#export-toolset"><i class="fa fa-check"></i><b>4.3.6</b> 06 - Export toolset</a></li>
+<li class="chapter" data-level="4.3.1" data-path="toolbox.html"><a href="toolbox.html#install-toolset"><i class="fa fa-check"></i><b>4.3.1</b> 01 - Install toolset</a><ul>
+<li class="chapter" data-level="4.3.1.1" data-path="toolbox.html"><a href="toolbox.html#install-r-packages"><i class="fa fa-check"></i><b>4.3.1.1</b> <code>Install R Packages</code></a></li>
+<li class="chapter" data-level="4.3.1.2" data-path="toolbox.html"><a href="toolbox.html#r-session-info"><i class="fa fa-check"></i><b>4.3.1.2</b> <code>R Session Info</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3.2" data-path="toolbox.html"><a href="toolbox.html#tools-toolset"><i class="fa fa-check"></i><b>4.3.2</b> 02 - Tools toolset</a><ul>
+<li class="chapter" data-level="4.3.2.1" data-path="toolbox.html"><a href="toolbox.html#hydro-dem-tool"><i class="fa fa-check"></i><b>4.3.2.1</b> <code>02 - Hydro DEM</code></a></li>
+<li class="chapter" data-level="4.3.2.2" data-path="toolbox.html"><a href="toolbox.html#contributing-area-tool"><i class="fa fa-check"></i><b>4.3.2.2</b> <code>03 - Contributing Area</code></a></li>
+<li class="chapter" data-level="4.3.2.3" data-path="toolbox.html"><a href="toolbox.html#contributing-area-d8-tool"><i class="fa fa-check"></i><b>4.3.2.3</b> <code>03a - Contributing Area D8</code></a></li>
+<li class="chapter" data-level="4.3.2.4" data-path="toolbox.html"><a href="toolbox.html#stream-network-tool"><i class="fa fa-check"></i><b>4.3.2.4</b> <code>04 - Stream Network</code></a></li>
+<li class="chapter" data-level="4.3.2.5" data-path="toolbox.html"><a href="toolbox.html#stream-network-points-tool"><i class="fa fa-check"></i><b>4.3.2.5</b> <code>04a - Stream Network Points</code></a></li>
+<li class="chapter" data-level="4.3.2.6" data-path="toolbox.html"><a href="toolbox.html#slope-sinuosity-tool"><i class="fa fa-check"></i><b>4.3.2.6</b> <code>04b - Slope and Sinuosity</code></a></li>
+<li class="chapter" data-level="4.3.2.7" data-path="toolbox.html"><a href="toolbox.html#watershed-tool"><i class="fa fa-check"></i><b>4.3.2.7</b> <code>04c - Watershed</code></a></li>
+<li class="chapter" data-level="4.3.2.8" data-path="toolbox.html"><a href="toolbox.html#flowline-tool"><i class="fa fa-check"></i><b>4.3.2.8</b> <code>05 - Flowline</code></a></li>
+<li class="chapter" data-level="4.3.2.9" data-path="toolbox.html"><a href="toolbox.html#flowline-points-tool"><i class="fa fa-check"></i><b>4.3.2.9</b> <code>06 - Flowline Points</code></a></li>
+<li class="chapter" data-level="4.3.2.10" data-path="toolbox.html"><a href="toolbox.html#detrend-dem-tool"><i class="fa fa-check"></i><b>4.3.2.10</b> <code>07 - Detrend DEM</code></a></li>
+<li class="chapter" data-level="4.3.2.11" data-path="toolbox.html"><a href="toolbox.html#water-surface-extent"><i class="fa fa-check"></i><b>4.3.2.11</b> <code>08 - Water Surface Extent</code></a></li>
+<li class="chapter" data-level="4.3.2.12" data-path="toolbox.html"><a href="toolbox.html#channel-slope-tool"><i class="fa fa-check"></i><b>4.3.2.12</b> <code>09 - Channel Slope</code></a></li>
+<li class="chapter" data-level="4.3.2.13" data-path="toolbox.html"><a href="toolbox.html#centerline-tool"><i class="fa fa-check"></i><b>4.3.2.13</b> <code>10 - Centerline</code></a></li>
+<li class="chapter" data-level="4.3.2.14" data-path="toolbox.html"><a href="toolbox.html#xs-layout-tool"><i class="fa fa-check"></i><b>4.3.2.14</b> <code>11 - XS Layout</code></a></li>
+<li class="chapter" data-level="4.3.2.15" data-path="toolbox.html"><a href="toolbox.html#xs-watershed-area-tool"><i class="fa fa-check"></i><b>4.3.2.15</b> <code>12 - XS Watershed Area</code></a></li>
+<li class="chapter" data-level="4.3.2.16" data-path="toolbox.html"><a href="toolbox.html#xs-river-position"><i class="fa fa-check"></i><b>4.3.2.16</b> <code>13 - XS River Position</code></a></li>
+<li class="chapter" data-level="4.3.2.17" data-path="toolbox.html"><a href="toolbox.html#xs-resequence-tool"><i class="fa fa-check"></i><b>4.3.2.17</b> <code>13a - XS Resequence</code></a></li>
+<li class="chapter" data-level="4.3.2.18" data-path="toolbox.html"><a href="toolbox.html#xs-points-tool"><i class="fa fa-check"></i><b>4.3.2.18</b> <code>14 - XS Points</code></a></li>
+<li class="chapter" data-level="4.3.2.19" data-path="toolbox.html"><a href="toolbox.html#bankline-points-tool"><i class="fa fa-check"></i><b>4.3.2.19</b> <code>14b - Bankline Points</code></a></li>
+<li class="chapter" data-level="4.3.2.20" data-path="toolbox.html"><a href="toolbox.html#xs-assign-loops-tool"><i class="fa fa-check"></i><b>4.3.2.20</b> <code>14c - XS Assign Loops</code></a></li>
+<li class="chapter" data-level="4.3.2.21" data-path="toolbox.html"><a href="toolbox.html#xs-dimensions-L1-tool"><i class="fa fa-check"></i><b>4.3.2.21</b> <code>15a - XS Dimensions, Level 1</code></a></li>
+<li class="chapter" data-level="4.3.2.22" data-path="toolbox.html"><a href="toolbox.html#xs-dimensions-L2-tool"><i class="fa fa-check"></i><b>4.3.2.22</b> <code>15b - XS Dimensions, Level 2</code></a></li>
+<li class="chapter" data-level="4.3.2.23" data-path="toolbox.html"><a href="toolbox.html#xs-dimensions-L3-tool"><i class="fa fa-check"></i><b>4.3.2.23</b> <code>15c - XS Planform, Level 3</code></a></li>
+<li class="chapter" data-level="4.3.2.24" data-path="toolbox.html"><a href="toolbox.html#xs-ras-watersurface-tool"><i class="fa fa-check"></i><b>4.3.2.24</b> <code>16 - XS RAS Watersurface</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3.3" data-path="toolbox.html"><a href="toolbox.html#reports-toolset"><i class="fa fa-check"></i><b>4.3.3</b> 03 - Reports toolset</a><ul>
+<li class="chapter" data-level="4.3.3.1" data-path="toolbox.html"><a href="toolbox.html#longitudinal-profile-compare-graph-tool"><i class="fa fa-check"></i><b>4.3.3.1</b> <code>Graph - Longitudinal Profile Compare</code></a></li>
+<li class="chapter" data-level="4.3.3.2" data-path="toolbox.html"><a href="toolbox.html#xs-longitudinal-profile-compare-graph-tool"><i class="fa fa-check"></i><b>4.3.3.2</b> <code>Graph - XS Longitudinal Profile Compare</code></a></li>
+<li class="chapter" data-level="4.3.3.3" data-path="toolbox.html"><a href="toolbox.html#reach-overview-map-tool"><i class="fa fa-check"></i><b>4.3.3.3</b> <code>Map - Reach Overview</code></a></li>
+<li class="chapter" data-level="4.3.3.4" data-path="toolbox.html"><a href="toolbox.html#L1-report-tool"><i class="fa fa-check"></i><b>4.3.3.4</b> <code>Report - L1</code></a></li>
+<li class="chapter" data-level="4.3.3.5" data-path="toolbox.html"><a href="toolbox.html#estimate-bankfull-report-tool"><i class="fa fa-check"></i><b>4.3.3.5</b> <code>Report - L2 Estimate Bankfull</code></a></li>
+<li class="chapter" data-level="4.3.3.6" data-path="toolbox.html"><a href="toolbox.html#L2-report-tool"><i class="fa fa-check"></i><b>4.3.3.6</b> <code>Report - L2</code></a></li>
+<li class="chapter" data-level="4.3.3.7" data-path="toolbox.html"><a href="toolbox.html#L3-report-tool"><i class="fa fa-check"></i><b>4.3.3.7</b> <code>Report - L3</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3.4" data-path="toolbox.html"><a href="toolbox.html#symbology-toolset"><i class="fa fa-check"></i><b>4.3.4</b> 04 - Symbology toolset</a><ul>
+<li class="chapter" data-level="4.3.4.1" data-path="toolbox.html"><a href="toolbox.html#banklines-symbol-tool"><i class="fa fa-check"></i><b>4.3.4.1</b> <code>Banklines</code></a></li>
+<li class="chapter" data-level="4.3.4.2" data-path="toolbox.html"><a href="toolbox.html#contributing-area-symbol-tool"><i class="fa fa-check"></i><b>4.3.4.2</b> <code>Contibuting Area</code></a></li>
+<li class="chapter" data-level="4.3.4.3" data-path="toolbox.html"><a href="toolbox.html#cross-section-symbol-tool"><i class="fa fa-check"></i><b>4.3.4.3</b> <code>Cross Section</code></a></li>
+<li class="chapter" data-level="4.3.4.4" data-path="toolbox.html"><a href="toolbox.html#dem-symbol-tool"><i class="fa fa-check"></i><b>4.3.4.4</b> <code>DEM</code></a></li>
+<li class="chapter" data-level="4.3.4.5" data-path="toolbox.html"><a href="toolbox.html#features-symbol-tool"><i class="fa fa-check"></i><b>4.3.4.5</b> <code>Features</code></a></li>
+<li class="chapter" data-level="4.3.4.6" data-path="toolbox.html"><a href="toolbox.html#flowline-symbol-tool"><i class="fa fa-check"></i><b>4.3.4.6</b> <code>Flowline</code></a></li>
+<li class="chapter" data-level="4.3.4.7" data-path="toolbox.html"><a href="toolbox.html#flowline-points-symbol-tool"><i class="fa fa-check"></i><b>4.3.4.7</b> <code>Flowline Points</code></a></li>
+<li class="chapter" data-level="4.3.4.8" data-path="toolbox.html"><a href="toolbox.html#loop-points-symbol-tool"><i class="fa fa-check"></i><b>4.3.4.8</b> <code>Loop Points</code></a></li>
+<li class="chapter" data-level="4.3.4.9" data-path="toolbox.html"><a href="toolbox.html#valleyline-symbol-tool"><i class="fa fa-check"></i><b>4.3.4.9</b> <code>Valleyline</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3.5" data-path="toolbox.html"><a href="toolbox.html#check-toolset"><i class="fa fa-check"></i><b>4.3.5</b> 05 - Check toolset</a><ul>
+<li class="chapter" data-level="4.3.5.1" data-path="toolbox.html"><a href="toolbox.html#check-arcgis-pro-compatibility"><i class="fa fa-check"></i><b>4.3.5.1</b> <code>Check ArcGIS Pro Compatibility</code></a></li>
+<li class="chapter" data-level="4.3.5.2" data-path="toolbox.html"><a href="toolbox.html#check-bankline-points"><i class="fa fa-check"></i><b>4.3.5.2</b> <code>Check Bankline Points</code></a></li>
+<li class="chapter" data-level="4.3.5.3" data-path="toolbox.html"><a href="toolbox.html#check-banklines"><i class="fa fa-check"></i><b>4.3.5.3</b> <code>Check Banklines</code></a></li>
+<li class="chapter" data-level="4.3.5.4" data-path="toolbox.html"><a href="toolbox.html#check-cross-section-points"><i class="fa fa-check"></i><b>4.3.5.4</b> <code>Check Cross Section Points</code></a></li>
+<li class="chapter" data-level="4.3.5.5" data-path="toolbox.html"><a href="toolbox.html#check-cross-section"><i class="fa fa-check"></i><b>4.3.5.5</b> <code>Check Cross Section</code></a></li>
+<li class="chapter" data-level="4.3.5.6" data-path="toolbox.html"><a href="toolbox.html#check-features"><i class="fa fa-check"></i><b>4.3.5.6</b> <code>Check Features</code></a></li>
+<li class="chapter" data-level="4.3.5.7" data-path="toolbox.html"><a href="toolbox.html#check-flowline"><i class="fa fa-check"></i><b>4.3.5.7</b> <code>Check Flowline</code></a></li>
+<li class="chapter" data-level="4.3.5.8" data-path="toolbox.html"><a href="toolbox.html#check-flowline-points"><i class="fa fa-check"></i><b>4.3.5.8</b> <code>Check Flowline Points</code></a></li>
+<li class="chapter" data-level="4.3.5.9" data-path="toolbox.html"><a href="toolbox.html#check-loop-points"><i class="fa fa-check"></i><b>4.3.5.9</b> <code>Check Loop Points</code></a></li>
+<li class="chapter" data-level="4.3.5.10" data-path="toolbox.html"><a href="toolbox.html#check-valleyline"><i class="fa fa-check"></i><b>4.3.5.10</b> <code>Check Valleyline</code></a></li>
+<li class="chapter" data-level="4.3.5.11" data-path="toolbox.html"><a href="toolbox.html#check-valleyline-points"><i class="fa fa-check"></i><b>4.3.5.11</b> <code>Check valleyline Points</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3.6" data-path="toolbox.html"><a href="toolbox.html#export-toolset"><i class="fa fa-check"></i><b>4.3.6</b> 06 - Export toolset</a><ul>
+<li class="chapter" data-level="4.3.6.1" data-path="toolbox.html"><a href="toolbox.html#L1-export-tool"><i class="fa fa-check"></i><b>4.3.6.1</b> <code>Level 1</code></a></li>
+<li class="chapter" data-level="4.3.6.2" data-path="toolbox.html"><a href="toolbox.html#L2-export-tool"><i class="fa fa-check"></i><b>4.3.6.2</b> <code>Level 2</code></a></li>
+<li class="chapter" data-level="4.3.6.3" data-path="toolbox.html"><a href="toolbox.html#L3-export-tool"><i class="fa fa-check"></i><b>4.3.6.3</b> <code>Level 3</code></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="toolbox.html"><a href="toolbox.html#feature-classes"><i class="fa fa-check"></i><b>4.4</b> Feature Classes</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="toolbox.html"><a href="toolbox.html#dem-raster"><i class="fa fa-check"></i><b>4.4.1</b> Terrain Model Raster</a></li>
@@ -148,15 +210,15 @@
 <li class="chapter" data-level="4.4.22" data-path="toolbox.html"><a href="toolbox.html#banklines-fc"><i class="fa fa-check"></i><b>4.4.22</b> Banklines</a></li>
 <li class="chapter" data-level="4.4.23" data-path="toolbox.html"><a href="toolbox.html#bankline-points-fc"><i class="fa fa-check"></i><b>4.4.23</b> Bankline Points</a></li>
 <li class="chapter" data-level="4.4.24" data-path="toolbox.html"><a href="toolbox.html#valleyline-fc"><i class="fa fa-check"></i><b>4.4.24</b> Valleyline</a></li>
-<li class="chapter" data-level="4.4.25" data-path="toolbox.html"><a href="toolbox.html#loop-points-loop-points-fc"><i class="fa fa-check"></i><b>4.4.25</b> Loop Points {loop-points-fc}</a></li>
+<li class="chapter" data-level="4.4.25" data-path="toolbox.html"><a href="toolbox.html#loop-points-fc"><i class="fa fa-check"></i><b>4.4.25</b> Loop Points</a></li>
 <li class="chapter" data-level="4.4.26" data-path="toolbox.html"><a href="toolbox.html#features-fc"><i class="fa fa-check"></i><b>4.4.26</b> Features</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="toolbox.html"><a href="toolbox.html#reports"><i class="fa fa-check"></i><b>4.5</b> Reports</a><ul>
 <li class="chapter" data-level="4.5.1" data-path="toolbox.html"><a href="toolbox.html#longitudinal-profile-compare-graph"><i class="fa fa-check"></i><b>4.5.1</b> <code>Graph - Longitudinal Profile Compare</code></a></li>
-<li class="chapter" data-level="4.5.2" data-path="toolbox.html"><a href="toolbox.html#l1-report"><i class="fa fa-check"></i><b>4.5.2</b> <code>Report - L1</code></a></li>
+<li class="chapter" data-level="4.5.2" data-path="toolbox.html"><a href="toolbox.html#L1-report"><i class="fa fa-check"></i><b>4.5.2</b> <code>Report - L1</code></a></li>
 <li class="chapter" data-level="4.5.3" data-path="toolbox.html"><a href="toolbox.html#estimate-bankfull-report"><i class="fa fa-check"></i><b>4.5.3</b> <code>Report - L2 Estimate Bankfull</code></a></li>
-<li class="chapter" data-level="4.5.4" data-path="toolbox.html"><a href="toolbox.html#l2-report"><i class="fa fa-check"></i><b>4.5.4</b> <code>Report - L2</code></a></li>
-<li class="chapter" data-level="4.5.5" data-path="toolbox.html"><a href="toolbox.html#l3-report"><i class="fa fa-check"></i><b>4.5.5</b> <code>Report - L3</code></a></li>
+<li class="chapter" data-level="4.5.4" data-path="toolbox.html"><a href="toolbox.html#L2-report"><i class="fa fa-check"></i><b>4.5.4</b> <code>Report - L2</code></a></li>
+<li class="chapter" data-level="4.5.5" data-path="toolbox.html"><a href="toolbox.html#L3-report"><i class="fa fa-check"></i><b>4.5.5</b> <code>Report - L3</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="metrics.html"><a href="metrics.html"><i class="fa fa-check"></i><b>5</b> Metrics</a><ul>
@@ -262,7 +324,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["FG-Tech-Manual.pdf", "FG-Tech-Manual.epub"],
+"download": ["FG-Tech-Manual.epub"],
 "toc": {
 "collapse": "subsection"
 }
