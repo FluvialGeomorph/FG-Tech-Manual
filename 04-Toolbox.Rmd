@@ -586,6 +586,13 @@ The purpose of this toolset is to export the tabular data from geospatial datase
 ## Feature Classes
 FluvialGeomorph defines a standard set of feature classes that are used through the tool chain. The definition of a common set of derived features is an important step in standardizing the FluvialGeomorph workflow. These database objects form a tightly linked set of features that work together in a particular order to accomplish the analysis. They are presented here in the approximate order in which they are produced. 
 
+### Study Area {#study-area-fc}
+The `study_area` polygon feature class is created manually by the analyst using these instructions from the [user manual](https://www.usermanual.fluvialgeomorph.org/level-1-workflow.html#define-study-area). 
+
+```{r, echo=FALSE}
+dd_table(dd_df, "study_area", "Study Area Fields.")
+```
+
 ### Terrain Model Raster {#dem-raster}
 The GIS analyst follows these instructions from the [user manual](https://www.usermanual.fluvialgeomorph.org/level-1-workflow.html#create-terrain) using standard ESRI geoprocessing tools to transform a LiDAR point cloud dataset covering the study area into an appropriately resolute (pixel cell size) digital elevation model (DEM). Only points representing the ground or water surface are selected from the point cloud to derive the terrain surface DEM. This raster dataset is named `dem`, but can also have a suffix added to represent its year of collection in change studies. Follow these instructions from 
 

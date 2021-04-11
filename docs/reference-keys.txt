@@ -88,11 +88,12 @@ tab:unnamed-chunk-88
 tab:unnamed-chunk-89
 tab:unnamed-chunk-90
 tab:unnamed-chunk-91
-fig:unnamed-chunk-92
+tab:unnamed-chunk-92
 fig:unnamed-chunk-93
 fig:unnamed-chunk-94
 fig:unnamed-chunk-95
 fig:unnamed-chunk-96
+fig:unnamed-chunk-97
 abstract
 distribution-statement
 unit-conversion-factors
@@ -194,6 +195,7 @@ L1-export-tool
 L2-export-tool
 L3-export-tool
 feature-classes
+study-area-fc
 dem-raster
 cutlines-fc
 dem-hydro-raster
