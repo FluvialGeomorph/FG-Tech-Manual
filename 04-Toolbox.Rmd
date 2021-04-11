@@ -504,6 +504,8 @@ knitr::include_graphics("figures/toolbox/tool_Report-L2.png")
 ```
 
 
+***
+
 #### `Report - L3` {#L3-report-tool}
 **Purpose** - This tool produces the [Level 3 Report](#L3-report) using these instructions in the [user manual](https://www.usermanual.fluvialgeomorph.org/level-3-workflow.html#run-report-2). 
 
@@ -541,34 +543,31 @@ The purpose of this toolset is to hold the tools that standardize the symbolizat
 #### `Valleyline` {#valleyline-symbol-tool}
 
 
-
+***
 
 ### 05 - Check toolset
 The purpose of this toolset is to hold the tools used to check FluvialGeomorph features for errors. 
 
-#### `Check ArcGIS Pro Compatibility`
+#### `Check Bankline Points` {#check-bankline-points-tool}
 
-#### `Check Bankline Points`
+#### `Check Banklines` {#check-banklines-tool}
 
-#### `Check Banklines`
+#### `Check Cross Section Points` {#check-cross-section-points-tool}
 
-#### `Check Cross Section Points`
+#### `Check Cross Section` {#check-cross-section-tool}
 
-#### `Check Cross Section`
+#### `Check Features` {#check-features-tool}
 
-#### `Check Features`
+#### `Check Flowline` {#check-flowline-tool}
 
-#### `Check Flowline`
+#### `Check Flowline Points` {#check-flowline-points-tool}
 
-#### `Check Flowline Points`
+#### `Check Loop Points` {#check-loop-points-tool}
 
-#### `Check Loop Points`
-
-#### `Check Valleyline`
-
-#### `Check valleyline Points`
+#### `Check Valleyline` {#check-valleyline-tool}
 
 
+***
 
 ### 06 - Export toolset
 The purpose of this toolset is to export the tabular data from geospatial datasets for further analysis. 
@@ -578,7 +577,6 @@ The purpose of this toolset is to export the tabular data from geospatial datase
 #### `Level 2` {#L2-export-tool}
 
 #### `Level 3` {#L3-export-tool}
-
 
 
 ***
