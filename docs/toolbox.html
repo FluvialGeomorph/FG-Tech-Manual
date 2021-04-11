@@ -25,7 +25,7 @@
 <meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District" />
 
 
-<meta name="date" content="2021-04-04" />
+<meta name="date" content="2021-04-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -4711,7 +4711,7 @@ Figure 4.31: Longitudinal Profile Plot.
 <ul>
 <li><strong>Study Area Overview</strong> - This section provides an overview of the study area reach.
 <ul>
-<li>Reach Overview Map - A reach overview map displaying cross section locations over an aerial image and/or an elevation multi-direction shaded relief. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_overview.R"><code>fluvgeo::map_reach_overview</code></a>.</li>
+<li>Reach Overview Map - A reach overview map displaying cross section locations over an aerial image and/or a medium resolution DEM with multi-direction shaded relief. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_overview.R"><code>fluvgeo::map_reach_overview</code></a>.</li>
 </ul></li>
 <li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
 <ul>
@@ -4745,25 +4745,25 @@ Figure 4.32: Level 1 Report.
 <ul>
 <li><strong>Study Area Overview</strong> - This section provides an overview of the study area reach.
 <ul>
-<li>Reach Overview Map - A reach overview map displaying cross section locations over an aerial image and/or an elevation multi-direction shaded relief. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_overview.R"><code>fluvgeo::map_reach_overview</code></a>.</li>
+<li>Reach Overview Map - A reach overview map displaying cross section locations over an aerial image and/or a medium resolution DEM with multi-direction shaded relief. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_overview.R"><code>fluvgeo::map_reach_overview</code></a>.</li>
 </ul></li>
 <li><strong>Bankfull Elevation Sensitivity Analysis</strong> - This section performs a sensitivity analysis of the directly measured reach-wide channel dimensions compared to the regional curve estimated channel dimensions.
 <ul>
 <li>Bankfull Elevation Goodness of Fit Graph - This graph is used to identify how similar this reach’s dimensions are compared to dimensions from several other regions at the current bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/gof_graph.R"><code>fluvgeo::gof_graph</code></a>.</li>
 <li>Bankfull Elevation Dimensions by Region Table - This table summarizes this reach’s dimensions compared to several other regions at the current bankfull elevation. This table is created by code in the Estimate Bankfull Report, <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/estimate_bankfull_report.Rmd"><code>fluvgeo/reports/estimate_bankfull_report.Rmd</code></a></li>
-<li>Regional Hydraulic Geometry Curves Graph - This graph displays the channel dimensions of each cross section in addition to the regional curve estimated dimensions. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/reach_rhg_graph.R"><code>fluvgeo::reach_rhg_graph</code></a>.</li>
+<li>Regional Hydraulic Geometry Curves Graph - This graph displays the channel dimensions of each cross section in the reach, along with the regional curve estimated dimensions. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/reach_rhg_graph.R"><code>fluvgeo::reach_rhg_graph</code></a>.</li>
 </ul></li>
 <li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
 <ul>
-<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> feature class for the survey being used to generate the estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
 </ul></li>
-<li><strong>Cross Section Metrics</strong> - This section displays metrics for the cross sections of a stream reach.
+<li><strong>Cross Section Metrics</strong> - This section displays metrics the Level 2 metrics for the riffle cross sections of a stream reach.
 <ul>
 <li>Cross Section Metrics Plot, Level 2 - This stream reach metrics graph displays the Level 2 metrics on a faceted graph. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metrics_plot_L2.R"><code>fluvgeo::xs_metrics_plot_L2</code></a>.</li>
 </ul></li>
 <li><strong>Cross Section Profiles</strong> - This section displays a focused view of the characteristics of each individual cross section in the stream reach.
 <ul>
-<li>Cross Section Map - This map displays the extent of a single cross section in plan view with a DEM background. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_xs.R"><code>fluvgeo::map_xs</code></a>.</li>
+<li>Cross Section Map - This map displays the extent of a single cross section in plan view with a high resolution DEM background. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_xs.R"><code>fluvgeo::map_xs</code></a>.</li>
 <li>Floodplain XS Profile Compare Plot - This graph displays a single <code>riffle_floodplain</code> feature in a wide aspect ratio profile view to compare the elevations from multiple surveys if provided. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_compare_plot_L2.R"><code>fluvgeo::xs_compare_plot_L2</code></a>.</li>
 <li>Channel XS Profile Compare Plot - This graph displays a single <code>riffle_channel</code> feature in a square aspect ratio profile view to compare the elevations from multiple surveys if provided. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_compare_plot_L2.R"><code>fluvgeo::xs_compare_plot_L2</code></a>.</li>
 <li>Bankfull Elevation Dimensions by Region Table - This table summarizes this cross section’s dimensions compared to several other regions at the current bankfull elevation. This table is created by code in the Estimate Bankfull Report, <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/estimate_bankfull_report.Rmd"><code>fluvgeo/reports/estimate_bankfull_report.Rmd</code></a>.</li>
@@ -4779,6 +4779,32 @@ Figure 4.33: Level 2, Estimate Bankfull Report.
 </div>
 <div id="L2-report" class="section level3">
 <h3><span class="header-section-number">4.5.4</span> <code>Report - L2</code></h3>
+<p><strong>Purpose</strong> - The Level 2 Report contains a set of maps and graphs that describe the Level 2 channel dimensions calculated at the specified bankfull elevation, estimated using the <a href="toolbox.html#estimate-bankfull-report">L2 Estimate Bankfull Report</a>. This report is produced using the <a href="toolbox.html#L2-report-tool"><code>Report - L2</code></a> tool using these instructions from the <a href="https://www.usermanual.fluvialgeomorph.org/level-2-workflow.html#run-report-1">user manual</a>.</p>
+<p><strong>Code</strong> - This report is created by the <a href="https://bookdown.org/yihui/rmarkdown/parameterized-reports.html">R Markdown parameterized report</a> in the R package <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_2_report.Rmd"><code>fluvgeo/reports/level_2_report.Rmd</code></a>.</p>
+<p>This report contains the following sections:</p>
+<ul>
+<li><strong>Study Area Overview</strong> - This section provides an overview of the study area reach.
+<ul>
+<li>Reach Overview Map - A reach overview map displaying cross section locations over an aerial image and/or a medium resolution DEM with multi-direction shaded relief. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_overview.R"><code>fluvgeo::map_reach_overview</code></a>.</li>
+</ul></li>
+<li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
+<ul>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="toolbox.html#xs-dimensions-fc">Level 2 cross section dimensions</a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Metrics</strong> - This section displays metrics for the Level 2 dimensions calculated for the regular cross sections of a stream reach.
+<ul>
+<li>Cross Section Metrics Plot, Level 2 - This stream reach metrics graph displays the Level 2 metrics on a faceted graph. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metrics_plot_L2.R"><code>fluvgeo::xs_metrics_plot_L2</code></a>.</li>
+<li>Width Depth Ratio Map - A reach overview map is used to display the width depth ratio values at each cross section for the reach. The width depth ratio parameters (i.e., metric definition, class break values and labels) are defined in this report using the R S4 class <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/FluvialGeomorphicMetric.R"><code>FluvialGeomorphicMetric</code></a>. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_metric.R"><code>fluvgeo::map_reach_metric</code></a>.</li>
+<li>Width Depth Ratio Graph - This graph displays the width depth ratio values (y-axis) of the stream along its length (x-axis) beginning from the downstream end of the reach moving upstream longitudinally. This graph uses the metric class definition for width depth ratio defined for the previous figure. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metric_plot.R"><code>fluvgeo::xs_metric_plot</code></a>.</li>
+<li>Regional Hydraulic Geometry Curves Graph - This graph displays the channel dimensions of each cross section in the reach, along with the regional curve estimated dimensions. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/reach_rhg_graph.R"><code>fluvgeo::reach_rhg_graph</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Profiles</strong> - This section displays a focused view of the characteristics of each individual cross section in the stream reach.
+<ul>
+<li>Cross Section Map - This map displays the extent of a single cross section in plan view with a high resolution DEM background. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_xs.R"><code>fluvgeo::map_xs</code></a>.</li>
+<li>Regular XS Profile Compare Plot - This graph displays a single <code>*_L2_dims</code> feature in a wide aspect ratio profile view to compare the elevations from multiple surveys if provided. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_compare_plot_L2.R"><code>fluvgeo::xs_compare_plot_L2</code></a>.</li>
+<li>Bankfull Elevation Dimensions by Region Table - This table summarizes this cross section’s dimensions compared to several other regions at the current bankfull elevation. This table is created by code in the L2 Report, <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_2_report.Rmd"><code>fluvgeo/reports/level_2_report.Rmd</code></a>.</li>
+</ul></li>
+</ul>
 <div class="figure"><span id="fig:unnamed-chunk-95"></span>
 <img src="figures/toolbox/Report_L2.png" alt="Level 2 Report." width="100%" />
 <p class="caption">
@@ -4789,6 +4815,34 @@ Figure 4.34: Level 2 Report.
 </div>
 <div id="L3-report" class="section level3">
 <h3><span class="header-section-number">4.5.5</span> <code>Report - L3</code></h3>
+<p><strong>Purpose</strong> - The Level 3 Report contains a set of maps and graphs that describe the Level 3 channel dimensions calculated at the specified bankfull elevation, estimated using the <a href="toolbox.html#estimate-bankfull-report">L2 Estimate Bankfull Report</a>. This report is produced using the <a href="toolbox.html#L3-report-tool"><code>Report - L3</code></a> tool using these instructions from the <a href="https://www.usermanual.fluvialgeomorph.org/level-3-workflow.html#run-report-2">user manual</a>.</p>
+<p><strong>Code</strong> - This report is created by the <a href="https://bookdown.org/yihui/rmarkdown/parameterized-reports.html">R Markdown parameterized report</a> in the R package <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_3_report.Rmd"><code>fluvgeo/reports/level_3_report.Rmd</code></a>.</p>
+<p>This report contains the following sections:</p>
+<ul>
+<li><strong>Study Area Overview</strong> - This section provides an overview of the study area reach.
+<ul>
+<li>Reach Overview Map - A reach overview map displaying cross section locations over an aerial image and/or a medium resolution DEM with multi-direction shaded relief. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_overview.R"><code>fluvgeo::map_reach_overview</code></a>.</li>
+</ul></li>
+<li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
+<ul>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="toolbox.html#xs-dimensions-fc">Level 3 cross section dimensions</a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Metrics</strong> - This section displays metrics for the Level 3 dimensions calculated for the regular cross sections of a stream reach.
+<ul>
+<li>Cross Section Metrics Plot, Level 3 - This stream reach metrics graph displays the Level 3 metrics on a faceted graph. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metrics_plot_L3.R"><code>fluvgeo::xs_metrics_plot_L3</code></a>.</li>
+<li>Width Depth Ratio Map - A reach overview map is used to display the width depth ratio values at each cross section for the reach. The width depth ratio parameters (i.e., metric definition, class break values and labels) are defined in this report using the R S4 class <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/FluvialGeomorphicMetric.R"><code>FluvialGeomorphicMetric</code></a>. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_metric.R"><code>fluvgeo::map_reach_metric</code></a>.</li>
+<li>Width Depth Ratio Graph - This graph displays the width depth ratio values (y-axis) of the stream along its length (x-axis) beginning from the downstream end of the reach moving upstream longitudinally. This graph uses the metric class definition for width depth ratio defined for the previous figure. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metric_plot.R"><code>fluvgeo::xs_metric_plot</code></a>.</li>
+<li>Radius of Curvature to Bankfull Width Map - A reach overview map is used to display the radius of curvature to bankfull width ratio values at each cross section for the reach. The radius of curvature to bankfull width ratio parameters (i.e., metric definition, class break values and labels) are defined in this report using the R S4 class <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/FluvialGeomorphicMetric.R"><code>FluvialGeomorphicMetric</code></a>. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_metric.R"><code>fluvgeo::map_reach_metric</code></a>.</li>
+<li>Radius of Curvature to Bankfull Width Graph - This graph displays the radius of curvature to bankfull width ratio values (y-axis) of the stream along its length (x-axis) beginning from the downstream end of the reach moving upstream longitudinally. This graph uses the metric class definition for radius of curvature to bankfull width ratio defined for the previous figure. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metric_plot.R"><code>fluvgeo::xs_metric_plot</code></a>.</li>
+<li>Regional Hydraulic Geometry Curves Graph - This graph displays the channel dimensions of each cross section in the reach, along with the regional curve estimated dimensions. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/reach_rhg_graph.R"><code>fluvgeo::reach_rhg_graph</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Profiles</strong> - This section displays a focused view of the characteristics of each individual cross section in the stream reach.
+<ul>
+<li>Cross Section Map - This map displays the extent of a single cross section in plan view with a high resolution DEM background. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_xs.R"><code>fluvgeo::map_xs</code></a>.</li>
+<li>Regular XS Profile Compare Plot - This graph displays a single <code>*_L3_dims</code> feature in a wide aspect ratio profile view to compare the elevations from multiple surveys if provided. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_compare_plot_L2.R"><code>fluvgeo::xs_compare_plot_L2</code></a>.</li>
+<li>Bankfull Elevation Dimensions by Region Table - This table summarizes this cross section’s dimensions compared to several other regions at the current bankfull elevation. This table is created by code in the L3 Report, <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_3_report.Rmd"><code>fluvgeo/reports/level_3_report.Rmd</code></a>.</li>
+</ul></li>
+</ul>
 <div class="figure"><span id="fig:unnamed-chunk-96"></span>
 <img src="figures/toolbox/Report_L3.png" alt="Level 3 Report." width="100%" />
 <p class="caption">
@@ -4837,7 +4891,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-Toolbox.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/04-Toolbox.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -4850,7 +4904,8 @@ gitbook.start({
 },
 "download": ["FG-Tech-Manual.epub"],
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"scroll_highlight": true
 }
 });
 });
