@@ -6,8 +6,9 @@ author:
   - Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District
 site: bookdown::bookdown_site
 output: bookdown::gitbook
-url: 'https://techmanual.fluvialgeomorph.org'
+url: 'https\://techmanual.fluvialgeomorph.org/'
 github-repo: "FluvialGeomorph/FG-Tech-Manual"
+favicon: "favicon.ico"
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: chicago
@@ -96,7 +97,7 @@ knitr::include_graphics("images/EWN_200.png")
 
 
 ## Abstract
-This document describes the methods usedin the development of the FluvialGeomorph project. 
+The [FluvialGeomorph ArcGIS toolbox](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox) provides a set of tools for conducting rapid fluvial geomorphology analysis and assessment. It allows a user to use high resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to cost effectively extract stream channel dimensions at fine scale for large spatial extents. This document describes the methods used in the development of the FluvialGeomorph project. 
 
 
 ## Distribution Statement
