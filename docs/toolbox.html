@@ -167,10 +167,10 @@
 <li class="chapter" data-level="4.3.4.9" data-path="toolbox.html"><a href="toolbox.html#valleyline-symbol-tool"><i class="fa fa-check"></i><b>4.3.4.9</b> <code>Valleyline</code></a></li>
 </ul></li>
 <li class="chapter" data-level="4.3.5" data-path="toolbox.html"><a href="toolbox.html#check-toolset"><i class="fa fa-check"></i><b>4.3.5</b> 05 - Check toolset</a><ul>
-<li class="chapter" data-level="4.3.5.1" data-path="toolbox.html"><a href="toolbox.html#check-bankline-points-tool"><i class="fa fa-check"></i><b>4.3.5.1</b> <code>Check Bankline Points</code></a></li>
-<li class="chapter" data-level="4.3.5.2" data-path="toolbox.html"><a href="toolbox.html#check-banklines-tool"><i class="fa fa-check"></i><b>4.3.5.2</b> <code>Check Banklines</code></a></li>
-<li class="chapter" data-level="4.3.5.3" data-path="toolbox.html"><a href="toolbox.html#check-cross-section-points-tool"><i class="fa fa-check"></i><b>4.3.5.3</b> <code>Check Cross Section Points</code></a></li>
-<li class="chapter" data-level="4.3.5.4" data-path="toolbox.html"><a href="toolbox.html#check-cross-section-tool"><i class="fa fa-check"></i><b>4.3.5.4</b> <code>Check Cross Section</code></a></li>
+<li class="chapter" data-level="4.3.5.1" data-path="toolbox.html"><a href="toolbox.html#check-banklines-tool"><i class="fa fa-check"></i><b>4.3.5.1</b> <code>Check Banklines</code></a></li>
+<li class="chapter" data-level="4.3.5.2" data-path="toolbox.html"><a href="toolbox.html#check-bankline-points-tool"><i class="fa fa-check"></i><b>4.3.5.2</b> <code>Check Bankline Points</code></a></li>
+<li class="chapter" data-level="4.3.5.3" data-path="toolbox.html"><a href="toolbox.html#check-cross-section-tool"><i class="fa fa-check"></i><b>4.3.5.3</b> <code>Check Cross Section</code></a></li>
+<li class="chapter" data-level="4.3.5.4" data-path="toolbox.html"><a href="toolbox.html#check-cross-section-points-tool"><i class="fa fa-check"></i><b>4.3.5.4</b> <code>Check Cross Section Points</code></a></li>
 <li class="chapter" data-level="4.3.5.5" data-path="toolbox.html"><a href="toolbox.html#check-features-tool"><i class="fa fa-check"></i><b>4.3.5.5</b> <code>Check Features</code></a></li>
 <li class="chapter" data-level="4.3.5.6" data-path="toolbox.html"><a href="toolbox.html#check-flowline-tool"><i class="fa fa-check"></i><b>4.3.5.6</b> <code>Check Flowline</code></a></li>
 <li class="chapter" data-level="4.3.5.7" data-path="toolbox.html"><a href="toolbox.html#check-flowline-points-tool"><i class="fa fa-check"></i><b>4.3.5.7</b> <code>Check Flowline Points</code></a></li>
@@ -2715,65 +2715,83 @@ Figure 4.30: Level 3 Report.
 </div>
 <div id="symbology-toolset" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> 04 - Symbology toolset</h3>
-<p>The purpose of this toolset is to hold the tools that standardize the symbolization of FluvialGeomorph datasets. Given the complexity of the datasets involved in this analysis</p>
+<p>The purpose of this toolset is to hold the tools that standardize the symbolization of FluvialGeomorph datasets. Given the complexity of the datasets involved in this analysis, consistent symbolization improves interpretation and speeds analysis.</p>
 <div id="banklines-symbol-tool" class="section level4">
 <h4><span class="header-section-number">4.3.4.1</span> <code>Banklines</code></h4>
+<p>Applies standard FluvialGeomorph symbology to the <a href="toolbox.html#banklines-fc"><code>banklines</code></a> feature class.</p>
 </div>
 <div id="contributing-area-symbol-tool" class="section level4">
 <h4><span class="header-section-number">4.3.4.2</span> <code>Contibuting Area</code></h4>
+<p>Applies standard FluvialGeomorph symbology to the <a href="#contributing-area-fc"><code>contributing_area</code></a> feature class.</p>
 </div>
 <div id="cross-section-symbol-tool" class="section level4">
 <h4><span class="header-section-number">4.3.4.3</span> <code>Cross Section</code></h4>
+<p>Applies standard FluvialGeomorph symbology to the cross section feature classes (i.e., <a href="toolbox.html#regular-xs-fc"><code>regular cross sections</code></a>, <a href="toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code> and <code>riffle_channel</code></a>, and <a href="toolbox.html#xs-dimensions-fc">cross section dimensions</a>).</p>
 </div>
 <div id="dem-symbol-tool" class="section level4">
 <h4><span class="header-section-number">4.3.4.4</span> <code>DEM</code></h4>
+<p>Applies standard FluvialGeomorph symbology to the <a href="toolbox.html#dem-hydro-raster"><code>dem_hydro</code></a> raster.</p>
 </div>
 <div id="features-symbol-tool" class="section level4">
 <h4><span class="header-section-number">4.3.4.5</span> <code>Features</code></h4>
+<p>Applies standard FluvialGeomorph symbology to the <a href="toolbox.html#features-fc"><code>features</code></a> feature class.</p>
 </div>
 <div id="flowline-symbol-tool" class="section level4">
 <h4><span class="header-section-number">4.3.4.6</span> <code>Flowline</code></h4>
+<p>Applies standard FluvialGeomorph symbology to the <a href="toolbox.html#flowline-fc"><code>flowline</code></a> feature class.</p>
 </div>
 <div id="flowline-points-symbol-tool" class="section level4">
 <h4><span class="header-section-number">4.3.4.7</span> <code>Flowline Points</code></h4>
+<p>Applies standard FluvialGeomorph symbology to the <a href="toolbox.html#flowline-points-fc"><code>flowline_points</code></a> feature class.</p>
 </div>
 <div id="loop-points-symbol-tool" class="section level4">
 <h4><span class="header-section-number">4.3.4.8</span> <code>Loop Points</code></h4>
+<p>Applies standard FluvialGeomorph symbology to the <a href="toolbox.html#loop-points-fc"><code>loop_points</code></a> feature class.</p>
 </div>
 <div id="valleyline-symbol-tool" class="section level4">
 <h4><span class="header-section-number">4.3.4.9</span> <code>Valleyline</code></h4>
+<p>Applies standard FluvialGeomorph symbology to the <a href="toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class.</p>
 <hr />
 </div>
 </div>
 <div id="check-toolset" class="section level3">
 <h3><span class="header-section-number">4.3.5</span> 05 - Check toolset</h3>
-<p>The purpose of this toolset is to hold the tools used to check FluvialGeomorph features for errors.</p>
-<div id="check-bankline-points-tool" class="section level4">
-<h4><span class="header-section-number">4.3.5.1</span> <code>Check Bankline Points</code></h4>
-</div>
+<p>The purpose of this toolset is to hold the tools used to check FluvialGeomorph features for some common, preventable errors.</p>
 <div id="check-banklines-tool" class="section level4">
-<h4><span class="header-section-number">4.3.5.2</span> <code>Check Banklines</code></h4>
+<h4><span class="header-section-number">4.3.5.1</span> <code>Check Banklines</code></h4>
+<p>This ArcGIS script tool checks the <a href="toolbox.html#banklines-fc"><code>banklines</code></a> feature class using the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_banklines.R"><code>fluvgeo::check_banklines</code></a>.</p>
 </div>
-<div id="check-cross-section-points-tool" class="section level4">
-<h4><span class="header-section-number">4.3.5.3</span> <code>Check Cross Section Points</code></h4>
+<div id="check-bankline-points-tool" class="section level4">
+<h4><span class="header-section-number">4.3.5.2</span> <code>Check Bankline Points</code></h4>
+<p>This ArcGIS script tool checks the <a href="toolbox.html#bankline-points-fc"><code>bankline_points</code></a> feature class using the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_bankline_points.R"><code>fluvgeo::check_bankline_points</code></a>.</p>
 </div>
 <div id="check-cross-section-tool" class="section level4">
-<h4><span class="header-section-number">4.3.5.4</span> <code>Check Cross Section</code></h4>
+<h4><span class="header-section-number">4.3.5.3</span> <code>Check Cross Section</code></h4>
+<p>This ArcGIS script tool checks the cross section feature classes (i.e., <a href="toolbox.html#regular-xs-fc"><code>regular cross sections</code></a>, <a href="toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code> and <code>riffle_channel</code></a>, and <a href="toolbox.html#xs-dimensions-fc">cross section dimensions</a>) using the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_cross_section.R"><code>fluvgeo::check_cross_section</code></a>.</p>
+</div>
+<div id="check-cross-section-points-tool" class="section level4">
+<h4><span class="header-section-number">4.3.5.4</span> <code>Check Cross Section Points</code></h4>
+<p>This ArcGIS script tool checks the <a href="toolbox.html#xs-points-fc">cross section points, <code>*_points</code></a> feature class using the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_cross_section_points.R"><code>fluvgeo::check_cross_section_points</code></a>.</p>
 </div>
 <div id="check-features-tool" class="section level4">
 <h4><span class="header-section-number">4.3.5.5</span> <code>Check Features</code></h4>
+<p>This ArcGIS script tool checks the <a href="toolbox.html#features-fc"><code>features</code></a> feature class using the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_cross_section_points.R"><code>fluvgeo::check_cross_section_points</code></a>.</p>
 </div>
 <div id="check-flowline-tool" class="section level4">
 <h4><span class="header-section-number">4.3.5.6</span> <code>Check Flowline</code></h4>
+<p>This ArcGIS script tool checks the <a href="toolbox.html#flowline-fc"><code>flowline</code></a> feature class using the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_flowline.R"><code>fluvgeo::check_flowline</code></a>.</p>
 </div>
 <div id="check-flowline-points-tool" class="section level4">
 <h4><span class="header-section-number">4.3.5.7</span> <code>Check Flowline Points</code></h4>
+<p>This ArcGIS script tool checks the <a href="toolbox.html#flowline-points-fc"><code>flowline_points</code></a> feature class using the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_flowline_points.R"><code>fluvgeo::check_flowline_points</code></a>.</p>
 </div>
 <div id="check-loop-points-tool" class="section level4">
 <h4><span class="header-section-number">4.3.5.8</span> <code>Check Loop Points</code></h4>
+<p>This ArcGIS script tool checks the <a href="toolbox.html#loop-points-fc"><code>loop_points</code></a> feature class using the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_loop_points.R"><code>fluvgeo::check_loop_points</code></a>.</p>
 </div>
 <div id="check-valleyline-tool" class="section level4">
 <h4><span class="header-section-number">4.3.5.9</span> <code>Check Valleyline</code></h4>
+<p>This ArcGIS script tool checks the <a href="toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class using the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_valleyline.R"><code>fluvgeo::check_valleyline</code></a>.</p>
 <hr />
 </div>
 </div>
@@ -2782,6 +2800,7 @@ Figure 4.30: Level 3 Report.
 <p>The purpose of this toolset is to export the tabular data from geospatial datasets for further analysis.</p>
 <div id="L1-export-tool" class="section level4">
 <h4><span class="header-section-number">4.3.6.1</span> <code>Level 1</code></h4>
+<p>This ArcGIS script tool exports the tabular data from these Level 1 feature classes: <a href="toolbox.html#flowline-points-fc"><code>flowline_points</code></a>, <a href="toolbox.html#regular-xs-fc">regular cross sections</a>, <a href="toolbox.html#xs-points-fc">cross section points</a>, and <a href="toolbox.html#features-fc"><code>features</code></a>.</p>
 </div>
 <div id="L2-export-tool" class="section level4">
 <h4><span class="header-section-number">4.3.6.2</span> <code>Level 2</code></h4>

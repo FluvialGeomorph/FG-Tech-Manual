@@ -522,50 +522,66 @@ knitr::include_graphics("figures/toolbox/tool_Report-L3.png")
 
 
 ### 04 - Symbology toolset
-The purpose of this toolset is to hold the tools that standardize the symbolization of FluvialGeomorph datasets. Given the complexity of the datasets involved in this analysis
+The purpose of this toolset is to hold the tools that standardize the symbolization of FluvialGeomorph datasets. Given the complexity of the datasets involved in this analysis, consistent symbolization improves interpretation and speeds analysis. 
 
 #### `Banklines` {#banklines-symbol-tool}
+Applies standard FluvialGeomorph symbology to the [`banklines`](#banklines-fc) feature class. 
 
 #### `Contibuting Area` {#contributing-area-symbol-tool}
+Applies standard FluvialGeomorph symbology to the [`contributing_area`](#contributing-area-fc) feature class. 
 
 #### `Cross Section` {#cross-section-symbol-tool}
+Applies standard FluvialGeomorph symbology to the cross section feature classes (i.e., [`regular cross sections`](#regular-xs-fc), [`riffle_floodplain` and `riffle_channel`](#riffle-xs-fc), and [cross section dimensions](#xs-dimensions-fc)). 
 
 #### `DEM` {#dem-symbol-tool}
+Applies standard FluvialGeomorph symbology to the [`dem_hydro`](#dem-hydro-raster) raster. 
 
 #### `Features` {#features-symbol-tool}
+Applies standard FluvialGeomorph symbology to the [`features`](#features-fc) feature class. 
 
 #### `Flowline` {#flowline-symbol-tool}
+Applies standard FluvialGeomorph symbology to the [`flowline`](#flowline-fc) feature class. 
 
 #### `Flowline Points` {#flowline-points-symbol-tool}
+Applies standard FluvialGeomorph symbology to the [`flowline_points`](#flowline-points-fc) feature class. 
 
 #### `Loop Points` {#loop-points-symbol-tool}
+Applies standard FluvialGeomorph symbology to the [`loop_points`](#loop-points-fc) feature class. 
 
 #### `Valleyline` {#valleyline-symbol-tool}
-
+Applies standard FluvialGeomorph symbology to the [`valleyline`](#valleyline-fc) feature class. 
 
 ***
 
 ### 05 - Check toolset
-The purpose of this toolset is to hold the tools used to check FluvialGeomorph features for errors. 
-
-#### `Check Bankline Points` {#check-bankline-points-tool}
+The purpose of this toolset is to hold the tools used to check FluvialGeomorph features for some common, preventable errors. 
 
 #### `Check Banklines` {#check-banklines-tool}
+This ArcGIS script tool checks the [`banklines`](#banklines-fc) feature class using the R function [`fluvgeo::check_banklines`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_banklines.R). 
 
-#### `Check Cross Section Points` {#check-cross-section-points-tool}
+#### `Check Bankline Points` {#check-bankline-points-tool}
+This ArcGIS script tool checks the [`bankline_points`](#bankline-points-fc) feature class using the R function [`fluvgeo::check_bankline_points`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_bankline_points.R). 
 
 #### `Check Cross Section` {#check-cross-section-tool}
+This ArcGIS script tool checks the cross section feature classes (i.e., [`regular cross sections`](#regular-xs-fc), [`riffle_floodplain` and `riffle_channel`](#riffle-xs-fc), and [cross section dimensions](#xs-dimensions-fc)) using the R function [`fluvgeo::check_cross_section`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_cross_section.R). 
+
+#### `Check Cross Section Points` {#check-cross-section-points-tool}
+This ArcGIS script tool checks the [cross section points, `*_points`](#xs-points-fc) feature class using the R function [`fluvgeo::check_cross_section_points`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_cross_section_points.R). 
 
 #### `Check Features` {#check-features-tool}
+This ArcGIS script tool checks the [`features`](#features-fc) feature class using the R function [`fluvgeo::check_cross_section_points`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_cross_section_points.R). 
 
 #### `Check Flowline` {#check-flowline-tool}
+This ArcGIS script tool checks the [`flowline`](#flowline-fc) feature class using the R function [`fluvgeo::check_flowline`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_flowline.R). 
 
 #### `Check Flowline Points` {#check-flowline-points-tool}
+This ArcGIS script tool checks the [`flowline_points`](#flowline-points-fc) feature class using the R function [`fluvgeo::check_flowline_points`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_flowline_points.R). 
 
 #### `Check Loop Points` {#check-loop-points-tool}
+This ArcGIS script tool checks the [`loop_points`](#loop-points-fc) feature class using the R function [`fluvgeo::check_loop_points`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_loop_points.R). 
 
 #### `Check Valleyline` {#check-valleyline-tool}
-
+This ArcGIS script tool checks the [`valleyline`](#valleyline-fc) feature class using the R function [`fluvgeo::check_valleyline`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/check_valleyline.R). 
 
 ***
 
@@ -573,6 +589,7 @@ The purpose of this toolset is to hold the tools used to check FluvialGeomorph f
 The purpose of this toolset is to export the tabular data from geospatial datasets for further analysis. 
 
 #### `Level 1` {#L1-export-tool}
+This ArcGIS script tool exports the tabular data from these Level 1 feature classes: [`flowline_points`](#flowline-points-fc), [regular cross sections](#regular-xs-fc), [cross section points](#xs-points-fc), and [`features`](#features-fc). 
 
 #### `Level 2` {#L2-export-tool}
 

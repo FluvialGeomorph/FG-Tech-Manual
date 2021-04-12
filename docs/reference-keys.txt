@@ -179,10 +179,10 @@ flowline-points-symbol-tool
 loop-points-symbol-tool
 valleyline-symbol-tool
 check-toolset
-check-bankline-points-tool
 check-banklines-tool
-check-cross-section-points-tool
+check-bankline-points-tool
 check-cross-section-tool
+check-cross-section-points-tool
 check-features-tool
 check-flowline-tool
 check-flowline-points-tool
