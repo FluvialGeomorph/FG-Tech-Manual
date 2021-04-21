@@ -125,7 +125,7 @@ knitr::include_graphics("figures/toolbox/tool_Stream_Network_Points.png")
 #### `04b - Slope and Sinuosity` {#slope-sinuosity-tool}
 **Purpose** - This tool calculates the [`gradient_*`](#gradient-fc) points feature class for a [`flowline_points`](#flowline-points-fc) or [`stream_network`](#stream-network-fc) feature class using these instructions from the [user manual](https://www.usermanual.fluvialgeomorph.org/level-1-workflow.html#calculate-slope-and-sinuosity). 
 
-**Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_04b_Gradient.R`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04b_Gradient.R). This Python script call the R function [`fluvgeo::slope_sinuosity`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/slope_sinuosity.R). 
+**Code** - This ArcGIS script tool calls the R script [`FluvialGeomorph-toolbox/tools/_04b_Gradient.R`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04b_Gradient.R). This Python script call the R function [`fluvgeo::slope_sinuosity`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/slope_sinuosity.R). 
 
 **Parameters** - This tool contains the following parameters:
 ```{r, echo=FALSE}
