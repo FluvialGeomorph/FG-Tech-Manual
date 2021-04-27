@@ -4,6 +4,7 @@ date: "`r Sys.Date()`"
 author: 
   - Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers
   - Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District
+description: "This technical manual describes the technical background of the FluvialGeomorph toolbox."
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 url: 'https\://techmanual.fluvialgeomorph.org/'
@@ -13,7 +14,6 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: chicago
 link-citations: true
-description: "This technical manual describes the technical background of the FluvialGeomorph toolbox."
 ---
 
 ```{r library, include=FALSE}
