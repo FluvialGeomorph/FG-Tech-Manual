@@ -1,0 +1,5 @@
+docs/** linguist-documentation
+*.Rmd linguist-detectable
+*.RData linguist-detectable
+*.Rmd linguist-language=R
+*.RData linguist-language=R
