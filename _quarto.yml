@@ -33,7 +33,5 @@ number-depth: 1
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
 
 editor: source

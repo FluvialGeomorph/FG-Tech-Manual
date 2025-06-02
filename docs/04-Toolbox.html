@@ -285,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The purpose of this toolset is to hold the tools that perform the FluvialGeomorph analysis.</p>
 <section id="hydro-dem-tool" class="level4">
 <h4 class="anchored" data-anchor-id="hydro-dem-tool"><code>02 - Hydro DEM</code></h4>
-<p><strong>Purpose</strong> - This tool “burns” (sets the elevation to the same value for all pixels along the extent of the polyline feature) a <a href="#cutlines-fc"><code>cutlines</code></a> feature class into the supplied DEM and creates the <a href="#dem-hydro-raster"><code>dem_hydro</code></a> in the output workspace using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#hydro-modify-dem">user manual</a>. See <a href="#hydro-modification-concept">this section</a> for a detailed discussion of why hydro modification is required.</p>
+<p><strong>Purpose</strong> - This tool “burns” (sets the elevation to the same value for all pixels along the extent of the polyline feature) a <a href="#cutlines-fc"><code>cutlines</code></a> feature class into the supplied DEM and creates the <a href="#dem-hydro-raster"><code>dem_hydro</code></a> in the output workspace using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#hydro-modify-dem">user manual</a>. See <a href="02-Concepts.html#hydro-modification-concept">this section</a> for a detailed discussion of why hydro modification is required.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_02_HydroDEM.py"><code>FluvialGeomorph-toolbox/tools/_02_HydroDEM.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
 <div class="cell">
@@ -891,7 +891,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="detrend-dem-tool" class="level4">
 <h4 class="anchored" data-anchor-id="detrend-dem-tool"><code>07 - Detrend DEM</code></h4>
-<p>This tool creates the <a href="#detrend-raster"><code>detrend</code></a> raster using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#define-initial-floodplain-and-channel-extent">user manual</a>. This tool uses <a href="#flowline-points-fc"><code>flowline_points</code></a> to remove the elevation trend from the stream reach. See <a href="#detrending-concept">this section</a> for a detailed discussion on detrended DEMs.</p>
+<p>This tool creates the <a href="#detrend-raster"><code>detrend</code></a> raster using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#define-initial-floodplain-and-channel-extent">user manual</a>. This tool uses <a href="#flowline-points-fc"><code>flowline_points</code></a> to remove the elevation trend from the stream reach. See <a href="02-Concepts.html#detrending-concept">this section</a> for a detailed discussion on detrended DEMs.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_07_DetrendDEM.py"><code>FluvialGeomorph-toolbox/tools/_07_DetrendDEM.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
 <div class="cell">
