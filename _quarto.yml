@@ -1,0 +1,39 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "FluvialGeomorph Technical Manual"
+  author:
+    - Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers
+    - Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District
+  date: "2025-06-02"
+  repo-url: https://github.com/FluvialGeomorph/FG-Tech-Manual
+  page-navigation: true
+  search: true
+  chapters:
+    - index.qmd
+    - 01-intro.qmd
+    - 02-Concepts.qmd
+    - 03-FieldMethods.qmd
+    - 04-Toolbox.qmd
+    - 05-Metrics.qmd
+    - 06-Workflows.qmd
+    - 07-References.qmd
+  sidebar:
+    style: docked
+    background: light
+  page-footer:
+    left: "Made with love by USACE"
+    background: light
+
+bibliography: [packages.bib, book.bib]
+number-depth: 1
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: source

@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers">
-<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District">
-<meta name="dcterms.date" content="2025-06-02">
 
-<title>FluvialGeomorph Technical Manual</title>
+<title>1&nbsp; Introduction – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-intro.html" rel="next">
+<link href="./02-Concepts.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,13 +111,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -169,13 +167,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
-  <ul class="collapse">
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#distribution-statement" id="toc-distribution-statement" class="nav-link" data-scroll-target="#distribution-statement">Distribution Statement</a></li>
-  <li><a href="#unit-conversion-factors" id="toc-unit-conversion-factors" class="nav-link" data-scroll-target="#unit-conversion-factors">Unit Conversion Factors</a></li>
-  <li><a href="#notation-list" id="toc-notation-list" class="nav-link" data-scroll-target="#notation-list">Notation List</a></li>
-  </ul></li>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#fluvialgeomorph-goals" id="toc-fluvialgeomorph-goals" class="nav-link" data-scroll-target="#fluvialgeomorph-goals">FluvialGeomorph Goals</a></li>
+  <li><a href="#design-philosophy" id="toc-design-philosophy" class="nav-link" data-scroll-target="#design-philosophy">Design Philosophy</a></li>
+  <li><a href="#previous-work" id="toc-previous-work" class="nav-link" data-scroll-target="#previous-work">Previous Work</a></li>
+  <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources">Other Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -184,27 +180,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">FluvialGeomorph Technical Manual</h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers </p>
-             <p>Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 2, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -214,111 +197,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Funding for development and maintenance of FluvialGeomorph has been provided by the following US Army Corps of Engineers (USACE) programs:</p>
+<p>This chapter describes the background and approach used in the development of the FluvialGeomorph project.</p>
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
 <ul>
-<li><a href="https://emrrp.el.erdc.dren.mil">Ecosystem Management and Restoration Research Program (EMRRP)</a>.</li>
-<li><a href="https://rsm.usace.army.mil/">Regional Sediment Management Program (RSM)</a></li>
-<li><a href="https://www.mvd.usace.army.mil/Missions/Mississippi-River-Science-Technology/MS-River-Geomorphology-Potamology/">Mississippi River Geomorphology and Potamology Program (MRG&amp;P)</a></li>
-<li><a href="https://www.iwr.usace.army.mil/Missions/Flood-Risk-Management/Flood-Risk-Management-Program/">Flood Risk Management Program (FRM)</a></li>
-<li><a href="https://ewn.el.erdc.dren.mil/">Engineering With Nature (EWN)</a></li>
+<li>Document the methods used in FluvialGeomorph</li>
+<li>Establish a common set of concepts and terminology between fluvial geomorphologists, geospatial analysts, and biologists/ecologists</li>
+<li>define terms</li>
+<li>Describe tools</li>
+<li>Describe products</li>
 </ul>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/USACE_200.png" class="img-fluid figure-img" width="130"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EMRRP_logo_200.png" class="img-fluid figure-img" width="146"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/RSM_200.png" class="img-fluid figure-img" width="103"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/MRG&amp;P_300.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/FRMP_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/SilverJackets_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EWN_200.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox">FluvialGeomorph ArcGIS toolbox</a> provides a set of tools for conducting rapid fluvial geomorphology analysis and assessment. It allows a user to use high resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to cost effectively extract stream channel dimensions at fine scale for large spatial extents. This document describes the methods used in the development of the FluvialGeomorph project.</p>
 </section>
-<section id="distribution-statement" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-statement">Distribution Statement</h2>
-<p>Approved for public release; distribution is unlimited</p>
+<section id="fluvialgeomorph-goals" class="level2">
+<h2 class="anchored" data-anchor-id="fluvialgeomorph-goals">FluvialGeomorph Goals</h2>
+<ul>
+<li>Develop reproducible methods for analyzing streams using remote sensing data</li>
+<li>Develop a set of fluvial feature extraction tools</li>
+<li>Develop methods that take advantage of the wealth on new LiDAR survey data</li>
+</ul>
 </section>
-<section id="unit-conversion-factors" class="level2">
-<h2 class="anchored" data-anchor-id="unit-conversion-factors">Unit Conversion Factors</h2>
-<table class="caption-top table">
-<caption>Unit Conversion Factors</caption>
-<thead>
-<tr class="header">
-<th>Multiply</th>
-<th>By</th>
-<th>To Obtain</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>feet</td>
-<td>0.3048</td>
-<td>meters</td>
-</tr>
-<tr class="even">
-<td>miles</td>
-<td>1.60934</td>
-<td>kilometers</td>
-</tr>
-<tr class="odd">
-<td>square miles</td>
-<td>2.58999</td>
-<td>square kilometers</td>
-</tr>
-</tbody>
-</table>
+<section id="design-philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="design-philosophy">Design Philosophy</h2>
+<ul>
+<li>Open source</li>
+<li>Establish a framework to build upon</li>
+<li>Combine best-of-breed tools</li>
+<li>Opinionated API</li>
+<li>Standardize reporting products</li>
+</ul>
 </section>
-<section id="notation-list" class="level2">
-<h2 class="anchored" data-anchor-id="notation-list">Notation List</h2>
-<hr>
+<section id="previous-work" class="level2">
+<h2 class="anchored" data-anchor-id="previous-work">Previous Work</h2>
+<ul>
+<li>River Bathymetry Toolkit</li>
+<li>TauDEM</li>
+</ul>
+</section>
+<section id="other-resources" class="level2">
+<h2 class="anchored" data-anchor-id="other-resources">Other Resources</h2>
+<ul>
+<li>How to use the tools is described in the user manual</li>
+<li>Application of this approach is described in other technical reports.</li>
+</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -744,10 +666,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02-Concepts.html" class="pagination-link" aria-label="Concepts">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Concepts</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers">
-<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District">
-<meta name="dcterms.date" content="2025-06-02">
 
-<title>FluvialGeomorph Technical Manual</title>
+<title>2&nbsp; Concepts – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-intro.html" rel="next">
+<link href="./03-FieldMethods.html" rel="next">
+<link href="./01-intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-Concepts.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Concepts</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -125,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-Concepts.html" class="sidebar-item-text sidebar-link">
+  <a href="./02-Concepts.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Concepts</span></span></a>
   </div>
 </li>
@@ -169,12 +167,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#fluvial-geomorphology" id="toc-fluvial-geomorphology" class="nav-link active" data-scroll-target="#fluvial-geomorphology">Fluvial Geomorphology</a>
   <ul class="collapse">
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#distribution-statement" id="toc-distribution-statement" class="nav-link" data-scroll-target="#distribution-statement">Distribution Statement</a></li>
-  <li><a href="#unit-conversion-factors" id="toc-unit-conversion-factors" class="nav-link" data-scroll-target="#unit-conversion-factors">Unit Conversion Factors</a></li>
-  <li><a href="#notation-list" id="toc-notation-list" class="nav-link" data-scroll-target="#notation-list">Notation List</a></li>
+  <li><a href="#reach" id="toc-reach" class="nav-link" data-scroll-target="#reach">Reach</a></li>
+  <li><a href="#flowline-concept" id="toc-flowline-concept" class="nav-link" data-scroll-target="#flowline-concept">Flowline</a></li>
+  <li><a href="#position-along-river" id="toc-position-along-river" class="nav-link" data-scroll-target="#position-along-river">Position Along River</a></li>
+  <li><a href="#pool-riffle-run" id="toc-pool-riffle-run" class="nav-link" data-scroll-target="#pool-riffle-run">Pool-Riffle-Run</a></li>
+  <li><a href="#xs-concept" id="toc-xs-concept" class="nav-link" data-scroll-target="#xs-concept">Cross Section</a></li>
+  <li><a href="#bankfull-concept" id="toc-bankfull-concept" class="nav-link" data-scroll-target="#bankfull-concept">Bankfull</a></li>
+  <li><a href="#flood-prone-concept" id="toc-flood-prone-concept" class="nav-link" data-scroll-target="#flood-prone-concept">Flood Prone</a></li>
+  <li><a href="#planform-planform-concept" id="toc-planform-planform-concept" class="nav-link" data-scroll-target="#planform-planform-concept">Planform {planform-concept}</a></li>
+  </ul></li>
+  <li><a href="#geospatial" id="toc-geospatial" class="nav-link" data-scroll-target="#geospatial">Geospatial</a>
+  <ul class="collapse">
+  <li><a href="#lidar-stream-measurement" id="toc-lidar-stream-measurement" class="nav-link" data-scroll-target="#lidar-stream-measurement">LiDAR Stream Measurement</a></li>
+  <li><a href="#terrain-models" id="toc-terrain-models" class="nav-link" data-scroll-target="#terrain-models">Terrain Models</a></li>
+  <li><a href="#terrain-visualization-concept" id="toc-terrain-visualization-concept" class="nav-link" data-scroll-target="#terrain-visualization-concept">Terrain Visualization</a></li>
+  <li><a href="#synthetic-stream-concept" id="toc-synthetic-stream-concept" class="nav-link" data-scroll-target="#synthetic-stream-concept">Synthetic Stream Delineation</a></li>
+  <li><a href="#flow-accumulation-concept" id="toc-flow-accumulation-concept" class="nav-link" data-scroll-target="#flow-accumulation-concept">Flow Accumulation</a></li>
+  <li><a href="#hydro-modification-concept" id="toc-hydro-modification-concept" class="nav-link" data-scroll-target="#hydro-modification-concept">Hydro Modification</a></li>
+  <li><a href="#detrending-concept" id="toc-detrending-concept" class="nav-link" data-scroll-target="#detrending-concept">Detrending</a></li>
+  <li><a href="#water-surface-elevation" id="toc-water-surface-elevation" class="nav-link" data-scroll-target="#water-surface-elevation">Water Surface Elevation</a></li>
+  <li><a href="#spatial-data-clearinghouses-for-terrain-data" id="toc-spatial-data-clearinghouses-for-terrain-data" class="nav-link" data-scroll-target="#spatial-data-clearinghouses-for-terrain-data">Spatial Data Clearinghouses for Terrain Data</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -184,27 +198,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">FluvialGeomorph Technical Manual</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Concepts</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers </p>
-             <p>Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 2, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -214,108 +215,115 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Funding for development and maintenance of FluvialGeomorph has been provided by the following US Army Corps of Engineers (USACE) programs:</p>
+<section id="fluvial-geomorphology" class="level2">
+<h2 class="anchored" data-anchor-id="fluvial-geomorphology">Fluvial Geomorphology</h2>
+<p>This section will discuss</p>
+<section id="reach" class="level3">
+<h3 class="anchored" data-anchor-id="reach">Reach</h3>
+<p>hierarchical levels: project study area, site, reach</p>
+</section>
+<section id="flowline-concept" class="level3">
+<h3 class="anchored" data-anchor-id="flowline-concept">Flowline</h3>
 <ul>
-<li><a href="https://emrrp.el.erdc.dren.mil">Ecosystem Management and Restoration Research Program (EMRRP)</a>.</li>
-<li><a href="https://rsm.usace.army.mil/">Regional Sediment Management Program (RSM)</a></li>
-<li><a href="https://www.mvd.usace.army.mil/Missions/Mississippi-River-Science-Technology/MS-River-Geomorphology-Potamology/">Mississippi River Geomorphology and Potamology Program (MRG&amp;P)</a></li>
-<li><a href="https://www.iwr.usace.army.mil/Missions/Flood-Risk-Management/Flood-Risk-Management-Program/">Flood Risk Management Program (FRM)</a></li>
-<li><a href="https://ewn.el.erdc.dren.mil/">Engineering With Nature (EWN)</a></li>
+<li>centerline</li>
+<li>thalweg</li>
 </ul>
+</section>
+<section id="position-along-river" class="level3">
+<h3 class="anchored" data-anchor-id="position-along-river">Position Along River</h3>
+</section>
+<section id="pool-riffle-run" class="level3">
+<h3 class="anchored" data-anchor-id="pool-riffle-run">Pool-Riffle-Run</h3>
+</section>
+<section id="xs-concept" class="level3">
+<h3 class="anchored" data-anchor-id="xs-concept">Cross Section</h3>
+</section>
+<section id="bankfull-concept" class="level3">
+<h3 class="anchored" data-anchor-id="bankfull-concept">Bankfull</h3>
+</section>
+<section id="flood-prone-concept" class="level3">
+<h3 class="anchored" data-anchor-id="flood-prone-concept">Flood Prone</h3>
+</section>
+<section id="planform-planform-concept" class="level3">
+<h3 class="anchored" data-anchor-id="planform-planform-concept">Planform {planform-concept}</h3>
+<ul>
+<li>loops contain bends</li>
+<li>loops have an apex</li>
+<li>loops alternate</li>
+<li>crossovers</li>
+<li>Valley Line</li>
+</ul>
+</section>
+</section>
+<section id="geospatial" class="level2">
+<h2 class="anchored" data-anchor-id="geospatial">Geospatial</h2>
+<section id="lidar-stream-measurement" class="level3">
+<h3 class="anchored" data-anchor-id="lidar-stream-measurement">LiDAR Stream Measurement</h3>
+<ul>
+<li>discuss the difference between water surface and channel bottom</li>
+<li>diagram of stream</li>
+</ul>
+</section>
+<section id="terrain-models" class="level3">
+<h3 class="anchored" data-anchor-id="terrain-models">Terrain Models</h3>
+<ul>
+<li>point cloud</li>
+<li>raster</li>
+<li>surface models, terrain models</li>
+</ul>
+</section>
+<section id="terrain-visualization-concept" class="level3">
+<h3 class="anchored" data-anchor-id="terrain-visualization-concept">Terrain Visualization</h3>
+</section>
+<section id="synthetic-stream-concept" class="level3">
+<h3 class="anchored" data-anchor-id="synthetic-stream-concept">Synthetic Stream Delineation</h3>
+</section>
+<section id="flow-accumulation-concept" class="level3">
+<h3 class="anchored" data-anchor-id="flow-accumulation-concept">Flow Accumulation</h3>
+</section>
+<section id="hydro-modification-concept" class="level3">
+<h3 class="anchored" data-anchor-id="hydro-modification-concept">Hydro Modification</h3>
+</section>
+<section id="detrending-concept" class="level3">
+<h3 class="anchored" data-anchor-id="detrending-concept">Detrending</h3>
+<ul>
+<li>“relative bank height”</li>
+<li>figure: side-by-side DEM and detrend</li>
+<li>figure: side-by-side longitudinal profiles</li>
+</ul>
+</section>
+<section id="water-surface-elevation" class="level3">
+<h3 class="anchored" data-anchor-id="water-surface-elevation">Water Surface Elevation</h3>
+<p>Since water almost completely absorbs LiDAR light pulses, areas of water are usually missing elevation data. However, this does not mean that water surface elevation (WSE) cannot be derived from or accurately represented in LiDAR datasets. The elevation of water areas in DEMs derived from LiDAR point clouds can be represented due to the acquisition of points along the water’s edge. See Figure x1 for an illustration of where these points are located.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/USACE_200.png" class="img-fluid figure-img" width="130"></p>
+<p><img src="figures/water_edge_lidar_points.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>LiDAR Points Acquired Close to the Water’s Edge Define the Water Surface. Mississippi River, RM 435, Vicksburg, MS.</figcaption>
 </figure>
 </div>
 </div>
+</div>
+<p>The point cloud density will largely determine how accurately the water surface is captured, driven by the probability of capturing points as close to the water line as possible. In relatively low point cloud density LiDAR collections (&gt;=1m point cloud spacing) the water surface is often represented with artifacts. These artifacts are commonly referred to as TIN (Triangulated Irregular Networks) artifacts created when the DEM is derived. These occur when LiDAR points were not regularly acquired close to the water’s edge. Sections of the banklines where LiDAR points were not acquired close to the water’s edge will appear as triangular “humps” in the water surface. In Figure x2, these “hump” artifacts are clearly visible as reddish areas, while the lower elevation areas close to the water surface elevation appears as green and blue areas.</p>
+<div class="cell">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/EMRRP_logo_200.png" class="img-fluid figure-img" width="146"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/RSM_200.png" class="img-fluid figure-img" width="103"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/MRG&amp;P_300.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/FRMP_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/SilverJackets_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EWN_200.png" class="img-fluid figure-img" width="150"></p>
+<p><img src="figures/R1_Detail.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>DEM artifacts due to LiDAR points not being captured close enough to the water’s edge. Mississippi River, RM 444-445.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox">FluvialGeomorph ArcGIS toolbox</a> provides a set of tools for conducting rapid fluvial geomorphology analysis and assessment. It allows a user to use high resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to cost effectively extract stream channel dimensions at fine scale for large spatial extents. This document describes the methods used in the development of the FluvialGeomorph project.</p>
 </section>
-<section id="distribution-statement" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-statement">Distribution Statement</h2>
-<p>Approved for public release; distribution is unlimited</p>
-</section>
-<section id="unit-conversion-factors" class="level2">
-<h2 class="anchored" data-anchor-id="unit-conversion-factors">Unit Conversion Factors</h2>
-<table class="caption-top table">
-<caption>Unit Conversion Factors</caption>
-<thead>
-<tr class="header">
-<th>Multiply</th>
-<th>By</th>
-<th>To Obtain</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>feet</td>
-<td>0.3048</td>
-<td>meters</td>
-</tr>
-<tr class="even">
-<td>miles</td>
-<td>1.60934</td>
-<td>kilometers</td>
-</tr>
-<tr class="odd">
-<td>square miles</td>
-<td>2.58999</td>
-<td>square kilometers</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="notation-list" class="level2">
-<h2 class="anchored" data-anchor-id="notation-list">Notation List</h2>
-<hr>
+<section id="spatial-data-clearinghouses-for-terrain-data" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-data-clearinghouses-for-terrain-data">Spatial Data Clearinghouses for Terrain Data</h3>
+<ul>
+<li>3DEP</li>
+<li>The National Map</li>
+<li>State clearinghouses</li>
+</ul>
 
 
 </section>
@@ -744,10 +752,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./01-intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03-FieldMethods.html" class="pagination-link" aria-label="Field Methods">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Field Methods</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

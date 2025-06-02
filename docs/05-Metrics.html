@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers">
-<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District">
-<meta name="dcterms.date" content="2025-06-02">
 
-<title>FluvialGeomorph Technical Manual</title>
+<title>5&nbsp; Metrics – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-intro.html" rel="next">
+<link href="./06-Workflows.html" rel="next">
+<link href="./04-Toolbox.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-Metrics.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metrics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -143,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-Metrics.html" class="sidebar-item-text sidebar-link">
+  <a href="./05-Metrics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metrics</span></span></a>
   </div>
 </li>
@@ -169,12 +167,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#level-1" id="toc-level-1" class="nav-link active" data-scroll-target="#level-1">Level 1</a>
   <ul class="collapse">
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#distribution-statement" id="toc-distribution-statement" class="nav-link" data-scroll-target="#distribution-statement">Distribution Statement</a></li>
-  <li><a href="#unit-conversion-factors" id="toc-unit-conversion-factors" class="nav-link" data-scroll-target="#unit-conversion-factors">Unit Conversion Factors</a></li>
-  <li><a href="#notation-list" id="toc-notation-list" class="nav-link" data-scroll-target="#notation-list">Notation List</a></li>
+  <li><a href="#drainage-area" id="toc-drainage-area" class="nav-link" data-scroll-target="#drainage-area">Drainage Area</a></li>
+  <li><a href="#slope" id="toc-slope" class="nav-link" data-scroll-target="#slope">Slope</a></li>
+  <li><a href="#sinuosity" id="toc-sinuosity" class="nav-link" data-scroll-target="#sinuosity">Sinuosity</a></li>
+  </ul></li>
+  <li><a href="#level-2" id="toc-level-2" class="nav-link" data-scroll-target="#level-2">Level 2</a>
+  <ul class="collapse">
+  <li><a href="#discharge" id="toc-discharge" class="nav-link" data-scroll-target="#discharge">Discharge</a></li>
+  <li><a href="#xs-area" id="toc-xs-area" class="nav-link" data-scroll-target="#xs-area">XS Area</a></li>
+  <li><a href="#xs-width" id="toc-xs-width" class="nav-link" data-scroll-target="#xs-width">XS Width</a></li>
+  <li><a href="#xs-depth" id="toc-xs-depth" class="nav-link" data-scroll-target="#xs-depth">XS Depth</a></li>
+  <li><a href="#xs-width-to-depth-ratio" id="toc-xs-width-to-depth-ratio" class="nav-link" data-scroll-target="#xs-width-to-depth-ratio">XS Width to Depth Ratio</a></li>
+  <li><a href="#entrenchment-ratio" id="toc-entrenchment-ratio" class="nav-link" data-scroll-target="#entrenchment-ratio">Entrenchment Ratio</a></li>
+  <li><a href="#shear-stress" id="toc-shear-stress" class="nav-link" data-scroll-target="#shear-stress">Shear Stress</a></li>
+  <li><a href="#stream-power" id="toc-stream-power" class="nav-link" data-scroll-target="#stream-power">Stream Power</a></li>
+  </ul></li>
+  <li><a href="#level-3" id="toc-level-3" class="nav-link" data-scroll-target="#level-3">Level 3</a>
+  <ul class="collapse">
+  <li><a href="#bend-radius-of-curvature" id="toc-bend-radius-of-curvature" class="nav-link" data-scroll-target="#bend-radius-of-curvature">Bend Radius of Curvature</a></li>
+  <li><a href="#meander-length" id="toc-meander-length" class="nav-link" data-scroll-target="#meander-length">Meander Length</a></li>
+  <li><a href="#meander-bend-width" id="toc-meander-bend-width" class="nav-link" data-scroll-target="#meander-bend-width">Meander Bend Width</a></li>
+  <li><a href="#radius-of-curvature-to-bankfull-width-ratio" id="toc-radius-of-curvature-to-bankfull-width-ratio" class="nav-link" data-scroll-target="#radius-of-curvature-to-bankfull-width-ratio">Radius of Curvature to Bankfull Width Ratio</a></li>
+  <li><a href="#meander-bend-width-to-bankfull-width-ratio" id="toc-meander-bend-width-to-bankfull-width-ratio" class="nav-link" data-scroll-target="#meander-bend-width-to-bankfull-width-ratio">Meander Bend Width to Bankfull Width Ratio</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -184,27 +200,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">FluvialGeomorph Technical Manual</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metrics</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers </p>
-             <p>Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 2, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -214,107 +217,73 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Funding for development and maintenance of FluvialGeomorph has been provided by the following US Army Corps of Engineers (USACE) programs:</p>
+<section id="level-1" class="level2">
+<h2 class="anchored" data-anchor-id="level-1">Level 1</h2>
+<section id="drainage-area" class="level3">
+<h3 class="anchored" data-anchor-id="drainage-area">Drainage Area</h3>
+</section>
+<section id="slope" class="level3">
+<h3 class="anchored" data-anchor-id="slope">Slope</h3>
+</section>
+<section id="sinuosity" class="level3">
+<h3 class="anchored" data-anchor-id="sinuosity">Sinuosity</h3>
+<hr>
+</section>
+</section>
+<section id="level-2" class="level2">
+<h2 class="anchored" data-anchor-id="level-2">Level 2</h2>
+<section id="discharge" class="level3">
+<h3 class="anchored" data-anchor-id="discharge">Discharge</h3>
+</section>
+<section id="xs-area" class="level3">
+<h3 class="anchored" data-anchor-id="xs-area">XS Area</h3>
+</section>
+<section id="xs-width" class="level3">
+<h3 class="anchored" data-anchor-id="xs-width">XS Width</h3>
+</section>
+<section id="xs-depth" class="level3">
+<h3 class="anchored" data-anchor-id="xs-depth">XS Depth</h3>
 <ul>
-<li><a href="https://emrrp.el.erdc.dren.mil">Ecosystem Management and Restoration Research Program (EMRRP)</a>.</li>
-<li><a href="https://rsm.usace.army.mil/">Regional Sediment Management Program (RSM)</a></li>
-<li><a href="https://www.mvd.usace.army.mil/Missions/Mississippi-River-Science-Technology/MS-River-Geomorphology-Potamology/">Mississippi River Geomorphology and Potamology Program (MRG&amp;P)</a></li>
-<li><a href="https://www.iwr.usace.army.mil/Missions/Flood-Risk-Management/Flood-Risk-Management-Program/">Flood Risk Management Program (FRM)</a></li>
-<li><a href="https://ewn.el.erdc.dren.mil/">Engineering With Nature (EWN)</a></li>
+<li>maximum depth</li>
+<li>mean depth</li>
 </ul>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/USACE_200.png" class="img-fluid figure-img" width="130"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EMRRP_logo_200.png" class="img-fluid figure-img" width="146"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/RSM_200.png" class="img-fluid figure-img" width="103"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/MRG&amp;P_300.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/FRMP_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/SilverJackets_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EWN_200.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox">FluvialGeomorph ArcGIS toolbox</a> provides a set of tools for conducting rapid fluvial geomorphology analysis and assessment. It allows a user to use high resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to cost effectively extract stream channel dimensions at fine scale for large spatial extents. This document describes the methods used in the development of the FluvialGeomorph project.</p>
 </section>
-<section id="distribution-statement" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-statement">Distribution Statement</h2>
-<p>Approved for public release; distribution is unlimited</p>
+<section id="xs-width-to-depth-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="xs-width-to-depth-ratio">XS Width to Depth Ratio</h3>
 </section>
-<section id="unit-conversion-factors" class="level2">
-<h2 class="anchored" data-anchor-id="unit-conversion-factors">Unit Conversion Factors</h2>
-<table class="caption-top table">
-<caption>Unit Conversion Factors</caption>
-<thead>
-<tr class="header">
-<th>Multiply</th>
-<th>By</th>
-<th>To Obtain</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>feet</td>
-<td>0.3048</td>
-<td>meters</td>
-</tr>
-<tr class="even">
-<td>miles</td>
-<td>1.60934</td>
-<td>kilometers</td>
-</tr>
-<tr class="odd">
-<td>square miles</td>
-<td>2.58999</td>
-<td>square kilometers</td>
-</tr>
-</tbody>
-</table>
+<section id="entrenchment-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="entrenchment-ratio">Entrenchment Ratio</h3>
 </section>
-<section id="notation-list" class="level2">
-<h2 class="anchored" data-anchor-id="notation-list">Notation List</h2>
+<section id="shear-stress" class="level3">
+<h3 class="anchored" data-anchor-id="shear-stress">Shear Stress</h3>
+<ul>
+<li>density</li>
+</ul>
+</section>
+<section id="stream-power" class="level3">
+<h3 class="anchored" data-anchor-id="stream-power">Stream Power</h3>
+<ul>
+<li>unit</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="level-3" class="level2">
+<h2 class="anchored" data-anchor-id="level-3">Level 3</h2>
+<section id="bend-radius-of-curvature" class="level3">
+<h3 class="anchored" data-anchor-id="bend-radius-of-curvature">Bend Radius of Curvature</h3>
+</section>
+<section id="meander-length" class="level3">
+<h3 class="anchored" data-anchor-id="meander-length">Meander Length</h3>
+</section>
+<section id="meander-bend-width" class="level3">
+<h3 class="anchored" data-anchor-id="meander-bend-width">Meander Bend Width</h3>
+</section>
+<section id="radius-of-curvature-to-bankfull-width-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="radius-of-curvature-to-bankfull-width-ratio">Radius of Curvature to Bankfull Width Ratio</h3>
+</section>
+<section id="meander-bend-width-to-bankfull-width-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="meander-bend-width-to-bankfull-width-ratio">Meander Bend Width to Bankfull Width Ratio</h3>
 <hr>
 
 
@@ -744,10 +713,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./04-Toolbox.html" class="pagination-link" aria-label="Toolbox">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Toolbox</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06-Workflows.html" class="pagination-link" aria-label="Workflows">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Workflows</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
