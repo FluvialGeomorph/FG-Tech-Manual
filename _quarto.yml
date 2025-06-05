@@ -39,7 +39,7 @@ book:
     - 4-1-QAChecklist.qmd
 
   sidebar:
-    style: docked
+    style: "docked"
     background: light
   page-footer:
     left: "Made with love by USACE"
@@ -50,7 +50,9 @@ number-depth: 1
 
 format:
   html:
-    light: flatly
-    dark: darkly
+    theme:
+      light: flatly
+      dark: darkly
+    respect-user-color-scheme: true
 
 editor: source
