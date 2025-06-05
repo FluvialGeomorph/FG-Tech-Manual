@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers">
-<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District">
-<meta name="dcterms.date" content="2025-06-02">
 
-<title>FluvialGeomorph Technical Manual</title>
+<title>14&nbsp; Level 3 Workflow – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./0-1-Intro.html" rel="next">
+<link href="./0-7-References.html" rel="next">
+<link href="./3-4-Level-2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Workflows.html">Workflows</a></li><li class="breadcrumb-item"><a href="./3-5-Level-3.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -228,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-5-Level-3.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-5-Level-3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span></a>
   </div>
 </li>
@@ -267,42 +265,45 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#define-valley-line" id="toc-define-valley-line" class="nav-link active" data-scroll-target="#define-valley-line">Define Valley Line</a>
   <ul class="collapse">
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#distribution-statement" id="toc-distribution-statement" class="nav-link" data-scroll-target="#distribution-statement">Distribution Statement</a></li>
-  <li><a href="#unit-conversion-factors" id="toc-unit-conversion-factors" class="nav-link" data-scroll-target="#unit-conversion-factors">Unit Conversion Factors</a></li>
-  <li><a href="#notation-list" id="toc-notation-list" class="nav-link" data-scroll-target="#notation-list">Notation List</a></li>
+  <li><a href="#determine-final-floodplain-extent" id="toc-determine-final-floodplain-extent" class="nav-link" data-scroll-target="#determine-final-floodplain-extent">Determine Final Floodplain Extent</a></li>
+  <li><a href="#develop-candidate-valleylines" id="toc-develop-candidate-valleylines" class="nav-link" data-scroll-target="#develop-candidate-valleylines">Develop Candidate Valleylines</a></li>
+  <li><a href="#choose-final-valleyline" id="toc-choose-final-valleyline" class="nav-link" data-scroll-target="#choose-final-valleyline">Choose Final Valleyline</a></li>
   </ul></li>
+  <li><a href="#define-meander-loops" id="toc-define-meander-loops" class="nav-link" data-scroll-target="#define-meander-loops">Define Meander Loops</a>
+  <ul class="collapse">
+  <li><a href="#define-loop-points" id="toc-define-loop-points" class="nav-link" data-scroll-target="#define-loop-points">Define Loop Points</a></li>
+  <li><a href="#derive-bankline-points" id="toc-derive-bankline-points" class="nav-link" data-scroll-target="#derive-bankline-points">Derive Bankline Points</a></li>
+  <li><a href="#assign-cross-section-loops" id="toc-assign-cross-section-loops" class="nav-link" data-scroll-target="#assign-cross-section-loops">Assign Cross Section Loops</a></li>
+  </ul></li>
+  <li><a href="#calculate-l3-cross-section-geometry" id="toc-calculate-l3-cross-section-geometry" class="nav-link" data-scroll-target="#calculate-l3-cross-section-geometry">Calculate L3 Cross Section Geometry</a>
+  <ul class="collapse">
+  <li><a href="#calculate-cross-section-l3-dimensions" id="toc-calculate-cross-section-l3-dimensions" class="nav-link" data-scroll-target="#calculate-cross-section-l3-dimensions">Calculate Cross Section L3 Dimensions</a></li>
+  <li><a href="#add-modeled-water-surface-elevation" id="toc-add-modeled-water-surface-elevation" class="nav-link" data-scroll-target="#add-modeled-water-surface-elevation">Add Modeled Water Surface Elevation</a></li>
+  </ul></li>
+  <li><a href="#run-report" id="toc-run-report" class="nav-link" data-scroll-target="#run-report">Run Report</a>
+  <ul class="collapse">
+  <li><a href="#run-the-l3-report" id="toc-run-the-l3-report" class="nav-link" data-scroll-target="#run-the-l3-report">Run the L3 Report</a></li>
+  <li><a href="#perform-qa" id="toc-perform-qa" class="nav-link" data-scroll-target="#perform-qa">Perform QA</a></li>
+  </ul></li>
+  <li><a href="#determine-next-steps" id="toc-determine-next-steps" class="nav-link" data-scroll-target="#determine-next-steps">Determine Next Steps</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Workflows.html">Workflows</a></li><li class="breadcrumb-item"><a href="./3-5-Level-3.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">FluvialGeomorph Technical Manual</h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers </p>
-             <p>Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 2, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -312,111 +313,184 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Funding for development and maintenance of FluvialGeomorph has been provided by the following US Army Corps of Engineers (USACE) programs:</p>
+<p>This chapter describes the workflow steps necessary to complete a Level 3 (L3) FluvialGeomorph analysis. The purpose of this level is to extract planform dimensions.</p>
+<section id="define-valley-line" class="level2">
+<h2 class="anchored" data-anchor-id="define-valley-line">Define Valley Line</h2>
+<p>The purpose of this stage is to define the valley trend line for the base year for each reach.</p>
+<section id="determine-final-floodplain-extent" class="level3">
+<h3 class="anchored" data-anchor-id="determine-final-floodplain-extent">Determine Final Floodplain Extent</h3>
+<p>The purpose of this step is to use the detrended bankfull elevation identified in L2 to delineate the active floodplain.</p>
 <ul>
-<li><a href="https://emrrp.el.erdc.dren.mil">Ecosystem Management and Restoration Research Program (EMRRP)</a>.</li>
-<li><a href="https://rsm.usace.army.mil/">Regional Sediment Management Program (RSM)</a></li>
-<li><a href="https://www.mvd.usace.army.mil/Missions/Mississippi-River-Science-Technology/MS-River-Geomorphology-Potamology/">Mississippi River Geomorphology and Potamology Program (MRG&amp;P)</a></li>
-<li><a href="https://www.iwr.usace.army.mil/Missions/Flood-Risk-Management/Flood-Risk-Management-Program/">Flood Risk Management Program (FRM)</a></li>
-<li><a href="https://ewn.el.erdc.dren.mil/">Engineering With Nature (EWN)</a></li>
+<li><p>From the final Estimate Bankfull Report created in Level 2, use the detrended bankfull elevation identified. In the example from Level 2, this value was 104 ft.</p></li>
+<li><p><strong>Determine the bankfull depth: </strong> The detrending process used in FluvialGeomorph expresses stream elevations using a base index value of 100 ft. Therefore, a detrended bankfull elevation estimated to be 104 ft. means that at bankfull discharge, the water surface elevation is 4 ft. above the detrended stream base index value of 100 ft. for this reach:<br>
+<code>104 ft detrended bankfull elevation - 100 ft detrended stream base index = 4 ft bankfull depth</code></p></li>
+<li><p><strong>Determine flood prone height: </strong> Flood prone has been determined through empirical studies to be approximately two times the bankfull depth. For example, using the bankfull depth calculated in the last step, calculate the flood prone depth using the following formula:<br>
+<code>2 * 4 ft bankfull depth = 8 ft flood prone height</code></p></li>
+<li><p>Therefore, the flood prone detrended elevation would be 108 ft:<br>
+<code>100 ft detrended stream base index + 8 ft flood prone height = 108 ft detrended flood prone height</code></p></li>
+<li><p>With the detrended flood prone elevation for your reach determined in the last step, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#water-surface-extent"><code>08 - Water Surface Extent</code></a> tool to extract a flood prone area polygon. This tool creates a new polygon feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a>, where xxx is the detrended elevation selected.</p></li>
+<li><p>This feature class must be edited to select the flood prone area polygon(s). Open the attribute table for the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class and use advanced sorting to sort first by <code>gridcode</code> and then by <code>Shape_Area</code>. Polygons with <code>gridcode</code> = 1 are polygons inundated at the detrended elevation. Typically, the polygons with the largest area represent the channel. Begin selecting <code>gridcode</code> = 1 polygons with the largest area until the entire flood prone area is selected.</p></li>
+<li><p>Export these selected features to a new feature class named <code>flood_prone</code>.</p></li>
+<li><p>Delete the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class created in this section.</p></li>
 </ul>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/USACE_200.png" class="img-fluid figure-img" width="130"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EMRRP_logo_200.png" class="img-fluid figure-img" width="146"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/RSM_200.png" class="img-fluid figure-img" width="103"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/MRG&amp;P_300.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/FRMP_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/SilverJackets_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EWN_200.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox">FluvialGeomorph ArcGIS toolbox</a> provides a set of tools for conducting rapid fluvial geomorphology analysis and assessment. It allows a user to use high resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to cost effectively extract stream channel dimensions at fine scale for large spatial extents. This document describes the methods used in the development of the FluvialGeomorph project.</p>
 </section>
-<section id="distribution-statement" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-statement">Distribution Statement</h2>
-<p>Approved for public release; distribution is unlimited</p>
+<section id="develop-candidate-valleylines" class="level3">
+<h3 class="anchored" data-anchor-id="develop-candidate-valleylines">Develop Candidate Valleylines</h3>
+<p>The purpose of this step is to create a set of candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes through iterative smoothing of the flowline for each reach.</p>
+<ul>
+<li>The following steps are performed in the site geodatabase for the base year. This is done to ensure that a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class is created smoothly through all of the reaches in a site.</li>
+<li>In the site geodatabase for the base year, use the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/smooth-line.htm">ESRI <code>Smooth Line</code></a> tool to smooth the site <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class.</li>
+<li>Choose the <code>PAEK</code> smoothing algorithm.</li>
+<li>For the first candidate valleyline, use a <code>Smoothing Tolarance</code> value of 200 meters. In this case you would name the output feature class <code>valleyline_200</code></li>
+<li>Repeat the previous step using the <code>Smoothing Tolerance</code> values such as 400, 800, and 1000.</li>
+<li>Depending on the detail of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class geometry, you may need to select a different range or set of step values of the <code>Smoothing Tolerance</code> parameter values to evaluate.</li>
+<li>The goal is to create a wide degree of flowline smoothing in the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes to select from in the next step.</li>
+</ul>
 </section>
-<section id="unit-conversion-factors" class="level2">
-<h2 class="anchored" data-anchor-id="unit-conversion-factors">Unit Conversion Factors</h2>
-<table class="caption-top table">
-<caption>Unit Conversion Factors</caption>
-<thead>
-<tr class="header">
-<th>Multiply</th>
-<th>By</th>
-<th>To Obtain</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>feet</td>
-<td>0.3048</td>
-<td>meters</td>
-</tr>
-<tr class="even">
-<td>miles</td>
-<td>1.60934</td>
-<td>kilometers</td>
-</tr>
-<tr class="odd">
-<td>square miles</td>
-<td>2.58999</td>
-<td>square kilometers</td>
-</tr>
-</tbody>
-</table>
+<section id="choose-final-valleyline" class="level3">
+<h3 class="anchored" data-anchor-id="choose-final-valleyline">Choose Final Valleyline</h3>
+<p>The purpose of this step is to choose from the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes the one that best captures the overall valley trend line.</p>
+<ul>
+<li>The goal of this step is to select from the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes the one that is the most smoothed, yet still fits primarily within the <code>flood_prone</code> polygon extent.</li>
+<li>Add the <code>flood_prone</code> polygon and all of the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes to the current map.</li>
+<li>Identify the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class that has the highest smoothing tolerance value that also is mostly contained within the extent of the <code>flood_prone</code> polygon.</li>
+<li>In the site geodatabase of the base year, rename the selected valley line to <code>valleyline</code>.</li>
+<li>Delete the unused candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes from the site geodatabase of the base year.</li>
+<li>Copy the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class you just created from the site geodatabase to each of the base year reach geodatabases.</li>
+</ul>
+<hr>
 </section>
-<section id="notation-list" class="level2">
-<h2 class="anchored" data-anchor-id="notation-list">Notation List</h2>
+</section>
+<section id="define-meander-loops" class="level2">
+<h2 class="anchored" data-anchor-id="define-meander-loops">Define Meander Loops</h2>
+<p>The purpose of this stage is to define meander loops and bends for the base year for each reach.</p>
+<section id="define-loop-points" class="level3">
+<h3 class="anchored" data-anchor-id="define-loop-points">Define Loop Points</h3>
+<p>The purpose of this step is to create a new feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> and use it to identify the start and end stream meander loops and bends.</p>
+<ul>
+<li>Create a new point feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a>. Enable z and m values. The feature class should contain the following fields:
+<ul>
+<li><code>ReachName</code>: Text (50) - The purpose of this field is to store the reach name.</li>
+<li><code>loop</code>: Long Integer - The purpose of this field is to store the loop unique identifier for the point.</li>
+<li><code>bend</code>: Long Integer - The purpose of the field is to store the bend identifier for the point.</li>
+<li><code>position</code>: Text (10) - The purpose of this field is to store position identifier for the point. This field must have one three values: “start”, “end”, or “apex”.</li>
+</ul></li>
+</ul>
+<p><strong>Create Loop Points</strong></p>
+<ul>
+<li><a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> features are used to define the start and end location of loop bends and the location of a loop’s apex.</li>
+<li><a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> features are always placed along (i.e., snapped to) a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>bankline</code></a> feature.</li>
+<li>Begin numbering loops starting at the downstream end of the reach and increment the <code>loop</code> integer values moving upstream.</li>
+<li>In FluvialGeomorph, the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> is used segment the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> into loops.</li>
+<li>The beginning and end of loops are delineated where the <code>valleyline</code> <em>definitively</em> crosses the <code>flowline</code>.</li>
+<li>If the <code>flowline</code> crosses the <code>valleyline</code> and then crosses back over in a short distance, this is not considered a <em>definitive</em> crossing. A definitive crossing is one where the <code>flowline</code> approaches the <code>valleyline</code>, crosses it, and then continues to move away from the <code>valleyline</code> for a significant longitudinal distance.</li>
+<li>Loops must alternate from one bank to the opposite bank. For example, if loop 1 is delineated along the right descending bank, then loop 2 is delineated along the left descending bank.</li>
+<li>Loops are composed of one or more bends (bends nest inside of loops). For example, loop 1 can have bends 1, 2, and 3 (i.e., loop 1, bend 1; loop 1, bend 2; loop 1, bend 3).</li>
+<li>Bend numbering restarts within each loop. The first <code>bend</code> value within a loop always begins with the value 1.</li>
+</ul>
+<p><strong>Multiple Reaches: </strong></p>
+<ul>
+<li>For a site with multiple reaches, loops must be uniquely numbered across all reaches. The <code>loop</code> field values of <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> should not repeat within the reaches of a site.<br>
+</li>
+<li>The downstream-most loop in the site should be numbered starting with the <code>loop</code> field value of 1 and increase moving upstream.<br>
+</li>
+<li>Set the <code>loop</code> field value for each upstream reach to the upstream-most value (i.e., the highest <code>loop</code> value of the downstream reach’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> feature class) of the downstream reach. For example, set the value of the field <code>loop</code> of the first Reach-2 <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> feature to 8 if the maximum value of Reach-1’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> feature class <code>loop</code> field is 7.</li>
+</ul>
+<p><strong>Check Loop Points: </strong></p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#check-loop-points-tool"><code>Check Loop Points</code></a> tool in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#check-toolset"><code>Check</code></a> toolset to verify that loops and bends are defined correctly.</li>
+<li>Review the messages produced by this tool to identify and correct problems with loop and bend delineation.</li>
+</ul>
+</section>
+<section id="derive-bankline-points" class="level3">
+<h3 class="anchored" data-anchor-id="derive-bankline-points">Derive Bankline Points</h3>
+<p>The purpose of this step is to convert the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> to a set of <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-fc"><code>bankline_points</code></a> and assign elevations and loop and bend locations to these features.</p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-tool"><code>14b - Bankline Points</code></a> tool to assign loops, bends, elevations and valley line positions to the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-fc"><code>bankline_points</code></a>.</li>
+<li>When the tool completes, check that this tools runs correctly by running the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#check-bankline-points-tool"><code>Check Bankline Points</code></a> tool in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#check-toolset"><code>Check</code></a> toolset.</li>
+<li>The check tool ensures that the <code>loop</code>, <code>bend</code>, <code>position</code>, <code>valley_POINT_X</code>, <code>valley_POINT_Y</code>, and <code>valley_POINT_M</code> fields are populated. Only <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-fc"><code>bankline_points</code></a> features within loops and bends will have values in the <code>loop</code>, <code>bend</code>, and <code>position</code> fields.</li>
+<li>All records should have values in the <code>valley_POINT_X</code>, <code>valley_POINT_Y</code>, and <code>valley_POINT_M</code> fields.</li>
+<li>Additionally, apply the following definition query to the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-fc"><code>bankline_points</code></a> feature class: “loop IS NOT NULL”. Only <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-fc"><code>bankline_points</code></a> features between <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> features should be visible.</li>
+</ul>
+</section>
+<section id="assign-cross-section-loops" class="level3">
+<h3 class="anchored" data-anchor-id="assign-cross-section-loops">Assign Cross Section Loops</h3>
+<p>The purpose of this step is to assign loop and bend identifiers to regularly spaced and riffle cross section feature classes for each reach.</p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-assign-loops-tool"><code>14c - Assign Loops</code></a> tool to assign loops and bends to a cross section feature class.</li>
+<li>Set the value of the <code>cross_section</code> parameter to the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#regular-xs-fc">regular cross section</a> feature class.</li>
+<li>After the tool completes, check the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#regular-xs-fc">regular cross section</a> feature class that the <code>loop</code> and <code>bend</code> fields are assigned the correct loop and bend values.</li>
+<li>Repeat this step for both the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> and <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code></a> feature classes.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="calculate-l3-cross-section-geometry" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-l3-cross-section-geometry">Calculate L3 Cross Section Geometry</h2>
+<p>The purpose of this stage is to calculate the Level 3 dimensions for each reach.</p>
+<section id="calculate-cross-section-l3-dimensions" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-cross-section-l3-dimensions">Calculate Cross Section L3 Dimensions</h3>
+<p>The purpose of this step is to calculate the L3 dimensions for the regularly spaced and riffle cross section feature classes for each reach.</p>
+<ul>
+<li>If any <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>*_dims_L3</code></a> feature classes exist in the reach geodatabase (created during a previous run), delete these feature classes.<br>
+</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-L3-tool"><code>15c - XS Planform, Level 3</code></a> tool to calculate the L3 dimensions.<br>
+</li>
+<li>Verify in the attribute table that the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc">L3 dimensions</a> have been calculated.</li>
+</ul>
+</section>
+<section id="add-modeled-water-surface-elevation" class="level3">
+<h3 class="anchored" data-anchor-id="add-modeled-water-surface-elevation">Add Modeled Water Surface Elevation</h3>
+<p>The purpose of this optional step is to add an HEC-RAS hydraulic model estimated water surface elevation (if available) to a cross section dimension feature class.</p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-ras-watersurface-tool"><code>16 - XS RAS Watersurface</code></a> tool to add a modeled water surface elevation field to the input cross section feature class.</li>
+<li>Use the <code>RAS_model_name</code> parameter to distinguish between multiple RAS model scenarios.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="run-report" class="level2">
+<h2 class="anchored" data-anchor-id="run-report">Run Report</h2>
+<p>The purpose of this stage is to run the Level 3 report for each reach.</p>
+<section id="run-the-l3-report" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-l3-report">Run the L3 Report</h3>
+<p>The purpose of this step is to run the L2 report for each reach.</p>
+<ul>
+<li>In the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#reports-toolset">Reports</a> toolset, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#L3-report-tool"><code>Level 3 Report</code></a> tool to produce the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#L3-report">Level 3 Report</a>.</li>
+<li>For the <code>stream</code> parameter, use the value of the <code>ReachName</code> field used in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class.</li>
+<li>For the <code>flowline_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class for the base year survey.</li>
+<li>For the <code>xs_dims_fc</code> parameter, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>*_dims_L3</code></a> feature class calculated for the regular cross sections of the base year.</li>
+<li>The <code>xs_points_*</code> parameters should be entered with the feature class for the most recent survey first (i.e., the base year) and then the previous surveys in reverse chronological order (e.g., 2016, 2010, 2006).</li>
+<li>The <code>survey_name_*</code> parameters are used to label the surveys in maps and graphs.</li>
+<li>The feature classes and labels used for the <code>flowline_points_*</code>, <code>xs_points_*</code>, and <code>survey_name_*</code> parameters must be entered in the same order (e.g., 2016, 2010, 2006) in each set of numbered parameters.</li>
+<li>For the <code>dem</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster">DEM</a> for the base year survey.</li>
+<li>For the <code>banklines_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class created for the base year survey.<br>
+</li>
+<li>For the <code>features_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#features-fc"><code>features</code></a> feature class for the base year survey.</li>
+<li>For the <code>bf_estimate</code> parameter, specify the detrended elevation value that represents the bankfull water surface elevation.</li>
+<li>For the <code>regions</code> parameter, select the regions to use for estimating the bankfull water surface elevation.</li>
+</ul>
+</section>
+<section id="perform-qa" class="level3">
+<h3 class="anchored" data-anchor-id="perform-qa">Perform QA</h3>
+<p>The purpose of this step is to use the QA Checklist to verify the reports have run correctly and identify any data mistakes that need to be corrected.</p>
+<ul>
+<li>Follow the instructions in the QA Checklist Chapter, <a href="4-1-QAChecklist.html#L3_report_qa">Level 3 Report</a> section, to verify that the reports have run correctly.</li>
+<li>Make the required changes suggested in the QA Checklist and rerun the report.</li>
+<li>Repeat these QA iterations until the reports are correct.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="determine-next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="determine-next-steps">Determine Next Steps</h2>
+<p>The purpose of this step is to determine what further steps need to be taken.</p>
+<ul>
+<li>Review the results of the Level 3 Report and determine if the project goals require further analysis.</li>
+</ul>
 <hr>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -842,10 +916,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./3-4-Level-2.html" class="pagination-link" aria-label="Level 2 Workflow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./0-1-Intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./0-7-References.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

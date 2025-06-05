@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13&nbsp; Level 2 Workflow – FluvialGeomorph Technical Manual</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./3-5-Level-3.html" rel="next">
+<link href="./3-3-Level-1.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Workflows.html">Workflows</a></li><li class="breadcrumb-item"><a href="./3-4-Level-2.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">FluvialGeomorph Technical Manual</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/FluvialGeomorph/FG-Tech-Manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0-1-Intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-1-Concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-2-Metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metrics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-3-FieldMethods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Field Methods</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-1-Install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-2-TutorialData.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-3-Toolbox.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Toolbox</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-4-Features.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Features</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-5-Reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workflows</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-1-Workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Workflows</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-2-CreateTerrain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Create Terrain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-3-Level-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-4-Level-2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-5-Level-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0-7-References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-1-QAChecklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#create-initial-riffle-geometry" id="toc-create-initial-riffle-geometry" class="nav-link active" data-scroll-target="#create-initial-riffle-geometry">Create Initial Riffle Geometry</a>
+  <ul class="collapse">
+  <li><a href="#create-riffle-floodplain" id="toc-create-riffle-floodplain" class="nav-link" data-scroll-target="#create-riffle-floodplain">Create Riffle Floodplain</a></li>
+  <li><a href="#assign-cross-section-ids" id="toc-assign-cross-section-ids" class="nav-link" data-scroll-target="#assign-cross-section-ids">Assign Cross Section IDs</a></li>
+  <li><a href="#calculate-cross-section-watershed-area" id="toc-calculate-cross-section-watershed-area" class="nav-link" data-scroll-target="#calculate-cross-section-watershed-area">Calculate Cross Section Watershed Area</a></li>
+  <li><a href="#calculate-cross-section-river-position" id="toc-calculate-cross-section-river-position" class="nav-link" data-scroll-target="#calculate-cross-section-river-position">Calculate Cross Section River Position</a></li>
+  <li><a href="#create-riffle-channel" id="toc-create-riffle-channel" class="nav-link" data-scroll-target="#create-riffle-channel">Create Riffle Channel</a></li>
+  <li><a href="#calculate-cross-section-points" id="toc-calculate-cross-section-points" class="nav-link" data-scroll-target="#calculate-cross-section-points">Calculate Cross Section Points</a></li>
+  <li><a href="#calculate-initial-cross-section-l2-dimension" id="toc-calculate-initial-cross-section-l2-dimension" class="nav-link" data-scroll-target="#calculate-initial-cross-section-l2-dimension">Calculate Initial Cross Section L2 Dimension</a></li>
+  </ul></li>
+  <li><a href="#estimate-bankfull" id="toc-estimate-bankfull" class="nav-link" data-scroll-target="#estimate-bankfull">Estimate Bankfull</a>
+  <ul class="collapse">
+  <li><a href="#run-the-estimate-bankfull-report" id="toc-run-the-estimate-bankfull-report" class="nav-link" data-scroll-target="#run-the-estimate-bankfull-report">Run the Estimate Bankfull Report</a></li>
+  <li><a href="#perform-qa" id="toc-perform-qa" class="nav-link" data-scroll-target="#perform-qa">Perform QA</a></li>
+  <li><a href="#determine-bankfull-elevation" id="toc-determine-bankfull-elevation" class="nav-link" data-scroll-target="#determine-bankfull-elevation">Determine Bankfull Elevation</a></li>
+  <li><a href="#create-bankfull-area" id="toc-create-bankfull-area" class="nav-link" data-scroll-target="#create-bankfull-area">Create Bankfull Area</a></li>
+  <li><a href="#create-banklines" id="toc-create-banklines" class="nav-link" data-scroll-target="#create-banklines">Create Banklines</a></li>
+  <li><a href="#create-final-centerline" id="toc-create-final-centerline" class="nav-link" data-scroll-target="#create-final-centerline">Create Final Centerline</a></li>
+  </ul></li>
+  <li><a href="#calculate-final-l2-cross-section-geometry" id="toc-calculate-final-l2-cross-section-geometry" class="nav-link" data-scroll-target="#calculate-final-l2-cross-section-geometry">Calculate Final L2 Cross Section Geometry</a>
+  <ul class="collapse">
+  <li><a href="#calculate-final-cross-section-l2-dimensions" id="toc-calculate-final-cross-section-l2-dimensions" class="nav-link" data-scroll-target="#calculate-final-cross-section-l2-dimensions">Calculate Final Cross Section L2 Dimensions</a></li>
+  <li><a href="#add-modeled-water-surface-elevation" id="toc-add-modeled-water-surface-elevation" class="nav-link" data-scroll-target="#add-modeled-water-surface-elevation">Add Modeled Water Surface Elevation</a></li>
+  </ul></li>
+  <li><a href="#run-report" id="toc-run-report" class="nav-link" data-scroll-target="#run-report">Run Report</a>
+  <ul class="collapse">
+  <li><a href="#run-the-l2-report" id="toc-run-the-l2-report" class="nav-link" data-scroll-target="#run-the-l2-report">Run the L2 Report</a></li>
+  <li><a href="#perform-qa-1" id="toc-perform-qa-1" class="nav-link" data-scroll-target="#perform-qa-1">Perform QA</a></li>
+  </ul></li>
+  <li><a href="#determine-next-steps" id="toc-determine-next-steps" class="nav-link" data-scroll-target="#determine-next-steps">Determine Next Steps</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Workflows.html">Workflows</a></li><li class="breadcrumb-item"><a href="./3-4-Level-2.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter describes the workflow steps necessary to complete a Level 2 (L2) FluvialGeomorph analysis. The purpose of this level is to calculate bankfull channel dimensions.</p>
+<section id="create-initial-riffle-geometry" class="level2">
+<h2 class="anchored" data-anchor-id="create-initial-riffle-geometry">Create Initial Riffle Geometry</h2>
+<p>The purpose of this stage is to identify and map riffle cross sections and roughly estimate an initial bankfull elevation for the base year for each reach.</p>
+<section id="create-riffle-floodplain" class="level3">
+<h3 class="anchored" data-anchor-id="create-riffle-floodplain">Create Riffle Floodplain</h3>
+<p>The purpose of this step is to identify riffle locations and map these cross sections across the lateral extent of the floodplain for each reach.</p>
+<p>A riffle is a shallow river landform where water flows in a steep, thin sheet <span class="citation" data-cites="luna_bergere_leopold_river_1957">(<a href="0-7-References.html#ref-luna_bergere_leopold_river_1957" role="doc-biblioref"><strong>luna_bergere_leopold_river_1957?</strong></a>)</span>. Riffles can be identified with the help of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#channel-slope-raster"><code>channel_slope</code></a> raster calculated in Level 1, and confirmed with high resolution aerial imagery. In the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#channel-slope-raster"><code>channel_slope</code></a> raster, pools appear as relatively smooth areas of low slope due to the absence of LiDAR points (deep water absorbs laser pulses). Shallow water riffles appear as highly textured areas of relatively higher slope between pools due to the higher number of LiDAR points from the exposed bed material.</p>
+<ul>
+<li>Create a new line feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code></a> to store riffle cross sections. This feature class must use the same coordinate system as the vector datasets of the project. Add the following fields:
+<ul>
+<li><code>ReachName</code>: Text (50) - The purpose of this field is to store the reach name.</li>
+<li><code>Seq</code>: long integer - The purpose of this field is to uniquely identify each cross section.</li>
+</ul></li>
+</ul>
+<p><strong>Riffle Identifying Characteristics:</strong></p>
+<ul>
+<li>A straight reach between two meander bends, areas in the cross-overs between river bends</li>
+<li>Clear indicators of the active floodplain or bankfull discharge</li>
+<li>Presence of one or more terraces</li>
+<li>Channel section and form typical of the stream</li>
+<li>A reasonably clear view of of geomorphic features</li>
+<li>Areas of high water surface slope (in the case of high gradient streams)</li>
+<li>Areas of minimum depth and width</li>
+<li>Channel width parallel and consistent</li>
+<li>Avoid tributary influences</li>
+<li>Cross sections should be drawn wide enough to capture the top of bank</li>
+</ul>
+<p><strong>Digitize Riffles</strong></p>
+<ul>
+<li>Digitize riffle cross sections beginning with the left descending bank. While editing, use the “Reverse Direction” command (aka flip) to ensure riffles are digitized in the correct direction.</li>
+<li>A red vertex denotes the end of a line segment. Therefore, the red end vertex should be on the right descending bank.</li>
+<li>Check that each cross section is digitized in the correct direction (start at the left descending bank and end on the right descending bank) before going on to the next step.</li>
+<li>Ensure that riffle cross sections are digitized to the full width of the active floodplain. Edit each <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code></a> feature to ensure that it extends at least to the edge of the <code>Floodplain Mask</code> layer, but no further.</li>
+<li>This ensures that each <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code></a> feature covers the entire floodplain, but does not extend too far into the uplands.<br>
+</li>
+<li>For a site with multiple reaches, riffle cross sections must be uniquely numbered across all reaches. The <code>Seq</code> field values of riffle cross sections should not repeat within the reaches of a site.</li>
+<li>The downstream-most cross section in the site should be numbered starting with the <code>Seq</code> field value of 1 and increase moving upstream.</li>
+<li>If necessary, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-resequence-tool"><code>13a - XS Resequence</code></a> tool to set the starting <code>Seq</code> value for each reach.</li>
+<li>Set the <code>Seq</code> field value for each upstream reach to the upstream-most value (i.e., the highest <code>Seq</code> value of the downstream reach’s riffle cross section feature class) of the downstream reach. For example, set the <code>Seq</code> of the Reach-2 riffle cross section feature class to 18 if the maximum value of Reach-1’s riffle cross section feature class <code>Seq</code> field is 17.</li>
+</ul>
+</section>
+<section id="assign-cross-section-ids" class="level3">
+<h3 class="anchored" data-anchor-id="assign-cross-section-ids">Assign Cross Section IDs</h3>
+<p>The purpose of this step is to ensure that riffle cross section identifiers are properly assigned. Assignment of cross section unique identifiers is critical for later tools to uniquely identify each cross section.</p>
+<ul>
+<li>Assign integer values to the <code>Seq</code> field starting with one. Begin numbering at the downstream extent of the study area and moving upstream.</li>
+</ul>
+</section>
+<section id="calculate-cross-section-watershed-area" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-cross-section-watershed-area">Calculate Cross Section Watershed Area</h3>
+<p>The purpose of this step is to calculate the watershed area for each riffle cross section.</p>
+<ul>
+<li>From the study area geodatabase, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#contributing-area-raster"><code>watershed_contributing_area</code></a> raster that covers the entire contributing watershed of the study area.<br>
+</li>
+<li>Use the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm">ERSI <code>Clip Raster</code></a> tool to clip the <code>watershed_contributing_area</code> raster to <code>stream_network_buffer</code> to speed tool run time.</li>
+<li>Add the <code>contributing_area_buffer</code> raster to a map and symbolize with a “hot-cold” stretch renderer.</li>
+<li>Add the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> and regular cross section features classes to the map. Place them on top of the <code>contributing_area_buffer</code> raster.</li>
+<li>Determine the maximum distance from the intersection of each cross section and the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> to the nearest pixel of high flow in the <code>contributing_area_buffer</code> raster. This value will be used for the <code>snap_distance</code> in the next step.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-watershed-area-tool"><code>12 - XS Watershed Area</code></a> tool to calculate the watershed area for each cross section.</li>
+<li>For the <code>flow_accum</code> parameter, use the <code>contributing_area_buffer</code> raster.</li>
+<li>For the <code>snap_distance</code> parameter, use the distance you calculated in a previous step.</li>
+</ul>
+</section>
+<section id="calculate-cross-section-river-position" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-cross-section-river-position">Calculate Cross Section River Position</h3>
+<p>The purpose of this step is to calculate the river position for each riffle cross section.</p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-river-position"><code>13 - XS River Position</code></a> tool to calculate the distance to the mouth of the river for each cross section.</li>
+<li>The river position of each cross section will be used in later steps to calculate several channel parameters (i.e., gradient, sinuosity).</li>
+</ul>
+</section>
+<section id="create-riffle-channel" class="level3">
+<h3 class="anchored" data-anchor-id="create-riffle-channel">Create Riffle Channel</h3>
+<p>The purpose of this step is to edit the lateral extent of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> feature class to just cover the initial channel extent. This allows a more detailed examination of the channel area.</p>
+<ul>
+<li>In the Catalog window, make a copy of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code></a> feature class and name it <code>riffle_channel</code>.</li>
+<li>Edit each <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> feature to ensure that it extends at least to the edge of the <code>Channel Mask</code> layer, but no further. This ensures that each <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> feature covers the entire channel, but does not extend too far into the floodplain.</li>
+<li>Use snapping to ensure that vertices of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> features are coincident with the overlapping <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code></a> features.</li>
+</ul>
+</section>
+<section id="calculate-cross-section-points" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-cross-section-points">Calculate Cross Section Points</h3>
+<p>The purpose of this step is to convert each riffle cross section into a set of evenly stationed points and assign DEM and detrended elevation values.</p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-points-tool"><code>14 - XS Points</code></a> tool to calculate cross section station points for each cross section.</li>
+<li>The <code>station_distance</code> parameter should be set to approximately the resolution of the DEM. For example, if the DEM has a cell size of 1 foot (0.3048 meter), set the <code>station_distance</code> to that distance (using the linear units of the coordinate system used for the project’s vector data).</li>
+<li>This tool creates a new feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-points-fc"><code>&lt;cross section feature class name&gt;_points</code></a>.</li>
+<li>Repeat this step for both the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code></a> and <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> feature classes.</li>
+</ul>
+</section>
+<section id="calculate-initial-cross-section-l2-dimension" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-initial-cross-section-l2-dimension">Calculate Initial Cross Section L2 Dimension</h3>
+<p>The purpose of this step is to calculate the initial L2 dimensions for the the riffle cross sections for each reach. Repeat the following steps for both the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code></a> and <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> feature classes.</p>
+<p><strong>Determine the moving window size</strong><br>
+Many stream metrics are scale dependent, meaning these metrics are affected by the size of the moving window used in their calculation. To determine the appropriate size of the moving window for this reach, use the following steps:</p>
+<ul>
+<li>Many stream metrics are typically calculated using a moving window size equal to two meander wavelengths.</li>
+<li>Using the initial <code>Channel Mask</code> layer that you created earlier, estimate the typical bankfull width for the reach.</li>
+<li>Estimate the length of two meander wavelengths by multiplying the bankfull width estimated in the last step by 10 (e.g., 30ft bankfull width * 10 = 300ft, two meander wavelengths).<br>
+</li>
+<li>Determine how many cross sections two meander wavelengths represent. For example, if riffle cross sections are spaced about 300ft apart, then two meander wavelengths would be 1 riffle cross section (i.e., 300ft / 300ft between riffle cross sections).</li>
+</ul>
+<p><strong>Calculate Initial L2 Dimensions</strong></p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-L2-tool"><code>15b - XS Dimensions, Level 2</code></a> tool to calculate L2 dimensions.</li>
+<li>Set the <code>xs_fc</code> parameter to the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#regular-xs-fc">regular cross sections</a> feature class you created in a previous step.</li>
+<li>Set the <code>lead_n</code> parameter to the number of upstream cross sections that you calculated in a previous step.</li>
+<li>If the elevations in the channel seem noisy, check the <code>use_smoothing</code> parameter and set the <code>loess_span</code> parameter to a value between 0-1.</li>
+<li>Confirm that the <code>vert_units</code> of the DEM are in feet.</li>
+</ul>
+<p><strong>Confirm the degree of smoothing</strong></p>
+<ul>
+<li>Use a chart to verify the choice of the smoothing <code>loess_span</code> parameter in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>*_dims_L2</code></a> feature class.</li>
+<li>Right-click on the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>*_dims_L2</code></a> feature class in the map table of contents and select “Create Chart”, and select “Line”. In the <code>Date or Number</code> dropdown, choose the field <code>POINT_M</code>. In the <code>Aggregation</code> dropdown, choose <code>None</code>. In the <code>Numeric field(s)</code> checklist, check the boxes next to <code>Z</code> and <code>Z_smooth</code>. Click the <code>Apply</code> button to view the chart.</li>
+<li>Visually assess the degree of smoothing. The smoothing should be high enough to eliminate LiDAR elevation noise, but not so high as to eliminate meaningful channel elevation change.</li>
+<li>If the smoothing is not ideal, re-run the tool and adjust the <code>loess_span</code> parameter.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="estimate-bankfull" class="level2">
+<h2 class="anchored" data-anchor-id="estimate-bankfull">Estimate Bankfull</h2>
+<p>The purpose of this stage is to estimate the detrended bankfull elevation for the base year for each reach. This report conducts a sensitivity analysis using the regional curve estimates of channel dimensions across a range of elevation values to identify the detrended bankfull elevation value that best fits the regional curve estimate.</p>
+<section id="run-the-estimate-bankfull-report" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-estimate-bankfull-report">Run the Estimate Bankfull Report</h3>
+<p>The purpose of this step is to run the Estimate Bankfull report for each reach.</p>
+<ul>
+<li>In the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#reports-toolset"><code>Reports</code></a> toolset, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#estimate-bankfull-report-tool"><code>L2 Estimate Bankfull</code></a> tool to produce the Estimate Bankfull Report.</li>
+<li>For the <code>stream</code> parameter, use the value of the <code>ReachName</code> field used in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class.</li>
+<li>For the <code>flowline_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class for the base year survey.</li>
+<li>For the <code>xs_dims_fc</code> parameter, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>riffle_channel_dims_L2</code></a> feature class calculated for the base year.</li>
+<li>The <code>xs_points_ch_*</code> parameter set requires a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-points-fc"><code>riffle_channel_points</code></a> feature class. These feature classes should be entered with the feature class for the most recent survey first (i.e., the base year) and then the previous surveys in reverse chronological order (e.g., 2016, 2010, 2006).</li>
+<li>The <code>xs_points_fp_*</code> parameter set requires a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-points-fc"><code>riffle_floodplain_points</code></a> feature class. These feature classes should be entered with the feature class for the most recent survey first (i.e., the base year) and then the previous surveys in reverse chronological order (e.g., 2016, 2010, 2006).</li>
+<li>The <code>survey_name_*</code> parameters are used to label the surveys in maps and graphs.</li>
+<li>The feature classes and labels used for the <code>xs_points_*</code> and <code>survey_name_*</code> parameters must be entered in the same order (e.g., 2016, 2010, 2006) in each set of numbered parameters.</li>
+<li>For the <code>features_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-points-fc"><code>features</code></a> feature class for the base year survey.</li>
+<li>For the <code>dem</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster">DEM</a> for the base year survey.</li>
+<li>For the <code>regions</code> parameter, select the regions to use for estimating the bankfull water surface elevation.</li>
+<li>For the <code>from_elevation</code> parameter, specify the lowest detrended elevation value to use for sensitivity analysis.</li>
+<li>For the <code>to_elevation</code> parameter, specify the highest detrended elevation value to use for sensitivity analysis.</li>
+<li>For the <code>by_elevation</code> parameter, specify the value to increment the sequence between <code>from_elevation</code> and <code>to_elevation</code>.</li>
+<li>The three values (i.e., <code>from_elevation</code>, <code>to_elevation</code>, and <code>by_elevation</code>) define the sequence used for the sensitivity analysis.</li>
+<li>For the <code>bf_estimate</code> parameter, specify the detrended elevation value that represents the bankfull water surface elevation.</li>
+</ul>
+</section>
+<section id="perform-qa" class="level3">
+<h3 class="anchored" data-anchor-id="perform-qa">Perform QA</h3>
+<p>The purpose of this step is to use the QA Checklist to verify the reports have run correctly and identify any data mistakes that need to be corrected.</p>
+<ul>
+<li>Follow the instructions in the QA Checklist Chapter, <a href="4-1-QAChecklist.html#estimate_bankfull_report_qa">Estimate Bankfull Report</a> section, to verify that the reports have run correctly.</li>
+<li>Make the required changes suggested in the QA Checklist and rerun the report.</li>
+<li>Repeat these QA iterations until the reports are correct.</li>
+</ul>
+</section>
+<section id="determine-bankfull-elevation" class="level3">
+<h3 class="anchored" data-anchor-id="determine-bankfull-elevation">Determine Bankfull Elevation</h3>
+<p>The purpose of this step is to interpret the Estimate Bankfull Report to determine the final detrended bankfull elevation to be used for the rest of the analysis for each reach. The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-points-fc"><code>L2 Estimate Bankfull</code></a> tool is intended to be run iteratively, testing the fit of a range of detrended bankfull elevations against different regional curves.</p>
+<ul>
+<li>From the initial <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#estimate-bankfull-report">Estimate Bankfull Report</a>, use the Bankfull Elevation Goodness of Fit sensitivity analysis graph to examine the effect of choice of detrended bankfull elevation on the error statistic.</li>
+<li>Identify the detrended bankfull elevation that minimizes error on the Bankfull Elevation Goodness of Fit sensitivity analysis graph.</li>
+<li>In the example figure below, the detrended bankfull elevation of 104 ft. minimizes error (y-axis Mean Average Error) for both area and depth. Although 102 ft. appears to be the detrended elevation that minimizes error for width, 104 ft. does a better job for area and depth. Using the logic of “best two out three”, a detrended bankfull elevation of 104 ft. could be chosen for this reach and will be used for later steps in this analysis. However, other criteria could be used depending on the goals of your study.</li>
+<li>Rerun the report using the value chosen in the previous step.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/reach_gof_graph.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Bankfull Elevation Goodness of Fit</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="create-bankfull-area" class="level3">
+<h3 class="anchored" data-anchor-id="create-bankfull-area">Create Bankfull Area</h3>
+<p>The purpose of this step is to use the final bankfull elevation determined in the previous step to derive a final <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>bankfull_area</code></a> polygon for each reach.</p>
+<ul>
+<li>From the final Estimate Bankfull Report, use the detrended bankfull elevation identified in the last step. In the example above, this value was 104 ft.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#water-surface-extent"><code>08 - Water Surface Extent</code></a> tool to extract a bankfull area polygon. This tool creates a new polygon feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a>, where xxx is the detrended elevation specified.</li>
+<li>The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class must be edited to select only the polygons that represent the bankfull area polygon(s).</li>
+<li>Open the attribute table for the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class and use advanced sorting to sort first by <code>gridcode</code> and then by <code>Shape_Area</code>.</li>
+<li>Polygons with <code>gridcode</code> = 1 are polygons inundated at the detrended elevation.</li>
+<li>Typically, the polygons with the largest area represent the channel.</li>
+<li>Begin by selecting <code>gridcode</code> = 1 polygons with the largest area until the entire bankfull area is selected.</li>
+<li>Export these selected features to a new feature class named <code>bankfull_area</code>.</li>
+<li>Delete the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class.</li>
+</ul>
+</section>
+<section id="create-banklines" class="level3">
+<h3 class="anchored" data-anchor-id="create-banklines">Create Banklines</h3>
+<p>The purpose of this step is to convert the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>bankfull_area</code></a> polygon into polylines and edit into a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class for each reach. The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class will have two records, one representing the left descending bankline and another the right descending bankline for the stream reach.</p>
+<ul>
+<li>Use the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/polygon-to-line.htm">ESRI <code>Polygon To Line</code></a> tool to convert the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>bankfull_area</code></a> polygon feature class to a new polyline feature class named <code>banklines</code>.</li>
+<li>Add the following fields to the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class:
+<ul>
+<li><code>ReachName</code>: Text (50) - The purpose of this field is to store the reach name.</li>
+<li><code>bank_id</code>: Long Integer - The purpose of this field is to uniquely identify each bank.</li>
+<li><code>bank</code>: Text (50) - The purpose of this field is to designate which bank is the <code>right descending</code> bank and which is the <code>left descending</code> bank.</li>
+</ul></li>
+<li>Start editing the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class.</li>
+<li>Use the <a href="https://pro.arcgis.com/en/pro-app/latest/help/editing/explode-a-multipart-feature.htm">ESRI <code>Explode Multipart Feature</code></a> tool to explode any multipart line feature in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class.</li>
+<li>Add the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class to the map.</li>
+<li>Use the <a href="https://pro.arcgis.com/en/pro-app/latest/help/editing/split-a-feature.htm">ESRI <code>Split Tool</code></a> to split the line features at the downstream and upstream ends of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class.</li>
+<li>The features in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class should not extend past the end of the <code>flowline</code> feature.</li>
+<li>Use the <a href="https://pro.arcgis.com/en/pro-app/latest/help/editing/split-a-feature.htm">ESRI <code>Split Tool</code></a> to trim any tributaries from the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class.</li>
+<li>The goal of this step is to have only two features, one representing the left descending bankline and another the right descending bankline. Delete all other line features.</li>
+<li>Ensure that the banklines are digitized in the upstream direction (like a <code>flowline</code> feature). Edit the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class to ensure that each bankline is digitized beginning with the downstream end and digitized upstream.</li>
+<li>While editing, select a <code>bankline</code> feature, choose to edit vertices. Ensure that the red endpoint is at the upstream end of each bankline.</li>
+<li>Use the <a href="https://pro.arcgis.com/en/pro-app/latest/help/editing/reverse-the-direction-of-a-polyline.htm">“Reverse Direction” command (aka flip)</a> to ensure each bankline is digitized in the upstream direction.</li>
+<li>Check that each bankline is digitized in the upstream direction (red endpoint at the upstream end) before going on to the next step.</li>
+<li>In the <code>ReachName</code> field enter the reach name.</li>
+<li>In the <code>bank</code> field, enter the string <code>right descending</code> or <code>left descending</code> to designate which bank each line represents.</li>
+<li>In the <code>bank_id</code> field enter a <code>1</code> for the <code>right descending</code> bank and <code>2</code> for the <code>left descending</code> bank.</li>
+</ul>
+</section>
+<section id="create-final-centerline" class="level3">
+<h3 class="anchored" data-anchor-id="create-final-centerline">Create Final Centerline</h3>
+<p>The purpose of this step is to create a stream centerline. The centerline represents the rough midline of the stream between the banklines.</p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#centerline-tool"><code>10 - Centerline</code></a> tool to create a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#centerline-fc"><code>centerline</code></a> polyline feature class representing the stream midline at the bankfull water surface elevation.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="calculate-final-l2-cross-section-geometry" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-final-l2-cross-section-geometry">Calculate Final L2 Cross Section Geometry</h2>
+<p>The purpose of this stage is to use the bankfull elevation determined in the last stage to calculate the final level 2 cross section dimensions for the base year for each reach.</p>
+<section id="calculate-final-cross-section-l2-dimensions" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-final-cross-section-l2-dimensions">Calculate Final Cross Section L2 Dimensions</h3>
+<p>The purpose of this step is to calculate the final L2 dimensions for the regularly spaced and riffle cross section feature classes for each reach. Repeat the following steps for <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#regular-xs-fc">regular spaced cross section</a> feature class, the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code></a> feature class, and the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> feature class.</p>
+<p><strong>Determine the moving window size</strong><br>
+Many stream metrics are scale dependent, meaning these metrics are affected by the size of the moving window used in their calculation. To determine the appropriate size of the moving window for this reach, use the following steps:</p>
+<ul>
+<li>Many stream metrics are typically calculated using a moving window size equal to two meander wavelengths.</li>
+<li>Using the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>bankfull_area</code></a> feature class, estimate the typical bankfull width for the reach.</li>
+<li>Estimate the length of two meander wavelengths by multiplying the bankfull width estimated in the last step by 10 (e.g., 30ft bankfull width * 10 = 300ft, two meander wavelengths).<br>
+</li>
+<li>Determine how many cross sections two meander wavelengths represent.</li>
+<li>For riffle cross section for example, if they are spaced about 300ft apart, then two meander wavelengths would be 1 riffle cross section (i.e., 300ft / 300ft between riffle cross sections).</li>
+<li>For regular cross section for example, if they are spaced about 100ft apart, then two meander wavelengths would be 3 regular cross sections (i.e., 300ft / 100ft between regular cross sections).</li>
+</ul>
+<p><strong>Calculate Final L2 Dimensions</strong></p>
+<ul>
+<li>Delete the initial Level 2 dimensions <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>*_dims_L2</code></a> feature classes created earlier in Level 2.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-L2-tool"><code>15b - XS Dimensions, Level 2</code></a> tool to calculate final L2 dimensions.</li>
+<li>Set the <code>xs_fc</code> parameter to the cross sections feature class.</li>
+<li>Set the <code>lead_n</code> parameter to the number of upstream cross sections that you calculated in a previous step depending on the type of cross section (i.e., regular cross section, riffle cross section).</li>
+<li>If the elevations in the channel seem noisy, check the <code>use_smoothing</code> parameter and set the <code>loess_span</code> parameter to a value between 0-1.</li>
+<li>Confirm that the <code>vert_units</code> of the DEM are in feet.</li>
+</ul>
+<p><strong>Confirm the degree of smoothing</strong></p>
+<ul>
+<li>Use a chart to verify the choice of the smoothing <code>loess_span</code> parameter in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>*_dims_L2</code></a> feature class.</li>
+<li>Right-click on the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>*_dims_L2</code></a> feature class in the map table of contents and select “Create Chart”, and select “Line”. In the <code>Date or Number</code> dropdown, choose the field <code>POINT_M</code>. In the <code>Aggregation</code> dropdown, choose <code>None</code>. In the <code>Numeric field(s)</code> checklist, check the boxes next to <code>Z</code> and <code>Z_smooth</code>. Click the <code>Apply</code> button to view the chart.</li>
+<li>Visually assess the degree of smoothing. The smoothing should be high enough to eliminate LiDAR elevation noise, but not so high as to eliminate meaningful channel elevation change.</li>
+<li>If the smoothing is not ideal, re-run the tool and adjust the <code>loess_span</code> parameter.</li>
+</ul>
+</section>
+<section id="add-modeled-water-surface-elevation" class="level3">
+<h3 class="anchored" data-anchor-id="add-modeled-water-surface-elevation">Add Modeled Water Surface Elevation</h3>
+<p>The purpose of this optional step is to add an HEC-RAS hydraulic model estimated water surface elevation (if available) to a cross section dimension feature class.</p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-ras-watersurface-tool"><code>16 - XS RAS Watersurface</code></a> tool to add a modeled water surface elevation field to the input cross section feature class.</li>
+<li>Use the <code>RAS_model_name</code> parameter to distinguish between multiple RAS model scenarios.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="run-report" class="level2">
+<h2 class="anchored" data-anchor-id="run-report">Run Report</h2>
+<p>The purpose of this stage is to produce the Level 2 report for each reach.</p>
+<section id="run-the-l2-report" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-l2-report">Run the L2 Report</h3>
+<p>The purpose of this step is to run the L2 report for each reach.</p>
+<ul>
+<li>In the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#reports-toolset">Reports</a> toolset, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#L2-report-tool"><code>Level 2 Report</code></a> tool to produce the Level 2 Report.</li>
+<li>For the <code>stream</code> parameter, use the value of the <code>ReachName</code> field used in the <code>flowline</code> feature class.</li>
+<li>For the <code>flowline_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class for the base year survey.</li>
+<li>For the <code>xs_dims_fc</code> parameter, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>*_dims_L2</code></a> feature class calculated for the regular cross sections of the base year.</li>
+<li>The <code>xs_points_*</code> parameters should be entered with the feature class for the most recent survey first (i.e., the base year) and then the previous surveys in reverse chronological order (e.g., 2016, 2010, 2006).</li>
+<li>The <code>survey_name_*</code> parameters are used to label the surveys in maps and graphs.</li>
+<li>The feature classes and labels used for the <code>flowline_points_*</code>, <code>xs_points_*</code>, and <code>survey_name_*</code> parameters must be entered in the same order (e.g., 2016, 2010, 2006) in each set of numbered parameters.</li>
+<li>For the <code>dem</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster">DEM</a> for the base year survey.</li>
+<li>For the <code>banklines_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class created for the base year survey.<br>
+</li>
+<li>For the <code>features_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#features-fc"><code>features</code></a> feature class for the base year survey.</li>
+<li>For the <code>bf_estimate</code> parameter, specify the detrended elevation value that represents the bankfull water surface elevation.</li>
+<li>For the <code>regions</code> parameter, select the regions to use for estimating the bankfull water surface elevation.</li>
+</ul>
+</section>
+<section id="perform-qa-1" class="level3">
+<h3 class="anchored" data-anchor-id="perform-qa-1">Perform QA</h3>
+<p>The purpose of this step is to use the QA Checklist to verify the reports have run correctly and identify any data mistakes that need to be corrected.</p>
+<ul>
+<li>Follow the instructions in the QA Checklist Chapter, <a href="4-1-QAChecklist.html#L2_report_qa">Level 2 Report</a> section, to verify that the reports have run correctly.</li>
+<li>Make the required changes suggested in the QA Checklist and rerun the report.</li>
+<li>Repeat these QA iterations until the reports are correct.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="determine-next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="determine-next-steps">Determine Next Steps</h2>
+<p>The purpose of this step is to determine what further steps need to be taken.</p>
+<ul>
+<li>Review the results of the Level 2 Report and determine if the project goals require proceeding to developing the Level 3 analysis.</li>
+</ul>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./3-3-Level-1.html" class="pagination-link" aria-label="Level 1 Workflow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./3-5-Level-3.html" class="pagination-link" aria-label="Level 3 Workflow">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Made with love by USACE</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

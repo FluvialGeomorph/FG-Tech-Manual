@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers">
-<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District">
-<meta name="dcterms.date" content="2025-06-02">
 
-<title>FluvialGeomorph Technical Manual</title>
+<title>9&nbsp; Reports – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./0-1-Intro.html" rel="next">
+<link href="./3-1-Workflows.html" rel="next">
+<link href="./2-4-Features.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-1-Install.html">Tools</a></li><li class="breadcrumb-item"><a href="./2-5-Reports.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reports</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -187,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-5-Reports.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-5-Reports.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
   </div>
 </li>
@@ -267,42 +265,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
-  <ul class="collapse">
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#distribution-statement" id="toc-distribution-statement" class="nav-link" data-scroll-target="#distribution-statement">Distribution Statement</a></li>
-  <li><a href="#unit-conversion-factors" id="toc-unit-conversion-factors" class="nav-link" data-scroll-target="#unit-conversion-factors">Unit Conversion Factors</a></li>
-  <li><a href="#notation-list" id="toc-notation-list" class="nav-link" data-scroll-target="#notation-list">Notation List</a></li>
-  </ul></li>
+  <li><a href="#longitudinal-profile-compare-graph" id="toc-longitudinal-profile-compare-graph" class="nav-link active" data-scroll-target="#longitudinal-profile-compare-graph"><code>Graph - Longitudinal Profile Compare</code></a></li>
+  <li><a href="#L1-report" id="toc-L1-report" class="nav-link" data-scroll-target="#L1-report"><code>Report - L1</code></a></li>
+  <li><a href="#estimate-bankfull-report" id="toc-estimate-bankfull-report" class="nav-link" data-scroll-target="#estimate-bankfull-report"><code>Report - L2 Estimate Bankfull</code></a></li>
+  <li><a href="#L2-report" id="toc-L2-report" class="nav-link" data-scroll-target="#L2-report"><code>Report - L2</code></a></li>
+  <li><a href="#L3-report" id="toc-L3-report" class="nav-link" data-scroll-target="#L3-report"><code>Report - L3</code></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-1-Install.html">Tools</a></li><li class="breadcrumb-item"><a href="./2-5-Reports.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reports</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">FluvialGeomorph Technical Manual</h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reports</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers </p>
-             <p>Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 2, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -312,111 +295,185 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Funding for development and maintenance of FluvialGeomorph has been provided by the following US Army Corps of Engineers (USACE) programs:</p>
+<p>FluvialGeomorph produces a series of reports that help to define stream conditions.</p>
+<section id="longitudinal-profile-compare-graph" class="level3">
+<h3 class="anchored" data-anchor-id="longitudinal-profile-compare-graph"><code>Graph - Longitudinal Profile Compare</code></h3>
+<p>This graph is produced using the <a href="2-3-Toolbox.html#longitudinal-profile-compare-graph-tool"><code>Graph - Longitudinal Profile Compare</code></a> tool.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/Graph-Longitudinal_Profile_Compare.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Longitudinal Profile Plot.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="L1-report" class="level3">
+<h3 class="anchored" data-anchor-id="L1-report"><code>Report - L1</code></h3>
+<p><strong>Purpose</strong> - The Level 1 Report contains a set of maps and graphs that describe the channel as measured from the LiDAR derived DEM. This report is produced using the <a href="2-3-Toolbox.html#L1-report-tool"><code>Report - L1</code></a> tool using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#run-report">user manual</a>.</p>
+<p><strong>Code</strong> - This report is created by the <a href="https://bookdown.org/yihui/rmarkdown/parameterized-reports.html">R Markdown parameterized report</a> in the R package <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_1_report.Rmd"><code>fluvgeo/reports/level_1_report.Rmd</code></a>.</p>
+<p>This report contains the following sections:</p>
 <ul>
-<li><a href="https://emrrp.el.erdc.dren.mil">Ecosystem Management and Restoration Research Program (EMRRP)</a>.</li>
-<li><a href="https://rsm.usace.army.mil/">Regional Sediment Management Program (RSM)</a></li>
-<li><a href="https://www.mvd.usace.army.mil/Missions/Mississippi-River-Science-Technology/MS-River-Geomorphology-Potamology/">Mississippi River Geomorphology and Potamology Program (MRG&amp;P)</a></li>
-<li><a href="https://www.iwr.usace.army.mil/Missions/Flood-Risk-Management/Flood-Risk-Management-Program/">Flood Risk Management Program (FRM)</a></li>
-<li><a href="https://ewn.el.erdc.dren.mil/">Engineering With Nature (EWN)</a></li>
+<li><strong>Study Area Overview</strong> - This section provides an overview of the study area reach.
+<ul>
+<li>Reach Overview Map - A reach overview map displaying cross section locations over an aerial image and/or a medium resolution DEM with multi-direction shaded relief. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_overview.R"><code>fluvgeo::map_reach_overview</code></a>.</li>
+</ul></li>
+<li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
+<ul>
+<li>Longitudinal Profile - This longitudinal profile graph is created from the <a href="2-4-Features.html#flowline-points-fc"><code>flowline_points</code></a> feature class for several surveys if available. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/compare_long_profile.R"><code>fluvgeo::compare_long_profile.R</code></a>.<br>
+</li>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="2-4-Features.html#regular-xs-fc">regular cross sections</a> feature class. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/compare_xs_long_profile.R"><code>fluvgeo::compare_xs_long_profile</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Metrics</strong> - This section displays metrics for the cross sections of a stream reach.
+<ul>
+<li>Cross Section Metrics Plot, Level 1 - This stream reach metrics graph displays the Level 1 metrics on a faceted graph. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metrics_plot_L1.R"><code>fluvgeo::xs_metrics_plot_L1</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Profiles</strong> - This section displays a focused view of the characteristics of each individual cross section in the stream reach.
+<ul>
+<li>Cross Section Map - This map displays the extent of a single cross section in plan view with a DEM background. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_xs.R"><code>fluvgeo::map_xs</code></a>.</li>
+<li>Cross Section Profile Compare Plot - This graph displays a single regularly spaced cross section in profile view comparing the elevations from multiple surveys if provided. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_compare_plot_L1.R"><code>fluvgeo::xs_compare_plot_L1</code></a>.</li>
+</ul></li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/USACE_200.png" class="img-fluid figure-img" width="130"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EMRRP_logo_200.png" class="img-fluid figure-img" width="146"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/RSM_200.png" class="img-fluid figure-img" width="103"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/MRG&amp;P_300.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/FRMP_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/SilverJackets_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EWN_200.png" class="img-fluid figure-img" width="150"></p>
+<p><img src="figures/toolbox/Report_L1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Level 1 Report.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox">FluvialGeomorph ArcGIS toolbox</a> provides a set of tools for conducting rapid fluvial geomorphology analysis and assessment. It allows a user to use high resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to cost effectively extract stream channel dimensions at fine scale for large spatial extents. This document describes the methods used in the development of the FluvialGeomorph project.</p>
-</section>
-<section id="distribution-statement" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-statement">Distribution Statement</h2>
-<p>Approved for public release; distribution is unlimited</p>
-</section>
-<section id="unit-conversion-factors" class="level2">
-<h2 class="anchored" data-anchor-id="unit-conversion-factors">Unit Conversion Factors</h2>
-<table class="caption-top table">
-<caption>Unit Conversion Factors</caption>
-<thead>
-<tr class="header">
-<th>Multiply</th>
-<th>By</th>
-<th>To Obtain</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>feet</td>
-<td>0.3048</td>
-<td>meters</td>
-</tr>
-<tr class="even">
-<td>miles</td>
-<td>1.60934</td>
-<td>kilometers</td>
-</tr>
-<tr class="odd">
-<td>square miles</td>
-<td>2.58999</td>
-<td>square kilometers</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="notation-list" class="level2">
-<h2 class="anchored" data-anchor-id="notation-list">Notation List</h2>
 <hr>
-
-
 </section>
+<section id="estimate-bankfull-report" class="level3">
+<h3 class="anchored" data-anchor-id="estimate-bankfull-report"><code>Report - L2 Estimate Bankfull</code></h3>
+<p><strong>Purpose</strong> - The Estimate Bankfull Report is used to help estimate the bankfull water surface elevation for an ungaged stream with the assistance of regional curves and visual observation of geomorphic indicators from LiDAR surveys. This report is produced using the <a href="2-3-Toolbox.html#estimate-bankfull-report-tool"><code>Report - L2 Estimate Bankfull</code></a> tool using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#estimate-bankfull">user manual</a>.</p>
+<p><strong>Code</strong> - This report is created by the <a href="https://bookdown.org/yihui/rmarkdown/parameterized-reports.html">R Markdown parameterized report</a> in the R package <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/estimate_bankfull_report.Rmd"><code>fluvgeo/reports/estimate_bankfull_report.Rmd</code></a>.</p>
+<p>This report contains the follow sections:</p>
+<ul>
+<li><strong>Study Area Overview</strong> - This section provides an overview of the study area reach.
+<ul>
+<li>Reach Overview Map - A reach overview map displaying cross section locations over an aerial image and/or a medium resolution DEM with multi-direction shaded relief. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_overview.R"><code>fluvgeo::map_reach_overview</code></a>.</li>
+</ul></li>
+<li><strong>Bankfull Elevation Sensitivity Analysis</strong> - This section performs a sensitivity analysis of the directly measured reach-wide channel dimensions compared to the regional curve estimated channel dimensions.
+<ul>
+<li>Bankfull Elevation Goodness of Fit Graph - This graph is used to identify how similar this reach’s dimensions are compared to dimensions from several other regions at the current bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/gof_graph.R"><code>fluvgeo::gof_graph</code></a>.</li>
+<li>Bankfull Elevation Dimensions by Region Table - This table summarizes this reach’s dimensions compared to several other regions at the current bankfull elevation. This table is created by code in the Estimate Bankfull Report, <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/estimate_bankfull_report.Rmd"><code>fluvgeo/reports/estimate_bankfull_report.Rmd</code></a></li>
+<li>Regional Hydraulic Geometry Curves Graph - This graph displays the channel dimensions of each cross section in the reach, along with the regional curve estimated dimensions. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/reach_rhg_graph.R"><code>fluvgeo::reach_rhg_graph</code></a>.</li>
+</ul></li>
+<li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
+<ul>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="2-4-Features.html#riffle-xs-fc"><code>riffle_channel</code></a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Metrics</strong> - This section displays metrics the Level 2 metrics for the riffle cross sections of a stream reach.
+<ul>
+<li>Cross Section Metrics Plot, Level 2 - This stream reach metrics graph displays the Level 2 metrics on a faceted graph. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metrics_plot_L2.R"><code>fluvgeo::xs_metrics_plot_L2</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Profiles</strong> - This section displays a focused view of the characteristics of each individual cross section in the stream reach.
+<ul>
+<li>Cross Section Map - This map displays the extent of a single cross section in plan view with a high resolution DEM background. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_xs.R"><code>fluvgeo::map_xs</code></a>.</li>
+<li>Floodplain XS Profile Compare Plot - This graph displays a single <code>riffle_floodplain</code> feature in a wide aspect ratio profile view to compare the elevations from multiple surveys if provided. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_compare_plot_L2.R"><code>fluvgeo::xs_compare_plot_L2</code></a>.</li>
+<li>Channel XS Profile Compare Plot - This graph displays a single <code>riffle_channel</code> feature in a square aspect ratio profile view to compare the elevations from multiple surveys if provided. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_compare_plot_L2.R"><code>fluvgeo::xs_compare_plot_L2</code></a>.</li>
+<li>Bankfull Elevation Dimensions by Region Table - This table summarizes this cross section’s dimensions compared to several other regions at the current bankfull elevation. This table is created by code in the Estimate Bankfull Report, <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/estimate_bankfull_report.Rmd"><code>fluvgeo/reports/estimate_bankfull_report.Rmd</code></a>.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/Report_L2_Estimate_Bankfull.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Level 2, Estimate Bankfull Report.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="L2-report" class="level3">
+<h3 class="anchored" data-anchor-id="L2-report"><code>Report - L2</code></h3>
+<p><strong>Purpose</strong> - The Level 2 Report contains a set of maps and graphs that describe the Level 2 channel dimensions calculated at the specified bankfull elevation, estimated using the <a href="#estimate-bankfull-report">L2 Estimate Bankfull Report</a>. This report is produced using the <a href="2-3-Toolbox.html#L2-report-tool"><code>Report - L2</code></a> tool using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#run-report-1">user manual</a>.</p>
+<p><strong>Code</strong> - This report is created by the <a href="https://bookdown.org/yihui/rmarkdown/parameterized-reports.html">R Markdown parameterized report</a> in the R package <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_2_report.Rmd"><code>fluvgeo/reports/level_2_report.Rmd</code></a>.</p>
+<p>This report contains the following sections:</p>
+<ul>
+<li><strong>Study Area Overview</strong> - This section provides an overview of the study area reach.
+<ul>
+<li>Reach Overview Map - A reach overview map displaying cross section locations over an aerial image and/or a medium resolution DEM with multi-direction shaded relief. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_overview.R"><code>fluvgeo::map_reach_overview</code></a>.</li>
+</ul></li>
+<li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
+<ul>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="2-4-Features.html#xs-dimensions-fc">Level 2 cross section dimensions</a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Metrics</strong> - This section displays metrics for the Level 2 dimensions calculated for the regular cross sections of a stream reach.
+<ul>
+<li>Cross Section Metrics Plot, Level 2 - This stream reach metrics graph displays the Level 2 metrics on a faceted graph. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metrics_plot_L2.R"><code>fluvgeo::xs_metrics_plot_L2</code></a>.</li>
+<li>Width Depth Ratio Map - A reach overview map is used to display the width depth ratio values at each cross section for the reach. The width depth ratio parameters (i.e., metric definition, class break values and labels) are defined in this report using the R S4 class <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/FluvialGeomorphicMetric.R"><code>FluvialGeomorphicMetric</code></a>. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_metric.R"><code>fluvgeo::map_reach_metric</code></a>.</li>
+<li>Width Depth Ratio Graph - This graph displays the width depth ratio values (y-axis) of the stream along its length (x-axis) beginning from the downstream end of the reach moving upstream longitudinally. This graph uses the metric class definition for width depth ratio defined for the previous figure. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metric_plot.R"><code>fluvgeo::xs_metric_plot</code></a>.</li>
+<li>Regional Hydraulic Geometry Curves Graph - This graph displays the channel dimensions of each cross section in the reach, along with the regional curve estimated dimensions. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/reach_rhg_graph.R"><code>fluvgeo::reach_rhg_graph</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Profiles</strong> - This section displays a focused view of the characteristics of each individual cross section in the stream reach.
+<ul>
+<li>Cross Section Map - This map displays the extent of a single cross section in plan view with a high resolution DEM background. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_xs.R"><code>fluvgeo::map_xs</code></a>.</li>
+<li>Regular XS Profile Compare Plot - This graph displays a single <code>*_L2_dims</code> feature in a wide aspect ratio profile view to compare the elevations from multiple surveys if provided. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_compare_plot_L2.R"><code>fluvgeo::xs_compare_plot_L2</code></a>.</li>
+<li>Bankfull Elevation Dimensions by Region Table - This table summarizes this cross section’s dimensions compared to several other regions at the current bankfull elevation. This table is created by code in the L2 Report, <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_2_report.Rmd"><code>fluvgeo/reports/level_2_report.Rmd</code></a>.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/Report_L2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Level 2 Report.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="L3-report" class="level3">
+<h3 class="anchored" data-anchor-id="L3-report"><code>Report - L3</code></h3>
+<p><strong>Purpose</strong> - The Level 3 Report contains a set of maps and graphs that describe the Level 3 channel dimensions calculated at the specified bankfull elevation, estimated using the <a href="#estimate-bankfull-report">L2 Estimate Bankfull Report</a>. This report is produced using the <a href="2-3-Toolbox.html#L3-report-tool"><code>Report - L3</code></a> tool using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#run-report-2">user manual</a>.</p>
+<p><strong>Code</strong> - This report is created by the <a href="https://bookdown.org/yihui/rmarkdown/parameterized-reports.html">R Markdown parameterized report</a> in the R package <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_3_report.Rmd"><code>fluvgeo/reports/level_3_report.Rmd</code></a>.</p>
+<p>This report contains the following sections:</p>
+<ul>
+<li><strong>Study Area Overview</strong> - This section provides an overview of the study area reach.
+<ul>
+<li>Reach Overview Map - A reach overview map displaying cross section locations over an aerial image and/or a medium resolution DEM with multi-direction shaded relief. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_overview.R"><code>fluvgeo::map_reach_overview</code></a>.</li>
+</ul></li>
+<li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
+<ul>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="2-4-Features.html#xs-dimensions-fc">Level 3 cross section dimensions</a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Metrics</strong> - This section displays metrics for the Level 3 dimensions calculated for the regular cross sections of a stream reach.
+<ul>
+<li>Cross Section Metrics Plot, Level 3 - This stream reach metrics graph displays the Level 3 metrics on a faceted graph. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metrics_plot_L3.R"><code>fluvgeo::xs_metrics_plot_L3</code></a>.</li>
+<li>Width Depth Ratio Map - A reach overview map is used to display the width depth ratio values at each cross section for the reach. The width depth ratio parameters (i.e., metric definition, class break values and labels) are defined in this report using the R S4 class <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/FluvialGeomorphicMetric.R"><code>FluvialGeomorphicMetric</code></a>. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_metric.R"><code>fluvgeo::map_reach_metric</code></a>.</li>
+<li>Width Depth Ratio Graph - This graph displays the width depth ratio values (y-axis) of the stream along its length (x-axis) beginning from the downstream end of the reach moving upstream longitudinally. This graph uses the metric class definition for width depth ratio defined for the previous figure. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metric_plot.R"><code>fluvgeo::xs_metric_plot</code></a>.</li>
+<li>Radius of Curvature to Bankfull Width Map - A reach overview map is used to display the radius of curvature to bankfull width ratio values at each cross section for the reach. The radius of curvature to bankfull width ratio parameters (i.e., metric definition, class break values and labels) are defined in this report using the R S4 class <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/FluvialGeomorphicMetric.R"><code>FluvialGeomorphicMetric</code></a>. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_reach_metric.R"><code>fluvgeo::map_reach_metric</code></a>.</li>
+<li>Radius of Curvature to Bankfull Width Graph - This graph displays the radius of curvature to bankfull width ratio values (y-axis) of the stream along its length (x-axis) beginning from the downstream end of the reach moving upstream longitudinally. This graph uses the metric class definition for radius of curvature to bankfull width ratio defined for the previous figure. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metric_plot.R"><code>fluvgeo::xs_metric_plot</code></a>.</li>
+<li>Regional Hydraulic Geometry Curves Graph - This graph displays the channel dimensions of each cross section in the reach, along with the regional curve estimated dimensions. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/reach_rhg_graph.R"><code>fluvgeo::reach_rhg_graph</code></a>.</li>
+</ul></li>
+<li><strong>Cross Section Profiles</strong> - This section displays a focused view of the characteristics of each individual cross section in the stream reach.
+<ul>
+<li>Cross Section Map - This map displays the extent of a single cross section in plan view with a high resolution DEM background. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/map_xs.R"><code>fluvgeo::map_xs</code></a>.</li>
+<li>Regular XS Profile Compare Plot - This graph displays a single <code>*_L3_dims</code> feature in a wide aspect ratio profile view to compare the elevations from multiple surveys if provided. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_compare_plot_L2.R"><code>fluvgeo::xs_compare_plot_L2</code></a>.</li>
+<li>Bankfull Elevation Dimensions by Region Table - This table summarizes this cross section’s dimensions compared to several other regions at the current bankfull elevation. This table is created by code in the L3 Report, <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_3_report.Rmd"><code>fluvgeo/reports/level_3_report.Rmd</code></a>.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/Report_L3.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Level 3 Report.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -842,10 +899,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./2-4-Features.html" class="pagination-link" aria-label="Features">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Features</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./0-1-Intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./3-1-Workflows.html" class="pagination-link" aria-label="Workflows">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Workflows</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

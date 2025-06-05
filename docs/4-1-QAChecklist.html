@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers">
-<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District">
-<meta name="dcterms.date" content="2025-06-02">
 
-<title>FluvialGeomorph Technical Manual</title>
+<title>Appendix A — QA Checklist – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./0-1-Intro.html" rel="next">
+<link href="./0-7-References.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4-1-QAChecklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./4-1-QAChecklist.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -251,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4-1-QAChecklist.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-1-QAChecklist.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span></a>
   </div>
 </li>
@@ -267,12 +264,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#L1_report_qa" id="toc-L1_report_qa" class="nav-link active" data-scroll-target="#L1_report_qa">Level 1 Report</a>
   <ul class="collapse">
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#distribution-statement" id="toc-distribution-statement" class="nav-link" data-scroll-target="#distribution-statement">Distribution Statement</a></li>
-  <li><a href="#unit-conversion-factors" id="toc-unit-conversion-factors" class="nav-link" data-scroll-target="#unit-conversion-factors">Unit Conversion Factors</a></li>
-  <li><a href="#notation-list" id="toc-notation-list" class="nav-link" data-scroll-target="#notation-list">Notation List</a></li>
+  <li><a href="#L1_study_area_overview" id="toc-L1_study_area_overview" class="nav-link" data-scroll-target="#L1_study_area_overview">Study Area Overview</a></li>
+  <li><a href="#L1_long_profiles" id="toc-L1_long_profiles" class="nav-link" data-scroll-target="#L1_long_profiles">Longitudinal Profiles</a></li>
+  <li><a href="#L1_xs_metrics" id="toc-L1_xs_metrics" class="nav-link" data-scroll-target="#L1_xs_metrics">Cross Section Metrics</a></li>
+  <li><a href="#L1_xs_profiles" id="toc-L1_xs_profiles" class="nav-link" data-scroll-target="#L1_xs_profiles">Cross Section Profiles</a></li>
+  </ul></li>
+  <li><a href="#estimate_bankfull_report_qa" id="toc-estimate_bankfull_report_qa" class="nav-link" data-scroll-target="#estimate_bankfull_report_qa">Estimate Bankfull Report</a>
+  <ul class="collapse">
+  <li><a href="#study-area-overview" id="toc-study-area-overview" class="nav-link" data-scroll-target="#study-area-overview">Study Area Overview</a></li>
+  <li><a href="#bankfull-elevation-sensitivity-analysis" id="toc-bankfull-elevation-sensitivity-analysis" class="nav-link" data-scroll-target="#bankfull-elevation-sensitivity-analysis">Bankfull Elevation Sensitivity Analysis</a></li>
+  <li><a href="#estimate_bankfull_long_profile" id="toc-estimate_bankfull_long_profile" class="nav-link" data-scroll-target="#estimate_bankfull_long_profile">Longitudinal Profile</a></li>
+  <li><a href="#estimate_bankfull_xs_metrics" id="toc-estimate_bankfull_xs_metrics" class="nav-link" data-scroll-target="#estimate_bankfull_xs_metrics">Cross Section Metrics</a></li>
+  <li><a href="#cross-section-profiles" id="toc-cross-section-profiles" class="nav-link" data-scroll-target="#cross-section-profiles">Cross Section Profiles</a></li>
+  </ul></li>
+  <li><a href="#L2_report_qa" id="toc-L2_report_qa" class="nav-link" data-scroll-target="#L2_report_qa">Level 2 Report</a>
+  <ul class="collapse">
+  <li><a href="#study-area-overview-1" id="toc-study-area-overview-1" class="nav-link" data-scroll-target="#study-area-overview-1">Study Area Overview</a></li>
+  <li><a href="#longitudinal-profile" id="toc-longitudinal-profile" class="nav-link" data-scroll-target="#longitudinal-profile">Longitudinal Profile</a></li>
+  <li><a href="#cross-section-metrics" id="toc-cross-section-metrics" class="nav-link" data-scroll-target="#cross-section-metrics">Cross Section Metrics</a></li>
+  <li><a href="#cross-section-profiles-1" id="toc-cross-section-profiles-1" class="nav-link" data-scroll-target="#cross-section-profiles-1">Cross Section Profiles</a></li>
+  </ul></li>
+  <li><a href="#L3_report_qa" id="toc-L3_report_qa" class="nav-link" data-scroll-target="#L3_report_qa">Level 3 Report</a>
+  <ul class="collapse">
+  <li><a href="#study-area-overview-2" id="toc-study-area-overview-2" class="nav-link" data-scroll-target="#study-area-overview-2">Study Area Overview</a></li>
+  <li><a href="#longitudinal-profile-1" id="toc-longitudinal-profile-1" class="nav-link" data-scroll-target="#longitudinal-profile-1">Longitudinal Profile</a></li>
+  <li><a href="#cross-section-metrics-1" id="toc-cross-section-metrics-1" class="nav-link" data-scroll-target="#cross-section-metrics-1">Cross Section Metrics</a></li>
+  <li><a href="#cross-section-profiles-2" id="toc-cross-section-profiles-2" class="nav-link" data-scroll-target="#cross-section-profiles-2">Cross Section Profiles</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -280,29 +299,16 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4-1-QAChecklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./4-1-QAChecklist.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">FluvialGeomorph Technical Manual</h1>
+<h1 class="title"><span id="qa_checklist" class="quarto-section-identifier">Appendix A — QA Checklist</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers </p>
-             <p>Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 2, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -312,107 +318,227 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Funding for development and maintenance of FluvialGeomorph has been provided by the following US Army Corps of Engineers (USACE) programs:</p>
+<p>This chapter describes the items an analyst needs to check to ensure that the FluvialGeomorph tools have run correctly to produce clean reports. In addition to following the guidance in the previous chapters when preparing the data and running each tool, this chapter will provide a checklist of items you’ll need to verify after each report completes. Reports are the place where all your hard work comes together! Your work is not complete just because the tools run without any errors. A lot of datasets must work together to make these reports come out cleanly. Because these reports integrate so many individual datasets, many issues aren’t discovered until you run the reports. This checklist will help you identify where things might not be exactly right with previous tool runs and what you’ll need to do fix them.</p>
+<section id="L1_report_qa" class="level2">
+<h2 class="anchored" data-anchor-id="L1_report_qa">Level 1 Report</h2>
+<section id="L1_study_area_overview" class="level3">
+<h3 class="anchored" data-anchor-id="L1_study_area_overview">Study Area Overview</h3>
+<p>This report section contains a set of reach overview maps drawn using the <code>flowline</code> and the regularly spaced cross section dimensions, <code>*_dims_L1</code>, feature classes (fc). Both the aerial photo and elevation are provided by <a href="https://docs.mapbox.com/api/maps/#raster-tiles">Mapbox Raster Tiles</a>.</p>
+<section id="check-the-stream-name" class="level4">
+<h4 class="anchored" data-anchor-id="check-the-stream-name">Check the stream name</h4>
+<p>All of the tools depend on consistent reach naming! Ensuring consistent naming begins with deriving the “flowline” fc. The ReachName field must contain the same value for all of the fc’s within a reach geodatabase. This is the single biggest gotcha we find running these tools. If tools aren’t working correctly and you’re sure you’ve done everything else right, consistent stream names is the first thing to check!</p>
+</section>
+<section id="cross-section-labels-at-the-correct-interval" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-labels-at-the-correct-interval">Cross section labels at the correct interval</h4>
+<p>Cross section labels usually cannot be placed on every cross section or the map or graph becomes unreadable due to label crowding. The <code>xs_label_freq</code> parameter can be adjusted to adequately space cross section labels. Typically <code>xs_label_freq</code> = 10 works for regularly spaced cross sections and <code>xs_label_freq</code> = 2 works for riffle cross sections.</p>
+</section>
+<section id="cross-sections-cover-the-full-extent-of-the-flowine" class="level4">
+<h4 class="anchored" data-anchor-id="cross-sections-cover-the-full-extent-of-the-flowine">Cross sections cover the full extent of the flowine</h4>
+<p>The <code>flowline</code> fc extends from the downstream end of the reach to the upstream end. Cross sections should be spaced regularly across the entire reach, without any gaps at the upper or lower end.</p>
+</section>
+<section id="map-basemap-displaying-correctly" class="level4">
+<h4 class="anchored" data-anchor-id="map-basemap-displaying-correctly">Map basemap displaying correctly</h4>
+<p>The overview maps should contain an aerial photo or shaded relief elevation basemap.</p>
+</section>
+</section>
+<section id="L1_long_profiles" class="level3">
+<h3 class="anchored" data-anchor-id="L1_long_profiles">Longitudinal Profiles</h3>
+<p>This report section contains two longitudinal profile graphs, one drawn using the <code>flowline_points</code> fc, and the second is drawn using the cross section dimensions, <code>*_dims_L1</code> fc.</p>
+<section id="elevation-values-are-reasonable" class="level4">
+<h4 class="anchored" data-anchor-id="elevation-values-are-reasonable">Elevation values are reasonable</h4>
+<p>The elevation values displayed on the map or graph should be reasonable. Use the ESRI <code>Explore</code> tool to check the DEM elevation values. By convention in FluvialGeomorph, DEM values must always have vertical units = feet.</p>
+</section>
+<section id="elevation-ranges-are-similar-between-surveys" class="level4">
+<h4 class="anchored" data-anchor-id="elevation-ranges-are-similar-between-surveys">Elevation ranges are similar between surveys</h4>
+<p>Although stream elevations can change over time, the elevation ranges between subsequent survey dates should be roughly similar. If the elevation ranges are drastically different, check the terrain development steps for each survey time period to ensure that the elevation data was processed correctly.</p>
+</section>
+<section id="multiple-surveys-are-labeled-correctly" class="level4">
+<h4 class="anchored" data-anchor-id="multiple-surveys-are-labeled-correctly">Multiple surveys are labeled correctly</h4>
+<p>Reports that contain multiple surveys should be entered in the same way to ensure they are labeled and symbolized (e.g., each survey drawn with the same color in each report) the same way across all reports. Follow these guidelines to ensure consistency:</p>
 <ul>
-<li><a href="https://emrrp.el.erdc.dren.mil">Ecosystem Management and Restoration Research Program (EMRRP)</a>.</li>
-<li><a href="https://rsm.usace.army.mil/">Regional Sediment Management Program (RSM)</a></li>
-<li><a href="https://www.mvd.usace.army.mil/Missions/Mississippi-River-Science-Technology/MS-River-Geomorphology-Potamology/">Mississippi River Geomorphology and Potamology Program (MRG&amp;P)</a></li>
-<li><a href="https://www.iwr.usace.army.mil/Missions/Flood-Risk-Management/Flood-Risk-Management-Program/">Flood Risk Management Program (FRM)</a></li>
-<li><a href="https://ewn.el.erdc.dren.mil/">Engineering With Nature (EWN)</a></li>
+<li>Most recent survey listed at the top, with earlier surveys listed in reverse chronological order.</li>
+<li>Survey date indicates the date flown (e.g., not the contract or delivery date).</li>
 </ul>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/USACE_200.png" class="img-fluid figure-img" width="130"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EMRRP_logo_200.png" class="img-fluid figure-img" width="146"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/RSM_200.png" class="img-fluid figure-img" width="103"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/MRG&amp;P_300.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/FRMP_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/SilverJackets_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EWN_200.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox">FluvialGeomorph ArcGIS toolbox</a> provides a set of tools for conducting rapid fluvial geomorphology analysis and assessment. It allows a user to use high resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to cost effectively extract stream channel dimensions at fine scale for large spatial extents. This document describes the methods used in the development of the FluvialGeomorph project.</p>
 </section>
-<section id="distribution-statement" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-statement">Distribution Statement</h2>
-<p>Approved for public release; distribution is unlimited</p>
+<section id="multiple-surveys-are-correctly-calibrated-to-the-base-year" class="level4">
+<h4 class="anchored" data-anchor-id="multiple-surveys-are-correctly-calibrated-to-the-base-year">Multiple surveys are correctly calibrated to the base year</h4>
+<p>On the longitudinal profile graphs, each survey line should start and end at the same x-axis station value. In other words, one survey line should not end before or after another survey line. Check the far right edge of the longitudinal graph to ensure all survey’s have the same ending value.</p>
+<p>If all of the surveys’ last station values do not align, it means that the previous surveys were not correctly calibrated to the base year flowline. Previous year surveys will need to have the <code>Flowline Points</code> tool rerun using the base year survey’s <code>flowline_points</code> for calibration.</p>
 </section>
-<section id="unit-conversion-factors" class="level2">
-<h2 class="anchored" data-anchor-id="unit-conversion-factors">Unit Conversion Factors</h2>
-<table class="caption-top table">
-<caption>Unit Conversion Factors</caption>
-<thead>
-<tr class="header">
-<th>Multiply</th>
-<th>By</th>
-<th>To Obtain</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>feet</td>
-<td>0.3048</td>
-<td>meters</td>
-</tr>
-<tr class="even">
-<td>miles</td>
-<td>1.60934</td>
-<td>kilometers</td>
-</tr>
-<tr class="odd">
-<td>square miles</td>
-<td>2.58999</td>
-<td>square kilometers</td>
-</tr>
-</tbody>
-</table>
+<section id="stationing-in-the-correct-units" class="level4">
+<h4 class="anchored" data-anchor-id="stationing-in-the-correct-units">Stationing in the correct units</h4>
+<p>Units can be chosen for the longitudinal profile stationing. Ensure that the correct units are selected.</p>
 </section>
-<section id="notation-list" class="level2">
-<h2 class="anchored" data-anchor-id="notation-list">Notation List</h2>
+<section id="stream-feature-labels-display-correctly" class="level4">
+<h4 class="anchored" data-anchor-id="stream-feature-labels-display-correctly">Stream feature labels display correctly</h4>
+<p>Longitudinal graphs are labeled using the rows in the <code>features</code> fc. Ensure these river features are labeled correctly and are located at the correct longitudinal position.</p>
+</section>
+</section>
+<section id="L1_xs_metrics" class="level3">
+<h3 class="anchored" data-anchor-id="L1_xs_metrics">Cross Section Metrics</h3>
+<p>This report section contains a Level 1 cross section metrics plot drawn using the cross section dimensions fc, <code>*_dims_L1</code>.</p>
+<section id="cross-section-watershed-area-calculated-correctly" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-watershed-area-calculated-correctly">Cross section watershed area calculated correctly</h4>
+<p>The watershed area metric is calculated by the <code>XS Watershed Area</code> tool. Given the complexities of automatically calculating watershed area for high resolution stream features, some watershed areas may not have been calculated correctly. Rerunning the Watershed Area tool or manual adjustment of the <code>Watershed_Area_SqMile</code> field may be required.</p>
+<ul>
+<li>Watershed values are reasonable.</li>
+<li>Watershed area must increase moving downstream.</li>
+</ul>
+</section>
+<section id="elevation-smoothing-is-acceptable" class="level4">
+<h4 class="anchored" data-anchor-id="elevation-smoothing-is-acceptable">Elevation smoothing is acceptable</h4>
+<p>High resolution LiDAR derived stream elevations can be noisy. Smoothing the elevations longitudinally is a way reduce noise. However, too much smoothing can be applied, eliminating any of the relationships we want to observe. By visually comparing the raw elevation and the smoothed elevation graphs, verify that the amount of smoothing sufficiently reduces noise, but does not not go too far and removes substantive variation. Smoothing is controlled in the <code>XS Dimension</code> tools using the “loess_span” parameter.</p>
+</section>
+<section id="ensure-metrics-values-are-smooth" class="level4">
+<h4 class="anchored" data-anchor-id="ensure-metrics-values-are-smooth">Ensure metrics values are smooth</h4>
+<p>Many reach metrics are calculated using a longitudinal moving window analysis. The size of the moving window is controlled in the <code>XS Dimensions</code> tools using the “lead_n” parameter. A smaller value applies a narrower moving mindow and a larger value applies a wider moving window. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced.</p>
+</section>
+<section id="slope-values-are-reasonable" class="level4">
+<h4 class="anchored" data-anchor-id="slope-values-are-reasonable">Slope values are reasonable</h4>
+<p>Slope values should be greater than zero. If negative slopes are being recorded, it usually means that the moving window size needs to be increased.</p>
+</section>
+<section id="sinuosity-values-are-reasonable" class="level4">
+<h4 class="anchored" data-anchor-id="sinuosity-values-are-reasonable">Sinuosity values are reasonable</h4>
+<p>Sinuosity values should be greater than one.</p>
+</section>
+</section>
+<section id="L1_xs_profiles" class="level3">
+<h3 class="anchored" data-anchor-id="L1_xs_profiles">Cross Section Profiles</h3>
+<p>This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the cross section dimensions <code>*_dims_L1</code> fc and the <code>dem_hydro</code> raster. The cross section profile graph is drawn using the cross section points fc’s for each survey.</p>
+<section id="cross-section-must-be-digitized-from-left-to-right" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-must-be-digitized-from-left-to-right">Cross section must be digitized from left to right</h4>
+<p>The graph is being viewed from the perspective of standing in the stream, looking downstream. To ensure this orientation, cross sections must be digitized from the left descending bank to the right descending bank.</p>
+</section>
+<section id="cross-section-perpenduicular-to-the-channel" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-perpenduicular-to-the-channel">Cross section perpenduicular to the channel</h4>
+</section>
+<section id="cross-section-covers-the-channel-extent" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-covers-the-channel-extent">Cross section covers the channel extent</h4>
+</section>
+<section id="cross-section-extends-onto-floodplain" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-extends-onto-floodplain">Cross section extends onto floodplain</h4>
+</section>
+<section id="cross-section-not-located-on-built-infrastructure" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-not-located-on-built-infrastructure">Cross section not located on built infrastructure</h4>
+</section>
+<section id="cross-section-drawn-within-the-dem-extent" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-drawn-within-the-dem-extent">Cross section drawn within the DEM extent</h4>
+</section>
+<section id="cross-section-y-axis-range-is-not-too-large" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-y-axis-range-is-not-too-large">Cross section y-axis range is not too large</h4>
+</section>
+<section id="cross-section-x-axis-range-is-not-too-large" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-x-axis-range-is-not-too-large">Cross section x-axis range is not too large</h4>
+</section>
+</section>
+</section>
+<section id="estimate_bankfull_report_qa" class="level2">
+<h2 class="anchored" data-anchor-id="estimate_bankfull_report_qa">Estimate Bankfull Report</h2>
+<section id="study-area-overview" class="level3">
+<h3 class="anchored" data-anchor-id="study-area-overview">Study Area Overview</h3>
+<p>This report section contains a set of reach overview maps drawn using the <code>flowline</code> and the riffle cross section dimensions, <code>*_dims_L2</code>, feature classes (fc). Both the aerial photo and elevation are provided by <a href="https://docs.mapbox.com/api/maps/#raster-tiles">Mapbox Raster Tiles</a>. See the QA checklist items in the <a href="#L1_study_area_overview">Level 1 Report, Study Area Overview</a> section.</p>
+</section>
+<section id="bankfull-elevation-sensitivity-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="bankfull-elevation-sensitivity-analysis">Bankfull Elevation Sensitivity Analysis</h3>
+<p>This report section contains the Bankfull Elevation sensitivity analysis Goodness of Fit graph and the Regional Hydraulic Geometry Curves graph drawn using the base year’s riffle cross section points fc.</p>
+<section id="correct-regions-included" class="level4">
+<h4 class="anchored" data-anchor-id="correct-regions-included">Correct regions included</h4>
+</section>
+<section id="adequate-range-of-bankfull-elevations" class="level4">
+<h4 class="anchored" data-anchor-id="adequate-range-of-bankfull-elevations">Adequate range of bankfull elevations</h4>
+</section>
+<section id="detrended-bankfull-elevation-set-to-a-reasonable-value" class="level4">
+<h4 class="anchored" data-anchor-id="detrended-bankfull-elevation-set-to-a-reasonable-value">Detrended bankfull elevation set to a reasonable value</h4>
+</section>
+<section id="drainage-area-values-are-reasonable" class="level4">
+<h4 class="anchored" data-anchor-id="drainage-area-values-are-reasonable">Drainage Area values are reasonable</h4>
+</section>
+</section>
+<section id="estimate_bankfull_long_profile" class="level3">
+<h3 class="anchored" data-anchor-id="estimate_bankfull_long_profile">Longitudinal Profile</h3>
+<p>This section of the report contains a cross section longitudinal profile graph drawn using the riffle cross section dimensions, <code>riffle_channel_dims_L2</code> fc.</p>
+<section id="elevation-values-are-reasonable-1" class="level4">
+<h4 class="anchored" data-anchor-id="elevation-values-are-reasonable-1">Elevation values are reasonable</h4>
+</section>
+<section id="stationing-in-the-correct-units-1" class="level4">
+<h4 class="anchored" data-anchor-id="stationing-in-the-correct-units-1">Stationing in the correct units</h4>
+</section>
+<section id="stream-feature-labels-display-correctly-1" class="level4">
+<h4 class="anchored" data-anchor-id="stream-feature-labels-display-correctly-1">Stream feature labels display correctly</h4>
+</section>
+</section>
+<section id="estimate_bankfull_xs_metrics" class="level3">
+<h3 class="anchored" data-anchor-id="estimate_bankfull_xs_metrics">Cross Section Metrics</h3>
+<p>This report section contains a Level 2 cross section metrics plot drawn using the <code>riffle_channel_dims_L2</code> fc.</p>
+<section id="width-depth-ratio-values-are-reasonable" class="level4">
+<h4 class="anchored" data-anchor-id="width-depth-ratio-values-are-reasonable">Width-Depth Ratio values are reasonable</h4>
+</section>
+<section id="entrenchment-ratio-values-are-reasonable" class="level4">
+<h4 class="anchored" data-anchor-id="entrenchment-ratio-values-are-reasonable">Entrenchment Ratio values are reasonable</h4>
+</section>
+<section id="slope-values-are-reasonable-1" class="level4">
+<h4 class="anchored" data-anchor-id="slope-values-are-reasonable-1">Slope values are reasonable</h4>
+</section>
+<section id="sinuosity-values-are-reasonable-1" class="level4">
+<h4 class="anchored" data-anchor-id="sinuosity-values-are-reasonable-1">Sinuosity values are reasonable</h4>
+</section>
+<section id="shear-stress-values-are-reasonable" class="level4">
+<h4 class="anchored" data-anchor-id="shear-stress-values-are-reasonable">Shear Stress values are reasonable</h4>
+</section>
+<section id="unit-stream-power-values-are-reasonable" class="level4">
+<h4 class="anchored" data-anchor-id="unit-stream-power-values-are-reasonable">Unit Stream Power values are reasonable</h4>
+</section>
+</section>
+<section id="cross-section-profiles" class="level3">
+<h3 class="anchored" data-anchor-id="cross-section-profiles">Cross Section Profiles</h3>
+<p>This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the cross section dimensions fc <code>riffle_channel_dims_L2</code> and the <code>dem_hydro</code> raster. The cross section profile graph is drawn using the <code>riffle_channel_points</code> fc’s for each survey. see the QA checklist items in the <a href="#L1_xs_profiles">Level 1 Report, Cross Section Profiles</a> section.</p>
+</section>
+</section>
+<section id="L2_report_qa" class="level2">
+<h2 class="anchored" data-anchor-id="L2_report_qa">Level 2 Report</h2>
+<section id="study-area-overview-1" class="level3">
+<h3 class="anchored" data-anchor-id="study-area-overview-1">Study Area Overview</h3>
+<p>This report section contains a set of reach overview maps drawn using the <code>flowline</code> and the regularly spaced cross section dimensions, <code>*_dims_L2</code>, feature classes (fc). Both the aerial photo and elevation are provided by <a href="https://docs.mapbox.com/api/maps/#raster-tiles">Mapbox Raster Tiles</a>. See the QA checklist items in the <a href="#L1_study_area_overview">Level 1 Report, Study Area Overview</a> section.</p>
+</section>
+<section id="longitudinal-profile" class="level3">
+<h3 class="anchored" data-anchor-id="longitudinal-profile">Longitudinal Profile</h3>
+<p>This section of the report contains a cross section longitudinal profile graph drawn using the regularly spaced cross section dimensions, <code>*_dims_L2</code> fc. See the QA checklist items in the <a href="#estimate_bankfull_long_profile">Estimate Bankfull, Longitudinal Profile</a> section.</p>
+</section>
+<section id="cross-section-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="cross-section-metrics">Cross Section Metrics</h3>
+<p>This report section contains a Level 2 cross section metrics plot drawn using the regularly spaced cross section dimensions, <code>*_dims_L2</code> fc.See the QA checklist items in the <a href="#estimate_bankfull_xs_metrics">Estimate Bankfull, Cross section Metrics</a> section.</p>
+<section id="ensure-metrics-values-are-smooth-1" class="level4">
+<h4 class="anchored" data-anchor-id="ensure-metrics-values-are-smooth-1">Ensure metrics values are smooth</h4>
+</section>
+</section>
+<section id="cross-section-profiles-1" class="level3">
+<h3 class="anchored" data-anchor-id="cross-section-profiles-1">Cross Section Profiles</h3>
+<p>This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the regularly spaced cross section dimensions fc <code>*_dims_L2</code> and the <code>dem_hydro</code> raster. The cross section profile graph is drawn using the cross section <code>*_points</code> fc’s for each survey. see the QA checklist items in the <a href="#L1_xs_profiles">Level 1 Report, Cross Section Profiles</a> section.</p>
+</section>
+</section>
+<section id="L3_report_qa" class="level2">
+<h2 class="anchored" data-anchor-id="L3_report_qa">Level 3 Report</h2>
+<section id="study-area-overview-2" class="level3">
+<h3 class="anchored" data-anchor-id="study-area-overview-2">Study Area Overview</h3>
+<p>This report section contains a set of reach overview maps drawn using the <code>flowline</code> and the regularly spaced cross section dimensions, <code>*_dims_L3</code>, feature classes (fc). Both the aerial photo and elevation are provided by <a href="https://docs.mapbox.com/api/maps/#raster-tiles">Mapbox Raster Tiles</a>. See the QA checklist items in the <a href="#L1_study_area_overview">Level 1 Report, Study Area Overview</a> section.</p>
+</section>
+<section id="longitudinal-profile-1" class="level3">
+<h3 class="anchored" data-anchor-id="longitudinal-profile-1">Longitudinal Profile</h3>
+<p>This section of the report contains a cross section longitudinal profile graph drawn using the regularly spaced cross section dimensions, <code>*_dims_L3</code> fc. See the QA checklist items in the <a href="#estimate_bankfull_long_profile">Estimate Bankfull, Longitudinal Profile</a> section.</p>
+</section>
+<section id="cross-section-metrics-1" class="level3">
+<h3 class="anchored" data-anchor-id="cross-section-metrics-1">Cross Section Metrics</h3>
+<p>This report section contains a Level 2 cross section metrics plot drawn using the regularly spaced cross section dimensions, <code>*_dims_L3</code> fc.See the QA checklist items in the <a href="#estimate_bankfull_xs_metrics">Estimate Bankfull, Cross section Metrics</a> section.</p>
+<section id="ensure-metrics-values-are-smooth-2" class="level4">
+<h4 class="anchored" data-anchor-id="ensure-metrics-values-are-smooth-2">Ensure metrics values are smooth</h4>
+</section>
+<section id="radius-of-curvature-to-bankfull-width-values-are-reasonable" class="level4">
+<h4 class="anchored" data-anchor-id="radius-of-curvature-to-bankfull-width-values-are-reasonable">Radius of Curvature to Bankfull Width values are reasonable</h4>
+</section>
+</section>
+<section id="cross-section-profiles-2" class="level3">
+<h3 class="anchored" data-anchor-id="cross-section-profiles-2">Cross Section Profiles</h3>
+<p>This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the regularly spaced cross section dimensions fc <code>*_dims_L3</code> and the <code>dem_hydro</code> raster. The cross section profile graph is drawn using the cross section “_points” fc’s for each survey. see the QA checklist items in the <a href="#L1_xs_profiles">Level 1 Report, Cross Section Profiles</a> section.</p>
 <hr>
 
 
@@ -842,11 +968,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./0-7-References.html" class="pagination-link" aria-label="References">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">References</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./0-1-Intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

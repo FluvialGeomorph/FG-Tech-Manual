@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers">
-<meta name="author" content="Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District">
-<meta name="dcterms.date" content="2025-06-02">
 
-<title>FluvialGeomorph Technical Manual</title>
+<title>5&nbsp; Install – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,7 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./0-1-Intro.html" rel="next">
+<link href="./2-2-TutorialData.html" rel="next">
+<link href="./1-3-FieldMethods.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-1-Install.html">Tools</a></li><li class="breadcrumb-item"><a href="./2-1-Install.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -163,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-1-Install.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-1-Install.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install</span></span></a>
   </div>
 </li>
@@ -267,42 +285,42 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#software-requirements" id="toc-software-requirements" class="nav-link active" data-scroll-target="#software-requirements">Software Requirements</a></li>
+  <li><a href="#install-r" id="toc-install-r" class="nav-link" data-scroll-target="#install-r">Install <code>R</code></a></li>
+  <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio">Install <code>RStudio</code></a></li>
+  <li><a href="#install-taudem" id="toc-install-taudem" class="nav-link" data-scroll-target="#install-taudem">Install TauDEM</a></li>
+  <li><a href="#install-arcgis-pro" id="toc-install-arcgis-pro" class="nav-link" data-scroll-target="#install-arcgis-pro">Install <code>ArcGIS Pro</code></a>
   <ul class="collapse">
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#distribution-statement" id="toc-distribution-statement" class="nav-link" data-scroll-target="#distribution-statement">Distribution Statement</a></li>
-  <li><a href="#unit-conversion-factors" id="toc-unit-conversion-factors" class="nav-link" data-scroll-target="#unit-conversion-factors">Unit Conversion Factors</a></li>
-  <li><a href="#notation-list" id="toc-notation-list" class="nav-link" data-scroll-target="#notation-list">Notation List</a></li>
+  <li><a href="#limited-arcmap-support" id="toc-limited-arcmap-support" class="nav-link" data-scroll-target="#limited-arcmap-support">Limited <code>ArcMap</code> support</a></li>
   </ul></li>
+  <li><a href="#install-arcgisbinding" id="toc-install-arcgisbinding" class="nav-link" data-scroll-target="#install-arcgisbinding">Install <code>arcgisbinding</code></a>
+  <ul class="collapse">
+  <li><a href="#install-the-latest-arcgisbinding-version" id="toc-install-the-latest-arcgisbinding-version" class="nav-link" data-scroll-target="#install-the-latest-arcgisbinding-version">Install the latest <code>arcgisbinding</code> version</a></li>
+  <li><a href="#download-a-specific-arcgisbinding-package-version" id="toc-download-a-specific-arcgisbinding-package-version" class="nav-link" data-scroll-target="#download-a-specific-arcgisbinding-package-version">Download a specific <code>arcgisbinding</code> package version</a></li>
+  <li><a href="#install-a-specific-arcgisbinding-package-version" id="toc-install-a-specific-arcgisbinding-package-version" class="nav-link" data-scroll-target="#install-a-specific-arcgisbinding-package-version">Install a specific <code>arcgisbinding</code> package version</a></li>
+  </ul></li>
+  <li><a href="#install-fluvialgeomorph" id="toc-install-fluvialgeomorph" class="nav-link" data-scroll-target="#install-fluvialgeomorph">Install FluvialGeomorph</a>
+  <ul class="collapse">
+  <li><a href="#install-the-fluvialgeomorph-r-packages" id="toc-install-the-fluvialgeomorph-r-packages" class="nav-link" data-scroll-target="#install-the-fluvialgeomorph-r-packages">Install the FluvialGeomorph <code>R</code> packages</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
+  </ul></li>
+  <li><a href="#install-tutorial-data" id="toc-install-tutorial-data" class="nav-link" data-scroll-target="#install-tutorial-data">Install Tutorial Data</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-1-Install.html">Tools</a></li><li class="breadcrumb-item"><a href="./2-1-Install.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">FluvialGeomorph Technical Manual</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers </p>
-             <p>Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 2, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -312,111 +330,139 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Funding for development and maintenance of FluvialGeomorph has been provided by the following US Army Corps of Engineers (USACE) programs:</p>
+<p>This chapter describes the process for installing and configuring the FluvialGeomorph toolbox and its required software components.</p>
+<section id="software-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="software-requirements">Software Requirements</h2>
+<p>Here is a summary of the software that must be installed to use the FluvialGeomorph toolbox. The rest of this chapter will describe how to complete these installations.</p>
 <ul>
-<li><a href="https://emrrp.el.erdc.dren.mil">Ecosystem Management and Restoration Research Program (EMRRP)</a>.</li>
-<li><a href="https://rsm.usace.army.mil/">Regional Sediment Management Program (RSM)</a></li>
-<li><a href="https://www.mvd.usace.army.mil/Missions/Mississippi-River-Science-Technology/MS-River-Geomorphology-Potamology/">Mississippi River Geomorphology and Potamology Program (MRG&amp;P)</a></li>
-<li><a href="https://www.iwr.usace.army.mil/Missions/Flood-Risk-Management/Flood-Risk-Management-Program/">Flood Risk Management Program (FRM)</a></li>
-<li><a href="https://ewn.el.erdc.dren.mil/">Engineering With Nature (EWN)</a></li>
+<li>Windows OS (10+ recommended, Server 2019). ArcGIS desktop GIS applications are only provided by ESRI for the Windows platform.</li>
+<li>R Statistical Computing Language (4.x+ recommended)</li>
+<li>RStudio Desktop (1.3+ recommended)</li>
+<li>TauDEM (5.3.7+ recommended)</li>
+<li>ArcGIS Pro (2.6+ recommended)</li>
+<li>ArcGIS Desktop (10.8+ recommended), optional, limited support</li>
+<li>FluvialGeomorph toolbox, latest version</li>
 </ul>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/USACE_200.png" class="img-fluid figure-img" width="130"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EMRRP_logo_200.png" class="img-fluid figure-img" width="146"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/RSM_200.png" class="img-fluid figure-img" width="103"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/MRG&amp;P_300.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/FRMP_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/SilverJackets_200.png" class="img-fluid figure-img" width="100"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/EWN_200.png" class="img-fluid figure-img" width="150"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox">FluvialGeomorph ArcGIS toolbox</a> provides a set of tools for conducting rapid fluvial geomorphology analysis and assessment. It allows a user to use high resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to cost effectively extract stream channel dimensions at fine scale for large spatial extents. This document describes the methods used in the development of the FluvialGeomorph project.</p>
 </section>
-<section id="distribution-statement" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-statement">Distribution Statement</h2>
-<p>Approved for public release; distribution is unlimited</p>
+<section id="install-r" class="level2">
+<h2 class="anchored" data-anchor-id="install-r">Install <code>R</code></h2>
+<p><a href="https://cran.r-project.org/"><code>R</code></a> is a statistical computing environment required to perform calculations and report generation (<span class="citation" data-cites="R-base">R Core Team (<a href="0-7-References.html#ref-R-base" role="doc-biblioref">2020</a>)</span>).</p>
+<ul>
+<li>Ensure that <code>R</code> is installed.</li>
+<li><code>R</code> version 4.x or greater is recommended.</li>
+<li>Ensure that <code>RTools</code> is installed. You will need either <a href="https://cran.r-project.org/bin/windows/Rtools/history.html"><code>RTools35</code></a> for <code>R</code> v3.5.x or <a href="https://cran.r-project.org/bin/windows/Rtools/"><code>RTools40</code></a> for <code>R</code> v4.x. <code>RTools</code> is required for compiling <code>R</code> packages from source. It is highly recommended, but not strictly required.</li>
+<li>Ensure that your <code>RTools</code> installation is on the system <code>PATH</code> (i.e., open a command prompt window, use the <code>path</code> command). If not, set your user environment <code>PATH</code> variable to the appropriate (depending on the <code>R</code> major version) <code>RTools</code> <code>bin</code> directory (e.g., <code>C:\Rtools\bin</code>, <code>C:\rtools40\usr\bin</code>).</li>
+</ul>
 </section>
-<section id="unit-conversion-factors" class="level2">
-<h2 class="anchored" data-anchor-id="unit-conversion-factors">Unit Conversion Factors</h2>
-<table class="caption-top table">
-<caption>Unit Conversion Factors</caption>
-<thead>
-<tr class="header">
-<th>Multiply</th>
-<th>By</th>
-<th>To Obtain</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>feet</td>
-<td>0.3048</td>
-<td>meters</td>
-</tr>
-<tr class="even">
-<td>miles</td>
-<td>1.60934</td>
-<td>kilometers</td>
-</tr>
-<tr class="odd">
-<td>square miles</td>
-<td>2.58999</td>
-<td>square kilometers</td>
-</tr>
-</tbody>
-</table>
+<section id="install-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="install-rstudio">Install <code>RStudio</code></h2>
+<p><code>Rstudio</code> is an Integrated Development Environment (IDE) for <code>R</code> that streamlines development and troubleshooting.</p>
+<ul>
+<li>Ensure that <code>Rstudio</code> is installed.</li>
+<li><code>RStudio</code> version 1.4 or greater is recommended.</li>
+<li><code>RStudio</code> is recommended, but not strictly required.</li>
+<li>Update your currently installed <code>R</code> packages to the latest version. On the <code>RStudio</code> tools menu, select “Check for Package Updates…”. Click the “Select All” button and click the “Install Updates” button.</li>
+<li>If asked to compile packages from source, select “Yes” if you installed <code>RTools</code>.</li>
+</ul>
 </section>
-<section id="notation-list" class="level2">
-<h2 class="anchored" data-anchor-id="notation-list">Notation List</h2>
+<section id="install-taudem" class="level2">
+<h2 class="anchored" data-anchor-id="install-taudem">Install TauDEM</h2>
+<p><a href="https://hydrology.usu.edu/taudem/taudem5/index.html"><code>TauDEM</code></a> (<strong>T</strong>errain <strong>A</strong>nalysis <strong>U</strong>sing <strong>D</strong>igital <strong>E</strong>levation <strong>M</strong>odels) is a suite of Digital Elevation Model (DEM) tools for the extraction and analysis of hydrologic information from topography as represented by a DEM (<span class="citation" data-cites="tarboton_new_1997">(<a href="0-7-References.html#ref-tarboton_new_1997" role="doc-biblioref"><strong>tarboton_new_1997?</strong></a>)</span>, <span class="citation" data-cites="fan_accelerating_2014">(<a href="0-7-References.html#ref-fan_accelerating_2014" role="doc-biblioref"><strong>fan_accelerating_2014?</strong></a>)</span>, <span class="citation" data-cites="yldrm_accelerating_2016">(<a href="0-7-References.html#ref-yldrm_accelerating_2016" role="doc-biblioref"><strong>yldrm_accelerating_2016?</strong></a>)</span>). <code>TauDEM</code> is used for advanced DEM processing and synthetic stream delineation.</p>
+<ul>
+<li>Install the latest version of <a href="https://hydrology.usu.edu/taudem/taudem5/downloads.html"><code>TauDEM</code></a>, v5.3.7.</li>
+<li>Ensure that <code>TauDEM</code> is on the system <code>PATH</code>. If not, set your user environment <code>PATH</code> variable to the <code>TauDEM</code> executable directory (e.g., <code>C:\Program Files\TauDEM\TauDEM5Exe</code>).</li>
+</ul>
+</section>
+<section id="install-arcgis-pro" class="level2">
+<h2 class="anchored" data-anchor-id="install-arcgis-pro">Install <code>ArcGIS Pro</code></h2>
+<p>ESRI <code>ArcGIS Pro</code> is the GIS application where the FluvialGeomorph analysis will be performed and where the toolbox will be accessed.</p>
+<ul>
+<li>Ensure that <code>ArcGIS Pro</code> is installed.</li>
+<li><code>ArcGIS Pro</code> version 2.6+ is recommended.</li>
+</ul>
+<section id="limited-arcmap-support" class="level3">
+<h3 class="anchored" data-anchor-id="limited-arcmap-support">Limited <code>ArcMap</code> support</h3>
+<p>ESRI <code>ArcMap</code> can currently be used to run the FluvialGeomorph toolbox, but use of <code>ArcGIS Pro</code> provides more functionality (e.g., charting, map templates, etc.). As the <code>ArcMap</code> application approaches end of life, it will no longer be supported by the FluvialGeomorph toolbox. As <code>ArcMap</code> is a 32-bit application, some <code>R</code> functions currently do not always perform as expected under 32-bit <code>R</code>. If you expect to get the most out of the FluvialGeomorph toolbox, migrate now to <code>ArcGIS Pro</code> to take advantage of the latest data formats, geoprocessing speed, Python 3, and 64-bit <code>R</code>.</p>
+</section>
+</section>
+<section id="install-arcgisbinding" class="level2">
+<h2 class="anchored" data-anchor-id="install-arcgisbinding">Install <code>arcgisbinding</code></h2>
+<p>The ESRI <code>arcgisbinding</code> <code>R</code> package allows <code>ArcGIS Pro</code> and <code>ArcMap</code> to read and write to <code>R</code> sessions. Installing it through <code>ArcGIS Pro</code> also enables it for use in <code>ArcMap</code> as well.</p>
+<section id="install-the-latest-arcgisbinding-version" class="level3">
+<h3 class="anchored" data-anchor-id="install-the-latest-arcgisbinding-version">Install the latest <code>arcgisbinding</code> version</h3>
+<ul>
+<li>In <code>ArcGIS Pro</code>, on the top menu, click “Project”, and click “Options” on the left menu.</li>
+<li>In the “Options” dialog box, click “Geoprocessing” on the left menu.</li>
+<li>On the “Geoprocessing” page, scroll down to the “R-ArcGIS Support” section.</li>
+<li>In the “R-ArcGIS Support” section, verify the installed <code>R</code> version for ArcGIS to use.</li>
+<li>Select an <code>R</code> version in the 4.x series.<br>
+</li>
+<li>From the “Installed ‘arcgisbinding’ package version:” dropdown menu, choose the “Check package for updates” option.</li>
+</ul>
+</section>
+<section id="download-a-specific-arcgisbinding-package-version" class="level3">
+<h3 class="anchored" data-anchor-id="download-a-specific-arcgisbinding-package-version">Download a specific <code>arcgisbinding</code> package version</h3>
+<p>Sometimes the FluvialGeomorph toolbox requires a specific version of the <code>arcgisbinding</code> package. Check the version compatibility matrix in the release notes for guidance. If the FluvialGeomporph toolbox release you are using specifies a particular combination of software versions, please manually download the specified version using these instructions:</p>
+<ul>
+<li>Navigate to the following URL: <a href="https://github.com/R-ArcGIS/r-bridge">https://github.com/R-ArcGIS/r-bridge</a></li>
+<li>In the “Releases” section on the middle-right side of the page, click the “+ xx releases” link.</li>
+<li>Download the <code>v1.0.1.239</code> version. This file is named: <code>arcgisbinding_1.0.1.239.zip</code></li>
+<li>Note the location of the file you just downloaded. We will use it in a following step.</li>
+</ul>
+</section>
+<section id="install-a-specific-arcgisbinding-package-version" class="level3">
+<h3 class="anchored" data-anchor-id="install-a-specific-arcgisbinding-package-version">Install a specific <code>arcgisbinding</code> package version</h3>
+<ul>
+<li>In <code>ArcGIS Pro</code>, on the top menu, click “Project”, and click “Options” on the left menu.</li>
+<li>In the “Options” dialog box, click “Geoprocessing” on the left menu.</li>
+<li>On the “Geoprocessing” page, scroll down to the “R-ArcGIS Support” section.</li>
+<li>In the “R-ArcGIS Support” section, verify the installed <code>R</code> version for ArcGIS to use.</li>
+<li>Select an <code>R</code> version in the 3.6.x series.<br>
+</li>
+<li>Below the “Detected R home directories” drop-down menu, you will see the <code>arcgisbinding</code> package section. From the drop-down, choose the “Update from file” option. Navigate to the <code>arcgisbinding_1.0.1.239.zip</code> file you downloaded in an earlier step and click the OK button.</li>
+</ul>
+</section>
+</section>
+<section id="install-fluvialgeomorph" class="level2">
+<h2 class="anchored" data-anchor-id="install-fluvialgeomorph">Install FluvialGeomorph</h2>
+<p>The code in the <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/">FluvialGeomorph-toolbox/</a> repository contains all of the files needed to use this ArcGIS toolbox.</p>
+<ul>
+<li>Open a web browser and navigate to <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/">https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/</a>.</li>
+<li>In the “Releases” section in the upper right side of the page, click the green “latest” link.</li>
+<li>On the latest release page, use the “Source code (zip)” link toward the bottom of the page to download a ZIP archive of the toolbox.</li>
+<li>Copy the ZIP archive file to your project working directory.</li>
+<li>If you already have a previous version of the FluvialGeomorph toolbox, delete it now.</li>
+<li>Unzip the archive file of the latest version to your project folder.</li>
+<li>In <code>ArcMap</code> or <code>ArcGIS Pro</code>, navigate to the folder where you just unzipped the archive and you are ready to use this ArcGIS toolbox.</li>
+</ul>
+<section id="install-the-fluvialgeomorph-r-packages" class="level3">
+<h3 class="anchored" data-anchor-id="install-the-fluvialgeomorph-r-packages">Install the FluvialGeomorph <code>R</code> packages</h3>
+<p>In this section we will use the FluvialGeomorph toolbox to install the <code>R</code> packages needed by the toolbox.</p>
+<ul>
+<li>Ensure that all other <code>R</code> applications (e.g., <code>RGui</code>, <code>RStudio</code>) are closed.</li>
+<li>In <code>ArcGIS Pro</code>, navigate to the FluvialGeomorph toolbox and add it to your project.</li>
+<li>In the <code>Install</code> toolset, use the <code>Install R packages</code> tool to install the required <code>R</code> packages.</li>
+<li>In the tool’s “Messages” section, follow the <code>R</code> console output for messages on installation progress.</li>
+</ul>
+</section>
+<section id="troubleshooting" class="level3">
+<h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
+<p>This is a list of commonly experienced errors and warnings when installing FluvialGeomorph <code>R</code> packages and their workarounds.</p>
+<p><strong>Problem: </strong> <code>cannot remove prior installation of package '&lt;some package&gt;'</code><br>
+<strong>Solution: </strong> Ensure that all other <code>R</code> applications (e.g., <code>RGui</code>, <code>RStudio</code>) are closed.</p>
+</section>
+</section>
+<section id="install-tutorial-data" class="level2">
+<h2 class="anchored" data-anchor-id="install-tutorial-data">Install Tutorial Data</h2>
+<p>See the <a href="2-2-TutorialData.html">Tutorial Data chapter</a> for instructions on downloading and setting-up the tutorial data.</p>
 <hr>
 
 
-</section>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-R-base" class="csl-entry" role="listitem">
+R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -842,10 +888,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./1-3-FieldMethods.html" class="pagination-link" aria-label="Field Methods">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Field Methods</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./0-1-Intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2-2-TutorialData.html" class="pagination-link" aria-label="Tutorial Data">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
