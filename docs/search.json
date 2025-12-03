@@ -10,6 +10,16 @@
     ]
   },
   {
+    "objectID": "index.html#authors",
+    "href": "index.html#authors",
+    "title": "FluvialGeomorph Technical Manual",
+    "section": "Authors",
+    "text": "Authors\n\nChristopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers\nMichael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District\nBobby Oliver, Geographer, US Army Corps of Engineers, Rock Island District",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
     "objectID": "index.html#abstract",
     "href": "index.html#abstract",
     "title": "FluvialGeomorph Technical Manual",
@@ -25,16 +35,6 @@
     "title": "FluvialGeomorph Technical Manual",
     "section": "Distribution Statement",
     "text": "Distribution Statement\nApproved for public release; distribution is unlimited",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "index.html#unit-conversion-factors",
-    "href": "index.html#unit-conversion-factors",
-    "title": "FluvialGeomorph Technical Manual",
-    "section": "Unit Conversion Factors",
-    "text": "Unit Conversion Factors\n\nUnit Conversion Factors\n\n\nMultiply\nBy\nTo Obtain\n\n\n\n\nfeet\n0.3048\nmeters\n\n\nmiles\n1.60934\nkilometers\n\n\nsquare miles\n2.58999\nsquare kilometers",
     "crumbs": [
       "Preface"
     ]
@@ -121,11 +121,11 @@
     ]
   },
   {
-    "objectID": "1-1-Concepts.html#fluvial-geomorphology",
-    "href": "1-1-Concepts.html#fluvial-geomorphology",
+    "objectID": "1-1-Concepts.html#derived-features",
+    "href": "1-1-Concepts.html#derived-features",
     "title": "2  Concepts",
-    "section": "",
-    "text": "Reach\nhierarchical levels: project study area, site, reach\n\n\nFlowline\n\ncenterline\nthalweg\n\n\n\nPosition Along River\n\n\nPool-Riffle-Run\n\n\nCross Section\n\n\nBankfull\n\n\nFlood Prone\n\n\nPlanform {planform-concept}\n\nloops contain bends\nloops have an apex\nloops alternate\ncrossovers\nValley Line",
+    "section": "Derived Features",
+    "text": "Derived Features\nThe definition of a common set of derived features is an important step in standardizing any workflow. The standard FluvialGeomorph database objects form a tightly linked set of features that work together in a particular order to accomplish the analysis.\n\nReach\nhierarchical levels: study area, site, reach\n\n\nFlowline\n\ncenterline\nthalweg\n\n\n\nPosition Along River\n\n\nPool-Riffle-Run\n\n\nCross Section\n\n\nBankfull\n\n\nFlood Prone\n\n\nPlanform {planform-concept}\n\nloops contain bends\nloops have an apex\nloops alternate\ncrossovers\nValley Line",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Concepts</span>"
@@ -136,7 +136,7 @@
     "href": "1-1-Concepts.html#geospatial",
     "title": "2  Concepts",
     "section": "Geospatial",
-    "text": "Geospatial\n\nLiDAR Stream Measurement\n\ndiscuss the difference between water surface and channel bottom\ndiagram of stream\n\n\n\nTerrain Models\n\npoint cloud\nraster\nsurface models, terrain models\n\n\n\nTerrain Visualization\n\n\nSynthetic Stream Delineation\n\n\nFlow Accumulation\n\n\nHydro Modification\n\n\nDetrending\n\n“relative bank height”\nfigure: side-by-side DEM and detrend\nfigure: side-by-side longitudinal profiles\n\n\n\nWater Surface Elevation\nSince water almost completely absorbs LiDAR light pulses, areas of water are usually missing elevation data. However, this does not mean that water surface elevation (WSE) cannot be derived from or accurately represented in LiDAR datasets. The elevation of water areas in DEMs derived from LiDAR point clouds can be represented due to the acquisition of points along the water’s edge. See Figure x1 for an illustration of where these points are located.\n\n\n\n\n\nLiDAR Points Acquired Close to the Water’s Edge Define the Water Surface. Mississippi River, RM 435, Vicksburg, MS.\n\n\n\n\nThe point cloud density will largely determine how accurately the water surface is captured, driven by the probability of capturing points as close to the water line as possible. In relatively low point cloud density LiDAR collections (&gt;=1m point cloud spacing) the water surface is often represented with artifacts. These artifacts are commonly referred to as TIN (Triangulated Irregular Networks) artifacts created when the DEM is derived. These occur when LiDAR points were not regularly acquired close to the water’s edge. Sections of the banklines where LiDAR points were not acquired close to the water’s edge will appear as triangular “humps” in the water surface. In Figure x2, these “hump” artifacts are clearly visible as reddish areas, while the lower elevation areas close to the water surface elevation appears as green and blue areas.\n\n\n\n\n\nDEM artifacts due to LiDAR points not being captured close enough to the water’s edge. Mississippi River, RM 444-445.\n\n\n\n\n\n\nSpatial Data Clearinghouses for Terrain Data\n\n3DEP\nThe National Map\nState clearinghouses",
+    "text": "Geospatial\n\nLiDAR Stream Measurement\n\ndiscuss the difference between water surface and channel bottom\ndiagram of stream\n\n\n\nTerrain Models\n\npoint cloud\nraster\nsurface models, terrain models\n\n\n\nTerrain Visualization\n\n\nSynthetic Stream Delineation\n\n\nFlow Accumulation\n\n\nHydro Modification\n\n\nRelative Elevation Model\n\n“relative bank height”\nfigure: side-by-side DEM and detrend\nfigure: side-by-side longitudinal profiles\n\n\n\nWater Surface Elevation\nSince water almost completely absorbs LiDAR light pulses, areas of water are usually missing elevation data. However, this does not mean that water surface elevation (WSE) cannot be derived from or accurately represented in LiDAR datasets. The elevation of water areas in DEMs derived from LiDAR point clouds can be represented due to the acquisition of points along the water’s edge. See Figure x1 for an illustration of where these points are located.\n\n\n\n\n\nLiDAR Points Acquired Close to the Water’s Edge Define the Water Surface. Mississippi River, RM 435, Vicksburg, MS.\n\n\n\n\nThe point cloud density will largely determine how accurately the water surface is captured, driven by the probability of capturing points as close to the water line as possible. In relatively low point cloud density LiDAR collections (&gt;=1m point cloud spacing) the water surface is often represented with artifacts. These artifacts are commonly referred to as TIN (Triangulated Irregular Networks) artifacts created when the DEM is derived. These occur when LiDAR points were not regularly acquired close to the water’s edge. Sections of the banklines where LiDAR points were not acquired close to the water’s edge will appear as triangular “humps” in the water surface. In Figure x2, these “hump” artifacts are clearly visible as reddish areas, while the lower elevation areas close to the water surface elevation appears as green and blue areas.\n\n\n\n\n\nDEM artifacts due to LiDAR points not being captured close enough to the water’s edge. Mississippi River, RM 444-445.\n\n\n\n\n\n\nSpatial Data Clearinghouses for Terrain Data\n\n3DEP\nThe National Map\nState clearinghouses",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Concepts</span>"

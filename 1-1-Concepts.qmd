@@ -4,8 +4,11 @@
 ## Fluvial Geomorphology
 This section will discuss 
 
+## Derived Features
+The definition of a common set of derived features is an important step in standardizing any workflow. The standard `FluvialGeomorph` database objects form a tightly linked set of features that work together in a particular order to accomplish the analysis.
+
 ### Reach
-hierarchical levels: project study area, site, reach
+hierarchical levels: study area, site, reach
 
 ### Flowline {#flowline-concept}
 * centerline
@@ -49,7 +52,7 @@ hierarchical levels: project study area, site, reach
 
 ### Hydro Modification {#hydro-modification-concept}
 
-### Detrending {#detrending-concept}
+### Relative Elevation Model {#detrending-concept}
 
 
 
