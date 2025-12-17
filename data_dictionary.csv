@@ -1,9 +1,9 @@
 feature_class,field_name,type,description,units,level
-study_area,none,,,,1
+boundary,none,,,,1
 dem,Z,32 bit float,The z-coordinate value (elevation).,"feet, NAVD88",1
 cutlines,none,,,,1
 dem_hydro,Z,32 bit float,The z-coordinate value (elevation).,"feet, NAVD88",1
-contributing_area,contributing_area,32 bit float,The specific catchment area. ,linear units of fc,1
+derived_streams,contributing_area,32 bit float,The specific catchment area. ,linear units of fc,1
 flow_accumulation_d8,flow_accumulation_d8,32 bit float,The number of accumulated flow for all upstream upstream pixels. ,number of cells,1
 flow_direction_d8,flow_direction_d8,32 bit float,The direction of flow from each cell to its downslope neighbor. ,D8 flow direction,1
 stream_network,ReachName,text,Name of the reach.,,1
@@ -51,7 +51,7 @@ flowline_points,POINT_X,double,The x-coordinate value (longitude).,linear units 
 flowline_points,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,1
 flowline_points,POINT_M,double,The m-coordinate value (route position).,,1
 flowline_points,Z,double,The z-coordinate value (elevation).,"feet, NAVD88",1
-detrend,detrend_Z,32 bit float,The detrended z-coordinate value (elevation).,"feet, detrended",1
+REM,detrend_Z,32 bit float,The detrended z-coordinate value (elevation).,"feet, detrended",1
 channel_slope,slope,32 bit float,The terrain slope. ,degree,1
 xs,ReachName,text,Name of the reach.,,1
 xs,Seq,short,The cross section unique identifier. ,,1

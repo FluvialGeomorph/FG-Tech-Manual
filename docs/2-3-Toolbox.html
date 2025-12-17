@@ -183,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2-4-Features.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Derived Features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -205,32 +205,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-1-Workflows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Workflows</span></span></a>
+  <a href="./3-1-Level-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-2-CreateTerrain.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Create Terrain</span></span></a>
+  <a href="./3-2-Level-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-3-Level-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></span></a>
+  <a href="./3-3-Level-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-4-Level-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span></a>
+  <a href="./3-4-FromField.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">From-Field</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-5-Level-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span></a>
+  <a href="./3-5-Validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Valadation</span></span></a>
   </div>
 </li>
       </ul>
@@ -410,396 +410,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <hr>
 </section>
-<section id="contributing-area-tool" class="level4">
-<h4 class="anchored" data-anchor-id="contributing-area-tool"><code>03 - Contributing Area</code></h4>
-<p><strong>Purpose</strong> - This tool calculates the <a href="https://hydrology.usu.edu/taudem/taudem5/help53/DInfinityContributingArea.html">D-infinity contributing area</a> for each pixel in the input DEM and creates a <a href="2-4-Features.html#contributing-area-raster"><code>contributing_area</code></a> raster in the output workspace using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-contributing-area">user manual</a>.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_03_ContributingArea.py"><code>FluvialGeomorph-toolbox/tools/_03_ContributingArea.py</code></a>. This Python script uses the <a href="https://hydrology.usu.edu/taudem/taudem5/index.html">TauDEM</a> <a href="https://hydrology.usu.edu/taudem/taudem5/help53/DInfinityContributingArea.html">D-Infinity Contributing Area tool</a> to calculate the specific catchment area (which is the contributing area per unit contour length using the multiple flow direction D-infinity approach).</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Contributing Area Tool Parameters.</caption>
-<colgroup>
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 84%">
-<col style="width: 3%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dem</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">processes</td>
-<td style="text-align: left;">long</td>
-<td style="text-align: left;">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Contributing_Area.png" class="img-fluid figure-img" width="272"></p>
-<figcaption>03 - Contributing Area Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="contributing-area-d8-tool" class="level4">
-<h4 class="anchored" data-anchor-id="contributing-area-d8-tool"><code>03a - Contributing Area D8</code></h4>
-<p><strong>Purpose</strong> - This tool creates the D8 <a href="2-4-Features.html#flow-accumulation-raster"><code>flow_accumulation_d8</code></a> and <a href="2-4-Features.html#flow-direction-raster"><code>flow_direction_d8</code></a> rasters in the output workspace for a given input DEM using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-contributing-area">user manual</a>.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_03a_ContributingAreaD8.py"><code>FluvialGeomorph-toolbox/tools/_03a_ContributingAreaD8.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Contributing Area D8 Tool Parameters.</caption>
-<colgroup>
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 84%">
-<col style="width: 3%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dem</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">processes</td>
-<td style="text-align: left;">long</td>
-<td style="text-align: left;">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Contributing_Area_D8.png" class="img-fluid figure-img" width="270"></p>
-<figcaption>03a - Contributing Area D8 Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="stream-network-tool" class="level4">
-<h4 class="anchored" data-anchor-id="stream-network-tool"><code>04 - Stream Network</code></h4>
-<p><strong>Purpose</strong> - This tool creates the synthetic flow network <a href="2-4-Features.html#stream-network-fc"><code>stream_network</code></a> polyline feature class from a <a href="2-4-Features.html#contributing-area-raster"><code>contributing_area</code></a> raster for a given stream initiation threshold using these instruction in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#derive-stream-network">user manual</a>.</p>
-<p><strong>Code</strong> - The ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04_StreamNetwork.py"><code>FluvialGeomorph-toolbox/tools/_04_StreamNetwork.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Stream Network Tool Parameters.</caption>
-<colgroup>
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 84%">
-<col style="width: 3%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">contrib_area</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the D-Infinity contributing area raster created by the Contributing Area tool.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">threshold</td>
-<td style="text-align: left;">long</td>
-<td style="text-align: left;">Flow accumulation threshold to initiate a stream expressed in the units of the source DEM used to accumulate the flow.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">processes</td>
-<td style="text-align: left;">long</td>
-<td style="text-align: left;">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Stream_Network.png" class="img-fluid figure-img" width="270"></p>
-<figcaption>04 - Stream Network Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="stream-network-points-tool" class="level4">
-<h4 class="anchored" data-anchor-id="stream-network-points-tool"><code>04a - Stream Network Points</code></h4>
-<p><strong>Purpose</strong> - This tool converts the <a href="2-4-Features.html#stream-network-fc"><code>stream_network</code></a> to the <a href="2-4-Features.html#stream-network-points-fc"><code>stream_network_points</code></a> points feature class using the these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-flowline-points">user manual</a>. This tool extracts elevation information from the DEM and calculates the drainage area.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04a_StreamNetworkPoints.py"><code>FluvialGeomorph-toolbox/tools/_04a_StreamNetworkPoints.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Stream Network Points Tool Parameters.</caption>
-<colgroup>
-<col style="width: 18%">
-<col style="width: 16%">
-<col style="width: 55%">
-<col style="width: 9%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">stream_network</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">Path to the edited <code>stream_network</code> feature class.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">flow_accum</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the flow accumulation model.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dem</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Stream_Network_Points.png" class="img-fluid figure-img" width="269"></p>
-<figcaption>04a - Stream Network Point Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="slope-sinuosity-tool" class="level4">
-<h4 class="anchored" data-anchor-id="slope-sinuosity-tool"><code>04b - Slope and Sinuosity</code></h4>
-<p><strong>Purpose</strong> - This tool calculates the <a href="2-4-Features.html#gradient-fc"><code>gradient_*</code></a> points feature class for a <a href="2-4-Features.html#flowline-points-fc"><code>flowline_points</code></a> or <a href="2-4-Features.html#stream-network-fc"><code>stream_network</code></a> feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-slope-and-sinuosity">user manual</a>.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the R script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04b_Gradient.R"><code>FluvialGeomorph-toolbox/tools/_04b_Gradient.R</code></a>. This Python script call the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/slope_sinuosity.R"><code>fluvgeo::slope_sinuosity</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Stream Network Points Tool Parameters.</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 8%">
-<col style="width: 74%">
-<col style="width: 5%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">flowline_points_fc</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">The full path to a <code>flowline_points</code> feature class.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">gradient_distance</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">The number of features to lead (upstream) and lag (downstream) to calculate the slope and sinuosity. Must be an integer.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">use_smoothing</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Determines if smoothed elevation values are used to calculate gradient and sinuosity (default is FALSE).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">loess_span</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">The loess regression span parameter (defaults to 0.05).</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Slope_and_Sinuosity.png" class="img-fluid figure-img" width="270"></p>
-<figcaption>04b - Slope and Sinuosity Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="watershed-tool" class="level4">
-<h4 class="anchored" data-anchor-id="watershed-tool"><code>04c - Watershed</code></h4>
-<p><strong>Purpose</strong> - This tool creates the <a href="2-4-Features.html#watershed-fc"><code>watershed</code></a> polygon feature class in the output workspace using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#delineate-watersheds">user manual</a>. This tool calculates the extent of the upstream drainage area for each point feature in the input <a href="2-4-Features.html#watershed-points-fc"><code>watershed_points</code></a> point feature class. This tool optionally calculates the landcover proportion in each watershed feature.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04c_Watersheds.py"><code>FluvialGeomorph-toolbox/tools/_04c_Watersheds.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Watershed Tool Parameters.</caption>
-<colgroup>
-<col style="width: 16%">
-<col style="width: 11%">
-<col style="width: 65%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">points</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">Path to the <code>watershed_points</code> feature class.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">point_ID_field</td>
-<td style="text-align: left;">Field</td>
-<td style="text-align: left;">Field in the <code>watershed_points</code> feature class that contains the point IDs.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">flow_accumulation_d8</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the flow accumulation model.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">flow_direction_d8</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the <code>flow_direction_d8</code> model (must use D8 method).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">snap_distance</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">The distance the point will be snapped to find the cell of highest flow accumulation.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">landcover</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to a categorical land cover raster.</td>
-<td style="text-align: left;">optional</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Watershed.png" class="img-fluid figure-img" width="272"></p>
-<figcaption>04c - Watershed Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<hr>
-</section>
 <section id="flowline-tool" class="level4">
 <h4 class="anchored" data-anchor-id="flowline-tool"><code>05 - Flowline</code></h4>
 <p><strong>Purpose</strong> - This tool creates a <a href="2-4-Features.html#flowline-fc"><code>flowline</code></a> feature class in the output workspace using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-the-flowline">user manual</a>. This tool uses an edited <a href="2-4-Features.html#stream-network-fc"><code>stream_network</code></a> feature class to derive the <a href="2-4-Features.html#flowline-fc"><code>flowline</code></a>.</p>
@@ -953,14 +563,14 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="detrend-dem-tool" class="level4">
-<h4 class="anchored" data-anchor-id="detrend-dem-tool"><code>07 - Detrend DEM</code></h4>
-<p>This tool creates the <a href="2-4-Features.html#detrend-raster"><code>detrend</code></a> raster using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#define-initial-floodplain-and-channel-extent">user manual</a>. This tool uses <a href="2-4-Features.html#flowline-points-fc"><code>flowline_points</code></a> to remove the elevation trend from the stream reach. See <a href="1-1-Concepts.html#detrending-concept">this section</a> for a detailed discussion on detrended DEMs.</p>
+<h4 class="anchored" data-anchor-id="detrend-dem-tool"><code>07 - Relative Elevation Model</code></h4>
+<p>This tool creates the <a href="2-4-Features.html#detrend-raster"><code>REM</code></a> raster using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#define-initial-floodplain-and-channel-extent">user manual</a>. This tool uses <a href="2-4-Features.html#flowline-points-fc"><code>flowline_points</code></a> to remove the elevation trend from the stream reach. See <a href="1-1-Concepts.html#detrending-concept">this section</a> for a detailed discussion on detrended DEMs.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_07_DetrendDEM.py"><code>FluvialGeomorph-toolbox/tools/_07_DetrendDEM.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<caption>Detrend DEM Tool Parameters.</caption>
+<caption>REM Tool Parameters.</caption>
 <colgroup>
 <col style="width: 8%">
 <col style="width: 7%">
@@ -1080,134 +690,6 @@ ul.task-list li input[type="checkbox"] {
 <figure class="figure">
 <p><img src="figures/toolbox/tool_Water_Surface_Extent.png" class="img-fluid figure-img" width="272"></p>
 <figcaption>08 - Water Surface Extent Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="channel-slope-tool" class="level4">
-<h4 class="anchored" data-anchor-id="channel-slope-tool"><code>09 - Channel Slope</code></h4>
-<p><strong>Purpose</strong> - This tool creates the <a href="2-4-Features.html#channel-slope-raster"><code>channel_slope</code></a> raster using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-channel-slope-raster">user manual</a>. This tool uses banks extent polygon to calculate a slope raster for the channel area.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_09_ChannelSlope.py"><code>FluvialGeomorph-toolbox/tools/_09_ChannelSlope.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Channel Slope Tool Parameters.</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 10%">
-<col style="width: 71%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dem</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">banks_poly</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">Path to a banks polygon feature class representing the channel area for which slope will be calculated.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">z_factor</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">Number of ground x,y units in one surface z unit.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Channel_Slope.png" class="img-fluid figure-img" width="270"></p>
-<figcaption>09 - Channel Slope Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="centerline-tool" class="level4">
-<h4 class="anchored" data-anchor-id="centerline-tool"><code>10 - Centerline</code></h4>
-<p><strong>Purpose</strong> - This tool creates the <a href="2-4-Features.html#centerline-fc"><code>centerline</code></a> polyline feature class using these instructions for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-initial-centerline">Level 1</a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-initial-centerline">Level 2</a> from the user manual. The centerline is the strem flow path that lies midway between the banks at bankfull.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_10_Centerline.py"><code>FluvialGeomorph-toolbox/tools/_10_Centerline.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Centerline Tool Parameters.</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 8%">
-<col style="width: 76%">
-<col style="width: 5%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dem</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">banks_poly</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">Path to a banks polygon representing the channel area for which slope will be calculated.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">smooth_tolerance</td>
-<td style="text-align: left;">long</td>
-<td style="text-align: left;">The PAEK smoothing tolerance that controls the calculating of new vertices. Acceptable smoothing occurs with values between 2 - 5.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Centerline.png" class="img-fluid figure-img" width="270"></p>
-<figcaption>10 - Centerline Tool.</figcaption>
 </figure>
 </div>
 </div>
@@ -1919,69 +1401,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <hr>
-</section>
-<section id="xs-ras-watersurface-tool" class="level4">
-<h4 class="anchored" data-anchor-id="xs-ras-watersurface-tool"><code>16 - XS RAS Watersurface</code></h4>
-<p><strong>Purpose</strong> - This tool adds or updates the field <code>ras_wse_*</code> to a <a href="2-4-Features.html#xs-dimensions-fc">cross section dimensions</a> feature class using these instructions for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#add-modeled-water-surface-elevation">Level 2</a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#add-modeled-water-surface-elevation-1">Level 3</a> from the user manual.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_16_XS_RAS_WaterSurface.py"><code>FluvialGeomorph-toolbox/tools/_16_XS_RAS_WaterSurface.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>XS RAS Watersurface Tool Parameters.</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 9%">
-<col style="width: 74%">
-<col style="width: 5%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">xs_dimensions</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">Path to a cross section dimension line feature class.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">RAS_depth</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Path to the RAS model depth raster (elevation units feet).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RAS_model_name</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Name of the RAS model that the depth raster represents. This name will be used to name the calculated WSE fields.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_XS_RAS_Watersurface.png" class="img-fluid figure-img" width="269"></p>
-<figcaption>16 - XS RAS Watersurface Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="reports-toolset" class="level3">
@@ -3668,8 +3087,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2-4-Features.html" class="pagination-link" aria-label="Features">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Features</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2-4-Features.html" class="pagination-link" aria-label="Derived Features">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Derived Features</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

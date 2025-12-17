@@ -29,11 +29,12 @@ book:
         - 2-5-Reports.qmd
     - part: "Workflows"
       chapters:
-        - 3-1-Workflows.qmd
-        - 3-2-CreateTerrain.qmd
-        - 3-3-Level-1.qmd
-        - 3-4-Level-2.qmd
-        - 3-5-Level-3.qmd
+        - 3-1-Level-1.qmd
+        - 3-2-Level-2.qmd
+        - 3-3-Level-3.qmd
+        - 3-4-FromField.qmd
+        - 3-5-Validation.qmd
+
     - 0-7-References.qmd
   appendices:
     - 4-1-QAChecklist.qmd

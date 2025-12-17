@@ -33,12 +33,6 @@ Here is a summary of the software that must be installed to use the FluvialGeomo
 * If asked to compile packages from source, select "Yes" if you installed `RTools`. 
 
 
-## Install TauDEM
-[`TauDEM`](https://hydrology.usu.edu/taudem/taudem5/index.html) (**T**errain **A**nalysis **U**sing **D**igital **E**levation **M**odels) is a suite of Digital Elevation Model (DEM) tools for the extraction and analysis of hydrologic information from topography as represented by a DEM (@tarboton_new_1997, @fan_accelerating_2014, @yldrm_accelerating_2016). `TauDEM` is used for advanced DEM processing and synthetic stream delineation. 
-
-* Install the latest version of [`TauDEM`](https://hydrology.usu.edu/taudem/taudem5/downloads.html), v5.3.7.
-* Ensure that `TauDEM` is on the system `PATH`. If not, set your user environment `PATH` variable to the `TauDEM` executable directory (e.g., `C:\Program Files\TauDEM\TauDEM5Exe`). 
-
 
 ## Install `ArcGIS Pro`
 ESRI `ArcGIS Pro` is the GIS application where the FluvialGeomorph analysis will be performed and where the toolbox will be accessed.   
