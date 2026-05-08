@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Level 3 Workflow – FluvialGeomorph Technical Manual</title>
+<title>Appendix B — DB Migration – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./3-4-FromField.html" rel="next">
-<link href="./3-2-Level-2.html" rel="prev">
+<link href="./4-1-QAChecklist.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -257,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Level-1.html">Workflows</a></li><li class="breadcrumb-item"><a href="./3-3-Level-3.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4-1-QAChecklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./4-2-DB-migration.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -391,7 +390,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-3-Level-3.html" class="sidebar-item-text sidebar-link active">
+  <a href="./3-3-Level-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span></a>
   </div>
 </li>
@@ -432,7 +431,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4-2-DB-migration.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-2-DB-migration.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></span></a>
   </div>
 </li>
@@ -448,29 +447,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#define-valley-line" id="toc-define-valley-line" class="nav-link active" data-scroll-target="#define-valley-line">Define Valley Line</a>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#units-of-analysis" id="toc-units-of-analysis" class="nav-link" data-scroll-target="#units-of-analysis">Units of Analysis</a></li>
+  <li><a href="#fg-features-data-model" id="toc-fg-features-data-model" class="nav-link" data-scroll-target="#fg-features-data-model">FG Features Data Model</a></li>
+  <li><a href="#combined-data-model" id="toc-combined-data-model" class="nav-link" data-scroll-target="#combined-data-model">Combined Data Model</a></li>
+  <li><a href="#legacy-folder-structure" id="toc-legacy-folder-structure" class="nav-link" data-scroll-target="#legacy-folder-structure">Legacy Folder Structure</a></li>
+  <li><a href="#new-folder-structure" id="toc-new-folder-structure" class="nav-link" data-scroll-target="#new-folder-structure">New Folder Structure</a></li>
+  <li><a href="#example-project-folder-to-study-area-database-crosswalk" id="toc-example-project-folder-to-study-area-database-crosswalk" class="nav-link" data-scroll-target="#example-project-folder-to-study-area-database-crosswalk">Example Project Folder to Study Area Database Crosswalk</a></li>
+  <li><a href="#proposed-file-structure" id="toc-proposed-file-structure" class="nav-link" data-scroll-target="#proposed-file-structure">Proposed File Structure</a>
   <ul class="collapse">
-  <li><a href="#determine-final-floodplain-extent" id="toc-determine-final-floodplain-extent" class="nav-link" data-scroll-target="#determine-final-floodplain-extent">Determine Final Floodplain Extent</a></li>
-  <li><a href="#develop-candidate-valleylines" id="toc-develop-candidate-valleylines" class="nav-link" data-scroll-target="#develop-candidate-valleylines">Develop Candidate Valleylines</a></li>
-  <li><a href="#choose-final-valleyline" id="toc-choose-final-valleyline" class="nav-link" data-scroll-target="#choose-final-valleyline">Choose Final Valleyline</a></li>
+  <li><a href="#option-1-reach-folders" id="toc-option-1-reach-folders" class="nav-link" data-scroll-target="#option-1-reach-folders">Option 1 (Reach Folders)</a></li>
+  <li><a href="#option-2-nested-stream-and-reach-folders" id="toc-option-2-nested-stream-and-reach-folders" class="nav-link" data-scroll-target="#option-2-nested-stream-and-reach-folders">Option 2 (Nested Stream and Reach Folders)</a></li>
   </ul></li>
-  <li><a href="#define-meander-loops" id="toc-define-meander-loops" class="nav-link" data-scroll-target="#define-meander-loops">Define Meander Loops</a>
-  <ul class="collapse">
-  <li><a href="#define-loop-points" id="toc-define-loop-points" class="nav-link" data-scroll-target="#define-loop-points">Define Loop Points</a></li>
-  <li><a href="#derive-bankline-points" id="toc-derive-bankline-points" class="nav-link" data-scroll-target="#derive-bankline-points">Derive Bankline Points</a></li>
-  <li><a href="#assign-cross-section-loops" id="toc-assign-cross-section-loops" class="nav-link" data-scroll-target="#assign-cross-section-loops">Assign Cross Section Loops</a></li>
-  </ul></li>
-  <li><a href="#calculate-l3-cross-section-geometry" id="toc-calculate-l3-cross-section-geometry" class="nav-link" data-scroll-target="#calculate-l3-cross-section-geometry">Calculate L3 Cross Section Geometry</a>
-  <ul class="collapse">
-  <li><a href="#calculate-cross-section-l3-dimensions" id="toc-calculate-cross-section-l3-dimensions" class="nav-link" data-scroll-target="#calculate-cross-section-l3-dimensions">Calculate Cross Section L3 Dimensions</a></li>
-  <li><a href="#add-modeled-water-surface-elevation" id="toc-add-modeled-water-surface-elevation" class="nav-link" data-scroll-target="#add-modeled-water-surface-elevation">Add Modeled Water Surface Elevation</a></li>
-  </ul></li>
-  <li><a href="#run-report" id="toc-run-report" class="nav-link" data-scroll-target="#run-report">Run Report</a>
-  <ul class="collapse">
-  <li><a href="#run-the-l3-report" id="toc-run-the-l3-report" class="nav-link" data-scroll-target="#run-the-l3-report">Run the L3 Report</a></li>
-  <li><a href="#perform-qa" id="toc-perform-qa" class="nav-link" data-scroll-target="#perform-qa">Perform QA</a></li>
-  </ul></li>
-  <li><a href="#determine-next-steps" id="toc-determine-next-steps" class="nav-link" data-scroll-target="#determine-next-steps">Determine Next Steps</a></li>
   </ul>
 </nav>
     </div>
@@ -478,9 +466,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Level-1.html">Workflows</a></li><li class="breadcrumb-item"><a href="./3-3-Level-3.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4-1-QAChecklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./4-2-DB-migration.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></h1>
+<h1 class="title">Appendix B — DB Migration</h1>
 </div>
 
 
@@ -497,184 +485,168 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter describes the workflow steps necessary to complete a Level 3 (L3) FluvialGeomorph analysis. The purpose of this level is to extract planform dimensions.</p>
-<section id="define-valley-line" class="level2">
-<h2 class="anchored" data-anchor-id="define-valley-line">Define Valley Line</h2>
-<p>The purpose of this stage is to define the valley trend line for the base year for each reach.</p>
-<section id="determine-final-floodplain-extent" class="level3">
-<h3 class="anchored" data-anchor-id="determine-final-floodplain-extent">Determine Final Floodplain Extent</h3>
-<p>The purpose of this step is to use the detrended bankfull elevation identified in L2 to delineate the active floodplain.</p>
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>This chapter documents a data management evolution phase of this project. As initially concieved (2017-2018), the FluvialGeomorph progam had a very “site-based” orientation. At that stage, we were focused on developing reproducible, automated tools to derive high resolution stream metrics from remotely collected LiDAR datasets. The <code>FluvialGeomorph toolbox</code> could process study areas with stream lengths 1 to 100s of miles long at high spatial resolution (1ft-1m DEM resolution). However, no effort was made to combine the derived data from all these “sites” into a single database. From the beginning, we conceptualized how our “site-scale” data model would scale into a larger dataset sometime later. This chapter describes our process for massaging these “site-based” datasets into a single database.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Note to Authors">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note to Authors
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This chapter must stay aligned with terminology in the chapter <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Concepts.html">User Manual Concepts</a>. Ensure the change of terms <code>Site</code> -&gt; <code>Stream</code> is accomplished.</p>
+</div>
+</div>
+</section>
+<section id="units-of-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="units-of-analysis">Units of Analysis</h2>
+<p>From the beginning of this effort, we established a consistent set of units of analysis. For our purpose, the top level unit of analysis is defined by a work request that comes from a customer, the “study area”. Within this arbitrary Aera of Interest (AOI), to structure our data we adopted a nested heirarchy of parent-child sub units. Understood as: Study areas have one or more streams. Streams have one or more reaches. Reaches have one or more survey events. This defines the overarching heirarchy of our data model.</p>
+<pre><code>Study Area
+└─── Streams
+     └─── Reaches 
+          └─── Survey Events</code></pre>
 <ul>
-<li><p>From the final Estimate Bankfull Report created in Level 2, use the detrended bankfull elevation identified. In the example from Level 2, this value was 104 ft.</p></li>
-<li><p><strong>Determine the bankfull depth: </strong> The detrending process used in FluvialGeomorph expresses stream elevations using a base index value of 100 ft. Therefore, a detrended bankfull elevation estimated to be 104 ft. means that at bankfull discharge, the water surface elevation is 4 ft. above the detrended stream base index value of 100 ft. for this reach:<br>
-<code>104 ft detrended bankfull elevation - 100 ft detrended stream base index = 4 ft bankfull depth</code></p></li>
-<li><p><strong>Determine flood prone height: </strong> Flood prone has been determined through empirical studies to be approximately two times the bankfull depth. For example, using the bankfull depth calculated in the last step, calculate the flood prone depth using the following formula:<br>
-<code>2 * 4 ft bankfull depth = 8 ft flood prone height</code></p></li>
-<li><p>Therefore, the flood prone detrended elevation would be 108 ft:<br>
-<code>100 ft detrended stream base index + 8 ft flood prone height = 108 ft detrended flood prone height</code></p></li>
-<li><p>With the detrended flood prone elevation for your reach determined in the last step, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#water-surface-extent"><code>08 - Water Surface Extent</code></a> tool to extract a flood prone area polygon. This tool creates a new polygon feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a>, where xxx is the detrended elevation selected.</p></li>
-<li><p>This feature class must be edited to select the flood prone area polygon(s). Open the attribute table for the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class and use advanced sorting to sort first by <code>gridcode</code> and then by <code>Shape_Area</code>. Polygons with <code>gridcode</code> = 1 are polygons inundated at the detrended elevation. Typically, the polygons with the largest area represent the channel. Begin selecting <code>gridcode</code> = 1 polygons with the largest area until the entire flood prone area is selected.</p></li>
-<li><p>Export these selected features to a new feature class named <code>flood_prone</code>.</p></li>
-<li><p>Delete the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class created in this section.</p></li>
+<li><strong>Study Area</strong>: These are the primary work units and correspond to projects that customers have requested for analysis.</li>
+<li><strong>Stream</strong>: Study areas are subdivided into “streams”. Streams are typically identified by names and subwatersheds within the project study area.</li>
+<li><strong>Reach</strong>: Streams are further subdivided into “reaches”. Reaches are defined according to project goals and use conventional rules for specifying reaches (i.e., tributary confluence to confluence), significant infrastructure, changes in surficial geology, etc.</li>
+<li><strong>Survey Event</strong>: Since FluvialGeomorph analysis is based on terrain surveys, the timing of the survey is a critical factor in the analysis. This data object is how we define point-in-time collections and the assessments made from them.</li>
 </ul>
 </section>
-<section id="develop-candidate-valleylines" class="level3">
-<h3 class="anchored" data-anchor-id="develop-candidate-valleylines">Develop Candidate Valleylines</h3>
-<p>The purpose of this step is to create a set of candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes through iterative smoothing of the flowline for each reach.</p>
-<ul>
-<li>The following steps are performed in the site geodatabase for the base year. This is done to ensure that a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class is created smoothly through all of the reaches in a site.</li>
-<li>In the site geodatabase for the base year, use the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/smooth-line.htm">ESRI <code>Smooth Line</code></a> tool to smooth the site <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class.</li>
-<li>Choose the <code>PAEK</code> smoothing algorithm.</li>
-<li>For the first candidate valleyline, use a <code>Smoothing Tolarance</code> value of 200 meters. In this case you would name the output feature class <code>valleyline_200</code></li>
-<li>Repeat the previous step using the <code>Smoothing Tolerance</code> values such as 400, 800, and 1000.</li>
-<li>Depending on the detail of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class geometry, you may need to select a different range or set of step values of the <code>Smoothing Tolerance</code> parameter values to evaluate.</li>
-<li>The goal is to create a wide degree of flowline smoothing in the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes to select from in the next step.</li>
-</ul>
+<section id="fg-features-data-model" class="level2">
+<h2 class="anchored" data-anchor-id="fg-features-data-model">FG Features Data Model</h2>
+<p>From the beginning, we devoted most of our attention to developing the FluvialGeomorph Features Data Model. See the FluvialGeomorph Tech Manual chapter <a href="./2-4-Features.html">Derived Features</a> for details. All <code>FluvialGeomorph-toolbox</code> analysis takes place within a single file geodatabase (ESRI <code>.gdb</code> format). For its spatial extent, it represents one reach in the data model above. For its temporal extent, it represents one survey event in the data model above. Therefore, this geodatabase can be described as a “Reach-Survey Event” Geodatabase in terms of the data model above. The rationale for the structure is for each survey event, all of the features will be derived from that DEM. When a new survey events occurs (or an historic survey is discovered), this procedure can be repeated. This study design maintains completely independent geodatabases to represent reach conditions at each point in time.</p>
+<pre><code>Reach-Survey Event Geodatabase
+├─── DEM
+├─── Cutlines
+├─── DEM Hydro
+├─── Stream Network
+├─── Flowline
+├─── Flowline Points
+├─── REM
+├─── Cross Sections
+├─── Cross Section Points
+├─── Cross Section Dimensions
+├─── Features
+├─── Bankfull Area
+├─── Banklines
+├─── Bankline Points
+├─── Valleyline
+└─── Loop Points</code></pre>
 </section>
-<section id="choose-final-valleyline" class="level3">
-<h3 class="anchored" data-anchor-id="choose-final-valleyline">Choose Final Valleyline</h3>
-<p>The purpose of this step is to choose from the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes the one that best captures the overall valley trend line.</p>
-<ul>
-<li>The goal of this step is to select from the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes the one that is the most smoothed, yet still fits primarily within the <code>flood_prone</code> polygon extent.</li>
-<li>Add the <code>flood_prone</code> polygon and all of the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes to the current map.</li>
-<li>Identify the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class that has the highest smoothing tolerance value that also is mostly contained within the extent of the <code>flood_prone</code> polygon.</li>
-<li>In the site geodatabase of the base year, rename the selected valley line to <code>valleyline</code>.</li>
-<li>Delete the unused candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes from the site geodatabase of the base year.</li>
-<li>Copy the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class you just created from the site geodatabase to each of the base year reach geodatabases.</li>
-</ul>
-<hr>
+<section id="combined-data-model" class="level2">
+<h2 class="anchored" data-anchor-id="combined-data-model">Combined Data Model</h2>
+<p>These two data models are grafted together by using the high-level “unit of analysis” data model to represent the overarching structure. Each “reach-survey event” geodatabase represents a specific “Survey Event” within the “unit of analysis” data model.</p>
+<pre><code>Study Area
+└─── Streams
+     └─── Reaches 
+          └─── Survey Events
+               └─── FG Features (DEM Hydro, Flowline, Flowline_points, etc.)</code></pre>
 </section>
+<section id="legacy-folder-structure" class="level2">
+<h2 class="anchored" data-anchor-id="legacy-folder-structure">Legacy Folder Structure</h2>
+<p>The FluvialGemorph program file structure is roughly modeled on the “unit of analysis” data model. Although the folders in the <code>/FluvialGeomorph/Projects/</code> folder roughly align with the concept of “Study Area”, the sub folders almost never utilize “Streams” and sometimes utilize “Reaches”.</p>
+<pre><code>/FluvialGeomorph/
+└─── Projects/
+     ├─── MVR_SJ_Copperas Creek/
+     ├─── NWO_Papillion/
+     └─── ...
+</code></pre>
 </section>
-<section id="define-meander-loops" class="level2">
-<h2 class="anchored" data-anchor-id="define-meander-loops">Define Meander Loops</h2>
-<p>The purpose of this stage is to define meander loops and bends for the base year for each reach.</p>
-<section id="define-loop-points" class="level3">
-<h3 class="anchored" data-anchor-id="define-loop-points">Define Loop Points</h3>
-<p>The purpose of this step is to create a new feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> and use it to identify the start and end stream meander loops and bends.</p>
-<ul>
-<li>Create a new point feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a>. Enable z and m values. The feature class should contain the following fields:
-<ul>
-<li><code>ReachName</code>: Text (50) - The purpose of this field is to store the reach name.</li>
-<li><code>loop</code>: Long Integer - The purpose of this field is to store the loop unique identifier for the point.</li>
-<li><code>bend</code>: Long Integer - The purpose of the field is to store the bend identifier for the point.</li>
-<li><code>position</code>: Text (10) - The purpose of this field is to store position identifier for the point. This field must have one three values: “start”, “end”, or “apex”.</li>
-</ul></li>
-</ul>
-<p><strong>Create Loop Points</strong></p>
-<ul>
-<li><a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> features are used to define the start and end location of loop bends and the location of a loop’s apex.</li>
-<li><a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> features are always placed along (i.e., snapped to) a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>bankline</code></a> feature.</li>
-<li>Begin numbering loops starting at the downstream end of the reach and increment the <code>loop</code> integer values moving upstream.</li>
-<li>In FluvialGeomorph, the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> is used segment the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> into loops.</li>
-<li>The beginning and end of loops are delineated where the <code>valleyline</code> <em>definitively</em> crosses the <code>flowline</code>.</li>
-<li>If the <code>flowline</code> crosses the <code>valleyline</code> and then crosses back over in a short distance, this is not considered a <em>definitive</em> crossing. A definitive crossing is one where the <code>flowline</code> approaches the <code>valleyline</code>, crosses it, and then continues to move away from the <code>valleyline</code> for a significant longitudinal distance.</li>
-<li>Loops must alternate from one bank to the opposite bank. For example, if loop 1 is delineated along the right descending bank, then loop 2 is delineated along the left descending bank.</li>
-<li>Loops are composed of one or more bends (bends nest inside of loops). For example, loop 1 can have bends 1, 2, and 3 (i.e., loop 1, bend 1; loop 1, bend 2; loop 1, bend 3).</li>
-<li>Bend numbering restarts within each loop. The first <code>bend</code> value within a loop always begins with the value 1.</li>
-</ul>
-<p><strong>Multiple Reaches: </strong></p>
-<ul>
-<li>For a site with multiple reaches, loops must be uniquely numbered across all reaches. The <code>loop</code> field values of <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> should not repeat within the reaches of a site.<br>
-</li>
-<li>The downstream-most loop in the site should be numbered starting with the <code>loop</code> field value of 1 and increase moving upstream.<br>
-</li>
-<li>Set the <code>loop</code> field value for each upstream reach to the upstream-most value (i.e., the highest <code>loop</code> value of the downstream reach’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> feature class) of the downstream reach. For example, set the value of the field <code>loop</code> of the first Reach-2 <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> feature to 8 if the maximum value of Reach-1’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> feature class <code>loop</code> field is 7.</li>
-</ul>
-<p><strong>Check Loop Points: </strong></p>
-<ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#check-loop-points-tool"><code>Check Loop Points</code></a> tool in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#check-toolset"><code>Check</code></a> toolset to verify that loops and bends are defined correctly.</li>
-<li>Review the messages produced by this tool to identify and correct problems with loop and bend delineation.</li>
-</ul>
+<section id="new-folder-structure" class="level2">
+<h2 class="anchored" data-anchor-id="new-folder-structure">New Folder Structure</h2>
+<p>To accomplish this migration, we have elected to refactor our file system to more closely match the database structure we are adopting. This will help ensure a cleaner translation between periodically updated, locally processed derived artifacts to be loaded into a central database. All processing is accomplished locally with idempotent database loading. We have decided to leave the current <code>/FluvialGeomorph/Projects/</code> folder structure in place while implementing the file system refactoring into <code>/FluvialGeomorph/studies/</code>. This migration plan design requires no work stoppage. New work can begin using the new approach, while legacy work can be migrated on a stepwise, pay-as-you-go basis. Eventually the <code>/FluvialGeomorph/Projects/</code> folder will be archived after all of its content has migrated.</p>
+<pre><code>/FluvialGeomorph/
+├─── Projects/
+|    ├─── MVR_SJ_Copperas_Creek/
+|    ├─── NWO_Papillion/
+|    └─── ...
+└─── studies
+     ├─── MVR_Copperas_Creek/
+     ├─── NWO_Papillion/
+     └─── ...</code></pre>
 </section>
-<section id="derive-bankline-points" class="level3">
-<h3 class="anchored" data-anchor-id="derive-bankline-points">Derive Bankline Points</h3>
-<p>The purpose of this step is to convert the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> to a set of <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-fc"><code>bankline_points</code></a> and assign elevations and loop and bend locations to these features.</p>
+<section id="example-project-folder-to-study-area-database-crosswalk" class="level2">
+<h2 class="anchored" data-anchor-id="example-project-folder-to-study-area-database-crosswalk">Example Project Folder to Study Area Database Crosswalk</h2>
+<p>Here are some examples to illustrate how legacy project work will be migrated to this new approach.</p>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-tool"><code>14b - Bankline Points</code></a> tool to assign loops, bends, elevations and valley line positions to the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-fc"><code>bankline_points</code></a>.</li>
-<li>When the tool completes, check that this tools runs correctly by running the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#check-bankline-points-tool"><code>Check Bankline Points</code></a> tool in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#check-toolset"><code>Check</code></a> toolset.</li>
-<li>The check tool ensures that the <code>loop</code>, <code>bend</code>, <code>position</code>, <code>valley_POINT_X</code>, <code>valley_POINT_Y</code>, and <code>valley_POINT_M</code> fields are populated. Only <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-fc"><code>bankline_points</code></a> features within loops and bends will have values in the <code>loop</code>, <code>bend</code>, and <code>position</code> fields.</li>
-<li>All records should have values in the <code>valley_POINT_X</code>, <code>valley_POINT_Y</code>, and <code>valley_POINT_M</code> fields.</li>
-<li>Additionally, apply the following definition query to the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-fc"><code>bankline_points</code></a> feature class: “loop IS NOT NULL”. Only <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankline-points-fc"><code>bankline_points</code></a> features between <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> features should be visible.</li>
+<li><code>/FluvialGeomorph/Projects/MVR_SJ_Copperas Creek/</code></li>
 </ul>
-</section>
-<section id="assign-cross-section-loops" class="level3">
-<h3 class="anchored" data-anchor-id="assign-cross-section-loops">Assign Cross Section Loops</h3>
-<p>The purpose of this step is to assign loop and bend identifiers to regularly spaced and riffle cross section feature classes for each reach.</p>
+<pre><code>Study Area: MVR-Copperas Creek
+└─── Streams: Copperas Creek IL
+     └─── Reaches: R1-R15, Sites 1-19
+          └─── Survey Events: 2009, 2019, 2022</code></pre>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-assign-loops-tool"><code>14c - Assign Loops</code></a> tool to assign loops and bends to a cross section feature class.</li>
-<li>Set the value of the <code>cross_section</code> parameter to the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#regular-xs-fc">regular cross section</a> feature class.</li>
-<li>After the tool completes, check the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#regular-xs-fc">regular cross section</a> feature class that the <code>loop</code> and <code>bend</code> fields are assigned the correct loop and bend values.</li>
-<li>Repeat this step for both the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_channel</code></a> and <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#riffle-xs-fc"><code>riffle_floodplain</code></a> feature classes.</li>
+<li><code>/FluvialGeomorph/Projects/NWO_Papillion/</code></li>
 </ul>
-<hr>
+<pre><code>Study Area: NWO-Papillion Creek
+└─── Streams: Sugar Creek, South Papillion Creek, Cole Creek, West Papillion, ...  
+     └─── Reaches: R1; R1-R2a; R1-R5; R1-R9
+          └─── Survey Events: 2010, 2016, 2018</code></pre>
 </section>
+<section id="proposed-file-structure" class="level2">
+<h2 class="anchored" data-anchor-id="proposed-file-structure">Proposed File Structure</h2>
+<section id="option-1-reach-folders" class="level3">
+<h3 class="anchored" data-anchor-id="option-1-reach-folders">Option 1 (Reach Folders)</h3>
+<pre><code>Study_Area_1/
+├─── Reaches/
+│    ├─── Reach_1/
+│    │    ├─── Reach1_year1.gdb/
+│    │    ├─── Reach1_year*.gdb/*
+|    │    ├─── Elevation/*
+|    │    ├─── Exports/*
+│    |    ├─── Maps/*
+│    |    └─── Reports/*
+│    ├─── Reach_2/
+│    │    ├─── Reach2_year1.gdb/
+│    │    ├─── Reach2_year*.gdb/*
+|    │    ├─── Elevation/*
+|    │    ├─── Exports/*
+│    |    ├─── Maps/*
+│    |    └─── Reports/*
+│    └─── Reach_3/
+|         ├─── ...
+├─── Elevation/*
+├─── Exports/*
+├─── Maps/*
+└─── Reports/</code></pre>
+<p>Note: *optional folder</p>
 </section>
-<section id="calculate-l3-cross-section-geometry" class="level2">
-<h2 class="anchored" data-anchor-id="calculate-l3-cross-section-geometry">Calculate L3 Cross Section Geometry</h2>
-<p>The purpose of this stage is to calculate the Level 3 dimensions for each reach.</p>
-<section id="calculate-cross-section-l3-dimensions" class="level3">
-<h3 class="anchored" data-anchor-id="calculate-cross-section-l3-dimensions">Calculate Cross Section L3 Dimensions</h3>
-<p>The purpose of this step is to calculate the L3 dimensions for the regularly spaced and riffle cross section feature classes for each reach.</p>
-<ul>
-<li>If any <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>*_dims_L3</code></a> feature classes exist in the reach geodatabase (created during a previous run), delete these feature classes.<br>
-</li>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-L3-tool"><code>15c - XS Planform, Level 3</code></a> tool to calculate the L3 dimensions.<br>
-</li>
-<li>Verify in the attribute table that the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc">L3 dimensions</a> have been calculated.</li>
-</ul>
-</section>
-<section id="add-modeled-water-surface-elevation" class="level3">
-<h3 class="anchored" data-anchor-id="add-modeled-water-surface-elevation">Add Modeled Water Surface Elevation</h3>
-<p>The purpose of this optional step is to add an HEC-RAS hydraulic model estimated water surface elevation (if available) to a cross section dimension feature class.</p>
-<ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-ras-watersurface-tool"><code>16 - XS RAS Watersurface</code></a> tool to add a modeled water surface elevation field to the input cross section feature class.</li>
-<li>Use the <code>RAS_model_name</code> parameter to distinguish between multiple RAS model scenarios.</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="run-report" class="level2">
-<h2 class="anchored" data-anchor-id="run-report">Run Report</h2>
-<p>The purpose of this stage is to run the Level 3 report for each reach.</p>
-<section id="run-the-l3-report" class="level3">
-<h3 class="anchored" data-anchor-id="run-the-l3-report">Run the L3 Report</h3>
-<p>The purpose of this step is to run the L2 report for each reach.</p>
-<ul>
-<li>In the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#reports-toolset">Reports</a> toolset, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#L3-report-tool"><code>Level 3 Report</code></a> tool to produce the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#L3-report">Level 3 Report</a>.</li>
-<li>For the <code>stream</code> parameter, use the value of the <code>ReachName</code> field used in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class.</li>
-<li>For the <code>flowline_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class for the base year survey.</li>
-<li>For the <code>xs_dims_fc</code> parameter, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-fc"><code>*_dims_L3</code></a> feature class calculated for the regular cross sections of the base year.</li>
-<li>The <code>xs_points_*</code> parameters should be entered with the feature class for the most recent survey first (i.e., the base year) and then the previous surveys in reverse chronological order (e.g., 2016, 2010, 2006).</li>
-<li>The <code>survey_name_*</code> parameters are used to label the surveys in maps and graphs.</li>
-<li>The feature classes and labels used for the <code>flowline_points_*</code>, <code>xs_points_*</code>, and <code>survey_name_*</code> parameters must be entered in the same order (e.g., 2016, 2010, 2006) in each set of numbered parameters.</li>
-<li>For the <code>dem</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster">DEM</a> for the base year survey.</li>
-<li>For the <code>banklines_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>banklines</code></a> feature class created for the base year survey.<br>
-</li>
-<li>For the <code>features_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#features-fc"><code>features</code></a> feature class for the base year survey.</li>
-<li>For the <code>bf_estimate</code> parameter, specify the detrended elevation value that represents the bankfull water surface elevation.</li>
-<li>For the <code>regions</code> parameter, select the regions to use for estimating the bankfull water surface elevation.</li>
-</ul>
-</section>
-<section id="perform-qa" class="level3">
-<h3 class="anchored" data-anchor-id="perform-qa">Perform QA</h3>
-<p>The purpose of this step is to use the QA Checklist to verify the reports have run correctly and identify any data mistakes that need to be corrected.</p>
-<ul>
-<li>Follow the instructions in the QA Checklist Chapter, <a href="4-1-QAChecklist.html#L3_report_qa">Level 3 Report</a> section, to verify that the reports have run correctly.</li>
-<li>Make the required changes suggested in the QA Checklist and rerun the report.</li>
-<li>Repeat these QA iterations until the reports are correct.</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="determine-next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="determine-next-steps">Determine Next Steps</h2>
-<p>The purpose of this step is to determine what further steps need to be taken.</p>
-<ul>
-<li>Review the results of the Level 3 Report and determine if the project goals require further analysis.</li>
-</ul>
-<hr>
+<section id="option-2-nested-stream-and-reach-folders" class="level3">
+<h3 class="anchored" data-anchor-id="option-2-nested-stream-and-reach-folders">Option 2 (Nested Stream and Reach Folders)</h3>
+<pre><code>Study_Area_1/
+├─── Streams/
+│    ├─── Stream_1/
+│    │    └─── Reaches/
+|    │         ├─── Reach_1/
+|    │         │    ├─── Reach1_year1.gdb/
+│    |         │    ├─── Reach1_year*.gdb/*
+│    |         │    ├─── Elevation/*
+│    |         │    ├─── Exports/*
+│    |         │    ├─── Maps/*
+│    |         │    └─── Reports/*
+│    |         ├─── Reach_2/
+│    |         │    ├─── Reach2_year1.gdb/
+│    │         │    ├─── Reach2_year*.gdb/*
+│    |         │    ├─── Elevation/*
+│    |         │    ├─── Exports/*
+│    |         │    ├─── Maps/*
+│    |         │    └─── Reports/*
+│    |         └─── ***
+│    └─── Stream_2/
+│         ├─── Reaches/
+|              ├─── ***
+├─── Elevation/*
+├─── Exports/*
+├─── Maps/*
+└─── Reports/</code></pre>
+<p>Note: *optional folder</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1092,14 +1064,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./3-2-Level-2.html" class="pagination-link" aria-label="Level 2 Workflow">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span>
+      <a href="./4-1-QAChecklist.html" class="pagination-link" aria-label="QA Checklist">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./3-4-FromField.html" class="pagination-link" aria-label="From-Field">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">From-Field</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

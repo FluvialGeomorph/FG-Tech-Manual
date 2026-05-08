@@ -54,7 +54,7 @@
     "href": "0-1-Intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "Purpose",
+    "text": "Purpose\nThis chapter describes the background and approach used in the development of the FluvialGeomorph project.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -224,7 +224,7 @@
     "href": "2-1-Install.html",
     "title": "5  Install",
     "section": "",
-    "text": "Software Requirements\nHere is a summary of the software that must be installed to use the FluvialGeomorph toolbox. The rest of this chapter will describe how to complete these installations.",
+    "text": "Software Requirements\nThis chapter describes the process for installing and configuring the FluvialGeomorph toolbox and its required software components.\nHere is a summary of the software that must be installed to use the FluvialGeomorph toolbox. The rest of this chapter will describe how to complete these installations.",
     "crumbs": [
       "Tools",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Install</span>"
@@ -312,7 +312,7 @@
     "href": "2-2-TutorialData.html",
     "title": "6  Tutorial Data",
     "section": "",
-    "text": "Map Templates\nTo standardize the maps used for this project, use these project site map templates.",
+    "text": "Map Templates\nThis chapter describes how to download the tutorial data and configure your workspace.\nTo standardize the maps used for this project, use these project site map templates.",
     "crumbs": [
       "Tools",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tutorial Data</span>"
@@ -345,7 +345,7 @@
     "href": "2-3-Toolbox.html",
     "title": "7  Toolbox",
     "section": "",
-    "text": "Platforms\nThe FluvialGeomorph toolbox uses ESRI and open source software to combine several platforms, each chosen based on their strengths, to construct a custom toolbox for rapid fluvial geomorphology analysis.",
+    "text": "Platforms\nThis chapter describes the FluvialGeomorph toolbox structure and the products it creates. This chapter begins with a description of the platforms used, the structure of the FluvialGeomorph ArcGIS toolbox and concludes with a description of the products created.\nThe FluvialGeomorph toolbox uses ESRI and open source software to combine several platforms, each chosen based on their strengths, to construct a custom toolbox for rapid fluvial geomorphology analysis.",
     "crumbs": [
       "Tools",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Toolbox</span>"
@@ -411,7 +411,7 @@
     "href": "3-1-Level-1.html",
     "title": "10  Level 1 Workflow",
     "section": "",
-    "text": "Define Study Area Coordinate System\nThe purpose of this step is to choose a horizontal and vertical coordinate system for all of the vector and raster datasets created. Using the same coordinate system for all study area datasets helps avoid errors introduced by input datasets containing differing coordinate systems, particularly incorrect handling of datums and units. The horizontal and vertical coordinate systems that you select will be used for all datasets created for this study area. It is the analyst’s responsibility to ensure that each dataset uses these specified horizontal and vertical coordinate systems. Each dataset imported into a study area geodatabase must be projected into the projected horizontal and vertical coordinate systems.",
+    "text": "Define Study Area Coordinate System\nThis chapter describes the workflow steps necessary to complete a Level 1 (L1) FluvialGeomorph analysis. The purpose of this level is to extract basic channel dimensions from LiDAR surveys. # Create Terrain The purpose of this stage is to develop the terrain models for the project study area for all available LiDAR surveys.\nThe purpose of this step is to choose a horizontal and vertical coordinate system for all of the vector and raster datasets created. Using the same coordinate system for all study area datasets helps avoid errors introduced by input datasets containing differing coordinate systems, particularly incorrect handling of datums and units. The horizontal and vertical coordinate systems that you select will be used for all datasets created for this study area. It is the analyst’s responsibility to ensure that each dataset uses these specified horizontal and vertical coordinate systems. Each dataset imported into a study area geodatabase must be projected into the projected horizontal and vertical coordinate systems.",
     "crumbs": [
       "Workflows",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Level 1 Workflow</span>"
@@ -543,7 +543,7 @@
     "href": "3-2-Level-2.html",
     "title": "11  Level 2 Workflow",
     "section": "",
-    "text": "Create Initial Riffle Geometry\nThe purpose of this stage is to identify and map riffle cross sections and roughly estimate an initial bankfull elevation for the base year for each reach.",
+    "text": "Create Initial Riffle Geometry\nThis chapter describes the workflow steps necessary to complete a Level 2 (L2) FluvialGeomorph analysis. The purpose of this level is to calculate bankfull channel dimensions.\nThe purpose of this stage is to identify and map riffle cross sections and roughly estimate an initial bankfull elevation for the base year for each reach.",
     "crumbs": [
       "Workflows",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Level 2 Workflow</span>"
@@ -609,7 +609,7 @@
     "href": "3-3-Level-3.html",
     "title": "12  Level 3 Workflow",
     "section": "",
-    "text": "Define Valley Line\nThe purpose of this stage is to define the valley trend line for the base year for each reach.",
+    "text": "Define Valley Line\nThis chapter describes the workflow steps necessary to complete a Level 3 (L3) FluvialGeomorph analysis. The purpose of this level is to extract planform dimensions.\nThe purpose of this stage is to define the valley trend line for the base year for each reach.",
     "crumbs": [
       "Workflows",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Level 3 Workflow</span>"
@@ -684,12 +684,12 @@
   {
     "objectID": "3-5-Validation.html",
     "href": "3-5-Validation.html",
-    "title": "14  Valadation",
+    "title": "14  Validation",
     "section": "",
     "text": "03a - Contributing Area D8\nPurpose - This tool creates the D8 flow_accumulation_d8 and flow_direction_d8 rasters in the output workspace for a given input DEM using these instructions in the user manual.\nCode - This ArcGIS script tool calls the Python script FluvialGeomorph-toolbox/tools/_03a_ContributingAreaD8.py.\nParameters - This tool contains the following parameters:\n\n\n\nContributing Area D8 Tool Parameters.\n\n\n\n\n\n\n\n\nParameter\nType\nDescription\nRequired\n\n\n\n\noutput_workspace\nWorkspace\nPath to the output workspace.\nrequired\n\n\ndem\nRaster Dataset\nPath to the digital elevation model (DEM).\nrequired\n\n\nprocesses\nlong\nThe number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.\nrequired\n\n\n\n\n\n\n\n\n\n\n03a - Contributing Area D8 Tool.\n\n\n\n\n\n\n\n03 - Contributing Area\nPurpose - This tool calculates the D-infinity contributing area for each pixel in the input DEM and creates a contributing_area raster in the output workspace using these instructions in the user manual.\nCode - This ArcGIS script tool calls the Python script FluvialGeomorph-toolbox/tools/_03_ContributingArea.py. This Python script uses the TauDEM D-Infinity Contributing Area tool to calculate the specific catchment area (which is the contributing area per unit contour length using the multiple flow direction D-infinity approach).\nParameters - This tool contains the following parameters:\n\n\n\nContributing Area Tool Parameters.\n\n\n\n\n\n\n\n\nParameter\nType\nDescription\nRequired\n\n\n\n\noutput_workspace\nWorkspace\nPath to the output workspace.\nrequired\n\n\ndem\nRaster Dataset\nPath to the digital elevation model (DEM).\nrequired\n\n\nprocesses\nlong\nThe number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.\nrequired\n\n\n\n\n\n\n\n\n\n\n03 - Contributing Area Tool.\n\n\n\n\n\n\n\n04 - Stream Network\nPurpose - This tool creates the synthetic flow network stream_network polyline feature class from a contributing_area raster for a given stream initiation threshold using these instruction in the user manual.\nCode - The ArcGIS script tool calls the Python script FluvialGeomorph-toolbox/tools/_04_StreamNetwork.py.\nParameters - This tool contains the following parameters:\n\n\n\nStream Network Tool Parameters.\n\n\n\n\n\n\n\n\nParameter\nType\nDescription\nRequired\n\n\n\n\noutput_workspace\nWorkspace\nPath to the output workspace.\nrequired\n\n\ncontrib_area\nRaster Dataset\nPath to the D-Infinity contributing area raster created by the Contributing Area tool.\nrequired\n\n\nthreshold\nlong\nFlow accumulation threshold to initiate a stream expressed in the units of the source DEM used to accumulate the flow.\nrequired\n\n\nprocesses\nlong\nThe number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.\nrequired\n\n\n\n\n\n\n\n\n\n\n04 - Stream Network Tool.\n\n\n\n\n\n\n\n04a - Stream Network Points\nPurpose - This tool converts the stream_network to the stream_network_points points feature class using the these instructions from the user manual. This tool extracts elevation information from the DEM and calculates the drainage area.\nCode - This ArcGIS script tool calls the Python script FluvialGeomorph-toolbox/tools/_04a_StreamNetworkPoints.py.\nParameters - This tool contains the following parameters:\n\n\n\nStream Network Points Tool Parameters.\n\n\n\n\n\n\n\n\nParameter\nType\nDescription\nRequired\n\n\n\n\noutput_workspace\nWorkspace\nPath to the output workspace.\nrequired\n\n\nstream_network\nFeature Class\nPath to the edited stream_network feature class.\nrequired\n\n\nflow_accum\nRaster Dataset\nPath to the flow accumulation model.\nrequired\n\n\ndem\nRaster Dataset\nPath to the digital elevation model (DEM).\nrequired\n\n\n\n\n\n\n\n\n\n\n04a - Stream Network Point Tool.\n\n\n\n\n\n\n\n04b - Slope and Sinuosity\nPurpose - This tool calculates the gradient_* points feature class for a flowline_points or stream_network feature class using these instructions from the user manual.\nCode - This ArcGIS script tool calls the R script FluvialGeomorph-toolbox/tools/_04b_Gradient.R. This Python script call the R function fluvgeo::slope_sinuosity.\nParameters - This tool contains the following parameters:\n\n\n\nStream Network Points Tool Parameters.\n\n\n\n\n\n\n\n\nParameter\nType\nDescription\nRequired\n\n\n\n\nflowline_points_fc\nFeature Class\nThe full path to a flowline_points feature class.\nrequired\n\n\ngradient_distance\ndouble\nThe number of features to lead (upstream) and lag (downstream) to calculate the slope and sinuosity. Must be an integer.\nrequired\n\n\nuse_smoothing\nBoolean\nDetermines if smoothed elevation values are used to calculate gradient and sinuosity (default is FALSE).\nrequired\n\n\nloess_span\ndouble\nThe loess regression span parameter (defaults to 0.05).\nrequired\n\n\n\n\n\n\n\n\n\n\n04b - Slope and Sinuosity Tool.\n\n\n\n\n\n\n\n04c - Watershed\nPurpose - This tool creates the watershed polygon feature class in the output workspace using these instructions from the user manual. This tool calculates the extent of the upstream drainage area for each point feature in the input watershed_points point feature class. This tool optionally calculates the landcover proportion in each watershed feature.\nCode - This ArcGIS script tool calls the Python script FluvialGeomorph-toolbox/tools/_04c_Watersheds.py.\nParameters - This tool contains the following parameters:\n\n\n\nWatershed Tool Parameters.\n\n\n\n\n\n\n\n\nParameter\nType\nDescription\nRequired\n\n\n\n\noutput_workspace\nWorkspace\nPath to the output workspace.\nrequired\n\n\npoints\nFeature Class\nPath to the watershed_points feature class.\nrequired\n\n\npoint_ID_field\nField\nField in the watershed_points feature class that contains the point IDs.\nrequired\n\n\nflow_accumulation_d8\nRaster Dataset\nPath to the flow accumulation model.\nrequired\n\n\nflow_direction_d8\nRaster Dataset\nPath to the flow_direction_d8 model (must use D8 method).\nrequired\n\n\nsnap_distance\ndouble\nThe distance the point will be snapped to find the cell of highest flow accumulation.\nrequired\n\n\nlandcover\nRaster Dataset\nPath to a categorical land cover raster.\noptional\n\n\n\n\n\n\n\n\n\n\n04c - Watershed Tool.\n\n\n\n\n\n\n\n09 - Channel Slope\nPurpose - This tool creates the channel_slope raster using these instructions in the user manual. This tool uses banks extent polygon to calculate a slope raster for the channel area.\nCode - This ArcGIS script tool calls the Python script FluvialGeomorph-toolbox/tools/_09_ChannelSlope.py.\nParameters - This tool contains the following parameters:\n\n\n\nChannel Slope Tool Parameters.\n\n\n\n\n\n\n\n\nParameter\nType\nDescription\nRequired\n\n\n\n\noutput_workspace\nWorkspace\nPath to the output workspace.\nrequired\n\n\ndem\nRaster Dataset\nPath to the digital elevation model (DEM).\nrequired\n\n\nbanks_poly\nFeature Class\nPath to a banks polygon feature class representing the channel area for which slope will be calculated.\nrequired\n\n\nz_factor\ndouble\nNumber of ground x,y units in one surface z unit.\nrequired\n\n\n\n\n\n\n\n\n\n\n09 - Channel Slope Tool.\n\n\n\n\n\n\n\n10 - Centerline\nPurpose - This tool creates the centerline polyline feature class using these instructions for Level 1 and Level 2 from the user manual. The centerline is the strem flow path that lies midway between the banks at bankfull.\nCode - This ArcGIS script tool calls the Python script FluvialGeomorph-toolbox/tools/_10_Centerline.py.\nParameters - This tool contains the following parameters:\n\n\n\nCenterline Tool Parameters.\n\n\n\n\n\n\n\n\nParameter\nType\nDescription\nRequired\n\n\n\n\noutput_workspace\nWorkspace\nPath to the output workspace.\nrequired\n\n\ndem\nRaster Dataset\nPath to the digital elevation model (DEM).\nrequired\n\n\nbanks_poly\nFeature Class\nPath to a banks polygon representing the channel area for which slope will be calculated.\nrequired\n\n\nsmooth_tolerance\nlong\nThe PAEK smoothing tolerance that controls the calculating of new vertices. Acceptable smoothing occurs with values between 2 - 5.\nrequired\n\n\n\n\n\n\n\n\n\n\n10 - Centerline Tool.\n\n\n\n\n\n\n\n16 - XS RAS Watersurface\nPurpose - This tool adds or updates the field ras_wse_* to a cross section dimensions feature class using these instructions for Level 2 and Level 3 from the user manual.\nCode - This ArcGIS script tool calls the Python script FluvialGeomorph-toolbox/tools/_16_XS_RAS_WaterSurface.py.\nParameters - This tool contains the following parameters:\n\n\n\nXS RAS Watersurface Tool Parameters.\n\n\n\n\n\n\n\n\nParameter\nType\nDescription\nRequired\n\n\n\n\noutput_workspace\nWorkspace\nPath to the output workspace.\nrequired\n\n\nxs_dimensions\nFeature Class\nPath to a cross section dimension line feature class.\nrequired\n\n\nRAS_depth\nstring\nPath to the RAS model depth raster (elevation units feet).\nrequired\n\n\nRAS_model_name\nstring\nName of the RAS model that the depth raster represents. This name will be used to name the calculated WSE fields.\nrequired\n\n\n\n\n\n\n\n\n\n\n16 - XS RAS Watersurface Tool.",
     "crumbs": [
       "Workflows",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Valadation</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Validation</span>"
     ]
   },
   {
@@ -707,7 +707,7 @@
     "href": "4-1-QAChecklist.html",
     "title": "Appendix A — QA Checklist",
     "section": "",
-    "text": "Level 1 Report",
+    "text": "Level 1 Report\nThis chapter describes the items an analyst needs to check to ensure that the FluvialGeomorph tools have run correctly to produce clean reports. In addition to following the guidance in the previous chapters when preparing the data and running each tool, this chapter will provide a checklist of items you’ll need to verify after each report completes. Reports are the place where all your hard work comes together! Your work is not complete just because the tools run without any errors. A lot of datasets must work together to make these reports come out cleanly. Because these reports integrate so many individual datasets, many issues aren’t discovered until you run the reports. This checklist will help you identify where things might not be exactly right with previous tool runs and what you’ll need to do fix them.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>QA Checklist</span>"
@@ -755,6 +755,127 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>QA Checklist</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html",
+    "href": "4-2-DB-migration.html",
+    "title": "Appendix B — DB Migration",
+    "section": "",
+    "text": "Purpose\nThis chapter documents a data management evolution phase of this project. As initially concieved (2017-2018), the FluvialGeomorph progam had a very “site-based” orientation. At that stage, we were focused on developing reproducible, automated tools to derive high resolution stream metrics from remotely collected LiDAR datasets. The FluvialGeomorph toolbox could process study areas with stream lengths 1 to 100s of miles long at high spatial resolution (1ft-1m DEM resolution). However, no effort was made to combine the derived data from all these “sites” into a single database. From the beginning, we conceptualized how our “site-scale” data model would scale into a larger dataset sometime later. This chapter describes our process for massaging these “site-based” datasets into a single database.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html#purpose",
+    "href": "4-2-DB-migration.html#purpose",
+    "title": "Appendix B — DB Migration",
+    "section": "",
+    "text": "Note to Authors\n\n\n\nThis chapter must stay aligned with terminology in the chapter User Manual Concepts. Ensure the change of terms Site -&gt; Stream is accomplished.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html#units-of-analysis",
+    "href": "4-2-DB-migration.html#units-of-analysis",
+    "title": "Appendix B — DB Migration",
+    "section": "Units of Analysis",
+    "text": "Units of Analysis\nFrom the beginning of this effort, we established a consistent set of units of analysis. For our purpose, the top level unit of analysis is defined by a work request that comes from a customer, the “study area”. Within this arbitrary Aera of Interest (AOI), to structure our data we adopted a nested heirarchy of parent-child sub units. Understood as: Study areas have one or more streams. Streams have one or more reaches. Reaches have one or more survey events. This defines the overarching heirarchy of our data model.\nStudy Area\n└─── Streams\n     └─── Reaches \n          └─── Survey Events\n\nStudy Area: These are the primary work units and correspond to projects that customers have requested for analysis.\nStream: Study areas are subdivided into “streams”. Streams are typically identified by names and subwatersheds within the project study area.\nReach: Streams are further subdivided into “reaches”. Reaches are defined according to project goals and use conventional rules for specifying reaches (i.e., tributary confluence to confluence), significant infrastructure, changes in surficial geology, etc.\nSurvey Event: Since FluvialGeomorph analysis is based on terrain surveys, the timing of the survey is a critical factor in the analysis. This data object is how we define point-in-time collections and the assessments made from them.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html#fg-features-data-model",
+    "href": "4-2-DB-migration.html#fg-features-data-model",
+    "title": "Appendix B — DB Migration",
+    "section": "FG Features Data Model",
+    "text": "FG Features Data Model\nFrom the beginning, we devoted most of our attention to developing the FluvialGeomorph Features Data Model. See the FluvialGeomorph Tech Manual chapter Derived Features for details. All FluvialGeomorph-toolbox analysis takes place within a single file geodatabase (ESRI .gdb format). For its spatial extent, it represents one reach in the data model above. For its temporal extent, it represents one survey event in the data model above. Therefore, this geodatabase can be described as a “Reach-Survey Event” Geodatabase in terms of the data model above. The rationale for the structure is for each survey event, all of the features will be derived from that DEM. When a new survey events occurs (or an historic survey is discovered), this procedure can be repeated. This study design maintains completely independent geodatabases to represent reach conditions at each point in time.\nReach-Survey Event Geodatabase\n├─── DEM\n├─── Cutlines\n├─── DEM Hydro\n├─── Stream Network\n├─── Flowline\n├─── Flowline Points\n├─── REM\n├─── Cross Sections\n├─── Cross Section Points\n├─── Cross Section Dimensions\n├─── Features\n├─── Bankfull Area\n├─── Banklines\n├─── Bankline Points\n├─── Valleyline\n└─── Loop Points",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html#single-data-model",
+    "href": "4-2-DB-migration.html#single-data-model",
+    "title": "Appendix B — DB Migration",
+    "section": "Single Data Model",
+    "text": "Single Data Model\nStudy Area\n└─── Streams\n     └─── Reaches \n          └─── Survey Events\n               └─── FG Features (DEM Hydro, Flowline, Flowline_points, etc.)\nReal World Example Study Areas\n/FluvialGeomorph/Projects/MVR_SJ_Copperas Creek/\nStudy Area: MVR-Copperas Creek\n└─── Streams: Copperas Creek IL\n     └─── Reaches: R1-R15, Sites 1-19\n          └─── Survey Events: 2009, 2019, 2022\n/FluvialGeomorph/Projects/NWO_Papillion/\nStudy Area: NWO-Papillion Creek\n└─── Streams: Sugar Creek, South Papillion Creek, Cole Creek, West Papillion, ...  \n     └─── Reaches: R1; R1-R2a; R1-R5; R1-R9\n          └─── Survey Events: 2010, 2016, 2018",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html#file-structure",
+    "href": "4-2-DB-migration.html#file-structure",
+    "title": "Appendix B — DB Migration",
+    "section": "File Structure",
+    "text": "File Structure\n\n\n\n\n\ntreeView\n- my-r-project\n  - data\n    - raw_data.csv\n  - scripts\n    - 01_cleaning.R\n    - 02_analysis.R\n  - output\n    - report.pdf\n  - _quarto.yml\n  - index.qmd\n\n\n\n\n\n\n\nOption 1 (Reach Folders)\nStudy_Area_1/\n├─── Reaches/\n│    ├─── Reach_1/\n│    │    ├─── Reach1_year1.gdb/\n│    │    ├─── Reach1_year*.gdb/*\n|    │    ├─── Elevation/*\n|    │    ├─── Exports/*\n│    |    ├─── Maps/*\n│    |    └─── Reports/*\n│    ├─── Reach_2/\n│    │    ├─── Reach2_year1.gdb/\n│    │    ├─── Reach2_year*.gdb/*\n|    │    ├─── Elevation/*\n|    │    ├─── Exports/*\n│    |    ├─── Maps/*\n│    |    └─── Reports/*\n│    └─── Reach_3/\n|         ├─── ...\n├─── Elevation/*\n├─── Exports/*\n├─── Maps/*\n└─── Reports/\nNote: *optional folder\n\n\nOption 2 (Nested Stream and Reach Folders)\nStudy_Area_1/\n├─── Streams/\n│    ├─── Stream_1/\n│    │    └─── Reaches/\n|    │         ├─── Reach_1/\n|    │         │    ├─── Reach1_year1.gdb/\n│    |         │    ├─── Reach1_year*.gdb/*\n│    |         │    ├─── Elevation/*\n│    |         │    ├─── Exports/*\n│    |         │    ├─── Maps/*\n│    |         │    └─── Reports/*\n│    |         ├─── Reach_2/\n│    |         │    ├─── Reach2_year1.gdb/\n│    │         │    ├─── Reach2_year*.gdb/*\n│    |         │    ├─── Elevation/*\n│    |         │    ├─── Exports/*\n│    |         │    ├─── Maps/*\n│    |         │    └─── Reports/*\n│    |         └─── ***\n│    └─── Stream_2/\n│         ├─── Reaches/\n|              ├─── ***\n├─── Elevation/*\n├─── Exports/*\n├─── Maps/*\n└─── Reports/\nNote: *optional folder",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html#combined-data-model",
+    "href": "4-2-DB-migration.html#combined-data-model",
+    "title": "Appendix B — DB Migration",
+    "section": "Combined Data Model",
+    "text": "Combined Data Model\nThese two data models are grafted together by using the high-level “unit of analysis” data model to represent the overarching structure. Each “reach-survey event” geodatabase represents a specific “Survey Event” within the “unit of analysis” data model.\nStudy Area\n└─── Streams\n     └─── Reaches \n          └─── Survey Events\n               └─── FG Features (DEM Hydro, Flowline, Flowline_points, etc.)",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html#legacy-folder-structure",
+    "href": "4-2-DB-migration.html#legacy-folder-structure",
+    "title": "Appendix B — DB Migration",
+    "section": "Legacy Folder Structure",
+    "text": "Legacy Folder Structure\nThe FluvialGemorph program file structure is roughly modeled on the “unit of analysis” data model. Although the folders in the /FluvialGeomorph/Projects/ folder roughly align with the concept of “Study Area”, the sub folders almost never utilize “Streams” and sometimes utilize “Reaches”.\n/FluvialGeomorph/\n└─── Projects/\n     ├─── MVR_SJ_Copperas Creek/\n     ├─── NWO_Papillion/\n     └─── ...",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html#new-folder-structure",
+    "href": "4-2-DB-migration.html#new-folder-structure",
+    "title": "Appendix B — DB Migration",
+    "section": "New Folder Structure",
+    "text": "New Folder Structure\nTo accomplish this migration, we have elected to refactor our file system to more closely match the database structure we are adopting. This will help ensure a cleaner translation between periodically updated, locally processed derived artifacts to be loaded into a central database. All processing is accomplished locally with idempotent database loading. We have decided to leave the current /FluvialGeomorph/Projects/ folder structure in place while implementing the file system refactoring into /FluvialGeomorph/studies/. This migration plan design requires no work stoppage. New work can begin using the new approach, while legacy work can be migrated on a stepwise, pay-as-you-go basis. Eventually the /FluvialGeomorph/Projects/ folder will be archived after all of its content has migrated.\n/FluvialGeomorph/\n├─── Projects/\n|    ├─── MVR_SJ_Copperas_Creek/\n|    ├─── NWO_Papillion/\n|    └─── ...\n└─── studies\n     ├─── MVR_Copperas_Creek/\n     ├─── NWO_Papillion/\n     └─── ...",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html#example-project-folder-to-study-area-database-crosswalk",
+    "href": "4-2-DB-migration.html#example-project-folder-to-study-area-database-crosswalk",
+    "title": "Appendix B — DB Migration",
+    "section": "Example Project Folder to Study Area Database Crosswalk",
+    "text": "Example Project Folder to Study Area Database Crosswalk\nHere are some examples to illustrate how legacy project work will be migrated to this new approach.\n\n/FluvialGeomorph/Projects/MVR_SJ_Copperas Creek/\n\nStudy Area: MVR-Copperas Creek\n└─── Streams: Copperas Creek IL\n     └─── Reaches: R1-R15, Sites 1-19\n          └─── Survey Events: 2009, 2019, 2022\n\n/FluvialGeomorph/Projects/NWO_Papillion/\n\nStudy Area: NWO-Papillion Creek\n└─── Streams: Sugar Creek, South Papillion Creek, Cole Creek, West Papillion, ...  \n     └─── Reaches: R1; R1-R2a; R1-R5; R1-R9\n          └─── Survey Events: 2010, 2016, 2018",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-DB-migration.html#proposed-file-structure",
+    "href": "4-2-DB-migration.html#proposed-file-structure",
+    "title": "Appendix B — DB Migration",
+    "section": "Proposed File Structure",
+    "text": "Proposed File Structure\n\nOption 1 (Reach Folders)\nStudy_Area_1/\n├─── Reaches/\n│    ├─── Reach_1/\n│    │    ├─── Reach1_year1.gdb/\n│    │    ├─── Reach1_year*.gdb/*\n|    │    ├─── Elevation/*\n|    │    ├─── Exports/*\n│    |    ├─── Maps/*\n│    |    └─── Reports/*\n│    ├─── Reach_2/\n│    │    ├─── Reach2_year1.gdb/\n│    │    ├─── Reach2_year*.gdb/*\n|    │    ├─── Elevation/*\n|    │    ├─── Exports/*\n│    |    ├─── Maps/*\n│    |    └─── Reports/*\n│    └─── Reach_3/\n|         ├─── ...\n├─── Elevation/*\n├─── Exports/*\n├─── Maps/*\n└─── Reports/\nNote: *optional folder\n\n\nOption 2 (Nested Stream and Reach Folders)\nStudy_Area_1/\n├─── Streams/\n│    ├─── Stream_1/\n│    │    └─── Reaches/\n|    │         ├─── Reach_1/\n|    │         │    ├─── Reach1_year1.gdb/\n│    |         │    ├─── Reach1_year*.gdb/*\n│    |         │    ├─── Elevation/*\n│    |         │    ├─── Exports/*\n│    |         │    ├─── Maps/*\n│    |         │    └─── Reports/*\n│    |         ├─── Reach_2/\n│    |         │    ├─── Reach2_year1.gdb/\n│    │         │    ├─── Reach2_year*.gdb/*\n│    |         │    ├─── Elevation/*\n│    |         │    ├─── Exports/*\n│    |         │    ├─── Maps/*\n│    |         │    └─── Reports/*\n│    |         └─── ***\n│    └─── Stream_2/\n│         ├─── Reaches/\n|              ├─── ***\n├─── Elevation/*\n├─── Exports/*\n├─── Maps/*\n└─── Reports/\nNote: *optional folder",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>DB Migration</span>"
     ]
   }
 ]
