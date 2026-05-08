@@ -38,6 +38,7 @@ book:
     - 0-7-References.qmd
   appendices:
     - 4-1-QAChecklist.qmd
+    - 4-2-DB-migration.qmd
 
   sidebar:
     style: "docked"

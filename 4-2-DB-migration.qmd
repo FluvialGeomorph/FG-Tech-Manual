@@ -1,0 +1,33 @@
+---
+title: "DB Migration"
+format: html
+---
+
+
+```
+Study_Area_Name
+└─── Sites
+│    └─── 01_Site_Name
+│    │    └─── Data
+│    │    │        Site1_year1.gdb
+│    │    │        Site1_year2.gdb
+│    │    │        Reach1_year1.gdb
+│    │    │        Reach1_year2.gdb
+│    │    │        Reach2_year1.gdb
+│    │    │        Reach2_year2.gdb
+│    │    │        ...
+│    │    └─── Exports
+│    │    └─── Maps
+│    │    └─── Reports
+│    └─── 02_Site_Name
+│         ...
+└─── Elevation
+│    └─── ProjectName_Year1
+│    │    └─── LAS
+│    └─── ProjectName_Year2
+│         └─── LAS
+│         ...
+└─── Exports
+└─── Maps
+
+```
