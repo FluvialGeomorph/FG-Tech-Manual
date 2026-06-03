@@ -257,8 +257,14 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0-7-References.html" class="sidebar-item-text sidebar-link">
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -272,7 +278,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4-1-QAChecklist.html" class="sidebar-item-text sidebar-link">
+  <a href="./QAChecklist.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span></a>
   </div>
 </li>
@@ -293,7 +299,7 @@ div.csl-indent {
   <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio">Install <code>RStudio</code></a></li>
   <li><a href="#install-arcgis-pro" id="toc-install-arcgis-pro" class="nav-link" data-scroll-target="#install-arcgis-pro">Install <code>ArcGIS Pro</code></a>
   <ul class="collapse">
-  <li><a href="#limited-arcmap-support" id="toc-limited-arcmap-support" class="nav-link" data-scroll-target="#limited-arcmap-support">Limited <code>ArcMap</code> support</a></li>
+  <li><a href="#arcmap-it-is-at-its-end-of-life-and-is-not-longer-supported." id="toc-arcmap-it-is-at-its-end-of-life-and-is-not-longer-supported." class="nav-link" data-scroll-target="#arcmap-it-is-at-its-end-of-life-and-is-not-longer-supported."><code>ArcMap</code> it is at it’s end of life and is not longer supported.</a></li>
   </ul></li>
   <li><a href="#install-arcgisbinding" id="toc-install-arcgisbinding" class="nav-link" data-scroll-target="#install-arcgisbinding">Install <code>arcgisbinding</code></a>
   <ul class="collapse">
@@ -332,23 +338,21 @@ div.csl-indent {
 </header>
 
 
-<p>This chapter describes the process for installing and configuring the FluvialGeomorph toolbox and its required software components.</p>
+<p>This chapter describes the requirements for installing and configuring the FluvialGeomorph toolbox and its required software components. There is more detailed information here than the user manual for requirement and configuration than the user manual.</p>
 <section id="software-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="software-requirements">Software Requirements</h2>
 <p>Here is a summary of the software that must be installed to use the FluvialGeomorph toolbox. The rest of this chapter will describe how to complete these installations.</p>
 <ul>
 <li>Windows OS (10+ recommended, Server 2019). ArcGIS desktop GIS applications are only provided by ESRI for the Windows platform.</li>
 <li>R Statistical Computing Language (4.x+ recommended)</li>
-<li>RStudio Desktop (1.3+ recommended)</li>
-<li>TauDEM (5.3.7+ recommended)</li>
-<li>ArcGIS Pro (2.6+ recommended)</li>
-<li>ArcGIS Desktop (10.8+ recommended), optional, limited support</li>
+<li>RStudio Desktop (2024.12.1+ recommended)</li>
+<li>ArcGIS Pro (3.2+ recommended)</li>
 <li>FluvialGeomorph toolbox, latest version</li>
 </ul>
 </section>
 <section id="install-r" class="level2">
 <h2 class="anchored" data-anchor-id="install-r">Install <code>R</code></h2>
-<p><a href="https://cran.r-project.org/"><code>R</code></a> is a statistical computing environment required to perform calculations and report generation (<span class="citation" data-cites="R-base">R Core Team (<a href="0-7-References.html#ref-R-base" role="doc-biblioref">2020</a>)</span>).</p>
+<p><a href="https://cran.r-project.org/"><code>R</code></a> is a statistical computing environment required to perform calculations and report generation (<span class="citation" data-cites="R-base">R Core Team (<a href="References.html#ref-R-base" role="doc-biblioref">2020</a>)</span>).</p>
 <ul>
 <li>Ensure that <code>R</code> is installed.</li>
 <li><code>R</code> version 4.x or greater is recommended.</li>
@@ -372,11 +376,10 @@ div.csl-indent {
 <p>ESRI <code>ArcGIS Pro</code> is the GIS application where the FluvialGeomorph analysis will be performed and where the toolbox will be accessed.</p>
 <ul>
 <li>Ensure that <code>ArcGIS Pro</code> is installed.</li>
-<li><code>ArcGIS Pro</code> version 2.6+ is recommended.</li>
+<li><code>ArcGIS Pro</code> version 3.2+ is recommended.</li>
 </ul>
-<section id="limited-arcmap-support" class="level3">
-<h3 class="anchored" data-anchor-id="limited-arcmap-support">Limited <code>ArcMap</code> support</h3>
-<p>ESRI <code>ArcMap</code> can currently be used to run the FluvialGeomorph toolbox, but use of <code>ArcGIS Pro</code> provides more functionality (e.g., charting, map templates, etc.). As the <code>ArcMap</code> application approaches end of life, it will no longer be supported by the FluvialGeomorph toolbox. As <code>ArcMap</code> is a 32-bit application, some <code>R</code> functions currently do not always perform as expected under 32-bit <code>R</code>. If you expect to get the most out of the FluvialGeomorph toolbox, migrate now to <code>ArcGIS Pro</code> to take advantage of the latest data formats, geoprocessing speed, Python 3, and 64-bit <code>R</code>.</p>
+<section id="arcmap-it-is-at-its-end-of-life-and-is-not-longer-supported." class="level3">
+<h3 class="anchored" data-anchor-id="arcmap-it-is-at-its-end-of-life-and-is-not-longer-supported."><code>ArcMap</code> it is at it’s end of life and is not longer supported.</h3>
 </section>
 </section>
 <section id="install-arcgisbinding" class="level2">
@@ -427,7 +430,7 @@ div.csl-indent {
 <li>Copy the ZIP archive file to your project working directory.</li>
 <li>If you already have a previous version of the FluvialGeomorph toolbox, delete it now.</li>
 <li>Unzip the archive file of the latest version to your project folder.</li>
-<li>In <code>ArcMap</code> or <code>ArcGIS Pro</code>, navigate to the folder where you just unzipped the archive and you are ready to use this ArcGIS toolbox.</li>
+<li>In <code>ArcGIS Pro</code>, navigate to the folder where you just unzipped the archive and you are ready to use this ArcGIS toolbox.</li>
 </ul>
 <section id="install-the-fluvialgeomorph-r-packages" class="level3">
 <h3 class="anchored" data-anchor-id="install-the-fluvialgeomorph-r-packages">Install the FluvialGeomorph <code>R</code> packages</h3>

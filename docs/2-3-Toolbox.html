@@ -237,8 +237,14 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0-7-References.html" class="sidebar-item-text sidebar-link">
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -252,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4-1-QAChecklist.html" class="sidebar-item-text sidebar-link">
+  <a href="./QAChecklist.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span></a>
   </div>
 </li>
@@ -272,12 +278,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#arcgis-toolbox" id="toc-arcgis-toolbox" class="nav-link" data-scroll-target="#arcgis-toolbox">ArcGIS Toolbox</a>
   <ul class="collapse">
-  <li><a href="#install-toolset" id="toc-install-toolset" class="nav-link" data-scroll-target="#install-toolset">01 - Install toolset</a></li>
-  <li><a href="#tools-toolset" id="toc-tools-toolset" class="nav-link" data-scroll-target="#tools-toolset">02 - Tools toolset</a></li>
-  <li><a href="#reports-toolset" id="toc-reports-toolset" class="nav-link" data-scroll-target="#reports-toolset">03 - Reports toolset</a></li>
-  <li><a href="#symbology-toolset" id="toc-symbology-toolset" class="nav-link" data-scroll-target="#symbology-toolset">04 - Symbology toolset</a></li>
-  <li><a href="#check-toolset" id="toc-check-toolset" class="nav-link" data-scroll-target="#check-toolset">05 - Check toolset</a></li>
-  <li><a href="#export-toolset" id="toc-export-toolset" class="nav-link" data-scroll-target="#export-toolset">06 - Export toolset</a></li>
+  <li><a href="#install-toolset" id="toc-install-toolset" class="nav-link" data-scroll-target="#install-toolset">Install toolset</a></li>
+  <li><a href="#levels-toolset" id="toc-levels-toolset" class="nav-link" data-scroll-target="#levels-toolset">Levels toolset</a></li>
+  <li><a href="#graphs-toolset" id="toc-graphs-toolset" class="nav-link" data-scroll-target="#graphs-toolset">Graphs toolset</a></li>
+  <li><a href="#reports-toolset" id="toc-reports-toolset" class="nav-link" data-scroll-target="#reports-toolset">Reports toolset</a></li>
+  <li><a href="#symbology-toolset" id="toc-symbology-toolset" class="nav-link" data-scroll-target="#symbology-toolset">Symbology toolset</a></li>
+  <li><a href="#check-toolset" id="toc-check-toolset" class="nav-link" data-scroll-target="#check-toolset">Check toolset</a></li>
+  <li><a href="#export-toolset" id="toc-export-toolset" class="nav-link" data-scroll-target="#export-toolset">Export toolset</a></li>
+  <li><a href="#export-toolset-1" id="toc-export-toolset-1" class="nav-link" data-scroll-target="#export-toolset-1">Export toolset</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -309,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="platforms">Platforms</h2>
 <p>The FluvialGeomorph toolbox uses <a href="https://www.esri.com/en-us/home">ESRI</a> and open source software to combine several platforms, each chosen based on their strengths, to construct a custom toolbox for rapid fluvial geomorphology analysis.</p>
 <ul>
-<li><a href="https://desktop.arcgis.com/en/">ArcGIS Desktop</a> -Desktop (ArcMap and ArcGIS Pro) are industry standard enterprise desktop GIS products for conducting geospatial analysis. The ArcGIS desktop applications contain an enormous number of commercial-off-the shelf (COTS) geospatial tools for performing sophisticated analyses and visualization.</li>
+<li><a href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources">ArcGIS Pro</a> -ArcGIS Pro is industry standard enterprise desktop GIS products for conducting geospatial analysis. The ArcGIS Pro applications contain an enormous number of commercial-off-the shelf (COTS) geospatial tools for performing sophisticated analyses and visualization.</li>
 <li><a href="https://pro.arcgis.com/en/pro-app/latest/help/analysis/geoprocessing/basics/use-a-custom-geoprocessing-tool.htm">ArcGIS toolbox</a> - ArcGIS Desktop allows for the creation of sophisticated custom geospatial toolboxes to be built that combine ESRI’s COTS geoprocessing tools with user created tools from several platforms (e.g., Python, R).</li>
 <li><a href="https://www.python.org/">Python</a> - ArcGIS provides a robust scripting interface to its GIS tools using the Python language. Custom geospatial toolboxes can combine ESRI’s COTS geoprocessing tools with tools available within the diverse, mature, and ever-growing Python data science ecosystem.</li>
 <li><a href="https://cran.r-project.org/">R</a> - ESRI’s <a href="https://github.com/R-ArcGIS/r-bridge">ArcGIS R-bridge</a> product allows R tools to be called within the ArcGIS toolbox interface. This allows ArcGIS tools to take advantage of the mature ecosystem of R data science, statistical, visualization, and report generation packages.</li>
@@ -328,7 +336,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="arcgis-toolbox">ArcGIS Toolbox</h2>
 <p>The FluvialGeomorph toolbox contains a set of tools for analyzing streams. These tools are divided into four toolsets.</p>
 <section id="install-toolset" class="level3">
-<h3 class="anchored" data-anchor-id="install-toolset">01 - Install toolset</h3>
+<h3 class="anchored" data-anchor-id="install-toolset">Install toolset</h3>
 <p>The purpose of this toolset is to hold the tools needed to install and troubleshoot the FluvialGeomorph toolbox software components.</p>
 <section id="install-r-packages" class="level4">
 <h4 class="anchored" data-anchor-id="install-r-packages"><code>Install R Packages</code></h4>
@@ -343,11 +351,11 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 </section>
-<section id="tools-toolset" class="level3">
-<h3 class="anchored" data-anchor-id="tools-toolset">02 - Tools toolset</h3>
+<section id="levels-toolset" class="level3">
+<h3 class="anchored" data-anchor-id="levels-toolset">Levels toolset</h3>
 <p>The purpose of this toolset is to hold the tools that perform the FluvialGeomorph analysis.</p>
 <section id="hydro-dem-tool" class="level4">
-<h4 class="anchored" data-anchor-id="hydro-dem-tool"><code>02 - Hydro DEM</code></h4>
+<h4 class="anchored" data-anchor-id="hydro-dem-tool"><code>Hydro DEM</code></h4>
 <p><strong>Purpose</strong> - This tool “burns” (sets the elevation to the same value for all pixels along the extent of the polyline feature) a <a href="2-4-Features.html#cutlines-fc"><code>cutlines</code></a> feature class into the supplied DEM and creates the <a href="2-4-Features.html#dem-hydro-raster"><code>dem_hydro</code></a> in the output workspace using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#hydro-modify-dem">user manual</a>. See <a href="1-1-Concepts.html#hydro-modification-concept">this section</a> for a detailed discussion of why hydro modification is required.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_02_HydroDEM.py"><code>FluvialGeomorph-toolbox/tools/_02_HydroDEM.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -411,7 +419,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="flowline-tool" class="level4">
-<h4 class="anchored" data-anchor-id="flowline-tool"><code>05 - Flowline</code></h4>
+<h4 class="anchored" data-anchor-id="flowline-tool"><code>Flowline</code></h4>
 <p><strong>Purpose</strong> - This tool creates a <a href="2-4-Features.html#flowline-fc"><code>flowline</code></a> feature class in the output workspace using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-the-flowline">user manual</a>. This tool uses an edited <a href="2-4-Features.html#stream-network-fc"><code>stream_network</code></a> feature class to derive the <a href="2-4-Features.html#flowline-fc"><code>flowline</code></a>.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_05_Flowline.py"><code>FluvialGeomorph-toolbox/tools/_05_Flowline.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -469,7 +477,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="flowline-points-tool" class="level4">
-<h4 class="anchored" data-anchor-id="flowline-points-tool"><code>06 - Flowline Points</code></h4>
+<h4 class="anchored" data-anchor-id="flowline-points-tool"><code>Flowline Points</code></h4>
 <p><strong>Purpose</strong> - This tool creates a <a href="2-4-Features.html#flowline-points-fc"><code>flowline_points</code></a> feature class in the output workspace using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-flowline-points">user manual</a>. This tool converts a stream <a href="2-4-Features.html#flowline-fc"><code>flowline</code></a> feature class to a route and begins the stationing using the <code>km_to_mouth</code> parameter. This tool can optionally calibrate the output <a href="2-4-Features.html#flowline-points-fc"><code>flowline_points</code></a> using a point feature class.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_06_FlowlinePoints.py"><code>FluvialGeomorph-toolbox/tools/_06_FlowlinePoints.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -563,7 +571,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="detrend-dem-tool" class="level4">
-<h4 class="anchored" data-anchor-id="detrend-dem-tool"><code>07 - Relative Elevation Model</code></h4>
+<h4 class="anchored" data-anchor-id="detrend-dem-tool"><code>Relative Elevation Model</code></h4>
 <p>This tool creates the <a href="2-4-Features.html#detrend-raster"><code>REM</code></a> raster using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#define-initial-floodplain-and-channel-extent">user manual</a>. This tool uses <a href="2-4-Features.html#flowline-points-fc"><code>flowline_points</code></a> to remove the elevation trend from the stream reach. See <a href="1-1-Concepts.html#detrending-concept">this section</a> for a detailed discussion on detrended DEMs.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_07_DetrendDEM.py"><code>FluvialGeomorph-toolbox/tools/_07_DetrendDEM.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -633,7 +641,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="water-surface-extent" class="level4">
-<h4 class="anchored" data-anchor-id="water-surface-extent"><code>08 - Water Surface Extent</code></h4>
+<h4 class="anchored" data-anchor-id="water-surface-extent"><code>Water Surface Extent</code></h4>
 <p><strong>Purpose</strong> - This tool creates the <a href="2-4-Features.html#bankfull-area-fc"><code>banks_raw</code></a> polygon feature class using these Level 1 instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#estimate-initial-channel-extent">user manual</a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#create-bankfull-area">these instructions</a> for Level 2.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_08_WaterSurfaceExtent.py">FluvialGeomorph-toolbox/tools/_08_WaterSurfaceExtent.py</a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -697,7 +705,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="xs-layout-tool" class="level4">
-<h4 class="anchored" data-anchor-id="xs-layout-tool"><code>11 - XS Layout</code></h4>
+<h4 class="anchored" data-anchor-id="xs-layout-tool"><code>XS Layout</code></h4>
 <p><strong>Purpose</strong> - This tool creates the <a href="2-4-Features.html#regular-xs-fc"><code>xs_*</code></a> polyline feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-regular-cross-section-geometry">user manual</a>. This tool creates a set of regularly spaced cross sections along the input <a href="2-4-Features.html#flowline-fc"><code>flowline</code></a> at the specified longitudinal spacing and lateral width. The output feature class is named <code>xs_&lt;transect_spacing&gt;_&lt;transect_width&gt;</code>.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_11_XSLayout.py"><code>FluvialGeomorph-toolbox/tools/_11_XSLayout.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -773,7 +781,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="xs-watershed-area-tool" class="level4">
-<h4 class="anchored" data-anchor-id="xs-watershed-area-tool"><code>12 - XS Watershed Area</code></h4>
+<h4 class="anchored" data-anchor-id="xs-watershed-area-tool"><code>XS Watershed Area</code></h4>
 <p><strong>Purpose</strong> - This tool adds or updates the field <code>Watershed_Area_SqMile</code> to the input cross section feature class using these instructions for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-cross-section-watershed-area"><code>Level 1</code></a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#calculate-cross-section-watershed-area-1"><code>Level 2</code></a> from the user manual. This field records the upstream drainage area for the cross section.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_12_XSWatershedArea.py"><code>FluvialGeomorph-toolbox/tools/_12_XSWatershedArea.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -843,7 +851,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="xs-river-position" class="level4">
-<h4 class="anchored" data-anchor-id="xs-river-position"><code>13 - XS River Position</code></h4>
+<h4 class="anchored" data-anchor-id="xs-river-position"><code>XS River Position</code></h4>
 <p><strong>Purpose</strong> - This tool adds or updates the field <code>km_to_mouth</code> to the input cross section feature class using these instructions for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-cross-section-river-position"><code>Level 1</code></a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#calculate-cross-section-river-position-1"><code>Level 2</code></a> from the user manual. This field records the distance of the cross section from the mouth of the site.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_13_XSRiverPosition.py"><code>FluvialGeomorph-toolbox/blob/_13_XSRiverPosition.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -901,7 +909,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="xs-resequence-tool" class="level4">
-<h4 class="anchored" data-anchor-id="xs-resequence-tool"><code>13a - XS Resequence</code></h4>
+<h4 class="anchored" data-anchor-id="xs-resequence-tool"><code>XS Resequence</code></h4>
 <p><strong>Purpose</strong> - This tools reorders the values of the <code>Seq</code> field for the input cross section feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-regular-cross-sections">user manual</a>.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_13a_XSResequence.py"><code>FluvialGeomorph-toolbox/tools/_13a_XSResequence.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -959,7 +967,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="xs-points-tool" class="level4">
-<h4 class="anchored" data-anchor-id="xs-points-tool"><code>14 - XS Points</code></h4>
+<h4 class="anchored" data-anchor-id="xs-points-tool"><code>XS Points</code></h4>
 <p><strong>Purpose</strong> - This tool creates the <a href="2-4-Features.html#xs-points-fc"><code>*_points</code></a> points feature class using the these instructions for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-cross-section-points">Level 1</a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#calculate-cross-section-points-1">Level 2</a> from the user manual. This tool converts a cross section polyline feature class (i.e., <code>xs_*</code>, <code>riffle_floodplain</code>, <code>riffle_channel</code>) into a series of points stationed at the <code>station_distance</code> along the input cross section. The name of the input cross section prepended to the output feature class: <code>&lt;cross_section name&gt;_points</code>.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_14_XSPoints.py"><code>FluvialGeomorph-toolbox/tools/_14_XSPoints.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -1035,7 +1043,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="bankline-points-tool" class="level4">
-<h4 class="anchored" data-anchor-id="bankline-points-tool"><code>14b - Bankline Points</code></h4>
+<h4 class="anchored" data-anchor-id="bankline-points-tool"><code>Bankline Points</code></h4>
 <p><strong>Purpose</strong> - This tool creates the <a href="2-4-Features.html#bankline-points-fc"><code>bankline_points</code></a> using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#derive-bankline-points">user manual</a>. This tool uses the <a href="2-4-Features.html#loop-points-fc"><code>loop_points</code></a> and <a href="2-4-Features.html#valleyline-fc"><code>valleyline</code></a> that the analyst manually created in previous steps.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_14b_BanklinePoints.py"><code>FluvialGeomorph-toolbox/tools/_14b_BanklinePoints.py</code></a></p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -1111,7 +1119,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="xs-assign-loops-tool" class="level4">
-<h4 class="anchored" data-anchor-id="xs-assign-loops-tool"><code>14c - XS Assign Loops</code></h4>
+<h4 class="anchored" data-anchor-id="xs-assign-loops-tool"><code>XS Assign Loops</code></h4>
 <p><strong>Purpose</strong> - This tool assigns loops and bends to input cross section feature class using the input <a href="2-4-Features.html#bankline-points-fc"><code>bankline_points</code></a> using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#assign-cross-section-loops">user manual</a>.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_14c_XSAssignLoops.py"><code>FluvialGeomorph-toolbox/tools/_14c_XSAssignLoops.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -1169,7 +1177,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="xs-dimensions-L1-tool" class="level4">
-<h4 class="anchored" data-anchor-id="xs-dimensions-L1-tool"><code>15a - XS Dimensions, Level 1</code></h4>
+<h4 class="anchored" data-anchor-id="xs-dimensions-L1-tool"><code>XS Dimensions, Level 1</code></h4>
 <p><strong>purpose</strong> - This tool calculates <a href="2-4-Features.html#xs-dimensions-fc">Level 1 cross section dimensions</a> for the input cross section feature class (i.e., <a href="2-4-Features.html#regular-xs-fc">regular cross sections</a>) using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-cross-section-l1-dimensions">user manual</a>.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_15a_XSDimensions.R">FluvialGeomorph-toolbox/tools/_15a_XSDimensions.R</a> which calls the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/cross_section_dimensions_L1.R"><code>fluvgeo::cross_section_dimensions_L1</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -1239,7 +1247,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="xs-dimensions-L2-tool" class="level4">
-<h4 class="anchored" data-anchor-id="xs-dimensions-L2-tool"><code>15b - XS Dimensions, Level 2</code></h4>
+<h4 class="anchored" data-anchor-id="xs-dimensions-L2-tool"><code>XS Dimensions, Level 2</code></h4>
 <p><strong>Purpose</strong> - This tool calculates <a href="2-4-Features.html#xs-dimensions-fc">Level 3 cross section dimensions</a> for the input cross section feature class (i.e., <a href="2-4-Features.html#regular-xs-fc">regular cross sections</a>, <a href="2-4-Features.html#riffle-xs-fc">riffle cross sections</a>) using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#calculate-final-l2-cross-section-geometry">user manual</a>.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_15b_XSDimensions.R"><code>FluvialGeomorph-toolbox/tools/_15b_XSDimensions.R</code></a></p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -1351,7 +1359,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="xs-dimensions-L3-tool" class="level4">
-<h4 class="anchored" data-anchor-id="xs-dimensions-L3-tool"><code>15c - XS Planform, Level 3</code></h4>
+<h4 class="anchored" data-anchor-id="xs-dimensions-L3-tool"><code>XS Planform, Level 3</code></h4>
 <p><strong>Purpose</strong> - This tool calculates <a href="2-4-Features.html#xs-dimensions-fc">Level 3 cross section dimensions</a> for the input cross section feature class (i.e., <a href="2-4-Features.html#regular-xs-fc">regular cross sections</a>, <a href="2-4-Features.html#riffle-xs-fc">riffle cross sections</a>) using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#calculate-l3-cross-section-geometry">user manual</a>.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_15c_XSPlanform.R"><code>FluvialGeomorph/FluvialGeomorph-toolbox/tools/_15c_XSPlanform.R</code></a> which calls the R functions <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/planform_dimensions.R"><code>fluvgeo::planform_dimensions</code></a> to calculate the planform dimensions and <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metric_ratios.R"><code>fluvgeo::xs_metric_ratios</code></a> to calculate the metric ratios.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
@@ -1403,8 +1411,8 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 </section>
-<section id="reports-toolset" class="level3">
-<h3 class="anchored" data-anchor-id="reports-toolset">03 - Reports toolset</h3>
+<section id="graphs-toolset" class="level3">
+<h3 class="anchored" data-anchor-id="graphs-toolset">Graphs toolset</h3>
 <p>The purpose of this toolset is to hold the tools that produce the FluvialGeomorph reports.</p>
 <section id="longitudinal-profile-compare-graph-tool" class="level4">
 <h4 class="anchored" data-anchor-id="longitudinal-profile-compare-graph-tool"><code>Graph - Longitudinal Profile Compare</code></h4>
@@ -1590,10 +1598,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<hr>
 </section>
-<section id="L1-report-tool" class="level4">
-<h4 class="anchored" data-anchor-id="L1-report-tool"><code>Report - L1</code></h4>
-<p><strong>Purpose</strong> - This tool produces the <a href="2-5-Reports.html#L1-report">Level 1 Report</a> using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#run-report">user manual</a>.</p>
+</section>
+<section id="reports-toolset" class="level3">
+<h3 class="anchored" data-anchor-id="reports-toolset">Reports toolset</h3>
+<p>The purpose of this toolset is to hold the tools that produce the FluvialGeomorph reports. #### <code>Report - L1</code> {#L1-report-tool} <strong>Purpose</strong> - This tool produces the <a href="2-5-Reports.html#L1-report">Level 1 Report</a> using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#run-report">user manual</a>.</p>
 <p><strong>Code</strong> - This ArcGIS script tool calls the R script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/report/_Level_1_Report.R"><code>FluvialGeomorph-toolbox/report/_Level_1_Report.R</code></a> which calls the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/level_1_report.R"><code>fluvgeo::level_1_report</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
 <div class="cell">
@@ -1785,7 +1795,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-</section>
 <section id="estimate-bankfull-report-tool" class="level4">
 <h4 class="anchored" data-anchor-id="estimate-bankfull-report-tool"><code>Report - L2 Estimate Bankfull</code></h4>
 <p><strong>Purpose</strong> - This tool produces the <a href="2-5-Reports.html#estimate-bankfull-report">Estimate Bankfull Report</a> using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#estimate-bankfull">user manual</a>.</p>
@@ -2217,7 +2226,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<hr>
 </section>
 <section id="L3-report-tool" class="level4">
 <h4 class="anchored" data-anchor-id="L3-report-tool"><code>Report - L3</code></h4>
@@ -2413,10 +2421,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<hr>
 </section>
 </section>
 <section id="symbology-toolset" class="level3">
-<h3 class="anchored" data-anchor-id="symbology-toolset">04 - Symbology toolset</h3>
+<h3 class="anchored" data-anchor-id="symbology-toolset">Symbology toolset</h3>
 <p>The purpose of this toolset is to hold the tools that standardize the symbolization of FluvialGeomorph datasets. Given the complexity of the datasets involved in this analysis, consistent symbolization improves interpretation and speeds analysis.</p>
 <section id="banklines-symbol-tool" class="level4">
 <h4 class="anchored" data-anchor-id="banklines-symbol-tool"><code>Banklines</code></h4>
@@ -2457,7 +2466,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 <section id="check-toolset" class="level3">
-<h3 class="anchored" data-anchor-id="check-toolset">05 - Check toolset</h3>
+<h3 class="anchored" data-anchor-id="check-toolset">Check toolset</h3>
 <p>The purpose of this toolset is to hold the tools used to check FluvialGeomorph features for some common, preventable errors.</p>
 <section id="check-banklines-tool" class="level4">
 <h4 class="anchored" data-anchor-id="check-banklines-tool"><code>Check Banklines</code></h4>
@@ -2498,7 +2507,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 <section id="export-toolset" class="level3">
-<h3 class="anchored" data-anchor-id="export-toolset">06 - Export toolset</h3>
+<h3 class="anchored" data-anchor-id="export-toolset">Export toolset</h3>
 <p>The purpose of this toolset is to export the tabular data from geospatial datasets for further analysis.</p>
 <section id="L1-export-tool" class="level4">
 <h4 class="anchored" data-anchor-id="L1-export-tool"><code>Level 1</code></h4>
@@ -2509,9 +2518,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="L3-export-tool" class="level4">
 <h4 class="anchored" data-anchor-id="L3-export-tool"><code>Level 3</code></h4>
-
-
+<hr>
 </section>
+</section>
+<section id="export-toolset-1" class="level3">
+<h3 class="anchored" data-anchor-id="export-toolset-1">Export toolset</h3>
+<p>The purpose of this toolset is to export the tabular data from geospatial datasets for further analysis.</p>
+
+
 </section>
 </section>
 

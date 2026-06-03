@@ -237,8 +237,14 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0-7-References.html" class="sidebar-item-text sidebar-link">
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -252,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4-1-QAChecklist.html" class="sidebar-item-text sidebar-link">
+  <a href="./QAChecklist.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span></a>
   </div>
 </li>
@@ -271,14 +277,16 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#fluvial-geomorphology" id="toc-fluvial-geomorphology" class="nav-link active" data-scroll-target="#fluvial-geomorphology">Fluvial Geomorphology</a></li>
   <li><a href="#derived-features" id="toc-derived-features" class="nav-link" data-scroll-target="#derived-features">Derived Features</a>
   <ul class="collapse">
-  <li><a href="#reach" id="toc-reach" class="nav-link" data-scroll-target="#reach">Reach</a></li>
+  <li><a href="#hierarchical-units-of-analysis" id="toc-hierarchical-units-of-analysis" class="nav-link" data-scroll-target="#hierarchical-units-of-analysis">Hierarchical Units of Analysis</a></li>
+  <li><a href="#analysis-levels" id="toc-analysis-levels" class="nav-link" data-scroll-target="#analysis-levels">Analysis Levels</a></li>
+  <li><a href="#workflow-levels" id="toc-workflow-levels" class="nav-link" data-scroll-target="#workflow-levels">Workflow Levels</a></li>
   <li><a href="#flowline-concept" id="toc-flowline-concept" class="nav-link" data-scroll-target="#flowline-concept">Flowline</a></li>
   <li><a href="#position-along-river" id="toc-position-along-river" class="nav-link" data-scroll-target="#position-along-river">Position Along River</a></li>
   <li><a href="#pool-riffle-run" id="toc-pool-riffle-run" class="nav-link" data-scroll-target="#pool-riffle-run">Pool-Riffle-Run</a></li>
   <li><a href="#xs-concept" id="toc-xs-concept" class="nav-link" data-scroll-target="#xs-concept">Cross Section</a></li>
   <li><a href="#bankfull-concept" id="toc-bankfull-concept" class="nav-link" data-scroll-target="#bankfull-concept">Bankfull</a></li>
   <li><a href="#flood-prone-concept" id="toc-flood-prone-concept" class="nav-link" data-scroll-target="#flood-prone-concept">Flood Prone</a></li>
-  <li><a href="#planform-planform-concept" id="toc-planform-planform-concept" class="nav-link" data-scroll-target="#planform-planform-concept">Planform {planform-concept}</a></li>
+  <li><a href="#planform-concept" id="toc-planform-concept" class="nav-link" data-scroll-target="#planform-concept">Planform</a></li>
   </ul></li>
   <li><a href="#geospatial" id="toc-geospatial" class="nav-link" data-scroll-target="#geospatial">Geospatial</a>
   <ul class="collapse">
@@ -289,6 +297,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#flow-accumulation-concept" id="toc-flow-accumulation-concept" class="nav-link" data-scroll-target="#flow-accumulation-concept">Flow Accumulation</a></li>
   <li><a href="#hydro-modification-concept" id="toc-hydro-modification-concept" class="nav-link" data-scroll-target="#hydro-modification-concept">Hydro Modification</a></li>
   <li><a href="#detrending-concept" id="toc-detrending-concept" class="nav-link" data-scroll-target="#detrending-concept">Relative Elevation Model</a></li>
+  <li><a href="#hydraulic-modelling" id="toc-hydraulic-modelling" class="nav-link" data-scroll-target="#hydraulic-modelling">Hydraulic Modelling</a></li>
   <li><a href="#water-surface-elevation" id="toc-water-surface-elevation" class="nav-link" data-scroll-target="#water-surface-elevation">Water Surface Elevation</a></li>
   <li><a href="#spatial-data-clearinghouses-for-terrain-data" id="toc-spatial-data-clearinghouses-for-terrain-data" class="nav-link" data-scroll-target="#spatial-data-clearinghouses-for-terrain-data">Spatial Data Clearinghouses for Terrain Data</a></li>
   </ul></li>
@@ -319,45 +328,83 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="fluvial-geomorphology" class="level2">
 <h2 class="anchored" data-anchor-id="fluvial-geomorphology">Fluvial Geomorphology</h2>
-<p>This section will discuss</p>
+<p>This section will discuss the overarching concepts of fluvial geomorphology. These are not definitions but the functionality of terms and tools within the fluvial geomorphology toolbox. This section will describe the need and the why behind running the tools and the foundational information needed to understand the <code>FluvialGeomorph</code> workflows.</p>
 </section>
 <section id="derived-features" class="level2">
 <h2 class="anchored" data-anchor-id="derived-features">Derived Features</h2>
 <p>The definition of a common set of derived features is an important step in standardizing any workflow. The standard <code>FluvialGeomorph</code> database objects form a tightly linked set of features that work together in a particular order to accomplish the analysis.</p>
-<section id="reach" class="level3">
-<h3 class="anchored" data-anchor-id="reach">Reach</h3>
-<p>hierarchical levels: study area, site, reach</p>
+<section id="hierarchical-units-of-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="hierarchical-units-of-analysis">Hierarchical Units of Analysis</h3>
+<p>To help organize the workflow process we have defined several units of analysis:</p>
+<ul>
+<li><p><strong>Study Area:</strong> These are the primary work units and correspond to projects that customers have requested for analysis. Customers define specific goals for each project that determine the specific workflow chosen. These goals define a project study area for each project. These project study areas typically consist of a particular watershed, a mainstem section of a named river, or a discrete stream reach.</p></li>
+<li><p><strong>Site:</strong> Study areas are subdivided into “sites”. Sites are typically named tributaries and their subwatersheds within the project study area.</p></li>
+<li><p><strong>Reach:</strong> Sites are further subdivided into “reaches”. Reaches are defined according to project goals and use conventional rules for specifying reaches (i.e., tributary confluence to confluence), significant infrastructure, changes in surficial geology, etc.</p></li>
+<li><p><strong>Survey Event:</strong> <code>FluvialGeomorph</code> analysis is based on LiDAR terrain surveys, the timing of the survey is a critical factor in the analysis. LiDAR is a single point-in-time dataset. Since LiDAR can be collected periodically, our data structure must accommodate multiple distinct time periods (typically separated by years) for which channel dimensions are extracted. If there are multiple LiDAR surveys available for the project study area, the most recent survey is referred to as the <em>base year</em>.</p></li>
+</ul>
+</section>
+<section id="analysis-levels" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-levels">Analysis Levels</h3>
+<p>We have defined a standard workflow that is modular, allowing analysts to prescribe and customers to purchase progressively more detailed analysis as needed. The workflow is organized according to the following levels:</p>
+<ul>
+<li><strong>Level 1:</strong> Extract basic channel dimensions and profile.</li>
+<li><strong>Level 2:</strong> Extract bankfull channel dimensions and profile.</li>
+<li><strong>Level 3:</strong> Extract planform dimensions.</li>
+</ul>
+</section>
+<section id="workflow-levels" class="level3">
+<h3 class="anchored" data-anchor-id="workflow-levels">Workflow Levels</h3>
+<p>The <code>FluvialGeomorph</code> workflow has been organized using the following hierarchical grouping to help analysts better understand how to perform the analysis and what is being done during each step of the process. All workflow steps are sequential and build on the outputs of previous steps.</p>
+<ul>
+<li><strong>Levels:</strong> The top hierarchical grouping of the workflow. Levels are distinguished by the degree of fluvial geometric detail and metrics that will be derived. Levels 2 and 3 are optional.</li>
+<li><strong>Phases:</strong> The second hierarchical grouping of the workflow. Each level is subdivided into phases. Phases are mostly a conceptual grouping of steps to accomplish a specific objective in the analysis chain.</li>
+<li><strong>Steps:</strong> the third hierarchical grouping of the workflow. Phases are subdivided into steps. steps typically involve running tools, manual editing, and performing quality assurance checks.</li>
+<li><strong>Tools:</strong> Tools are the lowest hierarchical grouping of the workflow. Tools perform operations that are suitable for automation.</li>
+</ul>
 </section>
 <section id="flowline-concept" class="level3">
 <h3 class="anchored" data-anchor-id="flowline-concept">Flowline</h3>
+<p>Flowlines are smoothed stream network geometries derived from digital elevation models.</p>
 <ul>
-<li>centerline</li>
-<li>thalweg</li>
+<li><strong>Centerline:</strong> The line that is equal distances between two banks in a stream. Generating cross sections along this line provides a full transverse view that extends beyond the bankfull width.</li>
+<li><strong>Thalweg:</strong> Thalwegs can be used to locate areas of scour and fill, geologic controls, and outcrops of non-erodible materials. The thalweg changes as the the concentration of flow due to centrifugal forces moves. Monitoring the thalweg allows engineers or geomorphologists to chart changes in the bed elevation through time.</li>
 </ul>
 </section>
 <section id="position-along-river" class="level3">
 <h3 class="anchored" data-anchor-id="position-along-river">Position Along River</h3>
+<p>Rivers and streams are dynamic and continuously change their position, shape, and other morphological characteristics. Creating cross sections from a flowline derived from flowline points establishes a position on an existing river for comparison of past and future variations during the lifetime of the project.</p>
 </section>
 <section id="pool-riffle-run" class="level3">
 <h3 class="anchored" data-anchor-id="pool-riffle-run">Pool-Riffle-Run</h3>
+<ul>
+<li><strong>Pool:</strong> In bends, there is a concentration of flow due to centrifugal forces. This causes the depth to increase at the outside of the bend, and this area is known as the pool.</li>
+<li><strong>Riffle:</strong> As the thalweg again changes sides below a bend, it crosses the centerline of the channel. This area is known as the riffle or crossing. At the point of tangency between adjacent bends, the velocity distribution is fairly consistent across the cross section, which is approximately rectangular in shape. The concentration of flow in the bend is lost and the velocity decreases accordingly, thus causing deposition in the crossing.</li>
+<li><strong>Run:</strong> A reach of stream characterized by fast-flowing, low-turbulence water. This includes deep areas in a stream where water flows fast with little or no turbulence. <!--need a more conceptual definitions--></li>
+</ul>
 </section>
 <section id="xs-concept" class="level3">
 <h3 class="anchored" data-anchor-id="xs-concept">Cross Section</h3>
+<p>While thalweg profiles are a useful tool it must be recognized that they only reflect the behavior of the channel bed and do not provide information about the channel as a whole. For this reason it is usually advisable to study changes in the cross sectional geometry. Cross sectional geometry refers to width, depth, area, wetted perimeter, hydraulic radius, and channel conveyance at a specific cross section.</p>
 </section>
 <section id="bankfull-concept" class="level3">
 <h3 class="anchored" data-anchor-id="bankfull-concept">Bankfull</h3>
+<p>The area between the side slopes of a channel which the streamflow is normally confined (the transition point between the bank and the floodplain). This convention must be addressed when channel cross-sections are recorded, plotted, and entered into hydraulic computational programs.</p>
+<p>Describes the peak flow; the stage at which the channel is nearly full. The term, “Bankfull” modifies stage, width, channel, and discharge.</p>
 </section>
 <section id="flood-prone-concept" class="level3">
 <h3 class="anchored" data-anchor-id="flood-prone-concept">Flood Prone</h3>
+<p>Flood prone areas generally include the active floodplain and the low terrace. The elevation of the floodprone is qualitatively defines as 2 times the maximum bankfull depth.</p>
+<p>Includes the floodplain and active channel that is subjected to regular flooding, as indicated by topography, soil/substrate, and vegetation community. Changes in vegetation types, flood deposits of fine woody materials, and change in slope are often good indicators of the flood prone width. Changes in vegetation are typically presented as a transition from riparian vegetation to upland grasses and/or other mesic species that have lesser water requirements.</p>
 </section>
-<section id="planform-planform-concept" class="level3">
-<h3 class="anchored" data-anchor-id="planform-planform-concept">Planform {planform-concept}</h3>
+<section id="planform-concept" class="level3">
+<h3 class="anchored" data-anchor-id="planform-concept">Planform</h3>
+<p>The pattern formed by a waterway as viewed from above. Channel pattern describes the planform of a channel. The primary types of planform are meandering, braided, and straight. In many cases, a stream will change pattern within its length. The type pattern is dependent on slope, discharge, and sediment load.</p>
 <ul>
-<li>loops contain bends</li>
-<li>loops have an apex</li>
-<li>loops alternate</li>
-<li>crossovers</li>
-<li>Valley Line</li>
+<li><strong>Loops Contain Bends:</strong> The change in direction of a stream channel.</li>
+<li><strong>Loops Have an Apex:</strong> The area near the center of a bend. Usually measured by dividing the total arc angle of the bend by two; e.g., in a 90 degree bend the apex would be the section of the arc near 45 degrees.</li>
+<li><strong>Loops Alternate:</strong> A meandering channel is formed by a series of alternating changes in direction, or bends. Relatively straight reaches of alluvial rivers rarely occur in nature. Streams meander within the banks of a straight section of the stream creating loops. Over time the alternating changes cause loops and bends to change positions.</li>
+<li><strong>Crossovers:</strong> The relatively short and shallow reach of a stream where the thalweg crosses from one bank to the other either between bends or between pools in a straight reach. The point of inflection in a meander. The point where the thalweg intersects the center line of the stream in crossing from near the outside of the next bend. The point of inflection in a meander where the thalweg intersects the centerline of the stream.</li>
+<li><strong>Valley Line:</strong> The straight line length of the valley along the same reach as the survey length is measured. This is usually obtained by topographic map, or by measuring the straight-line distance from the upstream extent of the longitudinal survey to the downstream extent. Valley length is measured over the exact same reach as the survey length and can be entered at the same time that gradient survey is measured.</li>
 </ul>
 </section>
 </section>
@@ -365,6 +412,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="geospatial">Geospatial</h2>
 <section id="lidar-stream-measurement" class="level3">
 <h3 class="anchored" data-anchor-id="lidar-stream-measurement">LiDAR Stream Measurement</h3>
+<p>Because near-infrared LiDAR does not penetrate the water surface, DEMs do not contain information about the channel depth, bed topography, and substrate size. The lowest elevation points from LiDAR are used to represent the water surface. The need for in-channel data for habitat monitoring and modeling fluvial processes requires high-resolution bathymetric LiDAR.</p>
 <ul>
 <li>discuss the difference between water surface and channel bottom</li>
 <li>diagram of stream</li>
@@ -372,6 +420,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="terrain-models" class="level3">
 <h3 class="anchored" data-anchor-id="terrain-models">Terrain Models</h3>
+<p>High-density, irregularly-spaced elevation mass points in Digital Terrain Models (DTMs) are routinely produced from LiDAR point clouds. Uniformly-gridded (raster) Digital Elevation Models (DEMs) are either interpolated from LiDAR mass points or compiled from stereo imagery.</p>
 <ul>
 <li>point cloud</li>
 <li>raster</li>
@@ -380,22 +429,33 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="terrain-visualization-concept" class="level3">
 <h3 class="anchored" data-anchor-id="terrain-visualization-concept">Terrain Visualization</h3>
+<p>Preserve Resolution and Detail. Visualize differences in LiDAR derived elevations. Accentuating the color ramp across the relevant range of elevation values. To see features in some images or raster datasets, or to distinguish them more easily from the surroundings, you may want to alter the stretch applied to the histogram. Dynamic Range Adjustment (DRA) is a tool for stretching the pixel values within the display and while not using all the pixels in the raster dataset.</p>
 </section>
 <section id="synthetic-stream-concept" class="level3">
 <h3 class="anchored" data-anchor-id="synthetic-stream-concept">Synthetic Stream Delineation</h3>
+<p>Derive linework from terrain data.</p>
 </section>
 <section id="flow-accumulation-concept" class="level3">
 <h3 class="anchored" data-anchor-id="flow-accumulation-concept">Flow Accumulation</h3>
+<p>D8, D16, D-inf. How streams accumulate flow from the upstream to downstream ends.</p>
 </section>
 <section id="hydro-modification-concept" class="level3">
 <h3 class="anchored" data-anchor-id="hydro-modification-concept">Hydro Modification</h3>
+<p>Modifying DEM to represent the flow of water through structures. Less resolute DEMs need more hydro modification. Inversely, more resolute DEMs need less hydro modification. The need for hydro modification is dependent on the type of structure. LiDAR collected at a high enough resolution can avoid hydro modification around bridges if the points collected can reach under the bridge on either side. Culverts and storm water structures interrupt visibility and prevent a full view of the flow of a stream and would require hydro modification.</p>
 </section>
 <section id="detrending-concept" class="level3">
 <h3 class="anchored" data-anchor-id="detrending-concept">Relative Elevation Model</h3>
+<p>Normalization/Standardization of an Elevation Model to an index value of 100 as the lowest value also known as the locally determined lowest elevation of the streamline so that the REM can be thought of as the Bank Height Model.</p>
 <ul>
 <li>“relative bank height”</li>
 <li>figure: side-by-side DEM and detrend</li>
 <li>figure: side-by-side longitudinal profiles</li>
+</ul>
+</section>
+<section id="hydraulic-modelling" class="level3">
+<h3 class="anchored" data-anchor-id="hydraulic-modelling">Hydraulic Modelling</h3>
+<ul>
+<li>Bathtub Assumption</li>
 </ul>
 </section>
 <section id="water-surface-elevation" class="level3">
@@ -426,7 +486,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="spatial-data-clearinghouses-for-terrain-data" class="level3">
 <h3 class="anchored" data-anchor-id="spatial-data-clearinghouses-for-terrain-data">Spatial Data Clearinghouses for Terrain Data</h3>
 <ul>
-<li>3DEP</li>
+<li><a href="https://apps.nationalmap.gov/viewer/">3DEP</a></li>
 <li>The National Map</li>
 <li>State clearinghouses</li>
 </ul>

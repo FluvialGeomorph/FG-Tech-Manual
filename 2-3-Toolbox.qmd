@@ -40,7 +40,7 @@ This chapter describes the FluvialGeomorph toolbox structure and the products it
 ## Platforms
 The FluvialGeomorph toolbox uses [ESRI](https://www.esri.com/en-us/home) and open source software to combine several platforms, each chosen based on their strengths, to construct a custom toolbox for rapid fluvial geomorphology analysis. 
 
-* [ArcGIS Desktop](https://desktop.arcgis.com/en/) -Desktop (ArcMap and ArcGIS Pro) are industry standard enterprise desktop GIS products for conducting geospatial analysis. The ArcGIS desktop applications contain an enormous number of commercial-off-the shelf (COTS) geospatial tools for performing sophisticated analyses and visualization. 
+* [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources) -ArcGIS Pro is industry standard enterprise desktop GIS products for conducting geospatial analysis. The ArcGIS Pro applications contain an enormous number of commercial-off-the shelf (COTS) geospatial tools for performing sophisticated analyses and visualization. 
 * [ArcGIS toolbox](https://pro.arcgis.com/en/pro-app/latest/help/analysis/geoprocessing/basics/use-a-custom-geoprocessing-tool.htm) - ArcGIS Desktop allows for the creation of sophisticated custom geospatial toolboxes to be built that combine ESRI's COTS geoprocessing tools with user created tools from several platforms (e.g., Python, R). 
 * [Python](https://www.python.org/) - ArcGIS provides a robust scripting interface to its GIS tools using the Python language. Custom geospatial toolboxes can combine ESRI's COTS geoprocessing tools with tools available within the diverse, mature, and ever-growing Python data science ecosystem. 
 * [R](https://cran.r-project.org/) - ESRI's [ArcGIS R-bridge](https://github.com/R-ArcGIS/r-bridge) product allows R tools to be called within the ArcGIS toolbox interface. This allows ArcGIS tools to take advantage of the mature ecosystem of R data science, statistical, visualization, and report generation packages. 
@@ -57,7 +57,7 @@ The FluvialGeomorph toolbox is composed of a set of tightly connected packages t
 ## ArcGIS Toolbox
 The FluvialGeomorph toolbox contains a set of tools for analyzing streams. These tools are divided into four toolsets. 
 
-### 01 - Install toolset
+### Install toolset
 The purpose of this toolset is to hold the tools needed to install and troubleshoot the FluvialGeomorph toolbox software components. 
 
 
@@ -75,10 +75,10 @@ The purpose of this toolset is to hold the tools needed to install and troublesh
 
 ***
 
-### 02 - Tools toolset
+### Levels toolset
 The purpose of this toolset is to hold the tools that perform the FluvialGeomorph analysis. 
 
-#### `02 - Hydro DEM` {#hydro-dem-tool}
+#### `Hydro DEM` {#hydro-dem-tool}
 **Purpose** - This tool "burns" (sets the elevation to the same value for all pixels along the extent of the polyline feature) a [`cutlines`](#cutlines-fc) feature class into the supplied DEM and creates the [`dem_hydro`](#dem-hydro-raster) in the output workspace using these instructions in the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#hydro-modify-dem). See [this section](#hydro-modification-concept) for a detailed discussion of why hydro modification is required. 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_02_HydroDEM.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_02_HydroDEM.py).
@@ -95,7 +95,7 @@ knitr::include_graphics("figures/toolbox/tool_Hydro_DEM.png")
 ***
 
 
-#### `05 - Flowline` {#flowline-tool}
+#### `Flowline` {#flowline-tool}
 **Purpose** - This tool creates a [`flowline`](#flowline-fc) feature class in the output workspace using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-the-flowline). This tool uses an edited [`stream_network`](#stream-network-fc) feature class to derive the [`flowline`](#flowline-fc). 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_05_Flowline.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_05_Flowline.py). 
@@ -111,7 +111,7 @@ knitr::include_graphics("figures/toolbox/tool_Flowline.png")
 
 ***
 
-#### `06 - Flowline Points` {#flowline-points-tool}
+#### `Flowline Points` {#flowline-points-tool}
 **Purpose** - This tool creates a [`flowline_points`](#flowline-points-fc) feature class in the output workspace using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-flowline-points). This tool converts a stream [`flowline`](#flowline-fc) feature class to a route and begins the stationing using the `km_to_mouth` parameter. This tool can optionally calibrate the output [`flowline_points`](#flowline-points-fc) using a point feature class. 
 
 **Code** - This ArcGIS script tool calls the Python script  [`FluvialGeomorph-toolbox/tools/_06_FlowlinePoints.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_06_FlowlinePoints.py). 
@@ -127,7 +127,7 @@ knitr::include_graphics("figures/toolbox/tool_Flowline_Points.png")
 
 ***
 
-#### `07 - Relative Elevation Model` {#detrend-dem-tool}
+#### `Relative Elevation Model` {#detrend-dem-tool}
 This tool creates the [`REM`](#detrend-raster) raster using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#define-initial-floodplain-and-channel-extent). This tool uses [`flowline_points`](#flowline-points-fc) to remove the elevation trend from the stream reach. See [this section](#detrending-concept) for a detailed discussion on detrended DEMs. 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_07_DetrendDEM.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_07_DetrendDEM.py). 
@@ -143,7 +143,7 @@ knitr::include_graphics("figures/toolbox/tool_Detrend_DEM.png")
 
 ***
 
-#### `08 - Water Surface Extent` {#water-surface-extent}
+#### `Water Surface Extent` {#water-surface-extent}
 **Purpose** - This tool creates the [`banks_raw`](#bankfull-area-fc) polygon feature class using these Level 1 instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#estimate-initial-channel-extent) and [these instructions](https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#create-bankfull-area) for Level 2.
 
 **Code** - This ArcGIS script tool calls the Python script [FluvialGeomorph-toolbox/tools/_08_WaterSurfaceExtent.py](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_08_WaterSurfaceExtent.py).
@@ -160,7 +160,7 @@ knitr::include_graphics("figures/toolbox/tool_Water_Surface_Extent.png")
 ***
 
 
-#### `11 - XS Layout` {#xs-layout-tool}
+#### `XS Layout` {#xs-layout-tool}
 **Purpose** - This tool creates the [`xs_*`](#regular-xs-fc) polyline feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-regular-cross-section-geometry). This tool creates a set of regularly spaced cross sections along the input [`flowline`](#flowline-fc) at the specified longitudinal spacing and lateral width. The output feature class is named `xs_<transect_spacing>_<transect_width>`. 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_11_XSLayout.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_11_XSLayout.py).
@@ -176,7 +176,7 @@ knitr::include_graphics("figures/toolbox/tool_XS_Layout.png")
 
 ***
 
-#### `12 - XS Watershed Area` {#xs-watershed-area-tool}
+#### `XS Watershed Area` {#xs-watershed-area-tool}
 **Purpose** - This tool adds or updates the field `Watershed_Area_SqMile` to the input cross section feature class using these instructions for [`Level 1`](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-cross-section-watershed-area) and [`Level 2`](https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#calculate-cross-section-watershed-area-1) from the user manual. This field records the upstream drainage area for the cross section. 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_12_XSWatershedArea.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_12_XSWatershedArea.py).
@@ -192,7 +192,7 @@ knitr::include_graphics("figures/toolbox/tool_XS_Watershed_Area.png")
 
 ***
 
-#### `13 - XS River Position` {#xs-river-position}
+#### `XS River Position` {#xs-river-position}
 **Purpose** - This tool adds or updates the field `km_to_mouth` to the input cross section feature class using these instructions for [`Level 1`](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-cross-section-river-position) and [`Level 2`](https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#calculate-cross-section-river-position-1) from the user manual. This field records the distance of the cross section from the mouth of the site. 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/blob/_13_XSRiverPosition.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_13_XSRiverPosition.py).
@@ -208,7 +208,7 @@ knitr::include_graphics("figures/toolbox/tool_XS_River_Position.png")
 
 ***
 
-#### `13a - XS Resequence` {#xs-resequence-tool}
+#### `XS Resequence` {#xs-resequence-tool}
 **Purpose** - This tools reorders the values of the `Seq` field for the input cross section feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-regular-cross-sections). 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_13a_XSResequence.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_13a_XSResequence.py). 
@@ -224,7 +224,7 @@ knitr::include_graphics("figures/toolbox/tool_XS_Resequence.png")
 
 ***
 
-#### `14 - XS Points` {#xs-points-tool}
+#### `XS Points` {#xs-points-tool}
 **Purpose** - This tool creates the [`*_points`](#xs-points-fc) points feature class using the these instructions for [Level 1](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-cross-section-points) and [Level 2](https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#calculate-cross-section-points-1) from the user manual. This tool converts a cross section polyline feature class (i.e., `xs_*`, `riffle_floodplain`, `riffle_channel`) into a series of points stationed at the `station_distance` along the input cross section. The name of the input cross section prepended to the output feature class: `<cross_section name>_points`. 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_14_XSPoints.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_14_XSPoints.py).
@@ -240,7 +240,7 @@ knitr::include_graphics("figures/toolbox/tool_XS_Points.png")
 
 ***
 
-#### `14b - Bankline Points` {#bankline-points-tool}
+#### `Bankline Points` {#bankline-points-tool}
 **Purpose** - This tool creates the [`bankline_points`](#bankline-points-fc) using these instructions in the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#derive-bankline-points). This tool uses the [`loop_points`](#loop-points-fc) and [`valleyline`](#valleyline-fc) that the analyst manually created in previous steps. 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_14b_BanklinePoints.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_14b_BanklinePoints.py)
@@ -256,7 +256,7 @@ knitr::include_graphics("figures/toolbox/tool_Bankline_Points.png")
 
 ***
 
-#### `14c - XS Assign Loops` {#xs-assign-loops-tool}
+#### `XS Assign Loops` {#xs-assign-loops-tool}
 **Purpose** - This tool assigns loops and bends to input cross section feature class using the input [`bankline_points`](#bankline-points-fc) using these instructions in the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#assign-cross-section-loops). 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_14c_XSAssignLoops.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_14c_XSAssignLoops.py). 
@@ -272,7 +272,7 @@ knitr::include_graphics("figures/toolbox/tool_XS_Assign_Loops.png")
 
 ***
 
-#### `15a - XS Dimensions, Level 1` {#xs-dimensions-L1-tool}
+#### `XS Dimensions, Level 1` {#xs-dimensions-L1-tool}
 **purpose** - This tool calculates [Level 1 cross section dimensions](#xs-dimensions-fc) for the input cross section feature class (i.e., [regular cross sections](#regular-xs-fc)) using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-cross-section-l1-dimensions).
 
 **Code** - This ArcGIS script tool calls the Python script [FluvialGeomorph-toolbox/tools/_15a_XSDimensions.R](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_15a_XSDimensions.R) which calls the R function [`fluvgeo::cross_section_dimensions_L1`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/cross_section_dimensions_L1.R). 
@@ -288,7 +288,7 @@ knitr::include_graphics("figures/toolbox/tool_XS_Dimensions_L1.png")
 
 ***
 
-#### `15b - XS Dimensions, Level 2` {#xs-dimensions-L2-tool}
+#### `XS Dimensions, Level 2` {#xs-dimensions-L2-tool}
 **Purpose** - This tool calculates [Level 3 cross section dimensions](#xs-dimensions-fc) for the input cross section feature class (i.e., [regular cross sections](#regular-xs-fc), [riffle cross sections](#riffle-xs-fc)) using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#calculate-final-l2-cross-section-geometry).
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_15b_XSDimensions.R`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_15b_XSDimensions.R)
@@ -304,7 +304,7 @@ knitr::include_graphics("figures/toolbox/tool_XS_Dimensions_L2.png")
 
 ***
 
-#### `15c - XS Planform, Level 3` {#xs-dimensions-L3-tool}
+#### `XS Planform, Level 3` {#xs-dimensions-L3-tool}
 **Purpose** - This tool calculates [Level 3 cross section dimensions](#xs-dimensions-fc) for the input cross section feature class (i.e., [regular cross sections](#regular-xs-fc), [riffle cross sections](#riffle-xs-fc)) using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#calculate-l3-cross-section-geometry). 
 
 **Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph/FluvialGeomorph-toolbox/tools/_15c_XSPlanform.R`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_15c_XSPlanform.R) which calls the R functions [`fluvgeo::planform_dimensions`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/planform_dimensions.R) to calculate the planform dimensions and [`fluvgeo::xs_metric_ratios`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_metric_ratios.R) to calculate the metric ratios. 
@@ -320,7 +320,7 @@ knitr::include_graphics("figures/toolbox/tool_XS_Dimensions_L3.png")
 
 ***
 
-### 03 - Reports toolset
+### Graphs toolset
 The purpose of this toolset is to hold the tools that produce the FluvialGeomorph reports. 
 
 #### `Graph - Longitudinal Profile Compare` {#longitudinal-profile-compare-graph-tool}
@@ -356,6 +356,10 @@ params_table(params_df, "reach_overview_map", "Reach Overview Map Tool Parameter
 knitr::include_graphics("figures/toolbox/tool_Map-Reach_Overview.png")
 ```
 
+***
+
+### Reports toolset
+The purpose of this toolset is to hold the tools that produce the FluvialGeomorph reports.
 #### `Report - L1` {#L1-report-tool}
 **Purpose** - This tool produces the [Level 1 Report](#L1-report) using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#run-report).  
 
@@ -400,8 +404,6 @@ knitr::include_graphics("figures/toolbox/tool_Report-L2.png")
 ```
 
 
-***
-
 #### `Report - L3` {#L3-report-tool}
 **Purpose** - This tool produces the [Level 3 Report](#L3-report) using these instructions in the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#run-report-2). 
 
@@ -416,8 +418,9 @@ params_table(params_df, "L3_report", "Level 3 Report Tool Parameters.")
 knitr::include_graphics("figures/toolbox/tool_Report-L3.png")
 ```
 
+***
 
-### 04 - Symbology toolset
+### Symbology toolset
 The purpose of this toolset is to hold the tools that standardize the symbolization of FluvialGeomorph datasets. Given the complexity of the datasets involved in this analysis, consistent symbolization improves interpretation and speeds analysis. 
 
 #### `Banklines` {#banklines-symbol-tool}
@@ -449,7 +452,7 @@ Applies standard FluvialGeomorph symbology to the [`valleyline`](#valleyline-fc)
 
 ***
 
-### 05 - Check toolset
+### Check toolset
 The purpose of this toolset is to hold the tools used to check FluvialGeomorph features for some common, preventable errors. 
 
 #### `Check Banklines` {#check-banklines-tool}
@@ -481,7 +484,7 @@ This ArcGIS script tool checks the [`valleyline`](#valleyline-fc) feature class 
 
 ***
 
-### 06 - Export toolset
+### Export toolset
 The purpose of this toolset is to export the tabular data from geospatial datasets for further analysis. 
 
 #### `Level 1` {#L1-export-tool}
@@ -490,3 +493,7 @@ This ArcGIS script tool exports the tabular data from these Level 1 feature clas
 #### `Level 2` {#L2-export-tool}
 
 #### `Level 3` {#L3-export-tool}
+
+***
+### Export toolset
+The purpose of this toolset is to export the tabular data from geospatial datasets for further analysis. 

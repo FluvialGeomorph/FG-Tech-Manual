@@ -22,7 +22,7 @@ This chapter describes the background and approach used in the development of th
 
 ## Previous Work
 * River Bathymetry Toolkit
-* TauDEM
+
 
 ## Other Resources
 * How to use the tools is described in the user manual

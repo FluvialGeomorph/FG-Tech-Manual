@@ -237,8 +237,14 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0-7-References.html" class="sidebar-item-text sidebar-link">
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -252,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4-1-QAChecklist.html" class="sidebar-item-text sidebar-link">
+  <a href="./QAChecklist.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span></a>
   </div>
 </li>
@@ -268,68 +274,57 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#define-study-area-coordinate-system" id="toc-define-study-area-coordinate-system" class="nav-link active" data-scroll-target="#define-study-area-coordinate-system">Define Study Area Coordinate System</a></li>
-  <li><a href="#create-study-area-geodatabases" id="toc-create-study-area-geodatabases" class="nav-link" data-scroll-target="#create-study-area-geodatabases">Create Study Area Geodatabases</a></li>
-  <li><a href="#define-study-area" id="toc-define-study-area" class="nav-link" data-scroll-target="#define-study-area">Define Study Area</a>
+  <li><a href="#level-1" id="toc-level-1" class="nav-link active" data-scroll-target="#level-1">Level 1</a>
   <ul class="collapse">
+  <li><a href="#study-area-coordinate-system" id="toc-study-area-coordinate-system" class="nav-link" data-scroll-target="#study-area-coordinate-system">Study Area Coordinate System</a></li>
+  <li><a href="#create-study-area-geodatabases" id="toc-create-study-area-geodatabases" class="nav-link" data-scroll-target="#create-study-area-geodatabases">Create Study Area Geodatabases</a></li>
+  <li><a href="#define-study-area" id="toc-define-study-area" class="nav-link" data-scroll-target="#define-study-area">Define Study Area</a></li>
   <li><a href="#create-study-area-areal-extent" id="toc-create-study-area-areal-extent" class="nav-link" data-scroll-target="#create-study-area-areal-extent">Create Study Area Areal Extent</a></li>
   <li><a href="#define-study-area-longitudinal-extent" id="toc-define-study-area-longitudinal-extent" class="nav-link" data-scroll-target="#define-study-area-longitudinal-extent">Define Study Area Longitudinal Extent</a></li>
-  </ul></li>
   <li><a href="#acquire-contributing-area-watershed-elevation-model" id="toc-acquire-contributing-area-watershed-elevation-model" class="nav-link" data-scroll-target="#acquire-contributing-area-watershed-elevation-model">Acquire Contributing Area Watershed Elevation Model</a></li>
-  <li><a href="#develop-high-resolution-elevation-model" id="toc-develop-high-resolution-elevation-model" class="nav-link" data-scroll-target="#develop-high-resolution-elevation-model">Develop High Resolution Elevation Model</a>
-  <ul class="collapse">
+  <li><a href="#develop-high-resolution-elevation-model" id="toc-develop-high-resolution-elevation-model" class="nav-link" data-scroll-target="#develop-high-resolution-elevation-model">Develop High Resolution Elevation Model</a></li>
   <li><a href="#download-lidar-point-cloud-data" id="toc-download-lidar-point-cloud-data" class="nav-link" data-scroll-target="#download-lidar-point-cloud-data">Download LiDAR point cloud data</a></li>
   <li><a href="#build-a-dem-from-lidar-point-cloud-data" id="toc-build-a-dem-from-lidar-point-cloud-data" class="nav-link" data-scroll-target="#build-a-dem-from-lidar-point-cloud-data">Build a DEM from LiDAR point cloud data</a></li>
   <li><a href="#verify-that-the-dem-elevations-are-in-feet" id="toc-verify-that-the-dem-elevations-are-in-feet" class="nav-link" data-scroll-target="#verify-that-the-dem-elevations-are-in-feet">Verify that the DEM elevations are in feet</a></li>
   <li><a href="#create-a-hillshade-to-improve-visualization" id="toc-create-a-hillshade-to-improve-visualization" class="nav-link" data-scroll-target="#create-a-hillshade-to-improve-visualization">Create a hillshade to improve visualization</a></li>
-  </ul></li>
-  <li><a href="#hydro-modify-dem" id="toc-hydro-modify-dem" class="nav-link" data-scroll-target="#hydro-modify-dem">Hydro Modify DEM</a>
-  <ul class="collapse">
+  <li><a href="#hydro-modify-dem" id="toc-hydro-modify-dem" class="nav-link" data-scroll-target="#hydro-modify-dem">Hydro Modify DEM</a></li>
   <li><a href="#identify-flow-blockages" id="toc-identify-flow-blockages" class="nav-link" data-scroll-target="#identify-flow-blockages">Identify Flow Blockages</a></li>
   <li><a href="#burn-cutlines-into-the-terrain" id="toc-burn-cutlines-into-the-terrain" class="nav-link" data-scroll-target="#burn-cutlines-into-the-terrain">Burn cutlines into the terrain</a></li>
-  </ul></li>
-  <li><a href="#define-stream-reaches" id="toc-define-stream-reaches" class="nav-link" data-scroll-target="#define-stream-reaches">Define Stream Reaches</a>
-  <ul class="collapse">
-  <li><a href="#calculate-contributing-area" id="toc-calculate-contributing-area" class="nav-link" data-scroll-target="#calculate-contributing-area">Calculate Contributing Area</a></li>
+  <li><a href="#define-stream-reaches" id="toc-define-stream-reaches" class="nav-link" data-scroll-target="#define-stream-reaches">Define Stream Reaches</a></li>
   <li><a href="#derive-stream-network" id="toc-derive-stream-network" class="nav-link" data-scroll-target="#derive-stream-network">Derive Stream Network</a></li>
   <li><a href="#calculate-slope-and-sinuosity" id="toc-calculate-slope-and-sinuosity" class="nav-link" data-scroll-target="#calculate-slope-and-sinuosity">Calculate Slope and Sinuosity</a></li>
   <li><a href="#define-reaches" id="toc-define-reaches" class="nav-link" data-scroll-target="#define-reaches">Define Reaches</a></li>
   <li><a href="#delineate-watersheds" id="toc-delineate-watersheds" class="nav-link" data-scroll-target="#delineate-watersheds">Delineate Watersheds</a></li>
-  </ul></li>
-  <li><a href="#derive-flowline" id="toc-derive-flowline" class="nav-link" data-scroll-target="#derive-flowline">Derive Flowline</a>
-  <ul class="collapse">
+  <li><a href="#derive-flowline" id="toc-derive-flowline" class="nav-link" data-scroll-target="#derive-flowline">Derive Flowline</a></li>
   <li><a href="#create-the-site-geodatabase" id="toc-create-the-site-geodatabase" class="nav-link" data-scroll-target="#create-the-site-geodatabase">Create the site geodatabase</a></li>
   <li><a href="#create-the-flowline" id="toc-create-the-flowline" class="nav-link" data-scroll-target="#create-the-flowline">Create the Flowline</a></li>
   <li><a href="#create-the-reach-geodatabase" id="toc-create-the-reach-geodatabase" class="nav-link" data-scroll-target="#create-the-reach-geodatabase">Create the Reach Geodatabase</a></li>
   <li><a href="#create-flowline-points" id="toc-create-flowline-points" class="nav-link" data-scroll-target="#create-flowline-points">Create Flowline Points</a></li>
-  </ul></li>
-  <li><a href="#define-initial-floodplain-and-channel-extent" id="toc-define-initial-floodplain-and-channel-extent" class="nav-link" data-scroll-target="#define-initial-floodplain-and-channel-extent">Define Initial Floodplain and Channel Extent</a>
-  <ul class="collapse">
+  <li><a href="#define-initial-floodplain-and-channel-extent" id="toc-define-initial-floodplain-and-channel-extent" class="nav-link" data-scroll-target="#define-initial-floodplain-and-channel-extent">Define Initial Floodplain and Channel Extent</a></li>
   <li><a href="#detrend-dem" id="toc-detrend-dem" class="nav-link" data-scroll-target="#detrend-dem">Detrend DEM</a></li>
   <li><a href="#estimate-initial-channel-extent" id="toc-estimate-initial-channel-extent" class="nav-link" data-scroll-target="#estimate-initial-channel-extent">Estimate Initial Channel Extent</a></li>
   <li><a href="#create-the-initial-channel-mask-layer" id="toc-create-the-initial-channel-mask-layer" class="nav-link" data-scroll-target="#create-the-initial-channel-mask-layer">Create the Initial Channel Mask layer</a></li>
   <li><a href="#estimate-initial-floodplain-extent" id="toc-estimate-initial-floodplain-extent" class="nav-link" data-scroll-target="#estimate-initial-floodplain-extent">Estimate Initial Floodplain Extent</a></li>
-  <li><a href="#calculate-channel-slope-raster" id="toc-calculate-channel-slope-raster" class="nav-link" data-scroll-target="#calculate-channel-slope-raster">Calculate Channel Slope Raster</a></li>
-  <li><a href="#create-initial-centerline" id="toc-create-initial-centerline" class="nav-link" data-scroll-target="#create-initial-centerline">Create Initial Centerline</a></li>
-  </ul></li>
-  <li><a href="#create-regular-cross-section-geometry" id="toc-create-regular-cross-section-geometry" class="nav-link" data-scroll-target="#create-regular-cross-section-geometry">Create Regular Cross Section Geometry</a>
-  <ul class="collapse">
+  <li><a href="#create-regular-cross-section-geometry" id="toc-create-regular-cross-section-geometry" class="nav-link" data-scroll-target="#create-regular-cross-section-geometry">Create Regular Cross Section Geometry</a></li>
   <li><a href="#create-regular-cross-sections" id="toc-create-regular-cross-sections" class="nav-link" data-scroll-target="#create-regular-cross-sections">Create Regular Cross Sections</a></li>
   <li><a href="#calculate-cross-section-watershed-area" id="toc-calculate-cross-section-watershed-area" class="nav-link" data-scroll-target="#calculate-cross-section-watershed-area">Calculate Cross Section Watershed Area</a></li>
   <li><a href="#calculate-cross-section-river-position" id="toc-calculate-cross-section-river-position" class="nav-link" data-scroll-target="#calculate-cross-section-river-position">Calculate Cross Section River Position</a></li>
   <li><a href="#calculate-cross-section-points" id="toc-calculate-cross-section-points" class="nav-link" data-scroll-target="#calculate-cross-section-points">Calculate Cross Section Points</a></li>
   <li><a href="#calculate-cross-section-l1-dimensions" id="toc-calculate-cross-section-l1-dimensions" class="nav-link" data-scroll-target="#calculate-cross-section-l1-dimensions">Calculate Cross Section L1 Dimensions</a></li>
-  </ul></li>
-  <li><a href="#identify-infrastructure" id="toc-identify-infrastructure" class="nav-link" data-scroll-target="#identify-infrastructure">Identify Infrastructure</a>
-  <ul class="collapse">
+  <li><a href="#identify-infrastructure" id="toc-identify-infrastructure" class="nav-link" data-scroll-target="#identify-infrastructure">Identify Infrastructure</a></li>
   <li><a href="#create-features" id="toc-create-features" class="nav-link" data-scroll-target="#create-features">Create Features</a></li>
   </ul></li>
-  <li><a href="#run-report" id="toc-run-report" class="nav-link" data-scroll-target="#run-report">Run Report</a>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">Data Management</a></li>
+  <li><a href="#reports" id="toc-reports" class="nav-link" data-scroll-target="#reports">Reports</a>
   <ul class="collapse">
   <li><a href="#run-the-level-1-report" id="toc-run-the-level-1-report" class="nav-link" data-scroll-target="#run-the-level-1-report">Run the Level 1 Report</a></li>
-  <li><a href="#perform-qa" id="toc-perform-qa" class="nav-link" data-scroll-target="#perform-qa">Perform QA</a></li>
   </ul></li>
-  <li><a href="#determine-next-steps" id="toc-determine-next-steps" class="nav-link" data-scroll-target="#determine-next-steps">Determine Next Steps</a></li>
+  <li><a href="#perform-qa" id="toc-perform-qa" class="nav-link" data-scroll-target="#perform-qa">Perform QA</a></li>
+  <li><a href="#determine-next-steps" id="toc-determine-next-steps" class="nav-link" data-scroll-target="#determine-next-steps">Determine Next Steps</a>
+  <ul class="collapse">
+  <li><a href="#calculate-channel-slope-raster" id="toc-calculate-channel-slope-raster" class="nav-link" data-scroll-target="#calculate-channel-slope-raster">Calculate Channel Slope Raster</a></li>
+  <li><a href="#create-initial-centerline" id="toc-create-initial-centerline" class="nav-link" data-scroll-target="#create-initial-centerline">Create Initial Centerline</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -355,10 +350,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter describes the workflow steps necessary to complete a Level 1 (L1) FluvialGeomorph analysis. The purpose of this level is to extract basic channel dimensions from LiDAR surveys. # Create Terrain The purpose of this stage is to develop the terrain models for the project study area for all available LiDAR surveys.</p>
-<section id="define-study-area-coordinate-system" class="level3">
-<h3 class="anchored" data-anchor-id="define-study-area-coordinate-system">Define Study Area Coordinate System</h3>
-<p>The purpose of this step is to choose a horizontal and vertical coordinate system for all of the vector and raster datasets created. Using the same coordinate system for all study area datasets helps avoid errors introduced by input datasets containing differing coordinate systems, particularly incorrect handling of datums and units. The horizontal and vertical coordinate systems that you select will be used for all datasets created for this study area. It is the analyst’s responsibility to ensure that each dataset uses these specified horizontal and vertical coordinate systems. Each dataset imported into a study area geodatabase must be projected into the projected horizontal and vertical coordinate systems.</p>
+<p>This chapter describes the workflow processes to complete a Level 1 (L1) FluvialGeomorph analysis. The purpose of this level is to extract basic channel dimensions from LiDAR surveys. Developing terrain models for the project study area for all available LiDAR survey events.Multiple survey events provide comparable channel dimensions for a reach overtime.</p>
+<section id="level-1" class="level2">
+<h2 class="anchored" data-anchor-id="level-1">Level 1</h2>
+<section id="study-area-coordinate-system" class="level3">
+<h3 class="anchored" data-anchor-id="study-area-coordinate-system">Study Area Coordinate System</h3>
+<p>Choose a horizontal and vertical coordinate system for all of the vector and raster datasets created. Using the same coordinate system for all study area datasets helps avoid errors introduced by input datasets containing differing coordinate systems, particularly incorrect handling of datums and units. The horizontal and vertical coordinate systems that you select will be used for all datasets created for this study area. It is the analyst’s responsibility to ensure that each dataset uses these specified horizontal and vertical coordinate systems. Each dataset imported into a study area geodatabase must be projected into the projected horizontal and vertical coordinate systems.</p>
 <ul>
 <li><strong>Horizontal Coordinate Systems</strong> - FluvialGeomorph currently supports any <em>projected</em> coordinate system with linear units of meter, feet, or US survey feet. Geographic coordinate systems (angular units, e.g., “Lat-Lon”) are not supported.<br>
 </li>
@@ -367,7 +364,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="create-study-area-geodatabases" class="level3">
 <h3 class="anchored" data-anchor-id="create-study-area-geodatabases">Create Study Area Geodatabases</h3>
-<p>The purpose of this step is to create a folder structure to store the the study area elevation data. Sub-folders will be created to store the terrain data for each available <a href="#units_of_analysis">LiDAR survey</a>. Initially, you will not know what LiDAR surveys exist for your study area until you begin your search for data described below. You will repeat the following steps for each LiDAR survey that exists for this project study area. The elevation data for each LiDAR survey will be processed separately and a synthetic stream network will be derived for each LiDAR survey independently. You will begin processing the data for the <a href="#units_of_analysis">base year</a> LiDAR survey first, then work backward in time to process earlier LiDAR surveys in reverse chronological order. Several analysis steps require the base year data to be processed first. For some tools, surveys prior to the base year use the base year data as inputs. This is done to express earlier surveys in terms of the base year for comparison purposes.</p>
+<p>Creation of a folder structure to store the the study area elevation data is the first step in managing the spataial data for this workflow. Next, sub-folders will be created to store the terrain data for each available <a href="#units_of_analysis">LiDAR survey</a>. Initially, you will not know what LiDAR surveys exist for your study area until you begin your search for data described below. You will repeat the following steps for each LiDAR survey that exists for this project study area. The elevation data for each LiDAR survey will be processed separately and a synthetic stream network will be derived for each LiDAR survey independently. You will begin processing the data for the <a href="#units_of_analysis">base year</a> LiDAR survey first, then work backward in time to process earlier LiDAR surveys in reverse chronological order. Several analysis steps require the base year data to be processed first. For some tools, surveys prior to the base year use the base year data as inputs. This is done to express earlier surveys in terms of the base year for comparison purposes.</p>
 <p>The following is an example of how to organize the working directory:</p>
 <ul>
 <li>Create a new folder on a local workstation drive. Name it for the project study area.</li>
@@ -396,27 +393,27 @@ ul.task-list li input[type="checkbox"] {
 └─── Exports
 └─── Maps</code></pre>
 </section>
-<section id="define-study-area" class="level2">
-<h2 class="anchored" data-anchor-id="define-study-area">Define Study Area</h2>
-<p>The purpose of this step is to define the location and extent of the study area. FluvialGeomorph project study areas are typically of three types, distinguished by their extent:</p>
+<section id="define-study-area" class="level3">
+<h3 class="anchored" data-anchor-id="define-study-area">Define Study Area</h3>
+<p>Define the location and extent of the study area. FluvialGeomorph project study areas are typically of three types, distinguished by their extent:</p>
 <ul>
 <li><strong>Small Reach</strong> - Required by projects analyzing a problem at a specific location. These project study areas are typically defined by a single point location, often representing a piece of built infrastructure (e.g., bridge, culvert, stream crossing, dam, revetment, gage, etc.) or specific stream feature (e.g., stream confluence, bank failure, severe bed erosion, oxbow cutoff, etc.). Analysis of these problems usually only requires examining a fixed distance up and down stream of the feature of interest. This distance up and down stream is determined by the scale of the driving factors.<br>
 </li>
 <li><strong>Long Reach</strong> - Required by projects analyzing a problem that spans a long set of connected stream reaches. These projects study areas are typically defined by several miles of stream, possibly including tributaries to the primary reach being analyzed.</li>
 <li><strong>Watershed</strong> - Required by projects analyzing watershed scale problems. FluvialGeomporh analysis of all streams in watersheds ranging in size from 1-3 HUC12 watersheds is feasible.</li>
 </ul>
+</section>
 <section id="create-study-area-areal-extent" class="level3">
 <h3 class="anchored" data-anchor-id="create-study-area-areal-extent">Create Study Area Areal Extent</h3>
-<p>The purpose of this step is to create a rough bounding polygon of the study area. This polygon should define the “must-have” extent for both communicating the extent of the study area, as well as helping to define the area within to acquire elevation data. This extent only needs to cover the extent of the stream to be analyzed and <em>does not</em> need to include the entire contributing area of the watershed.</p>
+<p>Create a rough bounding polygon of the study area. This polygon should define the “must-have” extent for both communicating the extent of the study area, as well as helping to define the area within to acquire elevation data. This extent only needs to cover the extent of the stream to be analyzed and <em>does not</em> need to include the entire contributing area of the watershed.</p>
 </section>
 <section id="define-study-area-longitudinal-extent" class="level3">
 <h3 class="anchored" data-anchor-id="define-study-area-longitudinal-extent">Define Study Area Longitudinal Extent</h3>
-<p>The purpose of this step is to help define an initial study area longitudinal extent. This step will use existing, medium resolution hydrography to help establish the rough extent of the study area. The feature classes imported in this step will be used only as an initial coarse-scale representation of the reaches to facilitate early study area definition. This will derive high resolution delineation of the reaches.</p>
+<p>Define an initial study area longitudinal extent. This step will use existing, medium resolution hydrography to help establish the rough extent of the study area. The feature classes imported in this step will be used only as an initial coarse-scale representation of the reaches to facilitate early study area definition. This will derive high resolution delineation of the reaches.</p>
 </section>
-</section>
-<section id="acquire-contributing-area-watershed-elevation-model" class="level2">
-<h2 class="anchored" data-anchor-id="acquire-contributing-area-watershed-elevation-model">Acquire Contributing Area Watershed Elevation Model</h2>
-<p>The purpose of this step is to acquire an existing, pre-made DEM of the entire study area contributing watershed. This DEM will help determine the following parameters:</p>
+<section id="acquire-contributing-area-watershed-elevation-model" class="level3">
+<h3 class="anchored" data-anchor-id="acquire-contributing-area-watershed-elevation-model">Acquire Contributing Area Watershed Elevation Model</h3>
+<p>Acquire an existing, pre-made DEM of the entire study area contributing watershed. This DEM will help determine the following parameters:</p>
 <ul>
 <li>Determine if an existing, pre-made DEM will serve for this FluvialGeomorph analysis.</li>
 <li>Derive high resolution project study area watershed extents.</li>
@@ -425,9 +422,10 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Multiple LiDAR Surveys</strong><br>
 Since the study area watershed boundaries are unlikely to have changed between LiDAR surveys, it is unnecessary to acquire the entire watershed elevation model for LiDAR survey dates prior to the <a href="#units_of_analysis">base year</a>. Only the watershed elevation model representing the base year needs to be acquired.</p>
 </section>
-<section id="develop-high-resolution-elevation-model" class="level2">
-<h2 class="anchored" data-anchor-id="develop-high-resolution-elevation-model">Develop High Resolution Elevation Model</h2>
-<p>The purpose of this DEM is to derive a detailed stream terrain model that meets the resolution requirements of the study.</p>
+<section id="develop-high-resolution-elevation-model" class="level3">
+<h3 class="anchored" data-anchor-id="develop-high-resolution-elevation-model">Develop High Resolution Elevation Model</h3>
+<p>This DEM is used to derive a detailed stream terrain model that meets the resolution requirements of the study.</p>
+</section>
 <section id="download-lidar-point-cloud-data" class="level3">
 <h3 class="anchored" data-anchor-id="download-lidar-point-cloud-data">Download LiDAR point cloud data</h3>
 </section>
@@ -440,13 +438,13 @@ Since the study area watershed boundaries are unlikely to have changed between L
 <section id="create-a-hillshade-to-improve-visualization" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-hillshade-to-improve-visualization">Create a hillshade to improve visualization</h3>
 </section>
+<section id="hydro-modify-dem" class="level3">
+<h3 class="anchored" data-anchor-id="hydro-modify-dem">Hydro Modify DEM</h3>
+<p>Creating a hydro-modified DEM to ensure proper water flow across the study area.</p>
 </section>
-<section id="hydro-modify-dem" class="level2">
-<h2 class="anchored" data-anchor-id="hydro-modify-dem">Hydro Modify DEM</h2>
-<p>The purpose of this step is to create a hydro-modified DEM to ensure proper water flow across the study area.</p>
 <section id="identify-flow-blockages" class="level3">
 <h3 class="anchored" data-anchor-id="identify-flow-blockages">Identify Flow Blockages</h3>
-<p>The purpose of this step is to develop a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#cutlines-fc"><code>cutlines</code></a> feature class representing flow blockages in the study area.</p>
+<p>Developing a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#cutlines-fc"><code>cutlines</code></a> feature class representing flow blockages in the study area is used further in the workflow.</p>
 <ul>
 <li>Examine the stream channel to be analyzed through the study area and determine if there are any blockages to flow in the DEM.</li>
 <li>Focus only on flow blockages within the main channel of the study reaches. Flow blockages outside of the the channels of the study reaches do not need to be identified for FluvialGeomorph analysis.</li>
@@ -460,33 +458,33 @@ Since the study area watershed boundaries are unlikely to have changed between L
 </section>
 <section id="burn-cutlines-into-the-terrain" class="level3">
 <h3 class="anchored" data-anchor-id="burn-cutlines-into-the-terrain">Burn cutlines into the terrain</h3>
-<p>The purpose of this step is to remove flow blockages from the terrain.</p>
+<p>This removes flow blockages from the terrain dataset.</p>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#hydro-dem-tool"><code>02 - Hydro DEM</code></a> tool to “burn” the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#cutlines"><code>cutlines</code></a> features into the study area watershed DEM. This tool creates the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster"><code>dem_hydro</code></a> raster. Rename this DEM <code>watershed_dem_hydro</code>.</li>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#hydro-dem-tool"><code>02 - Hydro DEM</code></a> tool to “burn” the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#cutlines"><code>cutlines</code></a> features into the high resolution DEM. This tool creates the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster"><code>dem_hydro</code></a> raster.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#hydro-dem-tool"><code>Hydro DEM</code></a> tool to “burn” the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#cutlines"><code>cutlines</code></a> features into the study area watershed DEM. This tool creates the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster"><code>dem_hydro</code></a> raster. Rename this DEM <code>watershed_dem_hydro</code>.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#hydro-dem-tool"><code>Hydro DEM</code></a> tool to “burn” the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#cutlines"><code>cutlines</code></a> features into the high resolution DEM. This tool creates the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster"><code>dem_hydro</code></a> raster.</li>
 </ul>
 <hr>
 </section>
-</section>
-<section id="define-stream-reaches" class="level2">
-<h2 class="anchored" data-anchor-id="define-stream-reaches">Define Stream Reaches</h2>
-<p>The purpose of this stage is to synthetically derive from the terrain the study area reaches and their watersheds.</p>
-<section id="calculate-contributing-area" class="level3">
-<h3 class="anchored" data-anchor-id="calculate-contributing-area">Calculate Contributing Area</h3>
-<p>The purpose of this step is to calculate the contributing drainage area for each pixel in the DEM.</p>
+<section id="define-stream-reaches" class="level3">
+<h3 class="anchored" data-anchor-id="define-stream-reaches">Define Stream Reaches</h3>
+<p>Synthetically derive from the terrain the study area reaches and their watersheds.</p>
+<section id="calculate-contributing-area" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-contributing-area">Calculate Contributing Area</h4>
+<p>Calculate the contributing drainage area for each pixel in the DEM.</p>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#contributing-area-d8-tool"><code>03a - Contributing Area D8</code></a> tool to calculate the contributing area for the study area watershed. This tool creates the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#contributing-area-raster"><code>contributing_area</code></a> raster. Rename this DEM <code>watershed_contributing_area</code>.</li>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#contributing-area-d8-tool"><code>03a - Contributing Area D8</code></a> tool to calculate the contributing area for the high resolution DEM. If created, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster"><code>dem_hydro</code></a> raster as input.<br>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#contributing-area-d8-tool"><code>Contributing Area D8</code></a> tool to calculate the contributing area for the study area watershed. This tool creates the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#contributing-area-raster"><code>contributing_area</code></a> raster. Rename this DEM <code>watershed_contributing_area</code>.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#contributing-area-d8-tool"><code>Contributing Area D8</code></a> tool to calculate the contributing area for the high resolution DEM. If created, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster"><code>dem_hydro</code></a> raster as input.<br>
 </li>
-<li>The <code>processes</code> parameter of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#contributing-area-d8-tool"><code>03a - Contributing Area D8</code></a> tool can be safely set to approximately 2 less than the number of cores on the computer running the tool.</li>
+<li>The <code>processes</code> parameter of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#contributing-area-d8-tool"><code>- Contributing Area D8</code></a> tool can be safely set to approximately 2 less than the number of cores on the computer running the tool.</li>
 </ul>
+</section>
 </section>
 <section id="derive-stream-network" class="level3">
 <h3 class="anchored" data-anchor-id="derive-stream-network">Derive Stream Network</h3>
-<p>The purpose of this step is to derive a synthetic vector stream network from the DEM for the study area.</p>
+<p>Derive a synthetic vector stream network from the DEM for the study area.</p>
 <ul>
 <li>Use the high resolution DEM to derive the stream network.</li>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-tool"><code>04 - Stream Network</code></a> tool to create a synthetic stream network from the hydro-modified DEM. The <code>processes</code> parameter can be safely set to approximately 2 less than the number of cores on the computer running the tool.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-tool"><code>Stream Network</code></a> tool to create a synthetic stream network from the hydro-modified DEM. The <code>processes</code> parameter can be safely set to approximately 2 less than the number of cores on the computer running the tool.</li>
 <li>The <code>threshold</code> parameter should be set to a value of 200,000 to 500,000 depending on the study area.<br>
 </li>
 <li>If the resulting <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-fc"><code>stream_network</code></a> feature class is too dense (requiring a large amount of editing to remove extraneous tributaries), try rerunning the tool and increasing the <code>threshold</code> value. Conversely, if the resulting <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-fc"><code>stream_network</code></a> feature class is too sparse (not enough of the stream network was delineated), try rerunning the tool and decreasing the <code>threshold</code> value.<br>
@@ -498,9 +496,9 @@ Since the study area watershed boundaries are unlikely to have changed between L
 </section>
 <section id="calculate-slope-and-sinuosity" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-slope-and-sinuosity">Calculate Slope and Sinuosity</h3>
-<p>The purpose of this step is to examine the stream network slope and sinuosity to help make decisions about how best to define study reaches.</p>
+<p>Examine the stream network slope and sinuosity to help make decisions about how best to define study reaches.</p>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-points-tool"><code>04a - Stream Network Points</code></a> tool to convert the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-fc"><code>stream_network</code></a> feature class into the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-points-fc"><code>stream_networks_points</code></a> feature class.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-points-tool"><code>Stream Network Points</code></a> tool to convert the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-fc"><code>stream_network</code></a> feature class into the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-points-fc"><code>stream_networks_points</code></a> feature class.</li>
 </ul>
 <p><strong>Determine the moving window size</strong><br>
 Slope and sinuosity are scale dependent metrics. This means that these metrics are affected by the size of the upstream moving window used in their calculation. To determine the appropriate size of this moving window for this study area, use the following steps:</p>
@@ -513,7 +511,7 @@ Slope and sinuosity are scale dependent metrics. This means that these metrics a
 </ul>
 <p><strong>Calculate Slope and Sinuosity</strong></p>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#slope-sinuosity-tool"><code>04b - Slope and Sinuosity</code></a> tool to calculate the slope and sinuosity of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-points-fc"><code>stream_networks_points</code></a> feature class.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#slope-sinuosity-tool"><code>- Slope and Sinuosity</code></a> tool to calculate the slope and sinuosity of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-points-fc"><code>stream_networks_points</code></a> feature class.</li>
 <li>Set the <code>gradient_distance</code> parameter to the number of upstream <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-points-fc"><code>stream_networks_points</code></a> that you calculated in a previous step.</li>
 <li>If the elevations in the channel seem noisy, check the <code>use_smoothing</code> parameter and set the <code>loess_span</code> parameter to a value between 0-1.</li>
 </ul>
@@ -527,7 +525,7 @@ Slope and sinuosity are scale dependent metrics. This means that these metrics a
 </section>
 <section id="define-reaches" class="level3">
 <h3 class="anchored" data-anchor-id="define-reaches">Define Reaches</h3>
-<p>The purpose of this step is to segment the stream network into a set of sites and reaches that can be analyzed in more detail through the remainder of the study. The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-fc"><code>stream_network</code></a> must be sub-divided into a set of sites and reaches that meet the following requirements:</p>
+<p>Segment the stream network into a set of sites and reaches that can be analyzed in more detail through the remainder of the study. The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-fc"><code>stream_network</code></a> must be sub-divided into a set of sites and reaches that meet the following requirements:</p>
 <p><strong>Criteria for Creating Sites:</strong></p>
 <ul>
 <li>A project study area composed of several sub-watersheds will need to be divided into a set of <a href="#units_of_analysis">sites</a>.</li>
@@ -554,18 +552,18 @@ Slope and sinuosity are scale dependent metrics. This means that these metrics a
 </section>
 <section id="delineate-watersheds" class="level3">
 <h3 class="anchored" data-anchor-id="delineate-watersheds">Delineate Watersheds</h3>
-<p>The purpose of this step is to delineate the areal extent of watersheds for each reach in the study area.</p>
+<p>Delineate the areal extent of watersheds for each reach in the study area.</p>
 <ul>
 <li>In the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-points-fc"><code>stream_network_points</code></a> feature class, select points that represent the downstream location of each of the sites in the project study area.</li>
 <li>Export these point features to a new feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#watershed-points-fc"><code>watershed_points</code></a> in the study area geodatabase.</li>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#watershed-tool"><code>04c - Watershed</code></a> tool to create a watershed polygon for each feature in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#watershed-points-fc"><code>watershed_points</code></a> feature class.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#watershed-tool"><code>Watershed</code></a> tool to create a watershed polygon for each feature in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#watershed-points-fc"><code>watershed_points</code></a> feature class.</li>
 </ul>
 <hr>
 </section>
+<section id="derive-flowline" class="level3">
+<h3 class="anchored" data-anchor-id="derive-flowline">Derive Flowline</h3>
+<p>Creatng a new site geodatabase, derive the site flowline, create new reach geodatabases for each reach, and copy the flowline to each reach’s geodatabase are the multiple steps needed in the portion of the workflow.</p>
 </section>
-<section id="derive-flowline" class="level2">
-<h2 class="anchored" data-anchor-id="derive-flowline">Derive Flowline</h2>
-<p>The purpose of this stage is to create a new site geodatabase, derive the site flowline, create new reach geodatabases for each reach, and copy the flowline to each reach’s geodatabase.</p>
 <section id="create-the-site-geodatabase" class="level3">
 <h3 class="anchored" data-anchor-id="create-the-site-geodatabase">Create the site geodatabase</h3>
 <p>The purpose of this step is to create a new site geodatabase and populate it with initial data.</p>
@@ -592,9 +590,9 @@ Slope and sinuosity are scale dependent metrics. This means that these metrics a
 </section>
 <section id="create-the-flowline" class="level3">
 <h3 class="anchored" data-anchor-id="create-the-flowline">Create the Flowline</h3>
-<p>The purpose of this step is to derive the site flowline. The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-tool"><code>05 - Flowline</code></a> tool converts a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-fc"><code>stream_network</code></a> feature into a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class. This tool smooths the <a href="file:///D:/Workspace/EMRRP_Sediment/Documents/TechReports/TechManual/docs/toolbox.html#stream-network-fc"><code>stream_network</code></a> geometry and converts the flowline into a route.</p>
+<p>Deriving the site flowline is next. The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-tool"><code>- Flowline</code></a> tool converts a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-fc"><code>stream_network</code></a> feature into a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class. This tool smooths the <a href="file:///D:/Workspace/EMRRP_Sediment/Documents/TechReports/TechManual/docs/toolbox.html#stream-network-fc"><code>stream_network</code></a> geometry and converts the flowline into a route.</p>
 <ul>
-<li>Use the <a href="file:///D:/Workspace/EMRRP_Sediment/Documents/TechReports/TechManual/docs/toolbox.html#flowline-tool"><code>05 - Flowline</code></a> tool to process the site <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-fc"><code>stream_network</code></a> feature class to produce a new <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class.</li>
+<li>Use the <a href="file:///D:/Workspace/EMRRP_Sediment/Documents/TechReports/TechManual/docs/toolbox.html#flowline-tool"><code>Flowline</code></a> tool to process the site <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#stream-network-fc"><code>stream_network</code></a> feature class to produce a new <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class.</li>
 <li>Set the <code>output_workspace</code> parameter to the site geodatabase.</li>
 <li>Use a <code>smooth_tolerance</code> parameter value from 5-20. The goal is to produce a smooth flowline, but not to remove too much resolution from the line.</li>
 <li>Ensure that the flowline remains in the channel and is not simplified into the floodplain. If this occurs, rerun reducing the degree of smoothing.</li>
@@ -607,7 +605,7 @@ Slope and sinuosity are scale dependent metrics. This means that these metrics a
 </section>
 <section id="create-the-reach-geodatabase" class="level3">
 <h3 class="anchored" data-anchor-id="create-the-reach-geodatabase">Create the Reach Geodatabase</h3>
-<p>The purpose of this step is to create a set of new reach geodatabases for each reach in a site and populate these reach geodatabases with initial data. This step will need to be repeated for each reach AND survey in the project study area <a href="#units_of_analysis">site</a>. For example, if a site has five reaches (e.g., R1-R5) and three LiDAR surveys (e.g., 2016, 2010, 2006), then a total of 15 reach geodatabases must be created at this stage:</p>
+<p>Create a set of new reach geodatabases for each reach in a site and populate these reach geodatabases with initial data. This step will need to be repeated for each reach AND survey in the project study area <a href="#units_of_analysis">site</a>. For example, if a site has five reaches (e.g., R1-R5) and three LiDAR surveys (e.g., 2016, 2010, 2006), then a total of 15 reach geodatabases must be created at this stage:</p>
 <table class="caption-top table">
 <caption>Reach Geodatabases Required for a Site with 5 Reaches and 3 LiDAR Surveys.</caption>
 <thead>
@@ -655,9 +653,9 @@ Slope and sinuosity are scale dependent metrics. This means that these metrics a
 </section>
 <section id="create-flowline-points" class="level3">
 <h3 class="anchored" data-anchor-id="create-flowline-points">Create Flowline Points</h3>
-<p>The purpose of this step is convert the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> into a series of points along the reach. The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-tool"><code>06 - Flowline Points</code></a> tool takes the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class, converts it to a route, calculates the distance to the mouth of the river for all vertices, and creates a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> feature class.</p>
+<p>Now converting the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> into a series of points along the reach is required. The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-tool"><code>- Flowline Points</code></a> tool takes the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class, converts it to a route, calculates the distance to the mouth of the river for all vertices, and creates a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> feature class.</p>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-tool"><code>06 - Flowline Points</code></a> tool to convert the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class into a new feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a>.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-tool"><code>Flowline Points</code></a> tool to convert the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class into a new feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a>.</li>
 <li>Set the <code>station_distance</code> field to approximately 1 meter.</li>
 <li>For a site with multiple reaches, set the <code>km_to_mouth</code> parameter for the downstream-most reach to 0.</li>
 <li>Set the <code>km_to_mouth</code> parameter for each upstream reach to the upstream-most value (i.e., the highest <code>km_to_mouth</code> value of the downstream reach’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> feature class) of the downstream reach. For example, set the <code>km_to_mouth</code> of the Reach-2 <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> feature class to <code>1.2345</code> if the maximum value of Reach-1’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> feature class <code>km_to_mouth</code> field is <code>1.2345</code>.</li>
@@ -668,34 +666,34 @@ Slope and sinuosity are scale dependent metrics. This means that these metrics a
 To make LiDAR surveys collected before the <a href="#units_of_analysis">base year</a> directly comparable to the base year, the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> from each previous survey must be <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/linear-referencing/calibrate-routes.htm">calibrated</a> to the base year. This adjusts any changes in flowline planform between survey events to be expressed in terms of the base year longitudinal stationing.</p>
 <ul>
 <li>If multiple LiDAR surveys exist for a project study area, the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> for any previous LiDAR survey must be calibrated using the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> of the base year.</li>
-<li>For example, if 2016 is the base year, when deriving the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> for a LiDAR survey from 2010, the base year’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> (2016) must be used for the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-tool"><code>06 - Flowline Points</code></a> tool’s <code>calibration_points</code> parameter value.</li>
+<li>For example, if 2016 is the base year, when deriving the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> for a LiDAR survey from 2010, the base year’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> (2016) must be used for the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-tool"><code>Flowline Points</code></a> tool’s <code>calibration_points</code> parameter value.</li>
 <li>Set the <code>point_id_field</code> and <code>measure_field</code> parameters to the fields in the base year’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> feature class.</li>
 <li>Set the <code>search_radius</code> parameter to the maximum distance between the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> of the current survey and the base year <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a>.</li>
 </ul>
 <hr>
 </section>
+<section id="define-initial-floodplain-and-channel-extent" class="level3">
+<h3 class="anchored" data-anchor-id="define-initial-floodplain-and-channel-extent">Define Initial Floodplain and Channel Extent</h3>
+<p>Define the initial floodplain and channel extent, for each reach and survey event.</p>
 </section>
-<section id="define-initial-floodplain-and-channel-extent" class="level2">
-<h2 class="anchored" data-anchor-id="define-initial-floodplain-and-channel-extent">Define Initial Floodplain and Channel Extent</h2>
-<p>The purpose of this stage is to define the initial floodplain and channel extent, for each reach and survey event.</p>
 <section id="detrend-dem" class="level3">
 <h3 class="anchored" data-anchor-id="detrend-dem">Detrend DEM</h3>
-<p>The purpose of this step is to produce a detrended DEM. A detrended DEM normalizes stream bank elevations for a specific reach.</p>
+<p>Produce a relative elevation model (REM), which is a detrended DEM normalizing stream bank elevations for a specific reach.</p>
 <ul>
 <li>Inspect the reach to determine the width of the active floodplain. Use the measure tool to measure from the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> outward to the widest extent of the active floodplain. This value will be used as the <code>buffer_distance</code> value in the following step.<br>
 </li>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-dem-tool"><code>07 - Detrend</code></a> tool to create a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-raster"><code>detrend</code></a> detrended DEM for the study reach. Set the <code>buffer_distance</code> field to a distance wide enough to capture the reach’s entire active floodplain.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-dem-tool"><code>- REM</code></a> tool to create a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-raster"><code>REM</code></a> detrended DEM for the study reach. Set the <code>buffer_distance</code> field to a distance wide enough to capture the reach’s entire active floodplain.</li>
 </ul>
 </section>
 <section id="estimate-initial-channel-extent" class="level3">
 <h3 class="anchored" data-anchor-id="estimate-initial-channel-extent">Estimate Initial Channel Extent</h3>
-<p>The purpose of this step is to use the detrended DEM to visually extract an initial channel extent polygon. The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-raster"><code>detrend</code></a> DEM created in the last step can be used to iteratively explore different inundation extents derived from various water surface elevations.</p>
+<p>The purpose of this step is to use the detrended DEM to visually extract an initial channel extent polygon. The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-raster"><code>REM</code></a> DEM created in the last step can be used to iteratively explore different inundation extents derived from various water surface elevations.</p>
 <ul>
-<li>Add the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-raster"><code>detrend</code></a> raster to the map Table of Contents. Name this layer <code>Channel Extent</code>.</li>
+<li>Add the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-raster"><code>REM</code></a> raster to the map Table of Contents. Name this layer <code>Channel Extent</code>.</li>
 <li>On the Symbology tab of the <code>Channel Extent</code> layer, use the Classified renderer to classify the raster into 2 classes. Set the first class boundary to the detrended elevation that you would like to explore. Set the color of the first class (min value - detrended elevation) to blue and the color of the second class (detrended elevation - max value) to No Color.</li>
 <li>Set the transparency of the <code>Channel Extent</code> layer to 50%.</li>
 <li>Begin to delineate the channel extent by selecting a detrended elevation that inundates the channel up to at least the first terrace. The goal at this stage is to select a detrended elevation that captures the extent of the channel without “spilling” too much water into the floodplain. Once you discover which detrended elevation begins to allow water to access the floodplain, reduce the detrended elevation value slightly to keep the water in the channel. Try several detrended elevation values to help make the decision.</li>
-<li>When you have chosen a detrended elevation, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#water-surface-extent"><code>08 - Water Surface Extent</code></a> tool to extract an initial channel extent area polygon. This tool creates a new polygon feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a>, where xxx is the detrended elevation selected.</li>
+<li>When you have chosen a detrended elevation, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#water-surface-extent"><code>- Water Surface Extent</code></a> tool to extract an initial channel extent area polygon. This tool creates a new polygon feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a>, where xxx is the detrended elevation selected.</li>
 <li>This feature class must be edited to select the channel area polygon(s). Open the attribute table for the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class and use advanced sorting to sort first by <code>gridcode</code> and then by <code>Shape_Area</code>. Polygons with <code>gridcode</code> = 1 are polygons inundated at the detrended elevation. Typically, the polygons with the largest area represent the channel. Begin selecting <code>gridcode</code> = 1 polygons with the largest area until the entire channel area is selected.</li>
 <li>Export these selected features to a new feature class named <code>initial_channel_extent</code>.</li>
 <li>Delete the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class created in this section.</li>
@@ -705,7 +703,7 @@ To make LiDAR surveys collected before the <a href="#units_of_analysis">base yea
 <h3 class="anchored" data-anchor-id="create-the-initial-channel-mask-layer">Create the Initial Channel Mask layer</h3>
 <p>The purpose of this step is to create a layer that defines an area just beyond the initial channel extent.</p>
 <ul>
-<li>Add the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-raster"><code>detrend</code></a> feature class to the map Table of Contents. Name this layer <code>Channel Mask</code>.</li>
+<li>Add the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-raster"><code>REM</code></a> feature class to the map Table of Contents. Name this layer <code>Channel Mask</code>.</li>
 <li>In the symbology of this layer, change the renderer from <code>stretched</code> to <code>classified</code>. Set the number of classes to 2. In the <code>classification</code> dialog, set the break value between the two classes to about one to two feet higher than the initial bankfull extent estimate. A couple of feet above the initial bankfull extent estimate should define the extent of the just the channel. For example, if the initial bankfull extent was estimated at 102 detrended feet, the initial bankfull height estimate would be 2 feet. One foot higher than the 2 foot initial bankfull height estimate would therefore be 103 detrended feet.</li>
 <li>Set the transparency of the <code>Channel Mask</code> layer to 50%.</li>
 </ul>
@@ -714,30 +712,16 @@ To make LiDAR surveys collected before the <a href="#units_of_analysis">base yea
 <h3 class="anchored" data-anchor-id="estimate-initial-floodplain-extent">Estimate Initial Floodplain Extent</h3>
 <p>The purpose of this step is to create a layer that defines the an initial estimate of the floodplain inundation extent.</p>
 <ul>
-<li>Add the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-raster"><code>detrend</code></a> feature class to the map Table of Contents. Name this layer <code>Floodplain Mask</code>.</li>
+<li>Add the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#detrend-raster"><code>REM</code></a> feature class to the map Table of Contents. Name this layer <code>Floodplain Mask</code>.</li>
 <li>In the symbology of this layer, change the renderer from <code>stretched</code> to <code>classified</code>. Set the number of classes to 2. In the <code>classification</code> dialog, set the break value between the two classes to four times the initial bankfull extent estimate. Four times the initial bankfull extent estimate should define the extent of the active floodplain. For example, if the initial bankfull extent was estimated at 102 detrended feet, the initial bankfull height estimate would be 2 feet. Four times the 2 foot initial bankfull height estimate would therefore be 108 detrended feet.</li>
 <li>Set the transparency of the <code>Floodplain Mask</code> layer to 50%.</li>
 </ul>
-</section>
-<section id="calculate-channel-slope-raster" class="level3">
-<h3 class="anchored" data-anchor-id="calculate-channel-slope-raster">Calculate Channel Slope Raster</h3>
-<p>The purpose of this step is to create a channel slope raster that can be used in the visual identification of riffle locations in following step.</p>
-<ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#channel-slope-tool"><code>09 - Channel Slope</code></a> tool to calculate a raster of the channel slope. Use the <code>intitial_channel_extent</code> polygon created earlier to define the channel area within which the slope raster will be calculated. This tool creates a new feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#channel-slope-raster"><code>channel_slope</code></a>.</li>
-</ul>
-</section>
-<section id="create-initial-centerline" class="level3">
-<h3 class="anchored" data-anchor-id="create-initial-centerline">Create Initial Centerline</h3>
-<p>The purpose of this step is to create a stream centerline. The centerline represents the rough midline of the stream between the banklines.</p>
-<ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#centerline-tool"><code>10 - Centerline</code></a> tool to create a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#centerline-fc"><code>centerline</code></a> polyline feature class representing the stream midline at the estimated bankfull water surface elevation using the <code>initial_channel_extent</code> feature class.</li>
-</ul>
 <hr>
 </section>
-</section>
-<section id="create-regular-cross-section-geometry" class="level2">
-<h2 class="anchored" data-anchor-id="create-regular-cross-section-geometry">Create Regular Cross Section Geometry</h2>
+<section id="create-regular-cross-section-geometry" class="level3">
+<h3 class="anchored" data-anchor-id="create-regular-cross-section-geometry">Create Regular Cross Section Geometry</h3>
 <p>The purpose of this stage is to create regularly spaced stream cross sections and extract terrain-derived hydraulic parameters for each reach and survey event.</p>
+</section>
 <section id="create-regular-cross-sections" class="level3">
 <h3 class="anchored" data-anchor-id="create-regular-cross-sections">Create Regular Cross Sections</h3>
 <p>The purpose of this step is to create regularly spaced cross sections along each reach.</p>
@@ -745,14 +729,14 @@ To make LiDAR surveys collected before the <a href="#units_of_analysis">base yea
 <li>The goal of this step is to create a set of regularly spaced cross sections that well represent the channel conditions found in this reach.</li>
 <li>Determine the typical maximum distance from the reach <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> to the edge of the active floodplain. The goal is not to identify the maximum distance to the edge of the floodplain, but to identify the typical distance to the edge of the floodplain.</li>
 <li>Determine the spacing between cross sections necessary to represent conditions along this stream. Cross section spacing for small stream of 50-100 feet works well. Larger rivers do not require such tight spacing.</li>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-layout-tool"><code>11 - XS Layout</code></a> tool to create a set of regularly spaced cross sections (referred to as transects in this tool). Use the values determined in the previous steps to set this tool’s parameters.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-layout-tool"><code>XS Layout</code></a> tool to create a set of regularly spaced cross sections (referred to as transects in this tool). Use the values determined in the previous steps to set this tool’s parameters.</li>
 <li>For a site with multiple reaches, regular cross sections must be uniquely numbered across all reaches. The <code>Seq</code> field values of regular cross sections should not repeat within the reaches of a site.</li>
 <li>The downstream-most cross section in the site should be numbered starting with the <code>Seq</code> field value of 1 and increase moving upstream.</li>
-<li>The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-layout-tool"><code>11 - XS Layout</code></a> tool automatically numbers regular cross sections <code>Seq</code> values starting with the value 1 at the downstream-most cross section.<br>
+<li>The <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-layout-tool"><code>XS Layout</code></a> tool automatically numbers regular cross sections <code>Seq</code> values starting with the value 1 at the downstream-most cross section.<br>
 </li>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-resequence-tool"><code>13a - XS Resequence</code></a> tool to set the starting <code>Seq</code> value for each reach.<br>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-resequence-tool"><code>XS Resequence</code></a> tool to set the starting <code>Seq</code> value for each reach.<br>
 </li>
-<li>For all reaches other than the first reach (downstream-most) in a site, the cross sections must be re-sequenced using the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-resequence-tool"><code>13a - XS Resequence</code></a> tool.</li>
+<li>For all reaches other than the first reach (downstream-most) in a site, the cross sections must be re-sequenced using the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-resequence-tool"><code>XS Resequence</code></a> tool.</li>
 <li>Set the <code>Seq</code> field value for each upstream reach to the upstream-most value (i.e., the highest <code>Seq</code> value of the downstream reach’s regular cross section feature class) of the downstream reach.</li>
 <li>For example, set the <code>Seq</code> of the Reach-2 regular cross section feature class to 58 if the maximum value of Reach-1’s regular cross section feature class <code>Seq</code> field is 57.</li>
 </ul>
@@ -767,7 +751,7 @@ To make LiDAR surveys collected before the <a href="#units_of_analysis">base yea
 <li>Add the <code>contributing_area_buffer</code> raster to a map and symbolize with a “hot-cold” stretch renderer.</li>
 <li>Add the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> and regular cross section features classes to the map. Place them on top of the <code>contributing_area_buffer</code> raster.</li>
 <li>Determine the maximum distance from the intersection of each cross section and the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> to the nearest pixel of high flow in the <code>contributing_area_buffer</code> raster. This value will be used for the <code>snap_distance</code> in the next step.</li>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-watershed-area-tool"><code>12 - XS Watershed Area</code></a> tool to calculate the watershed area for each cross section.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-watershed-area-tool"><code>XS Watershed Area</code></a> tool to calculate the watershed area for each cross section.</li>
 <li>For the <code>flow_accum</code> parameter, use the <code>contributing_area_buffer</code> raster.</li>
 <li>For the <code>snap_distance</code> parameter, use the distance you calculated in a previous step.</li>
 </ul>
@@ -776,7 +760,7 @@ To make LiDAR surveys collected before the <a href="#units_of_analysis">base yea
 <h3 class="anchored" data-anchor-id="calculate-cross-section-river-position">Calculate Cross Section River Position</h3>
 <p>The purpose of this step is to calculate the river position for each regularly spaced cross section.</p>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-river-position"><code>13 - XS River Position</code></a> tool to calculate the distance to the mouth of the river for each cross section.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-river-position"><code>XS River Position</code></a> tool to calculate the distance to the mouth of the river for each cross section.</li>
 <li>The river position of each cross section will be used in later steps to calculate several channel parameters (i.e., gradient, sinuosity).</li>
 </ul>
 </section>
@@ -784,7 +768,7 @@ To make LiDAR surveys collected before the <a href="#units_of_analysis">base yea
 <h3 class="anchored" data-anchor-id="calculate-cross-section-points">Calculate Cross Section Points</h3>
 <p>The purpose of this step is to convert each cross section into a set of evenly stationed points and assign DEM and detrended elevation values.</p>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-points-tool"><code>14 - XS Points</code></a> tool to calculate cross section station points for each cross section.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-points-tool"><code>XS Points</code></a> tool to calculate cross section station points for each cross section.</li>
 <li>The <code>station_distance</code> parameter should be set to approximately the resolution of the DEM. For example, if the DEM has a cell size of 1 foot (0.3048 meter), set the <code>station_distance</code> to that distance (using the linear units of the coordinate system used for the project’s vector data).</li>
 <li>This tool creates a new feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-points-fc"><code>&lt;cross section feature class name&gt;_points</code></a>.</li>
 </ul>
@@ -803,7 +787,7 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 </ul>
 <p><strong>Calculate L1 Dimensions</strong></p>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-L1-tool"><code>15a - XS Dimensions, Level 1</code></a> tool to calculate L1 dimensions.</li>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#xs-dimensions-L1-tool"><code>XS Dimensions, Level 1</code></a> tool to calculate L1 dimensions.</li>
 <li>Set the <code>xs_fc</code> parameter to the regular cross sections feature class you created in a previous step.</li>
 <li>Set the <code>lead_n</code> parameter to the number of upstream cross sections that you calculated in a previous step.</li>
 <li>If the elevations in the channel seem noisy, check the <code>use_smoothing</code> parameter and set the <code>loess_span</code> parameter to a value between 0-1.</li>
@@ -818,15 +802,15 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 </ul>
 <hr>
 </section>
-</section>
-<section id="identify-infrastructure" class="level2">
-<h2 class="anchored" data-anchor-id="identify-infrastructure">Identify Infrastructure</h2>
+<section id="identify-infrastructure" class="level3">
+<h3 class="anchored" data-anchor-id="identify-infrastructure">Identify Infrastructure</h3>
 <p>The purpose of this stage is to identify salient features in the floodplain that may be affecting channel hydraulics along each reach. Here are some ideas for the features you should identify:</p>
 <ul>
 <li>Significant tributaries</li>
 <li>Built infrastructure</li>
 <li>Significant geologic features</li>
 </ul>
+</section>
 <section id="create-features" class="level3">
 <h3 class="anchored" data-anchor-id="create-features">Create Features</h3>
 <p>The purpose of this step is to identify the longitudinal position of noteworthy stream features for graph and map labeling.</p>
@@ -844,12 +828,15 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 <li>To determine a feature’s longitudinal position along the reach, use the identify tool to find the closest point in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-points-fc"><code>flowline_points</code></a> feature class and use the value from its <code>POINT_M</code> value.</li>
 <li>Repeat these steps to record all of the significant features along each reach.</li>
 </ul>
+</section>
+</section>
+<section id="data-management" class="level2">
+<h2 class="anchored" data-anchor-id="data-management">Data Management</h2>
 <hr>
 </section>
-</section>
-<section id="run-report" class="level2">
-<h2 class="anchored" data-anchor-id="run-report">Run Report</h2>
-<p>The purpose of this stage is to run the Level 1 report for each reach.</p>
+<section id="reports" class="level2">
+<h2 class="anchored" data-anchor-id="reports">Reports</h2>
+<p>Run the Level 1 report for each reach.</p>
 <section id="run-the-level-1-report" class="level3">
 <h3 class="anchored" data-anchor-id="run-the-level-1-report">Run the Level 1 Report</h3>
 <p>The purpose of this step is to run the L1 report for each reach. The Level 1 Report displays the channel dimensions for the base year, compared with multiple previous year surveys.</p>
@@ -865,17 +852,18 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 <li>For the <code>features_fc</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#features-fc"><code>features</code></a> feature class for the base year survey.</li>
 <li>For the <code>dem</code> parameter, enter the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#dem-hydro-raster">DEM</a> for the base year survey.</li>
 </ul>
+<hr>
 </section>
-<section id="perform-qa" class="level3">
-<h3 class="anchored" data-anchor-id="perform-qa">Perform QA</h3>
-<p>The purpose of this step is to use the QA Checklist to verify the reports have run correctly and identify any data mistakes that need to be corrected.</p>
+</section>
+<section id="perform-qa" class="level2">
+<h2 class="anchored" data-anchor-id="perform-qa">Perform QA</h2>
+<p>Use the QA Checklist to verify the reports have run correctly and identify any data mistakes that need to be corrected.</p>
 <ul>
-<li>Follow the instructions in the QA Checklist Chapter, <a href="4-1-QAChecklist.html#L1_report_qa">Level 1 Report</a>, to verify that the reports have run correctly.</li>
+<li>Follow the instructions in the QA Checklist Chapter, <a href="QAChecklist.html#L1_report_qa">Level 1 Report</a>, to verify that the reports have run correctly.</li>
 <li>Make the required changes suggested in the QA Checklist and rerun the report.</li>
 <li>Repeat these QA iterations until the reports are correct.</li>
 </ul>
 <hr>
-</section>
 </section>
 <section id="determine-next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="determine-next-steps">Determine Next Steps</h2>
@@ -884,8 +872,22 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 <li>Review the results of the Level 1 Report and determine if the project goals require proceeding to developing the Level 2 analysis.</li>
 </ul>
 <hr>
+<section id="calculate-channel-slope-raster" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-channel-slope-raster">Calculate Channel Slope Raster</h3>
+<p>The purpose of this step is to create a channel slope raster that can be used in the visual identification of riffle locations in following step.</p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#channel-slope-tool"><code>Channel Slope</code></a> tool to calculate a raster of the channel slope. Use the <code>intitial_channel_extent</code> polygon created earlier to define the channel area within which the slope raster will be calculated. This tool creates a new feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#channel-slope-raster"><code>channel_slope</code></a>.</li>
+</ul>
+</section>
+<section id="create-initial-centerline" class="level3">
+<h3 class="anchored" data-anchor-id="create-initial-centerline">Create Initial Centerline</h3>
+<p>The purpose of this step is to create a stream centerline. The centerline represents the rough midline of the stream between the banklines.</p>
+<ul>
+<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#centerline-tool"><code>Centerline</code></a> tool to create a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#centerline-fc"><code>centerline</code></a> polyline feature class representing the stream midline at the estimated bankfull water surface elevation using the <code>initial_channel_extent</code> feature class.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

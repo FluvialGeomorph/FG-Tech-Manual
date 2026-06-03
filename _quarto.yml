@@ -35,9 +35,10 @@ book:
         - 3-4-FromField.qmd
         - 3-5-Validation.qmd
 
-    - 0-7-References.qmd
+    - References.qmd
+    - Glossary.qmd
   appendices:
-    - 4-1-QAChecklist.qmd
+    - QAChecklist.qmd
 
   sidebar:
     style: "docked"

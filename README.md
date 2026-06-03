@@ -4,7 +4,7 @@ The technical manual for the FluvialGeomorph project. <img src="images/HDQLO-03_
 ## Project Status
 [![Maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle)
 [![Project Status: Active The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2025--06--03-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2026--05--21-yellowgreen.svg)](/commits/master)
 [![Licence](https://img.shields.io/badge/licence-CC0-blue.svg)](http://choosealicense.com/licenses/cc0-1.0/)
 
 ## Description
@@ -48,6 +48,7 @@ provided by the following US Army Corps of Engineers (USACE) programs:
 -   [Michael Dougherty](mailto:Michael.P.Dougherty@usace.army.mil), Geographer, U.S. Army Corps of Engineers
     <a itemprop="sameAs" content="https://orcid.org/0000-0002-1465-5927" href="https://orcid.org/0000-0002-1465-5927" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">https://orcid.org/0000-0002-1465-5927</a>
 -   [Davi Michl](mailto:Davi.E.Michl@usace.army.mil), Biologist, US Army Corps of Engineers, Rock Island District
+-   [Bobby Oliver](mailto:Bobby.J.Oliver@usace.army.mil), Geographer, US Army Corps of Engineers, Rock Island District
 
 
 ## Read the Report
