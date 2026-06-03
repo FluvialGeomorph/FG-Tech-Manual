@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix A — QA Checklist – FluvialGeomorph Technical Manual</title>
+<title>Appendix B — DB Migration – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Glossary.html" rel="prev">
+<link href="./QA-checklist.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./QAChecklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./QAChecklist.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./QA-checklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DB-migration.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -229,7 +229,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-5-Validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Valadation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
   </div>
 </li>
       </ul>
@@ -243,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Glossary</span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -257,8 +257,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./QAChecklist.html" class="sidebar-item-text sidebar-link active">
+  <a href="./QA-checklist.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DB-migration.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></span></a>
   </div>
 </li>
       </ul>
@@ -273,34 +279,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#L1_report_qa" id="toc-L1_report_qa" class="nav-link active" data-scroll-target="#L1_report_qa">Level 1 Report</a>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#units-of-analysis" id="toc-units-of-analysis" class="nav-link" data-scroll-target="#units-of-analysis">Units of Analysis</a></li>
+  <li><a href="#fg-features-data-model" id="toc-fg-features-data-model" class="nav-link" data-scroll-target="#fg-features-data-model">FG Features Data Model</a></li>
+  <li><a href="#combined-data-model" id="toc-combined-data-model" class="nav-link" data-scroll-target="#combined-data-model">Combined Data Model</a></li>
+  <li><a href="#legacy-folder-structure" id="toc-legacy-folder-structure" class="nav-link" data-scroll-target="#legacy-folder-structure">Legacy Folder Structure</a></li>
+  <li><a href="#new-folder-structure" id="toc-new-folder-structure" class="nav-link" data-scroll-target="#new-folder-structure">New Folder Structure</a></li>
+  <li><a href="#example-project-folder-to-study-area-database-crosswalk" id="toc-example-project-folder-to-study-area-database-crosswalk" class="nav-link" data-scroll-target="#example-project-folder-to-study-area-database-crosswalk">Example Project Folder to Study Area Database Crosswalk</a></li>
+  <li><a href="#proposed-file-structure" id="toc-proposed-file-structure" class="nav-link" data-scroll-target="#proposed-file-structure">Proposed File Structure</a>
   <ul class="collapse">
-  <li><a href="#L1_study_area_overview" id="toc-L1_study_area_overview" class="nav-link" data-scroll-target="#L1_study_area_overview">Study Area Overview</a></li>
-  <li><a href="#L1_long_profiles" id="toc-L1_long_profiles" class="nav-link" data-scroll-target="#L1_long_profiles">Longitudinal Profiles</a></li>
-  <li><a href="#L1_xs_metrics" id="toc-L1_xs_metrics" class="nav-link" data-scroll-target="#L1_xs_metrics">Cross Section Metrics</a></li>
-  <li><a href="#L1_xs_profiles" id="toc-L1_xs_profiles" class="nav-link" data-scroll-target="#L1_xs_profiles">Cross Section Profiles</a></li>
-  </ul></li>
-  <li><a href="#estimate_bankfull_report_qa" id="toc-estimate_bankfull_report_qa" class="nav-link" data-scroll-target="#estimate_bankfull_report_qa">Estimate Bankfull Report</a>
-  <ul class="collapse">
-  <li><a href="#study-area-overview" id="toc-study-area-overview" class="nav-link" data-scroll-target="#study-area-overview">Study Area Overview</a></li>
-  <li><a href="#bankfull-elevation-sensitivity-analysis" id="toc-bankfull-elevation-sensitivity-analysis" class="nav-link" data-scroll-target="#bankfull-elevation-sensitivity-analysis">Bankfull Elevation Sensitivity Analysis</a></li>
-  <li><a href="#estimate_bankfull_long_profile" id="toc-estimate_bankfull_long_profile" class="nav-link" data-scroll-target="#estimate_bankfull_long_profile">Longitudinal Profile</a></li>
-  <li><a href="#estimate_bankfull_xs_metrics" id="toc-estimate_bankfull_xs_metrics" class="nav-link" data-scroll-target="#estimate_bankfull_xs_metrics">Cross Section Metrics</a></li>
-  <li><a href="#cross-section-profiles" id="toc-cross-section-profiles" class="nav-link" data-scroll-target="#cross-section-profiles">Cross Section Profiles</a></li>
-  </ul></li>
-  <li><a href="#L2_report_qa" id="toc-L2_report_qa" class="nav-link" data-scroll-target="#L2_report_qa">Level 2 Report</a>
-  <ul class="collapse">
-  <li><a href="#study-area-overview-1" id="toc-study-area-overview-1" class="nav-link" data-scroll-target="#study-area-overview-1">Study Area Overview</a></li>
-  <li><a href="#longitudinal-profile" id="toc-longitudinal-profile" class="nav-link" data-scroll-target="#longitudinal-profile">Longitudinal Profile</a></li>
-  <li><a href="#cross-section-metrics" id="toc-cross-section-metrics" class="nav-link" data-scroll-target="#cross-section-metrics">Cross Section Metrics</a></li>
-  <li><a href="#cross-section-profiles-1" id="toc-cross-section-profiles-1" class="nav-link" data-scroll-target="#cross-section-profiles-1">Cross Section Profiles</a></li>
-  </ul></li>
-  <li><a href="#L3_report_qa" id="toc-L3_report_qa" class="nav-link" data-scroll-target="#L3_report_qa">Level 3 Report</a>
-  <ul class="collapse">
-  <li><a href="#study-area-overview-2" id="toc-study-area-overview-2" class="nav-link" data-scroll-target="#study-area-overview-2">Study Area Overview</a></li>
-  <li><a href="#longitudinal-profile-1" id="toc-longitudinal-profile-1" class="nav-link" data-scroll-target="#longitudinal-profile-1">Longitudinal Profile</a></li>
-  <li><a href="#cross-section-metrics-1" id="toc-cross-section-metrics-1" class="nav-link" data-scroll-target="#cross-section-metrics-1">Cross Section Metrics</a></li>
-  <li><a href="#cross-section-profiles-2" id="toc-cross-section-profiles-2" class="nav-link" data-scroll-target="#cross-section-profiles-2">Cross Section Profiles</a></li>
+  <li><a href="#option-1-reach-folders" id="toc-option-1-reach-folders" class="nav-link" data-scroll-target="#option-1-reach-folders">Option 1 (Reach Folders)</a></li>
+  <li><a href="#option-2-nested-stream-and-reach-folders" id="toc-option-2-nested-stream-and-reach-folders" class="nav-link" data-scroll-target="#option-2-nested-stream-and-reach-folders">Option 2 (Nested Stream and Reach Folders)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -308,9 +297,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./QAChecklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./QAChecklist.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./QA-checklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DB-migration.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="qa_checklist" class="quarto-section-identifier">Appendix A — QA Checklist</span></h1>
+<h1 class="title">Appendix B — DB Migration</h1>
 </div>
 
 
@@ -327,228 +316,165 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter describes the items an analyst needs to check to ensure that the FluvialGeomorph tools have run correctly to produce clean reports. In addition to following the guidance in the previous chapters when preparing the data and running each tool, this chapter will provide a checklist of items you’ll need to verify after each report completes. Reports are the place where all your hard work comes together! Your work is not complete just because the tools run without any errors. A lot of datasets must work together to make these reports come out cleanly. Because these reports integrate so many individual datasets, many issues aren’t discovered until you run the reports. This checklist will help you identify where things might not be exactly right with previous tool runs and what you’ll need to do fix them.</p>
-<section id="L1_report_qa" class="level2">
-<h2 class="anchored" data-anchor-id="L1_report_qa">Level 1 Report</h2>
-<section id="L1_study_area_overview" class="level3">
-<h3 class="anchored" data-anchor-id="L1_study_area_overview">Study Area Overview</h3>
-<p>This report section contains a set of reach overview maps drawn using the <code>flowline</code> and the regularly spaced cross section dimensions, <code>*_dims_L1</code>, feature classes (fc). Both the aerial photo and elevation are provided by <a href="https://docs.mapbox.com/api/maps/#raster-tiles">Mapbox Raster Tiles</a>.</p>
-<section id="check-the-stream-name" class="level4">
-<h4 class="anchored" data-anchor-id="check-the-stream-name">Check the stream name</h4>
-<p>All of the tools depend on consistent reach naming! Ensuring consistent naming begins with deriving the “flowline” fc. The ReachName field must contain the same value for all of the fc’s within a reach geodatabase. This is the single biggest gotcha we find running these tools. If tools aren’t working correctly and you’re sure you’ve done everything else right, consistent stream names is the first thing to check!</p>
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>This chapter documents a data management evolution phase of this project. As initially concieved (2017-2018), the FluvialGeomorph progam had a very “site-based” orientation. At that stage, we were focused on developing reproducible, automated tools to derive high resolution stream metrics from remotely collected LiDAR datasets. The <code>FluvialGeomorph toolbox</code> could process study areas with stream lengths 1 to 100s of miles long at high spatial resolution (1ft-1m DEM resolution). However, no effort was made to combine the derived data from all these “sites” into a single database. From the beginning, we conceptualized how our “site-scale” data model would scale into a larger dataset sometime later. This chapter describes our process for massaging these “site-based” datasets into a single database.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Note to Authors">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note to Authors
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This chapter must stay aligned with terminology in the chapter <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Concepts.html">User Manual Concepts</a>. Ensure the change of terms <code>Site</code> -&gt; <code>Stream</code> is accomplished.</p>
+</div>
+</div>
 </section>
-<section id="cross-section-labels-at-the-correct-interval" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-labels-at-the-correct-interval">Cross section labels at the correct interval</h4>
-<p>Cross section labels usually cannot be placed on every cross section or the map or graph becomes unreadable due to label crowding. The <code>xs_label_freq</code> parameter can be adjusted to adequately space cross section labels. Typically <code>xs_label_freq</code> = 10 works for regularly spaced cross sections and <code>xs_label_freq</code> = 2 works for riffle cross sections.</p>
-</section>
-<section id="cross-sections-cover-the-full-extent-of-the-flowine" class="level4">
-<h4 class="anchored" data-anchor-id="cross-sections-cover-the-full-extent-of-the-flowine">Cross sections cover the full extent of the flowine</h4>
-<p>The <code>flowline</code> fc extends from the downstream end of the reach to the upstream end. Cross sections should be spaced regularly across the entire reach, without any gaps at the upper or lower end.</p>
-</section>
-<section id="map-basemap-displaying-correctly" class="level4">
-<h4 class="anchored" data-anchor-id="map-basemap-displaying-correctly">Map basemap displaying correctly</h4>
-<p>The overview maps should contain an aerial photo or shaded relief elevation basemap.</p>
-</section>
-</section>
-<section id="L1_long_profiles" class="level3">
-<h3 class="anchored" data-anchor-id="L1_long_profiles">Longitudinal Profiles</h3>
-<p>This report section contains two longitudinal profile graphs, one drawn using the <code>flowline_points</code> fc, and the second is drawn using the cross section dimensions, <code>*_dims_L1</code> fc.</p>
-<section id="elevation-values-are-reasonable" class="level4">
-<h4 class="anchored" data-anchor-id="elevation-values-are-reasonable">Elevation values are reasonable</h4>
-<p>The elevation values displayed on the map or graph should be reasonable. Use the ESRI <code>Explore</code> tool to check the DEM elevation values. By convention in FluvialGeomorph, DEM values must always have vertical units = feet.</p>
-</section>
-<section id="elevation-ranges-are-similar-between-surveys" class="level4">
-<h4 class="anchored" data-anchor-id="elevation-ranges-are-similar-between-surveys">Elevation ranges are similar between surveys</h4>
-<p>Although stream elevations can change over time, the elevation ranges between subsequent survey dates should be roughly similar. If the elevation ranges are drastically different, check the terrain development steps for each survey time period to ensure that the elevation data was processed correctly.</p>
-</section>
-<section id="multiple-surveys-are-labeled-correctly" class="level4">
-<h4 class="anchored" data-anchor-id="multiple-surveys-are-labeled-correctly">Multiple surveys are labeled correctly</h4>
-<p>Reports that contain multiple surveys should be entered in the same way to ensure they are labeled and symbolized (e.g., each survey drawn with the same color in each report) the same way across all reports. Follow these guidelines to ensure consistency:</p>
+<section id="units-of-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="units-of-analysis">Units of Analysis</h2>
+<p>From the beginning of this effort, we established a consistent set of units of analysis. For our purpose, the top level unit of analysis is defined by a work request that comes from a customer, the “study area”. Within this arbitrary Aera of Interest (AOI), to structure our data we adopted a nested heirarchy of parent-child sub units. Understood as: Study areas have one or more streams. Streams have one or more reaches. Reaches have one or more survey events. This defines the overarching heirarchy of our data model.</p>
+<pre><code>Study Area
+└─── Streams
+     └─── Reaches 
+          └─── Survey Events</code></pre>
 <ul>
-<li>Most recent survey listed at the top, with earlier surveys listed in reverse chronological order.</li>
-<li>Survey date indicates the date flown (e.g., not the contract or delivery date).</li>
+<li><strong>Study Area</strong>: These are the primary work units and correspond to projects that customers have requested for analysis.</li>
+<li><strong>Stream</strong>: Study areas are subdivided into “streams”. Streams are typically identified by names and subwatersheds within the project study area.</li>
+<li><strong>Reach</strong>: Streams are further subdivided into “reaches”. Reaches are defined according to project goals and use conventional rules for specifying reaches (i.e., tributary confluence to confluence), significant infrastructure, changes in surficial geology, etc.</li>
+<li><strong>Survey Event</strong>: Since FluvialGeomorph analysis is based on terrain surveys, the timing of the survey is a critical factor in the analysis. This data object is how we define point-in-time collections and the assessments made from them.</li>
 </ul>
 </section>
-<section id="multiple-surveys-are-correctly-calibrated-to-the-base-year" class="level4">
-<h4 class="anchored" data-anchor-id="multiple-surveys-are-correctly-calibrated-to-the-base-year">Multiple surveys are correctly calibrated to the base year</h4>
-<p>On the longitudinal profile graphs, each survey line should start and end at the same x-axis station value. In other words, one survey line should not end before or after another survey line. Check the far right edge of the longitudinal graph to ensure all survey’s have the same ending value.</p>
-<p>If all of the surveys’ last station values do not align, it means that the previous surveys were not correctly calibrated to the base year flowline. Previous year surveys will need to have the <code>Flowline Points</code> tool rerun using the base year survey’s <code>flowline_points</code> for calibration.</p>
+<section id="fg-features-data-model" class="level2">
+<h2 class="anchored" data-anchor-id="fg-features-data-model">FG Features Data Model</h2>
+<p>From the beginning, we devoted most of our attention to developing the FluvialGeomorph Features Data Model. See the FluvialGeomorph Tech Manual chapter <a href="./2-4-Features.html">Derived Features</a> for details. All <code>FluvialGeomorph-toolbox</code> analysis takes place within a single file geodatabase (ESRI <code>.gdb</code> format). For its spatial extent, it represents one reach in the data model above. For its temporal extent, it represents one survey event in the data model above. Therefore, this geodatabase can be described as a “Reach-Survey Event” Geodatabase in terms of the data model above. The rationale for the structure is for each survey event, all of the features will be derived from that DEM. When a new survey events occurs (or an historic survey is discovered), this procedure can be repeated. This study design maintains completely independent geodatabases to represent reach conditions at each point in time.</p>
+<pre><code>Reach-Survey Event Geodatabase
+├─── DEM
+├─── Cutlines
+├─── DEM Hydro
+├─── Stream Network
+├─── Flowline
+├─── Flowline Points
+├─── REM
+├─── Cross Sections
+├─── Cross Section Points
+├─── Cross Section Dimensions
+├─── Features
+├─── Bankfull Area
+├─── Banklines
+├─── Bankline Points
+├─── Valleyline
+└─── Loop Points</code></pre>
 </section>
-<section id="stationing-in-the-correct-units" class="level4">
-<h4 class="anchored" data-anchor-id="stationing-in-the-correct-units">Stationing in the correct units</h4>
-<p>Units can be chosen for the longitudinal profile stationing. Ensure that the correct units are selected.</p>
+<section id="combined-data-model" class="level2">
+<h2 class="anchored" data-anchor-id="combined-data-model">Combined Data Model</h2>
+<p>These two data models are grafted together by using the high-level “unit of analysis” data model to represent the overarching structure. Each “reach-survey event” geodatabase represents a specific “Survey Event” within the “unit of analysis” data model.</p>
+<pre><code>Study Area
+└─── Streams
+     └─── Reaches 
+          └─── Survey Events
+               └─── FG Features (DEM Hydro, Flowline, Flowline_points, etc.)</code></pre>
 </section>
-<section id="stream-feature-labels-display-correctly" class="level4">
-<h4 class="anchored" data-anchor-id="stream-feature-labels-display-correctly">Stream feature labels display correctly</h4>
-<p>Longitudinal graphs are labeled using the rows in the <code>features</code> fc. Ensure these river features are labeled correctly and are located at the correct longitudinal position.</p>
+<section id="legacy-folder-structure" class="level2">
+<h2 class="anchored" data-anchor-id="legacy-folder-structure">Legacy Folder Structure</h2>
+<p>The FluvialGemorph program file structure is roughly modeled on the “unit of analysis” data model. Although the folders in the <code>/FluvialGeomorph/Projects/</code> folder roughly align with the concept of “Study Area”, the sub folders almost never utilize “Streams” and sometimes utilize “Reaches”.</p>
+<pre><code>/FluvialGeomorph/
+└─── Projects/
+     ├─── MVR_SJ_Copperas Creek/
+     ├─── NWO_Papillion/
+     └─── ...
+</code></pre>
 </section>
+<section id="new-folder-structure" class="level2">
+<h2 class="anchored" data-anchor-id="new-folder-structure">New Folder Structure</h2>
+<p>To accomplish this migration, we have elected to refactor our file system to more closely match the database structure we are adopting. This will help ensure a cleaner translation between periodically updated, locally processed derived artifacts to be loaded into a central database. All processing is accomplished locally with idempotent database loading. We have decided to leave the current <code>/FluvialGeomorph/Projects/</code> folder structure in place while implementing the file system refactoring into <code>/FluvialGeomorph/studies/</code>. This migration plan design requires no work stoppage. New work can begin using the new approach, while legacy work can be migrated on a stepwise, pay-as-you-go basis. Eventually the <code>/FluvialGeomorph/Projects/</code> folder will be archived after all of its content has migrated.</p>
+<pre><code>/FluvialGeomorph/
+├─── Projects/
+|    ├─── MVR_SJ_Copperas_Creek/
+|    ├─── NWO_Papillion/
+|    └─── ...
+└─── studies
+     ├─── MVR_Copperas_Creek/
+     ├─── NWO_Papillion/
+     └─── ...</code></pre>
 </section>
-<section id="L1_xs_metrics" class="level3">
-<h3 class="anchored" data-anchor-id="L1_xs_metrics">Cross Section Metrics</h3>
-<p>This report section contains a Level 1 cross section metrics plot drawn using the cross section dimensions fc, <code>*_dims_L1</code>.</p>
-<section id="cross-section-watershed-area-calculated-correctly" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-watershed-area-calculated-correctly">Cross section watershed area calculated correctly</h4>
-<p>The watershed area metric is calculated by the <code>XS Watershed Area</code> tool. Given the complexities of automatically calculating watershed area for high resolution stream features, some watershed areas may not have been calculated correctly. Rerunning the Watershed Area tool or manual adjustment of the <code>Watershed_Area_SqMile</code> field may be required.</p>
+<section id="example-project-folder-to-study-area-database-crosswalk" class="level2">
+<h2 class="anchored" data-anchor-id="example-project-folder-to-study-area-database-crosswalk">Example Project Folder to Study Area Database Crosswalk</h2>
+<p>Here are some examples to illustrate how legacy project work will be migrated to this new approach.</p>
 <ul>
-<li>Watershed values are reasonable.</li>
-<li>Watershed area must increase moving downstream.</li>
+<li><code>/FluvialGeomorph/Projects/MVR_SJ_Copperas Creek/</code></li>
 </ul>
+<pre><code>Study Area: MVR-Copperas Creek
+└─── Streams: Copperas Creek IL
+     └─── Reaches: R1-R15, Sites 1-19
+          └─── Survey Events: 2009, 2019, 2022</code></pre>
+<ul>
+<li><code>/FluvialGeomorph/Projects/NWO_Papillion/</code></li>
+</ul>
+<pre><code>Study Area: NWO-Papillion Creek
+└─── Streams: Sugar Creek, South Papillion Creek, Cole Creek, West Papillion, ...  
+     └─── Reaches: R1; R1-R2a; R1-R5; R1-R9
+          └─── Survey Events: 2010, 2016, 2018</code></pre>
 </section>
-<section id="elevation-smoothing-is-acceptable" class="level4">
-<h4 class="anchored" data-anchor-id="elevation-smoothing-is-acceptable">Elevation smoothing is acceptable</h4>
-<p>High resolution LiDAR derived stream elevations can be noisy. Smoothing the elevations longitudinally is a way reduce noise. However, too much smoothing can be applied, eliminating any of the relationships we want to observe. By visually comparing the raw elevation and the smoothed elevation graphs, verify that the amount of smoothing sufficiently reduces noise, but does not not go too far and removes substantive variation. Smoothing is controlled in the <code>XS Dimension</code> tools using the “loess_span” parameter.</p>
+<section id="proposed-file-structure" class="level2">
+<h2 class="anchored" data-anchor-id="proposed-file-structure">Proposed File Structure</h2>
+<section id="option-1-reach-folders" class="level3">
+<h3 class="anchored" data-anchor-id="option-1-reach-folders">Option 1 (Reach Folders)</h3>
+<pre><code>Study_Area_1/
+├─── Reaches/
+│    ├─── Reach_1/
+│    │    ├─── Reach1_year1.gdb/
+│    │    ├─── Reach1_year*.gdb/*
+|    │    ├─── Elevation/*
+|    │    ├─── Exports/*
+│    |    ├─── Maps/*
+│    |    └─── Reports/*
+│    ├─── Reach_2/
+│    │    ├─── Reach2_year1.gdb/
+│    │    ├─── Reach2_year*.gdb/*
+|    │    ├─── Elevation/*
+|    │    ├─── Exports/*
+│    |    ├─── Maps/*
+│    |    └─── Reports/*
+│    └─── Reach_3/
+|         ├─── ...
+├─── Elevation/*
+├─── Exports/*
+├─── Maps/*
+└─── Reports/</code></pre>
+<p>Note: *optional folder</p>
 </section>
-<section id="ensure-metrics-values-are-smooth" class="level4">
-<h4 class="anchored" data-anchor-id="ensure-metrics-values-are-smooth">Ensure metrics values are smooth</h4>
-<p>Many reach metrics are calculated using a longitudinal moving window analysis. The size of the moving window is controlled in the <code>XS Dimensions</code> tools using the “lead_n” parameter. A smaller value applies a narrower moving mindow and a larger value applies a wider moving window. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced.</p>
-</section>
-<section id="slope-values-are-reasonable" class="level4">
-<h4 class="anchored" data-anchor-id="slope-values-are-reasonable">Slope values are reasonable</h4>
-<p>Slope values should be greater than zero. If negative slopes are being recorded, it usually means that the moving window size needs to be increased.</p>
-</section>
-<section id="sinuosity-values-are-reasonable" class="level4">
-<h4 class="anchored" data-anchor-id="sinuosity-values-are-reasonable">Sinuosity values are reasonable</h4>
-<p>Sinuosity values should be greater than one.</p>
-</section>
-</section>
-<section id="L1_xs_profiles" class="level3">
-<h3 class="anchored" data-anchor-id="L1_xs_profiles">Cross Section Profiles</h3>
-<p>This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the cross section dimensions <code>*_dims_L1</code> fc and the <code>dem_hydro</code> raster. The cross section profile graph is drawn using the cross section points fc’s for each survey.</p>
-<section id="cross-section-must-be-digitized-from-left-to-right" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-must-be-digitized-from-left-to-right">Cross section must be digitized from left to right</h4>
-<p>The graph is being viewed from the perspective of standing in the stream, looking downstream. To ensure this orientation, cross sections must be digitized from the left descending bank to the right descending bank.</p>
-</section>
-<section id="cross-section-perpenduicular-to-the-channel" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-perpenduicular-to-the-channel">Cross section perpenduicular to the channel</h4>
-</section>
-<section id="cross-section-covers-the-channel-extent" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-covers-the-channel-extent">Cross section covers the channel extent</h4>
-</section>
-<section id="cross-section-extends-onto-floodplain" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-extends-onto-floodplain">Cross section extends onto floodplain</h4>
-</section>
-<section id="cross-section-not-located-on-built-infrastructure" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-not-located-on-built-infrastructure">Cross section not located on built infrastructure</h4>
-</section>
-<section id="cross-section-drawn-within-the-dem-extent" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-drawn-within-the-dem-extent">Cross section drawn within the DEM extent</h4>
-</section>
-<section id="cross-section-y-axis-range-is-not-too-large" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-y-axis-range-is-not-too-large">Cross section y-axis range is not too large</h4>
-</section>
-<section id="cross-section-x-axis-range-is-not-too-large" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-x-axis-range-is-not-too-large">Cross section x-axis range is not too large</h4>
-</section>
-</section>
-</section>
-<section id="estimate_bankfull_report_qa" class="level2">
-<h2 class="anchored" data-anchor-id="estimate_bankfull_report_qa">Estimate Bankfull Report</h2>
-<section id="study-area-overview" class="level3">
-<h3 class="anchored" data-anchor-id="study-area-overview">Study Area Overview</h3>
-<p>This report section contains a set of reach overview maps drawn using the <code>flowline</code> and the riffle cross section dimensions, <code>*_dims_L2</code>, feature classes (fc). Both the aerial photo and elevation are provided by <a href="https://docs.mapbox.com/api/maps/#raster-tiles">Mapbox Raster Tiles</a>. See the QA checklist items in the <a href="#L1_study_area_overview">Level 1 Report, Study Area Overview</a> section.</p>
-</section>
-<section id="bankfull-elevation-sensitivity-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="bankfull-elevation-sensitivity-analysis">Bankfull Elevation Sensitivity Analysis</h3>
-<p>This report section contains the Bankfull Elevation sensitivity analysis Goodness of Fit graph and the Regional Hydraulic Geometry Curves graph drawn using the base year’s riffle cross section points fc.</p>
-<section id="correct-regions-included" class="level4">
-<h4 class="anchored" data-anchor-id="correct-regions-included">Correct regions included</h4>
-</section>
-<section id="adequate-range-of-bankfull-elevations" class="level4">
-<h4 class="anchored" data-anchor-id="adequate-range-of-bankfull-elevations">Adequate range of bankfull elevations</h4>
-</section>
-<section id="detrended-bankfull-elevation-set-to-a-reasonable-value" class="level4">
-<h4 class="anchored" data-anchor-id="detrended-bankfull-elevation-set-to-a-reasonable-value">Detrended bankfull elevation set to a reasonable value</h4>
-</section>
-<section id="drainage-area-values-are-reasonable" class="level4">
-<h4 class="anchored" data-anchor-id="drainage-area-values-are-reasonable">Drainage Area values are reasonable</h4>
-</section>
-</section>
-<section id="estimate_bankfull_long_profile" class="level3">
-<h3 class="anchored" data-anchor-id="estimate_bankfull_long_profile">Longitudinal Profile</h3>
-<p>This section of the report contains a cross section longitudinal profile graph drawn using the riffle cross section dimensions, <code>riffle_channel_dims_L2</code> fc.</p>
-<section id="elevation-values-are-reasonable-1" class="level4">
-<h4 class="anchored" data-anchor-id="elevation-values-are-reasonable-1">Elevation values are reasonable</h4>
-</section>
-<section id="stationing-in-the-correct-units-1" class="level4">
-<h4 class="anchored" data-anchor-id="stationing-in-the-correct-units-1">Stationing in the correct units</h4>
-</section>
-<section id="stream-feature-labels-display-correctly-1" class="level4">
-<h4 class="anchored" data-anchor-id="stream-feature-labels-display-correctly-1">Stream feature labels display correctly</h4>
-</section>
-</section>
-<section id="estimate_bankfull_xs_metrics" class="level3">
-<h3 class="anchored" data-anchor-id="estimate_bankfull_xs_metrics">Cross Section Metrics</h3>
-<p>This report section contains a Level 2 cross section metrics plot drawn using the <code>riffle_channel_dims_L2</code> fc.</p>
-<section id="width-depth-ratio-values-are-reasonable" class="level4">
-<h4 class="anchored" data-anchor-id="width-depth-ratio-values-are-reasonable">Width-Depth Ratio values are reasonable</h4>
-</section>
-<section id="entrenchment-ratio-values-are-reasonable" class="level4">
-<h4 class="anchored" data-anchor-id="entrenchment-ratio-values-are-reasonable">Entrenchment Ratio values are reasonable</h4>
-</section>
-<section id="slope-values-are-reasonable-1" class="level4">
-<h4 class="anchored" data-anchor-id="slope-values-are-reasonable-1">Slope values are reasonable</h4>
-</section>
-<section id="sinuosity-values-are-reasonable-1" class="level4">
-<h4 class="anchored" data-anchor-id="sinuosity-values-are-reasonable-1">Sinuosity values are reasonable</h4>
-</section>
-<section id="shear-stress-values-are-reasonable" class="level4">
-<h4 class="anchored" data-anchor-id="shear-stress-values-are-reasonable">Shear Stress values are reasonable</h4>
-</section>
-<section id="unit-stream-power-values-are-reasonable" class="level4">
-<h4 class="anchored" data-anchor-id="unit-stream-power-values-are-reasonable">Unit Stream Power values are reasonable</h4>
-</section>
-</section>
-<section id="cross-section-profiles" class="level3">
-<h3 class="anchored" data-anchor-id="cross-section-profiles">Cross Section Profiles</h3>
-<p>This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the cross section dimensions fc <code>riffle_channel_dims_L2</code> and the <code>dem_hydro</code> raster. The cross section profile graph is drawn using the <code>riffle_channel_points</code> fc’s for each survey. see the QA checklist items in the <a href="#L1_xs_profiles">Level 1 Report, Cross Section Profiles</a> section.</p>
-</section>
-</section>
-<section id="L2_report_qa" class="level2">
-<h2 class="anchored" data-anchor-id="L2_report_qa">Level 2 Report</h2>
-<section id="study-area-overview-1" class="level3">
-<h3 class="anchored" data-anchor-id="study-area-overview-1">Study Area Overview</h3>
-<p>This report section contains a set of reach overview maps drawn using the <code>flowline</code> and the regularly spaced cross section dimensions, <code>*_dims_L2</code>, feature classes (fc). Both the aerial photo and elevation are provided by <a href="https://docs.mapbox.com/api/maps/#raster-tiles">Mapbox Raster Tiles</a>. See the QA checklist items in the <a href="#L1_study_area_overview">Level 1 Report, Study Area Overview</a> section.</p>
-</section>
-<section id="longitudinal-profile" class="level3">
-<h3 class="anchored" data-anchor-id="longitudinal-profile">Longitudinal Profile</h3>
-<p>This section of the report contains a cross section longitudinal profile graph drawn using the regularly spaced cross section dimensions, <code>*_dims_L2</code> fc. See the QA checklist items in the <a href="#estimate_bankfull_long_profile">Estimate Bankfull, Longitudinal Profile</a> section.</p>
-</section>
-<section id="cross-section-metrics" class="level3">
-<h3 class="anchored" data-anchor-id="cross-section-metrics">Cross Section Metrics</h3>
-<p>This report section contains a Level 2 cross section metrics plot drawn using the regularly spaced cross section dimensions, <code>*_dims_L2</code> fc.See the QA checklist items in the <a href="#estimate_bankfull_xs_metrics">Estimate Bankfull, Cross section Metrics</a> section.</p>
-<section id="ensure-metrics-values-are-smooth-1" class="level4">
-<h4 class="anchored" data-anchor-id="ensure-metrics-values-are-smooth-1">Ensure metrics values are smooth</h4>
-</section>
-</section>
-<section id="cross-section-profiles-1" class="level3">
-<h3 class="anchored" data-anchor-id="cross-section-profiles-1">Cross Section Profiles</h3>
-<p>This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the regularly spaced cross section dimensions fc <code>*_dims_L2</code> and the <code>dem_hydro</code> raster. The cross section profile graph is drawn using the cross section <code>*_points</code> fc’s for each survey. see the QA checklist items in the <a href="#L1_xs_profiles">Level 1 Report, Cross Section Profiles</a> section.</p>
-</section>
-</section>
-<section id="L3_report_qa" class="level2">
-<h2 class="anchored" data-anchor-id="L3_report_qa">Level 3 Report</h2>
-<section id="study-area-overview-2" class="level3">
-<h3 class="anchored" data-anchor-id="study-area-overview-2">Study Area Overview</h3>
-<p>This report section contains a set of reach overview maps drawn using the <code>flowline</code> and the regularly spaced cross section dimensions, <code>*_dims_L3</code>, feature classes (fc). Both the aerial photo and elevation are provided by <a href="https://docs.mapbox.com/api/maps/#raster-tiles">Mapbox Raster Tiles</a>. See the QA checklist items in the <a href="#L1_study_area_overview">Level 1 Report, Study Area Overview</a> section.</p>
-</section>
-<section id="longitudinal-profile-1" class="level3">
-<h3 class="anchored" data-anchor-id="longitudinal-profile-1">Longitudinal Profile</h3>
-<p>This section of the report contains a cross section longitudinal profile graph drawn using the regularly spaced cross section dimensions, <code>*_dims_L3</code> fc. See the QA checklist items in the <a href="#estimate_bankfull_long_profile">Estimate Bankfull, Longitudinal Profile</a> section.</p>
-</section>
-<section id="cross-section-metrics-1" class="level3">
-<h3 class="anchored" data-anchor-id="cross-section-metrics-1">Cross Section Metrics</h3>
-<p>This report section contains a Level 2 cross section metrics plot drawn using the regularly spaced cross section dimensions, <code>*_dims_L3</code> fc.See the QA checklist items in the <a href="#estimate_bankfull_xs_metrics">Estimate Bankfull, Cross section Metrics</a> section.</p>
-<section id="ensure-metrics-values-are-smooth-2" class="level4">
-<h4 class="anchored" data-anchor-id="ensure-metrics-values-are-smooth-2">Ensure metrics values are smooth</h4>
-</section>
-<section id="radius-of-curvature-to-bankfull-width-values-are-reasonable" class="level4">
-<h4 class="anchored" data-anchor-id="radius-of-curvature-to-bankfull-width-values-are-reasonable">Radius of Curvature to Bankfull Width values are reasonable</h4>
-</section>
-</section>
-<section id="cross-section-profiles-2" class="level3">
-<h3 class="anchored" data-anchor-id="cross-section-profiles-2">Cross Section Profiles</h3>
-<p>This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the regularly spaced cross section dimensions fc <code>*_dims_L3</code> and the <code>dem_hydro</code> raster. The cross section profile graph is drawn using the cross section “_points” fc’s for each survey. see the QA checklist items in the <a href="#L1_xs_profiles">Level 1 Report, Cross Section Profiles</a> section.</p>
-<hr>
+<section id="option-2-nested-stream-and-reach-folders" class="level3">
+<h3 class="anchored" data-anchor-id="option-2-nested-stream-and-reach-folders">Option 2 (Nested Stream and Reach Folders)</h3>
+<pre><code>Study_Area_1/
+├─── Streams/
+│    ├─── Stream_1/
+│    │    └─── Reaches/
+|    │         ├─── Reach_1/
+|    │         │    ├─── Reach1_year1.gdb/
+│    |         │    ├─── Reach1_year*.gdb/*
+│    |         │    ├─── Elevation/*
+│    |         │    ├─── Exports/*
+│    |         │    ├─── Maps/*
+│    |         │    └─── Reports/*
+│    |         ├─── Reach_2/
+│    |         │    ├─── Reach2_year1.gdb/
+│    │         │    ├─── Reach2_year*.gdb/*
+│    |         │    ├─── Elevation/*
+│    |         │    ├─── Exports/*
+│    |         │    ├─── Maps/*
+│    |         │    └─── Reports/*
+│    |         └─── ***
+│    └─── Stream_2/
+│         ├─── Reaches/
+|              ├─── ***
+├─── Elevation/*
+├─── Exports/*
+├─── Maps/*
+└─── Reports/</code></pre>
+<p>Note: *optional folder</p>
 
 
 </section>
@@ -1121,8 +1047,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Glossary.html" class="pagination-link" aria-label="Glossary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Glossary</span>
+      <a href="./QA-checklist.html" class="pagination-link" aria-label="QA Checklist">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

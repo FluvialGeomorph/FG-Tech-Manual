@@ -38,7 +38,9 @@ book:
     - References.qmd
     - Glossary.qmd
   appendices:
-    - QAChecklist.qmd
+    - QA-checklist.qmd
+    - DB-migration.qmd
+
 
   sidebar:
     style: "docked"

@@ -1,0 +1,169 @@
+---
+title: "DB Migration"
+format: html
+---
+
+## Purpose
+This chapter documents a data management evolution phase of this project. As initially concieved (2017-2018), the FluvialGeomorph progam had a very "site-based" orientation. At that stage, we were focused on developing reproducible, automated tools to derive high resolution stream metrics from remotely collected LiDAR datasets. The `FluvialGeomorph toolbox` could process study areas with stream lengths 1 to 100s of miles long at high spatial resolution (1ft-1m DEM resolution). However, no effort was made to combine the derived data from all these "sites" into a single database. From the beginning, we conceptualized how our "site-scale" data model would scale into a larger dataset sometime later. This chapter describes our process for massaging these "site-based" datasets into a single database. 
+
+::: {.callout-tip title="Note to Authors"}
+This chapter must stay aligned with terminology in the chapter [User Manual Concepts](https://fluvialgeomorph.github.io/FG-User-Manual/Concepts.html). Ensure the change of terms `Site` -> `Stream` is accomplished. 
+:::
+
+## Units of Analysis
+From the beginning of this effort, we established a consistent set of units of analysis. For our purpose, the top level unit of analysis is defined by a work request that comes from a customer, the "study area". Within this arbitrary Aera of Interest (AOI), to structure our data we adopted a nested heirarchy of parent-child sub units. Understood as: Study areas have one or more streams. Streams have one or more reaches. Reaches have one or more survey events. This defines the overarching heirarchy of our data model. 
+
+```
+Study Area
+└─── Streams
+     └─── Reaches 
+          └─── Survey Events
+```
+
+- **Study Area**: These are the primary work units and correspond to projects that customers have requested for analysis. 
+- **Stream**: Study areas are subdivided into “streams”. Streams are typically identified by names and subwatersheds within the project study area.
+- **Reach**: Streams are further subdivided into “reaches”. Reaches are defined according to project goals and use conventional rules for specifying reaches (i.e., tributary confluence to confluence), significant infrastructure, changes in surficial geology, etc.
+- **Survey Event**: Since FluvialGeomorph analysis is based on terrain surveys, the timing of the survey is a critical factor in the analysis. This data object is how we define point-in-time collections and the assessments made from them. 
+
+## FG Features Data Model
+
+From the beginning, we devoted most of our attention to developing the FluvialGeomorph Features Data Model. See the FluvialGeomorph Tech Manual chapter [Derived Features](2-4-Features.qmd) for details. All `FluvialGeomorph-toolbox` analysis takes place within a single file geodatabase (ESRI `.gdb` format). For its spatial extent, it represents one reach in the data model above. For its temporal extent, it represents one survey event in the data model above. Therefore, this geodatabase can be described as a "Reach-Survey Event" Geodatabase in terms of the data model above. The rationale for the structure is for each survey event, all of the features will be derived from that DEM. When a new survey events occurs (or an historic survey is discovered), this procedure can be repeated. This study design maintains completely independent geodatabases to represent reach conditions at each point in time. 
+
+```
+Reach-Survey Event Geodatabase
+├─── DEM
+├─── Cutlines
+├─── DEM Hydro
+├─── Stream Network
+├─── Flowline
+├─── Flowline Points
+├─── REM
+├─── Cross Sections
+├─── Cross Section Points
+├─── Cross Section Dimensions
+├─── Features
+├─── Bankfull Area
+├─── Banklines
+├─── Bankline Points
+├─── Valleyline
+└─── Loop Points
+```
+
+## Combined Data Model
+These two data models are grafted together by using the high-level "unit of analysis" data model to represent the overarching structure. Each "reach-survey event" geodatabase represents a specific "Survey Event" within the "unit of analysis" data model. 
+
+```
+Study Area
+└─── Streams
+     └─── Reaches 
+          └─── Survey Events
+               └─── FG Features (DEM Hydro, Flowline, Flowline_points, etc.)
+```
+
+## Legacy Folder Structure
+The FluvialGemorph program file structure is roughly modeled on the "unit of analysis" data model. Although the folders in the `/FluvialGeomorph/Projects/` folder roughly align with the concept of "Study Area", the sub folders almost never utilize "Streams" and sometimes utilize "Reaches".  
+
+```
+/FluvialGeomorph/
+└─── Projects/
+     ├─── MVR_SJ_Copperas Creek/
+     ├─── NWO_Papillion/
+     └─── ...
+
+```
+
+## New Folder Structure
+To accomplish this migration, we have elected to refactor our file system to more closely match the database structure we are adopting. This will help ensure a cleaner translation between periodically updated, locally processed derived artifacts to be loaded into a central database. All processing is accomplished locally with idempotent database loading. We have decided to leave the current `/FluvialGeomorph/Projects/` folder structure in place while implementing the file system refactoring into `/FluvialGeomorph/studies/`. This migration plan design requires no work stoppage. New work can begin using the new approach, while legacy work can be migrated on a stepwise, pay-as-you-go basis. Eventually the `/FluvialGeomorph/Projects/` folder will be archived after all of its content has migrated. 
+
+```
+/FluvialGeomorph/
+├─── Projects/
+|    ├─── MVR_SJ_Copperas_Creek/
+|    ├─── NWO_Papillion/
+|    └─── ...
+└─── studies
+     ├─── MVR_Copperas_Creek/
+     ├─── NWO_Papillion/
+     └─── ...
+```
+
+## Example Project Folder to Study Area Database Crosswalk
+Here are some examples to illustrate how legacy project work will be migrated to this new approach. 
+
+- `/FluvialGeomorph/Projects/MVR_SJ_Copperas Creek/`
+```
+Study Area: MVR-Copperas Creek
+└─── Streams: Copperas Creek IL
+     └─── Reaches: R1-R15, Sites 1-19
+          └─── Survey Events: 2009, 2019, 2022
+```
+
+ - `/FluvialGeomorph/Projects/NWO_Papillion/`
+```
+Study Area: NWO-Papillion Creek
+└─── Streams: Sugar Creek, South Papillion Creek, Cole Creek, West Papillion, ...  
+     └─── Reaches: R1; R1-R2a; R1-R5; R1-R9
+          └─── Survey Events: 2010, 2016, 2018
+```
+
+
+## Proposed File Structure
+
+### Option 1 (Reach Folders)
+```
+Study_Area_1/
+├─── Reaches/
+│    ├─── Reach_1/
+│    │    ├─── Reach1_year1.gdb/
+│    │    ├─── Reach1_year*.gdb/*
+|    │    ├─── Elevation/*
+|    │    ├─── Exports/*
+│    |    ├─── Maps/*
+│    |    └─── Reports/*
+│    ├─── Reach_2/
+│    │    ├─── Reach2_year1.gdb/
+│    │    ├─── Reach2_year*.gdb/*
+|    │    ├─── Elevation/*
+|    │    ├─── Exports/*
+│    |    ├─── Maps/*
+│    |    └─── Reports/*
+│    └─── Reach_3/
+|         ├─── ...
+├─── Elevation/*
+├─── Exports/*
+├─── Maps/*
+└─── Reports/
+```
+Note: *optional folder
+
+### Option 2 (Nested Stream and Reach Folders)
+```
+Study_Area_1/
+├─── Streams/
+│    ├─── Stream_1/
+│    │    └─── Reaches/
+|    │         ├─── Reach_1/
+|    │         │    ├─── Reach1_year1.gdb/
+│    |         │    ├─── Reach1_year*.gdb/*
+│    |         │    ├─── Elevation/*
+│    |         │    ├─── Exports/*
+│    |         │    ├─── Maps/*
+│    |         │    └─── Reports/*
+│    |         ├─── Reach_2/
+│    |         │    ├─── Reach2_year1.gdb/
+│    │         │    ├─── Reach2_year*.gdb/*
+│    |         │    ├─── Elevation/*
+│    |         │    ├─── Exports/*
+│    |         │    ├─── Maps/*
+│    |         │    └─── Reports/*
+│    |         └─── ***
+│    └─── Stream_2/
+│         ├─── Reaches/
+|              ├─── ***
+├─── Elevation/*
+├─── Exports/*
+├─── Maps/*
+└─── Reports/
+```
+Note: *optional folder
+
