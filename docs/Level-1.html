@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Level 1 Workflow – FluvialGeomorph Technical Manual</title>
+<title>13&nbsp; Level-1 Initial Channel Analysis – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Level-2.html" rel="next">
+<link href="./Level-2-eb.html" rel="next">
 <link href="./Reports.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Level-1.html">Workflows</a></li><li class="breadcrumb-item"><a href="./Level-1.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Level-1.html">Workflows</a></li><li class="breadcrumb-item"><a href="./Level-1.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level-1 Initial Channel Analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -225,31 +225,37 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Level-1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level-1 Initial Channel Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Level-2-eb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level-2-EB Estimate Bankfull Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Level-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Level-2 Bankfull Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Level-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Level-3 Planform Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./FromField.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">From-Field</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">From-Field</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
   </div>
 </li>
       </ul>
@@ -299,7 +305,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#level-1" id="toc-level-1" class="nav-link active" data-scroll-target="#level-1">Level 1</a>
+  <li><a href="#level-1-workflow" id="toc-level-1-workflow" class="nav-link active" data-scroll-target="#level-1-workflow">Level 1 Workflow</a></li>
+  <li><a href="#level-1" id="toc-level-1" class="nav-link" data-scroll-target="#level-1">Level 1</a>
   <ul class="collapse">
   <li><a href="#study-area-coordinate-system" id="toc-study-area-coordinate-system" class="nav-link" data-scroll-target="#study-area-coordinate-system">Study Area Coordinate System</a></li>
   <li><a href="#create-study-area-geodatabases" id="toc-create-study-area-geodatabases" class="nav-link" data-scroll-target="#create-study-area-geodatabases">Create Study Area Geodatabases</a></li>
@@ -355,9 +362,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Level-1.html">Workflows</a></li><li class="breadcrumb-item"><a href="./Level-1.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Level-1.html">Workflows</a></li><li class="breadcrumb-item"><a href="./Level-1.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level-1 Initial Channel Analysis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level-1 Initial Channel Analysis</span></h1>
 </div>
 
 
@@ -374,7 +381,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><span class="badge badge-theory">📐 Theory</span></p>
+<section id="level-1-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="level-1-workflow">Level 1 Workflow</h2>
 <p>This chapter describes the workflow processes to complete a Level 1 (L1) FluvialGeomorph analysis. The purpose of this level is to extract basic channel dimensions from LiDAR surveys. Developing terrain models for the project study area for all available LiDAR survey events.Multiple survey events provide comparable channel dimensions for a reach overtime.</p>
+</section>
 <section id="level-1" class="level2">
 <h2 class="anchored" data-anchor-id="level-1">Level 1</h2>
 <section id="study-area-coordinate-system" class="level3">
@@ -1480,8 +1491,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Level-2.html" class="pagination-link" aria-label="Level 2 Workflow">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Level-2-eb.html" class="pagination-link" aria-label="Level-2-EB Estimate Bankfull Analysis">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level-2-EB Estimate Bankfull Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

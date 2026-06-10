@@ -7,7 +7,7 @@ book:
  # author:
  #   - Christopher Haring, Geomorphologist/Research Physical Scientist, Coastal Hydraulics Laboratory, U.S. Army Corps of Engineers
  #   - Michael Dougherty, Geographer, US Army Corps of Engineers, Rock Island District
-  date: "2025-06-05"
+  date: "2026-06-10"
   repo-url: https://github.com/FluvialGeomorph/FG-Tech-Manual
   page-navigation: true
   search: true
@@ -33,6 +33,7 @@ book:
     - part: "Workflows"
       chapters:
         - Level-1.qmd
+        - Level-2-eb.qmd
         - Level-2.qmd
         - Level-3.qmd
         - FromField.qmd
