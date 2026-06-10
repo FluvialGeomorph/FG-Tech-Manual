@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Install – FluvialGeomorph Technical Manual</title>
+<title>3&nbsp; Concepts – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./2-2-TutorialData.html" rel="next">
-<link href="./1-3-FieldMethods.html" rel="prev">
+<link href="./flowchart.html" rel="next">
+<link href="./quickguide.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -92,6 +72,7 @@ div.csl-indent {
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -103,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-1-Install.html">Tools</a></li><li class="breadcrumb-item"><a href="./2-1-Install.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quickguide.html">Foundations</a></li><li class="breadcrumb-item"><a href="./concepts.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Concepts</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -140,7 +121,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0-1-Intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./Intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -155,20 +136,38 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-1-Concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Concepts</span></span></a>
+  <a href="./quickguide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quick Guide</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-2-Metrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metrics</span></span></a>
+  <a href="./concepts.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Concepts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-3-FieldMethods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Field Methods</span></span></a>
+  <a href="./flowchart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Manual Flowchart</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./concept_map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Manual Crosswalk</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Metrics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FieldMethods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Field Methods</span></span></a>
   </div>
 </li>
       </ul>
@@ -184,32 +183,32 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-1-Install.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install</span></span></a>
+  <a href="./Install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Install</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-2-TutorialData.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial Data</span></span></a>
+  <a href="./TutorialData.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tutorial Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-3-Toolbox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Toolbox</span></span></a>
+  <a href="./Toolbox.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Toolbox</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-4-Features.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Derived Features</span></span></a>
+  <a href="./Features.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Derived Features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-5-Reports.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  <a href="./Reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
   </div>
 </li>
       </ul>
@@ -225,32 +224,32 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-1-Level-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></span></a>
+  <a href="./Level-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-2-Level-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span></a>
+  <a href="./Level-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-3-Level-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span></a>
+  <a href="./Level-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-4-FromField.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">From-Field</span></span></a>
+  <a href="./FromField.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">From-Field</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-5-Validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
+  <a href="./Validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
   </div>
 </li>
       </ul>
@@ -264,7 +263,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -300,34 +299,42 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#software-requirements" id="toc-software-requirements" class="nav-link active" data-scroll-target="#software-requirements">Software Requirements</a></li>
-  <li><a href="#install-r" id="toc-install-r" class="nav-link" data-scroll-target="#install-r">Install <code>R</code></a></li>
-  <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio">Install <code>RStudio</code></a></li>
-  <li><a href="#install-arcgis-pro" id="toc-install-arcgis-pro" class="nav-link" data-scroll-target="#install-arcgis-pro">Install <code>ArcGIS Pro</code></a>
+  <li><a href="#fluvial-geomorphology" id="toc-fluvial-geomorphology" class="nav-link active" data-scroll-target="#fluvial-geomorphology">Fluvial Geomorphology</a></li>
+  <li><a href="#derived-features" id="toc-derived-features" class="nav-link" data-scroll-target="#derived-features">Derived Features</a>
   <ul class="collapse">
-  <li><a href="#arcmap-it-is-at-its-end-of-life-and-is-not-longer-supported." id="toc-arcmap-it-is-at-its-end-of-life-and-is-not-longer-supported." class="nav-link" data-scroll-target="#arcmap-it-is-at-its-end-of-life-and-is-not-longer-supported."><code>ArcMap</code> it is at it’s end of life and is not longer supported.</a></li>
+  <li><a href="#hierarchical-units-of-analysis" id="toc-hierarchical-units-of-analysis" class="nav-link" data-scroll-target="#hierarchical-units-of-analysis">Hierarchical Units of Analysis</a></li>
+  <li><a href="#analysis-levels" id="toc-analysis-levels" class="nav-link" data-scroll-target="#analysis-levels">Analysis Levels</a></li>
+  <li><a href="#workflow-levels" id="toc-workflow-levels" class="nav-link" data-scroll-target="#workflow-levels">Workflow Levels</a></li>
+  <li><a href="#flowline-concept" id="toc-flowline-concept" class="nav-link" data-scroll-target="#flowline-concept">Flowline</a></li>
+  <li><a href="#position-along-river" id="toc-position-along-river" class="nav-link" data-scroll-target="#position-along-river">Position Along River</a></li>
+  <li><a href="#pool-riffle-run" id="toc-pool-riffle-run" class="nav-link" data-scroll-target="#pool-riffle-run">Pool-Riffle-Run</a></li>
+  <li><a href="#xs-concept" id="toc-xs-concept" class="nav-link" data-scroll-target="#xs-concept">Cross Section</a></li>
+  <li><a href="#bankfull-concept" id="toc-bankfull-concept" class="nav-link" data-scroll-target="#bankfull-concept">Bankfull</a></li>
+  <li><a href="#flood-prone-concept" id="toc-flood-prone-concept" class="nav-link" data-scroll-target="#flood-prone-concept">Flood Prone</a></li>
+  <li><a href="#planform-concept" id="toc-planform-concept" class="nav-link" data-scroll-target="#planform-concept">Planform</a></li>
   </ul></li>
-  <li><a href="#install-arcgisbinding" id="toc-install-arcgisbinding" class="nav-link" data-scroll-target="#install-arcgisbinding">Install <code>arcgisbinding</code></a>
+  <li><a href="#geospatial" id="toc-geospatial" class="nav-link" data-scroll-target="#geospatial">Geospatial</a>
   <ul class="collapse">
-  <li><a href="#install-the-latest-arcgisbinding-version" id="toc-install-the-latest-arcgisbinding-version" class="nav-link" data-scroll-target="#install-the-latest-arcgisbinding-version">Install the latest <code>arcgisbinding</code> version</a></li>
-  <li><a href="#download-a-specific-arcgisbinding-package-version" id="toc-download-a-specific-arcgisbinding-package-version" class="nav-link" data-scroll-target="#download-a-specific-arcgisbinding-package-version">Download a specific <code>arcgisbinding</code> package version</a></li>
-  <li><a href="#install-a-specific-arcgisbinding-package-version" id="toc-install-a-specific-arcgisbinding-package-version" class="nav-link" data-scroll-target="#install-a-specific-arcgisbinding-package-version">Install a specific <code>arcgisbinding</code> package version</a></li>
+  <li><a href="#lidar-stream-measurement" id="toc-lidar-stream-measurement" class="nav-link" data-scroll-target="#lidar-stream-measurement">LiDAR Stream Measurement</a></li>
+  <li><a href="#terrain-models" id="toc-terrain-models" class="nav-link" data-scroll-target="#terrain-models">Terrain Models</a></li>
+  <li><a href="#terrain-visualization-concept" id="toc-terrain-visualization-concept" class="nav-link" data-scroll-target="#terrain-visualization-concept">Terrain Visualization</a></li>
+  <li><a href="#synthetic-stream-concept" id="toc-synthetic-stream-concept" class="nav-link" data-scroll-target="#synthetic-stream-concept">Synthetic Stream Delineation</a></li>
+  <li><a href="#flow-accumulation-concept" id="toc-flow-accumulation-concept" class="nav-link" data-scroll-target="#flow-accumulation-concept">Flow Accumulation</a></li>
+  <li><a href="#hydro-modification-concept" id="toc-hydro-modification-concept" class="nav-link" data-scroll-target="#hydro-modification-concept">Hydro Modification</a></li>
+  <li><a href="#detrending-concept" id="toc-detrending-concept" class="nav-link" data-scroll-target="#detrending-concept">Relative Elevation Model</a></li>
+  <li><a href="#hydraulic-modelling" id="toc-hydraulic-modelling" class="nav-link" data-scroll-target="#hydraulic-modelling">Hydraulic Modelling</a></li>
+  <li><a href="#water-surface-elevation" id="toc-water-surface-elevation" class="nav-link" data-scroll-target="#water-surface-elevation">Water Surface Elevation</a></li>
+  <li><a href="#spatial-data-clearinghouses-for-terrain-data" id="toc-spatial-data-clearinghouses-for-terrain-data" class="nav-link" data-scroll-target="#spatial-data-clearinghouses-for-terrain-data">Spatial Data Clearinghouses for Terrain Data</a></li>
   </ul></li>
-  <li><a href="#install-fluvialgeomorph" id="toc-install-fluvialgeomorph" class="nav-link" data-scroll-target="#install-fluvialgeomorph">Install FluvialGeomorph</a>
-  <ul class="collapse">
-  <li><a href="#install-the-fluvialgeomorph-r-packages" id="toc-install-the-fluvialgeomorph-r-packages" class="nav-link" data-scroll-target="#install-the-fluvialgeomorph-r-packages">Install the FluvialGeomorph <code>R</code> packages</a></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
-  </ul></li>
-  <li><a href="#install-tutorial-data" id="toc-install-tutorial-data" class="nav-link" data-scroll-target="#install-tutorial-data">Install Tutorial Data</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-1-Install.html">Tools</a></li><li class="breadcrumb-item"><a href="./2-1-Install.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quickguide.html">Foundations</a></li><li class="breadcrumb-item"><a href="./concepts.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Concepts</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Concepts</span></h1>
 </div>
 
 
@@ -344,128 +351,174 @@ div.csl-indent {
 </header>
 
 
-<p>This chapter describes the requirements for installing and configuring the FluvialGeomorph toolbox and its required software components. There is more detailed information here than the user manual for requirement and configuration than the user manual.</p>
-<section id="software-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="software-requirements">Software Requirements</h2>
-<p>Here is a summary of the software that must be installed to use the FluvialGeomorph toolbox. The rest of this chapter will describe how to complete these installations.</p>
+<p><span class="badge badge-reference">⚡ Quick Reference</span></p>
+<section id="fluvial-geomorphology" class="level2">
+<h2 class="anchored" data-anchor-id="fluvial-geomorphology">Fluvial Geomorphology</h2>
+<p>This section will discuss the overarching concepts of fluvial geomorphology. These are not definitions but the functionality of terms and tools within the fluvial geomorphology toolbox. This section will describe the need and the why behind running the tools and the foundational information needed to understand the <code>FluvialGeomorph</code> workflows.</p>
+</section>
+<section id="derived-features" class="level2">
+<h2 class="anchored" data-anchor-id="derived-features">Derived Features</h2>
+<p>The definition of a common set of derived features is an important step in standardizing any workflow. The standard <code>FluvialGeomorph</code> database objects form a tightly linked set of features that work together in a particular order to accomplish the analysis.</p>
+<section id="hierarchical-units-of-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="hierarchical-units-of-analysis">Hierarchical Units of Analysis</h3>
+<p>To help organize the workflow process we have defined several units of analysis:</p>
 <ul>
-<li>Windows OS (10+ recommended, Server 2019). ArcGIS desktop GIS applications are only provided by ESRI for the Windows platform.</li>
-<li>R Statistical Computing Language (4.x+ recommended)</li>
-<li>RStudio Desktop (2024.12.1+ recommended)</li>
-<li>ArcGIS Pro (3.2+ recommended)</li>
-<li>FluvialGeomorph toolbox, latest version</li>
+<li><p><strong>Study Area:</strong> These are the primary work units and correspond to projects that customers have requested for analysis. Customers define specific goals for each project that determine the specific workflow chosen. These goals define a project study area for each project. These project study areas typically consist of a particular watershed, a mainstem section of a named river, or a discrete stream reach.</p></li>
+<li><p><strong>Site:</strong> Study areas are subdivided into “sites”. Sites are typically named tributaries and their subwatersheds within the project study area.</p></li>
+<li><p><strong>Reach:</strong> Sites are further subdivided into “reaches”. Reaches are defined according to project goals and use conventional rules for specifying reaches (i.e., tributary confluence to confluence), significant infrastructure, changes in surficial geology, etc.</p></li>
+<li><p><strong>Survey Event:</strong> <code>FluvialGeomorph</code> analysis is based on LiDAR terrain surveys, the timing of the survey is a critical factor in the analysis. LiDAR is a single point-in-time dataset. Since LiDAR can be collected periodically, our data structure must accommodate multiple distinct time periods (typically separated by years) for which channel dimensions are extracted. If there are multiple LiDAR surveys available for the project study area, the most recent survey is referred to as the <em>base year</em>.</p></li>
 </ul>
 </section>
-<section id="install-r" class="level2">
-<h2 class="anchored" data-anchor-id="install-r">Install <code>R</code></h2>
-<p><a href="https://cran.r-project.org/"><code>R</code></a> is a statistical computing environment required to perform calculations and report generation (<span class="citation" data-cites="R-base">R Core Team (<a href="References.html#ref-R-base" role="doc-biblioref">2020</a>)</span>).</p>
+<section id="analysis-levels" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-levels">Analysis Levels</h3>
+<p>We have defined a standard workflow that is modular, allowing analysts to prescribe and customers to purchase progressively more detailed analysis as needed. The workflow is organized according to the following levels:</p>
 <ul>
-<li>Ensure that <code>R</code> is installed.</li>
-<li><code>R</code> version 4.x or greater is recommended.</li>
-<li>Ensure that <code>RTools</code> is installed. You will need either <a href="https://cran.r-project.org/bin/windows/Rtools/history.html"><code>RTools35</code></a> for <code>R</code> v3.5.x or <a href="https://cran.r-project.org/bin/windows/Rtools/"><code>RTools40</code></a> for <code>R</code> v4.x. <code>RTools</code> is required for compiling <code>R</code> packages from source. It is highly recommended, but not strictly required.</li>
-<li>Ensure that your <code>RTools</code> installation is on the system <code>PATH</code> (i.e., open a command prompt window, use the <code>path</code> command). If not, set your user environment <code>PATH</code> variable to the appropriate (depending on the <code>R</code> major version) <code>RTools</code> <code>bin</code> directory (e.g., <code>C:\Rtools\bin</code>, <code>C:\rtools40\usr\bin</code>).</li>
+<li><strong>Level 1:</strong> Extract basic channel dimensions and profile.</li>
+<li><strong>Level 2:</strong> Extract bankfull channel dimensions and profile.</li>
+<li><strong>Level 3:</strong> Extract planform dimensions.</li>
 </ul>
 </section>
-<section id="install-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="install-rstudio">Install <code>RStudio</code></h2>
-<p><code>Rstudio</code> is an Integrated Development Environment (IDE) for <code>R</code> that streamlines development and troubleshooting.</p>
+<section id="workflow-levels" class="level3">
+<h3 class="anchored" data-anchor-id="workflow-levels">Workflow Levels</h3>
+<p>The <code>FluvialGeomorph</code> workflow has been organized using the following hierarchical grouping to help analysts better understand how to perform the analysis and what is being done during each step of the process. All workflow steps are sequential and build on the outputs of previous steps.</p>
 <ul>
-<li>Ensure that <code>Rstudio</code> is installed.</li>
-<li><code>RStudio</code> version 1.4 or greater is recommended.</li>
-<li><code>RStudio</code> is recommended, but not strictly required.</li>
-<li>Update your currently installed <code>R</code> packages to the latest version. On the <code>RStudio</code> tools menu, select “Check for Package Updates…”. Click the “Select All” button and click the “Install Updates” button.</li>
-<li>If asked to compile packages from source, select “Yes” if you installed <code>RTools</code>.</li>
+<li><strong>Levels:</strong> The top hierarchical grouping of the workflow. Levels are distinguished by the degree of fluvial geometric detail and metrics that will be derived. Levels 2 and 3 are optional.</li>
+<li><strong>Phases:</strong> The second hierarchical grouping of the workflow. Each level is subdivided into phases. Phases are mostly a conceptual grouping of steps to accomplish a specific objective in the analysis chain.</li>
+<li><strong>Steps:</strong> the third hierarchical grouping of the workflow. Phases are subdivided into steps. steps typically involve running tools, manual editing, and performing quality assurance checks.</li>
+<li><strong>Tools:</strong> Tools are the lowest hierarchical grouping of the workflow. Tools perform operations that are suitable for automation.</li>
 </ul>
 </section>
-<section id="install-arcgis-pro" class="level2">
-<h2 class="anchored" data-anchor-id="install-arcgis-pro">Install <code>ArcGIS Pro</code></h2>
-<p>ESRI <code>ArcGIS Pro</code> is the GIS application where the FluvialGeomorph analysis will be performed and where the toolbox will be accessed.</p>
+<section id="flowline-concept" class="level3">
+<h3 class="anchored" data-anchor-id="flowline-concept">Flowline</h3>
+<p>Flowlines are smoothed stream network geometries derived from digital elevation models.</p>
 <ul>
-<li>Ensure that <code>ArcGIS Pro</code> is installed.</li>
-<li><code>ArcGIS Pro</code> version 3.2+ is recommended.</li>
-</ul>
-<section id="arcmap-it-is-at-its-end-of-life-and-is-not-longer-supported." class="level3">
-<h3 class="anchored" data-anchor-id="arcmap-it-is-at-its-end-of-life-and-is-not-longer-supported."><code>ArcMap</code> it is at it’s end of life and is not longer supported.</h3>
-</section>
-</section>
-<section id="install-arcgisbinding" class="level2">
-<h2 class="anchored" data-anchor-id="install-arcgisbinding">Install <code>arcgisbinding</code></h2>
-<p>The ESRI <code>arcgisbinding</code> <code>R</code> package allows <code>ArcGIS Pro</code> and <code>ArcMap</code> to read and write to <code>R</code> sessions. Installing it through <code>ArcGIS Pro</code> also enables it for use in <code>ArcMap</code> as well.</p>
-<section id="install-the-latest-arcgisbinding-version" class="level3">
-<h3 class="anchored" data-anchor-id="install-the-latest-arcgisbinding-version">Install the latest <code>arcgisbinding</code> version</h3>
-<ul>
-<li>In <code>ArcGIS Pro</code>, on the top menu, click “Project”, and click “Options” on the left menu.</li>
-<li>In the “Options” dialog box, click “Geoprocessing” on the left menu.</li>
-<li>On the “Geoprocessing” page, scroll down to the “R-ArcGIS Support” section.</li>
-<li>In the “R-ArcGIS Support” section, verify the installed <code>R</code> version for ArcGIS to use.</li>
-<li>Select an <code>R</code> version in the 4.x series.<br>
-</li>
-<li>From the “Installed ‘arcgisbinding’ package version:” dropdown menu, choose the “Check package for updates” option.</li>
+<li><strong>Centerline:</strong> The line that is equal distances between two banks in a stream. Generating cross sections along this line provides a full transverse view that extends beyond the bankfull width.</li>
+<li><strong>Thalweg:</strong> Thalwegs can be used to locate areas of scour and fill, geologic controls, and outcrops of non-erodible materials. The thalweg changes as the the concentration of flow due to centrifugal forces moves. Monitoring the thalweg allows engineers or geomorphologists to chart changes in the bed elevation through time.</li>
 </ul>
 </section>
-<section id="download-a-specific-arcgisbinding-package-version" class="level3">
-<h3 class="anchored" data-anchor-id="download-a-specific-arcgisbinding-package-version">Download a specific <code>arcgisbinding</code> package version</h3>
-<p>Sometimes the FluvialGeomorph toolbox requires a specific version of the <code>arcgisbinding</code> package. Check the version compatibility matrix in the release notes for guidance. If the FluvialGeomporph toolbox release you are using specifies a particular combination of software versions, please manually download the specified version using these instructions:</p>
+<section id="position-along-river" class="level3">
+<h3 class="anchored" data-anchor-id="position-along-river">Position Along River</h3>
+<p>Rivers and streams are dynamic and continuously change their position, shape, and other morphological characteristics. Creating cross sections from a flowline derived from flowline points establishes a position on an existing river for comparison of past and future variations during the lifetime of the project.</p>
+</section>
+<section id="pool-riffle-run" class="level3">
+<h3 class="anchored" data-anchor-id="pool-riffle-run">Pool-Riffle-Run</h3>
 <ul>
-<li>Navigate to the following URL: <a href="https://github.com/R-ArcGIS/r-bridge">https://github.com/R-ArcGIS/r-bridge</a></li>
-<li>In the “Releases” section on the middle-right side of the page, click the “+ xx releases” link.</li>
-<li>Download the <code>v1.0.1.239</code> version. This file is named: <code>arcgisbinding_1.0.1.239.zip</code></li>
-<li>Note the location of the file you just downloaded. We will use it in a following step.</li>
+<li><strong>Pool:</strong> In bends, there is a concentration of flow due to centrifugal forces. This causes the depth to increase at the outside of the bend, and this area is known as the pool.</li>
+<li><strong>Riffle:</strong> As the thalweg again changes sides below a bend, it crosses the centerline of the channel. This area is known as the riffle or crossing. At the point of tangency between adjacent bends, the velocity distribution is fairly consistent across the cross section, which is approximately rectangular in shape. The concentration of flow in the bend is lost and the velocity decreases accordingly, thus causing deposition in the crossing.</li>
+<li><strong>Run:</strong> A reach of stream characterized by fast-flowing, low-turbulence water. This includes deep areas in a stream where water flows fast with little or no turbulence. <!--need a more conceptual definitions--></li>
 </ul>
 </section>
-<section id="install-a-specific-arcgisbinding-package-version" class="level3">
-<h3 class="anchored" data-anchor-id="install-a-specific-arcgisbinding-package-version">Install a specific <code>arcgisbinding</code> package version</h3>
+<section id="xs-concept" class="level3">
+<h3 class="anchored" data-anchor-id="xs-concept">Cross Section</h3>
+<p>While thalweg profiles are a useful tool it must be recognized that they only reflect the behavior of the channel bed and do not provide information about the channel as a whole. For this reason it is usually advisable to study changes in the cross sectional geometry. Cross sectional geometry refers to width, depth, area, wetted perimeter, hydraulic radius, and channel conveyance at a specific cross section.</p>
+</section>
+<section id="bankfull-concept" class="level3">
+<h3 class="anchored" data-anchor-id="bankfull-concept">Bankfull</h3>
+<p>The area between the side slopes of a channel which the streamflow is normally confined (the transition point between the bank and the floodplain). This convention must be addressed when channel cross-sections are recorded, plotted, and entered into hydraulic computational programs.</p>
+<p>Describes the peak flow; the stage at which the channel is nearly full. The term, “Bankfull” modifies stage, width, channel, and discharge.</p>
+</section>
+<section id="flood-prone-concept" class="level3">
+<h3 class="anchored" data-anchor-id="flood-prone-concept">Flood Prone</h3>
+<p>Flood prone areas generally include the active floodplain and the low terrace. The elevation of the floodprone is qualitatively defines as 2 times the maximum bankfull depth.</p>
+<p>Includes the floodplain and active channel that is subjected to regular flooding, as indicated by topography, soil/substrate, and vegetation community. Changes in vegetation types, flood deposits of fine woody materials, and change in slope are often good indicators of the flood prone width. Changes in vegetation are typically presented as a transition from riparian vegetation to upland grasses and/or other mesic species that have lesser water requirements.</p>
+</section>
+<section id="planform-concept" class="level3">
+<h3 class="anchored" data-anchor-id="planform-concept">Planform</h3>
+<p>The pattern formed by a waterway as viewed from above. Channel pattern describes the planform of a channel. The primary types of planform are meandering, braided, and straight. In many cases, a stream will change pattern within its length. The type pattern is dependent on slope, discharge, and sediment load.</p>
 <ul>
-<li>In <code>ArcGIS Pro</code>, on the top menu, click “Project”, and click “Options” on the left menu.</li>
-<li>In the “Options” dialog box, click “Geoprocessing” on the left menu.</li>
-<li>On the “Geoprocessing” page, scroll down to the “R-ArcGIS Support” section.</li>
-<li>In the “R-ArcGIS Support” section, verify the installed <code>R</code> version for ArcGIS to use.</li>
-<li>Select an <code>R</code> version in the 3.6.x series.<br>
-</li>
-<li>Below the “Detected R home directories” drop-down menu, you will see the <code>arcgisbinding</code> package section. From the drop-down, choose the “Update from file” option. Navigate to the <code>arcgisbinding_1.0.1.239.zip</code> file you downloaded in an earlier step and click the OK button.</li>
+<li><strong>Loops Contain Bends:</strong> The change in direction of a stream channel.</li>
+<li><strong>Loops Have an Apex:</strong> The area near the center of a bend. Usually measured by dividing the total arc angle of the bend by two; e.g., in a 90 degree bend the apex would be the section of the arc near 45 degrees.</li>
+<li><strong>Loops Alternate:</strong> A meandering channel is formed by a series of alternating changes in direction, or bends. Relatively straight reaches of alluvial rivers rarely occur in nature. Streams meander within the banks of a straight section of the stream creating loops. Over time the alternating changes cause loops and bends to change positions.</li>
+<li><strong>Crossovers:</strong> The relatively short and shallow reach of a stream where the thalweg crosses from one bank to the other either between bends or between pools in a straight reach. The point of inflection in a meander. The point where the thalweg intersects the center line of the stream in crossing from near the outside of the next bend. The point of inflection in a meander where the thalweg intersects the centerline of the stream.</li>
+<li><strong>Valley Line:</strong> The straight line length of the valley along the same reach as the survey length is measured. This is usually obtained by topographic map, or by measuring the straight-line distance from the upstream extent of the longitudinal survey to the downstream extent. Valley length is measured over the exact same reach as the survey length and can be entered at the same time that gradient survey is measured.</li>
 </ul>
 </section>
 </section>
-<section id="install-fluvialgeomorph" class="level2">
-<h2 class="anchored" data-anchor-id="install-fluvialgeomorph">Install FluvialGeomorph</h2>
-<p>The code in the <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/">FluvialGeomorph-toolbox/</a> repository contains all of the files needed to use this ArcGIS toolbox.</p>
+<section id="geospatial" class="level2">
+<h2 class="anchored" data-anchor-id="geospatial">Geospatial</h2>
+<section id="lidar-stream-measurement" class="level3">
+<h3 class="anchored" data-anchor-id="lidar-stream-measurement">LiDAR Stream Measurement</h3>
+<p>Because near-infrared LiDAR does not penetrate the water surface, DEMs do not contain information about the channel depth, bed topography, and substrate size. The lowest elevation points from LiDAR are used to represent the water surface. The need for in-channel data for habitat monitoring and modeling fluvial processes requires high-resolution bathymetric LiDAR.</p>
 <ul>
-<li>Open a web browser and navigate to <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/">https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/</a>.</li>
-<li>In the “Releases” section in the upper right side of the page, click the green “latest” link.</li>
-<li>On the latest release page, use the “Source code (zip)” link toward the bottom of the page to download a ZIP archive of the toolbox.</li>
-<li>Copy the ZIP archive file to your project working directory.</li>
-<li>If you already have a previous version of the FluvialGeomorph toolbox, delete it now.</li>
-<li>Unzip the archive file of the latest version to your project folder.</li>
-<li>In <code>ArcGIS Pro</code>, navigate to the folder where you just unzipped the archive and you are ready to use this ArcGIS toolbox.</li>
-</ul>
-<section id="install-the-fluvialgeomorph-r-packages" class="level3">
-<h3 class="anchored" data-anchor-id="install-the-fluvialgeomorph-r-packages">Install the FluvialGeomorph <code>R</code> packages</h3>
-<p>In this section we will use the FluvialGeomorph toolbox to install the <code>R</code> packages needed by the toolbox.</p>
-<ul>
-<li>Ensure that all other <code>R</code> applications (e.g., <code>RGui</code>, <code>RStudio</code>) are closed.</li>
-<li>In <code>ArcGIS Pro</code>, navigate to the FluvialGeomorph toolbox and add it to your project.</li>
-<li>In the <code>Install</code> toolset, use the <code>Install R packages</code> tool to install the required <code>R</code> packages.</li>
-<li>In the tool’s “Messages” section, follow the <code>R</code> console output for messages on installation progress.</li>
+<li>discuss the difference between water surface and channel bottom</li>
+<li>diagram of stream</li>
 </ul>
 </section>
-<section id="troubleshooting" class="level3">
-<h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
-<p>This is a list of commonly experienced errors and warnings when installing FluvialGeomorph <code>R</code> packages and their workarounds.</p>
-<p><strong>Problem: </strong> <code>cannot remove prior installation of package '&lt;some package&gt;'</code><br>
-<strong>Solution: </strong> Ensure that all other <code>R</code> applications (e.g., <code>RGui</code>, <code>RStudio</code>) are closed.</p>
+<section id="terrain-models" class="level3">
+<h3 class="anchored" data-anchor-id="terrain-models">Terrain Models</h3>
+<p>High-density, irregularly-spaced elevation mass points in Digital Terrain Models (DTMs) are routinely produced from LiDAR point clouds. Uniformly-gridded (raster) Digital Elevation Models (DEMs) are either interpolated from LiDAR mass points or compiled from stereo imagery.</p>
+<ul>
+<li>point cloud</li>
+<li>raster</li>
+<li>surface models, terrain models</li>
+</ul>
 </section>
+<section id="terrain-visualization-concept" class="level3">
+<h3 class="anchored" data-anchor-id="terrain-visualization-concept">Terrain Visualization</h3>
+<p>Preserve Resolution and Detail. Visualize differences in LiDAR derived elevations. Accentuating the color ramp across the relevant range of elevation values. To see features in some images or raster datasets, or to distinguish them more easily from the surroundings, you may want to alter the stretch applied to the histogram. Dynamic Range Adjustment (DRA) is a tool for stretching the pixel values within the display and while not using all the pixels in the raster dataset.</p>
 </section>
-<section id="install-tutorial-data" class="level2">
-<h2 class="anchored" data-anchor-id="install-tutorial-data">Install Tutorial Data</h2>
-<p>See the <a href="2-2-TutorialData.html">Tutorial Data chapter</a> for instructions on downloading and setting-up the tutorial data.</p>
-<hr>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-R-base" class="csl-entry" role="listitem">
-R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+<section id="synthetic-stream-concept" class="level3">
+<h3 class="anchored" data-anchor-id="synthetic-stream-concept">Synthetic Stream Delineation</h3>
+<p>Derive linework from terrain data.</p>
+</section>
+<section id="flow-accumulation-concept" class="level3">
+<h3 class="anchored" data-anchor-id="flow-accumulation-concept">Flow Accumulation</h3>
+<p>D8, D16, D-inf. How streams accumulate flow from the upstream to downstream ends.</p>
+</section>
+<section id="hydro-modification-concept" class="level3">
+<h3 class="anchored" data-anchor-id="hydro-modification-concept">Hydro Modification</h3>
+<p>Modifying DEM to represent the flow of water through structures. Less resolute DEMs need more hydro modification. Inversely, more resolute DEMs need less hydro modification. The need for hydro modification is dependent on the type of structure. LiDAR collected at a high enough resolution can avoid hydro modification around bridges if the points collected can reach under the bridge on either side. Culverts and storm water structures interrupt visibility and prevent a full view of the flow of a stream and would require hydro modification.</p>
+</section>
+<section id="detrending-concept" class="level3">
+<h3 class="anchored" data-anchor-id="detrending-concept">Relative Elevation Model</h3>
+<p>Normalization/Standardization of an Elevation Model to an index value of 100 as the lowest value also known as the locally determined lowest elevation of the streamline so that the REM can be thought of as the Bank Height Model.</p>
+<ul>
+<li>“relative bank height”</li>
+<li>figure: side-by-side DEM and detrend</li>
+<li>figure: side-by-side longitudinal profiles</li>
+</ul>
+</section>
+<section id="hydraulic-modelling" class="level3">
+<h3 class="anchored" data-anchor-id="hydraulic-modelling">Hydraulic Modelling</h3>
+<ul>
+<li>Bathtub Assumption</li>
+</ul>
+</section>
+<section id="water-surface-elevation" class="level3">
+<h3 class="anchored" data-anchor-id="water-surface-elevation">Water Surface Elevation</h3>
+<p>Since water almost completely absorbs LiDAR light pulses, areas of water are usually missing elevation data. However, this does not mean that water surface elevation (WSE) cannot be derived from or accurately represented in LiDAR datasets. The elevation of water areas in DEMs derived from LiDAR point clouds can be represented due to the acquisition of points along the water’s edge. See Figure x1 for an illustration of where these points are located.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/water_edge_lidar_points.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>LiDAR Points Acquired Close to the Water’s Edge Define the Water Surface. Mississippi River, RM 435, Vicksburg, MS.</figcaption>
+</figure>
 </div>
 </div>
+</div>
+<p>The point cloud density will largely determine how accurately the water surface is captured, driven by the probability of capturing points as close to the water line as possible. In relatively low point cloud density LiDAR collections (&gt;=1m point cloud spacing) the water surface is often represented with artifacts. These artifacts are commonly referred to as TIN (Triangulated Irregular Networks) artifacts created when the DEM is derived. These occur when LiDAR points were not regularly acquired close to the water’s edge. Sections of the banklines where LiDAR points were not acquired close to the water’s edge will appear as triangular “humps” in the water surface. In Figure x2, these “hump” artifacts are clearly visible as reddish areas, while the lower elevation areas close to the water surface elevation appears as green and blue areas.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/R1_Detail.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>DEM artifacts due to LiDAR points not being captured close enough to the water’s edge. Mississippi River, RM 444-445.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="spatial-data-clearinghouses-for-terrain-data" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-data-clearinghouses-for-terrain-data">Spatial Data Clearinghouses for Terrain Data</h3>
+<ul>
+<li><a href="https://apps.nationalmap.gov/viewer/">3DEP</a></li>
+<li>The National Map</li>
+<li>State clearinghouses</li>
+</ul>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1035,13 +1088,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./1-3-FieldMethods.html" class="pagination-link" aria-label="Field Methods">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Field Methods</span></span>
+      <a href="./quickguide.html" class="pagination-link" aria-label="Quick Guide">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quick Guide</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2-2-TutorialData.html" class="pagination-link" aria-label="Tutorial Data">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./flowchart.html" class="pagination-link" aria-label="Manual Flowchart">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Manual Flowchart</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

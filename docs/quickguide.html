@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>14&nbsp; Validation – FluvialGeomorph Technical Manual</title>
+<title>2&nbsp; Quick Guide – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./References.html" rel="next">
-<link href="./3-4-FromField.html" rel="prev">
+<link href="./concepts.html" rel="next">
+<link href="./Intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -43,6 +43,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,6 +74,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -83,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Level-1.html">Workflows</a></li><li class="breadcrumb-item"><a href="./3-5-Validation.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Validation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quickguide.html">Foundations</a></li><li class="breadcrumb-item"><a href="./quickguide.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quick Guide</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -120,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0-1-Intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./Intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -135,20 +138,38 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-1-Concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Concepts</span></span></a>
+  <a href="./quickguide.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quick Guide</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-2-Metrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metrics</span></span></a>
+  <a href="./concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Concepts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-3-FieldMethods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Field Methods</span></span></a>
+  <a href="./flowchart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Manual Flowchart</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./concept_map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Manual Crosswalk</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Metrics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FieldMethods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Field Methods</span></span></a>
   </div>
 </li>
       </ul>
@@ -164,32 +185,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-1-Install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install</span></span></a>
+  <a href="./Install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Install</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-2-TutorialData.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial Data</span></span></a>
+  <a href="./TutorialData.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tutorial Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-3-Toolbox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Toolbox</span></span></a>
+  <a href="./Toolbox.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Toolbox</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-4-Features.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Derived Features</span></span></a>
+  <a href="./Features.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Derived Features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-5-Reports.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  <a href="./Reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
   </div>
 </li>
       </ul>
@@ -205,32 +226,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-1-Level-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></span></a>
+  <a href="./Level-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level 1 Workflow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-2-Level-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span></a>
+  <a href="./Level-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level 2 Workflow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-3-Level-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span></a>
+  <a href="./Level-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Level 3 Workflow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-4-FromField.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">From-Field</span></span></a>
+  <a href="./FromField.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">From-Field</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-5-Validation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
+  <a href="./Validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
   </div>
 </li>
       </ul>
@@ -244,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -275,15 +296,74 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#quick-guide-how-the-manuals-work-together" id="toc-quick-guide-how-the-manuals-work-together" class="nav-link active" data-scroll-target="#quick-guide-how-the-manuals-work-together"><span class="header-section-number">3</span> Quick Guide: How the Manuals Work Together</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-two-manual-system" id="toc-the-two-manual-system" class="nav-link" data-scroll-target="#the-two-manual-system">The Two-Manual System</a>
+  <ul class="collapse">
+  <li><a href="#technical-manual-the-science" id="toc-technical-manual-the-science" class="nav-link" data-scroll-target="#technical-manual-the-science">📐 Technical Manual: The Science</a></li>
+  <li><a href="#user-manual-the-practice" id="toc-user-manual-the-practice" class="nav-link" data-scroll-target="#user-manual-the-practice">🔧 User Manual: The Practice</a></li>
+  <li><a href="#content-breakdown" id="toc-content-breakdown" class="nav-link" data-scroll-target="#content-breakdown">🏷 Content Breakdown</a></li>
+  </ul></li>
+  <li><a href="#how-they-connect" id="toc-how-they-connect" class="nav-link" data-scroll-target="#how-they-connect">How They Connect</a></li>
+  <li><a href="#typical-workflow" id="toc-typical-workflow" class="nav-link" data-scroll-target="#typical-workflow">Typical Workflow</a>
+  <ul class="collapse">
+  <li><a href="#planning-phase" id="toc-planning-phase" class="nav-link" data-scroll-target="#planning-phase">1. <strong>Planning Phase</strong></a></li>
+  <li><a href="#field-work" id="toc-field-work" class="nav-link" data-scroll-target="#field-work">2. <strong>Field Work</strong></a></li>
+  <li><a href="#data-processing" id="toc-data-processing" class="nav-link" data-scroll-target="#data-processing">3. <strong>Data Processing</strong></a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">4. <strong>Analysis</strong></a></li>
+  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control">5. <strong>Quality Control</strong></a></li>
+  <li><a href="#reporting" id="toc-reporting" class="nav-link" data-scroll-target="#reporting">6. <strong>Reporting</strong></a></li>
+  </ul></li>
+  <li><a href="#example-calculating-bankfull-discharge" id="toc-example-calculating-bankfull-discharge" class="nav-link" data-scroll-target="#example-calculating-bankfull-discharge">Example: Calculating Bankfull Discharge</a>
+  <ul class="collapse">
+  <li><a href="#technical-manual-shows" id="toc-technical-manual-shows" class="nav-link" data-scroll-target="#technical-manual-shows">Technical Manual Shows:</a></li>
+  <li><a href="#user-manual-shows" id="toc-user-manual-shows" class="nav-link" data-scroll-target="#user-manual-shows">User Manual Shows:</a></li>
+  <li><a href="#using-both-together" id="toc-using-both-together" class="nav-link" data-scroll-target="#using-both-together">Using Both Together:</a></li>
+  </ul></li>
+  <li><a href="#quick-reference-table" id="toc-quick-reference-table" class="nav-link" data-scroll-target="#quick-reference-table">Quick Reference Table</a></li>
+  <li><a href="#user-pathways" id="toc-user-pathways" class="nav-link" data-scroll-target="#user-pathways">User Pathways</a>
+  <ul class="collapse">
+  <li><a href="#beginner-path" id="toc-beginner-path" class="nav-link" data-scroll-target="#beginner-path">🟢 Beginner Path</a></li>
+  <li><a href="#intermediate-path" id="toc-intermediate-path" class="nav-link" data-scroll-target="#intermediate-path">🟡 Intermediate Path</a></li>
+  <li><a href="#advanced-path" id="toc-advanced-path" class="nav-link" data-scroll-target="#advanced-path">🔴 Advanced Path</a></li>
+  </ul></li>
+  <li><a href="#when-to-use-which-manual" id="toc-when-to-use-which-manual" class="nav-link" data-scroll-target="#when-to-use-which-manual">When to Use Which Manual</a>
+  <ul class="collapse">
+  <li><a href="#use-technical-manual-when" id="toc-use-technical-manual-when" class="nav-link" data-scroll-target="#use-technical-manual-when">Use Technical Manual When:</a></li>
+  <li><a href="#use-user-manual-when" id="toc-use-user-manual-when" class="nav-link" data-scroll-target="#use-user-manual-when">Use User Manual When:</a></li>
+  <li><a href="#use-both-when" id="toc-use-both-when" class="nav-link" data-scroll-target="#use-both-when">Use Both When:</a></li>
+  </ul></li>
+  <li><a href="#cross-references" id="toc-cross-references" class="nav-link" data-scroll-target="#cross-references">Cross-References</a></li>
+  <li><a href="#tips-for-success" id="toc-tips-for-success" class="nav-link" data-scroll-target="#tips-for-success">Tips for Success</a>
+  <ul class="collapse">
+  <li><a href="#first-time-users" id="toc-first-time-users" class="nav-link" data-scroll-target="#first-time-users">📚 First Time Users</a></li>
+  <li><a href="#experienced-users" id="toc-experienced-users" class="nav-link" data-scroll-target="#experienced-users">🎯 Experienced Users</a></li>
+  <li><a href="#team-leaders" id="toc-team-leaders" class="nav-link" data-scroll-target="#team-leaders">👥 Team Leaders</a></li>
+  </ul></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a>
+  <ul class="collapse">
+  <li><a href="#if-youre-stuck" id="toc-if-youre-stuck" class="nav-link" data-scroll-target="#if-youre-stuck">If You’re Stuck:</a></li>
+  <li><a href="#when-reporting-issues" id="toc-when-reporting-issues" class="nav-link" data-scroll-target="#when-reporting-issues">When Reporting Issues:</a></li>
+  </ul></li>
+  <li><a href="#document-versions" id="toc-document-versions" class="nav-link" data-scroll-target="#document-versions">Document Versions</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#quick-start-checklist" id="toc-quick-start-checklist" class="nav-link" data-scroll-target="#quick-start-checklist">Quick Start Checklist</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Level-1.html">Workflows</a></li><li class="breadcrumb-item"><a href="./3-5-Validation.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Validation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quickguide.html">Foundations</a></li><li class="breadcrumb-item"><a href="./quickguide.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quick Guide</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Validation</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quick Guide</span></h1>
 </div>
 
 
@@ -300,588 +380,437 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="contributing-area-d8-tool" class="level4">
-<h4 class="anchored" data-anchor-id="contributing-area-d8-tool"><code>03a - Contributing Area D8</code></h4>
-<p><strong>Purpose</strong> - This tool creates the D8 <a href="#flow-accumulation-raster"><code>flow_accumulation_d8</code></a> and <a href="#flow-direction-raster"><code>flow_direction_d8</code></a> rasters in the output workspace for a given input DEM using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-contributing-area">user manual</a>.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_03a_ContributingAreaD8.py"><code>FluvialGeomorph-toolbox/tools/_03a_ContributingAreaD8.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Contributing Area D8 Tool Parameters.</caption>
-<colgroup>
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 84%">
-<col style="width: 3%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dem</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">processes</td>
-<td style="text-align: left;">long</td>
-<td style="text-align: left;">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Contributing_Area_D8.png" class="img-fluid figure-img" width="270"></p>
-<figcaption>03a - Contributing Area D8 Tool.</figcaption>
-</figure>
-</div>
-</div>
+<p><span class="badge badge-reference">⚡ Quick Reference</span></p>
+<section id="quick-guide-how-the-manuals-work-together" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Quick Guide: How the Manuals Work Together</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>The <strong>Fluvial Geomorphology Technical Manual</strong> and <strong>User Manual</strong> are companion documents designed to work together. Think of them as the “why” and “how” of fluvial geomorphic assessment.</p>
+<hr>
+</section>
+<section id="the-two-manual-system" class="level2">
+<h2 class="anchored" data-anchor-id="the-two-manual-system">The Two-Manual System</h2>
+<section id="technical-manual-the-science" class="level3">
+<h3 class="anchored" data-anchor-id="technical-manual-the-science">📐 Technical Manual: The Science</h3>
+<p><strong>Purpose:</strong> Explains the scientific methods, theories, and calculations</p>
+<p><strong>Use this when you need to:</strong> - Understand the underlying science - Learn calculation methodologies - Validate your approach - Explain methods to reviewers - Understand why certain procedures are used</p>
+<p><strong>Contains:</strong> - Theoretical foundations - Mathematical equations - Classification systems (e.g., Rosgen) - Method validation and limitations - Scientific references</p>
+</section>
+<section id="user-manual-the-practice" class="level3">
+<h3 class="anchored" data-anchor-id="user-manual-the-practice">🔧 User Manual: The Practice</h3>
+<p><strong>Purpose:</strong> Shows you how to use the tools and execute workflows</p>
+<p><strong>Use this when you need to:</strong> - Perform actual analyses - Follow step-by-step procedures - Use ArcGIS Pro and R tools - Process field data - Generate reports and outputs</p>
+<p><strong>Contains:</strong> - Software tutorials - Workflow procedures - Tool-specific instructions - Example datasets - Troubleshooting tips</p>
+</section>
+<section id="content-breakdown" class="level3">
+<h3 class="anchored" data-anchor-id="content-breakdown">🏷 Content Breakdown</h3>
+<p><strong>Purpose:</strong> Shows you what the badges/tags mean and how they are used in both manuals.</p>
+<p><strong>Legend:</strong></p>
+<p>Skill Levels:</p>
+<ul>
+<li><p><span class="badge badge-beginner">🟢 Beginner</span></p></li>
+<li><p><span class="badge badge-intermediate">🟡 Intermediate</span></p></li>
+<li><p><span class="badge badge-advanced">🔴 Advanced</span></p></li>
+</ul>
+<p>Topic Classifications:</p>
+<ul>
+<li><p><span class="badge badge-reference">⚡ Quick Reference</span></p></li>
+<li><p><span class="badge badge-resource">📚️ Resource</span></p></li>
+<li><p><span class="badge badge-theory">📐 Theory</span></p></li>
+<li><p><span class="badge badge-practical">🔧 Practical</span></p></li>
+<li><p><span class="badge badge-caution">⚠️ Caution</span></p></li>
+<li><p><span class="badge badge-evaluate">☑️ Evaluate</span></p></li>
+</ul>
+<p><strong>Uses:</strong></p>
+<ul>
+<li>Skill levels are set by proficiency level of GIS skills and concept understanding.</li>
+<li>Topic classifications are based on the following:
+<ul>
+<li><strong>References</strong> provide extensive information and explanation of the material in the manuals.</li>
+<li><strong>Resources</strong> provides a breakdown of icons, classifications, and how the 2 manuals work together.</li>
+<li><strong>Theory</strong> provides background on the sources and methods used in the tools and process.</li>
+<li><strong>Practical</strong> labels the application based portions of the manuals</li>
+<li><strong>Caution marks</strong> contents to pay special attention to based on need or common errors.</li>
+<li><strong>Evaluate</strong> notes parts that cover evaluating application inputs and outputs.</li>
+</ul></li>
+</ul>
+<hr>
+<p><span class="badge badge-reference">⚡ Quick Reference</span></p>
+<p>This is a test of a coding book icon: <i class="fa-solid fa-book-code" aria-label="book-code"></i></p>
+</section>
+</section>
+<section id="how-they-connect" class="level2">
+<h2 class="anchored" data-anchor-id="how-they-connect">How They Connect</h2>
+<div style="text-align: center; max-width: 800px; margin: 0 auto;">
+  <div style="display: flex; gap: 40px; justify-content: center; margin-bottom: 30px;">
+    <div style="flex: 1; background: #e8f4f8; padding: 20px; border-radius: 10px; border: 3px solid #17a2b8;">
+      <h4 style="margin-top: 0;" class="anchored">📐 Technical Manual</h4>
+      <p><strong>WHY &amp; WHAT</strong></p>
+      <ul style="text-align: left; line-height: 1.8;">
+        <li>Theory</li>
+        <li>Equations</li>
+        <li>Methods</li>
+        <li>Validation</li>
+      </ul>
+    </div>
+    <div style="flex: 1; background: #fff4e6; padding: 20px; border-radius: 10px; border: 3px solid #fd7e14;">
+      <h4 style="margin-top: 0;" class="anchored">🔧 User Manual</h4>
+      <p><strong>HOW &amp; WHEN</strong></p>
+      <ul style="text-align: left; line-height: 1.8;">
+        <li>Workflows</li>
+        <li>Software steps</li>
+        <li>Examples</li>
+        <li>Troubleshooting</li>
+      </ul>
+    </div>
+  </div>
+  <div style="font-size: 2em; margin: 20px 0;">↓</div>
+  <div style="background: #d4edda; padding: 20px; border-radius: 10px; border: 3px solid #28a745; max-width: 400px; margin: 0 auto;">
+    <h4 style="margin: 0;" class="anchored">✅ Your Successful Analysis</h4>
+  </div>
 </div>
 <hr>
 </section>
-<section id="contributing-area-tool" class="level4">
-<h4 class="anchored" data-anchor-id="contributing-area-tool"><code>03 - Contributing Area</code></h4>
-<p><strong>Purpose</strong> - This tool calculates the <a href="https://hydrology.usu.edu/taudem/taudem5/help53/DInfinityContributingArea.html">D-infinity contributing area</a> for each pixel in the input DEM and creates a <a href="#contributing-area-raster"><code>contributing_area</code></a> raster in the output workspace using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-contributing-area">user manual</a>.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_03_ContributingArea.py"><code>FluvialGeomorph-toolbox/tools/_03_ContributingArea.py</code></a>. This Python script uses the <a href="https://hydrology.usu.edu/taudem/taudem5/index.html">TauDEM</a> <a href="https://hydrology.usu.edu/taudem/taudem5/help53/DInfinityContributingArea.html">D-Infinity Contributing Area tool</a> to calculate the specific catchment area (which is the contributing area per unit contour length using the multiple flow direction D-infinity approach).</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Contributing Area Tool Parameters.</caption>
-<colgroup>
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 84%">
-<col style="width: 3%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dem</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">processes</td>
-<td style="text-align: left;">long</td>
-<td style="text-align: left;">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Contributing_Area.png" class="img-fluid figure-img" width="272"></p>
-<figcaption>03 - Contributing Area Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="typical-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="typical-workflow">Typical Workflow</h2>
+<section id="planning-phase" class="level3">
+<h3 class="anchored" data-anchor-id="planning-phase">1. <strong>Planning Phase</strong></h3>
+<ul>
+<li>📐 <strong>Technical Manual:</strong> Review methods for your stream type</li>
+<li>🔧 <strong>User Manual:</strong> Check data requirements and tool setup</li>
+</ul>
+</section>
+<section id="field-work" class="level3">
+<h3 class="anchored" data-anchor-id="field-work">2. <strong>Field Work</strong></h3>
+<ul>
+<li>📐 <strong>Technical Manual:</strong> Understand what measurements are needed and why</li>
+<li>🔧 <strong>User Manual:</strong> Follow field data collection protocols</li>
+</ul>
+</section>
+<section id="data-processing" class="level3">
+<h3 class="anchored" data-anchor-id="data-processing">3. <strong>Data Processing</strong></h3>
+<ul>
+<li>🔧 <strong>User Manual:</strong> Execute workflows in ArcGIS Pro and R</li>
+<li>📐 <strong>Technical Manual:</strong> Reference when you need to understand a calculation</li>
+</ul>
+</section>
+<section id="analysis" class="level3">
+<h3 class="anchored" data-anchor-id="analysis">4. <strong>Analysis</strong></h3>
+<ul>
+<li>🔧 <strong>User Manual:</strong> Run analysis tools</li>
+<li>📐 <strong>Technical Manual:</strong> Interpret results using scientific context</li>
+</ul>
+</section>
+<section id="quality-control" class="level3">
+<h3 class="anchored" data-anchor-id="quality-control">5. <strong>Quality Control</strong></h3>
+<ul>
+<li>📐 <strong>Technical Manual:</strong> Validate results against expected ranges</li>
+<li>🔧 <strong>User Manual:</strong> Use QC checklists</li>
+</ul>
+</section>
+<section id="reporting" class="level3">
+<h3 class="anchored" data-anchor-id="reporting">6. <strong>Reporting</strong></h3>
+<ul>
+<li>📐 <strong>Technical Manual:</strong> Cite methods and equations</li>
+<li>🔧 <strong>User Manual:</strong> Generate standard outputs</li>
+</ul>
 <hr>
 </section>
-<section id="stream-network-tool" class="level4">
-<h4 class="anchored" data-anchor-id="stream-network-tool"><code>04 - Stream Network</code></h4>
-<p><strong>Purpose</strong> - This tool creates the synthetic flow network <a href="2-4-Features.html#stream-network-fc"><code>stream_network</code></a> polyline feature class from a <a href="#contributing-area-raster"><code>contributing_area</code></a> raster for a given stream initiation threshold using these instruction in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#derive-stream-network">user manual</a>.</p>
-<p><strong>Code</strong> - The ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04_StreamNetwork.py"><code>FluvialGeomorph-toolbox/tools/_04_StreamNetwork.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Stream Network Tool Parameters.</caption>
-<colgroup>
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 84%">
-<col style="width: 3%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">contrib_area</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the D-Infinity contributing area raster created by the Contributing Area tool.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">threshold</td>
-<td style="text-align: left;">long</td>
-<td style="text-align: left;">Flow accumulation threshold to initiate a stream expressed in the units of the source DEM used to accumulate the flow.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">processes</td>
-<td style="text-align: left;">long</td>
-<td style="text-align: left;">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Stream_Network.png" class="img-fluid figure-img" width="270"></p>
-<figcaption>04 - Stream Network Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
+</section>
+<section id="example-calculating-bankfull-discharge" class="level2">
+<h2 class="anchored" data-anchor-id="example-calculating-bankfull-discharge">Example: Calculating Bankfull Discharge</h2>
+<section id="technical-manual-shows" class="level3">
+<h3 class="anchored" data-anchor-id="technical-manual-shows">Technical Manual Shows:</h3>
+<ul>
+<li><strong>Why:</strong> Manning’s equation is appropriate for uniform flow</li>
+<li><strong>What:</strong> Q = (1/n)AR<sup>(2/3)S</sup>(1/2)</li>
+<li><strong>Theory:</strong> Relationship between flow, roughness, and geometry</li>
+<li><strong>Limitations:</strong> Assumes uniform flow conditions</li>
+<li><strong>Validation:</strong> Typical ranges for different stream types</li>
+</ul>
+</section>
+<section id="user-manual-shows" class="level3">
+<h3 class="anchored" data-anchor-id="user-manual-shows">User Manual Shows:</h3>
+<ul>
+<li><strong>How:</strong> Step-by-step in ArcGIS Pro and R</li>
+<li><strong>Where:</strong> Which tools to click</li>
+<li><strong>When:</strong> At what stage in the workflow</li>
+<li><strong>Troubleshooting:</strong> Common errors and solutions</li>
+<li><strong>Output:</strong> What the final report looks like</li>
+</ul>
+</section>
+<section id="using-both-together" class="level3">
+<h3 class="anchored" data-anchor-id="using-both-together">Using Both Together:</h3>
+<ol type="1">
+<li>📐 Read Technical Manual to understand Manning’s equation</li>
+<li>🔧 Follow User Manual to input your cross-section data</li>
+<li>🔧 Run the FluvialGeomorph tool</li>
+<li>📐 Check Technical Manual to verify results are reasonable</li>
+<li>🔧 Use User Manual to generate final report</li>
+</ol>
 <hr>
 </section>
-<section id="stream-network-points-tool" class="level4">
-<h4 class="anchored" data-anchor-id="stream-network-points-tool"><code>04a - Stream Network Points</code></h4>
-<p><strong>Purpose</strong> - This tool converts the <a href="2-4-Features.html#stream-network-fc"><code>stream_network</code></a> to the <a href="#stream-network-points-fc"><code>stream_network_points</code></a> points feature class using the these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-flowline-points">user manual</a>. This tool extracts elevation information from the DEM and calculates the drainage area.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04a_StreamNetworkPoints.py"><code>FluvialGeomorph-toolbox/tools/_04a_StreamNetworkPoints.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Stream Network Points Tool Parameters.</caption>
+</section>
+<section id="quick-reference-table" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference-table">Quick Reference Table</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 16%">
-<col style="width: 55%">
-<col style="width: 9%">
+<col style="width: 34%">
+<col style="width: 42%">
+<col style="width: 23%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
+<th>I Need To…</th>
+<th>Use This Manual</th>
+<th>Section</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
+<td>Understand Rosgen classification</td>
+<td>📐 Technical</td>
+<td>Stream Classification</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">stream_network</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">Path to the edited <code>stream_network</code> feature class.</td>
-<td style="text-align: left;">required</td>
+<td>Run classification in ArcGIS</td>
+<td>🔧 User</td>
+<td>Workflow Chapter</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">flow_accum</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the flow accumulation model.</td>
-<td style="text-align: left;">required</td>
+<td>Learn about hydraulic geometry</td>
+<td>📐 Technical</td>
+<td>Hydraulic Geometry</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">dem</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
-<td style="text-align: left;">required</td>
+<td>Calculate width/depth ratios</td>
+<td>🔧 User</td>
+<td>Analysis Tools</td>
+</tr>
+<tr class="odd">
+<td>Understand sediment transport equations</td>
+<td>📐 Technical</td>
+<td>Sediment Transport</td>
+</tr>
+<tr class="even">
+<td>Process LiDAR data</td>
+<td>🔧 User</td>
+<td>Data Preparation</td>
+</tr>
+<tr class="odd">
+<td>Validate my discharge calculation</td>
+<td>📐 Technical</td>
+<td>Quality Control</td>
+</tr>
+<tr class="even">
+<td>Troubleshoot an error message</td>
+<td>🔧 User</td>
+<td>Troubleshooting</td>
+</tr>
+<tr class="odd">
+<td>Cite methods in a report</td>
+<td>📐 Technical</td>
+<td>References</td>
+</tr>
+<tr class="even">
+<td>Generate cross-section plots</td>
+<td>🔧 User</td>
+<td>Visualization Tools</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Stream_Network_Points.png" class="img-fluid figure-img" width="269"></p>
-<figcaption>04a - Stream Network Point Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
 <hr>
 </section>
-<section id="slope-sinuosity-tool" class="level4">
-<h4 class="anchored" data-anchor-id="slope-sinuosity-tool"><code>04b - Slope and Sinuosity</code></h4>
-<p><strong>Purpose</strong> - This tool calculates the <a href="#gradient-fc"><code>gradient_*</code></a> points feature class for a <a href="2-4-Features.html#flowline-points-fc"><code>flowline_points</code></a> or <a href="2-4-Features.html#stream-network-fc"><code>stream_network</code></a> feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-slope-and-sinuosity">user manual</a>.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the R script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04b_Gradient.R"><code>FluvialGeomorph-toolbox/tools/_04b_Gradient.R</code></a>. This Python script call the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/slope_sinuosity.R"><code>fluvgeo::slope_sinuosity</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Stream Network Points Tool Parameters.</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 8%">
-<col style="width: 74%">
-<col style="width: 5%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">flowline_points_fc</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">The full path to a <code>flowline_points</code> feature class.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">gradient_distance</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">The number of features to lead (upstream) and lag (downstream) to calculate the slope and sinuosity. Must be an integer.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">use_smoothing</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Determines if smoothed elevation values are used to calculate gradient and sinuosity (default is FALSE).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">loess_span</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">The loess regression span parameter (defaults to 0.05).</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Slope_and_Sinuosity.png" class="img-fluid figure-img" width="270"></p>
-<figcaption>04b - Slope and Sinuosity Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="user-pathways" class="level2">
+<h2 class="anchored" data-anchor-id="user-pathways">User Pathways</h2>
+<section id="beginner-path" class="level3">
+<h3 class="anchored" data-anchor-id="beginner-path">🟢 Beginner Path</h3>
+<ol type="1">
+<li><strong>Start:</strong> 🔧 User Manual - Getting Started</li>
+<li><strong>Learn:</strong> 📐 Technical Manual - Basic Concepts</li>
+<li><strong>Practice:</strong> 🔧 User Manual - Tutorial with example data</li>
+<li><strong>Understand:</strong> 📐 Technical Manual - Method details</li>
+<li><strong>Apply:</strong> 🔧 User Manual - Your own project</li>
+</ol>
+</section>
+<section id="intermediate-path" class="level3">
+<h3 class="anchored" data-anchor-id="intermediate-path">🟡 Intermediate Path</h3>
+<ol type="1">
+<li><strong>Review:</strong> 📐 Technical Manual - Specific method</li>
+<li><strong>Execute:</strong> 🔧 User Manual - Corresponding workflow</li>
+<li><strong>Validate:</strong> 📐 Technical Manual - Expected results</li>
+<li><strong>Refine:</strong> 🔧 User Manual - Advanced options</li>
+</ol>
+</section>
+<section id="advanced-path" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-path">🔴 Advanced Path</h3>
+<ol type="1">
+<li><strong>Deep dive:</strong> 📐 Technical Manual - Theory and equations</li>
+<li><strong>Customize:</strong> 🔧 User Manual - Advanced workflows</li>
+<li><strong>Validate:</strong> 📐 Technical Manual - Sensitivity analysis</li>
+<li><strong>Innovate:</strong> Adapt methods for unique situations</li>
+</ol>
 <hr>
 </section>
-<section id="watershed-tool" class="level4">
-<h4 class="anchored" data-anchor-id="watershed-tool"><code>04c - Watershed</code></h4>
-<p><strong>Purpose</strong> - This tool creates the <a href="#watershed-fc"><code>watershed</code></a> polygon feature class in the output workspace using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#delineate-watersheds">user manual</a>. This tool calculates the extent of the upstream drainage area for each point feature in the input <a href="#watershed-points-fc"><code>watershed_points</code></a> point feature class. This tool optionally calculates the landcover proportion in each watershed feature.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04c_Watersheds.py"><code>FluvialGeomorph-toolbox/tools/_04c_Watersheds.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Watershed Tool Parameters.</caption>
-<colgroup>
-<col style="width: 16%">
-<col style="width: 11%">
-<col style="width: 65%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">points</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">Path to the <code>watershed_points</code> feature class.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">point_ID_field</td>
-<td style="text-align: left;">Field</td>
-<td style="text-align: left;">Field in the <code>watershed_points</code> feature class that contains the point IDs.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">flow_accumulation_d8</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the flow accumulation model.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">flow_direction_d8</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the <code>flow_direction_d8</code> model (must use D8 method).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">snap_distance</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">The distance the point will be snapped to find the cell of highest flow accumulation.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">landcover</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to a categorical land cover raster.</td>
-<td style="text-align: left;">optional</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Watershed.png" class="img-fluid figure-img" width="272"></p>
-<figcaption>04c - Watershed Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
+</section>
+<section id="when-to-use-which-manual" class="level2">
+<h2 class="anchored" data-anchor-id="when-to-use-which-manual">When to Use Which Manual</h2>
+<section id="use-technical-manual-when" class="level3">
+<h3 class="anchored" data-anchor-id="use-technical-manual-when">Use Technical Manual When:</h3>
+<ul>
+<li>✅ Writing a methods section for a report</li>
+<li>✅ Explaining your approach to reviewers</li>
+<li>✅ Understanding why a method works</li>
+<li>✅ Determining if a method is appropriate</li>
+<li>✅ Validating results</li>
+<li>✅ Teaching concepts to others</li>
+<li>✅ Researching alternative approaches</li>
+</ul>
+</section>
+<section id="use-user-manual-when" class="level3">
+<h3 class="anchored" data-anchor-id="use-user-manual-when">Use User Manual When:</h3>
+<ul>
+<li>✅ Setting up software for the first time</li>
+<li>✅ Following a step-by-step workflow</li>
+<li>✅ Troubleshooting an error</li>
+<li>✅ Learning tool-specific procedures</li>
+<li>✅ Processing data</li>
+<li>✅ Generating outputs</li>
+<li>✅ Finding example datasets</li>
+</ul>
+</section>
+<section id="use-both-when" class="level3">
+<h3 class="anchored" data-anchor-id="use-both-when">Use Both When:</h3>
+<ul>
+<li>✅ Starting a new project</li>
+<li>✅ Learning a new analysis method</li>
+<li>✅ Quality checking your work</li>
+<li>✅ Training team members</li>
+<li>✅ Developing standard operating procedures</li>
+</ul>
 <hr>
 </section>
-<section id="channel-slope-tool" class="level4">
-<h4 class="anchored" data-anchor-id="channel-slope-tool"><code>09 - Channel Slope</code></h4>
-<p><strong>Purpose</strong> - This tool creates the <a href="#channel-slope-raster"><code>channel_slope</code></a> raster using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-channel-slope-raster">user manual</a>. This tool uses banks extent polygon to calculate a slope raster for the channel area.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_09_ChannelSlope.py"><code>FluvialGeomorph-toolbox/tools/_09_ChannelSlope.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Channel Slope Tool Parameters.</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 10%">
-<col style="width: 71%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dem</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">banks_poly</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">Path to a banks polygon feature class representing the channel area for which slope will be calculated.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">z_factor</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">Number of ground x,y units in one surface z unit.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Channel_Slope.png" class="img-fluid figure-img" width="270"></p>
-<figcaption>09 - Channel Slope Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
+</section>
+<section id="cross-references" class="level2">
+<h2 class="anchored" data-anchor-id="cross-references">Cross-References</h2>
+<p>Both manuals include cross-references to help you navigate:</p>
+<p><strong>In Technical Manual:</strong> &gt; “For step-by-step instructions on running this analysis, see User Manual Chapter 5: Hydraulic Geometry Analysis”</p>
+<p><strong>In User Manual:</strong> &gt; “For the theoretical basis of this calculation, see Technical Manual Section 3.2: Manning’s Equation”</p>
 <hr>
 </section>
-<section id="centerline-tool" class="level4">
-<h4 class="anchored" data-anchor-id="centerline-tool"><code>10 - Centerline</code></h4>
-<p><strong>Purpose</strong> - This tool creates the <a href="#centerline-fc"><code>centerline</code></a> polyline feature class using these instructions for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-initial-centerline">Level 1</a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-initial-centerline">Level 2</a> from the user manual. The centerline is the strem flow path that lies midway between the banks at bankfull.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_10_Centerline.py"><code>FluvialGeomorph-toolbox/tools/_10_Centerline.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Centerline Tool Parameters.</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 8%">
-<col style="width: 76%">
-<col style="width: 5%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dem</td>
-<td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">banks_poly</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">Path to a banks polygon representing the channel area for which slope will be calculated.</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">smooth_tolerance</td>
-<td style="text-align: left;">long</td>
-<td style="text-align: left;">The PAEK smoothing tolerance that controls the calculating of new vertices. Acceptable smoothing occurs with values between 2 - 5.</td>
-<td style="text-align: left;">required</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_Centerline.png" class="img-fluid figure-img" width="270"></p>
-<figcaption>10 - Centerline Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="tips-for-success" class="level2">
+<h2 class="anchored" data-anchor-id="tips-for-success">Tips for Success</h2>
+<section id="first-time-users" class="level3">
+<h3 class="anchored" data-anchor-id="first-time-users">📚 First Time Users</h3>
+<ol type="1">
+<li>Skim both manuals to understand the structure</li>
+<li>Start with User Manual tutorials using example data</li>
+<li>Reference Technical Manual when you want deeper understanding</li>
+<li>Bookmark frequently used sections in both</li>
+</ol>
+</section>
+<section id="experienced-users" class="level3">
+<h3 class="anchored" data-anchor-id="experienced-users">🎯 Experienced Users</h3>
+<ol type="1">
+<li>Use Technical Manual as a reference guide</li>
+<li>Use User Manual for workflow reminders</li>
+<li>Contribute feedback to improve both manuals</li>
+</ol>
+</section>
+<section id="team-leaders" class="level3">
+<h3 class="anchored" data-anchor-id="team-leaders">👥 Team Leaders</h3>
+<ol type="1">
+<li>Assign Technical Manual reading for conceptual training</li>
+<li>Use User Manual for hands-on training sessions</li>
+<li>Create project-specific SOPs combining both manuals</li>
+</ol>
 <hr>
 </section>
-<section id="xs-ras-watersurface-tool" class="level4">
-<h4 class="anchored" data-anchor-id="xs-ras-watersurface-tool"><code>16 - XS RAS Watersurface</code></h4>
-<p><strong>Purpose</strong> - This tool adds or updates the field <code>ras_wse_*</code> to a <a href="2-4-Features.html#xs-dimensions-fc">cross section dimensions</a> feature class using these instructions for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#add-modeled-water-surface-elevation">Level 2</a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#add-modeled-water-surface-elevation-1">Level 3</a> from the user manual.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_16_XS_RAS_WaterSurface.py"><code>FluvialGeomorph-toolbox/tools/_16_XS_RAS_WaterSurface.py</code></a>.</p>
-<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>XS RAS Watersurface Tool Parameters.</caption>
+</section>
+<section id="getting-help" class="level2">
+<h2 class="anchored" data-anchor-id="getting-help">Getting Help</h2>
+<section id="if-youre-stuck" class="level3">
+<h3 class="anchored" data-anchor-id="if-youre-stuck">If You’re Stuck:</h3>
+<ol type="1">
+<li><strong>Check User Manual</strong> troubleshooting section</li>
+<li><strong>Review Technical Manual</strong> to ensure method is appropriate</li>
+<li><strong>Verify</strong> you’re using the right tool for your stream type</li>
+<li><strong>Consult</strong> example datasets to compare</li>
+<li><strong>Contact</strong> support with specific questions</li>
+</ol>
+</section>
+<section id="when-reporting-issues" class="level3">
+<h3 class="anchored" data-anchor-id="when-reporting-issues">When Reporting Issues:</h3>
+<p>Include information from both manuals: - <strong>Method used</strong> (from Technical Manual) - <strong>Tool/workflow</strong> (from User Manual) - <strong>Expected vs.&nbsp;actual results</strong> - <strong>Error messages</strong></p>
+<hr>
+</section>
+</section>
+<section id="document-versions" class="level2">
+<h2 class="anchored" data-anchor-id="document-versions">Document Versions</h2>
+<p>Always ensure both manuals are from the <strong>same version release</strong>: - Technical Manual v1.2.0 ↔︎ User Manual v1.2.0 ✅ - Technical Manual v1.2.0 ↔︎ User Manual v1.0.0 ⚠️ (may have inconsistencies)</p>
+<p>Check the version number on the title page of each manual.</p>
+<hr>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 9%">
-<col style="width: 74%">
-<col style="width: 5%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 31%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Required</th>
+<th>Manual</th>
+<th>Focus</th>
+<th>When to Use</th>
+<th>Key Content</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">output_workspace</td>
-<td style="text-align: left;">Workspace</td>
-<td style="text-align: left;">Path to the output workspace.</td>
-<td style="text-align: left;">required</td>
+<td>📐 <strong>Technical</strong></td>
+<td>Science &amp; Theory</td>
+<td>Understanding WHY</td>
+<td>Methods, equations, validation</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">xs_dimensions</td>
-<td style="text-align: left;">Feature Class</td>
-<td style="text-align: left;">Path to a cross section dimension line feature class.</td>
-<td style="text-align: left;">required</td>
+<td>🔧 <strong>User</strong></td>
+<td>Practice &amp; Application</td>
+<td>Doing the work</td>
+<td>Workflows, tools, examples</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RAS_depth</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Path to the RAS model depth raster (elevation units feet).</td>
-<td style="text-align: left;">required</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RAS_model_name</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Name of the RAS model that the depth raster represents. This name will be used to name the calculated WSE fields.</td>
-<td style="text-align: left;">required</td>
+<td>🤝 <strong>Together</strong></td>
+<td>Complete Solution</td>
+<td>Best results</td>
+<td>Informed analysis with proper execution</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/toolbox/tool_XS_RAS_Watersurface.png" class="img-fluid figure-img" width="269"></p>
-<figcaption>16 - XS RAS Watersurface Tool.</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p><strong>Remember:</strong> The Technical Manual gives you the knowledge; the User Manual gives you the skills. Together, they give you expertise.</p>
+<hr>
+</section>
+<section id="quick-start-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="quick-start-checklist">Quick Start Checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Download both manuals</label></li>
+<li><label><input type="checkbox">Verify versions match</label></li>
+<li><label><input type="checkbox">Review this guide</label></li>
+<li><label><input type="checkbox">Identify your user level (Beginner/Intermediate/Advanced)</label></li>
+<li><label><input type="checkbox">Follow your pathway</label></li>
+<li><label><input type="checkbox">Bookmark key sections in both manuals</label></li>
+<li><label><input type="checkbox">Download example datasets from User Manual</label></li>
+<li><label><input type="checkbox">Review relevant methods in Technical Manual</label></li>
+<li><label><input type="checkbox">Execute first workflow from User Manual</label></li>
+<li><label><input type="checkbox">Validate results using Technical Manual</label></li>
+</ul>
+<hr>
+<p><strong>Ready to begin?</strong> Start with the User Manual’s “Getting Started” chapter, and keep the Technical Manual open for reference!</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1451,13 +1380,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./3-4-FromField.html" class="pagination-link" aria-label="From-Field">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">From-Field</span></span>
+      <a href="./Intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./References.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./concepts.html" class="pagination-link" aria-label="Concepts">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Concepts</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

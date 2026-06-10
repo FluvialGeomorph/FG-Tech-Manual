@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix B — DB Migration – FluvialGeomorph Technical Manual</title>
+<title>5&nbsp; Manual Crosswalk – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./QA-checklist.html" rel="prev">
+<link href="./Metrics.html" rel="next">
+<link href="./flowchart.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,6 +70,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -83,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./QA-checklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DB-migration.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quickguide.html">Foundations</a></li><li class="breadcrumb-item"><a href="./concept_map.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Manual Crosswalk</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./concept_map.html" class="sidebar-item-text sidebar-link">
+  <a href="./concept_map.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Manual Crosswalk</span></span></a>
   </div>
 </li>
@@ -282,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./DB-migration.html" class="sidebar-item-text sidebar-link active">
+  <a href="./DB-migration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></span></a>
   </div>
 </li>
@@ -298,17 +303,41 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
-  <li><a href="#units-of-analysis" id="toc-units-of-analysis" class="nav-link" data-scroll-target="#units-of-analysis">Units of Analysis</a></li>
-  <li><a href="#fg-features-data-model" id="toc-fg-features-data-model" class="nav-link" data-scroll-target="#fg-features-data-model">FG Features Data Model</a></li>
-  <li><a href="#combined-data-model" id="toc-combined-data-model" class="nav-link" data-scroll-target="#combined-data-model">Combined Data Model</a></li>
-  <li><a href="#legacy-folder-structure" id="toc-legacy-folder-structure" class="nav-link" data-scroll-target="#legacy-folder-structure">Legacy Folder Structure</a></li>
-  <li><a href="#new-folder-structure" id="toc-new-folder-structure" class="nav-link" data-scroll-target="#new-folder-structure">New Folder Structure</a></li>
-  <li><a href="#example-project-folder-to-study-area-database-crosswalk" id="toc-example-project-folder-to-study-area-database-crosswalk" class="nav-link" data-scroll-target="#example-project-folder-to-study-area-database-crosswalk">Example Project Folder to Study Area Database Crosswalk</a></li>
-  <li><a href="#proposed-file-structure" id="toc-proposed-file-structure" class="nav-link" data-scroll-target="#proposed-file-structure">Proposed File Structure</a>
+  <li><a href="#concept-map-technical-manual-user-manual" id="toc-concept-map-technical-manual-user-manual" class="nav-link active" data-scroll-target="#concept-map-technical-manual-user-manual"><span class="header-section-number">6</span> Concept Map: Technical Manual ↔︎ User Manual</a>
   <ul class="collapse">
-  <li><a href="#option-1-reach-folders" id="toc-option-1-reach-folders" class="nav-link" data-scroll-target="#option-1-reach-folders">Option 1 (Reach Folders)</a></li>
-  <li><a href="#option-2-nested-stream-and-reach-folders" id="toc-option-2-nested-stream-and-reach-folders" class="nav-link" data-scroll-target="#option-2-nested-stream-and-reach-folders">Option 2 (Nested Stream and Reach Folders)</a></li>
+  <li><a href="#visual-concept-map" id="toc-visual-concept-map" class="nav-link" data-scroll-target="#visual-concept-map">Visual Concept Map</a></li>
+  <li><a href="#detailed-chapter-correspondence-table" id="toc-detailed-chapter-correspondence-table" class="nav-link" data-scroll-target="#detailed-chapter-correspondence-table">Detailed Chapter Correspondence Table</a>
+  <ul class="collapse">
+  <li><a href="#level-1-introduction-setup" id="toc-level-1-introduction-setup" class="nav-link" data-scroll-target="#level-1-introduction-setup">Level 1: Introduction &amp; Setup</a></li>
+  <li><a href="#level-2-field-methods" id="toc-level-2-field-methods" class="nav-link" data-scroll-target="#level-2-field-methods">Level 2: Field Methods</a></li>
+  <li><a href="#level-3-data-processing" id="toc-level-3-data-processing" class="nav-link" data-scroll-target="#level-3-data-processing">Level 3: Data Processing</a></li>
+  <li><a href="#level-4-analysis-calculations" id="toc-level-4-analysis-calculations" class="nav-link" data-scroll-target="#level-4-analysis-calculations">Level 4: Analysis &amp; Calculations</a></li>
+  <li><a href="#level-5-validation-reporting" id="toc-level-5-validation-reporting" class="nav-link" data-scroll-target="#level-5-validation-reporting">Level 5: Validation &amp; Reporting</a></li>
+  <li><a href="#level-6-troubleshooting-support" id="toc-level-6-troubleshooting-support" class="nav-link" data-scroll-target="#level-6-troubleshooting-support">Level 6: Troubleshooting &amp; Support</a></li>
+  </ul></li>
+  <li><a href="#cross-reference-quick-guide" id="toc-cross-reference-quick-guide" class="nav-link" data-scroll-target="#cross-reference-quick-guide">Cross-Reference Quick Guide</a>
+  <ul class="collapse">
+  <li><a href="#by-analysis-type" id="toc-by-analysis-type" class="nav-link" data-scroll-target="#by-analysis-type">By Analysis Type</a></li>
+  </ul></li>
+  <li><a href="#integrated-workflow-maps" id="toc-integrated-workflow-maps" class="nav-link" data-scroll-target="#integrated-workflow-maps">Integrated Workflow Maps</a>
+  <ul class="collapse">
+  <li><a href="#complete-level-1-assessment-workflow" id="toc-complete-level-1-assessment-workflow" class="nav-link" data-scroll-target="#complete-level-1-assessment-workflow">Complete Level-1 Assessment Workflow</a></li>
+  </ul></li>
+  <li><a href="#topic-based-cross-reference" id="toc-topic-based-cross-reference" class="nav-link" data-scroll-target="#topic-based-cross-reference">Topic-Based Cross-Reference</a>
+  <ul class="collapse">
+  <li><a href="#bankfull-stage-discharge" id="toc-bankfull-stage-discharge" class="nav-link" data-scroll-target="#bankfull-stage-discharge">Bankfull Stage &amp; Discharge</a></li>
+  <li><a href="#stream-classification" id="toc-stream-classification" class="nav-link" data-scroll-target="#stream-classification">Stream Classification</a></li>
+  <li><a href="#cross-section-analysis" id="toc-cross-section-analysis" class="nav-link" data-scroll-target="#cross-section-analysis">Cross-Section Analysis</a></li>
+  </ul></li>
+  <li><a href="#study-guide-using-both-manuals-together" id="toc-study-guide-using-both-manuals-together" class="nav-link" data-scroll-target="#study-guide-using-both-manuals-together">Study Guide: Using Both Manuals Together</a>
+  <ul class="collapse">
+  <li><a href="#for-each-new-topic" id="toc-for-each-new-topic" class="nav-link" data-scroll-target="#for-each-new-topic">For Each New Topic:</a></li>
+  </ul></li>
+  <li><a href="#bookmark-these-page-combinations" id="toc-bookmark-these-page-combinations" class="nav-link" data-scroll-target="#bookmark-these-page-combinations">Bookmark These Page Combinations</a>
+  <ul class="collapse">
+  <li><a href="#most-frequently-used-together" id="toc-most-frequently-used-together" class="nav-link" data-scroll-target="#most-frequently-used-together">Most Frequently Used Together:</a></li>
+  </ul></li>
+  <li><a href="#quick-reference-card" id="toc-quick-reference-card" class="nav-link" data-scroll-target="#quick-reference-card">Quick Reference Card</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -316,9 +345,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./QA-checklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DB-migration.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quickguide.html">Foundations</a></li><li class="breadcrumb-item"><a href="./concept_map.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Manual Crosswalk</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix B — DB Migration</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Manual Crosswalk</span></h1>
 </div>
 
 
@@ -335,165 +364,876 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="purpose" class="level2">
-<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
-<p>This chapter documents a data management evolution phase of this project. As initially concieved (2017-2018), the FluvialGeomorph progam had a very “site-based” orientation. At that stage, we were focused on developing reproducible, automated tools to derive high resolution stream metrics from remotely collected LiDAR datasets. The <code>FluvialGeomorph toolbox</code> could process study areas with stream lengths 1 to 100s of miles long at high spatial resolution (1ft-1m DEM resolution). However, no effort was made to combine the derived data from all these “sites” into a single database. From the beginning, we conceptualized how our “site-scale” data model would scale into a larger dataset sometime later. This chapter describes our process for massaging these “site-based” datasets into a single database.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Note to Authors">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p><span class="badge badge-resource">📚️ Resource</span></p>
+<section id="concept-map-technical-manual-user-manual" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Concept Map: Technical Manual ↔︎ User Manual</h1>
+<section id="visual-concept-map" class="level2">
+<h2 class="anchored" data-anchor-id="visual-concept-map">Visual Concept Map</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    subgraph TM["📐 Technical Manual"]
+        TM1[1. Introduction &amp; Overview]
+        TM2[2. Stream Classification]
+        TM3[3. Hydraulic Geometry]
+        TM4[4. Bankfull Identification]
+        TM5[5. Cross-Section Analysis]
+        TM6[6. Longitudinal Profile]
+        TM7[7. Sediment Transport]
+        TM8[8. Channel Stability]
+        TM9[9. Validation &amp; QC]
+        TM10[10. Regional Curves]
+    end
+    
+    subgraph UM["🔧 User Manual"]
+        UM1[1. Getting Started]
+        UM2[2. Data Requirements]
+        UM3[3. Field Data Collection]
+        UM4[4. Data Processing]
+        UM5[5. Terrain Development]
+        UM6[6. Reach Delineation]
+        UM7[7. Cross-Section Tools]
+        UM8[8. Bankfull Analysis]
+        UM9[9. Classification Workflow]
+        UM10[10. Hydraulic Geometry]
+        UM11[11. Sediment Analysis]
+        UM12[12. Report Generation]
+        UM13[13. Quality Control]
+        UM14[14. Troubleshooting]
+    end
+    
+    TM1 -.-&gt;|Context| UM1
+    TM1 -.-&gt;|Overview| UM2
+    
+    TM2 --&gt;|Methods| UM9
+    TM2 -.-&gt;|Field ID| UM3
+    
+    TM3 --&gt;|Equations| UM10
+    TM3 -.-&gt;|Theory| UM7
+    
+    TM4 --&gt;|Criteria| UM8
+    TM4 --&gt;|Indicators| UM3
+    
+    TM5 --&gt;|Analysis Methods| UM7
+    TM5 -.-&gt;|Processing| UM4
+    
+    TM6 --&gt;|Profile Analysis| UM6
+    TM6 -.-&gt;|Slope Calc| UM5
+    
+    TM7 --&gt;|Transport Equations| UM11
+    TM7 -.-&gt;|Substrate| UM3
+    
+    TM8 -.-&gt;|Assessment| UM9
+    TM8 -.-&gt;|Indicators| UM3
+    
+    TM9 --&gt;|Validation| UM13
+    TM9 --&gt;|Expected Ranges| UM12
+    
+    TM10 -.-&gt;|Regional Data| UM10
+    TM10 -.-&gt;|Comparison| UM13
+    
+    style TM fill:#e8f4f8
+    style UM fill:#fff4e6
+</pre>
 </div>
-<div class="callout-title-container flex-fill">
-Note to Authors
+<p></p></figure><p></p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>This chapter must stay aligned with terminology in the chapter <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Concepts.html">User Manual Concepts</a>. Ensure the change of terms <code>Site</code> -&gt; <code>Stream</code> is accomplished.</p>
 </div>
-</div>
+<p><strong>Legend:</strong> - <strong>Solid arrows (→)</strong>: Primary/direct correspondence - <strong>Dashed arrows (-.-&gt;)</strong>: Supporting/reference relationship</p>
+<hr>
 </section>
-<section id="units-of-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="units-of-analysis">Units of Analysis</h2>
-<p>From the beginning of this effort, we established a consistent set of units of analysis. For our purpose, the top level unit of analysis is defined by a work request that comes from a customer, the “study area”. Within this arbitrary Aera of Interest (AOI), to structure our data we adopted a nested heirarchy of parent-child sub units. Understood as: Study areas have one or more streams. Streams have one or more reaches. Reaches have one or more survey events. This defines the overarching heirarchy of our data model.</p>
-<pre><code>Study Area
-└─── Streams
-     └─── Reaches 
-          └─── Survey Events</code></pre>
+<section id="detailed-chapter-correspondence-table" class="level2">
+<h2 class="anchored" data-anchor-id="detailed-chapter-correspondence-table">Detailed Chapter Correspondence Table</h2>
+<section id="level-1-introduction-setup" class="level3">
+<h3 class="anchored" data-anchor-id="level-1-introduction-setup">Level 1: Introduction &amp; Setup</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 20%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>📐 Technical Manual</th>
+<th>🔧 User Manual</th>
+<th>Relationship</th>
+<th>Use Together For</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ch 1: Introduction &amp; Overview</strong></td>
+<td><strong>Ch 1: Getting Started</strong></td>
+<td>Foundation</td>
+<td>Understanding project scope</td>
+</tr>
+<tr class="even">
+<td>• Purpose &amp; scope<br>• Fluvial concepts<br>• Assessment framework</td>
+<td>• Software installation<br>• Project setup<br>• Interface overview</td>
+<td>Technical provides context;<br>User provides implementation</td>
+<td>• Initial project planning<br>• Team orientation<br>• Scope definition</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 1: Introduction</strong></td>
+<td><strong>Ch 2: Data Requirements</strong></td>
+<td>Planning</td>
+<td>Determining data needs</td>
+</tr>
+<tr class="even">
+<td>• Assessment levels<br>• Method selection</td>
+<td>• Required datasets<br>• Data formats<br>• Minimum requirements</td>
+<td>Technical explains why;<br>User specifies what</td>
+<td>• Project scoping<br>• Budget planning<br>• Timeline estimation</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="level-2-field-methods" class="level3">
+<h3 class="anchored" data-anchor-id="level-2-field-methods">Level 2: Field Methods</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 20%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>📐 Technical Manual</th>
+<th>🔧 User Manual</th>
+<th>Relationship</th>
+<th>Use Together For</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ch 4: Bankfull Identification</strong></td>
+<td><strong>Ch 3: Field Data Collection</strong></td>
+<td>Direct Application</td>
+<td>Field surveys</td>
+</tr>
+<tr class="even">
+<td>• Bankfull indicators<br>• Field identification<br>• Validation criteria</td>
+<td>• Survey protocols<br>• Equipment use<br>• Data recording forms</td>
+<td>Technical defines indicators;<br>User shows how to measure</td>
+<td>• Training field crews<br>• Conducting surveys<br>• Documenting features</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 2: Stream Classification</strong></td>
+<td><strong>Ch 3: Field Data Collection</strong></td>
+<td>Supporting</td>
+<td>Stream characterization</td>
+</tr>
+<tr class="even">
+<td>• Rosgen classification<br>• Stream types<br>• Morphological features</td>
+<td>• Feature identification<br>• Photo documentation<br>• Field forms</td>
+<td>Technical explains features;<br>User shows how to document</td>
+<td>• Stream reconnaissance<br>• Feature identification<br>• Classification prep</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 7: Sediment Transport</strong></td>
+<td><strong>Ch 3: Field Data Collection</strong></td>
+<td>Supporting</td>
+<td>Substrate assessment</td>
+</tr>
+<tr class="even">
+<td>• Particle size theory<br>• Substrate classification</td>
+<td>• Pebble count procedures<br>• Substrate sampling<br>• Data recording</td>
+<td>Technical explains importance;<br>User provides protocols</td>
+<td>• Substrate characterization<br>• Roughness estimation<br>• Transport potential</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="level-3-data-processing" class="level3">
+<h3 class="anchored" data-anchor-id="level-3-data-processing">Level 3: Data Processing</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 20%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>📐 Technical Manual</th>
+<th>🔧 User Manual</th>
+<th>Relationship</th>
+<th>Use Together For</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ch 5: Cross-Section Analysis</strong></td>
+<td><strong>Ch 4: Data Processing</strong></td>
+<td>Foundation</td>
+<td>Data preparation</td>
+</tr>
+<tr class="even">
+<td>• Cross-section theory<br>• Spacing requirements<br>• Orientation standards</td>
+<td>• Data import<br>• Format conversion<br>• Data cleaning</td>
+<td>Technical sets standards;<br>User implements processing</td>
+<td>• Importing survey data<br>• Quality checking<br>• Format standardization</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 6: Longitudinal Profile</strong></td>
+<td><strong>Ch 5: Terrain Development</strong></td>
+<td>Direct Application</td>
+<td>DEM creation</td>
+</tr>
+<tr class="even">
+<td>• Profile analysis theory<br>• Slope calculation methods<br>• Elevation requirements</td>
+<td>• LiDAR processing<br>• DEM generation<br>• Terrain tools</td>
+<td>Technical explains methods;<br>User executes workflows</td>
+<td>• Creating terrain models<br>• Extracting profiles<br>• Calculating slopes</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 6: Longitudinal Profile</strong></td>
+<td><strong>Ch 6: Reach Delineation</strong></td>
+<td>Direct Application</td>
+<td>Defining reaches</td>
+</tr>
+<tr class="even">
+<td>• Reach definition criteria<br>• Homogeneity requirements<br>• Break point identification</td>
+<td>• Reach delineation tools<br>• Breakpoint selection<br>• Reach segmentation</td>
+<td>Technical defines criteria;<br>User applies tools</td>
+<td>• Segmenting streams<br>• Identifying breaks<br>• Creating reach boundaries</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="level-4-analysis-calculations" class="level3">
+<h3 class="anchored" data-anchor-id="level-4-analysis-calculations">Level 4: Analysis &amp; Calculations</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 20%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>📐 Technical Manual</th>
+<th>🔧 User Manual</th>
+<th>Relationship</th>
+<th>Use Together For</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ch 5: Cross-Section Analysis</strong></td>
+<td><strong>Ch 7: Cross-Section Tools</strong></td>
+<td>Direct Application</td>
+<td>Cross-section analysis</td>
+</tr>
+<tr class="even">
+<td>• Geometric calculations<br>• Area, width, depth<br>• Hydraulic radius</td>
+<td>• Cross-section generation<br>• Dimension extraction<br>• Visualization tools</td>
+<td>Technical provides equations;<br>User executes calculations</td>
+<td>• Generating cross-sections<br>• Extracting dimensions<br>• Creating plots</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 4: Bankfull Identification</strong></td>
+<td><strong>Ch 8: Bankfull Analysis</strong></td>
+<td>Direct Application</td>
+<td>Bankfull determination</td>
+</tr>
+<tr class="even">
+<td>• Bankfull stage theory<br>• Discharge calculations<br>• Manning’s equation</td>
+<td>• Bankfull tools workflow<br>• Stage identification<br>• Discharge computation</td>
+<td>Technical explains methods;<br>User runs analysis</td>
+<td>• Identifying bankfull stage<br>• Calculating discharge<br>• Validating results</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 2: Stream Classification</strong></td>
+<td><strong>Ch 9: Classification Workflow</strong></td>
+<td>Direct Application</td>
+<td>Stream typing</td>
+</tr>
+<tr class="even">
+<td>• Rosgen classification system<br>• Entrenchment ratio<br>• Width/depth ratio<br>• Sinuosity<br>• Slope categories</td>
+<td>• Classification tool<br>• Parameter calculation<br>• Type assignment<br>• Classification reports</td>
+<td>Technical defines system;<br>User implements workflow</td>
+<td>• Classifying streams<br>• Calculating parameters<br>• Assigning stream types<br>• Generating classification reports</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 3: Hydraulic Geometry</strong></td>
+<td><strong>Ch 10: Hydraulic Geometry</strong></td>
+<td>Direct Application</td>
+<td>Dimensional analysis</td>
+</tr>
+<tr class="even">
+<td>• Power law relationships<br>• Regional curves theory<br>• Drainage area relationships<br>• Exponent interpretation</td>
+<td>• Hydraulic geometry tools<br>• Curve fitting<br>• Relationship plotting<br>• Prediction tools</td>
+<td>Technical explains relationships;<br>User generates curves</td>
+<td>• Creating regional curves<br>• Predicting dimensions<br>• Comparing relationships<br>• Validating predictions</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 7: Sediment Transport</strong></td>
+<td><strong>Ch 11: Sediment Analysis</strong></td>
+<td>Direct Application</td>
+<td>Transport calculations</td>
+</tr>
+<tr class="even">
+<td>• Transport equations<br>• Shields parameter<br>• Critical shear stress<br>• Capacity calculations</td>
+<td>• Sediment transport tools<br>• Shear stress calculation<br>• Capacity estimation<br>• Mobility analysis</td>
+<td>Technical provides equations;<br>User runs calculations</td>
+<td>• Calculating transport capacity<br>• Assessing mobility<br>• Estimating sediment loads<br>• Stability assessment</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="level-5-validation-reporting" class="level3">
+<h3 class="anchored" data-anchor-id="level-5-validation-reporting">Level 5: Validation &amp; Reporting</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 20%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>📐 Technical Manual</th>
+<th>🔧 User Manual</th>
+<th>Relationship</th>
+<th>Use Together For</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ch 9: Validation &amp; QC</strong></td>
+<td><strong>Ch 13: Quality Control</strong></td>
+<td>Direct Application</td>
+<td>Quality assurance</td>
+</tr>
+<tr class="even">
+<td>• Expected value ranges<br>• Validation criteria<br>• Error sources<br>• Uncertainty analysis</td>
+<td>• QC checklists<br>• Validation procedures<br>• Error checking<br>• Data review</td>
+<td>Technical sets standards;<br>User implements checks</td>
+<td>• Validating results<br>• Checking calculations<br>• Identifying errors<br>• Ensuring quality</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 10: Regional Curves</strong></td>
+<td><strong>Ch 13: Quality Control</strong></td>
+<td>Supporting</td>
+<td>Result comparison</td>
+</tr>
+<tr class="even">
+<td>• Regional relationships<br>• Comparison methods<br>• Acceptable ranges</td>
+<td>• Comparison tools<br>• Outlier identification<br>• Regional data plots</td>
+<td>Technical provides context;<br>User compares data</td>
+<td>• Comparing to regional data<br>• Identifying outliers<br>• Validating predictions</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 9: Validation &amp; QC</strong></td>
+<td><strong>Ch 12: Report Generation</strong></td>
+<td>Supporting</td>
+<td>Documentation</td>
+</tr>
+<tr class="even">
+<td>• Reporting standards<br>• Required documentation<br>• Method citations</td>
+<td>• Report templates<br>• Output generation<br>• Visualization tools<br>• Export formats</td>
+<td>Technical defines requirements;<br>User creates outputs</td>
+<td>• Generating reports<br>• Creating figures<br>• Documenting methods<br>• Exporting results</td>
+</tr>
+<tr class="odd">
+<td><strong>Ch 8: Channel Stability</strong></td>
+<td><strong>Ch 12: Report Generation</strong></td>
+<td>Supporting</td>
+<td>Stability reporting</td>
+</tr>
+<tr class="even">
+<td>• Stability indicators<br>• Assessment criteria<br>• Interpretation guidance</td>
+<td>• Stability outputs<br>• Summary tables<br>• Condition reports</td>
+<td>Technical interprets results;<br>User formats outputs</td>
+<td>• Assessing stability<br>• Reporting conditions<br>• Summarizing findings</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="level-6-troubleshooting-support" class="level3">
+<h3 class="anchored" data-anchor-id="level-6-troubleshooting-support">Level 6: Troubleshooting &amp; Support</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 20%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>📐 Technical Manual</th>
+<th>🔧 User Manual</th>
+<th>Relationship</th>
+<th>Use Together For</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ch 9: Validation &amp; QC</strong></td>
+<td><strong>Ch 14: Troubleshooting</strong></td>
+<td>Supporting</td>
+<td>Problem solving</td>
+</tr>
+<tr class="even">
+<td>• Common issues<br>• Method limitations<br>• When methods fail</td>
+<td>• Error messages<br>• Common problems<br>• Solutions<br>• Workarounds</td>
+<td>Technical explains why problems occur;<br>User provides solutions</td>
+<td>• Diagnosing issues<br>• Understanding errors<br>• Finding solutions<br>• Determining alternatives</td>
+</tr>
+<tr class="odd">
+<td><strong>All Chapters</strong></td>
+<td><strong>Ch 14: Troubleshooting</strong></td>
+<td>Reference</td>
+<td>Error resolution</td>
+</tr>
+<tr class="even">
+<td>• Method-specific limitations<br>• Assumptions<br>• Applicability</td>
+<td>• Tool-specific errors<br>• Workflow issues<br>• Data problems</td>
+<td>Technical clarifies appropriateness;<br>User fixes technical issues</td>
+<td>• Resolving errors<br>• Checking assumptions<br>• Verifying applicability</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="cross-reference-quick-guide" class="level2">
+<h2 class="anchored" data-anchor-id="cross-reference-quick-guide">Cross-Reference Quick Guide</h2>
+<section id="by-analysis-type" class="level3">
+<h3 class="anchored" data-anchor-id="by-analysis-type">By Analysis Type</h3>
+<section id="stream-classification-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="stream-classification-analysis">Stream Classification Analysis</h4>
+<p><strong>Read in this order:</strong></p>
+<ol type="1">
+<li>📐 <strong>Technical Ch 2: Stream Classification</strong> (30 min)
 <ul>
-<li><strong>Study Area</strong>: These are the primary work units and correspond to projects that customers have requested for analysis.</li>
-<li><strong>Stream</strong>: Study areas are subdivided into “streams”. Streams are typically identified by names and subwatersheds within the project study area.</li>
-<li><strong>Reach</strong>: Streams are further subdivided into “reaches”. Reaches are defined according to project goals and use conventional rules for specifying reaches (i.e., tributary confluence to confluence), significant infrastructure, changes in surficial geology, etc.</li>
-<li><strong>Survey Event</strong>: Since FluvialGeomorph analysis is based on terrain surveys, the timing of the survey is a critical factor in the analysis. This data object is how we define point-in-time collections and the assessments made from them.</li>
-</ul>
-</section>
-<section id="fg-features-data-model" class="level2">
-<h2 class="anchored" data-anchor-id="fg-features-data-model">FG Features Data Model</h2>
-<p>From the beginning, we devoted most of our attention to developing the FluvialGeomorph Features Data Model. See the FluvialGeomorph Tech Manual chapter <a href="2-4-Features.qmd">Derived Features</a> for details. All <code>FluvialGeomorph-toolbox</code> analysis takes place within a single file geodatabase (ESRI <code>.gdb</code> format). For its spatial extent, it represents one reach in the data model above. For its temporal extent, it represents one survey event in the data model above. Therefore, this geodatabase can be described as a “Reach-Survey Event” Geodatabase in terms of the data model above. The rationale for the structure is for each survey event, all of the features will be derived from that DEM. When a new survey events occurs (or an historic survey is discovered), this procedure can be repeated. This study design maintains completely independent geodatabases to represent reach conditions at each point in time.</p>
-<pre><code>Reach-Survey Event Geodatabase
-├─── DEM
-├─── Cutlines
-├─── DEM Hydro
-├─── Stream Network
-├─── Flowline
-├─── Flowline Points
-├─── REM
-├─── Cross Sections
-├─── Cross Section Points
-├─── Cross Section Dimensions
-├─── Features
-├─── Bankfull Area
-├─── Banklines
-├─── Bankline Points
-├─── Valleyline
-└─── Loop Points</code></pre>
-</section>
-<section id="combined-data-model" class="level2">
-<h2 class="anchored" data-anchor-id="combined-data-model">Combined Data Model</h2>
-<p>These two data models are grafted together by using the high-level “unit of analysis” data model to represent the overarching structure. Each “reach-survey event” geodatabase represents a specific “Survey Event” within the “unit of analysis” data model.</p>
-<pre><code>Study Area
-└─── Streams
-     └─── Reaches 
-          └─── Survey Events
-               └─── FG Features (DEM Hydro, Flowline, Flowline_points, etc.)</code></pre>
-</section>
-<section id="legacy-folder-structure" class="level2">
-<h2 class="anchored" data-anchor-id="legacy-folder-structure">Legacy Folder Structure</h2>
-<p>The FluvialGemorph program file structure is roughly modeled on the “unit of analysis” data model. Although the folders in the <code>/FluvialGeomorph/Projects/</code> folder roughly align with the concept of “Study Area”, the sub folders almost never utilize “Streams” and sometimes utilize “Reaches”.</p>
-<pre><code>/FluvialGeomorph/
-└─── Projects/
-     ├─── MVR_SJ_Copperas Creek/
-     ├─── NWO_Papillion/
-     └─── ...
-</code></pre>
-</section>
-<section id="new-folder-structure" class="level2">
-<h2 class="anchored" data-anchor-id="new-folder-structure">New Folder Structure</h2>
-<p>To accomplish this migration, we have elected to refactor our file system to more closely match the database structure we are adopting. This will help ensure a cleaner translation between periodically updated, locally processed derived artifacts to be loaded into a central database. All processing is accomplished locally with idempotent database loading. We have decided to leave the current <code>/FluvialGeomorph/Projects/</code> folder structure in place while implementing the file system refactoring into <code>/FluvialGeomorph/studies/</code>. This migration plan design requires no work stoppage. New work can begin using the new approach, while legacy work can be migrated on a stepwise, pay-as-you-go basis. Eventually the <code>/FluvialGeomorph/Projects/</code> folder will be archived after all of its content has migrated.</p>
-<pre><code>/FluvialGeomorph/
-├─── Projects/
-|    ├─── MVR_SJ_Copperas_Creek/
-|    ├─── NWO_Papillion/
-|    └─── ...
-└─── studies
-     ├─── MVR_Copperas_Creek/
-     ├─── NWO_Papillion/
-     └─── ...</code></pre>
-</section>
-<section id="example-project-folder-to-study-area-database-crosswalk" class="level2">
-<h2 class="anchored" data-anchor-id="example-project-folder-to-study-area-database-crosswalk">Example Project Folder to Study Area Database Crosswalk</h2>
-<p>Here are some examples to illustrate how legacy project work will be migrated to this new approach.</p>
+<li>Understand Rosgen system</li>
+<li>Learn classification parameters</li>
+<li>Review stream types</li>
+</ul></li>
+<li>🔧 <strong>User Ch 3: Field Data Collection</strong> (15 min)
 <ul>
-<li><code>/FluvialGeomorph/Projects/MVR_SJ_Copperas Creek/</code></li>
-</ul>
-<pre><code>Study Area: MVR-Copperas Creek
-└─── Streams: Copperas Creek IL
-     └─── Reaches: R1-R15, Sites 1-19
-          └─── Survey Events: 2009, 2019, 2022</code></pre>
+<li>Field identification procedures</li>
+<li>Photo documentation</li>
+</ul></li>
+<li>🔧 <strong>User Ch 9: Classification Workflow</strong> (45 min)
 <ul>
-<li><code>/FluvialGeomorph/Projects/NWO_Papillion/</code></li>
-</ul>
-<pre><code>Study Area: NWO-Papillion Creek
-└─── Streams: Sugar Creek, South Papillion Creek, Cole Creek, West Papillion, ...  
-     └─── Reaches: R1; R1-R2a; R1-R5; R1-R9
-          └─── Survey Events: 2010, 2016, 2018</code></pre>
+<li>Run classification tools</li>
+<li>Calculate parameters</li>
+<li>Assign stream type</li>
+</ul></li>
+<li>📐 <strong>Technical Ch 9: Validation</strong> (15 min)
+<ul>
+<li>Verify classification makes sense</li>
+<li>Check against regional data</li>
+</ul></li>
+</ol>
+<hr>
 </section>
-<section id="proposed-file-structure" class="level2">
-<h2 class="anchored" data-anchor-id="proposed-file-structure">Proposed File Structure</h2>
-<section id="option-1-reach-folders" class="level3">
-<h3 class="anchored" data-anchor-id="option-1-reach-folders">Option 1 (Reach Folders)</h3>
-<pre><code>Study_Area_1/
-├─── Reaches/
-│    ├─── Reach_1/
-│    │    ├─── Reach1_year1.gdb/
-│    │    ├─── Reach1_year*.gdb/*
-|    │    ├─── Elevation/*
-|    │    ├─── Exports/*
-│    |    ├─── Maps/*
-│    |    └─── Reports/*
-│    ├─── Reach_2/
-│    │    ├─── Reach2_year1.gdb/
-│    │    ├─── Reach2_year*.gdb/*
-|    │    ├─── Elevation/*
-|    │    ├─── Exports/*
-│    |    ├─── Maps/*
-│    |    └─── Reports/*
-│    └─── Reach_3/
-|         ├─── ...
-├─── Elevation/*
-├─── Exports/*
-├─── Maps/*
-└─── Reports/</code></pre>
-<p>Note: *optional folder</p>
+<section id="bankfull-discharge-calculation" class="level4">
+<h4 class="anchored" data-anchor-id="bankfull-discharge-calculation">Bankfull Discharge Calculation</h4>
+<p><strong>Read in this order:</strong></p>
+<ol type="1">
+<li>📐 <strong>Technical Ch 4: Bankfull Identification</strong> (20 min)
+<ul>
+<li>Learn bankfull indicators</li>
+<li>Understand discharge theory</li>
+<li>Review Manning’s equation</li>
+</ul></li>
+<li>🔧 <strong>User Ch 3: Field Data Collection</strong> (20 min)
+<ul>
+<li>Survey bankfull features</li>
+<li>Measure slope</li>
+<li>Document indicators</li>
+</ul></li>
+<li>🔧 <strong>User Ch 7: Cross-Section Tools</strong> (30 min)
+<ul>
+<li>Generate cross-sections</li>
+<li>Extract dimensions</li>
+</ul></li>
+<li>🔧 <strong>User Ch 8: Bankfull Analysis</strong> (30 min)
+<ul>
+<li>Run bankfull tools</li>
+<li>Calculate discharge</li>
+<li>Generate outputs</li>
+</ul></li>
+<li>📐 <strong>Technical Ch 9: Validation</strong> (15 min)
+<ul>
+<li>Check results against expected ranges</li>
+<li>Validate discharge values</li>
+</ul></li>
+</ol>
+<hr>
 </section>
-<section id="option-2-nested-stream-and-reach-folders" class="level3">
-<h3 class="anchored" data-anchor-id="option-2-nested-stream-and-reach-folders">Option 2 (Nested Stream and Reach Folders)</h3>
-<pre><code>Study_Area_1/
-├─── Streams/
-│    ├─── Stream_1/
-│    │    └─── Reaches/
-|    │         ├─── Reach_1/
-|    │         │    ├─── Reach1_year1.gdb/
-│    |         │    ├─── Reach1_year*.gdb/*
-│    |         │    ├─── Elevation/*
-│    |         │    ├─── Exports/*
-│    |         │    ├─── Maps/*
-│    |         │    └─── Reports/*
-│    |         ├─── Reach_2/
-│    |         │    ├─── Reach2_year1.gdb/
-│    │         │    ├─── Reach2_year*.gdb/*
-│    |         │    ├─── Elevation/*
-│    |         │    ├─── Exports/*
-│    |         │    ├─── Maps/*
-│    |         │    └─── Reports/*
-│    |         └─── ***
-│    └─── Stream_2/
-│         ├─── Reaches/
-|              ├─── ***
-├─── Elevation/*
-├─── Exports/*
-├─── Maps/*
-└─── Reports/</code></pre>
-<p>Note: *optional folder</p>
+<section id="hydraulic-geometry-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="hydraulic-geometry-analysis">Hydraulic Geometry Analysis</h4>
+<p><strong>Read in this order:</strong></p>
+<ol type="1">
+<li>📐 <strong>Technical Ch 3: Hydraulic Geometry</strong> (30 min)
+<ul>
+<li>Understand power law relationships</li>
+<li>Learn about regional curves</li>
+<li>Review exponents</li>
+</ul></li>
+<li>🔧 <strong>User Ch 2: Data Requirements</strong> (10 min)
+<ul>
+<li>Determine data needs</li>
+<li>Check minimum requirements</li>
+</ul></li>
+<li>🔧 <strong>User Ch 10: Hydraulic Geometry</strong> (45 min)
+<ul>
+<li>Run hydraulic geometry tools</li>
+<li>Generate regional curves</li>
+<li>Create predictions</li>
+</ul></li>
+<li>📐 <strong>Technical Ch 10: Regional Curves</strong> (20 min)
+<ul>
+<li>Compare to published curves</li>
+<li>Interpret relationships</li>
+</ul></li>
+<li>🔧 <strong>User Ch 13: Quality Control</strong> (15 min)
+<ul>
+<li>Validate curve fits</li>
+<li>Check outliers</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="sediment-transport-assessment" class="level4">
+<h4 class="anchored" data-anchor-id="sediment-transport-assessment">Sediment Transport Assessment</h4>
+<p><strong>Read in this order:</strong></p>
+<ol type="1">
+<li>📐 <strong>Technical Ch 7: Sediment Transport</strong> (40 min)
+<ul>
+<li>Learn transport equations</li>
+<li>Understand critical shear stress</li>
+<li>Review Shields parameter</li>
+</ul></li>
+<li>🔧 <strong>User Ch 3: Field Data Collection</strong> (20 min)
+<ul>
+<li>Conduct pebble counts</li>
+<li>Sample substrate</li>
+<li>Document bed material</li>
+</ul></li>
+<li>🔧 <strong>User Ch 11: Sediment Analysis</strong> (30 min)
+<ul>
+<li>Run transport calculations</li>
+<li>Calculate shear stress</li>
+<li>Assess mobility</li>
+</ul></li>
+<li>📐 <strong>Technical Ch 8: Channel Stability</strong> (20 min)
+<ul>
+<li>Interpret results</li>
+<li>Assess stability implications</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+</section>
+</section>
+<section id="integrated-workflow-maps" class="level2">
+<h2 class="anchored" data-anchor-id="integrated-workflow-maps">Integrated Workflow Maps</h2>
+<section id="complete-level-1-assessment-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="complete-level-1-assessment-workflow">Complete Level-1 Assessment Workflow</h3>
+<pre><code>Planning Phase:
+├─ 📐 TM Ch 1: Introduction → Understand assessment approach
+├─ 🔧 UM Ch 1: Getting Started → Set up software
+└─ 🔧 UM Ch 2: Data Requirements → Identify needed data
+
+Field Phase:
+├─ 📐 TM Ch 4: Bankfull ID → Learn indicators
+├─ 📐 TM Ch 2: Classification → Understand features
+├─ 🔧 UM Ch 3: Field Collection → Conduct surveys
+└─ 📐 TM Ch 7: Sediment → Substrate theory
+
+Processing Phase:
+├─ 🔧 UM Ch 4: Data Processing → Import data
+├─ 🔧 UM Ch 5: Terrain Development → Create DEM
+├─ 🔧 UM Ch 6: Reach Delineation → Define reaches
+└─ 🔧 UM Ch 7: Cross-Sections → Generate XS
+
+Analysis Phase:
+├─ 🔧 UM Ch 8: Bankfull Analysis → Calculate dimensions
+├─ 🔧 UM Ch 9: Classification → Assign stream type
+├─ 🔧 UM Ch 10: Hydraulic Geometry → Analyze relationships
+└─ 🔧 UM Ch 11: Sediment Analysis → Assess transport
+
+Validation Phase:
+├─ 📐 TM Ch 9: Validation → Check results
+├─ 📐 TM Ch 10: Regional Curves → Compare data
+└─ 🔧 UM Ch 13: Quality Control → Run QC checks
+
+Reporting Phase:
+├─ 🔧 UM Ch 12: Report Generation → Create outputs
+└─ 📐 TM Ch 1-10: All → Cite methods</code></pre>
+<hr>
+</section>
+</section>
+<section id="topic-based-cross-reference" class="level2">
+<h2 class="anchored" data-anchor-id="topic-based-cross-reference">Topic-Based Cross-Reference</h2>
+<section id="bankfull-stage-discharge" class="level3">
+<h3 class="anchored" data-anchor-id="bankfull-stage-discharge">Bankfull Stage &amp; Discharge</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 45%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Technical Manual</th>
+<th>User Manual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Theory</strong></td>
+<td>Ch 4: Bankfull theory, return interval</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><strong>Field Indicators</strong></td>
+<td>Ch 4: Indicator descriptions</td>
+<td>Ch 3: Field identification</td>
+</tr>
+<tr class="odd">
+<td><strong>Survey Methods</strong></td>
+<td>Ch 4: Survey requirements</td>
+<td>Ch 3: Survey protocols</td>
+</tr>
+<tr class="even">
+<td><strong>Calculations</strong></td>
+<td>Ch 4: Manning’s equation, roughness</td>
+<td>Ch 8: Calculation workflow</td>
+</tr>
+<tr class="odd">
+<td><strong>Tools</strong></td>
+<td>—</td>
+<td>Ch 8: Bankfull tools</td>
+</tr>
+<tr class="even">
+<td><strong>Validation</strong></td>
+<td>Ch 9: Expected ranges</td>
+<td>Ch 13: QC procedures</td>
+</tr>
+<tr class="odd">
+<td><strong>Reporting</strong></td>
+<td>Ch 4: Documentation standards</td>
+<td>Ch 12: Output generation</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="stream-classification" class="level3">
+<h3 class="anchored" data-anchor-id="stream-classification">Stream Classification</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 45%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Technical Manual</th>
+<th>User Manual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Classification System</strong></td>
+<td>Ch 2: Rosgen system details</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><strong>Parameters</strong></td>
+<td>Ch 2: Definitions, calculations</td>
+<td>Ch 9: Parameter extraction</td>
+</tr>
+<tr class="odd">
+<td><strong>Stream Types</strong></td>
+<td>Ch 2: Type descriptions</td>
+<td>Ch 9: Type assignment</td>
+</tr>
+<tr class="even">
+<td><strong>Field Assessment</strong></td>
+<td>Ch 2: Visual identification</td>
+<td>Ch 3: Field procedures</td>
+</tr>
+<tr class="odd">
+<td><strong>Tools</strong></td>
+<td>—</td>
+<td>Ch 9: Classification tools</td>
+</tr>
+<tr class="even">
+<td><strong>Validation</strong></td>
+<td>Ch 2: Typical ranges by type</td>
+<td>Ch 13: Classification QC</td>
+</tr>
+<tr class="odd">
+<td><strong>Reporting</strong></td>
+<td>Ch 2: Classification reporting</td>
+<td>Ch 12: Classification outputs</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cross-section-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="cross-section-analysis">Cross-Section Analysis</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 45%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Technical Manual</th>
+<th>User Manual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Theory</strong></td>
+<td>Ch 5: Geometric principles</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><strong>Spacing</strong></td>
+<td>Ch 5: Spacing requirements</td>
+<td>Ch 7: XS placement</td>
+</tr>
+<tr class="odd">
+<td><strong>Orientation</strong></td>
+<td>Ch 5: Perpendicular requirements</td>
+<td>Ch 7: XS orientation</td>
+</tr>
+<tr class="even">
+<td><strong>Dimensions</strong></td>
+<td>Ch 5: Calculation methods</td>
+<td>Ch 7: Dimension extraction</td>
+</tr>
+<tr class="odd">
+<td><strong>Tools</strong></td>
+<td>—</td>
+<td>Ch 7: Cross-section tools</td>
+</tr>
+<tr class="even">
+<td><strong>Visualization</strong></td>
+<td>Ch 5: Standard plots</td>
+<td>Ch 7: Plotting tools</td>
+</tr>
+<tr class="odd">
+<td><strong>QC</strong></td>
+<td>Ch 9: XS validation</td>
+<td>Ch 13: XS quality checks</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="study-guide-using-both-manuals-together" class="level2">
+<h2 class="anchored" data-anchor-id="study-guide-using-both-manuals-together">Study Guide: Using Both Manuals Together</h2>
+<section id="for-each-new-topic" class="level3">
+<h3 class="anchored" data-anchor-id="for-each-new-topic">For Each New Topic:</h3>
+<p><strong>Step 1: Foundation (Technical Manual)</strong> - Read relevant theory chapter - Understand equations and methods - Note key concepts and limitations</p>
+<p><strong>Step 2: Application (User Manual)</strong> - Review data requirements - Follow workflow step-by-step - Use example data first</p>
+<p><strong>Step 3: Practice (User Manual)</strong> - Apply to your own data - Follow procedures exactly - Document any issues</p>
+<p><strong>Step 4: Validation (Technical Manual)</strong> - Check results against expected ranges - Verify assumptions are met - Interpret findings</p>
+<p><strong>Step 5: Refinement (Both)</strong> - Troubleshoot issues (User Manual) - Understand why issues occur (Technical Manual) - Adjust approach as needed</p>
+<hr>
+</section>
+</section>
+<section id="bookmark-these-page-combinations" class="level2">
+<h2 class="anchored" data-anchor-id="bookmark-these-page-combinations">Bookmark These Page Combinations</h2>
+<section id="most-frequently-used-together" class="level3">
+<h3 class="anchored" data-anchor-id="most-frequently-used-together">Most Frequently Used Together:</h3>
+<ol type="1">
+<li><strong>📐 TM Ch 4 + 🔧 UM Ch 8</strong>: Bankfull analysis</li>
+<li><strong>📐 TM Ch 2 + 🔧 UM Ch 9</strong>: Stream classification</li>
+<li><strong>📐 TM Ch 3 + 🔧 UM Ch 10</strong>: Hydraulic geometry</li>
+<li><strong>📐 TM Ch 9 + 🔧 UM Ch 13</strong>: Validation &amp; QC</li>
+<li><strong>📐 TM Ch 5 + 🔧 UM Ch 7</strong>: Cross-section analysis</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="quick-reference-card" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference-card">Quick Reference Card</h2>
+<p><strong>Print this and keep it handy:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>I Need To…</th>
+<th>Start Here</th>
+<th>Then Go Here</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Understand WHY</td>
+<td>📐 Technical</td>
+<td>🔧 User (to apply)</td>
+</tr>
+<tr class="even">
+<td>Learn HOW</td>
+<td>🔧 User</td>
+<td>📐 Technical (to validate)</td>
+</tr>
+<tr class="odd">
+<td>Plan project</td>
+<td>📐 TM Ch 1</td>
+<td>🔧 UM Ch 2</td>
+</tr>
+<tr class="even">
+<td>Collect data</td>
+<td>📐 TM Ch 4</td>
+<td>🔧 UM Ch 3</td>
+</tr>
+<tr class="odd">
+<td>Process data</td>
+<td>🔧 UM Ch 4-7</td>
+<td>📐 TM Ch 5-6 (reference)</td>
+</tr>
+<tr class="even">
+<td>Run analysis</td>
+<td>🔧 UM Ch 8-11</td>
+<td>📐 TM Ch 2-7 (understand)</td>
+</tr>
+<tr class="odd">
+<td>Check results</td>
+<td>📐 TM Ch 9</td>
+<td>🔧 UM Ch 13</td>
+</tr>
+<tr class="even">
+<td>Create reports</td>
+<td>🔧 UM Ch 12</td>
+<td>📐 TM (cite methods)</td>
+</tr>
+<tr class="odd">
+<td>Fix problems</td>
+<td>🔧 UM Ch 14</td>
+<td>📐 TM (understand why)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>💡 Pro Tip:</strong> Keep both manuals open in separate browser tabs or windows. As you work through User Manual workflows, reference the corresponding Technical Manual sections to deepen your understanding!</p>
 
 
 </section>
@@ -1066,11 +1806,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./QA-checklist.html" class="pagination-link" aria-label="QA Checklist">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span>
+      <a href="./flowchart.html" class="pagination-link" aria-label="Manual Flowchart">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Manual Flowchart</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./Metrics.html" class="pagination-link" aria-label="Metrics">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Metrics</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
