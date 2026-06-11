@@ -1,5 +1,5 @@
 ---
-title: "Level-1 Initial Channel Analysis"
+title: "Level-1 Initial Channel Analysis Workflow"
 format: html
 ---
 {{< badge theory >}}

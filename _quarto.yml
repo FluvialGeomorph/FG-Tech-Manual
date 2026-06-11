@@ -23,22 +23,29 @@ book:
         - concept_map.qmd
         - Metrics.qmd
         - FieldMethods.qmd
-    - part: "Tools"
+    - part: "FluvialGeomorph Toolbox"
       chapters:
         - Install.qmd
         - TutorialData.qmd
         - Toolbox.qmd
         - Features.qmd
         - Reports.qmd
-        - regionalcurve.qmd
-    - part: "Workflows"
-      chapters:
         - Level-1.qmd
         - Level-2-eb.qmd
         - Level-2.qmd
         - Level-3.qmd
         - FromField.qmd
         - Validation.qmd
+    - part: "Rapid Assessment Tools"
+      chapters:
+        - floodplain.qmd
+        - ohwm.qmd
+        - chute.qmd
+    - part: "R Packages"
+      chapters:
+        - regionalcurve.qmd
+        - fluvgeo.qmd
+
 
     - References.qmd
     - Glossary.qmd
@@ -46,6 +53,7 @@ book:
   appendices:
     - QA-checklist.qmd
     - DB-migration.qmd
+
 
 
   sidebar:
@@ -57,6 +65,7 @@ book:
 
 bibliography: [packages.bib, book.bib]
 number-depth: 1
+
 
 format:
   html:

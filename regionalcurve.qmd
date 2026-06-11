@@ -1,5 +1,5 @@
 ---
-title: "Regional Curve Development"
+title: "Regional Curve R Package"
 format: html
 ---
 

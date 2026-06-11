@@ -1,5 +1,5 @@
 ---
-title: "Level-2 Bankfull Analysis"
+title: "Level-2 Bankfull Analysis Workflow"
 format: html
 ---
 {{< badge theory >}}
