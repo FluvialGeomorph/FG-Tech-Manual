@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Field Methods – FluvialGeomorph Technical Manual</title>
+<title>6&nbsp; Field Methods – FluvialGeomorph Technical Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quickguide.html">Foundations</a></li><li class="breadcrumb-item"><a href="./FieldMethods.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Field Methods</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quickguide.html">Foundations</a></li><li class="breadcrumb-item"><a href="./FieldMethods.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Field Methods</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -122,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -137,37 +157,37 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quickguide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quick Guide</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quick Guide</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Concepts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./flowchart.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Manual Flowchart</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Manual Flowchart</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./concept_map.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Manual Crosswalk</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Manual Crosswalk</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Metrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Metrics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metrics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./FieldMethods.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Field Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Field Methods</span></span></a>
   </div>
 </li>
       </ul>
@@ -184,31 +204,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Install</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Install</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./TutorialData.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tutorial Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tutorial Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Toolbox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Toolbox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Toolbox</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Features.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Derived Features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Derived Features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Reports.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
   </div>
 </li>
       </ul>
@@ -225,37 +245,37 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Level-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level-1 Initial Channel Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level-1 Initial Channel Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Level-2-eb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level-2-EB Estimate Bankfull Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level-2-EB Estimate Bankfull Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Level-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Level-2 Bankfull Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level-2 Bankfull Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Level-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Level-3 Planform Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Level-3 Planform Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./FromField.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">From-Field</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">From-Field</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
   </div>
 </li>
       </ul>
@@ -305,18 +325,56 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#traditional-field-survey" id="toc-traditional-field-survey" class="nav-link active" data-scroll-target="#traditional-field-survey">Traditional Field Survey</a></li>
-  <li><a href="#lidar-survey" id="toc-lidar-survey" class="nav-link" data-scroll-target="#lidar-survey">LiDAR Survey</a></li>
-  <li><a href="#benefits-of-lidar-survey-compared-with-traditional-field-survey" id="toc-benefits-of-lidar-survey-compared-with-traditional-field-survey" class="nav-link" data-scroll-target="#benefits-of-lidar-survey-compared-with-traditional-field-survey">Benefits of LiDAR Survey Compared with Traditional Field Survey</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#traditional-field-survey" id="toc-traditional-field-survey" class="nav-link" data-scroll-target="#traditional-field-survey">Traditional Field Survey</a>
+  <ul class="collapse">
+  <li><a href="#overview-of-traditional-methods" id="toc-overview-of-traditional-methods" class="nav-link" data-scroll-target="#overview-of-traditional-methods">Overview of Traditional Methods</a></li>
+  <li><a href="#traditional-survey-procedures" id="toc-traditional-survey-procedures" class="nav-link" data-scroll-target="#traditional-survey-procedures">Traditional Survey Procedures</a></li>
+  <li><a href="#traditional-survey-capabilities" id="toc-traditional-survey-capabilities" class="nav-link" data-scroll-target="#traditional-survey-capabilities">Traditional Survey Capabilities</a></li>
+  <li><a href="#traditional-survey-limitations" id="toc-traditional-survey-limitations" class="nav-link" data-scroll-target="#traditional-survey-limitations">Traditional Survey Limitations</a></li>
+  </ul></li>
+  <li><a href="#lidar-survey" id="toc-lidar-survey" class="nav-link" data-scroll-target="#lidar-survey">LiDAR Survey</a>
+  <ul class="collapse">
+  <li><a href="#overview-of-lidar-technology" id="toc-overview-of-lidar-technology" class="nav-link" data-scroll-target="#overview-of-lidar-technology">Overview of LiDAR Technology</a></li>
+  <li><a href="#lidar-data-characteristics" id="toc-lidar-data-characteristics" class="nav-link" data-scroll-target="#lidar-data-characteristics">LiDAR Data Characteristics</a></li>
+  <li><a href="#lidar-survey-for-stream-analysis" id="toc-lidar-survey-for-stream-analysis" class="nav-link" data-scroll-target="#lidar-survey-for-stream-analysis">LiDAR Survey for Stream Analysis</a></li>
+  <li><a href="#lidar-survey-capabilities" id="toc-lidar-survey-capabilities" class="nav-link" data-scroll-target="#lidar-survey-capabilities">LiDAR Survey Capabilities</a></li>
+  <li><a href="#lidar-survey-limitations" id="toc-lidar-survey-limitations" class="nav-link" data-scroll-target="#lidar-survey-limitations">LiDAR Survey Limitations</a></li>
+  </ul></li>
+  <li><a href="#benefits-of-lidar-survey-compared-with-traditional-field-survey" id="toc-benefits-of-lidar-survey-compared-with-traditional-field-survey" class="nav-link" data-scroll-target="#benefits-of-lidar-survey-compared-with-traditional-field-survey">Benefits of LiDAR Survey Compared with Traditional Field Survey</a>
+  <ul class="collapse">
+  <li><a href="#spatial-coverage-and-resolution" id="toc-spatial-coverage-and-resolution" class="nav-link" data-scroll-target="#spatial-coverage-and-resolution">Spatial Coverage and Resolution</a></li>
+  <li><a href="#cost-effectiveness" id="toc-cost-effectiveness" class="nav-link" data-scroll-target="#cost-effectiveness">Cost-Effectiveness</a></li>
+  <li><a href="#time-efficiency" id="toc-time-efficiency" class="nav-link" data-scroll-target="#time-efficiency">Time Efficiency</a></li>
+  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility">Accessibility</a></li>
+  <li><a href="#temporal-analysis" id="toc-temporal-analysis" class="nav-link" data-scroll-target="#temporal-analysis">Temporal Analysis</a></li>
+  <li><a href="#regional-analysis" id="toc-regional-analysis" class="nav-link" data-scroll-target="#regional-analysis">Regional Analysis</a></li>
+  <li><a href="#consistency-and-repeatability" id="toc-consistency-and-repeatability" class="nav-link" data-scroll-target="#consistency-and-repeatability">Consistency and Repeatability</a></li>
+  <li><a href="#comprehensive-characterization" id="toc-comprehensive-characterization" class="nav-link" data-scroll-target="#comprehensive-characterization">Comprehensive Characterization</a></li>
+  <li><a href="#integration-and-visualization" id="toc-integration-and-visualization" class="nav-link" data-scroll-target="#integration-and-visualization">Integration and Visualization</a></li>
+  </ul></li>
+  <li><a href="#complementary-use-of-both-methods" id="toc-complementary-use-of-both-methods" class="nav-link" data-scroll-target="#complementary-use-of-both-methods">Complementary Use of Both Methods</a>
+  <ul class="collapse">
+  <li><a href="#optimal-integration-strategy" id="toc-optimal-integration-strategy" class="nav-link" data-scroll-target="#optimal-integration-strategy">Optimal Integration Strategy</a></li>
+  <li><a href="#validation-and-calibration" id="toc-validation-and-calibration" class="nav-link" data-scroll-target="#validation-and-calibration">Validation and Calibration</a></li>
+  <li><a href="#strategic-field-data-collection" id="toc-strategic-field-data-collection" class="nav-link" data-scroll-target="#strategic-field-data-collection">Strategic Field Data Collection</a></li>
+  <li><a href="#workflow-integration" id="toc-workflow-integration" class="nav-link" data-scroll-target="#workflow-integration">Workflow Integration</a></li>
+  </ul></li>
+  <li><a href="#summary-and-recommendations" id="toc-summary-and-recommendations" class="nav-link" data-scroll-target="#summary-and-recommendations">Summary and Recommendations</a>
+  <ul class="collapse">
+  <li><a href="#key-comparisons" id="toc-key-comparisons" class="nav-link" data-scroll-target="#key-comparisons">Key Comparisons</a></li>
+  <li><a href="#when-to-use-each-method" id="toc-when-to-use-each-method" class="nav-link" data-scroll-target="#when-to-use-each-method">When to Use Each Method</a></li>
+  <li><a href="#recommendations-for-fluvialgeomorph-users" id="toc-recommendations-for-fluvialgeomorph-users" class="nav-link" data-scroll-target="#recommendations-for-fluvialgeomorph-users">Recommendations for FluvialGeomorph Users</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quickguide.html">Foundations</a></li><li class="breadcrumb-item"><a href="./FieldMethods.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Field Methods</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quickguide.html">Foundations</a></li><li class="breadcrumb-item"><a href="./FieldMethods.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Field Methods</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Field Methods</span></h1>
+<h1 class="title"><span id="sec-field-methods" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Field Methods</span></span></h1>
 </div>
 
 
@@ -333,16 +391,355 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Stream channel surveys provide the fundamental data for fluvial geomorphic analysis. Traditionally, these surveys have been conducted using ground-based methods with survey crews physically measuring channel dimensions in the field. The advent of high-resolution LiDAR (Light Detection and Ranging) technology has transformed stream surveying by enabling rapid, cost-effective extraction of channel geometry across large spatial extents.</p>
+<p>This chapter compares traditional field survey methods with LiDAR-based approaches, examining the capabilities, limitations, and appropriate applications of each method. Understanding the strengths and weaknesses of both approaches enables practitioners to select the most appropriate survey method for their project objectives and to effectively integrate field and remote sensing data.</p>
+<p>FluvialGeomorph was specifically developed to leverage LiDAR data for rapid stream assessment while maintaining scientific rigor. However, field surveys remain essential for validation, ground-truthing, and collecting information not available from remote sensing. The most robust analyses often combine both approaches.</p>
+</section>
 <section id="traditional-field-survey" class="level2">
 <h2 class="anchored" data-anchor-id="traditional-field-survey">Traditional Field Survey</h2>
+<section id="overview-of-traditional-methods" class="level3">
+<h3 class="anchored" data-anchor-id="overview-of-traditional-methods">Overview of Traditional Methods</h3>
+<p>Traditional field surveys involve direct measurement of stream channel features using ground-based survey equipment. These methods have been the standard approach for stream assessment and have established the foundational understanding of fluvial geomorphology <span class="citation" data-cites="leopold1953hydraulic dunne1978water">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>; <a href="References.html#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span>.</p>
+<p><strong>Common Traditional Survey Methods:</strong> - Total station surveys - Level and rod surveys - GPS/GNSS surveys - Tape and level surveys - Rapid assessment methods</p>
+<p><strong>Typical Data Collected:</strong> - Cross-section geometry (elevation profiles perpendicular to flow) - Longitudinal profiles (thalweg and water surface elevations) - Bankfull dimensions (width, depth, cross-sectional area) - Channel slope - Planform measurements (sinuosity, meander geometry) - Substrate characteristics - Vegetation and habitat features</p>
+</section>
+<section id="traditional-survey-procedures" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-survey-procedures">Traditional Survey Procedures</h3>
+<section id="cross-section-surveys" class="level4">
+<h4 class="anchored" data-anchor-id="cross-section-surveys">Cross-Section Surveys</h4>
+<p>Traditional cross-section surveys involve establishing a transect perpendicular to flow and measuring elevation at points across the channel and floodplain.</p>
+<p><strong>Equipment:</strong> - Total station with prism and rod - Auto-level or laser level with survey rod - RTK-GPS receiver - Measuring tape - Field data sheets</p>
+<p><strong>Procedure:</strong> 1. Select representative cross-section location 2. Establish transect perpendicular to flow direction 3. Set up survey instrument at control point 4. Measure elevation at breaks in slope across the section 5. Record station (distance from left bank) and elevation 6. Include bankfull points, thalweg, and floodplain extent 7. Document substrate, vegetation, and features</p>
+<p><strong>Point Spacing:</strong> - Channel bed: 0.5-1 m (1.5-3 ft) typical - Banks: 0.5 m (1.5 ft) or at slope breaks - Floodplain: 2-5 m (6-15 ft) - Closer spacing at features of interest - Typically 20-40 points per cross-section</p>
+<p><strong>Time Requirements:</strong> - Setup: 15-30 minutes per section - Survey: 30-60 minutes per section - Documentation: 10-15 minutes per section - <strong>Total: 1-2 hours per cross-section</strong></p>
+</section>
+<section id="longitudinal-profile-surveys" class="level4">
+<h4 class="anchored" data-anchor-id="longitudinal-profile-surveys">Longitudinal Profile Surveys</h4>
+<p>Longitudinal profiles document elevation changes along the stream channel.</p>
+<p><strong>Procedure:</strong> 1. Begin at downstream end of reach 2. Survey thalweg (deepest point) elevations 3. Progress upstream at regular intervals 4. Record distance along channel and elevation 5. Include water surface elevation if flowing 6. Note features (pools, riffles, grade controls)</p>
+<p><strong>Point Spacing:</strong> - Plane-bed channels: 5-10 m (15-30 ft) - Pool-riffle channels: 2-5 m (6-15 ft) - Step-pool channels: 1-2 m (3-6 ft) - Additional points at grade controls and features</p>
+<p><strong>Time Requirements:</strong> - 100 m reach: 2-4 hours - 500 m reach: 8-16 hours - 1000 m reach: 16-32 hours</p>
+</section>
+<section id="bankfull-identification-and-measurement" class="level4">
+<h4 class="anchored" data-anchor-id="bankfull-identification-and-measurement">Bankfull Identification and Measurement</h4>
+<p>Bankfull stage represents the channel-forming discharge that fills the channel to the top of the banks <span class="citation" data-cites="dunne1978water leopold1953hydraulic">(<a href="References.html#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>; <a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>)</span>.</p>
+<p><strong>Field Indicators:</strong> - Topographic break at floodplain transition - Change in vegetation from bank to floodplain species - Bank undercut and scour features - Root exposure at consistent elevation - Depositional features (point bars, berms) - Stain lines or debris lines - Sediment texture changes</p>
+<p><strong>Measurement Procedure:</strong> 1. Walk reach to identify bankfull indicators 2. Mark locations where multiple indicators converge 3. Survey bankfull elevation at multiple points (10-20 per reach) 4. Measure bankfull width perpendicular to flow 5. Calculate bankfull depth from cross-section data 6. Document indicators with photos and notes</p>
+<p><strong>Time Requirements:</strong> - Reconnaissance: 30-60 minutes per reach - Survey: 2-4 hours per reach - Documentation: 30-60 minutes per reach</p>
+</section>
+<section id="planform-surveys" class="level4">
+<h4 class="anchored" data-anchor-id="planform-surveys">Planform Surveys</h4>
+<p>Planform surveys document channel pattern and geometry.</p>
+<p><strong>Measurements:</strong> - Channel length along thalweg - Valley length (straight-line distance) - Sinuosity (channel length / valley length) - Meander wavelength and amplitude - Radius of curvature - Belt width</p>
+<p><strong>Methods:</strong> - Pace or tape along thalweg - GPS track recording - Measurements from aerial photos - Total station survey of channel centerline</p>
+<p><strong>Time Requirements:</strong> - 500 m reach: 2-4 hours - 1000 m reach: 4-8 hours</p>
+</section>
+</section>
+<section id="traditional-survey-capabilities" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-survey-capabilities">Traditional Survey Capabilities</h3>
+<p><strong>Strengths:</strong> - High accuracy (vertical: ±0.03 m; horizontal: ±0.3 m) - Direct observation of features - Flexibility to measure any feature of interest - Substrate and vegetation data collection - Immediate quality control - Works in any vegetation or canopy condition - Can survey below water surface (with wading or boat)</p>
+<p><strong>Data Products:</strong> - Detailed cross-section geometry - Accurate bankfull dimensions - Longitudinal profiles - Substrate size distributions - Vegetation characteristics - Habitat features - Photo documentation</p>
+</section>
+<section id="traditional-survey-limitations" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-survey-limitations">Traditional Survey Limitations</h3>
+<p><strong>Spatial Coverage:</strong> - Limited to accessible locations - Typically 3-10 cross-sections per reach - Sparse longitudinal profile data - Gaps between survey points - Cannot capture continuous channel geometry</p>
+<p><strong>Cost and Time:</strong> - Labor-intensive (2-3 person crew typical) - 1-2 hours per cross-section - 4-8 hours per reach for comprehensive survey - High cost per data point - Weather-dependent field work</p>
+<p><strong>Access Constraints:</strong> - Private property restrictions - Difficult terrain (steep slopes, dense vegetation) - Deep or swift water - Seasonal access limitations - Safety concerns in remote areas</p>
+<p><strong>Temporal Limitations:</strong> - Single snapshot in time - Resurveys rarely feasible due to cost - Cannot assess temporal change economically - Limited ability to capture dynamic processes</p>
+<p><strong>Spatial Extent:</strong> - Watershed-scale surveys impractical - Regional studies require extensive resources - Inconsistent methods across studies - Limited sample sizes for regional analysis</p>
+<p><strong>Example: Traditional Survey Effort</strong></p>
+<p>For a typical stream restoration project: - Study area: 5 km of stream - Cross-sections: 20 sections (250 m spacing) - Field crew: 3 people - Time per section: 1.5 hours - <strong>Total field time: 30 hours (4 days)</strong> - <strong>Cost: $15,000-25,000</strong> (crew time, equipment, travel)</p>
+<p>This provides detailed data at 20 locations but no information between cross-sections, representing &lt;0.1% spatial coverage of the 5 km reach.</p>
+</section>
 </section>
 <section id="lidar-survey" class="level2">
 <h2 class="anchored" data-anchor-id="lidar-survey">LiDAR Survey</h2>
+<section id="overview-of-lidar-technology" class="level3">
+<h3 class="anchored" data-anchor-id="overview-of-lidar-technology">Overview of LiDAR Technology</h3>
+<p>LiDAR (Light Detection and Ranging) is an active remote sensing technology that measures distance by illuminating a target with laser light and measuring the reflected pulses with a sensor. Airborne LiDAR systems mounted on aircraft or drones rapidly collect millions of elevation points across large areas.</p>
+<p><strong>LiDAR System Components:</strong> - Laser scanner (emits and receives laser pulses) - GPS/GNSS (determines aircraft position) - Inertial Measurement Unit (IMU) (determines aircraft orientation) - Computer system (records and processes data)</p>
+<p><strong>Data Collection Process:</strong> 1. Aircraft flies systematic pattern over study area 2. Laser emits pulses at high frequency (50,000-500,000 per second) 3. Pulses reflect from ground, vegetation, and structures 4. System records multiple returns per pulse 5. GPS and IMU data enable precise point positioning 6. Post-processing classifies points (ground, vegetation, buildings, etc.) 7. Ground points interpolated to create Digital Elevation Model (DEM)</p>
+</section>
+<section id="lidar-data-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="lidar-data-characteristics">LiDAR Data Characteristics</h3>
+<p><strong>Spatial Resolution:</strong> - Point density: 1-8+ points per square meter typical - DEM resolution: 0.5-3 m grid spacing common - Vertical accuracy: ±5-15 cm RMSE - Horizontal accuracy: ±30-100 cm</p>
+<p><strong>Coverage:</strong> - Continuous elevation data across entire study area - Watershed to regional scale feasible - Consistent data quality throughout - No gaps due to access limitations</p>
+<p><strong>Temporal Considerations:</strong> - Single acquisition provides snapshot in time - Multi-temporal LiDAR enables change detection - Acquisition timing affects data quality: - Leaf-off conditions improve ground point density - Low-flow conditions capture more channel bed - Seasonal timing should match analysis objectives</p>
+</section>
+<section id="lidar-survey-for-stream-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="lidar-survey-for-stream-analysis">LiDAR Survey for Stream Analysis</h3>
+<section id="data-acquisition" class="level4">
+<h4 class="anchored" data-anchor-id="data-acquisition">Data Acquisition</h4>
+<p><strong>Acquisition Specifications for Fluvial Geomorphology:</strong> - Point density: ≥2 points/m² minimum; ≥4 points/m² preferred - Vertical accuracy: ±15 cm RMSE or better - Horizontal accuracy: ±1 m or better - Timing: Leaf-off, low-flow conditions - Classification: Bare earth (ground) points identified - Hydro-flattening: Optional; may improve or degrade results</p>
+<p><strong>Coverage Requirements:</strong> - Full watershed or study area extent - Include stream channels and floodplains - Sufficient buffer beyond area of interest - Overlap between flight lines for complete coverage</p>
+<p><strong>Quality Considerations:</strong> - Vegetation density affects ground point density - Water surface reflects laser poorly (channel bed not captured) - Dense canopy may prevent ground returns - Acquisition conditions (leaf-on vs.&nbsp;leaf-off) critical - Processing quality (classification accuracy) affects results</p>
+</section>
+<section id="dem-generation" class="level4">
+<h4 class="anchored" data-anchor-id="dem-generation">DEM Generation</h4>
+<p>LiDAR point clouds are processed to create Digital Elevation Models:</p>
+<p><strong>Processing Steps:</strong> 1. Point cloud classification (ground vs.&nbsp;non-ground) 2. Ground point filtering and quality control 3. Interpolation to regular grid (raster DEM) 4. Optional hydro-conditioning or hydro-flattening 5. Quality assessment and artifact removal</p>
+<p><strong>DEM Specifications for FluvialGeomorph:</strong> - Resolution: 1 m preferred; 3 m maximum - Format: GeoTIFF or other standard raster format - Coordinate system: Projected (not geographic) - Vertical datum: Consistent across study area - No data values: Properly defined - Metadata: Complete documentation of processing</p>
+</section>
+<section id="fluvialgeomorph-lidar-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="fluvialgeomorph-lidar-analysis">FluvialGeomorph LiDAR Analysis</h4>
+<p>FluvialGeomorph automates extraction of channel geometry from LiDAR DEMs:</p>
+<p><strong>Automated Extraction:</strong> 1. Stream network delineation or import 2. Cross-section generation perpendicular to flow 3. Elevation profile extraction from DEM 4. Bankfull identification from topographic breaks 5. Dimension calculation (width, depth, area) 6. Longitudinal profile extraction 7. Planform analysis (sinuosity, meander metrics) 8. Reach-scale aggregation and statistics</p>
+<p><strong>Cross-Section Extraction:</strong> - Automated placement along stream network - User-defined spacing (typically 10-50 m) - Perpendicular orientation to flow direction - Extraction of elevation values from DEM - Hundreds to thousands of sections per reach - Continuous spatial coverage</p>
+<p><strong>Bankfull Identification:</strong> - Topographic break detection algorithms - Slope-based methods - Statistical analysis of elevation distribution - Automated identification at each cross-section - Quality control and validation procedures</p>
+<p><strong>Dimension Calculation:</strong> - Bankfull width, depth, cross-sectional area - Channel geometry ratios - Floodplain dimensions - Bank height and slope - Calculated at every cross-section</p>
+<p><strong>Time Requirements:</strong> - Data preparation: 1-4 hours - Automated processing: Minutes to hours (depending on extent) - Quality control: 2-8 hours - <strong>Total: 1-2 days for watershed-scale analysis</strong></p>
+</section>
+</section>
+<section id="lidar-survey-capabilities" class="level3">
+<h3 class="anchored" data-anchor-id="lidar-survey-capabilities">LiDAR Survey Capabilities</h3>
+<p><strong>Spatial Coverage:</strong> - Continuous elevation data across entire study area - Unlimited cross-sections (spacing limited only by DEM resolution) - Complete longitudinal profiles - Watershed to regional scale analysis - Consistent methodology across large areas</p>
+<p><strong>Efficiency:</strong> - Rapid data collection (aircraft covers large areas quickly) - Automated processing and analysis - Minimal field time required - Cost-effective for large areas - Repeatable analysis with consistent methods</p>
+<p><strong>Temporal Analysis:</strong> - Multi-temporal LiDAR enables change detection - Channel migration analysis - Erosion and deposition mapping - Pre- and post-project monitoring - Long-term trend analysis</p>
+<p><strong>Data Products:</strong> - High-resolution DEMs - Thousands of cross-sections - Continuous longitudinal profiles - Planform metrics at fine resolution - Regional curve datasets with large sample sizes - Reach-scale statistics and summaries</p>
+<p><strong>Example: LiDAR Survey Coverage</strong></p>
+<p>For the same 5 km stream restoration project: - LiDAR DEM: 1-m resolution, continuous coverage - Cross-sections: 500 sections (10 m spacing) - Processing time: 1-2 days - <strong>Spatial coverage: 100% of reach</strong> - <strong>Cost: $5,000-10,000</strong> (if LiDAR already available)</p>
+<p>This provides detailed data at 500 locations (25× more than traditional survey) with complete spatial coverage.</p>
+</section>
+<section id="lidar-survey-limitations" class="level3">
+<h3 class="anchored" data-anchor-id="lidar-survey-limitations">LiDAR Survey Limitations</h3>
+<p><strong>Data Availability:</strong> - LiDAR coverage not available in all areas - Acquisition cost for new LiDAR can be high ($10,000-50,000+ for small areas) - May need to wait for regional LiDAR programs - Data may be outdated (channel may have changed since acquisition)</p>
+<p><strong>Technical Limitations:</strong> - Cannot measure below water surface - Dense vegetation limits ground point density - Small streams (&lt;2-3 m wide) may not be resolved - Vertical accuracy lower than traditional surveys (±15 cm vs.&nbsp;±3 cm) - Processing artifacts and classification errors possible</p>
+<p><strong>Bankfull Identification:</strong> - Automated methods may not work in all settings - Incised channels may lack clear topographic breaks - Modified channels may not have natural bankfull features - Field validation recommended - May require manual adjustment or calibration</p>
+<p><strong>Missing Information:</strong> - No substrate data (particle size, composition) - No vegetation species information - No water quality data - No direct observation of features - Limited ability to assess recent changes or disturbances</p>
+<p><strong>Quality Dependence:</strong> - Results depend on LiDAR acquisition quality - Processing methods affect DEM accuracy - Vegetation conditions during acquisition critical - Water level during acquisition affects channel bed capture - Classification accuracy affects ground elevation</p>
+</section>
 </section>
 <section id="benefits-of-lidar-survey-compared-with-traditional-field-survey" class="level2">
 <h2 class="anchored" data-anchor-id="benefits-of-lidar-survey-compared-with-traditional-field-survey">Benefits of LiDAR Survey Compared with Traditional Field Survey</h2>
+<section id="spatial-coverage-and-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-coverage-and-resolution">Spatial Coverage and Resolution</h3>
+<p><strong>Traditional Survey:</strong> - Discrete cross-sections (typically 3-10 per reach) - Gaps between survey points - Spatial coverage &lt;1% of reach length - Limited ability to capture spatial variability - May miss important features between sections</p>
+<p><strong>LiDAR Survey:</strong> - Continuous elevation coverage - Cross-sections at any spacing (typically 10-50 m) - Spatial coverage 100% of reach - Captures full spatial variability - No features missed due to survey spacing</p>
+<p><strong>Benefit:</strong> LiDAR provides 100-1000× more spatial data points, enabling comprehensive characterization of channel geometry and variability.</p>
+</section>
+<section id="cost-effectiveness" class="level3">
+<h3 class="anchored" data-anchor-id="cost-effectiveness">Cost-Effectiveness</h3>
+<p><strong>Traditional Survey Cost Structure:</strong> - High per-point cost (labor-intensive) - Cost increases linearly with number of cross-sections - 3-person crew: $2,000-4,000 per day - 20 cross-sections: $15,000-25,000 - Additional reaches require proportional additional cost</p>
+<p><strong>LiDAR Survey Cost Structure:</strong> - High initial acquisition cost (if new LiDAR needed) - Low per-point cost once data acquired - Cost increases minimally with number of cross-sections - Analysis of 20 vs.&nbsp;500 cross-sections: similar cost - Multiple reaches analyzed from same dataset</p>
+<p><strong>Cost Comparison Examples:</strong></p>
+<p><em>Single Reach (5 km):</em> - Traditional: $15,000-25,000 (20 cross-sections) - LiDAR: $5,000-10,000 (500 cross-sections, if data available) - <strong>LiDAR provides 25× more data at 40-80% lower cost</strong></p>
+<p><em>Watershed Scale (50 km):</em> - Traditional: $150,000-250,000 (200 cross-sections) - LiDAR: $20,000-40,000 (5,000 cross-sections, if data available) - <strong>LiDAR provides 25× more data at 85-90% lower cost</strong></p>
+<p><em>Regional Scale (500 km):</em> - Traditional: $1,500,000-2,500,000 (impractical) - LiDAR: $100,000-200,000 (50,000 cross-sections) - <strong>LiDAR enables analysis that would be cost-prohibitive with traditional methods</strong></p>
+<p><strong>Benefit:</strong> LiDAR is dramatically more cost-effective for large-area analysis, enabling watershed and regional studies that would be impractical with traditional surveys.</p>
+</section>
+<section id="time-efficiency" class="level3">
+<h3 class="anchored" data-anchor-id="time-efficiency">Time Efficiency</h3>
+<p><strong>Traditional Survey Timeline:</strong> - Mobilization: 1-2 days - Field survey: 4-8 days (5 km reach) - Data processing: 2-4 days - Analysis: 3-5 days - <strong>Total: 2-3 weeks</strong></p>
+<p><strong>LiDAR Survey Timeline:</strong> - Data acquisition: Already complete (existing LiDAR) - Data preparation: 0.5-1 day - Automated processing: Hours - Quality control: 1-2 days - Analysis: 2-3 days - <strong>Total: 1 week</strong></p>
+<p><strong>Benefit:</strong> LiDAR analysis is 2-3× faster than traditional surveys, enabling rapid assessment and shorter project timelines.</p>
+</section>
+<section id="accessibility" class="level3">
+<h3 class="anchored" data-anchor-id="accessibility">Accessibility</h3>
+<p><strong>Traditional Survey Access Constraints:</strong> - Private property permission required - Physical access to stream necessary - Steep terrain limits access - Dense vegetation impedes surveys - Deep or swift water prevents wading - Remote locations difficult to reach - Safety concerns in hazardous areas</p>
+<p><strong>LiDAR Survey Access:</strong> - No property access required - No physical stream access needed - Terrain does not limit analysis - Vegetation affects data quality but not access - Water depth not a constraint (though limits bed capture) - Remote locations easily analyzed - No safety concerns for analysts</p>
+<p><strong>Benefit:</strong> LiDAR enables analysis of inaccessible reaches and provides consistent data across all areas regardless of access constraints.</p>
+</section>
+<section id="temporal-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="temporal-analysis">Temporal Analysis</h3>
+<p><strong>Traditional Survey Temporal Capabilities:</strong> - Single snapshot in time - Resurveys rarely conducted (cost-prohibitive) - Limited change detection - Difficult to assess channel dynamics - Cannot evaluate long-term trends economically</p>
+<p><strong>LiDAR Survey Temporal Capabilities:</strong> - Multiple LiDAR datasets enable change detection - Channel migration analysis - Erosion and deposition mapping - Pre- and post-project monitoring - Long-term trend assessment - Cost-effective repeat analysis</p>
+<p><strong>Benefit:</strong> Multi-temporal LiDAR enables change detection and monitoring that would be impractical with traditional surveys.</p>
+</section>
+<section id="regional-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="regional-analysis">Regional Analysis</h3>
+<p><strong>Traditional Survey Regional Limitations:</strong> - Small sample sizes (10-50 reaches typical) - Inconsistent methods across studies - Limited geographic coverage - Expensive to expand sample size - Difficult to develop robust regional relationships <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span></p>
+<p><strong>LiDAR Survey Regional Capabilities:</strong> - Large sample sizes (100-1000+ reaches feasible) - Consistent methodology across all sites - Complete watershed or regional coverage - Cost-effective to analyze many reaches - Robust regional curve development - Better characterization of variability</p>
+<p><strong>Example: Regional Curve Development</strong></p>
+<p><em>Traditional Approach:</em> - 30 field-surveyed reaches - 2-3 years of field work - $200,000-300,000 cost - Limited geographic coverage - Moderate statistical confidence</p>
+<p><em>LiDAR Approach:</em> - 300 LiDAR-analyzed reaches - 3-6 months of analysis - $50,000-100,000 cost - Complete regional coverage - High statistical confidence</p>
+<p><strong>Benefit:</strong> LiDAR enables development of robust regional relationships with 10× larger sample sizes at 50-75% lower cost <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span>.</p>
+</section>
+<section id="consistency-and-repeatability" class="level3">
+<h3 class="anchored" data-anchor-id="consistency-and-repeatability">Consistency and Repeatability</h3>
+<p><strong>Traditional Survey Consistency:</strong> - Methods vary among practitioners - Subjective bankfull identification - Different survey crews produce different results - Difficult to replicate exactly - Quality depends on crew experience</p>
+<p><strong>LiDAR Survey Consistency:</strong> - Standardized automated methods - Objective bankfull identification algorithms - Same results from same data regardless of analyst - Fully repeatable analysis - Consistent quality across all sites</p>
+<p><strong>Benefit:</strong> LiDAR provides consistent, repeatable results that support quality assurance and enable comparison across studies.</p>
+</section>
+<section id="comprehensive-characterization" class="level3">
+<h3 class="anchored" data-anchor-id="comprehensive-characterization">Comprehensive Characterization</h3>
+<p><strong>Traditional Survey Characterization:</strong> - Discrete cross-sections - Limited longitudinal data - Sparse planform measurements - May miss important features - Difficult to assess reach-scale patterns</p>
+<p><strong>LiDAR Survey Characterization:</strong> - Continuous cross-section coverage - Complete longitudinal profiles - Detailed planform analysis - Captures all features - Comprehensive reach-scale assessment - Spatial pattern analysis</p>
+<p><strong>Benefit:</strong> LiDAR provides comprehensive characterization of channel geometry, enabling better understanding of reach-scale patterns and processes.</p>
+</section>
+<section id="integration-and-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="integration-and-visualization">Integration and Visualization</h3>
+<p><strong>Traditional Survey Products:</strong> - Individual cross-section plots - Tabular dimension data - Limited visualization options - Difficult to communicate spatial patterns - Static representations</p>
+<p><strong>LiDAR Survey Products:</strong> - High-resolution DEMs - 3D visualizations - Interactive maps - Spatial analysis products - Animation of temporal change - Web-based data sharing</p>
+<p><strong>Benefit:</strong> LiDAR data products support better visualization, communication, and integration with other spatial data.</p>
+</section>
+</section>
+<section id="complementary-use-of-both-methods" class="level2">
+<h2 class="anchored" data-anchor-id="complementary-use-of-both-methods">Complementary Use of Both Methods</h2>
+<section id="optimal-integration-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="optimal-integration-strategy">Optimal Integration Strategy</h3>
+<p>The most effective approach combines the strengths of both traditional field surveys and LiDAR analysis:</p>
+<p><strong>Use LiDAR for:</strong> - Comprehensive spatial coverage - Rapid watershed-scale assessment - Regional curve development - Preliminary site screening - Change detection and monitoring - Areas with access constraints</p>
+<p><strong>Use Traditional Field Surveys for:</strong> - Validation of LiDAR-derived measurements - Bankfull verification and calibration - Substrate characterization - Vegetation assessment - Detailed site investigation - Areas with poor LiDAR coverage or quality</p>
+</section>
+<section id="validation-and-calibration" class="level3">
+<h3 class="anchored" data-anchor-id="validation-and-calibration">Validation and Calibration</h3>
+<p><strong>Field Validation of LiDAR:</strong> - Survey 10-20 validation cross-sections - Compare field and LiDAR bankfull elevations - Assess accuracy across range of channel sizes - Identify conditions where LiDAR works well or poorly - Calculate error statistics and confidence intervals</p>
+<p><strong>Calibration of Automated Methods:</strong> - Use field data to refine bankfull identification algorithms - Adjust parameters for local conditions - Test on independent validation sites - Document optimal settings for region or stream type - Improve accuracy of automated extraction</p>
+</section>
+<section id="strategic-field-data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="strategic-field-data-collection">Strategic Field Data Collection</h3>
+<p><strong>Efficient Field Survey Design:</strong> - Focus field effort on validation sites - Select representative range of conditions - Prioritize accessible locations with clear bankfull indicators - Collect substrate and vegetation data not available from LiDAR - Document conditions affecting LiDAR data quality</p>
+<p><strong>Sample Size Recommendations:</strong> - Minimum 10 validation sites per study area - 20-30 sites for regional calibration - Include range of drainage areas and channel types - Stratify by vegetation cover and channel condition - Balance statistical needs with budget constraints</p>
+</section>
+<section id="workflow-integration" class="level3">
+<h3 class="anchored" data-anchor-id="workflow-integration">Workflow Integration</h3>
+<p><strong>Integrated Analysis Workflow:</strong></p>
+<ol type="1">
+<li><strong>LiDAR Analysis:</strong>
+<ul>
+<li>Process LiDAR DEM</li>
+<li>Extract cross-sections across entire study area</li>
+<li>Automated bankfull identification</li>
+<li>Calculate dimensions at all cross-sections</li>
+<li>Identify reaches of interest</li>
+</ul></li>
+<li><strong>Field Validation:</strong>
+<ul>
+<li>Select validation sites based on LiDAR analysis</li>
+<li>Survey field cross-sections at validation sites</li>
+<li>Verify bankfull elevation and indicators</li>
+<li>Collect substrate and vegetation data</li>
+<li>Document conditions and observations</li>
+</ul></li>
+<li><strong>Comparison and Calibration:</strong>
+<ul>
+<li>Compare field and LiDAR measurements</li>
+<li>Calculate accuracy statistics</li>
+<li>Identify systematic biases</li>
+<li>Refine automated methods if needed</li>
+<li>Establish confidence intervals</li>
+</ul></li>
+<li><strong>Final Analysis:</strong>
+<ul>
+<li>Apply calibrated methods to full dataset</li>
+<li>Use field data to supplement LiDAR analysis</li>
+<li>Integrate substrate and vegetation information</li>
+<li>Develop regional relationships</li>
+<li>Assess reach and watershed conditions</li>
+</ul></li>
+</ol>
+<p><strong>Benefit:</strong> Integrated approach provides comprehensive spatial coverage from LiDAR with accuracy and validation from strategic field surveys.</p>
+</section>
+</section>
+<section id="summary-and-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="summary-and-recommendations">Summary and Recommendations</h2>
+<section id="key-comparisons" class="level3">
+<h3 class="anchored" data-anchor-id="key-comparisons">Key Comparisons</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>Traditional Survey</th>
+<th>LiDAR Survey</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Spatial Coverage</strong></td>
+<td>Discrete points (&lt;1%)</td>
+<td>Continuous (100%)</td>
+</tr>
+<tr class="even">
+<td><strong>Number of Cross-Sections</strong></td>
+<td>3-10 per reach</td>
+<td>100-1000 per reach</td>
+</tr>
+<tr class="odd">
+<td><strong>Vertical Accuracy</strong></td>
+<td>±3 cm</td>
+<td>±15 cm</td>
+</tr>
+<tr class="even">
+<td><strong>Cost (5 km reach)</strong></td>
+<td>$15,000-25,000</td>
+<td>$5,000-10,000</td>
+</tr>
+<tr class="odd">
+<td><strong>Time Required</strong></td>
+<td>2-3 weeks</td>
+<td>1 week</td>
+</tr>
+<tr class="even">
+<td><strong>Access Requirements</strong></td>
+<td>Physical access needed</td>
+<td>No access needed</td>
+</tr>
+<tr class="odd">
+<td><strong>Substrate Data</strong></td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td><strong>Below Water</strong></td>
+<td>Yes (with wading)</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td><strong>Regional Scale</strong></td>
+<td>Impractical</td>
+<td>Feasible</td>
+</tr>
+<tr class="even">
+<td><strong>Consistency</strong></td>
+<td>Variable</td>
+<td>Standardized</td>
+</tr>
+<tr class="odd">
+<td><strong>Temporal Analysis</strong></td>
+<td>Difficult</td>
+<td>Feasible</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="when-to-use-each-method" class="level3">
+<h3 class="anchored" data-anchor-id="when-to-use-each-method">When to Use Each Method</h3>
+<p><strong>Use Traditional Field Survey When:</strong> - LiDAR data not available or poor quality - Very small streams (&lt;2 m wide) - Dense canopy prevents ground returns - Substrate data required - Detailed site investigation needed - High vertical accuracy required (±3 cm) - Below-water measurements needed</p>
+<p><strong>Use LiDAR Survey When:</strong> - Watershed or regional scale analysis needed - Comprehensive spatial coverage required - Access constraints limit field surveys - Cost-effectiveness is priority - Consistent methodology across sites required - Temporal change analysis desired - Rapid assessment needed</p>
+<p><strong>Use Both Methods When:</strong> - Budget allows strategic field validation - Accuracy verification required - Substrate and vegetation data needed - Calibration of automated methods desired - Comprehensive characterization required - Quality assurance is priority</p>
+</section>
+<section id="recommendations-for-fluvialgeomorph-users" class="level3">
+<h3 class="anchored" data-anchor-id="recommendations-for-fluvialgeomorph-users">Recommendations for FluvialGeomorph Users</h3>
+<ol type="1">
+<li><p><strong>Start with LiDAR analysis</strong> to gain comprehensive spatial coverage and identify reaches of interest</p></li>
+<li><p><strong>Conduct strategic field validation</strong> at 10-20 sites representing range of conditions</p></li>
+<li><p><strong>Compare field and LiDAR measurements</strong> to assess accuracy and identify limitations</p></li>
+<li><p><strong>Calibrate automated methods</strong> using field data to improve bankfull identification</p></li>
+<li><p><strong>Supplement LiDAR analysis</strong> with field data on substrate, vegetation, and features not captured by topography</p></li>
+<li><p><strong>Document data quality</strong> and limitations for both LiDAR and field surveys</p></li>
+<li><p><strong>Use integrated approach</strong> to leverage strengths of both methods</p></li>
+<li><p><strong>Consider multi-temporal LiDAR</strong> for change detection and monitoring where available</p></li>
+</ol>
+<p>The combination of LiDAR-based analysis for comprehensive spatial coverage and strategic field surveys for validation and supplemental data provides the most robust and cost-effective approach to fluvial geomorphic assessment. FluvialGeomorph is specifically designed to support this integrated workflow, enabling practitioners to efficiently analyze large areas while maintaining scientific rigor through field validation.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-doll2003hydraulic" class="csl-entry" role="listitem">
+Doll, Barbara A., D. E. Wise-Frederick, C. M. Buckner, S. D. Wilkerson, W. A. Harman, R. E. Smith, and J. Spooner. 2003. <span>“Hydraulic Geometry Relationships for Urban Streams Throughout the <span>Piedmont</span> of <span>North Carolina</span>.”</span> <em>Journal of the American Water Resources Association</em> 38 (3): 641–51. <a href="https://doi.org/10.1111/j.1752-1688.2003.tb03683.x">https://doi.org/10.1111/j.1752-1688.2003.tb03683.x</a>.
+</div>
+<div id="ref-dunne1978water" class="csl-entry" role="listitem">
+Dunne, Thomas, and Luna B. Leopold. 1978. <em>Water in Environmental Planning</em>. New York: W.H. Freeman; Company.
+</div>
+<div id="ref-harman1999bankfull" class="csl-entry" role="listitem">
+Harman, W. A., G. D. Jennings, J. M. Patterson, D. R. Clinton, L. O. Slate, A. G. Jessup, J. R. Everhart, and R. E. Smith. 1999. <span>“Bankfull Hydraulic Geometry Relationships for <span>North Carolina</span> Streams.”</span> In <em>Wildland Hydrology</em>. American Water Resources Association.
+</div>
+<div id="ref-leopold1953hydraulic" class="csl-entry" role="listitem">
+Leopold, Luna B., and Thomas Maddock. 1953. <span>“The Hydraulic Geometry of Stream Channels and Some Physiographic Implications.”</span> Professional Paper 252. Washington, D.C.: U.S. Geological Survey.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -913,12 +1310,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Metrics.html" class="pagination-link" aria-label="Metrics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Metrics</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metrics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Install.html" class="pagination-link" aria-label="Install">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Install</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Install</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

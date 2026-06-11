@@ -1,5 +1,285 @@
-# Introduction
-This chapter describes the background and approach used in the development of the FluvialGeomorph project. 
+# Introduction {.unnumbered}
+
+## Overview
+
+The **FluvialGeomorph** toolbox is an open-source ArcGIS toolbox and R package designed to support rapid fluvial geomorphic analysis and assessment. FluvialGeomorph provides a standardized toolset for conducting cost-effective stream channel analysis by leveraging high-resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to extract stream channel dimensions at fine scale across large spatial extents.
+
+Traditional field-based stream surveys are time-consuming, expensive, and limited in spatial coverage. FluvialGeomorph addresses these limitations by enabling practitioners to systematically extract channel geometry from LiDAR-derived digital elevation models (DEMs), dramatically expanding the scale and efficiency of fluvial geomorphic assessment.
+
+## Purpose and Scope
+
+### Purpose of this Manual
+
+This technical manual serves as the authoritative reference for the analytical methods implemented in FluvialGeomorph. It documents the algorithms, procedures, and scientific foundations underlying the toolbox capabilities. This manual is intended for:
+
+- **Practitioners** seeking to understand the methods and assumptions behind the analyses
+- **Researchers** looking to validate or build upon the analytical approaches
+- **Reviewers** evaluating the technical basis of FluvialGeomorph analyses
+- **Developers** contributing to or extending the FluvialGeomorph codebase
+
+While the [FluvialGeomorph User Manual](https://fluvialgeomorph.github.io/FG-User-Manual/) provides step-by-step instructions for using the toolbox, this technical manual focuses on *why* and *how* the methods work, including:
+
+- Theoretical foundations and literature basis
+- Mathematical formulations and algorithms
+- LiDAR data requirements and processing methods
+- Assumptions, limitations, and appropriate applications
+- Validation and uncertainty quantification
+
+### Scope
+
+This manual documents the analytical methods for extracting fluvial geomorphic information from LiDAR terrain data, including:
+
+- Cross-section extraction and processing
+- Bankfull identification from topographic signatures
+- Channel dimension calculation (width, depth, cross-sectional area)
+- Longitudinal profile and slope analysis
+- Planform characterization (sinuosity, meander metrics)
+- Regional curve development and application
+- Reach-scale assessment and aggregation
+
+## Background and Development
+
+### The Need for Rapid Assessment Methods
+
+Stream restoration and management require accurate information about channel geometry across watersheds and regions. However, traditional field survey methods face significant challenges:
+
+- **Limited spatial coverage**: Field surveys typically capture only a few cross-sections per reach
+- **High cost**: Survey crews, equipment, and access requirements are expensive
+- **Time constraints**: Field work is weather-dependent and time-intensive
+- **Temporal snapshots**: Resurveys to assess change are rarely feasible
+- **Access limitations**: Private property and difficult terrain restrict survey locations
+
+The widespread availability of high-resolution LiDAR data presents an opportunity to overcome these limitations. LiDAR-derived DEMs provide continuous terrain coverage across entire watersheds with consistent, repeatable measurements at fine spatial resolution (often 1-meter or better). FluvialGeomorph was developed to systematically extract fluvial geomorphic information from LiDAR data, enabling rapid assessment at scales previously impractical with field methods alone.
+
+### Development History
+
+FluvialGeomorph was developed by the U.S. Army Corps of Engineers to support stream assessment, restoration planning, and regional studies. The toolbox builds upon:
+
+- Established fluvial geomorphology principles [@leopold1953hydraulic; @dunne1978water]
+- Regional hydraulic geometry methods [@harman1999bankfull; @doll2003hydraulic]
+- Advances in LiDAR remote sensing and terrain analysis
+- Geospatial analysis and automation techniques
+
+The toolbox has been applied to numerous watersheds and regional studies, demonstrating the value of LiDAR-based analysis for regional curve development, stream condition assessment, restoration site screening, and pre- and post-project monitoring.
+
+## Analytical Framework
+
+### Core Principles
+
+FluvialGeomorph is built on fundamental principles of fluvial geomorphology:
+
+1. **Hydraulic geometry relationships**: Channel dimensions scale predictably with discharge and drainage area [@leopold1953hydraulic]
+2. **Topographic signature**: Bankfull elevation creates detectable topographic breaks in the landscape
+3. **Regional consistency**: Streams within physiographic regions exhibit similar dimension-discharge relationships [@harman1999bankfull; @doll2003hydraulic]
+4. **Dynamic equilibrium**: Stable channels reflect a balance between flow, sediment, and boundary conditions [@dunne1978water]
+
+These principles enable the extraction of meaningful channel dimensions from topographic data and support the development of regional relationships for assessment and design.
+
+### LiDAR-Based Analysis
+
+FluvialGeomorph leverages the unique capabilities of LiDAR terrain data:
+
+- **High spatial resolution**: Captures fine-scale topographic features including bankfull breaks
+- **Continuous coverage**: Enables measurement at any location along the stream network
+- **Consistent methodology**: Standardized processing ensures comparable results across sites
+- **Efficient analysis**: Automated extraction dramatically reduces time and cost compared to field surveys
+- **Temporal analysis**: Multi-temporal LiDAR datasets enable change detection
+
+The toolbox automates the extraction of cross-sections, identification of bankfull elevation, and calculation of channel dimensions from LiDAR DEMs, providing rapid assessment capabilities while maintaining scientific rigor.
+
+### Integration with Field Data
+
+While FluvialGeomorph enables rapid LiDAR-based analysis, it is designed to complement, not replace, field observations. The most robust assessments integrate:
+
+- **LiDAR-derived measurements**: Provide extensive spatial coverage and consistent methodology
+- **Field validation**: Ground-truthing confirms bankfull identification and dimension accuracy
+- **Field indicators**: Bankfull features, vegetation lines, and sediment characteristics validate remote sensing
+- **Substrate data**: Bed and bank material information not available from LiDAR
+- **Ecological observations**: Habitat and biological data complement geomorphic measurements
+
+This integrated approach leverages the strengths of both remote sensing and field methods.
+
+## Relationship to User Manual
+
+This technical manual is complemented by the [FluvialGeomorph User Manual](https://fluvialgeomorph.github.io/FG-User-Manual/), which provides:
+
+- Installation and setup instructions
+- Step-by-step tool usage guidance
+- Workflow examples and tutorials
+- Data preparation guidelines
+- Troubleshooting and FAQs
+
+**Use the User Manual when you need to know *how* to use the tools.**
+
+**Use this Technical Manual when you need to understand *what* the tools calculate and *why* the methods work.**
+
+Together, these manuals provide comprehensive documentation for both using and understanding FluvialGeomorph.
+
+## Software Architecture
+
+### Dual Implementation
+
+FluvialGeomorph is available in two complementary implementations:
+
+**ArcGIS Toolbox**
+- Graphical user interface for interactive analysis
+- Map-based visualization and quality control
+- Integration with existing GIS workflows
+- Built with ArcPy, Python, and Spatial Analyst
+- Ideal for users familiar with ArcGIS environments
+
+**R Package**
+- Programmatic access for reproducible workflows
+- Statistical analysis and regional curve development
+- Batch processing and automation capabilities
+- Built with sf, terra, dplyr, and ggplot2
+- Ideal for users familiar with R/RStudio environments
+
+Both implementations use common algorithms and produce consistent results. Data can be exchanged between platforms using standard formats (shapefiles, GeoPackage, GeoTIFF, CSV).
+
+## LiDAR Data Requirements
+
+### Data Specifications
+
+FluvialGeomorph requires high-quality LiDAR-derived elevation data with the following characteristics:
+
+- **Spatial resolution**: 1-meter or finer recommended; 3-meter maximum
+- **Vertical accuracy**: ±15 cm RMSE or better
+- **Point density**: Sufficient to resolve channel features (typically ≥1 point/m²)
+- **Bare earth classification**: Vegetation and structures properly removed
+- **Format**: GeoTIFF or other standard raster format
+- **Coordinate system**: Projected coordinate system (not geographic)
+- **Vertical datum**: Consistent across study area
+
+### Data Quality Considerations
+
+LiDAR data quality directly affects analysis results. Key considerations include:
+
+- **Vegetation effects**: Dense canopy can limit ground point density and accuracy
+- **Water penetration**: LiDAR typically does not penetrate water; channel bed may not be captured
+- **Acquisition timing**: Low-flow conditions and leaf-off vegetation improve results
+- **Processing quality**: Classification errors and interpolation artifacts can affect measurements
+- **Temporal consistency**: Multi-temporal analysis requires consistent processing methods
+
+Users should assess LiDAR data quality before analysis and understand how data limitations may affect results. Detailed data specifications and quality assessment procedures are provided in subsequent chapters.
+
+## Assumptions and Limitations
+
+### General Assumptions
+
+FluvialGeomorph methods are based on several fundamental assumptions:
+
+1. **Topographic signature**: Bankfull elevation creates a detectable topographic break in the cross-section
+2. **LiDAR accuracy**: Elevation data are sufficiently accurate for dimension extraction at the scale of analysis
+3. **Bare earth representation**: Vegetation and structures have been properly removed from the DEM
+4. **Channel visibility**: Stream channel is visible in LiDAR data (not obscured by dense canopy or water)
+5. **Quasi-equilibrium**: Methods work best on channels in approximate dynamic equilibrium
+
+### Key Limitations
+
+Users should be aware of important limitations:
+
+- **Submerged channels**: LiDAR cannot measure below water surface; low-flow acquisition conditions required
+- **Dense vegetation**: Heavy canopy cover may prevent accurate ground elevation measurement
+- **Small streams**: Very small channels (< 2-3 meters wide) may not be resolved at typical LiDAR resolution
+- **Bankfull identification**: Automated methods may not work in all settings; field validation recommended
+- **Incised channels**: Deeply incised or entrenched channels may lack clear bankfull indicators
+- **Modified channels**: Artificial or heavily modified channels may not exhibit natural topographic signatures
+- **Temporal representation**: Single LiDAR dataset provides a snapshot; channel may have changed since acquisition
+
+### Appropriate Applications
+
+FluvialGeomorph is most appropriate for:
+
+- Wadeable streams and small to medium rivers (typically 2-50 meter bankfull width)
+- Channels with visible topographic bankfull indicators
+- Areas with high-quality LiDAR coverage
+- Alluvial channels in natural or semi-natural condition
+- Regional studies requiring consistent methodology across large areas
+- Preliminary assessment and screening-level analysis
+
+Methods may require adaptation or may not be suitable for bedrock channels, braided systems, highly incised channels, or streams smaller than LiDAR resolution. Specific limitations for individual methods are discussed in relevant chapters.
+
+## Quality Assurance and Validation
+
+### Quality Assurance
+
+FluvialGeomorph incorporates multiple quality assurance mechanisms:
+
+- **Input validation**: Tools check data formats, coordinate systems, and spatial resolution
+- **Range checking**: Calculated dimensions are checked against reasonable ranges
+- **Visualization**: Graphical outputs enable visual quality review
+- **Statistical screening**: Automated flagging of unusual measurements
+- **Documentation**: Metadata and processing logs for all analyses
+
+### Validation
+
+LiDAR-derived measurements should be validated through comparison with field surveys, verification of bankfull indicators, assessment of regional consistency, and independent review by experienced practitioners. Validation studies demonstrate that FluvialGeomorph methods can achieve accuracy comparable to field surveys when applied to appropriate stream types with high-quality LiDAR data.
+
+Detailed validation results and accuracy assessments are presented in subsequent chapters.
+
+## Using This Manual
+
+### Manual Organization
+
+This manual is organized to support both learning and reference use:
+
+- **Early chapters** cover data requirements, processing methods, and fundamental algorithms
+- **Middle chapters** document specific analytical methods (cross-sections, bankfull, dimensions, profiles, planform)
+- **Later chapters** address regional analysis, validation, and uncertainty quantification
+- **Appendices** provide supplementary information, code examples, and reference tables
+
+Cross-references throughout the manual link related topics and methods.
+
+### Navigation
+
+- **Quick Start**: Overview of typical workflows and getting started guidance
+- **Flowchart**: Visual representation of analysis processes and decision points
+- **Crosswalk**: Index linking tools, methods, and manual chapters
+- **Individual chapters**: Detailed documentation of specific methods
+- **References**: Complete bibliography of cited literature
+
+### For Different Users
+
+**New users** should start with the User Manual for basic operation, then consult relevant chapters of this manual to understand the methods being applied.
+
+**Experienced practitioners** can use this manual as a reference for specific methods, algorithms, and validation results.
+
+**Researchers and developers** will find detailed algorithm descriptions, theoretical foundations, and validation studies to support method evaluation and extension.
+
+## Contributing and Support
+
+### Open Source Development
+
+FluvialGeomorph is open source software. We welcome contributions including:
+
+- Bug reports and feature requests
+- Code contributions and method improvements
+- Documentation enhancements
+- Validation studies and case studies
+- Application examples from different regions
+
+Visit the [GitHub repository](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox) to contribute.
+
+### Getting Help
+
+Support resources include:
+
+- **User Manual**: Step-by-step guidance and examples
+- **Technical Manual**: Detailed method documentation (this document)
+- **GitHub Issues**: Bug reports and technical questions
+- **Community**: Share experiences and solutions with other users
+
+### Citing FluvialGeomorph
+
+If you use FluvialGeomorph in research or publications, please cite appropriately and acknowledge the U.S. Army Corps of Engineers as the developer.
+
+---
+
+*This technical manual is a living document that will be updated as methods are refined and new capabilities are added. Version information and change logs are maintained in the GitHub repository.*
+
+
+<!-- This chapter describes the background and approach used in the development of the FluvialGeomorph project. 
 
 ## Purpose
 * Document the methods used in FluvialGeomorph
@@ -26,6 +306,6 @@ This chapter describes the background and approach used in the development of th
 
 ## Other Resources
 * How to use the tools is described in the user manual
-* Application of this approach is described in other technical reports. 
+* Application of this approach is described in other technical reports. -->
 
 
