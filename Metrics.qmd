@@ -2,51 +2,1341 @@
 
 ## Level 1
 
-### Drainage Area
-
-### Slope 
-
-### Sinuosity
 
 
-***
+### Drainage Area {#sec-drainage-area}
 
-## Level 2
+**Definition:** The total upstream land area that contributes surface water flow to a specific point along a stream channel.
 
-### Discharge
+**Technical Specification:**
 
-### XS Area
+- **Symbol:** $A_d$ or DA
+- **Units:** km² (square kilometers) or mi² (square miles)
+- **Data Type:** Float/Double
+- **Typical Range:** 0.01 - 10,000+ km²
 
-### XS Width
+**Calculation Method:**
 
-### XS Depth
-* maximum depth
-* mean depth
+Drainage area is typically derived from Digital Elevation Models (DEMs) using flow accumulation algorithms:
 
-### XS Width to Depth Ratio
+$$A_d = \frac{\text{Flow\_Accumulation} \times \text{Cell\_Area}}{1,000,000}$$
 
-### Entrenchment Ratio
+Where:
 
-### Shear Stress
-* density
+- Flow_Accumulation = number of upstream cells
+- Cell_Area = DEM cell size² (in m²)
+- Division by 1,000,000 converts m² to km²
 
-### Stream Power
-* unit
+**Implementation Notes:**
+
+- Extracted at reach pour points or cross-section locations
+- Requires hydrologically conditioned DEM
+- Critical input for regional curve development
+- Primary independent variable for Level 2 metric predictions
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Watershed Delineation](../FG-User-Manual/watershed-delineation.html) for workflow guidance.
+:::
+
+**Data Sources:**
+
+- USGS StreamStats
+- NHDPlus catchment attributes
+- Custom watershed delineation from DEM
+
+---
+
+### Slope {#sec-slope}
+
+**Definition:** The change in elevation per unit length along the stream channel, representing the gradient of energy dissipation.
+
+**Technical Specification:**
+
+- **Symbol:** $S$ or $S_0$
+- **Units:** m/m (dimensionless) or ft/ft, often expressed as percentage or ratio
+- **Data Type:** Float/Double
+- **Typical Range:** 0.0001 - 0.10 (0.01% - 10%)
+
+**Calculation Methods:**
+
+**1. Reach-Average Slope:**
+
+$$S = \frac{Z_{\text{upstream}} - Z_{\text{downstream}}}{L_{\text{reach}}}$$
+
+Where:
+
+- $Z_{\text{upstream}}$ = elevation at upstream extent (m)
+- $Z_{\text{downstream}}$ = elevation at downstream extent (m)
+- $L_{\text{reach}}$ = channel length between points (m)
+
+**2. Water Surface Slope:**
+
+Derived from surveyed water surface elevations at bankfull stage:
+
+$$S_{ws} = \frac{\Delta Z_{ws}}{L_{\text{channel}}}$$
+
+**3. Energy Slope:**
+
+From Manning's equation, back-calculated from known discharge and channel geometry.
+
+**Implementation Notes:**
+
+- Reach length should be 20-30× bankfull width minimum
+- Use channel centerline length, not valley length
+- Water surface slope preferred over bed slope for hydraulic calculations
+- Critical parameter for shear stress and stream power calculations
+
+**Quality Control:**
+
+- Compare with regional slope-drainage area relationships
+- Flag values outside expected range for stream type
+- Verify against LiDAR-derived profiles where available
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Reach Delineation](../FG-User-Manual/reach-delineation.html) for slope measurement protocols.
+:::
+
+---
+
+### Sinuosity {#sec-sinuosity}
+
+**Definition:** The ratio of channel length to valley length, quantifying the degree of channel meandering.
+
+**Technical Specification:**
+
+- **Symbol:** $K$ or SI
+- **Units:** Dimensionless ratio
+- **Data Type:** Float/Double
+- **Typical Range:** 1.0 - 4.0+ (1.0 = straight, >1.5 = meandering)
+
+**Calculation Method:**
+
+$$K = \frac{L_{\text{channel}}}{L_{\text{valley}}}$$
+
+Where:
+
+- $L_{\text{channel}}$ = length along channel centerline (m)
+- $L_{\text{valley}}$ = straight-line distance between endpoints (m)
+
+**Classification Thresholds:**
+
+| Sinuosity | Classification | Description |
+|-----------|----------------|-------------|
+| K < 1.05 | Straight | Minimal meandering |
+| 1.05 ≤ K < 1.5 | Sinuous | Moderate meandering |
+| K ≥ 1.5 | Meandering | Well-developed meanders |
+
+: Classification of channel sinuosity {#tbl-sinuosity-class}
+
+**Implementation Notes:**
+
+- Measure over consistent reach lengths (typically 20× bankfull width)
+- Channel length follows thalweg or centerline
+- Valley length is straight-line distance between reach endpoints
+- Sensitive to reach length selection; longer reaches yield more stable values
+
+**Alternative Metrics:**
+
+- **Meander Wavelength Ratio:** $\lambda/W$ (see [Level 3 metrics](#sec-level-3))
+- **Bend Curvature:** More detailed planform characterization
+
+**Geomorphic Significance:**
+
+- Indicates channel adjustment to slope and sediment transport
+- Higher sinuosity = lower energy gradient
+- Key discriminator in stream classification systems (Rosgen, River Styles)
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Planform Assessment](../FG-User-Manual/planform-assessment.html) for sinuosity measurement procedures.
+:::
+
+---
+
+## Level 2 {#sec-level-2}
+
+### Discharge {#sec-discharge}
+
+**Definition:** The volumetric flow rate of water passing through a channel cross-section, typically referenced to bankfull or other recurrence interval flows.
+
+**Technical Specification:**
+
+- **Symbol:** $Q$ ($Q_{bf}$ for bankfull, $Q_2$, $Q_{1.5}$, etc. for recurrence intervals)
+- **Units:** m³/s (cms) or ft³/s (cfs)
+- **Data Type:** Float/Double
+- **Typical Range:** 0.01 - 10,000+ m³/s (highly variable)
+
+**Calculation Methods:**
+
+**1. Regional Curve Prediction:**
+
+$$Q_{bf} = a \times (A_d)^b$$
+
+Where:
+
+- $a$, $b$ = regional regression coefficients
+- $A_d$ = drainage area (km²)
+
+**2. Manning's Equation:**
+
+$$Q = \frac{1}{n} \times A \times R^{2/3} \times S^{1/2}$$
+
+Where:
+
+- $n$ = Manning's roughness coefficient
+- $A$ = cross-sectional area (m²)
+- $R$ = hydraulic radius (m)
+- $S$ = energy slope (m/m)
+
+**3. Gage Analysis:**
+
+- Frequency analysis of annual peak flows
+- Bankfull discharge typically $Q_{1.5}$ to $Q_{2.3}$
+
+**Recurrence Intervals:**
+
+| Symbol | Return Period | Description |
+|--------|---------------|-------------|
+| $Q_{1.5}$ | 1.5-year | Common bankfull proxy |
+| $Q_2$ | 2-year | Standard bankfull reference |
+| $Q_{10}$ | 10-year | Small flood |
+| $Q_{25}$ | 25-year | Moderate flood |
+| $Q_{50}$ | 50-year | Large flood |
+| $Q_{100}$ | 100-year | Design flood |
+
+: Common discharge recurrence intervals {#tbl-discharge-intervals}
+
+**Implementation Notes:**
+
+- Bankfull discharge is the channel-forming flow
+- Regional curves vary by physiographic province
+- Uncertainty increases with extrapolation beyond calibration range
+- Critical input for all hydraulic geometry calculations
+
+**Data Sources:**
+
+- USGS StreamStats regional equations
+- Gage analysis (USGS NWIS data)
+- Hydraulic modeling (HEC-RAS, SRH-2D)
+
+**Quality Control:**
+
+```r
+# Check against Dunne & Leopold (1978) approximation
+Q_check <- 2.3 * A_d^0.7  # for A_d in km², Q in m³/s
+```
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Bankfull Identification](../FG-User-Manual/bankfull-identification.html) and [Regional Curves](../FG-User-Manual/regional-curves.html).
+:::
+
+---
+
+### XS Area {#sec-xs-area}
+
+**Definition:** The cross-sectional area of flow perpendicular to the direction of flow, measured at bankfull stage.
+
+**Technical Specification:**
+
+- **Symbol:** $A$ or $A_{bf}$
+- **Units:** m² or ft²
+- **Data Type:** Float/Double
+- **Typical Range:** 1 - 1,000+ m²
+
+**Calculation Method:**
+
+**From Survey Data:**
+
+$$A = \sum_{i=1}^{n-1} \left[(x_{i+1} - x_i) \times \frac{(z_i + z_{i+1})}{2}\right]$$
+
+Where:
+
+- $x_i$ = horizontal station (m)
+- $z_i$ = depth below bankfull elevation (m)
+- Summation from left to right bank
+
+**Trapezoidal Rule Integration:**
+
+$$A = \sum_{i=1}^{n-1} \left[0.5 \times (d_i + d_{i+1}) \times \Delta x_i\right]$$
+
+**Regional Curve Prediction:**
+
+$$A_{bf} = c \times (A_d)^d$$
+
+Where:
+
+- $c$, $d$ = regional regression coefficients
+- $A_d$ = drainage area (km²)
+
+**Implementation Notes:**
+
+- Measured perpendicular to flow direction
+- Extends from bankfull elevation on left to right bank
+- Excludes overbank areas
+- Should represent active channel geometry
+
+**Hydraulic Geometry Relationship:**
+
+$$A = W \times D_{\text{mean}}$$
+
+Where:
+
+- $W$ = bankfull width (m)
+- $D_{\text{mean}}$ = mean depth (m)
+
+**Quality Control:**
+
+- Compare measured vs. predicted from regional curves
+- Check against continuity equation: $Q = A \times V$
+- Verify bankfull elevation identification
+- Flag cross-sections with unusual geometry
+
+**Data Processing:**
+
+- Remove survey errors (spikes, gaps)
+- Interpolate between survey points if needed
+- Apply consistent bankfull datum
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Cross-Section Surveys](../FG-User-Manual/cross-section-surveys.html) and [Bankfull Delineation](../FG-User-Manual/bankfull-delineation.html).
+:::
+
+---
+
+### XS Width {#sec-xs-width}
+
+**Definition:** The top width of the channel measured at bankfull stage, perpendicular to flow direction.
+
+**Technical Specification:**
+
+- **Symbol:** $W$ or $W_{bf}$
+- **Units:** m or ft
+- **Data Type:** Float/Double
+- **Typical Range:** 1 - 200+ m
+
+**Calculation Method:**
+
+**From Survey Data:**
+
+$$W = x_{\text{right}} - x_{\text{left}}$$
+
+Where:
+
+- $x_{\text{right}}$ = station at right bankfull indicator (m)
+- $x_{\text{left}}$ = station at left bankfull indicator (m)
+
+**Regional Curve Prediction:**
+
+$$W_{bf} = e \times (A_d)^f$$
+
+Where:
+
+- $e$, $f$ = regional regression coefficients (typically $f \approx 0.5$)
+- $A_d$ = drainage area (km²)
+
+**Hydraulic Geometry:**
+
+$$W = a \times Q^b$$
+
+Where:
+
+- $a$, $b$ = at-a-station or downstream coefficients
+- $Q$ = discharge (m³/s)
+- Typical $b \approx 0.5$ for downstream relations
+
+**Implementation Notes:**
+
+- Measured at water surface at bankfull stage
+- Perpendicular to flow direction
+- Excludes vegetated benches unless inundated at bankfull
+- Most stable and easily measured hydraulic geometry parameter
+
+**Measurement Considerations:**
+
+- Use consistent bankfull indicators (topographic break, vegetation line, etc.)
+- Multiple cross-sections per reach for averaging
+- Avoid locations with local controls (bedrock, structures)
+
+**Quality Control:**
+
+```r
+# Width-to-depth ratio check
+WD_ratio <- W / D_mean
+# Typical range: 10-40 for most alluvial channels
+```
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Bankfull Width Measurement](../FG-User-Manual/bankfull-width.html) and [Field Indicators](../FG-User-Manual/field-indicators.html).
+:::
+
+---
+
+### XS Depth {#sec-xs-depth}
+
+**Definition:** Vertical distance from the water surface to the channel bed, measured at bankfull stage.
+
+**Technical Specification:**
+
+- **Symbol:** $D$ ($D_{\text{max}}$ for maximum, $D_{\text{mean}}$ for mean)
+- **Units:** m or ft
+- **Data Type:** Float/Double
+- **Typical Range:** 0.1 - 10+ m
+
+#### Maximum Depth {#sec-max-depth}
+
+**Calculation Method:**
+
+$$D_{\text{max}} = \max(z_{bf} - z_{\text{bed}})$$
+
+Where:
+
+- $z_{bf}$ = bankfull elevation (m)
+- $z_{\text{bed}}$ = bed elevation at each station (m)
+
+**Characteristics:**
+
+- Typically occurs near thalweg
+- Location varies with channel morphology
+- Less stable than mean depth for regional relationships
+
+#### Mean Depth {#sec-mean-depth}
+
+**Calculation Method:**
+
+$$D_{\text{mean}} = \frac{A}{W}$$
+
+Where:
+
+- $A$ = cross-sectional area (m²)
+- $W$ = bankfull width (m)
+
+**Alternative Calculation:**
+
+$$D_{\text{mean}} = \frac{1}{W} \times \sum_{i=1}^{n} \left[d_i \times \Delta x_i\right]$$
+
+Where:
+
+- $d_i$ = depth at station $i$ (m)
+- $\Delta x_i$ = horizontal distance increment (m)
+
+**Regional Curve Prediction:**
+
+$$D_{\text{mean}} = g \times (A_d)^h$$
+
+Where:
+
+- $g$, $h$ = regional regression coefficients (typically $h \approx 0.3-0.4$)
+- $A_d$ = drainage area (km²)
+
+**Hydraulic Geometry:**
+
+$$D_{\text{mean}} = c \times Q^f$$
+
+Where:
+
+- $c$, $f$ = coefficients (typical $f \approx 0.3-0.4$)
+- $Q$ = discharge (m³/s)
+
+**Implementation Notes:**
+
+- Mean depth preferred for regional curves and ratios
+- Maximum depth useful for habitat assessment
+- Hydraulic depth ($A/W$) equivalent to mean depth for rectangular channels
+- More variable than width; requires multiple cross-sections
+
+**Quality Control:**
+
+- Verify reasonable width-to-depth ratios
+- Check against regional expectations
+- Compare maximum to mean depth (typically $D_{\text{max}} \approx 1.5-2.0 \times D_{\text{mean}}$)
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Depth Measurement](../FG-User-Manual/depth-measurement.html) and [Cross-Section Analysis](../FG-User-Manual/cross-section-analysis.html).
+:::
+
+---
+
+### XS Width to Depth Ratio {#sec-width-depth-ratio}
+
+**Definition:** The ratio of bankfull width to mean depth, indicating channel shape and lateral vs. vertical adjustment potential.
+
+**Technical Specification:**
+
+- **Symbol:** $W/D$ or $F$ (form ratio)
+- **Units:** Dimensionless
+- **Data Type:** Float/Double
+- **Typical Range:** 5 - 100+ (highly variable by stream type)
+
+**Calculation Method:**
+
+$$\frac{W}{D} = \frac{W_{bf}}{D_{\text{mean}}}$$
+
+Where:
+
+- $W_{bf}$ = bankfull width (m)
+- $D_{\text{mean}}$ = mean bankfull depth (m)
+
+**Classification Ranges:**
+
+| W/D Ratio | Classification | Channel Form |
+|-----------|----------------|--------------|
+| < 12 | Narrow/Deep | Incised or confined |
+| 12 - 40 | Moderate | Typical alluvial |
+| > 40 | Wide/Shallow | Laterally active |
+
+: Width-to-depth ratio classification {#tbl-wd-ratio}
+
+**Geomorphic Significance:**
+
+::: {.panel-tabset}
+
+## Low W/D (narrow, deep)
+
+- Incised or confined channels
+- Resistant banks (cohesive, vegetated)
+- Higher shear stress on bed
+- Vertical adjustment dominant
+
+## High W/D (wide, shallow)
+
+- Unconfined, laterally active channels
+- Erodible banks
+- Lower unit stream power
+- Lateral adjustment dominant
+
+:::
+
+**Implementation Notes:**
+
+- Key discriminator in stream classification (Rosgen types)
+- Indicates channel stability and adjustment mode
+- Varies systematically with stream power and bank strength
+- Use mean depth, not maximum depth
+
+**Relationships:**
+
+Schumm (1960) relationship with silt-clay content:
+
+$$\frac{W}{D} = 255 \times M^{-1.08}$$
+
+Where $M$ = weighted mean percent silt-clay in channel perimeter
+
+**Quality Control:**
+
+- Compare with regional values for similar stream types
+- Check consistency across multiple cross-sections
+- Verify depth measurement accuracy (primary source of error)
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Stream Classification](../FG-User-Manual/stream-classification.html) and [Channel Form](../FG-User-Manual/channel-form.html).
+:::
+
+---
+
+### Entrenchment Ratio {#sec-entrenchment-ratio}
+
+**Definition:** The ratio of flood-prone width to bankfull width, indicating the degree of vertical containment and access to floodplain.
+
+**Technical Specification:**
+
+- **Symbol:** ER
+- **Units:** Dimensionless
+- **Data Type:** Float/Double
+- **Typical Range:** 1.0 - 10.0+
+
+**Calculation Method:**
+
+$$ER = \frac{W_{fpa}}{W_{bf}}$$
+
+Where:
+
+- $W_{fpa}$ = flood-prone area width (m)
+- $W_{bf}$ = bankfull width (m)
+
+**Flood-Prone Area Definition:**
+
+- Width of area inundated at 2× maximum bankfull depth
+- Measured perpendicular to valley orientation
+- Represents approximate 50-year floodplain
+
+**Measurement Protocol:**
+
+1. Establish bankfull elevation ($z_{bf}$)
+2. Calculate flood-prone elevation: $z_{fpa} = z_{bf} + (2 \times D_{\text{max}})$
+3. Measure horizontal width at $z_{fpa}$ elevation
+4. Calculate ratio
+
+**Classification Thresholds:**
+
+| ER Value | Entrenchment Level | Description |
+|----------|-------------------|-------------|
+| < 1.4 | Entrenched | Minimal floodplain access |
+| 1.4 - 2.2 | Moderately Entrenched | Limited floodplain access |
+| > 2.2 | Slightly Entrenched | Good floodplain connectivity |
+
+: Entrenchment ratio classification {#tbl-entrenchment}
+
+**Geomorphic Significance:**
+
+- Indicates vertical stability and incision history
+- Controls sediment storage and flood attenuation
+- Key parameter in stream classification systems
+- Affects riparian habitat and nutrient cycling
+
+**Implementation Notes:**
+
+- Measure from valley cross-section, not channel cross-section
+- Use topographic maps or LiDAR for consistent measurement
+- May vary significantly along reach; use representative locations
+- Sensitive to local topography and valley confinement
+
+**Alternative Metrics:**
+
+- **Incision Ratio:** Depth of incision below historical floodplain
+- **Confinement Ratio:** Valley width to bankfull width
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Entrenchment Assessment](../FG-User-Manual/entrenchment-assessment.html) and [Valley Confinement](../FG-User-Manual/valley-confinement.html).
+:::
+
+---
+
+### Shear Stress {#sec-shear-stress}
+
+**Definition:** The tangential force per unit area exerted by flowing water on the channel bed, driving sediment transport.
+
+**Technical Specification:**
+
+- **Symbol:** $\tau$ (tau) or $\tau_0$
+- **Units:** N/m² (Pascals) or lb/ft²
+- **Data Type:** Float/Double
+- **Typical Range:** 0.1 - 100+ N/m²
+
+**Calculation Method:**
+
+**Boundary Shear Stress:**
+
+$$\tau_0 = \gamma \times R \times S$$
+
+Where:
+
+- $\gamma$ = specific weight of water (N/m³)
+- $R$ = hydraulic radius (m)
+- $S$ = energy slope (m/m)
+
+**With Density:**
+
+$$\tau_0 = \rho \times g \times R \times S$$
+
+Where:
+
+- $\rho$ = water density (1000 kg/m³ at 20°C)
+- $g$ = gravitational acceleration (9.81 m/s²)
+- $R$ = hydraulic radius (m)
+- $S$ = energy slope (m/m)
+
+#### Density {#sec-density}
+
+**Water Density Values:**
+
+| Temperature | Density (kg/m³) | Specific Weight (N/m³) |
+|-------------|-----------------|------------------------|
+| 4°C | 1000.0 | 9810 |
+| 10°C | 999.7 | 9807 |
+| 20°C | 998.2 | 9789 |
+| 30°C | 995.7 | 9764 |
+
+: Water density and specific weight by temperature {#tbl-water-density}
+
+**Temperature Correction:**
+
+$$\rho(T) = 1000 \times \left[1 - (T - 4)^2 \times 6.8 \times 10^{-6}\right]$$
+
+for $T$ in °C
+
+**Implementation Notes:**
+
+- Use bankfull hydraulic radius and water surface slope
+- Represents average bed shear stress
+- Local shear stress varies with bed topography
+- Critical for sediment transport calculations
+
+**Hydraulic Radius:**
+
+$$R = \frac{A}{P}$$
+
+Where:
+
+- $A$ = cross-sectional area (m²)
+- $P$ = wetted perimeter (m)
+
+For wide channels ($W \gg D$):
+
+$$R \approx D_{\text{mean}}$$
+
+**Critical Shear Stress:**
+
+$$\tau_c = \theta_c \times (\rho_s - \rho) \times g \times D_{50}$$
+
+Where:
+
+- $\theta_c$ = Shields parameter (≈ 0.045 for coarse sediment)
+- $\rho_s$ = sediment density (2650 kg/m³ for quartz)
+- $D_{50}$ = median grain size (m)
+
+**Geomorphic Significance:**
+
+- Indicates sediment transport capacity
+- Threshold for bed mobility
+- Controls channel morphology and stability
+- Key input for stream restoration design
+
+**Quality Control:**
+
+- Verify slope measurement accuracy
+- Check against expected values for stream type
+- Compare with critical shear stress for bed material
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Sediment Transport](../FG-User-Manual/sediment-transport.html) and [Hydraulic Analysis](../FG-User-Manual/hydraulic-analysis.html).
+:::
+
+---
+
+### Stream Power {#sec-stream-power}
+
+**Definition:** The rate of energy expenditure per unit length of channel, representing the capacity to perform geomorphic work.
+
+**Technical Specification:**
+
+- **Symbol:** $\Omega$ (omega) for total, $\omega$ (omega) for unit
+- **Units:** 
+  - Total: W/m (watts per meter)
+  - Unit: W/m² (watts per square meter)
+- **Data Type:** Float/Double
+- **Typical Range:** 
+  - Total: 1 - 10,000+ W/m
+  - Unit: 1 - 300+ W/m²
+
+**Calculation Methods:**
+
+**Total Stream Power:**
+
+$$\Omega = \gamma \times Q \times S$$
+
+Or:
+
+$$\Omega = \rho \times g \times Q \times S$$
+
+Where:
+
+- $\gamma$ = specific weight of water (9810 N/m³)
+- $\rho$ = water density (1000 kg/m³)
+- $g$ = gravitational acceleration (9.81 m/s²)
+- $Q$ = discharge (m³/s)
+- $S$ = energy slope (m/m)
+
+#### Unit Stream Power {#sec-unit-stream-power}
+
+**Definition:** Stream power per unit bed area, normalizing for channel size.
+
+**Calculation Method:**
+
+$$\omega = \frac{\Omega}{W} = \frac{\gamma \times Q \times S}{W}$$
+
+Or:
+
+$$\omega = \tau_0 \times V$$
+
+Where:
+
+- $W$ = bankfull width (m)
+- $\tau_0$ = boundary shear stress (N/m²)
+- $V$ = mean flow velocity (m/s)
+
+**Simplified Form:**
+
+$$\omega = \rho \times g \times D \times S \times V$$
+
+**Geomorphic Significance:**
+
+**Classification Thresholds (Nanson & Croke, 1992):**
+
+| Unit Stream Power (W/m²) | Energy Level | Process Regime |
+|--------------------------|--------------|----------------|
+| < 10 | Low Energy | Deposition-dominated, fine sediment |
+| 10 - 50 | Medium Energy | Balanced transport, mixed sediment |
+| 50 - 300 | High Energy | Erosion-dominated, coarse sediment |
+| ≥ 300 | Very High Energy | Bedrock control, limited alluvium |
+
+: Stream power classification {#tbl-stream-power}
+
+**Implementation Notes:**
+
+- Use bankfull discharge and water surface slope
+- Unit stream power preferred for comparing channels of different sizes
+- Critical parameter for stream classification and restoration design
+- Correlates with channel pattern and sediment transport regime
+
+**Specific Stream Power:**
+
+Alternative formulation per unit mass of water:
+
+$$\omega_s = g \times S \times V \quad \text{(in m²/s³)}$$
+
+**Relationships:**
+
+**With Shear Stress:**
+
+$$\omega = \tau_0 \times V = \tau_0 \times \frac{Q}{A}$$
+
+**With Slope and Discharge:**
+
+$$\omega = \frac{\rho \times g \times S \times Q}{W}$$
+
+**Quality Control:**
+
+- Verify discharge and slope accuracy
+- Compare with regional values for similar stream types
+- Check consistency with observed channel morphology
+- Validate against sediment transport observations
+
+**Applications:**
+
+- Stream classification (River Styles, Rosgen)
+- Restoration design (reference reach selection)
+- Sediment transport prediction
+- Channel evolution assessment
+- Habitat characterization
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Stream Power Analysis](../FG-User-Manual/stream-power-analysis.html), [Channel Classification](../FG-User-Manual/channel-classification.html), and [Restoration Design](../FG-User-Manual/restoration-design.html).
+:::
+
+---
+
+## Level 3 {#sec-level-3}
+
+### Bend Radius of Curvature {#sec-bend-radius}
+
+**Definition:** The radius of the circular arc that best fits the centerline of a meander bend, quantifying bend tightness.
+
+**Technical Specification:**
+
+- **Symbol:** $R_c$
+- **Units:** m or ft
+- **Data Type:** Float/Double
+- **Typical Range:** 10 - 1000+ m (varies with channel size)
+
+**Calculation Methods:**
+
+**1. Three-Point Circle Method:**
+
+$$R_c = \frac{a \times b \times c}{4 \times K}$$
+
+Where:
+
+- $a$, $b$, $c$ = distances between three points on bend
+- $K$ = area of triangle formed by three points
+
+**2. Curvature from Coordinates:**
+
+$$\kappa = \frac{|x'y'' - y'x''|}{(x'^2 + y'^2)^{3/2}}$$
+
+$$R_c = \frac{1}{\kappa}$$
+
+Where:
+
+- $x'$, $y'$ = first derivatives of centerline coordinates
+- $x''$, $y''$ = second derivatives
+- $\kappa$ = curvature
+
+**3. Best-Fit Circle:**
+
+Least-squares fit of circular arc to bend apex points:
+
+$$(x - x_c)^2 + (y - y_c)^2 = R_c^2$$
+
+Solve for center $(x_c, y_c)$ and radius $R_c$
+
+**Implementation Notes:**
+
+- Measure at bend apex (point of maximum curvature)
+- Use channel centerline or thalweg
+- Requires high-resolution planform data (aerial imagery, LiDAR)
+- Multiple bends per reach for statistical analysis
+
+**Measurement Extent:**
+
+- Inflection point to inflection point
+- Minimum 3 points for calculation
+- More points improve accuracy
+
+**Geomorphic Significance:**
+
+- Indicates bend tightness and migration potential
+- Controls secondary circulation and bank erosion
+- Affects sediment sorting and bar formation
+- Key parameter in meander evolution models
+
+**Quality Control:**
+
+- Visual inspection of fitted circle
+- Compare with field observations
+- Check for consistency along reach
+- Flag irregular or compound bends
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Planform Analysis](../FG-User-Manual/planform-analysis.html) and [Meander Geometry](../FG-User-Manual/meander-geometry.html).
+:::
+
+---
+
+### Meander Length {#sec-meander-length}
+
+**Definition:** The along-channel distance between successive inflection points, representing one complete meander wavelength.
+
+**Technical Specification:**
+
+- **Symbol:** $\lambda$ (lambda) or $L_m$
+- **Units:** m or ft
+- **Data Type:** Float/Double
+- **Typical Range:** 50 - 5000+ m (scales with channel size)
+
+**Calculation Method:**
+
+**Direct Measurement:**
+
+$$\lambda = L_{\text{channel}} \text{ (inflection to inflection)}$$
+
+Measured along channel centerline between successive inflection points (crossover points where curvature changes sign).
+
+**From Planform:**
+
+1. Identify inflection points on both sides of meander
+2. Measure centerline distance between corresponding points
+3. Average multiple meanders for reach-scale value
+
+**Empirical Relationships:**
+
+**Leopold & Wolman (1960):**
+
+$$\lambda = 10.9 \times W_{bf}^{1.01}$$
+
+**Simplified:**
+
+$$\lambda \approx 11 \times W_{bf}$$
+
+Where $W_{bf}$ = bankfull width (m)
+
+**Alternative (with discharge):**
+
+$$\lambda = 4.7 \times Q_{bf}^{0.5}$$
+
+Where $Q_{bf}$ = bankfull discharge (m³/s)
+
+**Components:**
+
+- **Meander Wavelength ($\lambda$):** Full wavelength (inflection to inflection)
+- **Meander Arc Length:** Distance along one bend
+- **Meander Amplitude:** Perpendicular distance from valley axis to bend apex
+
+**Implementation Notes:**
+
+- Requires well-developed meander pattern
+- Measure multiple meanders for statistical reliability
+- Use consistent definition of inflection points
+- Scales predictably with channel width
+
+**Geomorphic Significance:**
+
+- Fundamental property of meandering channels
+- Reflects balance between flow momentum and bank resistance
+- Controls floodplain width and reworking rate
+- Used in channel restoration design
+
+**Quality Control:**
+
+```r
+# Check against empirical relationship
+lambda_predicted <- 11 * W_bf
+ratio <- lambda_measured / lambda_predicted
+# Typical range: 0.7 - 1.5
+```
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Meander Characterization](../FG-User-Manual/meander-characterization.html) and [Planform Metrics](../FG-User-Manual/planform-metrics.html).
+:::
+
+---
+
+### Meander Bend Width {#sec-meander-bend-width}
+
+**Definition:** The straight-line distance from the meander apex to the opposite inflection point, perpendicular to the valley axis.
+
+**Technical Specification:**
+
+- **Symbol:** $A_m$ or $W_m$
+- **Units:** m or ft
+- **Data Type:** Float/Double
+- **Typical Range:** 20 - 2000+ m
+
+**Calculation Method:**
+
+**Direct Measurement:**
+
+$$W_m = \text{perpendicular distance from valley axis to bend apex}$$
+
+Or:
+
+$$W_m = 2 \times A_m$$
+
+Where $A_m$ = meander amplitude (distance from valley centerline to apex)
+
+**From Coordinates:**
+
+1. Define valley axis (straight line between inflection points)
+2. Identify bend apex (point of maximum curvature)
+3. Measure perpendicular distance from axis to apex
+4. Multiply by 2 for full bend width
+
+**Empirical Relationships:**
+
+**Typical Ratio:**
+
+$$W_m \approx 0.5 \times \lambda$$
+
+Where $\lambda$ = meander wavelength
+
+**With Bankfull Width:**
+
+$$W_m \approx 18 \times W_{bf}$$
+
+(Derived from $\lambda \approx 11 \times W_{bf}$ and $W_m \approx 0.5 \times \lambda$)
+
+**Implementation Notes:**
+
+- Measure perpendicular to valley trend, not channel
+- Use bend apex (point of maximum deflection)
+- Represents lateral extent of channel migration
+- Important for floodplain width and easement determination
+
+**Meander Belt Width:**
+
+Related but distinct metric:
+
+$$W_{\text{belt}} = \text{maximum width of meander belt}$$
+
+Encompasses multiple meanders and historical channel positions.
+
+**Geomorphic Significance:**
+
+- Indicates lateral migration potential
+- Controls floodplain reworking rate
+- Defines meander belt for land use planning
+- Key parameter for restoration corridor width
+
+**Quality Control:**
+
+- Verify valley axis orientation
+- Check consistency across multiple bends
+- Compare with meander wavelength ($W_m \approx 0.5 \times \lambda$)
+- Validate against historical channel positions
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Migration Assessment](../FG-User-Manual/migration-assessment.html) and [Corridor Delineation](../FG-User-Manual/corridor-delineation.html).
+:::
+
+---
+
+### Radius of Curvature to Bankfull Width Ratio {#sec-rc-w-ratio}
+
+**Definition:** Dimensionless ratio quantifying bend tightness relative to channel size, indicating meander development and stability.
+
+**Technical Specification:**
+
+- **Symbol:** $R_c/W$ or $r^*$
+- **Units:** Dimensionless
+- **Data Type:** Float/Double
+- **Typical Range:** 2 - 20+
+
+**Calculation Method:**
+
+$$\frac{R_c}{W} = \frac{R_c}{W_{bf}}$$
+
+Where:
+
+- $R_c$ = radius of curvature at bend apex (m)
+- $W_{bf}$ = bankfull width (m)
+
+**Classification Thresholds:**
+
+| $R_c/W$ | Bend Tightness | Characteristics |
+|---------|----------------|-----------------|
+| < 2 | Very Tight | High erosion risk, unstable |
+| 2 - 3 | Tight | Active migration, high shear |
+| 3 - 5 | Moderate | Balanced, typical meanders |
+| 5 - 10 | Gentle | Stable, lower migration rates |
+| > 10 | Very Gentle | Approaching straight |
+
+: Radius of curvature to width ratio classification {#tbl-rc-w-ratio}
+
+**Geomorphic Significance:**
+
+::: {.panel-tabset}
+
+## Low $R_c/W$ (tight bends)
+
+- High near-bank velocities and shear stress
+- Rapid bank erosion and migration
+- Strong secondary circulation
+- Point bar development
+- Potential for cutoff formation
+
+## High $R_c/W$ (gentle bends)
+
+- Lower erosion rates
+- More stable banks
+- Weaker secondary flow
+- Slower migration
+- Less sediment sorting
+
+:::
+
+**Implementation Notes:**
+
+- Calculate at bend apex (maximum curvature)
+- Average multiple bends for reach characterization
+- Use consistent bankfull width measurement
+- Critical for assessing bend stability
+
+**Empirical Relationships:**
+
+**Hickin & Nanson (1984) - Migration Rate:**
+
+Maximum migration rate occurs at $R_c/W \approx 2-3$
+
+**Stability Threshold:**
+
+$$\begin{align}
+R_c/W < 2 &: \text{High instability risk} \\
+R_c/W > 10 &: \text{Minimal lateral activity}
+\end{align}$$
+
+**Applications:**
+
+- Bank erosion hazard assessment
+- Restoration design (target $R_c/W = 2-3$ for natural appearance)
+- Channel evolution prediction
+- Infrastructure risk evaluation
+
+**Quality Control:**
+
+```r
+# Check against typical values
+if (Rc_W < 1.5) {
+  flag <- "Unusually tight"
+} else if (Rc_W > 15) {
+  flag <- "Nearly straight"
+}
+```
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Bend Stability](../FG-User-Manual/bend-stability.html) and [Migration Rates](../FG-User-Manual/migration-rates.html).
+:::
+
+---
+
+### Meander Bend Width to Bankfull Width Ratio {#sec-wm-w-ratio}
+
+**Definition:** Dimensionless ratio of meander bend width to bankfull width, indicating the lateral extent of meandering relative to channel size.
+
+**Technical Specification:**
+
+- **Symbol:** $W_m/W$ or $A_m/W$
+- **Units:** Dimensionless
+- **Data Type:** Float/Double
+- **Typical Range:** 10 - 30+
+
+**Calculation Method:**
+
+$$\frac{W_m}{W} = \frac{W_m}{W_{bf}}$$
+
+Or using amplitude:
+
+$$\frac{A_m}{W} = \frac{A_m}{W_{bf}}$$
+
+Where:
+
+- $W_m$ = meander bend width (m)
+- $A_m$ = meander amplitude (m) [$W_m = 2 \times A_m$]
+- $W_{bf}$ = bankfull width (m)
+
+**Empirical Relationships:**
+
+**From Leopold & Wolman:**
+
+Since $\lambda \approx 11 \times W$ and $W_m \approx 0.5 \times \lambda$:
+
+$$\frac{W_m}{W} \approx 18$$
+
+**Typical Range:**
+
+$$\frac{W_m}{W} = 15 - 25 \text{ (for freely meandering channels)}$$
+
+**With Sinuosity:**
+
+Higher sinuosity generally correlates with higher $W_m/W$ ratios.
+
+**Implementation Notes:**
+
+- Measure at representative bends (avoid anomalies)
+- Average multiple bends for reach value
+- Requires well-developed meander pattern
+- Sensitive to valley confinement
+
+**Geomorphic Significance:**
+
+::: {.panel-tabset}
+
+## Low $W_m/W$ (< 10)
+
+- Confined or constrained channel
+- Limited lateral migration space
+- Valley controls on planform
+- Reduced floodplain connectivity
+
+## Moderate $W_m/W$ (10-25)
+
+- Freely meandering
+- Typical alluvial channel
+- Active floodplain reworking
+- Natural lateral mobility
+
+## High $W_m/W$ (> 25)
+
+- Highly sinuous
+- Extensive lateral migration
+- Wide meander belt
+- Low valley gradient
+
+:::
+
+**Applications:**
+
+**Restoration Design:**
+
+```r
+# Target meander geometry
+W_m_design <- 18 * W_bf_design
+lambda_design <- 11 * W_bf_design
+R_c_design <- 2.5 * W_bf_design
+```
+
+**Corridor Width Estimation:**
+
+```r
+W_corridor <- W_m + (2 * migration_buffer)
+W_corridor_min <- 20 * W_bf  # minimum
+```
+
+**Channel Evolution:**
+
+- Increasing $W_m/W$ indicates lateral expansion
+- Decreasing $W_m/W$ suggests confinement or straightening
+- Temporal changes indicate adjustment processes
+
+**Quality Control:**
+
+```r
+# Consistency check with wavelength
+lambda_W <- lambda_measured / W_bf  # Should be ~11
+Wm_W <- W_m_measured / W_bf  # Should be ~18
+
+# Ratio should be approximately 0.5
+ratio_check <- Wm_W / lambda_W
+# Expected: ratio_check ≈ 0.5 ± 0.1
+```
+
+**Comparison with Historical Data:**
+
+- Overlay historical channel positions
+- Calculate $W_m/W$ for different time periods
+- Assess trends in lateral activity
+- Identify reaches with changing planform
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Planform Design](../FG-User-Manual/planform-design.html), [Meander Geometry](../FG-User-Manual/meander-geometry.html), and [Channel Migration Zones](../FG-User-Manual/channel-migration-zones.html).
+:::
+
+---
+
+## Summary {#sec-metrics-summary}
+
+### Metric Hierarchy and Relationships {#sec-metric-hierarchy}
+
+| Level | Metric | Primary Inputs | Typical Use |
+|-------|--------|----------------|-------------|
+| **1** | Drainage Area | DEM, pour point | Regional curves, scaling |
+| **1** | Slope | Elevation, length | Energy gradient, classification |
+| **1** | Sinuosity | Channel/valley length | Pattern classification |
+| **2** | Discharge | Drainage area, regional curves | Hydraulic design |
+| **2** | XS Area | Width, depth | Flow capacity |
+| **2** | XS Width | Survey, bankfull elevation | Hydraulic geometry |
+| **2** | XS Depth | Survey, bankfull elevation | Hydraulic geometry |
+| **2** | W/D Ratio | Width, depth | Channel form, stability |
+| **2** | Entrenchment | Flood-prone width, bankfull width | Vertical stability |
+| **2** | Shear Stress | Depth, slope, density | Sediment transport |
+| **2** | Stream Power | Discharge, slope, width | Geomorphic work capacity |
+| **3** | Bend $R_c$ | Planform coordinates | Bend tightness |
+| **3** | Meander Length | Inflection points | Planform scaling |
+| **3** | Bend Width | Amplitude, valley axis | Lateral extent |
+| **3** | $R_c/W$ | Radius, width | Bend stability |
+| **3** | $W_m/W$ | Bend width, bankfull width | Planform development |
+
+: Summary of FluvialGeomorph metrics by level {#tbl-metrics-summary}
+
+### Implementation Workflow {#sec-implementation-workflow}
+
+**Level 1 → Level 2 → Level 3**
+
+::: {.callout-tip}
+## Workflow Sequence
+
+1. **Level 1 Metrics** (watershed-scale)
+   - Derive from GIS analysis
+   - Independent variables for predictions
+   - Minimal field data required
+
+2. **Level 2 Metrics** (reach/cross-section scale)
+   - Predicted from Level 1 using regional curves
+   - Validated with field surveys
+   - Core hydraulic geometry parameters
+
+3. **Level 3 Metrics** (planform scale)
+   - Calculated from Level 2 dimensions
+   - Require detailed planform mapping
+   - Characterize lateral dynamics
+:::
+
+::: {.callout-note}
+## Cross-Reference
+See [User Manual Section on Metric Calculation Workflow](../FG-User-Manual/metric-workflow.html) and [Data Collection Protocols](../FG-User-Manual/data-collection.html).
+:::
 
 
-***
-
-## Level 3
-
-### Bend Radius of Curvature
-
-### Meander Length
-
-### Meander Bend Width
-
-### Radius of Curvature to Bankfull Width Ratio
-
-### Meander Bend Width to Bankfull Width Ratio
-
-
-***

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -71,6 +105,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -307,28 +370,33 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#level-1" id="toc-level-1" class="nav-link active" data-scroll-target="#level-1">Level 1</a>
   <ul class="collapse">
-  <li><a href="#drainage-area" id="toc-drainage-area" class="nav-link" data-scroll-target="#drainage-area">Drainage Area</a></li>
-  <li><a href="#slope" id="toc-slope" class="nav-link" data-scroll-target="#slope">Slope</a></li>
-  <li><a href="#sinuosity" id="toc-sinuosity" class="nav-link" data-scroll-target="#sinuosity">Sinuosity</a></li>
+  <li><a href="#sec-drainage-area" id="toc-sec-drainage-area" class="nav-link" data-scroll-target="#sec-drainage-area">Drainage Area</a></li>
+  <li><a href="#sec-slope" id="toc-sec-slope" class="nav-link" data-scroll-target="#sec-slope">Slope</a></li>
+  <li><a href="#sec-sinuosity" id="toc-sec-sinuosity" class="nav-link" data-scroll-target="#sec-sinuosity">Sinuosity</a></li>
   </ul></li>
-  <li><a href="#level-2" id="toc-level-2" class="nav-link" data-scroll-target="#level-2">Level 2</a>
+  <li><a href="#sec-level-2" id="toc-sec-level-2" class="nav-link" data-scroll-target="#sec-level-2">Level 2</a>
   <ul class="collapse">
-  <li><a href="#discharge" id="toc-discharge" class="nav-link" data-scroll-target="#discharge">Discharge</a></li>
-  <li><a href="#xs-area" id="toc-xs-area" class="nav-link" data-scroll-target="#xs-area">XS Area</a></li>
-  <li><a href="#xs-width" id="toc-xs-width" class="nav-link" data-scroll-target="#xs-width">XS Width</a></li>
-  <li><a href="#xs-depth" id="toc-xs-depth" class="nav-link" data-scroll-target="#xs-depth">XS Depth</a></li>
-  <li><a href="#xs-width-to-depth-ratio" id="toc-xs-width-to-depth-ratio" class="nav-link" data-scroll-target="#xs-width-to-depth-ratio">XS Width to Depth Ratio</a></li>
-  <li><a href="#entrenchment-ratio" id="toc-entrenchment-ratio" class="nav-link" data-scroll-target="#entrenchment-ratio">Entrenchment Ratio</a></li>
-  <li><a href="#shear-stress" id="toc-shear-stress" class="nav-link" data-scroll-target="#shear-stress">Shear Stress</a></li>
-  <li><a href="#stream-power" id="toc-stream-power" class="nav-link" data-scroll-target="#stream-power">Stream Power</a></li>
+  <li><a href="#sec-discharge" id="toc-sec-discharge" class="nav-link" data-scroll-target="#sec-discharge">Discharge</a></li>
+  <li><a href="#sec-xs-area" id="toc-sec-xs-area" class="nav-link" data-scroll-target="#sec-xs-area">XS Area</a></li>
+  <li><a href="#sec-xs-width" id="toc-sec-xs-width" class="nav-link" data-scroll-target="#sec-xs-width">XS Width</a></li>
+  <li><a href="#sec-xs-depth" id="toc-sec-xs-depth" class="nav-link" data-scroll-target="#sec-xs-depth">XS Depth</a></li>
+  <li><a href="#sec-width-depth-ratio" id="toc-sec-width-depth-ratio" class="nav-link" data-scroll-target="#sec-width-depth-ratio">XS Width to Depth Ratio</a></li>
+  <li><a href="#sec-entrenchment-ratio" id="toc-sec-entrenchment-ratio" class="nav-link" data-scroll-target="#sec-entrenchment-ratio">Entrenchment Ratio</a></li>
+  <li><a href="#sec-shear-stress" id="toc-sec-shear-stress" class="nav-link" data-scroll-target="#sec-shear-stress">Shear Stress</a></li>
+  <li><a href="#sec-stream-power" id="toc-sec-stream-power" class="nav-link" data-scroll-target="#sec-stream-power">Stream Power</a></li>
   </ul></li>
-  <li><a href="#level-3" id="toc-level-3" class="nav-link" data-scroll-target="#level-3">Level 3</a>
+  <li><a href="#sec-level-3" id="toc-sec-level-3" class="nav-link" data-scroll-target="#sec-level-3">Level 3</a>
   <ul class="collapse">
-  <li><a href="#bend-radius-of-curvature" id="toc-bend-radius-of-curvature" class="nav-link" data-scroll-target="#bend-radius-of-curvature">Bend Radius of Curvature</a></li>
-  <li><a href="#meander-length" id="toc-meander-length" class="nav-link" data-scroll-target="#meander-length">Meander Length</a></li>
-  <li><a href="#meander-bend-width" id="toc-meander-bend-width" class="nav-link" data-scroll-target="#meander-bend-width">Meander Bend Width</a></li>
-  <li><a href="#radius-of-curvature-to-bankfull-width-ratio" id="toc-radius-of-curvature-to-bankfull-width-ratio" class="nav-link" data-scroll-target="#radius-of-curvature-to-bankfull-width-ratio">Radius of Curvature to Bankfull Width Ratio</a></li>
-  <li><a href="#meander-bend-width-to-bankfull-width-ratio" id="toc-meander-bend-width-to-bankfull-width-ratio" class="nav-link" data-scroll-target="#meander-bend-width-to-bankfull-width-ratio">Meander Bend Width to Bankfull Width Ratio</a></li>
+  <li><a href="#sec-bend-radius" id="toc-sec-bend-radius" class="nav-link" data-scroll-target="#sec-bend-radius">Bend Radius of Curvature</a></li>
+  <li><a href="#sec-meander-length" id="toc-sec-meander-length" class="nav-link" data-scroll-target="#sec-meander-length">Meander Length</a></li>
+  <li><a href="#sec-meander-bend-width" id="toc-sec-meander-bend-width" class="nav-link" data-scroll-target="#sec-meander-bend-width">Meander Bend Width</a></li>
+  <li><a href="#sec-rc-w-ratio" id="toc-sec-rc-w-ratio" class="nav-link" data-scroll-target="#sec-rc-w-ratio">Radius of Curvature to Bankfull Width Ratio</a></li>
+  <li><a href="#sec-wm-w-ratio" id="toc-sec-wm-w-ratio" class="nav-link" data-scroll-target="#sec-wm-w-ratio">Meander Bend Width to Bankfull Width Ratio</a></li>
+  </ul></li>
+  <li><a href="#sec-metrics-summary" id="toc-sec-metrics-summary" class="nav-link" data-scroll-target="#sec-metrics-summary">Summary</a>
+  <ul class="collapse">
+  <li><a href="#sec-metric-hierarchy" id="toc-sec-metric-hierarchy" class="nav-link" data-scroll-target="#sec-metric-hierarchy">Metric Hierarchy and Relationships</a></li>
+  <li><a href="#sec-implementation-workflow" id="toc-sec-implementation-workflow" class="nav-link" data-scroll-target="#sec-implementation-workflow">Implementation Workflow</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -357,72 +425,1629 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="level-1" class="level2">
 <h2 class="anchored" data-anchor-id="level-1">Level 1</h2>
-<section id="drainage-area" class="level3">
-<h3 class="anchored" data-anchor-id="drainage-area">Drainage Area</h3>
+<section id="sec-drainage-area" class="level3">
+<h3 class="anchored" data-anchor-id="sec-drainage-area">Drainage Area</h3>
+<p><strong>Definition:</strong> The total upstream land area that contributes surface water flow to a specific point along a stream channel.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(A_d\)</span> or DA</li>
+<li><strong>Units:</strong> km² (square kilometers) or mi² (square miles)</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 0.01 - 10,000+ km²</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p>Drainage area is typically derived from Digital Elevation Models (DEMs) using flow accumulation algorithms:</p>
+<p><span class="math display">\[A_d = \frac{\text{Flow\_Accumulation} \times \text{Cell\_Area}}{1,000,000}\]</span></p>
+<p>Where:</p>
+<ul>
+<li>Flow_Accumulation = number of upstream cells</li>
+<li>Cell_Area = DEM cell size² (in m²)</li>
+<li>Division by 1,000,000 converts m² to km²</li>
+</ul>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Extracted at reach pour points or cross-section locations</li>
+<li>Requires hydrologically conditioned DEM</li>
+<li>Critical input for regional curve development</li>
+<li>Primary independent variable for Level 2 metric predictions</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/watershed-delineation.html">User Manual Section on Watershed Delineation</a> for workflow guidance.</p>
+</div>
+</div>
+<p><strong>Data Sources:</strong></p>
+<ul>
+<li>USGS StreamStats</li>
+<li>NHDPlus catchment attributes</li>
+<li>Custom watershed delineation from DEM</li>
+</ul>
+<hr>
 </section>
-<section id="slope" class="level3">
-<h3 class="anchored" data-anchor-id="slope">Slope</h3>
+<section id="sec-slope" class="level3">
+<h3 class="anchored" data-anchor-id="sec-slope">Slope</h3>
+<p><strong>Definition:</strong> The change in elevation per unit length along the stream channel, representing the gradient of energy dissipation.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(S\)</span> or <span class="math inline">\(S_0\)</span></li>
+<li><strong>Units:</strong> m/m (dimensionless) or ft/ft, often expressed as percentage or ratio</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 0.0001 - 0.10 (0.01% - 10%)</li>
+</ul>
+<p><strong>Calculation Methods:</strong></p>
+<p><strong>1. Reach-Average Slope:</strong></p>
+<p><span class="math display">\[S = \frac{Z_{\text{upstream}} - Z_{\text{downstream}}}{L_{\text{reach}}}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(Z_{\text{upstream}}\)</span> = elevation at upstream extent (m)</li>
+<li><span class="math inline">\(Z_{\text{downstream}}\)</span> = elevation at downstream extent (m)</li>
+<li><span class="math inline">\(L_{\text{reach}}\)</span> = channel length between points (m)</li>
+</ul>
+<p><strong>2. Water Surface Slope:</strong></p>
+<p>Derived from surveyed water surface elevations at bankfull stage:</p>
+<p><span class="math display">\[S_{ws} = \frac{\Delta Z_{ws}}{L_{\text{channel}}}\]</span></p>
+<p><strong>3. Energy Slope:</strong></p>
+<p>From Manning’s equation, back-calculated from known discharge and channel geometry.</p>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Reach length should be 20-30× bankfull width minimum</li>
+<li>Use channel centerline length, not valley length</li>
+<li>Water surface slope preferred over bed slope for hydraulic calculations</li>
+<li>Critical parameter for shear stress and stream power calculations</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<ul>
+<li>Compare with regional slope-drainage area relationships</li>
+<li>Flag values outside expected range for stream type</li>
+<li>Verify against LiDAR-derived profiles where available</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/reach-delineation.html">User Manual Section on Reach Delineation</a> for slope measurement protocols.</p>
+</div>
+</div>
+<hr>
 </section>
-<section id="sinuosity" class="level3">
-<h3 class="anchored" data-anchor-id="sinuosity">Sinuosity</h3>
+<section id="sec-sinuosity" class="level3">
+<h3 class="anchored" data-anchor-id="sec-sinuosity">Sinuosity</h3>
+<p><strong>Definition:</strong> The ratio of channel length to valley length, quantifying the degree of channel meandering.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(K\)</span> or SI</li>
+<li><strong>Units:</strong> Dimensionless ratio</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 1.0 - 4.0+ (1.0 = straight, &gt;1.5 = meandering)</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p><span class="math display">\[K = \frac{L_{\text{channel}}}{L_{\text{valley}}}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(L_{\text{channel}}\)</span> = length along channel centerline (m)</li>
+<li><span class="math inline">\(L_{\text{valley}}\)</span> = straight-line distance between endpoints (m)</li>
+</ul>
+<p><strong>Classification Thresholds:</strong></p>
+<div id="tbl-sinuosity-class" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sinuosity-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.1: Classification of channel sinuosity
+</figcaption>
+<div aria-describedby="tbl-sinuosity-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sinuosity</th>
+<th>Classification</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>K &lt; 1.05</td>
+<td>Straight</td>
+<td>Minimal meandering</td>
+</tr>
+<tr class="even">
+<td>1.05 ≤ K &lt; 1.5</td>
+<td>Sinuous</td>
+<td>Moderate meandering</td>
+</tr>
+<tr class="odd">
+<td>K ≥ 1.5</td>
+<td>Meandering</td>
+<td>Well-developed meanders</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Measure over consistent reach lengths (typically 20× bankfull width)</li>
+<li>Channel length follows thalweg or centerline</li>
+<li>Valley length is straight-line distance between reach endpoints</li>
+<li>Sensitive to reach length selection; longer reaches yield more stable values</li>
+</ul>
+<p><strong>Alternative Metrics:</strong></p>
+<ul>
+<li><strong>Meander Wavelength Ratio:</strong> <span class="math inline">\(\lambda/W\)</span> (see <a href="#sec-level-3">Level 3 metrics</a>)</li>
+<li><strong>Bend Curvature:</strong> More detailed planform characterization</li>
+</ul>
+<p><strong>Geomorphic Significance:</strong></p>
+<ul>
+<li>Indicates channel adjustment to slope and sediment transport</li>
+<li>Higher sinuosity = lower energy gradient</li>
+<li>Key discriminator in stream classification systems (Rosgen, River Styles)</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/planform-assessment.html">User Manual Section on Planform Assessment</a> for sinuosity measurement procedures.</p>
+</div>
+</div>
 <hr>
 </section>
 </section>
-<section id="level-2" class="level2">
-<h2 class="anchored" data-anchor-id="level-2">Level 2</h2>
-<section id="discharge" class="level3">
-<h3 class="anchored" data-anchor-id="discharge">Discharge</h3>
-</section>
-<section id="xs-area" class="level3">
-<h3 class="anchored" data-anchor-id="xs-area">XS Area</h3>
-</section>
-<section id="xs-width" class="level3">
-<h3 class="anchored" data-anchor-id="xs-width">XS Width</h3>
-</section>
-<section id="xs-depth" class="level3">
-<h3 class="anchored" data-anchor-id="xs-depth">XS Depth</h3>
+<section id="sec-level-2" class="level2">
+<h2 class="anchored" data-anchor-id="sec-level-2">Level 2</h2>
+<section id="sec-discharge" class="level3">
+<h3 class="anchored" data-anchor-id="sec-discharge">Discharge</h3>
+<p><strong>Definition:</strong> The volumetric flow rate of water passing through a channel cross-section, typically referenced to bankfull or other recurrence interval flows.</p>
+<p><strong>Technical Specification:</strong></p>
 <ul>
-<li>maximum depth</li>
-<li>mean depth</li>
+<li><strong>Symbol:</strong> <span class="math inline">\(Q\)</span> (<span class="math inline">\(Q_{bf}\)</span> for bankfull, <span class="math inline">\(Q_2\)</span>, <span class="math inline">\(Q_{1.5}\)</span>, etc. for recurrence intervals)</li>
+<li><strong>Units:</strong> m³/s (cms) or ft³/s (cfs)</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 0.01 - 10,000+ m³/s (highly variable)</li>
+</ul>
+<p><strong>Calculation Methods:</strong></p>
+<p><strong>1. Regional Curve Prediction:</strong></p>
+<p><span class="math display">\[Q_{bf} = a \times (A_d)^b\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> = regional regression coefficients</li>
+<li><span class="math inline">\(A_d\)</span> = drainage area (km²)</li>
+</ul>
+<p><strong>2. Manning’s Equation:</strong></p>
+<p><span class="math display">\[Q = \frac{1}{n} \times A \times R^{2/3} \times S^{1/2}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> = Manning’s roughness coefficient</li>
+<li><span class="math inline">\(A\)</span> = cross-sectional area (m²)</li>
+<li><span class="math inline">\(R\)</span> = hydraulic radius (m)</li>
+<li><span class="math inline">\(S\)</span> = energy slope (m/m)</li>
+</ul>
+<p><strong>3. Gage Analysis:</strong></p>
+<ul>
+<li>Frequency analysis of annual peak flows</li>
+<li>Bankfull discharge typically <span class="math inline">\(Q_{1.5}\)</span> to <span class="math inline">\(Q_{2.3}\)</span></li>
+</ul>
+<p><strong>Recurrence Intervals:</strong></p>
+<div id="tbl-discharge-intervals" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-discharge-intervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.2: Common discharge recurrence intervals
+</figcaption>
+<div aria-describedby="tbl-discharge-intervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Return Period</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(Q_{1.5}\)</span></td>
+<td>1.5-year</td>
+<td>Common bankfull proxy</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Q_2\)</span></td>
+<td>2-year</td>
+<td>Standard bankfull reference</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Q_{10}\)</span></td>
+<td>10-year</td>
+<td>Small flood</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Q_{25}\)</span></td>
+<td>25-year</td>
+<td>Moderate flood</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Q_{50}\)</span></td>
+<td>50-year</td>
+<td>Large flood</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Q_{100}\)</span></td>
+<td>100-year</td>
+<td>Design flood</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Bankfull discharge is the channel-forming flow</li>
+<li>Regional curves vary by physiographic province</li>
+<li>Uncertainty increases with extrapolation beyond calibration range</li>
+<li>Critical input for all hydraulic geometry calculations</li>
+</ul>
+<p><strong>Data Sources:</strong></p>
+<ul>
+<li>USGS StreamStats regional equations</li>
+<li>Gage analysis (USGS NWIS data)</li>
+<li>Hydraulic modeling (HEC-RAS, SRH-2D)</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check against Dunne &amp; Leopold (1978) approximation</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Q_check <span class="ot">&lt;-</span> <span class="fl">2.3</span> <span class="sc">*</span> A_d<span class="sc">^</span><span class="fl">0.7</span>  <span class="co"># for A_d in km², Q in m³/s</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/bankfull-identification.html">User Manual Section on Bankfull Identification</a> and <a href="../FG-User-Manual/regional-curves.html">Regional Curves</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-xs-area" class="level3">
+<h3 class="anchored" data-anchor-id="sec-xs-area">XS Area</h3>
+<p><strong>Definition:</strong> The cross-sectional area of flow perpendicular to the direction of flow, measured at bankfull stage.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(A\)</span> or <span class="math inline">\(A_{bf}\)</span></li>
+<li><strong>Units:</strong> m² or ft²</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 1 - 1,000+ m²</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p><strong>From Survey Data:</strong></p>
+<p><span class="math display">\[A = \sum_{i=1}^{n-1} \left[(x_{i+1} - x_i) \times \frac{(z_i + z_{i+1})}{2}\right]\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(x_i\)</span> = horizontal station (m)</li>
+<li><span class="math inline">\(z_i\)</span> = depth below bankfull elevation (m)</li>
+<li>Summation from left to right bank</li>
+</ul>
+<p><strong>Trapezoidal Rule Integration:</strong></p>
+<p><span class="math display">\[A = \sum_{i=1}^{n-1} \left[0.5 \times (d_i + d_{i+1}) \times \Delta x_i\right]\]</span></p>
+<p><strong>Regional Curve Prediction:</strong></p>
+<p><span class="math display">\[A_{bf} = c \times (A_d)^d\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(c\)</span>, <span class="math inline">\(d\)</span> = regional regression coefficients</li>
+<li><span class="math inline">\(A_d\)</span> = drainage area (km²)</li>
+</ul>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Measured perpendicular to flow direction</li>
+<li>Extends from bankfull elevation on left to right bank</li>
+<li>Excludes overbank areas</li>
+<li>Should represent active channel geometry</li>
+</ul>
+<p><strong>Hydraulic Geometry Relationship:</strong></p>
+<p><span class="math display">\[A = W \times D_{\text{mean}}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(W\)</span> = bankfull width (m)</li>
+<li><span class="math inline">\(D_{\text{mean}}\)</span> = mean depth (m)</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<ul>
+<li>Compare measured vs.&nbsp;predicted from regional curves</li>
+<li>Check against continuity equation: <span class="math inline">\(Q = A \times V\)</span></li>
+<li>Verify bankfull elevation identification</li>
+<li>Flag cross-sections with unusual geometry</li>
+</ul>
+<p><strong>Data Processing:</strong></p>
+<ul>
+<li>Remove survey errors (spikes, gaps)</li>
+<li>Interpolate between survey points if needed</li>
+<li>Apply consistent bankfull datum</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/cross-section-surveys.html">User Manual Section on Cross-Section Surveys</a> and <a href="../FG-User-Manual/bankfull-delineation.html">Bankfull Delineation</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-xs-width" class="level3">
+<h3 class="anchored" data-anchor-id="sec-xs-width">XS Width</h3>
+<p><strong>Definition:</strong> The top width of the channel measured at bankfull stage, perpendicular to flow direction.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(W\)</span> or <span class="math inline">\(W_{bf}\)</span></li>
+<li><strong>Units:</strong> m or ft</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 1 - 200+ m</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p><strong>From Survey Data:</strong></p>
+<p><span class="math display">\[W = x_{\text{right}} - x_{\text{left}}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(x_{\text{right}}\)</span> = station at right bankfull indicator (m)</li>
+<li><span class="math inline">\(x_{\text{left}}\)</span> = station at left bankfull indicator (m)</li>
+</ul>
+<p><strong>Regional Curve Prediction:</strong></p>
+<p><span class="math display">\[W_{bf} = e \times (A_d)^f\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(e\)</span>, <span class="math inline">\(f\)</span> = regional regression coefficients (typically <span class="math inline">\(f \approx 0.5\)</span>)</li>
+<li><span class="math inline">\(A_d\)</span> = drainage area (km²)</li>
+</ul>
+<p><strong>Hydraulic Geometry:</strong></p>
+<p><span class="math display">\[W = a \times Q^b\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> = at-a-station or downstream coefficients</li>
+<li><span class="math inline">\(Q\)</span> = discharge (m³/s)</li>
+<li>Typical <span class="math inline">\(b \approx 0.5\)</span> for downstream relations</li>
+</ul>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Measured at water surface at bankfull stage</li>
+<li>Perpendicular to flow direction</li>
+<li>Excludes vegetated benches unless inundated at bankfull</li>
+<li>Most stable and easily measured hydraulic geometry parameter</li>
+</ul>
+<p><strong>Measurement Considerations:</strong></p>
+<ul>
+<li>Use consistent bankfull indicators (topographic break, vegetation line, etc.)</li>
+<li>Multiple cross-sections per reach for averaging</li>
+<li>Avoid locations with local controls (bedrock, structures)</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Width-to-depth ratio check</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>WD_ratio <span class="ot">&lt;-</span> W <span class="sc">/</span> D_mean</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Typical range: 10-40 for most alluvial channels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/bankfull-width.html">User Manual Section on Bankfull Width Measurement</a> and <a href="../FG-User-Manual/field-indicators.html">Field Indicators</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-xs-depth" class="level3">
+<h3 class="anchored" data-anchor-id="sec-xs-depth">XS Depth</h3>
+<p><strong>Definition:</strong> Vertical distance from the water surface to the channel bed, measured at bankfull stage.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(D\)</span> (<span class="math inline">\(D_{\text{max}}\)</span> for maximum, <span class="math inline">\(D_{\text{mean}}\)</span> for mean)</li>
+<li><strong>Units:</strong> m or ft</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 0.1 - 10+ m</li>
+</ul>
+<section id="sec-max-depth" class="level4">
+<h4 class="anchored" data-anchor-id="sec-max-depth">Maximum Depth</h4>
+<p><strong>Calculation Method:</strong></p>
+<p><span class="math display">\[D_{\text{max}} = \max(z_{bf} - z_{\text{bed}})\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(z_{bf}\)</span> = bankfull elevation (m)</li>
+<li><span class="math inline">\(z_{\text{bed}}\)</span> = bed elevation at each station (m)</li>
+</ul>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Typically occurs near thalweg</li>
+<li>Location varies with channel morphology</li>
+<li>Less stable than mean depth for regional relationships</li>
 </ul>
 </section>
-<section id="xs-width-to-depth-ratio" class="level3">
-<h3 class="anchored" data-anchor-id="xs-width-to-depth-ratio">XS Width to Depth Ratio</h3>
-</section>
-<section id="entrenchment-ratio" class="level3">
-<h3 class="anchored" data-anchor-id="entrenchment-ratio">Entrenchment Ratio</h3>
-</section>
-<section id="shear-stress" class="level3">
-<h3 class="anchored" data-anchor-id="shear-stress">Shear Stress</h3>
+<section id="sec-mean-depth" class="level4">
+<h4 class="anchored" data-anchor-id="sec-mean-depth">Mean Depth</h4>
+<p><strong>Calculation Method:</strong></p>
+<p><span class="math display">\[D_{\text{mean}} = \frac{A}{W}\]</span></p>
+<p>Where:</p>
 <ul>
-<li>density</li>
+<li><span class="math inline">\(A\)</span> = cross-sectional area (m²)</li>
+<li><span class="math inline">\(W\)</span> = bankfull width (m)</li>
 </ul>
-</section>
-<section id="stream-power" class="level3">
-<h3 class="anchored" data-anchor-id="stream-power">Stream Power</h3>
+<p><strong>Alternative Calculation:</strong></p>
+<p><span class="math display">\[D_{\text{mean}} = \frac{1}{W} \times \sum_{i=1}^{n} \left[d_i \times \Delta x_i\right]\]</span></p>
+<p>Where:</p>
 <ul>
-<li>unit</li>
+<li><span class="math inline">\(d_i\)</span> = depth at station <span class="math inline">\(i\)</span> (m)</li>
+<li><span class="math inline">\(\Delta x_i\)</span> = horizontal distance increment (m)</li>
 </ul>
+<p><strong>Regional Curve Prediction:</strong></p>
+<p><span class="math display">\[D_{\text{mean}} = g \times (A_d)^h\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span> = regional regression coefficients (typically <span class="math inline">\(h \approx 0.3-0.4\)</span>)</li>
+<li><span class="math inline">\(A_d\)</span> = drainage area (km²)</li>
+</ul>
+<p><strong>Hydraulic Geometry:</strong></p>
+<p><span class="math display">\[D_{\text{mean}} = c \times Q^f\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(c\)</span>, <span class="math inline">\(f\)</span> = coefficients (typical <span class="math inline">\(f \approx 0.3-0.4\)</span>)</li>
+<li><span class="math inline">\(Q\)</span> = discharge (m³/s)</li>
+</ul>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Mean depth preferred for regional curves and ratios</li>
+<li>Maximum depth useful for habitat assessment</li>
+<li>Hydraulic depth (<span class="math inline">\(A/W\)</span>) equivalent to mean depth for rectangular channels</li>
+<li>More variable than width; requires multiple cross-sections</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<ul>
+<li>Verify reasonable width-to-depth ratios</li>
+<li>Check against regional expectations</li>
+<li>Compare maximum to mean depth (typically <span class="math inline">\(D_{\text{max}} \approx 1.5-2.0 \times D_{\text{mean}}\)</span>)</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/depth-measurement.html">User Manual Section on Depth Measurement</a> and <a href="../FG-User-Manual/cross-section-analysis.html">Cross-Section Analysis</a>.</p>
+</div>
+</div>
 <hr>
 </section>
 </section>
-<section id="level-3" class="level2">
-<h2 class="anchored" data-anchor-id="level-3">Level 3</h2>
-<section id="bend-radius-of-curvature" class="level3">
-<h3 class="anchored" data-anchor-id="bend-radius-of-curvature">Bend Radius of Curvature</h3>
-</section>
-<section id="meander-length" class="level3">
-<h3 class="anchored" data-anchor-id="meander-length">Meander Length</h3>
-</section>
-<section id="meander-bend-width" class="level3">
-<h3 class="anchored" data-anchor-id="meander-bend-width">Meander Bend Width</h3>
-</section>
-<section id="radius-of-curvature-to-bankfull-width-ratio" class="level3">
-<h3 class="anchored" data-anchor-id="radius-of-curvature-to-bankfull-width-ratio">Radius of Curvature to Bankfull Width Ratio</h3>
-</section>
-<section id="meander-bend-width-to-bankfull-width-ratio" class="level3">
-<h3 class="anchored" data-anchor-id="meander-bend-width-to-bankfull-width-ratio">Meander Bend Width to Bankfull Width Ratio</h3>
+<section id="sec-width-depth-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="sec-width-depth-ratio">XS Width to Depth Ratio</h3>
+<p><strong>Definition:</strong> The ratio of bankfull width to mean depth, indicating channel shape and lateral vs.&nbsp;vertical adjustment potential.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(W/D\)</span> or <span class="math inline">\(F\)</span> (form ratio)</li>
+<li><strong>Units:</strong> Dimensionless</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 5 - 100+ (highly variable by stream type)</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p><span class="math display">\[\frac{W}{D} = \frac{W_{bf}}{D_{\text{mean}}}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(W_{bf}\)</span> = bankfull width (m)</li>
+<li><span class="math inline">\(D_{\text{mean}}\)</span> = mean bankfull depth (m)</li>
+</ul>
+<p><strong>Classification Ranges:</strong></p>
+<div id="tbl-wd-ratio" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-wd-ratio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.3: Width-to-depth ratio classification
+</figcaption>
+<div aria-describedby="tbl-wd-ratio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>W/D Ratio</th>
+<th>Classification</th>
+<th>Channel Form</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt; 12</td>
+<td>Narrow/Deep</td>
+<td>Incised or confined</td>
+</tr>
+<tr class="even">
+<td>12 - 40</td>
+<td>Moderate</td>
+<td>Typical alluvial</td>
+</tr>
+<tr class="odd">
+<td>&gt; 40</td>
+<td>Wide/Shallow</td>
+<td>Laterally active</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Geomorphic Significance:</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Low W/D (narrow, deep)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">High W/D (wide, shallow)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ul>
+<li>Incised or confined channels</li>
+<li>Resistant banks (cohesive, vegetated)</li>
+<li>Higher shear stress on bed</li>
+<li>Vertical adjustment dominant</li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ul>
+<li>Unconfined, laterally active channels</li>
+<li>Erodible banks</li>
+<li>Lower unit stream power</li>
+<li>Lateral adjustment dominant</li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Key discriminator in stream classification (Rosgen types)</li>
+<li>Indicates channel stability and adjustment mode</li>
+<li>Varies systematically with stream power and bank strength</li>
+<li>Use mean depth, not maximum depth</li>
+</ul>
+<p><strong>Relationships:</strong></p>
+<p>Schumm (1960) relationship with silt-clay content:</p>
+<p><span class="math display">\[\frac{W}{D} = 255 \times M^{-1.08}\]</span></p>
+<p>Where <span class="math inline">\(M\)</span> = weighted mean percent silt-clay in channel perimeter</p>
+<p><strong>Quality Control:</strong></p>
+<ul>
+<li>Compare with regional values for similar stream types</li>
+<li>Check consistency across multiple cross-sections</li>
+<li>Verify depth measurement accuracy (primary source of error)</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/stream-classification.html">User Manual Section on Stream Classification</a> and <a href="../FG-User-Manual/channel-form.html">Channel Form</a>.</p>
+</div>
+</div>
 <hr>
+</section>
+<section id="sec-entrenchment-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="sec-entrenchment-ratio">Entrenchment Ratio</h3>
+<p><strong>Definition:</strong> The ratio of flood-prone width to bankfull width, indicating the degree of vertical containment and access to floodplain.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> ER</li>
+<li><strong>Units:</strong> Dimensionless</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 1.0 - 10.0+</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p><span class="math display">\[ER = \frac{W_{fpa}}{W_{bf}}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(W_{fpa}\)</span> = flood-prone area width (m)</li>
+<li><span class="math inline">\(W_{bf}\)</span> = bankfull width (m)</li>
+</ul>
+<p><strong>Flood-Prone Area Definition:</strong></p>
+<ul>
+<li>Width of area inundated at 2× maximum bankfull depth</li>
+<li>Measured perpendicular to valley orientation</li>
+<li>Represents approximate 50-year floodplain</li>
+</ul>
+<p><strong>Measurement Protocol:</strong></p>
+<ol type="1">
+<li>Establish bankfull elevation (<span class="math inline">\(z_{bf}\)</span>)</li>
+<li>Calculate flood-prone elevation: <span class="math inline">\(z_{fpa} = z_{bf} + (2 \times D_{\text{max}})\)</span></li>
+<li>Measure horizontal width at <span class="math inline">\(z_{fpa}\)</span> elevation</li>
+<li>Calculate ratio</li>
+</ol>
+<p><strong>Classification Thresholds:</strong></p>
+<div id="tbl-entrenchment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-entrenchment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.4: Entrenchment ratio classification
+</figcaption>
+<div aria-describedby="tbl-entrenchment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>ER Value</th>
+<th>Entrenchment Level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt; 1.4</td>
+<td>Entrenched</td>
+<td>Minimal floodplain access</td>
+</tr>
+<tr class="even">
+<td>1.4 - 2.2</td>
+<td>Moderately Entrenched</td>
+<td>Limited floodplain access</td>
+</tr>
+<tr class="odd">
+<td>&gt; 2.2</td>
+<td>Slightly Entrenched</td>
+<td>Good floodplain connectivity</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Geomorphic Significance:</strong></p>
+<ul>
+<li>Indicates vertical stability and incision history</li>
+<li>Controls sediment storage and flood attenuation</li>
+<li>Key parameter in stream classification systems</li>
+<li>Affects riparian habitat and nutrient cycling</li>
+</ul>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Measure from valley cross-section, not channel cross-section</li>
+<li>Use topographic maps or LiDAR for consistent measurement</li>
+<li>May vary significantly along reach; use representative locations</li>
+<li>Sensitive to local topography and valley confinement</li>
+</ul>
+<p><strong>Alternative Metrics:</strong></p>
+<ul>
+<li><strong>Incision Ratio:</strong> Depth of incision below historical floodplain</li>
+<li><strong>Confinement Ratio:</strong> Valley width to bankfull width</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/entrenchment-assessment.html">User Manual Section on Entrenchment Assessment</a> and <a href="../FG-User-Manual/valley-confinement.html">Valley Confinement</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-shear-stress" class="level3">
+<h3 class="anchored" data-anchor-id="sec-shear-stress">Shear Stress</h3>
+<p><strong>Definition:</strong> The tangential force per unit area exerted by flowing water on the channel bed, driving sediment transport.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(\tau\)</span> (tau) or <span class="math inline">\(\tau_0\)</span></li>
+<li><strong>Units:</strong> N/m² (Pascals) or lb/ft²</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 0.1 - 100+ N/m²</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p><strong>Boundary Shear Stress:</strong></p>
+<p><span class="math display">\[\tau_0 = \gamma \times R \times S\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\gamma\)</span> = specific weight of water (N/m³)</li>
+<li><span class="math inline">\(R\)</span> = hydraulic radius (m)</li>
+<li><span class="math inline">\(S\)</span> = energy slope (m/m)</li>
+</ul>
+<p><strong>With Density:</strong></p>
+<p><span class="math display">\[\tau_0 = \rho \times g \times R \times S\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\rho\)</span> = water density (1000 kg/m³ at 20°C)</li>
+<li><span class="math inline">\(g\)</span> = gravitational acceleration (9.81 m/s²)</li>
+<li><span class="math inline">\(R\)</span> = hydraulic radius (m)</li>
+<li><span class="math inline">\(S\)</span> = energy slope (m/m)</li>
+</ul>
+<section id="sec-density" class="level4">
+<h4 class="anchored" data-anchor-id="sec-density">Density</h4>
+<p><strong>Water Density Values:</strong></p>
+<div id="tbl-water-density" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-water-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.5: Water density and specific weight by temperature
+</figcaption>
+<div aria-describedby="tbl-water-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Temperature</th>
+<th>Density (kg/m³)</th>
+<th>Specific Weight (N/m³)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4°C</td>
+<td>1000.0</td>
+<td>9810</td>
+</tr>
+<tr class="even">
+<td>10°C</td>
+<td>999.7</td>
+<td>9807</td>
+</tr>
+<tr class="odd">
+<td>20°C</td>
+<td>998.2</td>
+<td>9789</td>
+</tr>
+<tr class="even">
+<td>30°C</td>
+<td>995.7</td>
+<td>9764</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Temperature Correction:</strong></p>
+<p><span class="math display">\[\rho(T) = 1000 \times \left[1 - (T - 4)^2 \times 6.8 \times 10^{-6}\right]\]</span></p>
+<p>for <span class="math inline">\(T\)</span> in °C</p>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Use bankfull hydraulic radius and water surface slope</li>
+<li>Represents average bed shear stress</li>
+<li>Local shear stress varies with bed topography</li>
+<li>Critical for sediment transport calculations</li>
+</ul>
+<p><strong>Hydraulic Radius:</strong></p>
+<p><span class="math display">\[R = \frac{A}{P}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(A\)</span> = cross-sectional area (m²)</li>
+<li><span class="math inline">\(P\)</span> = wetted perimeter (m)</li>
+</ul>
+<p>For wide channels (<span class="math inline">\(W \gg D\)</span>):</p>
+<p><span class="math display">\[R \approx D_{\text{mean}}\]</span></p>
+<p><strong>Critical Shear Stress:</strong></p>
+<p><span class="math display">\[\tau_c = \theta_c \times (\rho_s - \rho) \times g \times D_{50}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\theta_c\)</span> = Shields parameter (≈ 0.045 for coarse sediment)</li>
+<li><span class="math inline">\(\rho_s\)</span> = sediment density (2650 kg/m³ for quartz)</li>
+<li><span class="math inline">\(D_{50}\)</span> = median grain size (m)</li>
+</ul>
+<p><strong>Geomorphic Significance:</strong></p>
+<ul>
+<li>Indicates sediment transport capacity</li>
+<li>Threshold for bed mobility</li>
+<li>Controls channel morphology and stability</li>
+<li>Key input for stream restoration design</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<ul>
+<li>Verify slope measurement accuracy</li>
+<li>Check against expected values for stream type</li>
+<li>Compare with critical shear stress for bed material</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/sediment-transport.html">User Manual Section on Sediment Transport</a> and <a href="../FG-User-Manual/hydraulic-analysis.html">Hydraulic Analysis</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="sec-stream-power" class="level3">
+<h3 class="anchored" data-anchor-id="sec-stream-power">Stream Power</h3>
+<p><strong>Definition:</strong> The rate of energy expenditure per unit length of channel, representing the capacity to perform geomorphic work.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(\Omega\)</span> (omega) for total, <span class="math inline">\(\omega\)</span> (omega) for unit</li>
+<li><strong>Units:</strong>
+<ul>
+<li>Total: W/m (watts per meter)</li>
+<li>Unit: W/m² (watts per square meter)</li>
+</ul></li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong>
+<ul>
+<li>Total: 1 - 10,000+ W/m</li>
+<li>Unit: 1 - 300+ W/m²</li>
+</ul></li>
+</ul>
+<p><strong>Calculation Methods:</strong></p>
+<p><strong>Total Stream Power:</strong></p>
+<p><span class="math display">\[\Omega = \gamma \times Q \times S\]</span></p>
+<p>Or:</p>
+<p><span class="math display">\[\Omega = \rho \times g \times Q \times S\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\gamma\)</span> = specific weight of water (9810 N/m³)</li>
+<li><span class="math inline">\(\rho\)</span> = water density (1000 kg/m³)</li>
+<li><span class="math inline">\(g\)</span> = gravitational acceleration (9.81 m/s²)</li>
+<li><span class="math inline">\(Q\)</span> = discharge (m³/s)</li>
+<li><span class="math inline">\(S\)</span> = energy slope (m/m)</li>
+</ul>
+<section id="sec-unit-stream-power" class="level4">
+<h4 class="anchored" data-anchor-id="sec-unit-stream-power">Unit Stream Power</h4>
+<p><strong>Definition:</strong> Stream power per unit bed area, normalizing for channel size.</p>
+<p><strong>Calculation Method:</strong></p>
+<p><span class="math display">\[\omega = \frac{\Omega}{W} = \frac{\gamma \times Q \times S}{W}\]</span></p>
+<p>Or:</p>
+<p><span class="math display">\[\omega = \tau_0 \times V\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(W\)</span> = bankfull width (m)</li>
+<li><span class="math inline">\(\tau_0\)</span> = boundary shear stress (N/m²)</li>
+<li><span class="math inline">\(V\)</span> = mean flow velocity (m/s)</li>
+</ul>
+<p><strong>Simplified Form:</strong></p>
+<p><span class="math display">\[\omega = \rho \times g \times D \times S \times V\]</span></p>
+<p><strong>Geomorphic Significance:</strong></p>
+<p><strong>Classification Thresholds (Nanson &amp; Croke, 1992):</strong></p>
+<div id="tbl-stream-power" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stream-power-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.6: Stream power classification
+</figcaption>
+<div aria-describedby="tbl-stream-power-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Unit Stream Power (W/m²)</th>
+<th>Energy Level</th>
+<th>Process Regime</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt; 10</td>
+<td>Low Energy</td>
+<td>Deposition-dominated, fine sediment</td>
+</tr>
+<tr class="even">
+<td>10 - 50</td>
+<td>Medium Energy</td>
+<td>Balanced transport, mixed sediment</td>
+</tr>
+<tr class="odd">
+<td>50 - 300</td>
+<td>High Energy</td>
+<td>Erosion-dominated, coarse sediment</td>
+</tr>
+<tr class="even">
+<td>≥ 300</td>
+<td>Very High Energy</td>
+<td>Bedrock control, limited alluvium</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Use bankfull discharge and water surface slope</li>
+<li>Unit stream power preferred for comparing channels of different sizes</li>
+<li>Critical parameter for stream classification and restoration design</li>
+<li>Correlates with channel pattern and sediment transport regime</li>
+</ul>
+<p><strong>Specific Stream Power:</strong></p>
+<p>Alternative formulation per unit mass of water:</p>
+<p><span class="math display">\[\omega_s = g \times S \times V \quad \text{(in m²/s³)}\]</span></p>
+<p><strong>Relationships:</strong></p>
+<p><strong>With Shear Stress:</strong></p>
+<p><span class="math display">\[\omega = \tau_0 \times V = \tau_0 \times \frac{Q}{A}\]</span></p>
+<p><strong>With Slope and Discharge:</strong></p>
+<p><span class="math display">\[\omega = \frac{\rho \times g \times S \times Q}{W}\]</span></p>
+<p><strong>Quality Control:</strong></p>
+<ul>
+<li>Verify discharge and slope accuracy</li>
+<li>Compare with regional values for similar stream types</li>
+<li>Check consistency with observed channel morphology</li>
+<li>Validate against sediment transport observations</li>
+</ul>
+<p><strong>Applications:</strong></p>
+<ul>
+<li>Stream classification (River Styles, Rosgen)</li>
+<li>Restoration design (reference reach selection)</li>
+<li>Sediment transport prediction</li>
+<li>Channel evolution assessment</li>
+<li>Habitat characterization</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/stream-power-analysis.html">User Manual Section on Stream Power Analysis</a>, <a href="../FG-User-Manual/channel-classification.html">Channel Classification</a>, and <a href="../FG-User-Manual/restoration-design.html">Restoration Design</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="sec-level-3" class="level2">
+<h2 class="anchored" data-anchor-id="sec-level-3">Level 3</h2>
+<section id="sec-bend-radius" class="level3">
+<h3 class="anchored" data-anchor-id="sec-bend-radius">Bend Radius of Curvature</h3>
+<p><strong>Definition:</strong> The radius of the circular arc that best fits the centerline of a meander bend, quantifying bend tightness.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(R_c\)</span></li>
+<li><strong>Units:</strong> m or ft</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 10 - 1000+ m (varies with channel size)</li>
+</ul>
+<p><strong>Calculation Methods:</strong></p>
+<p><strong>1. Three-Point Circle Method:</strong></p>
+<p><span class="math display">\[R_c = \frac{a \times b \times c}{4 \times K}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> = distances between three points on bend</li>
+<li><span class="math inline">\(K\)</span> = area of triangle formed by three points</li>
+</ul>
+<p><strong>2. Curvature from Coordinates:</strong></p>
+<p><span class="math display">\[\kappa = \frac{|x'y'' - y'x''|}{(x'^2 + y'^2)^{3/2}}\]</span></p>
+<p><span class="math display">\[R_c = \frac{1}{\kappa}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(x'\)</span>, <span class="math inline">\(y'\)</span> = first derivatives of centerline coordinates</li>
+<li><span class="math inline">\(x''\)</span>, <span class="math inline">\(y''\)</span> = second derivatives</li>
+<li><span class="math inline">\(\kappa\)</span> = curvature</li>
+</ul>
+<p><strong>3. Best-Fit Circle:</strong></p>
+<p>Least-squares fit of circular arc to bend apex points:</p>
+<p><span class="math display">\[(x - x_c)^2 + (y - y_c)^2 = R_c^2\]</span></p>
+<p>Solve for center <span class="math inline">\((x_c, y_c)\)</span> and radius <span class="math inline">\(R_c\)</span></p>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Measure at bend apex (point of maximum curvature)</li>
+<li>Use channel centerline or thalweg</li>
+<li>Requires high-resolution planform data (aerial imagery, LiDAR)</li>
+<li>Multiple bends per reach for statistical analysis</li>
+</ul>
+<p><strong>Measurement Extent:</strong></p>
+<ul>
+<li>Inflection point to inflection point</li>
+<li>Minimum 3 points for calculation</li>
+<li>More points improve accuracy</li>
+</ul>
+<p><strong>Geomorphic Significance:</strong></p>
+<ul>
+<li>Indicates bend tightness and migration potential</li>
+<li>Controls secondary circulation and bank erosion</li>
+<li>Affects sediment sorting and bar formation</li>
+<li>Key parameter in meander evolution models</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<ul>
+<li>Visual inspection of fitted circle</li>
+<li>Compare with field observations</li>
+<li>Check for consistency along reach</li>
+<li>Flag irregular or compound bends</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/planform-analysis.html">User Manual Section on Planform Analysis</a> and <a href="../FG-User-Manual/meander-geometry.html">Meander Geometry</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-meander-length" class="level3">
+<h3 class="anchored" data-anchor-id="sec-meander-length">Meander Length</h3>
+<p><strong>Definition:</strong> The along-channel distance between successive inflection points, representing one complete meander wavelength.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(\lambda\)</span> (lambda) or <span class="math inline">\(L_m\)</span></li>
+<li><strong>Units:</strong> m or ft</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 50 - 5000+ m (scales with channel size)</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p><strong>Direct Measurement:</strong></p>
+<p><span class="math display">\[\lambda = L_{\text{channel}} \text{ (inflection to inflection)}\]</span></p>
+<p>Measured along channel centerline between successive inflection points (crossover points where curvature changes sign).</p>
+<p><strong>From Planform:</strong></p>
+<ol type="1">
+<li>Identify inflection points on both sides of meander</li>
+<li>Measure centerline distance between corresponding points</li>
+<li>Average multiple meanders for reach-scale value</li>
+</ol>
+<p><strong>Empirical Relationships:</strong></p>
+<p><strong>Leopold &amp; Wolman (1960):</strong></p>
+<p><span class="math display">\[\lambda = 10.9 \times W_{bf}^{1.01}\]</span></p>
+<p><strong>Simplified:</strong></p>
+<p><span class="math display">\[\lambda \approx 11 \times W_{bf}\]</span></p>
+<p>Where <span class="math inline">\(W_{bf}\)</span> = bankfull width (m)</p>
+<p><strong>Alternative (with discharge):</strong></p>
+<p><span class="math display">\[\lambda = 4.7 \times Q_{bf}^{0.5}\]</span></p>
+<p>Where <span class="math inline">\(Q_{bf}\)</span> = bankfull discharge (m³/s)</p>
+<p><strong>Components:</strong></p>
+<ul>
+<li><strong>Meander Wavelength (<span class="math inline">\(\lambda\)</span>):</strong> Full wavelength (inflection to inflection)</li>
+<li><strong>Meander Arc Length:</strong> Distance along one bend</li>
+<li><strong>Meander Amplitude:</strong> Perpendicular distance from valley axis to bend apex</li>
+</ul>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Requires well-developed meander pattern</li>
+<li>Measure multiple meanders for statistical reliability</li>
+<li>Use consistent definition of inflection points</li>
+<li>Scales predictably with channel width</li>
+</ul>
+<p><strong>Geomorphic Significance:</strong></p>
+<ul>
+<li>Fundamental property of meandering channels</li>
+<li>Reflects balance between flow momentum and bank resistance</li>
+<li>Controls floodplain width and reworking rate</li>
+<li>Used in channel restoration design</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check against empirical relationship</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>lambda_predicted <span class="ot">&lt;-</span> <span class="dv">11</span> <span class="sc">*</span> W_bf</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> lambda_measured <span class="sc">/</span> lambda_predicted</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Typical range: 0.7 - 1.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/meander-characterization.html">User Manual Section on Meander Characterization</a> and <a href="../FG-User-Manual/planform-metrics.html">Planform Metrics</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-meander-bend-width" class="level3">
+<h3 class="anchored" data-anchor-id="sec-meander-bend-width">Meander Bend Width</h3>
+<p><strong>Definition:</strong> The straight-line distance from the meander apex to the opposite inflection point, perpendicular to the valley axis.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(A_m\)</span> or <span class="math inline">\(W_m\)</span></li>
+<li><strong>Units:</strong> m or ft</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 20 - 2000+ m</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p><strong>Direct Measurement:</strong></p>
+<p><span class="math display">\[W_m = \text{perpendicular distance from valley axis to bend apex}\]</span></p>
+<p>Or:</p>
+<p><span class="math display">\[W_m = 2 \times A_m\]</span></p>
+<p>Where <span class="math inline">\(A_m\)</span> = meander amplitude (distance from valley centerline to apex)</p>
+<p><strong>From Coordinates:</strong></p>
+<ol type="1">
+<li>Define valley axis (straight line between inflection points)</li>
+<li>Identify bend apex (point of maximum curvature)</li>
+<li>Measure perpendicular distance from axis to apex</li>
+<li>Multiply by 2 for full bend width</li>
+</ol>
+<p><strong>Empirical Relationships:</strong></p>
+<p><strong>Typical Ratio:</strong></p>
+<p><span class="math display">\[W_m \approx 0.5 \times \lambda\]</span></p>
+<p>Where <span class="math inline">\(\lambda\)</span> = meander wavelength</p>
+<p><strong>With Bankfull Width:</strong></p>
+<p><span class="math display">\[W_m \approx 18 \times W_{bf}\]</span></p>
+<p>(Derived from <span class="math inline">\(\lambda \approx 11 \times W_{bf}\)</span> and <span class="math inline">\(W_m \approx 0.5 \times \lambda\)</span>)</p>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Measure perpendicular to valley trend, not channel</li>
+<li>Use bend apex (point of maximum deflection)</li>
+<li>Represents lateral extent of channel migration</li>
+<li>Important for floodplain width and easement determination</li>
+</ul>
+<p><strong>Meander Belt Width:</strong></p>
+<p>Related but distinct metric:</p>
+<p><span class="math display">\[W_{\text{belt}} = \text{maximum width of meander belt}\]</span></p>
+<p>Encompasses multiple meanders and historical channel positions.</p>
+<p><strong>Geomorphic Significance:</strong></p>
+<ul>
+<li>Indicates lateral migration potential</li>
+<li>Controls floodplain reworking rate</li>
+<li>Defines meander belt for land use planning</li>
+<li>Key parameter for restoration corridor width</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<ul>
+<li>Verify valley axis orientation</li>
+<li>Check consistency across multiple bends</li>
+<li>Compare with meander wavelength (<span class="math inline">\(W_m \approx 0.5 \times \lambda\)</span>)</li>
+<li>Validate against historical channel positions</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/migration-assessment.html">User Manual Section on Migration Assessment</a> and <a href="../FG-User-Manual/corridor-delineation.html">Corridor Delineation</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-rc-w-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="sec-rc-w-ratio">Radius of Curvature to Bankfull Width Ratio</h3>
+<p><strong>Definition:</strong> Dimensionless ratio quantifying bend tightness relative to channel size, indicating meander development and stability.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(R_c/W\)</span> or <span class="math inline">\(r^*\)</span></li>
+<li><strong>Units:</strong> Dimensionless</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 2 - 20+</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p><span class="math display">\[\frac{R_c}{W} = \frac{R_c}{W_{bf}}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(R_c\)</span> = radius of curvature at bend apex (m)</li>
+<li><span class="math inline">\(W_{bf}\)</span> = bankfull width (m)</li>
+</ul>
+<p><strong>Classification Thresholds:</strong></p>
+<div id="tbl-rc-w-ratio" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rc-w-ratio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.7: Radius of curvature to width ratio classification
+</figcaption>
+<div aria-describedby="tbl-rc-w-ratio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(R_c/W\)</span></th>
+<th>Bend Tightness</th>
+<th>Characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt; 2</td>
+<td>Very Tight</td>
+<td>High erosion risk, unstable</td>
+</tr>
+<tr class="even">
+<td>2 - 3</td>
+<td>Tight</td>
+<td>Active migration, high shear</td>
+</tr>
+<tr class="odd">
+<td>3 - 5</td>
+<td>Moderate</td>
+<td>Balanced, typical meanders</td>
+</tr>
+<tr class="even">
+<td>5 - 10</td>
+<td>Gentle</td>
+<td>Stable, lower migration rates</td>
+</tr>
+<tr class="odd">
+<td>&gt; 10</td>
+<td>Very Gentle</td>
+<td>Approaching straight</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Geomorphic Significance:</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Low <span class="math inline">\(R_c/W\)</span> (tight bends)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">High <span class="math inline">\(R_c/W\)</span> (gentle bends)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ul>
+<li>High near-bank velocities and shear stress</li>
+<li>Rapid bank erosion and migration</li>
+<li>Strong secondary circulation</li>
+<li>Point bar development</li>
+<li>Potential for cutoff formation</li>
+</ul>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<ul>
+<li>Lower erosion rates</li>
+<li>More stable banks</li>
+<li>Weaker secondary flow</li>
+<li>Slower migration</li>
+<li>Less sediment sorting</li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Calculate at bend apex (maximum curvature)</li>
+<li>Average multiple bends for reach characterization</li>
+<li>Use consistent bankfull width measurement</li>
+<li>Critical for assessing bend stability</li>
+</ul>
+<p><strong>Empirical Relationships:</strong></p>
+<p><strong>Hickin &amp; Nanson (1984) - Migration Rate:</strong></p>
+<p>Maximum migration rate occurs at <span class="math inline">\(R_c/W \approx 2-3\)</span></p>
+<p><strong>Stability Threshold:</strong></p>
+<p><span class="math display">\[\begin{align}
+R_c/W &lt; 2 &amp;: \text{High instability risk} \\
+R_c/W &gt; 10 &amp;: \text{Minimal lateral activity}
+\end{align}\]</span></p>
+<p><strong>Applications:</strong></p>
+<ul>
+<li>Bank erosion hazard assessment</li>
+<li>Restoration design (target <span class="math inline">\(R_c/W = 2-3\)</span> for natural appearance)</li>
+<li>Channel evolution prediction</li>
+<li>Infrastructure risk evaluation</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check against typical values</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (Rc_W <span class="sc">&lt;</span> <span class="fl">1.5</span>) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  flag <span class="ot">&lt;-</span> <span class="st">"Unusually tight"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (Rc_W <span class="sc">&gt;</span> <span class="dv">15</span>) {</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  flag <span class="ot">&lt;-</span> <span class="st">"Nearly straight"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/bend-stability.html">User Manual Section on Bend Stability</a> and <a href="../FG-User-Manual/migration-rates.html">Migration Rates</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sec-wm-w-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="sec-wm-w-ratio">Meander Bend Width to Bankfull Width Ratio</h3>
+<p><strong>Definition:</strong> Dimensionless ratio of meander bend width to bankfull width, indicating the lateral extent of meandering relative to channel size.</p>
+<p><strong>Technical Specification:</strong></p>
+<ul>
+<li><strong>Symbol:</strong> <span class="math inline">\(W_m/W\)</span> or <span class="math inline">\(A_m/W\)</span></li>
+<li><strong>Units:</strong> Dimensionless</li>
+<li><strong>Data Type:</strong> Float/Double</li>
+<li><strong>Typical Range:</strong> 10 - 30+</li>
+</ul>
+<p><strong>Calculation Method:</strong></p>
+<p><span class="math display">\[\frac{W_m}{W} = \frac{W_m}{W_{bf}}\]</span></p>
+<p>Or using amplitude:</p>
+<p><span class="math display">\[\frac{A_m}{W} = \frac{A_m}{W_{bf}}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(W_m\)</span> = meander bend width (m)</li>
+<li><span class="math inline">\(A_m\)</span> = meander amplitude (m) [<span class="math inline">\(W_m = 2 \times A_m\)</span>]</li>
+<li><span class="math inline">\(W_{bf}\)</span> = bankfull width (m)</li>
+</ul>
+<p><strong>Empirical Relationships:</strong></p>
+<p><strong>From Leopold &amp; Wolman:</strong></p>
+<p>Since <span class="math inline">\(\lambda \approx 11 \times W\)</span> and <span class="math inline">\(W_m \approx 0.5 \times \lambda\)</span>:</p>
+<p><span class="math display">\[\frac{W_m}{W} \approx 18\]</span></p>
+<p><strong>Typical Range:</strong></p>
+<p><span class="math display">\[\frac{W_m}{W} = 15 - 25 \text{ (for freely meandering channels)}\]</span></p>
+<p><strong>With Sinuosity:</strong></p>
+<p>Higher sinuosity generally correlates with higher <span class="math inline">\(W_m/W\)</span> ratios.</p>
+<p><strong>Implementation Notes:</strong></p>
+<ul>
+<li>Measure at representative bends (avoid anomalies)</li>
+<li>Average multiple bends for reach value</li>
+<li>Requires well-developed meander pattern</li>
+<li>Sensitive to valley confinement</li>
+</ul>
+<p><strong>Geomorphic Significance:</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Low <span class="math inline">\(W_m/W\)</span> (&lt; 10)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Moderate <span class="math inline">\(W_m/W\)</span> (10-25)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">High <span class="math inline">\(W_m/W\)</span> (&gt; 25)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<ul>
+<li>Confined or constrained channel</li>
+<li>Limited lateral migration space</li>
+<li>Valley controls on planform</li>
+<li>Reduced floodplain connectivity</li>
+</ul>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<ul>
+<li>Freely meandering</li>
+<li>Typical alluvial channel</li>
+<li>Active floodplain reworking</li>
+<li>Natural lateral mobility</li>
+</ul>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<ul>
+<li>Highly sinuous</li>
+<li>Extensive lateral migration</li>
+<li>Wide meander belt</li>
+<li>Low valley gradient</li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Applications:</strong></p>
+<p><strong>Restoration Design:</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Target meander geometry</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>W_m_design <span class="ot">&lt;-</span> <span class="dv">18</span> <span class="sc">*</span> W_bf_design</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>lambda_design <span class="ot">&lt;-</span> <span class="dv">11</span> <span class="sc">*</span> W_bf_design</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>R_c_design <span class="ot">&lt;-</span> <span class="fl">2.5</span> <span class="sc">*</span> W_bf_design</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Corridor Width Estimation:</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>W_corridor <span class="ot">&lt;-</span> W_m <span class="sc">+</span> (<span class="dv">2</span> <span class="sc">*</span> migration_buffer)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>W_corridor_min <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">*</span> W_bf  <span class="co"># minimum</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Channel Evolution:</strong></p>
+<ul>
+<li>Increasing <span class="math inline">\(W_m/W\)</span> indicates lateral expansion</li>
+<li>Decreasing <span class="math inline">\(W_m/W\)</span> suggests confinement or straightening</li>
+<li>Temporal changes indicate adjustment processes</li>
+</ul>
+<p><strong>Quality Control:</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consistency check with wavelength</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>lambda_W <span class="ot">&lt;-</span> lambda_measured <span class="sc">/</span> W_bf  <span class="co"># Should be ~11</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>Wm_W <span class="ot">&lt;-</span> W_m_measured <span class="sc">/</span> W_bf  <span class="co"># Should be ~18</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ratio should be approximately 0.5</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ratio_check <span class="ot">&lt;-</span> Wm_W <span class="sc">/</span> lambda_W</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected: ratio_check ≈ 0.5 ± 0.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Comparison with Historical Data:</strong></p>
+<ul>
+<li>Overlay historical channel positions</li>
+<li>Calculate <span class="math inline">\(W_m/W\)</span> for different time periods</li>
+<li>Assess trends in lateral activity</li>
+<li>Identify reaches with changing planform</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/planform-design.html">User Manual Section on Planform Design</a>, <a href="../FG-User-Manual/meander-geometry.html">Meander Geometry</a>, and <a href="../FG-User-Manual/channel-migration-zones.html">Channel Migration Zones</a>.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="sec-metrics-summary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-metrics-summary">Summary</h2>
+<section id="sec-metric-hierarchy" class="level3">
+<h3 class="anchored" data-anchor-id="sec-metric-hierarchy">Metric Hierarchy and Relationships</h3>
+<div id="tbl-metrics-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-metrics-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.8: Summary of FluvialGeomorph metrics by level
+</figcaption>
+<div aria-describedby="tbl-metrics-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 18%">
+<col style="width: 36%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Level</th>
+<th>Metric</th>
+<th>Primary Inputs</th>
+<th>Typical Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>Drainage Area</td>
+<td>DEM, pour point</td>
+<td>Regional curves, scaling</td>
+</tr>
+<tr class="even">
+<td><strong>1</strong></td>
+<td>Slope</td>
+<td>Elevation, length</td>
+<td>Energy gradient, classification</td>
+</tr>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>Sinuosity</td>
+<td>Channel/valley length</td>
+<td>Pattern classification</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>Discharge</td>
+<td>Drainage area, regional curves</td>
+<td>Hydraulic design</td>
+</tr>
+<tr class="odd">
+<td><strong>2</strong></td>
+<td>XS Area</td>
+<td>Width, depth</td>
+<td>Flow capacity</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>XS Width</td>
+<td>Survey, bankfull elevation</td>
+<td>Hydraulic geometry</td>
+</tr>
+<tr class="odd">
+<td><strong>2</strong></td>
+<td>XS Depth</td>
+<td>Survey, bankfull elevation</td>
+<td>Hydraulic geometry</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>W/D Ratio</td>
+<td>Width, depth</td>
+<td>Channel form, stability</td>
+</tr>
+<tr class="odd">
+<td><strong>2</strong></td>
+<td>Entrenchment</td>
+<td>Flood-prone width, bankfull width</td>
+<td>Vertical stability</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>Shear Stress</td>
+<td>Depth, slope, density</td>
+<td>Sediment transport</td>
+</tr>
+<tr class="odd">
+<td><strong>2</strong></td>
+<td>Stream Power</td>
+<td>Discharge, slope, width</td>
+<td>Geomorphic work capacity</td>
+</tr>
+<tr class="even">
+<td><strong>3</strong></td>
+<td>Bend <span class="math inline">\(R_c\)</span></td>
+<td>Planform coordinates</td>
+<td>Bend tightness</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>Meander Length</td>
+<td>Inflection points</td>
+<td>Planform scaling</td>
+</tr>
+<tr class="even">
+<td><strong>3</strong></td>
+<td>Bend Width</td>
+<td>Amplitude, valley axis</td>
+<td>Lateral extent</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td><span class="math inline">\(R_c/W\)</span></td>
+<td>Radius, width</td>
+<td>Bend stability</td>
+</tr>
+<tr class="even">
+<td><strong>3</strong></td>
+<td><span class="math inline">\(W_m/W\)</span></td>
+<td>Bend width, bankfull width</td>
+<td>Planform development</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-implementation-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="sec-implementation-workflow">Implementation Workflow</h3>
+<p><strong>Level 1 → Level 2 → Level 3</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Workflow Sequence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Level 1 Metrics</strong> (watershed-scale)
+<ul>
+<li>Derive from GIS analysis</li>
+<li>Independent variables for predictions</li>
+<li>Minimal field data required</li>
+</ul></li>
+<li><strong>Level 2 Metrics</strong> (reach/cross-section scale)
+<ul>
+<li>Predicted from Level 1 using regional curves</li>
+<li>Validated with field surveys</li>
+<li>Core hydraulic geometry parameters</li>
+</ul></li>
+<li><strong>Level 3 Metrics</strong> (planform scale)
+<ul>
+<li>Calculated from Level 2 dimensions</li>
+<li>Require detailed planform mapping</li>
+<li>Characterize lateral dynamics</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cross-Reference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="../FG-User-Manual/metric-workflow.html">User Manual Section on Metric Calculation Workflow</a> and <a href="../FG-User-Manual/data-collection.html">Data Collection Protocols</a>.</p>
+</div>
+</div>
 
 
 </section>
