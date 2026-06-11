@@ -1,0 +1,1083 @@
+---
+title: "Regional Curve Development"
+format: html
+---
+
+
+## Overview
+
+Regional curves are empirical relationships between channel dimensions (bankfull width, depth, and cross-sectional area) and watershed drainage area or bankfull discharge. These relationships, first systematically documented by @leopold1953hydraulic, provide a powerful tool for stream assessment and restoration design by characterizing how channel size scales predictably with watershed size within physiographically similar regions.
+
+Regional curves serve multiple purposes in fluvial geomorphic analysis:
+
+- **Assessment**: Compare existing channel dimensions to regional expectations
+- **Design**: Estimate appropriate channel dimensions for restoration projects
+- **Screening**: Rapidly evaluate channel condition across watersheds
+- **Validation**: Verify detailed design calculations
+- **Prediction**: Estimate dimensions at ungaged locations
+
+Traditional regional curve development has been limited by the cost and time required to survey sufficient sites to establish robust relationships [@harman1999bankfull; @doll2003hydraulic]. FluvialGeomorph addresses this limitation by enabling the integration of LiDAR-derived measurements with field validation data, dramatically expanding sample sizes while maintaining accuracy through strategic field verification.
+
+This chapter describes methods for developing regional curves that combine:
+
+- **LiDAR-derived measurements**: Providing large sample sizes and comprehensive spatial coverage
+- **Field validation data**: Ensuring accuracy and verifying bankfull identification
+- **Statistical methods**: Establishing robust relationships with quantified uncertainty
+- **Quality control procedures**: Maintaining data integrity and reliability
+
+## Theoretical Foundation
+
+### Hydraulic Geometry Principles
+
+Regional curves are based on the principle that channel dimensions adjust to accommodate the flow and sediment regime imposed by the watershed [@leopold1953hydraulic; @dunne1978water]. For streams in quasi-equilibrium within a physiographically similar region, channel dimensions scale predictably with drainage area:
+
+$$W_{bf} = aA^b$$
+
+$$D_{bf} = cA^f$$
+
+$$A_{bf} = kA^m$$
+
+Where:
+- $W_{bf}$ = bankfull width (m or ft)
+- $D_{bf}$ = bankfull mean depth (m or ft)
+- $A_{bf}$ = bankfull cross-sectional area (m² or ft²)
+- $A$ = drainage area (km² or mi²)
+- $a$, $c$, $k$ = coefficients (intercepts)
+- $b$, $f$, $m$ = exponents (slopes on log-log plot)
+
+### Regional Consistency
+
+Streams within a physiographically similar region exhibit consistent dimension-drainage area relationships because they share:
+
+- **Climate**: Similar precipitation patterns and runoff characteristics
+- **Geology**: Common bedrock and surficial geology
+- **Topography**: Similar valley slopes and relief
+- **Vegetation**: Comparable vegetation types and density
+- **Land use**: Similar watershed disturbance patterns
+- **Sediment supply**: Comparable sediment sources and delivery
+
+Regional curves developed from stable, reference-quality streams represent the expected dimensions for channels in dynamic equilibrium with their flow and sediment regime [@harman1999bankfull; @doll2003hydraulic].
+
+### Drainage Area as Surrogate
+
+Drainage area serves as a surrogate for bankfull discharge in regional curves:
+
+- Drainage area is easily determined from topographic data or GIS
+- Bankfull discharge is difficult to measure directly
+- Strong correlation exists between drainage area and bankfull discharge within regions
+- Drainage area is available for all locations (gaged and ungaged)
+
+The relationship between bankfull discharge and drainage area is typically:
+
+$$Q_{bf} = \alpha A^\beta$$
+
+Where:
+- $Q_{bf}$ = bankfull discharge (m³/s or ft³/s)
+- $\alpha$, $\beta$ = regional coefficients
+
+### Exponent Relationships
+
+Theoretical considerations suggest relationships among exponents [@leopold1953hydraulic]:
+
+$$b + f = m$$
+
+This relationship reflects the fact that cross-sectional area equals width times depth. In practice, exponents derived from field data may not satisfy this relationship exactly due to measurement error and natural variability.
+
+Typical exponent ranges:
+- Width exponent ($b$): 0.4-0.6
+- Depth exponent ($f$): 0.3-0.5
+- Area exponent ($m$): 0.7-1.0
+
+## Data Requirements
+
+### Site Selection Criteria
+
+Regional curves should be developed from streams that represent stable, reference conditions:
+
+**Inclusion Criteria:**
+- Alluvial channels (able to adjust form)
+- Stable condition (not actively incising or aggrading)
+- Natural or near-natural condition
+- Clear bankfull indicators present
+- Minimal human disturbance
+- Representative of region
+
+**Exclusion Criteria:**
+- Bedrock-controlled channels
+- Actively incising or degrading channels
+- Recently disturbed channels (channelization, dredging)
+- Heavily modified channels (concrete, rip-rap)
+- Channels lacking clear bankfull features
+- Tidal or backwater-affected reaches
+- Braided or anastomosing channels (unless developing curves specifically for these types)
+
+### Sample Size Requirements
+
+**Minimum Sample Sizes:**
+- Statistical validity: 20-30 sites minimum
+- Robust relationships: 50-100 sites preferred
+- Comprehensive regional coverage: 100+ sites ideal
+- Stratification by drainage area: 5-10 sites per order of magnitude
+
+**Drainage Area Range:**
+- Span 2-3 orders of magnitude minimum
+- Example: 1-100 km² or 10-1000 km²
+- Adequate coverage across range (avoid gaps)
+- Sufficient sites at small and large end of range
+- Logarithmic distribution preferred over linear
+
+**Spatial Distribution:**
+- Geographic coverage across region
+- Multiple watersheds represented
+- Range of valley settings
+- Various channel types within region
+- Avoid clustering in single watershed
+
+### LiDAR Data Requirements
+
+**LiDAR Specifications:**
+- Spatial resolution: 1-m preferred; 3-m maximum
+- Vertical accuracy: ±15 cm RMSE or better
+- Point density: ≥2 points/m²
+- Bare earth classification: High quality
+- Acquisition timing: Leaf-off, low-flow conditions
+- Coverage: Complete for all study sites
+
+**Quality Considerations:**
+- Consistent acquisition specifications across region
+- Similar processing methods for all data
+- Comparable vegetation conditions during acquisition
+- Similar water levels during acquisition
+- Minimal time span between acquisitions (if multiple datasets)
+
+### Field Validation Data Requirements
+
+**Validation Site Selection:**
+- Subset of LiDAR analysis sites (typically 10-30%)
+- Representative of range of conditions
+- Stratified by drainage area
+- Range of channel types and settings
+- Accessible locations with clear bankfull indicators
+- High-quality LiDAR coverage
+
+**Field Measurements:**
+- Bankfull elevation at multiple points (10-20 per reach)
+- Cross-section surveys at 3-5 locations per reach
+- Bankfull width measurements (10-20 per reach)
+- Bankfull indicators documented and photographed
+- Substrate characterization
+- Channel condition assessment
+- GPS coordinates and site documentation
+
+**Validation Data Quality:**
+- Vertical accuracy: ±0.03 m (±0.1 ft)
+- Horizontal accuracy: ±0.3 m (±1 ft)
+- Multiple bankfull indicators verified
+- Consistent methodology across sites
+- Complete documentation
+- Quality control procedures followed
+
+## Data Collection and Processing
+
+### LiDAR-Based Dimension Extraction
+
+#### Stream Network Preparation
+
+1. **Delineate or Import Stream Network:**
+   - Use DEM-derived flow accumulation
+   - Or import existing stream network (NHD, state data)
+   - Define drainage area threshold for stream initiation
+   - Verify network accuracy against imagery or maps
+
+2. **Calculate Drainage Area:**
+   - Use flow accumulation from DEM
+   - Or calculate from watershed boundaries
+   - Verify against published values where available
+   - Document method and data sources
+
+3. **Segment Stream Network:**
+   - Divide into reaches of consistent character
+   - Typical reach length: 10-20 bankfull widths
+   - Avoid reaches with confluences or major disturbances
+   - Assign unique reach identifiers
+
+#### Cross-Section Extraction
+
+1. **Generate Cross-Sections:**
+   - Automated placement perpendicular to flow
+   - Spacing: 10-50 m typical (based on channel size)
+   - Extend across channel and floodplain
+   - Extract elevation profiles from DEM
+
+2. **Quality Control:**
+   - Visual inspection of cross-section locations
+   - Verify perpendicular orientation
+   - Check for artifacts or errors
+   - Remove sections at confluences or structures
+   - Ensure adequate floodplain coverage
+
+#### Bankfull Identification
+
+1. **Automated Bankfull Detection:**
+   - Apply topographic break detection algorithms
+   - Slope-based methods
+   - Statistical analysis of elevation distribution
+   - Identify bankfull elevation on both banks
+
+2. **Quality Screening:**
+   - Visual review of bankfull identification
+   - Check for consistency along reach
+   - Flag uncertain identifications
+   - Remove sections with poor bankfull definition
+   - Document quality ratings
+
+3. **Manual Refinement:**
+   - Adjust bankfull elevation where needed
+   - Use consistent criteria across all sites
+   - Document adjustments and rationale
+   - Maintain quality control records
+
+#### Dimension Calculation
+
+1. **Extract Dimensions at Each Cross-Section:**
+   - Bankfull width (distance between bankfull points)
+   - Bankfull mean depth (area divided by width)
+   - Bankfull cross-sectional area
+   - Width-depth ratio
+   - Bank height and floodplain width
+
+2. **Reach-Scale Aggregation:**
+   - Calculate mean dimensions for each reach
+   - Calculate standard deviation and coefficient of variation
+   - Identify and remove outliers (>3 standard deviations)
+   - Document number of cross-sections per reach
+   - Assess within-reach variability
+
+### Field Validation Data Collection
+
+#### Site Survey
+
+1. **Bankfull Verification:**
+   - Identify bankfull indicators in field
+   - Survey bankfull elevation at 10-20 points
+   - Measure bankfull width at 10-20 locations
+   - Document indicators with photos
+   - Record confidence level for bankfull identification
+
+2. **Cross-Section Surveys:**
+   - Survey 3-5 cross-sections per reach
+   - Co-locate with LiDAR-extracted sections where possible
+   - Measure elevation at breaks in slope
+   - Include bankfull points, thalweg, floodplain
+   - Calculate dimensions from surveyed sections
+
+3. **Site Documentation:**
+   - GPS coordinates
+   - Drainage area verification
+   - Channel type and condition
+   - Substrate characterization
+   - Vegetation description
+   - Photo documentation
+   - Field notes and observations
+
+#### Data Processing
+
+1. **Calculate Field Dimensions:**
+   - Process survey data to elevations
+   - Identify bankfull elevation from field indicators
+   - Calculate width, depth, area from cross-sections
+   - Average dimensions across reach
+   - Calculate uncertainty estimates
+
+2. **Quality Control:**
+   - Check for survey errors or closures
+   - Verify calculations
+   - Compare dimensions across cross-sections
+   - Assess consistency of bankfull identification
+   - Document data quality
+
+### Comparison and Validation
+
+#### LiDAR vs. Field Comparison
+
+1. **Direct Comparison:**
+   - Match LiDAR and field sites
+   - Compare bankfull elevations
+   - Compare dimensions (width, depth, area)
+   - Calculate differences and percent errors
+   - Identify systematic biases
+
+2. **Statistical Analysis:**
+   - Calculate mean error and standard deviation
+   - Perform paired t-tests
+   - Calculate correlation coefficients
+   - Assess accuracy across range of channel sizes
+   - Identify factors affecting accuracy
+
+3. **Error Assessment:**
+   - Vertical error in bankfull elevation
+   - Percent error in width, depth, area
+   - Relationship between error and channel size
+   - Relationship between error and vegetation cover
+   - Relationship between error and channel condition
+
+**Example Validation Results:**
+
+| Dimension | Mean Error | Std Dev | RMSE | R² |
+|-----------|-----------|---------|------|-----|
+| Bankfull Elevation | +0.08 m | 0.12 m | 0.14 m | - |
+| Bankfull Width | -3.2% | 8.5% | 9.1% | 0.95 |
+| Bankfull Depth | +5.1% | 12.3% | 13.3% | 0.88 |
+| Bankfull Area | +1.8% | 15.2% | 15.3% | 0.92 |
+
+#### Calibration
+
+1. **Assess Systematic Bias:**
+   - Determine if LiDAR consistently over- or under-estimates
+   - Calculate bias correction factors if needed
+   - Test correction on independent validation sites
+   - Document calibration procedure
+
+2. **Refine Automated Methods:**
+   - Adjust bankfull detection algorithm parameters
+   - Use field data as training dataset
+   - Test refined methods on validation sites
+   - Iterate to optimize accuracy
+   - Document optimal parameter settings
+
+3. **Establish Confidence Intervals:**
+   - Calculate prediction intervals from validation data
+   - Quantify uncertainty in LiDAR-derived dimensions
+   - Develop correction factors if appropriate
+   - Document accuracy by channel size or condition
+
+### Data Integration
+
+#### Combined Dataset Development
+
+1. **Merge LiDAR and Field Data:**
+   - Include all field-validated sites in dataset
+   - Include LiDAR sites that pass quality screening
+   - Apply calibration corrections if developed
+   - Flag data source for each site (field, LiDAR, or both)
+   - Maintain data quality ratings
+
+2. **Quality Screening:**
+   - Remove sites with poor bankfull identification
+   - Remove outliers (>3 standard deviations from regression)
+   - Remove sites with known disturbances
+   - Remove sites outside drainage area range of interest
+   - Document exclusion criteria and removed sites
+
+3. **Final Dataset:**
+   - Site ID and location
+   - Drainage area
+   - Bankfull width, depth, area
+   - Data source (field, LiDAR, or both)
+   - Quality rating
+   - Channel type and condition
+   - Notes and documentation
+
+**Example Dataset Summary:**
+
+| Data Source | Number of Sites | Drainage Area Range (km²) |
+|-------------|----------------|---------------------------|
+| Field Only | 25 | 2.5 - 180 |
+| LiDAR Only | 175 | 1.2 - 250 |
+| Both (Validation) | 30 | 3.0 - 200 |
+| **Total** | **230** | **1.2 - 250** |
+
+## Statistical Analysis
+
+### Regression Methods
+
+#### Log-Transformation
+
+Regional curves are typically developed using log-transformed data:
+
+$$\log(W_{bf}) = \log(a) + b \cdot \log(A)$$
+
+Log-transformation:
+- Linearizes power-law relationships
+- Stabilizes variance across range of drainage areas
+- Enables use of ordinary least squares regression
+- Facilitates interpretation of exponents
+
+#### Ordinary Least Squares (OLS) Regression
+
+**Procedure:**
+1. Log-transform dimension and drainage area data
+2. Perform linear regression: $\log(Y) = \log(a) + b \cdot \log(X)$
+3. Calculate regression coefficients and statistics
+4. Back-transform to power-law form: $Y = aX^b$
+
+**Assumptions:**
+- Linear relationship in log-log space
+- Homoscedastic errors (constant variance)
+- Independent observations
+- Normally distributed residuals
+
+**Outputs:**
+- Coefficient ($a$) and exponent ($b$)
+- R² (coefficient of determination)
+- Standard error of estimate
+- Confidence intervals for coefficients
+- Prediction intervals
+
+#### Alternative Regression Methods
+
+**Reduced Major Axis (RMA) Regression:**
+- Accounts for error in both variables
+- Appropriate when drainage area has uncertainty
+- Produces steeper slopes than OLS
+- Use when both variables are measured with error
+
+**Weighted Least Squares:**
+- Weights observations by inverse variance
+- Appropriate when error varies with channel size
+- Can weight field data more heavily than LiDAR data
+- Use when data quality varies among sites
+
+**Robust Regression:**
+- Less sensitive to outliers
+- Appropriate when dataset includes some questionable sites
+- Various methods available (M-estimators, least trimmed squares)
+- Use when outliers cannot be definitively removed
+
+### Model Evaluation
+
+#### Goodness of Fit
+
+**R² (Coefficient of Determination):**
+- Proportion of variance explained by model
+- Range: 0 to 1 (higher is better)
+- Typical values for regional curves: 0.7-0.95
+- Lower values may indicate:
+  - High natural variability
+  - Mixed channel types or conditions
+  - Poor data quality
+  - Inappropriate regional grouping
+
+**Standard Error of Estimate (SEE):**
+- Average deviation of observations from regression line
+- In log space: $SEE = \sqrt{\frac{\sum(log(Y_{obs}) - log(Y_{pred}))^2}{n-2}}$
+- Back-transformed to percent error: $PE = 100 \times (10^{SEE} - 1)$
+- Typical values: 20-40% for width, 30-50% for depth
+
+**Root Mean Square Error (RMSE):**
+- Similar to SEE but calculated in original units
+- $RMSE = \sqrt{\frac{\sum(Y_{obs} - Y_{pred})^2}{n}}$
+- Useful for comparing models in original units
+
+#### Residual Analysis
+
+**Residual Plots:**
+- Plot residuals vs. predicted values
+- Plot residuals vs. drainage area
+- Check for patterns indicating:
+  - Non-linear relationships
+  - Heteroscedasticity (non-constant variance)
+  - Outliers or influential points
+  - Systematic bias
+
+**Normal Probability Plot:**
+- Plot residuals vs. theoretical normal quantiles
+- Check for normality of residuals
+- Deviations indicate:
+  - Skewed distribution
+  - Outliers
+  - Non-normal errors
+
+**Influence Diagnostics:**
+- Cook's distance: Identifies influential points
+- Leverage: Identifies points with unusual predictor values
+- DFBETAS: Change in coefficients when point removed
+- Remove or investigate high-influence points
+
+#### Model Comparison
+
+**Compare Alternative Models:**
+- Different regional groupings
+- Different regression methods
+- With and without outliers
+- Field-only vs. combined datasets
+
+**Comparison Criteria:**
+- R² and adjusted R²
+- Standard error of estimate
+- AIC (Akaike Information Criterion)
+- BIC (Bayesian Information Criterion)
+- Cross-validation error
+- Prediction interval width
+
+### Uncertainty Quantification
+
+#### Confidence Intervals
+
+**Confidence Interval for Regression Line:**
+- Uncertainty in mean predicted value
+- Narrower than prediction intervals
+- Width increases away from mean drainage area
+- 95% confidence interval typical
+
+**Calculation:**
+$$CI = \hat{Y} \pm t_{\alpha/2, n-2} \cdot SE_{\hat{Y}}$$
+
+Where:
+- $\hat{Y}$ = predicted value
+- $t_{\alpha/2, n-2}$ = t-value for desired confidence level
+- $SE_{\hat{Y}}$ = standard error of predicted mean
+
+#### Prediction Intervals
+
+**Prediction Interval for Individual Observations:**
+- Uncertainty in predicting dimension at new site
+- Wider than confidence intervals
+- Accounts for both regression uncertainty and natural variability
+- 95% prediction interval typical
+
+**Calculation:**
+$$PI = \hat{Y} \pm t_{\alpha/2, n-2} \cdot SE_{pred}$$
+
+Where:
+$$SE_{pred} = SEE \sqrt{1 + \frac{1}{n} + \frac{(X - \bar{X})^2}{\sum(X_i - \bar{X})^2}}$$
+
+**Interpretation:**
+- 95% of stable streams should fall within prediction interval
+- Sites outside interval may be:
+  - Unstable or disturbed
+  - Different channel type
+  - Measurement error
+  - Natural variability
+
+#### Uncertainty from Data Integration
+
+**Combined Uncertainty:**
+When integrating field and LiDAR data, total uncertainty includes:
+
+1. **Field measurement error**: ±3-5% typical
+2. **LiDAR measurement error**: ±10-15% typical
+3. **Natural variability**: ±20-30% typical
+4. **Regression error**: Captured in prediction intervals
+
+**Weighting Approaches:**
+- Weight field data more heavily (higher accuracy)
+- Weight by inverse variance
+- Equal weighting if LiDAR well-validated
+- Sensitivity analysis to assess impact of weighting
+
+**Propagation of Error:**
+- Combine error sources using root-sum-square
+- Total uncertainty typically dominated by natural variability
+- Document all error sources and assumptions
+
+## Regional Curve Development Workflow
+
+### Step 1: Define Region and Objectives
+
+**Regional Definition:**
+- Physiographic province or ecoregion
+- Watershed or river basin
+- Geologic or soil region
+- Climate zone
+- Custom region based on similarity
+
+**Objectives:**
+- Assessment of channel condition
+- Restoration design guidance
+- Screening-level analysis
+- Detailed design verification
+- Research or monitoring
+
+**Target Drainage Area Range:**
+- Define based on stream types of interest
+- Ensure adequate sample size across range
+- Consider extrapolation limits
+
+### Step 2: Compile LiDAR Data
+
+**Data Acquisition:**
+- Identify available LiDAR coverage
+- Assess data quality and specifications
+- Acquire or access LiDAR DEMs
+- Verify coordinate systems and datums
+- Document data sources and dates
+
+**Data Preparation:**
+- Mosaic multiple LiDAR tiles if needed
+- Reproject to common coordinate system
+- Resample to consistent resolution if needed
+- Quality check for artifacts or errors
+- Prepare metadata documentation
+
+### Step 3: Select Study Sites
+
+**Site Identification:**
+- Identify potential sites from maps and imagery
+- Apply inclusion/exclusion criteria
+- Stratify by drainage area
+- Ensure geographic distribution
+- Target 100-200+ sites for LiDAR analysis
+
+**Site Screening:**
+- Visual inspection using imagery
+- Check for disturbances or modifications
+- Verify LiDAR coverage and quality
+- Assess vegetation cover
+- Prioritize high-quality sites
+
+**Validation Site Selection:**
+- Select 20-30 sites for field validation
+- Representative of range of conditions
+- Stratified by drainage area
+- Accessible locations
+- High-quality LiDAR coverage
+
+### Step 4: Extract LiDAR-Derived Dimensions
+
+**FluvialGeomorph Processing:**
+1. Import stream network and drainage areas
+2. Generate cross-sections (10-50 m spacing)
+3. Extract elevation profiles from DEM
+4. Apply automated bankfull identification
+5. Calculate dimensions at each cross-section
+6. Aggregate to reach-scale means
+7. Quality control and screening
+
+**Quality Control:**
+- Visual review of bankfull identification
+- Check for consistency within reaches
+- Remove poor-quality sections
+- Flag uncertain identifications
+- Document quality ratings
+
+**Initial Dataset:**
+- Site ID, location, drainage area
+- Mean bankfull width, depth, area
+- Number of cross-sections per site
+- Within-site variability (CV)
+- Quality rating
+
+### Step 5: Conduct Field Validation
+
+**Field Surveys:**
+- Survey validation sites (20-30 sites)
+- Verify bankfull elevation and indicators
+- Measure dimensions at multiple locations
+- Document channel condition
+- Collect substrate and vegetation data
+- Photo documentation
+
+**Data Processing:**
+- Calculate field-measured dimensions
+- Average across reach
+- Calculate uncertainty estimates
+- Quality control checks
+- Complete site documentation
+
+### Step 6: Validate and Calibrate
+
+**Comparison Analysis:**
+- Match LiDAR and field sites
+- Compare bankfull elevations
+- Compare dimensions (width, depth, area)
+- Calculate errors and statistics
+- Identify systematic biases
+
+**Accuracy Assessment:**
+- Mean error and standard deviation
+- RMSE and percent error
+- Correlation analysis
+- Error vs. channel size
+- Error vs. vegetation or condition
+
+**Calibration:**
+- Develop bias corrections if needed
+- Refine automated methods
+- Test on independent sites
+- Establish confidence intervals
+- Document calibration procedure
+
+### Step 7: Integrate Datasets
+
+**Combine Data:**
+- Merge field and LiDAR datasets
+- Apply calibration corrections
+- Quality screening and outlier removal
+- Flag data sources
+- Final dataset compilation
+
+**Dataset Summary:**
+- Total number of sites
+- Drainage area range
+- Data source breakdown
+- Quality distribution
+- Geographic coverage
+
+### Step 8: Develop Regional Curves
+
+**Regression Analysis:**
+- Log-transform data
+- Perform OLS regression (or alternative method)
+- Calculate coefficients and exponents
+- Assess goodness of fit (R², SEE)
+- Analyze residuals
+
+**Model Refinement:**
+- Remove outliers if justified
+- Test alternative regional groupings
+- Compare regression methods
+- Evaluate model assumptions
+- Select final model
+
+**Uncertainty Quantification:**
+- Calculate confidence intervals
+- Calculate prediction intervals
+- Assess uncertainty sources
+- Document limitations
+
+### Step 9: Validate Regional Curves
+
+**Independent Validation:**
+- Reserve 20-30% of sites for validation
+- Apply curves to validation sites
+- Compare predicted vs. observed dimensions
+- Calculate validation statistics
+- Assess prediction accuracy
+
+**Cross-Validation:**
+- Leave-one-out cross-validation
+- K-fold cross-validation
+- Calculate cross-validation error
+- Compare with model fit statistics
+
+**Comparison with Existing Curves:**
+- Compare with published regional curves [@harman1999bankfull; @doll2003hydraulic]
+- Assess consistency or differences
+- Explain discrepancies (methods, time period, site selection)
+- Document relationship to existing work
+
+### Step 10: Document and Publish
+
+**Technical Documentation:**
+- Methods and procedures
+- Site selection criteria
+- Data sources and quality
+- Statistical methods
+- Validation results
+- Limitations and appropriate use
+
+**Curve Equations:**
+- Power-law equations with coefficients
+- Applicable drainage area range
+- R², SEE, and other statistics
+- Confidence and prediction intervals
+- Graphical presentation
+
+**Application Guidance:**
+- Appropriate uses
+- Limitations and cautions
+- Extrapolation limits
+- Comparison with field measurements
+- Quality assurance recommendations
+
+## Example Regional Curve Development
+
+### Case Study: Piedmont Region
+
+**Objective:** Develop regional curves for Piedmont streams using combined LiDAR and field data
+
+**Region Definition:**
+- Piedmont physiographic province
+- Drainage area range: 1-500 km²
+- Mixed land use (forest, agriculture, urban)
+- Similar geology and climate
+
+**Data Collection:**
+
+*LiDAR Analysis:*
+- 185 sites analyzed from 1-m LiDAR
+- Drainage area range: 1.2-450 km²
+- 10-50 cross-sections per site
+- Automated bankfull identification
+- Quality screening applied
+
+*Field Validation:*
+- 28 sites field-surveyed
+- Drainage area range: 2.5-380 km²
+- 3-5 cross-sections per site
+- Bankfull indicators verified
+- Dimensions measured
+
+**Validation Results:**
+
+| Dimension | Mean Error | RMSE | R² |
+|-----------|-----------|------|-----|
+| Bankfull Width | -2.8% | 8.7% | 0.96 |
+| Bankfull Depth | +4.2% | 11.5% | 0.89 |
+| Bankfull Area | +1.3% | 14.2% | 0.93 |
+
+**Calibration:**
+- No systematic bias detected
+- No calibration correction applied
+- Confidence intervals established from validation data
+
+**Combined Dataset:**
+- 213 total sites (185 LiDAR + 28 field)
+- Drainage area range: 1.2-450 km²
+- 15 outliers removed (>3 SD)
+- Final dataset: 198 sites
+
+**Regional Curve Results:**
+
+*Bankfull Width:*
+$$W_{bf} = 4.23 \cdot A^{0.48}$$
+- R² = 0.89
+- SEE = 0.12 (±30% at 95% PI)
+- n = 198
+
+*Bankfull Mean Depth:*
+$$D_{bf} = 0.32 \cdot A^{0.38}$$
+- R² = 0.82
+- SEE = 0.14 (±35% at 95% PI)
+- n = 198
+
+*Bankfull Cross-Sectional Area:*
+$$A_{bf} = 1.35 \cdot A^{0.86}$$
+- R² = 0.91
+- SEE = 0.13 (±32% at 95% PI)
+- n = 198
+
+Where:
+- Dimensions in meters
+- Drainage area in km²
+
+**Comparison with Previous Studies:**
+
+| Study | Method | n | Width Exponent | Depth Exponent |
+|-------|--------|---|----------------|----------------|
+| @harman1999bankfull | Field | 48 | 0.46 | 0.39 |
+| @doll2003hydraulic | Field | 87 | 0.50 | 0.36 |
+| This Study | LiDAR + Field | 198 | 0.48 | 0.38 |
+
+**Interpretation:**
+- Exponents consistent with previous studies
+- Larger sample size improves confidence
+- Prediction intervals similar to field-only studies
+- LiDAR enables more comprehensive regional coverage
+
+## Quality Assurance and Limitations
+
+### Quality Control Procedures
+
+**Data Quality:**
+- Verify LiDAR specifications meet requirements
+- Screen sites for disturbances and modifications
+- Visual review of bankfull identification
+- Statistical outlier detection and removal
+- Independent validation of subset of sites
+
+**Analysis Quality:**
+- Check regression assumptions
+- Analyze residuals for patterns
+- Assess influence of individual points
+- Compare alternative models
+- Cross-validation
+
+**Documentation Quality:**
+- Complete metadata for all sites
+- Document exclusions and adjustments
+- Record quality ratings
+- Maintain photo documentation
+- Preserve raw data and processing records
+
+### Limitations and Uncertainties
+
+**Data Limitations:**
+- LiDAR cannot measure below water surface
+- Dense vegetation affects ground point density
+- Small streams may not be resolved
+- Temporal mismatch between LiDAR acquisitions
+- Limited to streams with clear bankfull indicators
+
+**Method Limitations:**
+- Automated bankfull identification may fail in some settings
+- Assumes streams are in quasi-equilibrium
+- Regional curves represent average conditions
+- Natural variability not fully captured
+- Extrapolation beyond data range uncertain
+
+**Application Limitations:**
+- Curves apply to stable, reference-quality streams
+- May not apply to disturbed or modified channels
+- Prediction intervals are wide (±30-40% typical)
+- Should be verified with field observations
+- Not a substitute for detailed site investigation
+
+### Appropriate Use
+
+**Regional Curves Are Appropriate For:**
+- Preliminary assessment of channel condition
+- Screening-level analysis across watersheds
+- Initial dimensioning for restoration design
+- Validation of detailed design calculations
+- Comparison with field measurements
+- Research and monitoring applications
+
+**Regional Curves Should Not Be Used For:**
+- Final design dimensions without field verification
+- Highly modified or disturbed channels
+- Channel types not represented in dataset
+- Drainage areas outside curve range
+- Situations requiring high accuracy (±5%)
+- Substitute for site-specific analysis
+
+## Advanced Topics
+
+### Stratification by Channel Type
+
+**Rationale:**
+- Different channel types may have different dimension-drainage area relationships
+- Pool-riffle vs. plane-bed vs. step-pool
+- Confined vs. unconfined valleys
+- Different substrate types
+
+**Approach:**
+- Classify sites by channel type
+- Develop separate curves for each type
+- Compare curves statistically
+- Assess if stratification improves predictions
+
+**Considerations:**
+- Requires sufficient sample size for each type (30+ sites)
+- Classification must be objective and repeatable
+- May reduce overall sample size
+- Increases complexity of application
+
+### Multiple Regression Models
+
+**Additional Predictor Variables:**
+- Valley slope
+- Substrate size (D50)
+- Precipitation or runoff
+- Land use or impervious cover
+- Vegetation or forest cover
+
+**Model Form:**
+$$W_{bf} = a \cdot A^{b_1} \cdot S^{b_2} \cdot D_{50}^{b_3}$$
+
+**Advantages:**
+- May improve predictions
+- Captures additional controls on channel size
+- Enables assessment of multiple factors
+
+**Disadvantages:**
+- Requires additional data for all sites
+- More complex to apply
+- Risk of overfitting
+- Collinearity among predictors
+
+### Temporal Analysis
+
+**Multi-Temporal Regional Curves:**
+- Develop curves from different time periods
+- Compare to assess temporal changes
+- Identify trends in channel dimensions
+- Assess impacts of land use change or climate
+
+**Requirements:**
+- Multiple LiDAR datasets over time
+- Consistent processing methods
+- Sufficient time between acquisitions (5-10+ years)
+- Stable reference sites for comparison
+
+### Discharge-Based Curves
+
+**Bankfull Discharge Relationships:**
+- Develop curves using bankfull discharge instead of drainage area
+- Requires discharge estimates for all sites
+- More direct relationship with channel dimensions
+- Enables comparison across regions
+
+**Discharge Estimation Methods:**
+- Gage analysis (where available)
+- Regional discharge-drainage area relationships
+- Hydraulic calculations (Manning's equation)
+- Hydrologic modeling
+
+## Summary and Recommendations
+
+### Key Points
+
+1. **Regional curves provide powerful tools** for stream assessment and design, characterizing expected channel dimensions based on drainage area [@leopold1953hydraulic; @dunne1978water]
+
+2. **LiDAR dramatically expands sample sizes** from typical 20-50 sites to 100-200+ sites, improving statistical robustness and regional coverage
+
+3. **Field validation is essential** to verify LiDAR-derived measurements and establish accuracy, typically requiring 20-30 validation sites
+
+4. **Integration of LiDAR and field data** leverages the strengths of both approaches: comprehensive coverage from LiDAR and accuracy from field surveys
+
+5. **Proper statistical methods** including log-transformation, regression analysis, and uncertainty quantification are critical for developing reliable curves
+
+6. **Quality control procedures** ensure data integrity and appropriate site selection, with systematic screening and validation
+
+7. **Prediction intervals are wide** (±30-40% typical), reflecting natural variability and measurement uncertainty
+
+8. **Regional curves are screening tools** that should be verified with field observations for important applications
+
+### Recommendations for Practitioners
+
+**Planning:**
+- Define region based on physiographic similarity
+- Target 100-200+ sites for LiDAR analysis
+- Plan 20-30 field validation sites
+- Stratify by drainage area and geography
+- Ensure adequate LiDAR coverage and quality
+
+**Data Collection:**
+- Use high-quality LiDAR (1-m resolution, ±15 cm accuracy)
+- Apply consistent site selection criteria
+- Conduct thorough field validation
+- Document all sites completely
+- Maintain quality control throughout
+
+**Analysis:**
+- Use appropriate statistical methods
+- Validate with independent sites
+- Quantify uncertainty
+- Compare with existing curves
+- Document limitations clearly
+
+**Application:**
+- Use curves for preliminary assessment
+- Verify predictions with field observations
+- Stay within drainage area range
+- Apply only to stable, reference-quality streams
+- Combine with other lines of evidence
+
+**Documentation:**
+- Publish methods and results
+- Provide complete curve equations and statistics
+- Include application guidance
+- Share data when possible
+- Contribute to regional knowledge base
+
+### Future Directions
+
+**Emerging Opportunities:**
+- Increasing LiDAR coverage and quality
+- Multi-temporal analysis for change detection
+- Integration with other remote sensing data
+- Machine learning for bankfull identification
+- Web-based tools for curve application
+- Standardized regional curve databases
+
+**Research Needs:**
+- Improved bankfull identification algorithms
+- Better understanding of uncertainty sources
+- Methods for disturbed or modified channels
+- Integration of discharge data
+- Temporal dynamics and channel evolution
+- Climate change impacts on regional relationships
+
+The integration of LiDAR-derived measurements with field validation data represents a significant advance in regional curve development, enabling more robust relationships based on larger sample sizes while maintaining accuracy through strategic field verification. FluvialGeomorph provides the tools to efficiently implement this integrated approach, supporting improved stream assessment and restoration design across watersheds and regions.

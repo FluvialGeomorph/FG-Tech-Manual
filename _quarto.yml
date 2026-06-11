@@ -30,6 +30,7 @@ book:
         - Toolbox.qmd
         - Features.qmd
         - Reports.qmd
+        - regionalcurve.qmd
     - part: "Workflows"
       chapters:
         - Level-1.qmd
