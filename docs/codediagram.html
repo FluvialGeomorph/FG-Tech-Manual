@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Appendix C — Tools &amp; Dependencies – FluvialGeomorph Technical Manual</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./DB-migration.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./QA-checklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./codediagram.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Tools &amp; Dependencies</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">FluvialGeomorph Technical Manual</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/FluvialGeomorph/FG-Tech-Manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quickguide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quick Guide</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./flowchart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Manual Flowchart</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./concept_map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Manual Crosswalk</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Metrics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FieldMethods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Field Methods</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">FluvialGeomorph Toolbox</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Install</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./TutorialData.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tutorial Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Toolbox.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Toolbox</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Features.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Derived Features</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Level-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level-1 Initial Channel Analysis Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Level-2-eb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level-2-EB Estimate Bankfull Analysis Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Level-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Level-2 Bankfull Analysis Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Level-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Level-3 Planform Analysis Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FromField.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">From-Field</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Rapid Assessment Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./floodplain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Floodplain Connectivity RAT</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ohwm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ordinary Highwater Mark RAT</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chute.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Chute Design RAT</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">R Packages</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regionalcurve.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve R Package</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fluvgeo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">fluvgeo R Package</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./QA-checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">QA Checklist</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DB-migration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./codediagram.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Tools &amp; Dependencies</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#interactive-workflow-diagram" id="toc-interactive-workflow-diagram" class="nav-link" data-scroll-target="#interactive-workflow-diagram">Interactive Workflow Diagram</a></li>
+  <li><a href="#tool-reference-table" id="toc-tool-reference-table" class="nav-link" data-scroll-target="#tool-reference-table">Tool Reference Table</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./QA-checklist.html">Appendices</a></li><li class="breadcrumb-item"><a href="./codediagram.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Tools &amp; Dependencies</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Appendix C — Tools &amp; Dependencies</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+.workflow-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.tooltip-box {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-box .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    left: 100%;
+    margin-left: 15px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    line-height: 1.4;
+    pointer-events: none;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.tooltip-box .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+}
+
+.tooltip-box:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tool-card {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    min-width: 200px;
+    max-width: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-color: #2E86AB;
+}
+
+.tool-card h4 {
+    margin: 0 0 5px 0;
+    color: #2E86AB;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tool-card .package-badge {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    color: #666;
+    margin-top: 5px;
+    font-family: monospace;
+}
+
+.phase-row {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: visible;
+}
+
+.phase-label {
+    min-width: 150px;
+    font-weight: bold;
+    color: #333;
+    padding-right: 20px;
+    font-size: 14px;
+    padding-top: 15px;
+}
+
+.tools-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    flex: 1;
+    padding: 10px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.tools-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tools-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.tools-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.tools-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.arrow {
+    font-size: 24px;
+    color: #999;
+    margin: 0 5px;
+    flex-shrink: 0;
+    padding-top: 15px;
+}
+</style>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This page provides a visual guide to the FluvialGeomorph toolbox analysis workflow, showing the order of operations and dependencies between tools.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How to Use
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Hover over any tool card to see a description</li>
+<li>Click on a tool card to view its source code on GitHub</li>
+<li>Scroll horizontally within each phase to see all tools</li>
+<li>Tools are organized by analysis phase from left to right</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="interactive-workflow-diagram" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-workflow-diagram">Interactive Workflow Diagram</h2>
+<div class="workflow-container">
+<section id="phase-1-data-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-data-preparation">Phase 1: Data Preparation</h3>
+<div class="phase-row" style="background: #E8F4F8;">
+<div class="phase-label">
+Data Preparation
+</div>
+<div class="tools-container">
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01_FlowlinePoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+FlowlinePoints
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01_FlowlinePoints.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Creates regularly spaced points along the stream flowline for analysis </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_02_ReachName.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+ReachName
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_02_ReachName.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Assigns reach names to flowline segments </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_03_StreamProfilePoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+StreamProfilePoints
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_03_StreamProfilePoints.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Creates profile points along stream centerline </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04_BanklinePoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+BanklinePoints
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04_BanklinePoints.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Creates points along banklines </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_05_StationPoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+StationPoints
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_05_StationPoints.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Creates station points for analysis </span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="phase-2-cross-section-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2-cross-section-analysis">Phase 2: Cross Section Analysis</h3>
+<div class="phase-row" style="background: #FFF4E6;">
+<div class="phase-label">
+Cross Section Analysis
+</div>
+<div class="tools-container">
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_06_XSCreateLine.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+XSCreateLine
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_06_XSCreateLine.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Creates cross section lines perpendicular to flowline </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_XSUpdateLine.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+XSUpdateLine
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_XSUpdateLine.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Updates cross section line attributes </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_08_XSCreateStationPoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+XSCreateStationPoints
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_08_XSCreateStationPoints.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Creates cross section station points from survey data </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_09_XSUpdateStationPoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+XSUpdateStationPoints
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_09_XSUpdateStationPoints.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Updates XS station point attributes </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_10_XSAssignRiverPosition.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+XSAssignRiverPosition
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_10_XSAssignRiverPosition.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Assigns river position (left bank, channel, right bank) to XS points </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_11_XSDimensions.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+XSDimensions
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_11_XSDimensions.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates bankfull dimensions from XS geometry </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_12_XSCompare.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+XSCompare
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_12_XSCompare.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Compares surveyed dimensions to regional curve estimates </span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="phase-3-longitudinal-profile" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-longitudinal-profile">Phase 3: Longitudinal Profile</h3>
+<div class="phase-row" style="background: #E8F5E9;">
+<div class="phase-label">
+Longitudinal Profile
+</div>
+<div class="tools-container">
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_13_LongitudinalProfile.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+LongitudinalProfile
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_13_LongitudinalProfile.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Extracts elevation profile along flowline </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14_Slope.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+Slope
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14_Slope.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates reach and local slopes </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15_Riffle.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+Riffle
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15_Riffle.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Identifies riffle features </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_16_Pool.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+Pool
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_16_Pool.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Identifies pool features </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_17_PoolRiffle.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+PoolRiffle
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_17_PoolRiffle.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Analyzes pool-riffle sequences </span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="phase-4-planform-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="phase-4-planform-analysis">Phase 4: Planform Analysis</h3>
+<div class="phase-row" style="background: #F3E5F5;">
+<div class="phase-label">
+Planform Analysis
+</div>
+<div class="tools-container">
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_18_Sinuosity.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+Sinuosity
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_18_Sinuosity.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates channel sinuosity </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_19_Meander.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+Meander
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_19_Meander.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Analyzes meander geometry </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_20_BanklineLength.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+BanklineLength
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_20_BanklineLength.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates bankline lengths </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_21_BanklineGradient.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+BanklineGradient
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_21_BanklineGradient.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates bankline gradients </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_22_ValleyWidth.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+ValleyWidth
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_22_ValleyWidth.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Measures valley width and calculates confinement </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_23_BankfullWidth.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+BankfullWidth
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_23_BankfullWidth.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates bankfull width </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_24_FloodplainWidth.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+FloodplainWidth
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_24_FloodplainWidth.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Measures floodplain width </span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="phase-5-hydraulic-geometry" class="level3">
+<h3 class="anchored" data-anchor-id="phase-5-hydraulic-geometry">Phase 5: Hydraulic Geometry</h3>
+<div class="phase-row" style="background: #FCE4EC;">
+<div class="phase-label">
+Hydraulic Geometry
+</div>
+<div class="tools-container">
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_25_RegionalCurve.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+RegionalCurve
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_25_RegionalCurve.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Estimates bankfull dimensions from drainage area using regional curves </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_26_RHGDimensions.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+RHGDimensions
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_26_RHGDimensions.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates at-a-station hydraulic geometry </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_27_RHGCompare.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+RHGCompare
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_27_RHGCompare.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Compares RHG to regional curves </span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="phase-6-hydraulic-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="phase-6-hydraulic-analysis">Phase 6: Hydraulic Analysis</h3>
+<div class="phase-row" style="background: #E3F2FD;">
+<div class="phase-label">
+Hydraulic Analysis
+</div>
+<div class="tools-container">
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_28_ManningsN.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+ManningsN
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_28_ManningsN.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Estimates Manning’s roughness coefficient </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_29_Velocity.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+Velocity
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_29_Velocity.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates flow velocity using Manning’s equation </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_30_ShearStress.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+ShearStress
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_30_ShearStress.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates boundary shear stress </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_31_StreamPower.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+StreamPower
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_31_StreamPower.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates unit and specific stream power </span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="phase-7-sediment-transport" class="level3">
+<h3 class="anchored" data-anchor-id="phase-7-sediment-transport">Phase 7: Sediment Transport</h3>
+<div class="phase-row" style="background: #FFF3E0;">
+<div class="phase-label">
+Sediment Transport
+</div>
+<div class="tools-container">
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_32_GrainSize.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+GrainSize
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_32_GrainSize.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Analyzes grain size distribution </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_33_Shields.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+Shields
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_33_Shields.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates Shields parameter for incipient motion </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_34_BedloadTransport.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+BedloadTransport
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_34_BedloadTransport.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Calculates bedload transport capacity </span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="phase-8-assessment-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="phase-8-assessment-visualization">Phase 8: Assessment &amp; Visualization</h3>
+<div class="phase-row" style="background: #F1F8E9;">
+<div class="phase-label">
+Assessment
+</div>
+<div class="tools-container">
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_35_StreamClassification.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+StreamClassification
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_35_StreamClassification.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Classifies stream type (Rosgen, etc.) </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_36_XSVisualization.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+XSVisualization
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_36_XSVisualization.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Creates cross section plots and visualizations </span></p>
+</div>
+<div class="arrow">
+→
+</div>
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_37_ReportGeneration.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4 class="anchored">
+ReportGeneration
+</h4>
+</a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_37_ReportGeneration.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
+</div>
+<p><span class="tooltiptext"> Generates comprehensive analysis reports </span></p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="tool-reference-table" class="level2">
+<h2 class="anchored" data-anchor-id="tool-reference-table">Tool Reference Table</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Phase</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Tool</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Package</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Purpose</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Inputs</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Outputs</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Dependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd" data-grouplength="5">
+<td colspan="7" style="background-color: #E8F4F8"><strong>Phase 1: Data Preparation</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01_FlowlinePoints.py" target="_blank">FlowlinePoints</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Create analysis points along flowline</td>
+<td style="text-align: left;">Flowline, spacing</td>
+<td style="text-align: left;">Point feature class</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_02_ReachName.py" target="_blank">ReachName</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Assign reach names</td>
+<td style="text-align: left;">Flowline points, breaks</td>
+<td style="text-align: left;">Points with reach names</td>
+<td style="text-align: left;">FlowlinePoints</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_03_StreamProfilePoints.py" target="_blank">StreamProfilePoints</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Create profile points</td>
+<td style="text-align: left;">Flowline, DEM</td>
+<td style="text-align: left;">Profile points</td>
+<td style="text-align: left;">FlowlinePoints</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04_BanklinePoints.py" target="_blank">BanklinePoints</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Create bankline points</td>
+<td style="text-align: left;">Bankline features</td>
+<td style="text-align: left;">Bankline points</td>
+<td style="text-align: left;">Banklines</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_05_StationPoints.py" target="_blank">StationPoints</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Create station points</td>
+<td style="text-align: left;">Flowline, interval</td>
+<td style="text-align: left;">Station points</td>
+<td style="text-align: left;">FlowlinePoints</td>
+</tr>
+<tr class="odd" data-grouplength="7">
+<td colspan="7" style="background-color: #FFF4E6"><strong>Phase 2: Cross Section</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_06_XSCreateLine.py" target="_blank">XSCreateLine</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Create XS lines</td>
+<td style="text-align: left;">Flowline, spacing</td>
+<td style="text-align: left;">XS line features</td>
+<td style="text-align: left;">FlowlinePoints</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_XSUpdateLine.py" target="_blank">XSUpdateLine</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Update XS lines</td>
+<td style="text-align: left;">XS lines</td>
+<td style="text-align: left;">Updated XS lines</td>
+<td style="text-align: left;">XSCreateLine</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_08_XSCreateStationPoints.py" target="_blank">XSCreateStationPoints</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Create XS points from survey</td>
+<td style="text-align: left;">Survey data</td>
+<td style="text-align: left;">XS point features</td>
+<td style="text-align: left;">Survey data</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_09_XSUpdateStationPoints.py" target="_blank">XSUpdateStationPoints</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Update XS points</td>
+<td style="text-align: left;">XS points</td>
+<td style="text-align: left;">Updated XS points</td>
+<td style="text-align: left;">XSCreateStationPoints</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_10_XSAssignRiverPosition.py" target="_blank">XSAssignRiverPosition</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Assign river position</td>
+<td style="text-align: left;">XS points, bankfull</td>
+<td style="text-align: left;">Points with position</td>
+<td style="text-align: left;">XSCreateStationPoints</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_11_XSDimensions.py" target="_blank">XSDimensions</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate XS dimensions</td>
+<td style="text-align: left;">XS with position</td>
+<td style="text-align: left;">Width, depth, area</td>
+<td style="text-align: left;">XSAssignRiverPosition</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_12_XSCompare.py" target="_blank">XSCompare</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Compare to regional</td>
+<td style="text-align: left;">XS dims, regional</td>
+<td style="text-align: left;">Comparison ratios</td>
+<td style="text-align: left;">XSDimensions, RegionalCurve</td>
+</tr>
+<tr class="odd" data-grouplength="5">
+<td colspan="7" style="background-color: #E8F5E9"><strong>Phase 3: Profile</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">3</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_13_LongitudinalProfile.py" target="_blank">LongitudinalProfile</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Extract elevation profile</td>
+<td style="text-align: left;">DEM, flowline</td>
+<td style="text-align: left;">Profile elevations</td>
+<td style="text-align: left;">FlowlinePoints</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">3</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14_Slope.py" target="_blank">Slope</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate slopes</td>
+<td style="text-align: left;">Profile elevations</td>
+<td style="text-align: left;">Reach/local slopes</td>
+<td style="text-align: left;">LongitudinalProfile</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">3</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15_Riffle.py" target="_blank">Riffle</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Identify riffles</td>
+<td style="text-align: left;">Profile, slope</td>
+<td style="text-align: left;">Riffle locations</td>
+<td style="text-align: left;">Slope</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">3</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_16_Pool.py" target="_blank">Pool</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Identify pools</td>
+<td style="text-align: left;">Profile, slope</td>
+<td style="text-align: left;">Pool locations</td>
+<td style="text-align: left;">Slope</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">3</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_17_PoolRiffle.py" target="_blank">PoolRiffle</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Analyze pool-riffle</td>
+<td style="text-align: left;">Pools, riffles</td>
+<td style="text-align: left;">Spacing, characteristics</td>
+<td style="text-align: left;">Pool, Riffle</td>
+</tr>
+<tr class="odd" data-grouplength="7">
+<td colspan="7" style="background-color: #F3E5F5"><strong>Phase 4: Planform</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">4</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_18_Sinuosity.py" target="_blank">Sinuosity</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate sinuosity</td>
+<td style="text-align: left;">Flowline, valley</td>
+<td style="text-align: left;">Sinuosity ratio</td>
+<td style="text-align: left;">FlowlinePoints</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">4</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_19_Meander.py" target="_blank">Meander</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Analyze meanders</td>
+<td style="text-align: left;">Flowline</td>
+<td style="text-align: left;">Wavelength, amplitude</td>
+<td style="text-align: left;">Sinuosity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">4</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_20_BanklineLength.py" target="_blank">BanklineLength</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate bankline length</td>
+<td style="text-align: left;">Banklines</td>
+<td style="text-align: left;">Length measurements</td>
+<td style="text-align: left;">BanklinePoints</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">4</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_21_BanklineGradient.py" target="_blank">BanklineGradient</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate bankline gradient</td>
+<td style="text-align: left;">Bankline points</td>
+<td style="text-align: left;">Gradient values</td>
+<td style="text-align: left;">BanklinePoints</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">4</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_22_ValleyWidth.py" target="_blank">ValleyWidth</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Measure valley width</td>
+<td style="text-align: left;">Valley polygon</td>
+<td style="text-align: left;">Width, confinement</td>
+<td style="text-align: left;">XSDimensions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">4</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_23_BankfullWidth.py" target="_blank">BankfullWidth</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate bankfull width</td>
+<td style="text-align: left;">XS dimensions</td>
+<td style="text-align: left;">Bankfull width</td>
+<td style="text-align: left;">XSDimensions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">4</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_24_FloodplainWidth.py" target="_blank">FloodplainWidth</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Measure floodplain width</td>
+<td style="text-align: left;">Floodplain polygon</td>
+<td style="text-align: left;">Width measurements</td>
+<td style="text-align: left;">FlowlinePoints</td>
+</tr>
+<tr class="odd" data-grouplength="3">
+<td colspan="7" style="background-color: #FCE4EC"><strong>Phase 5: Hydraulic Geometry</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">5</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_25_RegionalCurve.py" target="_blank">RegionalCurve</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Estimate bankfull dimensions</td>
+<td style="text-align: left;">Drainage area</td>
+<td style="text-align: left;">Estimated dimensions</td>
+<td style="text-align: left;">Drainage area</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">5</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_26_RHGDimensions.py" target="_blank">RHGDimensions</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate hydraulic geometry</td>
+<td style="text-align: left;">XS at multiple flows</td>
+<td style="text-align: left;">RHG relations</td>
+<td style="text-align: left;">XSDimensions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">5</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_27_RHGCompare.py" target="_blank">RHGCompare</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Compare RHG to regional</td>
+<td style="text-align: left;">RHG, regional curves</td>
+<td style="text-align: left;">Departure metrics</td>
+<td style="text-align: left;">RHGDimensions, RegionalCurve</td>
+</tr>
+<tr class="odd" data-grouplength="4">
+<td colspan="7" style="background-color: #E3F2FD"><strong>Phase 6: Hydraulics</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">6</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_28_ManningsN.py" target="_blank">ManningsN</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Estimate roughness</td>
+<td style="text-align: left;">Bed, vegetation</td>
+<td style="text-align: left;">Manning's n</td>
+<td style="text-align: left;">Field observations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">6</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_29_Velocity.py" target="_blank">Velocity</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate velocity</td>
+<td style="text-align: left;">n, R, slope</td>
+<td style="text-align: left;">Flow velocity</td>
+<td style="text-align: left;">ManningsN, Slope, XSDimensions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">6</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_30_ShearStress.py" target="_blank">ShearStress</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate shear stress</td>
+<td style="text-align: left;">R, slope</td>
+<td style="text-align: left;">Boundary shear</td>
+<td style="text-align: left;">XSDimensions, Slope</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">6</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_31_StreamPower.py" target="_blank">StreamPower</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate stream power</td>
+<td style="text-align: left;">Q, slope, width</td>
+<td style="text-align: left;">Unit/specific power</td>
+<td style="text-align: left;">Slope, XSDimensions</td>
+</tr>
+<tr class="even" data-grouplength="3">
+<td colspan="7" style="background-color: #FFF3E0"><strong>Phase 7: Sediment</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">7</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_32_GrainSize.py" target="_blank">GrainSize</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Analyze grain size</td>
+<td style="text-align: left;">Pebble count</td>
+<td style="text-align: left;">D16, D50, D84</td>
+<td style="text-align: left;">Field pebble count</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">7</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_33_Shields.py" target="_blank">Shields</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate Shields parameter</td>
+<td style="text-align: left;">Shear, grain size</td>
+<td style="text-align: left;">Shields, critical τ</td>
+<td style="text-align: left;">ShearStress, GrainSize</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">7</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_34_BedloadTransport.py" target="_blank">BedloadTransport</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Calculate bedload</td>
+<td style="text-align: left;">Shields, grain size</td>
+<td style="text-align: left;">Transport rate</td>
+<td style="text-align: left;">Shields</td>
+</tr>
+<tr class="even" data-grouplength="3">
+<td colspan="7" style="background-color: #F1F8E9"><strong>Phase 8: Assessment</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">8</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_35_StreamClassification.py" target="_blank">StreamClassification</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Classify stream type</td>
+<td style="text-align: left;">All metrics</td>
+<td style="text-align: left;">Stream type</td>
+<td style="text-align: left;">Multiple tools</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">8</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_36_XSVisualization.py" target="_blank">XSVisualization</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Create XS plots</td>
+<td style="text-align: left;">XS data</td>
+<td style="text-align: left;">Plots</td>
+<td style="text-align: left;">XSDimensions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">8</td>
+<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_37_ReportGeneration.py" target="_blank">ReportGeneration</a></td>
+<td style="text-align: left;">toolbox</td>
+<td style="text-align: left;">Generate reports</td>
+<td style="text-align: left;">All outputs</td>
+<td style="text-align: left;">HTML/PDF reports</td>
+<td style="text-align: left;">All tools</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This workflow includes all 37 tools from the FluvialGeomorph toolbox. Tool names and links point to the actual Python scripts in the GitHub repository.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./DB-migration.html" class="pagination-link" aria-label="DB Migration">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DB Migration</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Made with love by USACE</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

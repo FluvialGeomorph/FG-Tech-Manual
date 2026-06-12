@@ -1273,12 +1273,166 @@
   {
     "objectID": "fluvgeo.html",
     "href": "fluvgeo.html",
-    "title": "fluvgeo Package",
+    "title": "22  fluvgeo R Package",
     "section": "",
     "text": "Overview\nThe fluvgeo package provides a comprehensive suite of tools for fluvial geomorphology analysis in R. It is the core package of the FluvialGeomorph toolbox, providing functions for processing, analyzing, and visualizing stream channel geometry, planform characteristics, and longitudinal profiles.",
     "crumbs": [
       "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#overview",
+    "href": "fluvgeo.html#overview",
+    "title": "22  fluvgeo R Package",
+    "section": "",
+    "text": "Package Information\n\n\n\n\nRepository: https://github.com/FluvialGeomorph/fluvgeo\nLicense: CC0 1.0 Universal\nLanguage: R\nDependencies: R (≥ 3.5.0), sf, dplyr, ggplot2, raster",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#installation",
+    "href": "fluvgeo.html#installation",
+    "title": "22  fluvgeo R Package",
+    "section": "Installation",
+    "text": "Installation\n\nFrom GitHub\n\n# Install devtools if not already installed\nif (!require(\"devtools\")) install.packages(\"devtools\")\n\n# Install fluvgeo from GitHub\ndevtools::install_github(\"FluvialGeomorph/fluvgeo\")\n\n\n\nLoad Package\n\nlibrary(fluvgeo)\nlibrary(sf)\nlibrary(dplyr)\nlibrary(ggplot2)",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#key-features",
+    "href": "fluvgeo.html#key-features",
+    "title": "22  fluvgeo R Package",
+    "section": "Key Features",
+    "text": "Key Features\nThe fluvgeo package provides functionality for:\n\nCross Section Analysis: Import, process, and analyze cross section survey data\nLongitudinal Profile Analysis: Extract and analyze stream profiles from DEMs and survey data\nPlanform Analysis: Calculate sinuosity, meander geometry, and channel migration\nHydraulic Calculations: Compute hydraulic parameters from channel geometry\nVisualization: Create publication-quality plots and maps\nData Management: Import/export tools for common survey data formats",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#package-workflow",
+    "href": "fluvgeo.html#package-workflow",
+    "title": "22  fluvgeo R Package",
+    "section": "Package Workflow",
+    "text": "Package Workflow\n\n\n\n\n\nflowchart TB\n    Start([Start fluvgeo Analysis])\n    \n    subgraph Import[\"Data Import\"]\n        ImportDEM[\"Import DEM&lt;br/&gt;(import_dem)\"]\n        ImportXS[\"Import Cross Sections&lt;br/&gt;(xs_import)\"]\n        ImportProfile[\"Import Profile&lt;br/&gt;(profile_import)\"]\n        ImportFlowline[\"Import Flowline&lt;br/&gt;(import_flowline)\"]\n    end\n    \n    subgraph Process[\"Data Processing\"]\n        ProcessXS[\"Process XS Geometry&lt;br/&gt;(xs_process)\"]\n        ProcessProfile[\"Process Profile&lt;br/&gt;(profile_process)\"]\n        ExtractFlowline[\"Extract Flowline&lt;br/&gt;(extract_flowline)\"]\n        DelineateWS[\"Delineate Watershed&lt;br/&gt;(delineate_watershed)\"]\n    end\n    \n    subgraph Analyze[\"Analysis\"]\n        XSMetrics[\"XS Metrics&lt;br/&gt;(xs_metrics)\"]\n        Bankfull[\"Identify Bankfull&lt;br/&gt;(xs_bankfull)\"]\n        Dimensions[\"Calculate Dimensions&lt;br/&gt;(xs_dimensions)\"]\n        Sinuosity[\"Calculate Sinuosity&lt;br/&gt;(sinuosity)\"]\n        Slope[\"Calculate Slope&lt;br/&gt;(profile_slope)\"]\n        Radius[\"Radius of Curvature&lt;br/&gt;(radius_curvature)\"]\n    end\n    \n    subgraph Visualize[\"Visualization\"]\n        PlotXS[\"Plot Cross Sections&lt;br/&gt;(plot_xs)\"]\n        PlotProfile[\"Plot Profile&lt;br/&gt;(plot_profile)\"]\n        PlotPlanform[\"Plot Planform&lt;br/&gt;(plot_planform)\"]\n        CreateMaps[\"Create Maps&lt;br/&gt;(create_maps)\"]\n    end\n    \n    Export[\"Export Results&lt;br/&gt;(export_data)\"]\n    End([Complete])\n    \n    Start --&gt; Import\n    Import --&gt; Process\n    Process --&gt; Analyze\n    Analyze --&gt; Visualize\n    Visualize --&gt; Export\n    Export --&gt; End\n    \n    ImportXS --&gt; ProcessXS\n    ImportProfile --&gt; ProcessProfile\n    ImportDEM --&gt; ExtractFlowline\n    ImportDEM --&gt; DelineateWS\n    \n    ProcessXS --&gt; XSMetrics\n    XSMetrics --&gt; Bankfull\n    Bankfull --&gt; Dimensions\n    \n    ProcessProfile --&gt; Slope\n    ExtractFlowline --&gt; Sinuosity\n    ExtractFlowline --&gt; Radius\n    \n    Dimensions --&gt; PlotXS\n    Slope --&gt; PlotProfile\n    Sinuosity --&gt; PlotPlanform\n    \n    PlotXS --&gt; CreateMaps\n    PlotProfile --&gt; CreateMaps\n    PlotPlanform --&gt; CreateMaps\n    \n    style Start fill:#90EE90\n    style End fill:#90EE90\n    style Import fill:#E8F4F8,stroke:#2E86AB,stroke-width:2px\n    style Process fill:#FFF4E6,stroke:#F77F00,stroke-width:2px\n    style Analyze fill:#E8F5E9,stroke:#06A77D,stroke-width:2px\n    style Visualize fill:#FFF9C4,stroke:#F9C74F,stroke-width:2px",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#main-functions",
+    "href": "fluvgeo.html#main-functions",
+    "title": "22  fluvgeo R Package",
+    "section": "Main Functions",
+    "text": "Main Functions\n\nCross Section Analysis\n\nImport Cross Sections\nImport cross section survey data from various formats.\n\n# Import cross section data from CSV\nxs_data &lt;- xs_import(\n  path = \"data/cross_sections.csv\",\n  format = \"csv\",\n  crs = 26916  # UTM Zone 16N\n)\n\n# Import from shapefile\nxs_data &lt;- xs_import(\n  path = \"data/cross_sections.shp\",\n  format = \"shapefile\"\n)\n\n# Import from total station data\nxs_data &lt;- xs_import(\n  path = \"data/survey_data.txt\",\n  format = \"total_station\",\n  station_col = \"Station\",\n  elevation_col = \"Elevation\"\n)\n\nParameters:\n\npath: File path to cross section data\nformat: Data format (“csv”, “shapefile”, “total_station”, “excel”)\ncrs: Coordinate reference system (EPSG code)\nstation_col: Column name for station values\nelevation_col: Column name for elevation values\n\nReturns: An sf object containing cross section geometry\n\n\nProcess Cross Sections\nProcess and clean cross section geometry data.\n\n# Process cross section geometry\nxs_processed &lt;- xs_process(\n  xs_data = xs_data,\n  smooth = TRUE,\n  smooth_window = 5,\n  remove_outliers = TRUE,\n  outlier_threshold = 3\n)\n\n# Interpolate missing stations\nxs_interpolated &lt;- xs_interpolate(\n  xs_data = xs_processed,\n  interval = 0.5  # meters\n)\n\nParameters:\n\nxs_data: Cross section data object\nsmooth: Apply smoothing to elevation data\nsmooth_window: Window size for moving average\nremove_outliers: Remove elevation outliers\noutlier_threshold: Standard deviations for outlier detection\n\n\n\nCalculate XS Metrics\nCalculate geometric metrics for cross sections.\n\n# Calculate cross section metrics\nxs_metrics &lt;- xs_metrics(\n  xs_data = xs_processed,\n  bankfull_elevation = NULL,  # Auto-detect or specify\n  method = \"geometry\"  # or \"vegetation\", \"field_indicators\"\n)\n\n# View metrics\nprint(xs_metrics)\n\nCalculated Metrics:\n\nCross-sectional area\nWetted perimeter\nHydraulic radius\nTop width\nMaximum depth\nMean depth\nWidth/depth ratio\n\n\n\nIdentify Bankfull\nIdentify bankfull stage using multiple methods.\n\n# Identify bankfull using geometric method\nbankfull_geom &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"geometry\",\n  plot = TRUE\n)\n\n# Identify bankfull using maximum width/depth ratio\nbankfull_wd &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"width_depth_ratio\",\n  plot = TRUE\n)\n\n# Identify bankfull using field indicators\nbankfull_field &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"field_indicators\",\n  indicators = c(\"top_of_bank\", \"vegetation_change\", \"bench\")\n)\n\nMethods:\n\ngeometry: Geometric inflection points\nwidth_depth_ratio: Maximum width/depth ratio\nfield_indicators: Field-identified indicators\nhydraulic: Hydraulic geometry relationships\n\n\n\nCalculate Dimensions\nCalculate bankfull channel dimensions.\n\n# Calculate bankfull dimensions\ndimensions &lt;- xs_dimensions(\n  xs_data = xs_processed,\n  bankfull_elevation = bankfull_geom$elevation,\n  reach_name = \"Reach 1\"\n)\n\n# View dimensions\nprint(dimensions)\n\nCalculated Dimensions:\n\nBankfull width (ft or m)\nBankfull mean depth (ft or m)\nBankfull maximum depth (ft or m)\nBankfull cross-sectional area (ft² or m²)\nWidth/depth ratio\nHydraulic radius (ft or m)\n\n\n\n\nLongitudinal Profile Analysis\n\nImport Profile\nImport longitudinal profile data.\n\n# Import profile from survey data\nprofile_data &lt;- profile_import(\n  path = \"data/profile.csv\",\n  station_col = \"Station\",\n  elevation_col = \"Elevation\",\n  crs = 26916\n)\n\n# Extract profile from DEM\nprofile_dem &lt;- profile_extract_dem(\n  dem = dem_raster,\n  flowline = flowline_sf,\n  interval = 10  # meters\n)\n\n\n\nCalculate Slope\nCalculate reach and local slopes.\n\n# Calculate reach slope\nreach_slope &lt;- profile_slope(\n  profile_data = profile_data,\n  method = \"reach\",\n  start_station = 0,\n  end_station = 1000\n)\n\n# Calculate local slopes\nlocal_slopes &lt;- profile_slope(\n  profile_data = profile_data,\n  method = \"local\",\n  window = 50  # meters\n)\n\n# Calculate water surface slope\nws_slope &lt;- profile_slope(\n  profile_data = profile_data,\n  method = \"water_surface\",\n  flow_depth = 2.5  # meters\n)\n\nMethods:\n\nreach: Overall reach slope\nlocal: Moving window local slopes\nwater_surface: Water surface slope at specified depth\nenergy: Energy slope\n\n\n\nIdentify Features\nIdentify pools, riffles, and other features.\n\n# Identify pool-riffle sequence\nfeatures &lt;- profile_features(\n  profile_data = profile_data,\n  method = \"residual_depth\",\n  threshold = 0.5  # meters\n)\n\n# Calculate pool-riffle spacing\nspacing &lt;- pool_riffle_spacing(\n  features = features,\n  bankfull_width = 15  # meters\n)\n\n# Identify knickpoints\nknickpoints &lt;- identify_knickpoints(\n  profile_data = profile_data,\n  threshold = 0.02,  # slope change threshold\n  min_length = 20    # minimum knickpoint length (m)\n)\n\n\n\n\nPlanform Analysis\n\nCalculate Sinuosity\nCalculate channel sinuosity.\n\n# Calculate reach sinuosity\nsinuosity_reach &lt;- sinuosity(\n  flowline = flowline_sf,\n  method = \"reach\",\n  valley_line = valley_centerline_sf\n)\n\n# Calculate local sinuosity\nsinuosity_local &lt;- sinuosity(\n  flowline = flowline_sf,\n  method = \"local\",\n  window = 500  # meters\n)\n\n# Results\nprint(paste(\"Reach Sinuosity:\", round(sinuosity_reach, 3)))\n\nSinuosity Classification:\n\n&lt; 1.05: Straight\n1.05 - 1.25: Sinuous\n1.25 - 1.50: Meandering\n\n1.50: Highly meandering\n\n\n\n\nMeander Geometry\nAnalyze meander geometry and characteristics.\n\n# Identify meander bends\nmeanders &lt;- identify_meanders(\n  flowline = flowline_sf,\n  method = \"inflection_points\",\n  min_amplitude = 10  # meters\n)\n\n# Calculate meander wavelength\nwavelength &lt;- meander_wavelength(\n  meanders = meanders,\n  method = \"average\"\n)\n\n# Calculate meander amplitude\namplitude &lt;- meander_amplitude(\n  meanders = meanders,\n  valley_line = valley_centerline_sf\n)\n\n# Calculate meander belt width\nbelt_width &lt;- meander_belt_width(\n  flowline = flowline_sf,\n  meanders = meanders,\n  method = \"envelope\"\n)\n\nMeander Metrics:\n\nWavelength: Distance between successive meander bends\nAmplitude: Maximum lateral extent of meander\nBelt width: Width of meander belt\nRadius of curvature: Bend radius\n\n\n\nRadius of Curvature\nCalculate radius of curvature along the channel.\n\n# Calculate radius of curvature\ncurvature &lt;- radius_curvature(\n  flowline = flowline_sf,\n  method = \"three_point\",\n  window = 3  # number of points\n)\n\n# Classify bend severity\nbend_class &lt;- classify_bends(\n  curvature = curvature,\n  bankfull_width = 15  # meters\n)\n\n# Plot curvature\nplot_curvature(\n  flowline = flowline_sf,\n  curvature = curvature,\n  color_by = \"radius\"\n)\n\nBend Classification (Rc/W ratio):\n\n\n10: Gentle bend\n\n5 - 10: Moderate bend\n2 - 5: Sharp bend\n&lt; 2: Very sharp bend\n\n\n\n\nWatershed Analysis\n\nDelineate Watershed\nDelineate watershed from DEM.\n\n# Delineate watershed from pour point\nwatershed &lt;- delineate_watershed(\n  dem = dem_raster,\n  pour_point = outlet_point_sf,\n  method = \"d8\"  # or \"dinf\"\n)\n\n# Calculate drainage area\ndrainage_area &lt;- calculate_drainage_area(\n  watershed = watershed,\n  units = \"km2\"  # or \"mi2\", \"acres\"\n)\n\n# Extract watershed characteristics\nws_chars &lt;- watershed_characteristics(\n  watershed = watershed,\n  dem = dem_raster,\n  include = c(\"area\", \"perimeter\", \"relief\", \"slope\")\n)\n\n\n\nExtract Flowline\nExtract stream flowline from DEM.\n\n# Extract flowline from DEM\nflowline &lt;- extract_flowline(\n  dem = dem_raster,\n  method = \"d8\",\n  threshold = 1000,  # flow accumulation threshold\n  smooth = TRUE\n)\n\n# Smooth flowline\nflowline_smooth &lt;- smooth_flowline(\n  flowline = flowline,\n  method = \"spline\",\n  tolerance = 5  # meters\n)\n\n# Calculate flowline length\nlength &lt;- calculate_length(\n  flowline = flowline_smooth,\n  units = \"km\"  # or \"mi\", \"m\", \"ft\"\n)\n\n\n\n\nHydraulic Calculations\n\nManning’s Equation\nCalculate flow velocity and discharge using Manning’s equation.\n\n# Calculate velocity\nvelocity &lt;- mannings_velocity(\n  hydraulic_radius = 1.5,  # meters\n  slope = 0.002,           # m/m\n  mannings_n = 0.035\n)\n\n# Calculate discharge\ndischarge &lt;- mannings_discharge(\n  area = 25,               # m²\n  hydraulic_radius = 1.5,  # meters\n  slope = 0.002,           # m/m\n  mannings_n = 0.035\n)\n\n# Estimate Manning's n\nmannings_n &lt;- estimate_mannings_n(\n  bed_material = \"gravel\",\n  vegetation = \"moderate\",\n  channel_irregularity = \"minor\",\n  method = \"cowan\"\n)\n\n\n\nHydraulic Geometry\nCalculate hydraulic geometry parameters.\n\n# Calculate hydraulic radius\nhyd_radius &lt;- hydraulic_radius(\n  area = 25,        # m²\n  wetted_perimeter = 18  # m\n)\n\n# Calculate wetted perimeter\nwetted_perim &lt;- wetted_perimeter(\n  xs_data = xs_processed,\n  water_surface_elevation = 100.5\n)\n\n# Calculate flow area\nflow_area &lt;- calculate_flow_area(\n  xs_data = xs_processed,\n  water_surface_elevation = 100.5\n)",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#visualization-functions",
+    "href": "fluvgeo.html#visualization-functions",
+    "title": "22  fluvgeo R Package",
+    "section": "Visualization Functions",
+    "text": "Visualization Functions\n\nPlot Cross Sections\n\n# Basic cross section plot\nplot_xs(\n  xs_data = xs_processed,\n  xs_id = \"XS-1\",\n  bankfull_elevation = bankfull_geom$elevation,\n  title = \"Cross Section XS-1\"\n)\n\n# Multiple cross sections\nplot_xs_multiple(\n  xs_data = xs_processed,\n  xs_ids = c(\"XS-1\", \"XS-2\", \"XS-3\"),\n  layout = \"grid\",\n  ncol = 2\n)\n\n# Cross section with dimensions\nplot_xs_dimensions(\n  xs_data = xs_processed,\n  xs_id = \"XS-1\",\n  dimensions = dimensions,\n  show_labels = TRUE\n)\n\n\n\nPlot Longitudinal Profile\n\n# Basic profile plot\nplot_profile(\n  profile_data = profile_data,\n  title = \"Longitudinal Profile\",\n  show_slope = TRUE\n)\n\n# Profile with features\nplot_profile_features(\n  profile_data = profile_data,\n  features = features,\n  color_by = \"feature_type\"\n)\n\n# Profile with cross sections\nplot_profile_xs(\n  profile_data = profile_data,\n  xs_locations = xs_stations,\n  xs_data = xs_processed\n)\n\n\n\nPlot Planform\n\n# Basic planform plot\nplot_planform(\n  flowline = flowline_sf,\n  watershed = watershed,\n  basemap = TRUE\n)\n\n# Planform with meanders\nplot_planform_meanders(\n  flowline = flowline_sf,\n  meanders = meanders,\n  color_by = \"wavelength\"\n)\n\n# Planform with curvature\nplot_planform_curvature(\n  flowline = flowline_sf,\n  curvature = curvature,\n  color_palette = \"viridis\"\n)\n\n\n\nCreate Maps\n\n# Create assessment map\nassessment_map &lt;- create_map(\n  flowline = flowline_sf,\n  watershed = watershed,\n  xs_locations = xs_data,\n  features = features,\n  basemap = \"terrain\",\n  scale_bar = TRUE,\n  north_arrow = TRUE\n)\n\n# Export map\nexport_map(\n  map = assessment_map,\n  filename = \"assessment_map.png\",\n  width = 11,\n  height = 8.5,\n  dpi = 300\n)",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#data-importexport",
+    "href": "fluvgeo.html#data-importexport",
+    "title": "22  fluvgeo R Package",
+    "section": "Data Import/Export",
+    "text": "Data Import/Export\n\nImport Functions\n\n# Import from various formats\ndata_csv &lt;- import_data(\n  path = \"data/survey.csv\",\n  format = \"csv\"\n)\n\ndata_shp &lt;- import_data(\n  path = \"data/features.shp\",\n  format = \"shapefile\"\n)\n\ndata_excel &lt;- import_data(\n  path = \"data/measurements.xlsx\",\n  format = \"excel\",\n  sheet = \"Cross Sections\"\n)\n\n# Import DEM\ndem &lt;- import_dem(\n  path = \"data/dem.tif\",\n  crs = 26916\n)\n\n\n\nExport Functions\n\n# Export to CSV\nexport_data(\n  data = dimensions,\n  path = \"output/dimensions.csv\",\n  format = \"csv\"\n)\n\n# Export to shapefile\nexport_data(\n  data = flowline_sf,\n  path = \"output/flowline.shp\",\n  format = \"shapefile\"\n)\n\n# Export to GeoPackage\nexport_data(\n  data = xs_data,\n  path = \"output/cross_sections.gpkg\",\n  format = \"gpkg\",\n  layer_name = \"cross_sections\"\n)\n\n# Export summary report\nexport_report(\n  data = list(\n    dimensions = dimensions,\n    profile = profile_data,\n    sinuosity = sinuosity_reach\n  ),\n  path = \"output/summary_report.html\",\n  format = \"html\",\n  template = \"standard\"\n)",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#example-workflow",
+    "href": "fluvgeo.html#example-workflow",
+    "title": "22  fluvgeo R Package",
+    "section": "Example Workflow",
+    "text": "Example Workflow\nHere’s a complete example workflow using fluvgeo:\n\nlibrary(fluvgeo)\nlibrary(sf)\nlibrary(dplyr)\n\n# 1. Import data\ndem &lt;- import_dem(\"data/dem.tif\", crs = 26916)\nxs_data &lt;- xs_import(\"data/cross_sections.csv\", format = \"csv\", crs = 26916)\n\n# 2. Extract flowline\nflowline &lt;- extract_flowline(\n  dem = dem,\n  method = \"d8\",\n  threshold = 1000,\n  smooth = TRUE\n)\n\n# 3. Delineate watershed\nwatershed &lt;- delineate_watershed(\n  dem = dem,\n  pour_point = outlet_point,\n  method = \"d8\"\n)\n\n# 4. Process cross sections\nxs_processed &lt;- xs_process(\n  xs_data = xs_data,\n  smooth = TRUE,\n  remove_outliers = TRUE\n)\n\n# 5. Identify bankfull\nbankfull &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"geometry\",\n  plot = TRUE\n)\n\n# 6. Calculate dimensions\ndimensions &lt;- xs_dimensions(\n  xs_data = xs_processed,\n  bankfull_elevation = bankfull$elevation\n)\n\n# 7. Extract and analyze profile\nprofile &lt;- profile_extract_dem(\n  dem = dem,\n  flowline = flowline,\n  interval = 10\n)\n\nslope &lt;- profile_slope(\n  profile_data = profile,\n  method = \"reach\"\n)\n\n# 8. Calculate planform metrics\nsinuosity_value &lt;- sinuosity(\n  flowline = flowline,\n  method = \"reach\"\n)\n\nmeanders &lt;- identify_meanders(\n  flowline = flowline,\n  method = \"inflection_points\"\n)\n\n# 9. Create visualizations\nplot_xs(xs_data = xs_processed, xs_id = \"XS-1\")\nplot_profile(profile_data = profile)\nplot_planform(flowline = flowline, watershed = watershed)\n\n# 10. Export results\nexport_data(dimensions, \"output/dimensions.csv\")\nexport_data(flowline, \"output/flowline.shp\")\n\n# 11. Generate report\ncreate_summary_report(\n  xs_data = xs_processed,\n  dimensions = dimensions,\n  profile = profile,\n  sinuosity = sinuosity_value,\n  output_file = \"output/analysis_report.html\"\n)",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#function-reference",
+    "href": "fluvgeo.html#function-reference",
+    "title": "22  fluvgeo R Package",
+    "section": "Function Reference",
+    "text": "Function Reference\n\nCross Section Functions\n\n\n\nFunction\nDescription\n\n\n\n\nxs_import()\nImport cross section data\n\n\nxs_process()\nProcess and clean XS geometry\n\n\nxs_interpolate()\nInterpolate XS stations\n\n\nxs_metrics()\nCalculate XS geometric metrics\n\n\nxs_bankfull()\nIdentify bankfull stage\n\n\nxs_dimensions()\nCalculate bankfull dimensions\n\n\nplot_xs()\nPlot cross section\n\n\nplot_xs_multiple()\nPlot multiple cross sections\n\n\n\n\n\nProfile Functions\n\n\n\nFunction\nDescription\n\n\n\n\nprofile_import()\nImport profile data\n\n\nprofile_extract_dem()\nExtract profile from DEM\n\n\nprofile_process()\nProcess profile data\n\n\nprofile_slope()\nCalculate slope\n\n\nprofile_features()\nIdentify pools and riffles\n\n\npool_riffle_spacing()\nCalculate pool-riffle spacing\n\n\nidentify_knickpoints()\nIdentify knickpoints\n\n\nplot_profile()\nPlot longitudinal profile\n\n\n\n\n\nPlanform Functions\n\n\n\nFunction\nDescription\n\n\n\n\nsinuosity()\nCalculate sinuosity\n\n\nidentify_meanders()\nIdentify meander bends\n\n\nmeander_wavelength()\nCalculate wavelength\n\n\nmeander_amplitude()\nCalculate amplitude\n\n\nmeander_belt_width()\nCalculate belt width\n\n\nradius_curvature()\nCalculate radius of curvature\n\n\nclassify_bends()\nClassify bend severity\n\n\nplot_planform()\nPlot planform map\n\n\n\n\n\nWatershed Functions\n\n\n\nFunction\nDescription\n\n\n\n\ndelineate_watershed()\nDelineate watershed\n\n\ncalculate_drainage_area()\nCalculate drainage area\n\n\nwatershed_characteristics()\nExtract watershed characteristics\n\n\nextract_flowline()\nExtract stream flowline\n\n\nsmooth_flowline()\nSmooth flowline geometry\n\n\n\n\n\nHydraulic Functions\n\n\n\nFunction\nDescription\n\n\n\n\nmannings_velocity()\nCalculate velocity (Manning’s)\n\n\nmannings_discharge()\nCalculate discharge (Manning’s)\n\n\nestimate_mannings_n()\nEstimate Manning’s n\n\n\nhydraulic_radius()\nCalculate hydraulic radius\n\n\nwetted_perimeter()\nCalculate wetted perimeter\n\n\ncalculate_flow_area()\nCalculate flow area\n\n\n\n\n\nUtility Functions\n\n\n\nFunction\nDescription\n\n\n\n\nimport_data()\nImport data from various formats\n\n\nexport_data()\nExport data to various formats\n\n\nimport_dem()\nImport DEM raster\n\n\ncreate_map()\nCreate assessment map\n\n\nexport_map()\nExport map to file\n\n\ncreate_summary_report()\nGenerate summary report",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#best-practices",
+    "href": "fluvgeo.html#best-practices",
+    "title": "22  fluvgeo R Package",
+    "section": "Best Practices",
+    "text": "Best Practices\n\nData Quality\n\nSurvey Data\n\nUse consistent coordinate systems\nCheck for survey errors and outliers\nDocument survey methods and equipment\nInclude metadata with all datasets\n\nCross Sections\n\nSurvey perpendicular to flow\nExtend beyond bankfull on both sides\nInclude floodplain features\nMark bankfull indicators in field\n\nLongitudinal Profiles\n\nUse consistent datum\nInclude sufficient upstream/downstream extent\nDocument water surface elevations\nNote grade control features\n\n\n\n\nAnalysis Workflow\n\nData Preparation\n\nImport and organize all data\nCheck coordinate systems\nRemove obvious errors\nDocument data sources\n\nQuality Control\n\nVisual inspection of all data\nCheck for outliers\nValidate calculations\nCompare with field observations\n\nAnalysis\n\nUse multiple methods when available\nDocument assumptions\nCalculate uncertainty\nCompare with regional data\n\nVisualization\n\nCreate clear, labeled plots\nUse consistent scales and units\nInclude legends and annotations\nExport at appropriate resolution\n\nDocumentation\n\nRecord all processing steps\nDocument function parameters\nSave intermediate results\nCreate reproducible workflows",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#troubleshooting",
+    "href": "fluvgeo.html#troubleshooting",
+    "title": "22  fluvgeo R Package",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\n\nCommon Issues\n\n\n\n\n\n\nCoordinate System Errors\n\n\n\nProblem: Data doesn’t align or appears in wrong location\nSolution:\n\n# Check CRS\nst_crs(xs_data)\n\n# Transform to correct CRS\nxs_data &lt;- st_transform(xs_data, crs = 26916)\n\n\n\n\n\n\n\n\n\nMissing Bankfull Indicators\n\n\n\nProblem: Automatic bankfull detection fails\nSolution:\n\n# Manually specify bankfull elevation\nbankfull_manual &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"manual\",\n  elevation = 100.5\n)\n\n# Or use field indicators\nbankfull_field &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"field_indicators\",\n  indicators = field_markers\n)\n\n\n\n\n\n\n\n\n\nDEM Resolution Issues\n\n\n\nProblem: Extracted features don’t match field observations\nSolution:\n\n# Use higher resolution DEM\n# Supplement with survey data\n# Adjust extraction parameters\n\nflowline &lt;- extract_flowline(\n  dem = dem_high_res,\n  threshold = 500,  # Lower threshold\n  smooth = TRUE,\n  smooth_factor = 0.5  # Less smoothing\n)",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#additional-resources",
+    "href": "fluvgeo.html#additional-resources",
+    "title": "22  fluvgeo R Package",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\nDocumentation\n\nGitHub Repository\nFunction Reference\nUser Manual\n\n\n\nRelated Packages\n\nRegionalCurve - Regional curve development\nRHG - Hydraulic geometry analysis\nFluvialGeomorph - Additional analysis tools\n\n\n\nSupport\n\nIssues - Report bugs or request features\nDiscussions - Ask questions and share ideas",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#citation",
+    "href": "fluvgeo.html#citation",
+    "title": "22  fluvgeo R Package",
+    "section": "Citation",
+    "text": "Citation\nIf you use fluvgeo in your research, please cite:\nFluvialGeomorph Team (2024). fluvgeo: Fluvial Geomorphology Analysis Tools.\nR package version X.X.X. https://github.com/FluvialGeomorph/fluvgeo",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
+    ]
+  },
+  {
+    "objectID": "fluvgeo.html#license",
+    "href": "fluvgeo.html#license",
+    "title": "22  fluvgeo R Package",
+    "section": "License",
+    "text": "License\nThis package is released under the CC0 1.0 Universal license. You are free to use, modify, and distribute this software for any purpose.\n\nLast updated: 2026-06-12",
+    "crumbs": [
+      "R Packages",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo R Package</span>"
     ]
   },
   {
@@ -1456,157 +1610,47 @@
     ]
   },
   {
-    "objectID": "fluvgeo.html#overview",
-    "href": "fluvgeo.html#overview",
-    "title": "fluvgeo Package",
+    "objectID": "codediagram.html",
+    "href": "codediagram.html",
+    "title": "Appendix C — Tools & Dependencies",
     "section": "",
-    "text": "Package Information\n\n\n\n\nRepository: https://github.com/FluvialGeomorph/fluvgeo\nLicense: CC0 1.0 Universal\nLanguage: R\nDependencies: R (≥ 3.5.0), sf, dplyr, ggplot2, raster",
+    "text": "Overview\nThis page provides a visual guide to the FluvialGeomorph toolbox analysis workflow, showing the order of operations and dependencies between tools.",
     "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Tools & Dependencies</span>"
     ]
   },
   {
-    "objectID": "fluvgeo.html#installation",
-    "href": "fluvgeo.html#installation",
-    "title": "fluvgeo Package",
-    "section": "Installation",
-    "text": "Installation\n\nFrom GitHub\n\n# Install devtools if not already installed\nif (!require(\"devtools\")) install.packages(\"devtools\")\n\n# Install fluvgeo from GitHub\ndevtools::install_github(\"FluvialGeomorph/fluvgeo\")\n\n\n\nLoad Package\n\nlibrary(fluvgeo)\nlibrary(sf)\nlibrary(dplyr)\nlibrary(ggplot2)",
+    "objectID": "codediagram.html#overview",
+    "href": "codediagram.html#overview",
+    "title": "Appendix C — Tools & Dependencies",
+    "section": "",
+    "text": "How to Use\n\n\n\n\nHover over any tool card to see a description\nClick on a tool card to view its source code on GitHub\nScroll horizontally within each phase to see all tools\nTools are organized by analysis phase from left to right",
     "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Tools & Dependencies</span>"
     ]
   },
   {
-    "objectID": "fluvgeo.html#key-features",
-    "href": "fluvgeo.html#key-features",
-    "title": "fluvgeo Package",
-    "section": "Key Features",
-    "text": "Key Features\nThe fluvgeo package provides functionality for:\n\nCross Section Analysis: Import, process, and analyze cross section survey data\nLongitudinal Profile Analysis: Extract and analyze stream profiles from DEMs and survey data\nPlanform Analysis: Calculate sinuosity, meander geometry, and channel migration\nHydraulic Calculations: Compute hydraulic parameters from channel geometry\nVisualization: Create publication-quality plots and maps\nData Management: Import/export tools for common survey data formats",
+    "objectID": "codediagram.html#interactive-workflow-diagram",
+    "href": "codediagram.html#interactive-workflow-diagram",
+    "title": "Appendix C — Tools & Dependencies",
+    "section": "Interactive Workflow Diagram",
+    "text": "Interactive Workflow Diagram\n\n\nPhase 1: Data Preparation\n\n\nData Preparation\n\n\n\n\n\n\nFlowlinePoints\n\ntoolbox \n\n Creates regularly spaced points along the stream flowline for analysis \n\n\n→\n\n\n\n\n\nReachName\n\ntoolbox \n\n Assigns reach names to flowline segments \n\n\n→\n\n\n\n\n\nStreamProfilePoints\n\ntoolbox \n\n Creates profile points along stream centerline \n\n\n→\n\n\n\n\n\nBanklinePoints\n\ntoolbox \n\n Creates points along banklines \n\n\n→\n\n\n\n\n\nStationPoints\n\ntoolbox \n\n Creates station points for analysis \n\n\n\n\n\nPhase 2: Cross Section Analysis\n\n\nCross Section Analysis\n\n\n\n\n\n\nXSCreateLine\n\ntoolbox \n\n Creates cross section lines perpendicular to flowline \n\n\n→\n\n\n\n\n\nXSUpdateLine\n\ntoolbox \n\n Updates cross section line attributes \n\n\n→\n\n\n\n\n\nXSCreateStationPoints\n\ntoolbox \n\n Creates cross section station points from survey data \n\n\n→\n\n\n\n\n\nXSUpdateStationPoints\n\ntoolbox \n\n Updates XS station point attributes \n\n\n→\n\n\n\n\n\nXSAssignRiverPosition\n\ntoolbox \n\n Assigns river position (left bank, channel, right bank) to XS points \n\n\n→\n\n\n\n\n\nXSDimensions\n\ntoolbox \n\n Calculates bankfull dimensions from XS geometry \n\n\n→\n\n\n\n\n\nXSCompare\n\ntoolbox \n\n Compares surveyed dimensions to regional curve estimates \n\n\n\n\n\nPhase 3: Longitudinal Profile\n\n\nLongitudinal Profile\n\n\n\n\n\n\nLongitudinalProfile\n\ntoolbox \n\n Extracts elevation profile along flowline \n\n\n→\n\n\n\n\n\nSlope\n\ntoolbox \n\n Calculates reach and local slopes \n\n\n→\n\n\n\n\n\nRiffle\n\ntoolbox \n\n Identifies riffle features \n\n\n→\n\n\n\n\n\nPool\n\ntoolbox \n\n Identifies pool features \n\n\n→\n\n\n\n\n\nPoolRiffle\n\ntoolbox \n\n Analyzes pool-riffle sequences \n\n\n\n\n\nPhase 4: Planform Analysis\n\n\nPlanform Analysis\n\n\n\n\n\n\nSinuosity\n\ntoolbox \n\n Calculates channel sinuosity \n\n\n→\n\n\n\n\n\nMeander\n\ntoolbox \n\n Analyzes meander geometry \n\n\n→\n\n\n\n\n\nBanklineLength\n\ntoolbox \n\n Calculates bankline lengths \n\n\n→\n\n\n\n\n\nBanklineGradient\n\ntoolbox \n\n Calculates bankline gradients \n\n\n→\n\n\n\n\n\nValleyWidth\n\ntoolbox \n\n Measures valley width and calculates confinement \n\n\n→\n\n\n\n\n\nBankfullWidth\n\ntoolbox \n\n Calculates bankfull width \n\n\n→\n\n\n\n\n\nFloodplainWidth\n\ntoolbox \n\n Measures floodplain width \n\n\n\n\n\nPhase 5: Hydraulic Geometry\n\n\nHydraulic Geometry\n\n\n\n\n\n\nRegionalCurve\n\ntoolbox \n\n Estimates bankfull dimensions from drainage area using regional curves \n\n\n→\n\n\n\n\n\nRHGDimensions\n\ntoolbox \n\n Calculates at-a-station hydraulic geometry \n\n\n→\n\n\n\n\n\nRHGCompare\n\ntoolbox \n\n Compares RHG to regional curves \n\n\n\n\n\nPhase 6: Hydraulic Analysis\n\n\nHydraulic Analysis\n\n\n\n\n\n\nManningsN\n\ntoolbox \n\n Estimates Manning’s roughness coefficient \n\n\n→\n\n\n\n\n\nVelocity\n\ntoolbox \n\n Calculates flow velocity using Manning’s equation \n\n\n→\n\n\n\n\n\nShearStress\n\ntoolbox \n\n Calculates boundary shear stress \n\n\n→\n\n\n\n\n\nStreamPower\n\ntoolbox \n\n Calculates unit and specific stream power \n\n\n\n\n\nPhase 7: Sediment Transport\n\n\nSediment Transport\n\n\n\n\n\n\nGrainSize\n\ntoolbox \n\n Analyzes grain size distribution \n\n\n→\n\n\n\n\n\nShields\n\ntoolbox \n\n Calculates Shields parameter for incipient motion \n\n\n→\n\n\n\n\n\nBedloadTransport\n\ntoolbox \n\n Calculates bedload transport capacity \n\n\n\n\n\nPhase 8: Assessment & Visualization\n\n\nAssessment\n\n\n\n\n\n\nStreamClassification\n\ntoolbox \n\n Classifies stream type (Rosgen, etc.) \n\n\n→\n\n\n\n\n\nXSVisualization\n\ntoolbox \n\n Creates cross section plots and visualizations \n\n\n→\n\n\n\n\n\nReportGeneration\n\ntoolbox \n\n Generates comprehensive analysis reports",
     "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Tools & Dependencies</span>"
     ]
   },
   {
-    "objectID": "fluvgeo.html#package-workflow",
-    "href": "fluvgeo.html#package-workflow",
-    "title": "fluvgeo Package",
-    "section": "Package Workflow",
-    "text": "Package Workflow\n\n\n\n\n\nflowchart TB\n    Start([Start fluvgeo Analysis])\n    \n    subgraph Import[\"Data Import\"]\n        ImportDEM[\"Import DEM&lt;br/&gt;(import_dem)\"]\n        ImportXS[\"Import Cross Sections&lt;br/&gt;(xs_import)\"]\n        ImportProfile[\"Import Profile&lt;br/&gt;(profile_import)\"]\n        ImportFlowline[\"Import Flowline&lt;br/&gt;(import_flowline)\"]\n    end\n    \n    subgraph Process[\"Data Processing\"]\n        ProcessXS[\"Process XS Geometry&lt;br/&gt;(xs_process)\"]\n        ProcessProfile[\"Process Profile&lt;br/&gt;(profile_process)\"]\n        ExtractFlowline[\"Extract Flowline&lt;br/&gt;(extract_flowline)\"]\n        DelineateWS[\"Delineate Watershed&lt;br/&gt;(delineate_watershed)\"]\n    end\n    \n    subgraph Analyze[\"Analysis\"]\n        XSMetrics[\"XS Metrics&lt;br/&gt;(xs_metrics)\"]\n        Bankfull[\"Identify Bankfull&lt;br/&gt;(xs_bankfull)\"]\n        Dimensions[\"Calculate Dimensions&lt;br/&gt;(xs_dimensions)\"]\n        Sinuosity[\"Calculate Sinuosity&lt;br/&gt;(sinuosity)\"]\n        Slope[\"Calculate Slope&lt;br/&gt;(profile_slope)\"]\n        Radius[\"Radius of Curvature&lt;br/&gt;(radius_curvature)\"]\n    end\n    \n    subgraph Visualize[\"Visualization\"]\n        PlotXS[\"Plot Cross Sections&lt;br/&gt;(plot_xs)\"]\n        PlotProfile[\"Plot Profile&lt;br/&gt;(plot_profile)\"]\n        PlotPlanform[\"Plot Planform&lt;br/&gt;(plot_planform)\"]\n        CreateMaps[\"Create Maps&lt;br/&gt;(create_maps)\"]\n    end\n    \n    Export[\"Export Results&lt;br/&gt;(export_data)\"]\n    End([Complete])\n    \n    Start --&gt; Import\n    Import --&gt; Process\n    Process --&gt; Analyze\n    Analyze --&gt; Visualize\n    Visualize --&gt; Export\n    Export --&gt; End\n    \n    ImportXS --&gt; ProcessXS\n    ImportProfile --&gt; ProcessProfile\n    ImportDEM --&gt; ExtractFlowline\n    ImportDEM --&gt; DelineateWS\n    \n    ProcessXS --&gt; XSMetrics\n    XSMetrics --&gt; Bankfull\n    Bankfull --&gt; Dimensions\n    \n    ProcessProfile --&gt; Slope\n    ExtractFlowline --&gt; Sinuosity\n    ExtractFlowline --&gt; Radius\n    \n    Dimensions --&gt; PlotXS\n    Slope --&gt; PlotProfile\n    Sinuosity --&gt; PlotPlanform\n    \n    PlotXS --&gt; CreateMaps\n    PlotProfile --&gt; CreateMaps\n    PlotPlanform --&gt; CreateMaps\n    \n    style Start fill:#90EE90\n    style End fill:#90EE90\n    style Import fill:#E8F4F8,stroke:#2E86AB,stroke-width:2px\n    style Process fill:#FFF4E6,stroke:#F77F00,stroke-width:2px\n    style Analyze fill:#E8F5E9,stroke:#06A77D,stroke-width:2px\n    style Visualize fill:#FFF9C4,stroke:#F9C74F,stroke-width:2px",
+    "objectID": "codediagram.html#tool-reference-table",
+    "href": "codediagram.html#tool-reference-table",
+    "title": "Appendix C — Tools & Dependencies",
+    "section": "Tool Reference Table",
+    "text": "Tool Reference Table\n\n\n\n\n\nPhase\nTool\nPackage\nPurpose\nInputs\nOutputs\nDependencies\n\n\n\n\nPhase 1: Data Preparation\n\n\n1\nFlowlinePoints\ntoolbox\nCreate analysis points along flowline\nFlowline, spacing\nPoint feature class\nNone\n\n\n1\nReachName\ntoolbox\nAssign reach names\nFlowline points, breaks\nPoints with reach names\nFlowlinePoints\n\n\n1\nStreamProfilePoints\ntoolbox\nCreate profile points\nFlowline, DEM\nProfile points\nFlowlinePoints\n\n\n1\nBanklinePoints\ntoolbox\nCreate bankline points\nBankline features\nBankline points\nBanklines\n\n\n1\nStationPoints\ntoolbox\nCreate station points\nFlowline, interval\nStation points\nFlowlinePoints\n\n\nPhase 2: Cross Section\n\n\n2\nXSCreateLine\ntoolbox\nCreate XS lines\nFlowline, spacing\nXS line features\nFlowlinePoints\n\n\n2\nXSUpdateLine\ntoolbox\nUpdate XS lines\nXS lines\nUpdated XS lines\nXSCreateLine\n\n\n2\nXSCreateStationPoints\ntoolbox\nCreate XS points from survey\nSurvey data\nXS point features\nSurvey data\n\n\n2\nXSUpdateStationPoints\ntoolbox\nUpdate XS points\nXS points\nUpdated XS points\nXSCreateStationPoints\n\n\n2\nXSAssignRiverPosition\ntoolbox\nAssign river position\nXS points, bankfull\nPoints with position\nXSCreateStationPoints\n\n\n2\nXSDimensions\ntoolbox\nCalculate XS dimensions\nXS with position\nWidth, depth, area\nXSAssignRiverPosition\n\n\n2\nXSCompare\ntoolbox\nCompare to regional\nXS dims, regional\nComparison ratios\nXSDimensions, RegionalCurve\n\n\nPhase 3: Profile\n\n\n3\nLongitudinalProfile\ntoolbox\nExtract elevation profile\nDEM, flowline\nProfile elevations\nFlowlinePoints\n\n\n3\nSlope\ntoolbox\nCalculate slopes\nProfile elevations\nReach/local slopes\nLongitudinalProfile\n\n\n3\nRiffle\ntoolbox\nIdentify riffles\nProfile, slope\nRiffle locations\nSlope\n\n\n3\nPool\ntoolbox\nIdentify pools\nProfile, slope\nPool locations\nSlope\n\n\n3\nPoolRiffle\ntoolbox\nAnalyze pool-riffle\nPools, riffles\nSpacing, characteristics\nPool, Riffle\n\n\nPhase 4: Planform\n\n\n4\nSinuosity\ntoolbox\nCalculate sinuosity\nFlowline, valley\nSinuosity ratio\nFlowlinePoints\n\n\n4\nMeander\ntoolbox\nAnalyze meanders\nFlowline\nWavelength, amplitude\nSinuosity\n\n\n4\nBanklineLength\ntoolbox\nCalculate bankline length\nBanklines\nLength measurements\nBanklinePoints\n\n\n4\nBanklineGradient\ntoolbox\nCalculate bankline gradient\nBankline points\nGradient values\nBanklinePoints\n\n\n4\nValleyWidth\ntoolbox\nMeasure valley width\nValley polygon\nWidth, confinement\nXSDimensions\n\n\n4\nBankfullWidth\ntoolbox\nCalculate bankfull width\nXS dimensions\nBankfull width\nXSDimensions\n\n\n4\nFloodplainWidth\ntoolbox\nMeasure floodplain width\nFloodplain polygon\nWidth measurements\nFlowlinePoints\n\n\nPhase 5: Hydraulic Geometry\n\n\n5\nRegionalCurve\ntoolbox\nEstimate bankfull dimensions\nDrainage area\nEstimated dimensions\nDrainage area\n\n\n5\nRHGDimensions\ntoolbox\nCalculate hydraulic geometry\nXS at multiple flows\nRHG relations\nXSDimensions\n\n\n5\nRHGCompare\ntoolbox\nCompare RHG to regional\nRHG, regional curves\nDeparture metrics\nRHGDimensions, RegionalCurve\n\n\nPhase 6: Hydraulics\n\n\n6\nManningsN\ntoolbox\nEstimate roughness\nBed, vegetation\nManning's n\nField observations\n\n\n6\nVelocity\ntoolbox\nCalculate velocity\nn, R, slope\nFlow velocity\nManningsN, Slope, XSDimensions\n\n\n6\nShearStress\ntoolbox\nCalculate shear stress\nR, slope\nBoundary shear\nXSDimensions, Slope\n\n\n6\nStreamPower\ntoolbox\nCalculate stream power\nQ, slope, width\nUnit/specific power\nSlope, XSDimensions\n\n\nPhase 7: Sediment\n\n\n7\nGrainSize\ntoolbox\nAnalyze grain size\nPebble count\nD16, D50, D84\nField pebble count\n\n\n7\nShields\ntoolbox\nCalculate Shields parameter\nShear, grain size\nShields, critical τ\nShearStress, GrainSize\n\n\n7\nBedloadTransport\ntoolbox\nCalculate bedload\nShields, grain size\nTransport rate\nShields\n\n\nPhase 8: Assessment\n\n\n8\nStreamClassification\ntoolbox\nClassify stream type\nAll metrics\nStream type\nMultiple tools\n\n\n8\nXSVisualization\ntoolbox\nCreate XS plots\nXS data\nPlots\nXSDimensions\n\n\n8\nReportGeneration\ntoolbox\nGenerate reports\nAll outputs\nHTML/PDF reports\nAll tools\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis workflow includes all 37 tools from the FluvialGeomorph toolbox. Tool names and links point to the actual Python scripts in the GitHub repository.",
     "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
-    ]
-  },
-  {
-    "objectID": "fluvgeo.html#main-functions",
-    "href": "fluvgeo.html#main-functions",
-    "title": "fluvgeo Package",
-    "section": "Main Functions",
-    "text": "Main Functions\n\nCross Section Analysis\n\nImport Cross Sections\nImport cross section survey data from various formats.\n\n# Import cross section data from CSV\nxs_data &lt;- xs_import(\n  path = \"data/cross_sections.csv\",\n  format = \"csv\",\n  crs = 26916  # UTM Zone 16N\n)\n\n# Import from shapefile\nxs_data &lt;- xs_import(\n  path = \"data/cross_sections.shp\",\n  format = \"shapefile\"\n)\n\n# Import from total station data\nxs_data &lt;- xs_import(\n  path = \"data/survey_data.txt\",\n  format = \"total_station\",\n  station_col = \"Station\",\n  elevation_col = \"Elevation\"\n)\n\nParameters:\n\npath: File path to cross section data\nformat: Data format (“csv”, “shapefile”, “total_station”, “excel”)\ncrs: Coordinate reference system (EPSG code)\nstation_col: Column name for station values\nelevation_col: Column name for elevation values\n\nReturns: An sf object containing cross section geometry\n\n\nProcess Cross Sections\nProcess and clean cross section geometry data.\n\n# Process cross section geometry\nxs_processed &lt;- xs_process(\n  xs_data = xs_data,\n  smooth = TRUE,\n  smooth_window = 5,\n  remove_outliers = TRUE,\n  outlier_threshold = 3\n)\n\n# Interpolate missing stations\nxs_interpolated &lt;- xs_interpolate(\n  xs_data = xs_processed,\n  interval = 0.5  # meters\n)\n\nParameters:\n\nxs_data: Cross section data object\nsmooth: Apply smoothing to elevation data\nsmooth_window: Window size for moving average\nremove_outliers: Remove elevation outliers\noutlier_threshold: Standard deviations for outlier detection\n\n\n\nCalculate XS Metrics\nCalculate geometric metrics for cross sections.\n\n# Calculate cross section metrics\nxs_metrics &lt;- xs_metrics(\n  xs_data = xs_processed,\n  bankfull_elevation = NULL,  # Auto-detect or specify\n  method = \"geometry\"  # or \"vegetation\", \"field_indicators\"\n)\n\n# View metrics\nprint(xs_metrics)\n\nCalculated Metrics:\n\nCross-sectional area\nWetted perimeter\nHydraulic radius\nTop width\nMaximum depth\nMean depth\nWidth/depth ratio\n\n\n\nIdentify Bankfull\nIdentify bankfull stage using multiple methods.\n\n# Identify bankfull using geometric method\nbankfull_geom &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"geometry\",\n  plot = TRUE\n)\n\n# Identify bankfull using maximum width/depth ratio\nbankfull_wd &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"width_depth_ratio\",\n  plot = TRUE\n)\n\n# Identify bankfull using field indicators\nbankfull_field &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"field_indicators\",\n  indicators = c(\"top_of_bank\", \"vegetation_change\", \"bench\")\n)\n\nMethods:\n\ngeometry: Geometric inflection points\nwidth_depth_ratio: Maximum width/depth ratio\nfield_indicators: Field-identified indicators\nhydraulic: Hydraulic geometry relationships\n\n\n\nCalculate Dimensions\nCalculate bankfull channel dimensions.\n\n# Calculate bankfull dimensions\ndimensions &lt;- xs_dimensions(\n  xs_data = xs_processed,\n  bankfull_elevation = bankfull_geom$elevation,\n  reach_name = \"Reach 1\"\n)\n\n# View dimensions\nprint(dimensions)\n\nCalculated Dimensions:\n\nBankfull width (ft or m)\nBankfull mean depth (ft or m)\nBankfull maximum depth (ft or m)\nBankfull cross-sectional area (ft² or m²)\nWidth/depth ratio\nHydraulic radius (ft or m)\n\n\n\n\nLongitudinal Profile Analysis\n\nImport Profile\nImport longitudinal profile data.\n\n# Import profile from survey data\nprofile_data &lt;- profile_import(\n  path = \"data/profile.csv\",\n  station_col = \"Station\",\n  elevation_col = \"Elevation\",\n  crs = 26916\n)\n\n# Extract profile from DEM\nprofile_dem &lt;- profile_extract_dem(\n  dem = dem_raster,\n  flowline = flowline_sf,\n  interval = 10  # meters\n)\n\n\n\nCalculate Slope\nCalculate reach and local slopes.\n\n# Calculate reach slope\nreach_slope &lt;- profile_slope(\n  profile_data = profile_data,\n  method = \"reach\",\n  start_station = 0,\n  end_station = 1000\n)\n\n# Calculate local slopes\nlocal_slopes &lt;- profile_slope(\n  profile_data = profile_data,\n  method = \"local\",\n  window = 50  # meters\n)\n\n# Calculate water surface slope\nws_slope &lt;- profile_slope(\n  profile_data = profile_data,\n  method = \"water_surface\",\n  flow_depth = 2.5  # meters\n)\n\nMethods:\n\nreach: Overall reach slope\nlocal: Moving window local slopes\nwater_surface: Water surface slope at specified depth\nenergy: Energy slope\n\n\n\nIdentify Features\nIdentify pools, riffles, and other features.\n\n# Identify pool-riffle sequence\nfeatures &lt;- profile_features(\n  profile_data = profile_data,\n  method = \"residual_depth\",\n  threshold = 0.5  # meters\n)\n\n# Calculate pool-riffle spacing\nspacing &lt;- pool_riffle_spacing(\n  features = features,\n  bankfull_width = 15  # meters\n)\n\n# Identify knickpoints\nknickpoints &lt;- identify_knickpoints(\n  profile_data = profile_data,\n  threshold = 0.02,  # slope change threshold\n  min_length = 20    # minimum knickpoint length (m)\n)\n\n\n\n\nPlanform Analysis\n\nCalculate Sinuosity\nCalculate channel sinuosity.\n\n# Calculate reach sinuosity\nsinuosity_reach &lt;- sinuosity(\n  flowline = flowline_sf,\n  method = \"reach\",\n  valley_line = valley_centerline_sf\n)\n\n# Calculate local sinuosity\nsinuosity_local &lt;- sinuosity(\n  flowline = flowline_sf,\n  method = \"local\",\n  window = 500  # meters\n)\n\n# Results\nprint(paste(\"Reach Sinuosity:\", round(sinuosity_reach, 3)))\n\nSinuosity Classification:\n\n&lt; 1.05: Straight\n1.05 - 1.25: Sinuous\n1.25 - 1.50: Meandering\n\n1.50: Highly meandering\n\n\n\n\nMeander Geometry\nAnalyze meander geometry and characteristics.\n\n# Identify meander bends\nmeanders &lt;- identify_meanders(\n  flowline = flowline_sf,\n  method = \"inflection_points\",\n  min_amplitude = 10  # meters\n)\n\n# Calculate meander wavelength\nwavelength &lt;- meander_wavelength(\n  meanders = meanders,\n  method = \"average\"\n)\n\n# Calculate meander amplitude\namplitude &lt;- meander_amplitude(\n  meanders = meanders,\n  valley_line = valley_centerline_sf\n)\n\n# Calculate meander belt width\nbelt_width &lt;- meander_belt_width(\n  flowline = flowline_sf,\n  meanders = meanders,\n  method = \"envelope\"\n)\n\nMeander Metrics:\n\nWavelength: Distance between successive meander bends\nAmplitude: Maximum lateral extent of meander\nBelt width: Width of meander belt\nRadius of curvature: Bend radius\n\n\n\nRadius of Curvature\nCalculate radius of curvature along the channel.\n\n# Calculate radius of curvature\ncurvature &lt;- radius_curvature(\n  flowline = flowline_sf,\n  method = \"three_point\",\n  window = 3  # number of points\n)\n\n# Classify bend severity\nbend_class &lt;- classify_bends(\n  curvature = curvature,\n  bankfull_width = 15  # meters\n)\n\n# Plot curvature\nplot_curvature(\n  flowline = flowline_sf,\n  curvature = curvature,\n  color_by = \"radius\"\n)\n\nBend Classification (Rc/W ratio):\n\n\n10: Gentle bend\n\n5 - 10: Moderate bend\n2 - 5: Sharp bend\n&lt; 2: Very sharp bend\n\n\n\n\nWatershed Analysis\n\nDelineate Watershed\nDelineate watershed from DEM.\n\n# Delineate watershed from pour point\nwatershed &lt;- delineate_watershed(\n  dem = dem_raster,\n  pour_point = outlet_point_sf,\n  method = \"d8\"  # or \"dinf\"\n)\n\n# Calculate drainage area\ndrainage_area &lt;- calculate_drainage_area(\n  watershed = watershed,\n  units = \"km2\"  # or \"mi2\", \"acres\"\n)\n\n# Extract watershed characteristics\nws_chars &lt;- watershed_characteristics(\n  watershed = watershed,\n  dem = dem_raster,\n  include = c(\"area\", \"perimeter\", \"relief\", \"slope\")\n)\n\n\n\nExtract Flowline\nExtract stream flowline from DEM.\n\n# Extract flowline from DEM\nflowline &lt;- extract_flowline(\n  dem = dem_raster,\n  method = \"d8\",\n  threshold = 1000,  # flow accumulation threshold\n  smooth = TRUE\n)\n\n# Smooth flowline\nflowline_smooth &lt;- smooth_flowline(\n  flowline = flowline,\n  method = \"spline\",\n  tolerance = 5  # meters\n)\n\n# Calculate flowline length\nlength &lt;- calculate_length(\n  flowline = flowline_smooth,\n  units = \"km\"  # or \"mi\", \"m\", \"ft\"\n)\n\n\n\n\nHydraulic Calculations\n\nManning’s Equation\nCalculate flow velocity and discharge using Manning’s equation.\n\n# Calculate velocity\nvelocity &lt;- mannings_velocity(\n  hydraulic_radius = 1.5,  # meters\n  slope = 0.002,           # m/m\n  mannings_n = 0.035\n)\n\n# Calculate discharge\ndischarge &lt;- mannings_discharge(\n  area = 25,               # m²\n  hydraulic_radius = 1.5,  # meters\n  slope = 0.002,           # m/m\n  mannings_n = 0.035\n)\n\n# Estimate Manning's n\nmannings_n &lt;- estimate_mannings_n(\n  bed_material = \"gravel\",\n  vegetation = \"moderate\",\n  channel_irregularity = \"minor\",\n  method = \"cowan\"\n)\n\n\n\nHydraulic Geometry\nCalculate hydraulic geometry parameters.\n\n# Calculate hydraulic radius\nhyd_radius &lt;- hydraulic_radius(\n  area = 25,        # m²\n  wetted_perimeter = 18  # m\n)\n\n# Calculate wetted perimeter\nwetted_perim &lt;- wetted_perimeter(\n  xs_data = xs_processed,\n  water_surface_elevation = 100.5\n)\n\n# Calculate flow area\nflow_area &lt;- calculate_flow_area(\n  xs_data = xs_processed,\n  water_surface_elevation = 100.5\n)",
-    "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
-    ]
-  },
-  {
-    "objectID": "fluvgeo.html#visualization-functions",
-    "href": "fluvgeo.html#visualization-functions",
-    "title": "fluvgeo Package",
-    "section": "Visualization Functions",
-    "text": "Visualization Functions\n\nPlot Cross Sections\n\n# Basic cross section plot\nplot_xs(\n  xs_data = xs_processed,\n  xs_id = \"XS-1\",\n  bankfull_elevation = bankfull_geom$elevation,\n  title = \"Cross Section XS-1\"\n)\n\n# Multiple cross sections\nplot_xs_multiple(\n  xs_data = xs_processed,\n  xs_ids = c(\"XS-1\", \"XS-2\", \"XS-3\"),\n  layout = \"grid\",\n  ncol = 2\n)\n\n# Cross section with dimensions\nplot_xs_dimensions(\n  xs_data = xs_processed,\n  xs_id = \"XS-1\",\n  dimensions = dimensions,\n  show_labels = TRUE\n)\n\n\n\nPlot Longitudinal Profile\n\n# Basic profile plot\nplot_profile(\n  profile_data = profile_data,\n  title = \"Longitudinal Profile\",\n  show_slope = TRUE\n)\n\n# Profile with features\nplot_profile_features(\n  profile_data = profile_data,\n  features = features,\n  color_by = \"feature_type\"\n)\n\n# Profile with cross sections\nplot_profile_xs(\n  profile_data = profile_data,\n  xs_locations = xs_stations,\n  xs_data = xs_processed\n)\n\n\n\nPlot Planform\n\n# Basic planform plot\nplot_planform(\n  flowline = flowline_sf,\n  watershed = watershed,\n  basemap = TRUE\n)\n\n# Planform with meanders\nplot_planform_meanders(\n  flowline = flowline_sf,\n  meanders = meanders,\n  color_by = \"wavelength\"\n)\n\n# Planform with curvature\nplot_planform_curvature(\n  flowline = flowline_sf,\n  curvature = curvature,\n  color_palette = \"viridis\"\n)\n\n\n\nCreate Maps\n\n# Create assessment map\nassessment_map &lt;- create_map(\n  flowline = flowline_sf,\n  watershed = watershed,\n  xs_locations = xs_data,\n  features = features,\n  basemap = \"terrain\",\n  scale_bar = TRUE,\n  north_arrow = TRUE\n)\n\n# Export map\nexport_map(\n  map = assessment_map,\n  filename = \"assessment_map.png\",\n  width = 11,\n  height = 8.5,\n  dpi = 300\n)",
-    "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
-    ]
-  },
-  {
-    "objectID": "fluvgeo.html#data-importexport",
-    "href": "fluvgeo.html#data-importexport",
-    "title": "fluvgeo Package",
-    "section": "Data Import/Export",
-    "text": "Data Import/Export\n\nImport Functions\n\n# Import from various formats\ndata_csv &lt;- import_data(\n  path = \"data/survey.csv\",\n  format = \"csv\"\n)\n\ndata_shp &lt;- import_data(\n  path = \"data/features.shp\",\n  format = \"shapefile\"\n)\n\ndata_excel &lt;- import_data(\n  path = \"data/measurements.xlsx\",\n  format = \"excel\",\n  sheet = \"Cross Sections\"\n)\n\n# Import DEM\ndem &lt;- import_dem(\n  path = \"data/dem.tif\",\n  crs = 26916\n)\n\n\n\nExport Functions\n\n# Export to CSV\nexport_data(\n  data = dimensions,\n  path = \"output/dimensions.csv\",\n  format = \"csv\"\n)\n\n# Export to shapefile\nexport_data(\n  data = flowline_sf,\n  path = \"output/flowline.shp\",\n  format = \"shapefile\"\n)\n\n# Export to GeoPackage\nexport_data(\n  data = xs_data,\n  path = \"output/cross_sections.gpkg\",\n  format = \"gpkg\",\n  layer_name = \"cross_sections\"\n)\n\n# Export summary report\nexport_report(\n  data = list(\n    dimensions = dimensions,\n    profile = profile_data,\n    sinuosity = sinuosity_reach\n  ),\n  path = \"output/summary_report.html\",\n  format = \"html\",\n  template = \"standard\"\n)",
-    "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
-    ]
-  },
-  {
-    "objectID": "fluvgeo.html#example-workflow",
-    "href": "fluvgeo.html#example-workflow",
-    "title": "fluvgeo Package",
-    "section": "Example Workflow",
-    "text": "Example Workflow\nHere’s a complete example workflow using fluvgeo:\n\nlibrary(fluvgeo)\nlibrary(sf)\nlibrary(dplyr)\n\n# 1. Import data\ndem &lt;- import_dem(\"data/dem.tif\", crs = 26916)\nxs_data &lt;- xs_import(\"data/cross_sections.csv\", format = \"csv\", crs = 26916)\n\n# 2. Extract flowline\nflowline &lt;- extract_flowline(\n  dem = dem,\n  method = \"d8\",\n  threshold = 1000,\n  smooth = TRUE\n)\n\n# 3. Delineate watershed\nwatershed &lt;- delineate_watershed(\n  dem = dem,\n  pour_point = outlet_point,\n  method = \"d8\"\n)\n\n# 4. Process cross sections\nxs_processed &lt;- xs_process(\n  xs_data = xs_data,\n  smooth = TRUE,\n  remove_outliers = TRUE\n)\n\n# 5. Identify bankfull\nbankfull &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"geometry\",\n  plot = TRUE\n)\n\n# 6. Calculate dimensions\ndimensions &lt;- xs_dimensions(\n  xs_data = xs_processed,\n  bankfull_elevation = bankfull$elevation\n)\n\n# 7. Extract and analyze profile\nprofile &lt;- profile_extract_dem(\n  dem = dem,\n  flowline = flowline,\n  interval = 10\n)\n\nslope &lt;- profile_slope(\n  profile_data = profile,\n  method = \"reach\"\n)\n\n# 8. Calculate planform metrics\nsinuosity_value &lt;- sinuosity(\n  flowline = flowline,\n  method = \"reach\"\n)\n\nmeanders &lt;- identify_meanders(\n  flowline = flowline,\n  method = \"inflection_points\"\n)\n\n# 9. Create visualizations\nplot_xs(xs_data = xs_processed, xs_id = \"XS-1\")\nplot_profile(profile_data = profile)\nplot_planform(flowline = flowline, watershed = watershed)\n\n# 10. Export results\nexport_data(dimensions, \"output/dimensions.csv\")\nexport_data(flowline, \"output/flowline.shp\")\n\n# 11. Generate report\ncreate_summary_report(\n  xs_data = xs_processed,\n  dimensions = dimensions,\n  profile = profile,\n  sinuosity = sinuosity_value,\n  output_file = \"output/analysis_report.html\"\n)",
-    "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
-    ]
-  },
-  {
-    "objectID": "fluvgeo.html#function-reference",
-    "href": "fluvgeo.html#function-reference",
-    "title": "fluvgeo Package",
-    "section": "Function Reference",
-    "text": "Function Reference\n\nCross Section Functions\n\n\n\nFunction\nDescription\n\n\n\n\nxs_import()\nImport cross section data\n\n\nxs_process()\nProcess and clean XS geometry\n\n\nxs_interpolate()\nInterpolate XS stations\n\n\nxs_metrics()\nCalculate XS geometric metrics\n\n\nxs_bankfull()\nIdentify bankfull stage\n\n\nxs_dimensions()\nCalculate bankfull dimensions\n\n\nplot_xs()\nPlot cross section\n\n\nplot_xs_multiple()\nPlot multiple cross sections\n\n\n\n\n\nProfile Functions\n\n\n\nFunction\nDescription\n\n\n\n\nprofile_import()\nImport profile data\n\n\nprofile_extract_dem()\nExtract profile from DEM\n\n\nprofile_process()\nProcess profile data\n\n\nprofile_slope()\nCalculate slope\n\n\nprofile_features()\nIdentify pools and riffles\n\n\npool_riffle_spacing()\nCalculate pool-riffle spacing\n\n\nidentify_knickpoints()\nIdentify knickpoints\n\n\nplot_profile()\nPlot longitudinal profile\n\n\n\n\n\nPlanform Functions\n\n\n\nFunction\nDescription\n\n\n\n\nsinuosity()\nCalculate sinuosity\n\n\nidentify_meanders()\nIdentify meander bends\n\n\nmeander_wavelength()\nCalculate wavelength\n\n\nmeander_amplitude()\nCalculate amplitude\n\n\nmeander_belt_width()\nCalculate belt width\n\n\nradius_curvature()\nCalculate radius of curvature\n\n\nclassify_bends()\nClassify bend severity\n\n\nplot_planform()\nPlot planform map\n\n\n\n\n\nWatershed Functions\n\n\n\nFunction\nDescription\n\n\n\n\ndelineate_watershed()\nDelineate watershed\n\n\ncalculate_drainage_area()\nCalculate drainage area\n\n\nwatershed_characteristics()\nExtract watershed characteristics\n\n\nextract_flowline()\nExtract stream flowline\n\n\nsmooth_flowline()\nSmooth flowline geometry\n\n\n\n\n\nHydraulic Functions\n\n\n\nFunction\nDescription\n\n\n\n\nmannings_velocity()\nCalculate velocity (Manning’s)\n\n\nmannings_discharge()\nCalculate discharge (Manning’s)\n\n\nestimate_mannings_n()\nEstimate Manning’s n\n\n\nhydraulic_radius()\nCalculate hydraulic radius\n\n\nwetted_perimeter()\nCalculate wetted perimeter\n\n\ncalculate_flow_area()\nCalculate flow area\n\n\n\n\n\nUtility Functions\n\n\n\nFunction\nDescription\n\n\n\n\nimport_data()\nImport data from various formats\n\n\nexport_data()\nExport data to various formats\n\n\nimport_dem()\nImport DEM raster\n\n\ncreate_map()\nCreate assessment map\n\n\nexport_map()\nExport map to file\n\n\ncreate_summary_report()\nGenerate summary report",
-    "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
-    ]
-  },
-  {
-    "objectID": "fluvgeo.html#best-practices",
-    "href": "fluvgeo.html#best-practices",
-    "title": "fluvgeo Package",
-    "section": "Best Practices",
-    "text": "Best Practices\n\nData Quality\n\nSurvey Data\n\nUse consistent coordinate systems\nCheck for survey errors and outliers\nDocument survey methods and equipment\nInclude metadata with all datasets\n\nCross Sections\n\nSurvey perpendicular to flow\nExtend beyond bankfull on both sides\nInclude floodplain features\nMark bankfull indicators in field\n\nLongitudinal Profiles\n\nUse consistent datum\nInclude sufficient upstream/downstream extent\nDocument water surface elevations\nNote grade control features\n\n\n\n\nAnalysis Workflow\n\nData Preparation\n\nImport and organize all data\nCheck coordinate systems\nRemove obvious errors\nDocument data sources\n\nQuality Control\n\nVisual inspection of all data\nCheck for outliers\nValidate calculations\nCompare with field observations\n\nAnalysis\n\nUse multiple methods when available\nDocument assumptions\nCalculate uncertainty\nCompare with regional data\n\nVisualization\n\nCreate clear, labeled plots\nUse consistent scales and units\nInclude legends and annotations\nExport at appropriate resolution\n\nDocumentation\n\nRecord all processing steps\nDocument function parameters\nSave intermediate results\nCreate reproducible workflows",
-    "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
-    ]
-  },
-  {
-    "objectID": "fluvgeo.html#troubleshooting",
-    "href": "fluvgeo.html#troubleshooting",
-    "title": "fluvgeo Package",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\n\nCommon Issues\n\n\n\n\n\n\nCoordinate System Errors\n\n\n\nProblem: Data doesn’t align or appears in wrong location\nSolution:\n\n# Check CRS\nst_crs(xs_data)\n\n# Transform to correct CRS\nxs_data &lt;- st_transform(xs_data, crs = 26916)\n\n\n\n\n\n\n\n\n\nMissing Bankfull Indicators\n\n\n\nProblem: Automatic bankfull detection fails\nSolution:\n\n# Manually specify bankfull elevation\nbankfull_manual &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"manual\",\n  elevation = 100.5\n)\n\n# Or use field indicators\nbankfull_field &lt;- xs_bankfull(\n  xs_data = xs_processed,\n  method = \"field_indicators\",\n  indicators = field_markers\n)\n\n\n\n\n\n\n\n\n\nDEM Resolution Issues\n\n\n\nProblem: Extracted features don’t match field observations\nSolution:\n\n# Use higher resolution DEM\n# Supplement with survey data\n# Adjust extraction parameters\n\nflowline &lt;- extract_flowline(\n  dem = dem_high_res,\n  threshold = 500,  # Lower threshold\n  smooth = TRUE,\n  smooth_factor = 0.5  # Less smoothing\n)",
-    "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
-    ]
-  },
-  {
-    "objectID": "fluvgeo.html#additional-resources",
-    "href": "fluvgeo.html#additional-resources",
-    "title": "fluvgeo Package",
-    "section": "Additional Resources",
-    "text": "Additional Resources\n\nDocumentation\n\nGitHub Repository\nFunction Reference\nUser Manual\n\n\n\nRelated Packages\n\nRegionalCurve - Regional curve development\nRHG - Hydraulic geometry analysis\nFluvialGeomorph - Additional analysis tools\n\n\n\nSupport\n\nIssues - Report bugs or request features\nDiscussions - Ask questions and share ideas",
-    "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
-    ]
-  },
-  {
-    "objectID": "fluvgeo.html#citation",
-    "href": "fluvgeo.html#citation",
-    "title": "fluvgeo Package",
-    "section": "Citation",
-    "text": "Citation\nIf you use fluvgeo in your research, please cite:\nFluvialGeomorph Team (2024). fluvgeo: Fluvial Geomorphology Analysis Tools.\nR package version X.X.X. https://github.com/FluvialGeomorph/fluvgeo",
-    "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
-    ]
-  },
-  {
-    "objectID": "fluvgeo.html#license",
-    "href": "fluvgeo.html#license",
-    "title": "fluvgeo Package",
-    "section": "License",
-    "text": "License\nThis package is released under the CC0 1.0 Universal license. You are free to use, modify, and distribute this software for any purpose.\n\nLast updated: 2026-06-12",
-    "crumbs": [
-      "R Packages",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>fluvgeo Package</span>"
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Tools & Dependencies</span>"
     ]
   }
 ]

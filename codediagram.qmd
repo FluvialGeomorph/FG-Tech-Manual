@@ -1,0 +1,835 @@
+---
+title: "Tools & Dependencies"
+format: html
+---
+
+<style>
+.workflow-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.tooltip-box {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-box .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    left: 100%;
+    margin-left: 15px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    line-height: 1.4;
+    pointer-events: none;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.tooltip-box .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+}
+
+.tooltip-box:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tool-card {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    min-width: 200px;
+    max-width: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-color: #2E86AB;
+}
+
+.tool-card h4 {
+    margin: 0 0 5px 0;
+    color: #2E86AB;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tool-card .package-badge {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    color: #666;
+    margin-top: 5px;
+    font-family: monospace;
+}
+
+.phase-row {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: visible;
+}
+
+.phase-label {
+    min-width: 150px;
+    font-weight: bold;
+    color: #333;
+    padding-right: 20px;
+    font-size: 14px;
+    padding-top: 15px;
+}
+
+.tools-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    flex: 1;
+    padding: 10px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.tools-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tools-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.tools-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.tools-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.arrow {
+    font-size: 24px;
+    color: #999;
+    margin: 0 5px;
+    flex-shrink: 0;
+    padding-top: 15px;
+}
+</style>
+
+## Overview
+
+This page provides a visual guide to the FluvialGeomorph toolbox analysis workflow, showing the order of operations and dependencies between tools.
+
+::: {.callout-tip}
+## How to Use
+
+- Hover over any tool card to see a description
+- Click on a tool card to view its source code on GitHub
+- Scroll horizontally within each phase to see all tools
+- Tools are organized by analysis phase from left to right
+:::
+
+## Interactive Workflow Diagram
+
+<div class="workflow-container">
+
+### Phase 1: Data Preparation
+
+<div class="phase-row" style="background: #E8F4F8;">
+<div class="phase-label">Data Preparation</div>
+<div class="tools-container">
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01_FlowlinePoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>FlowlinePoints</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Creates regularly spaced points along the stream flowline for analysis
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_02_ReachName.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>ReachName</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Assigns reach names to flowline segments
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_03_StreamProfilePoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>StreamProfilePoints</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Creates profile points along stream centerline
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04_BanklinePoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>BanklinePoints</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Creates points along banklines
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_05_StationPoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>StationPoints</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Creates station points for analysis
+</span>
+</div>
+
+</div>
+</div>
+
+### Phase 2: Cross Section Analysis
+
+<div class="phase-row" style="background: #FFF4E6;">
+<div class="phase-label">Cross Section Analysis</div>
+<div class="tools-container">
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_06_XSCreateLine.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>XSCreateLine</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Creates cross section lines perpendicular to flowline
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_XSUpdateLine.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>XSUpdateLine</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Updates cross section line attributes
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_08_XSCreateStationPoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>XSCreateStationPoints</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Creates cross section station points from survey data
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_09_XSUpdateStationPoints.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>XSUpdateStationPoints</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Updates XS station point attributes
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_10_XSAssignRiverPosition.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>XSAssignRiverPosition</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Assigns river position (left bank, channel, right bank) to XS points
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_11_XSDimensions.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>XSDimensions</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates bankfull dimensions from XS geometry
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_12_XSCompare.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>XSCompare</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Compares surveyed dimensions to regional curve estimates
+</span>
+</div>
+
+</div>
+</div>
+
+### Phase 3: Longitudinal Profile
+
+<div class="phase-row" style="background: #E8F5E9;">
+<div class="phase-label">Longitudinal Profile</div>
+<div class="tools-container">
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_13_LongitudinalProfile.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>LongitudinalProfile</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Extracts elevation profile along flowline
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14_Slope.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>Slope</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates reach and local slopes
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15_Riffle.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>Riffle</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Identifies riffle features
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_16_Pool.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>Pool</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Identifies pool features
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_17_PoolRiffle.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>PoolRiffle</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Analyzes pool-riffle sequences
+</span>
+</div>
+
+</div>
+</div>
+
+### Phase 4: Planform Analysis
+
+<div class="phase-row" style="background: #F3E5F5;">
+<div class="phase-label">Planform Analysis</div>
+<div class="tools-container">
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_18_Sinuosity.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>Sinuosity</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates channel sinuosity
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_19_Meander.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>Meander</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Analyzes meander geometry
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_20_BanklineLength.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>BanklineLength</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates bankline lengths
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_21_BanklineGradient.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>BanklineGradient</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates bankline gradients
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_22_ValleyWidth.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>ValleyWidth</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Measures valley width and calculates confinement
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_23_BankfullWidth.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>BankfullWidth</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates bankfull width
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_24_FloodplainWidth.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>FloodplainWidth</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Measures floodplain width
+</span>
+</div>
+
+</div>
+</div>
+
+### Phase 5: Hydraulic Geometry
+
+<div class="phase-row" style="background: #FCE4EC;">
+<div class="phase-label">Hydraulic Geometry</div>
+<div class="tools-container">
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_25_RegionalCurve.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>RegionalCurve</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Estimates bankfull dimensions from drainage area using regional curves
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_26_RHGDimensions.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>RHGDimensions</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates at-a-station hydraulic geometry
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_27_RHGCompare.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>RHGCompare</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Compares RHG to regional curves
+</span>
+</div>
+
+</div>
+</div>
+
+### Phase 6: Hydraulic Analysis
+
+<div class="phase-row" style="background: #E3F2FD;">
+<div class="phase-label">Hydraulic Analysis</div>
+<div class="tools-container">
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_28_ManningsN.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>ManningsN</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Estimates Manning's roughness coefficient
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_29_Velocity.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>Velocity</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates flow velocity using Manning's equation
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_30_ShearStress.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>ShearStress</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates boundary shear stress
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_31_StreamPower.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>StreamPower</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates unit and specific stream power
+</span>
+</div>
+
+</div>
+</div>
+
+### Phase 7: Sediment Transport
+
+<div class="phase-row" style="background: #FFF3E0;">
+<div class="phase-label">Sediment Transport</div>
+<div class="tools-container">
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_32_GrainSize.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>GrainSize</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Analyzes grain size distribution
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_33_Shields.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>Shields</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates Shields parameter for incipient motion
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_34_BedloadTransport.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>BedloadTransport</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Calculates bedload transport capacity
+</span>
+</div>
+
+</div>
+</div>
+
+### Phase 8: Assessment & Visualization
+
+<div class="phase-row" style="background: #F1F8E9;">
+<div class="phase-label">Assessment</div>
+<div class="tools-container">
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_35_StreamClassification.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>StreamClassification</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Classifies stream type (Rosgen, etc.)
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_36_XSVisualization.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>XSVisualization</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Creates cross section plots and visualizations
+</span>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="tooltip-box">
+<div class="tool-card">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_37_ReportGeneration.py" target="_blank" style="text-decoration: none; color: inherit;">
+<h4>ReportGeneration</h4>
+<span class="package-badge">toolbox</span>
+</a>
+</div>
+<span class="tooltiptext">
+Generates comprehensive analysis reports
+</span>
+</div>
+
+</div>
+</div>
+
+</div>
+
+## Tool Reference Table
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+tools <- tribble(
+  ~Phase, ~Tool, ~Package, ~Purpose, ~Inputs, ~Outputs, ~Dependencies, ~GitHub_Link,
+  
+  "1", "FlowlinePoints", "toolbox", "Create analysis points along flowline", "Flowline, spacing", "Point feature class", "None", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01_FlowlinePoints.py",
+  "1", "ReachName", "toolbox", "Assign reach names", "Flowline points, breaks", "Points with reach names", "FlowlinePoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_02_ReachName.py",
+  "1", "StreamProfilePoints", "toolbox", "Create profile points", "Flowline, DEM", "Profile points", "FlowlinePoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_03_StreamProfilePoints.py",
+  "1", "BanklinePoints", "toolbox", "Create bankline points", "Bankline features", "Bankline points", "Banklines", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04_BanklinePoints.py",
+  "1", "StationPoints", "toolbox", "Create station points", "Flowline, interval", "Station points", "FlowlinePoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_05_StationPoints.py",
+  
+  "2", "XSCreateLine", "toolbox", "Create XS lines", "Flowline, spacing", "XS line features", "FlowlinePoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_06_XSCreateLine.py",
+  "2", "XSUpdateLine", "toolbox", "Update XS lines", "XS lines", "Updated XS lines", "XSCreateLine", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_XSUpdateLine.py",
+  "2", "XSCreateStationPoints", "toolbox", "Create XS points from survey", "Survey data", "XS point features", "Survey data", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_08_XSCreateStationPoints.py",
+  "2", "XSUpdateStationPoints", "toolbox", "Update XS points", "XS points", "Updated XS points", "XSCreateStationPoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_09_XSUpdateStationPoints.py",
+  "2", "XSAssignRiverPosition", "toolbox", "Assign river position", "XS points, bankfull", "Points with position", "XSCreateStationPoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_10_XSAssignRiverPosition.py",
+  "2", "XSDimensions", "toolbox", "Calculate XS dimensions", "XS with position", "Width, depth, area", "XSAssignRiverPosition", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_11_XSDimensions.py",
+  "2", "XSCompare", "toolbox", "Compare to regional", "XS dims, regional", "Comparison ratios", "XSDimensions, RegionalCurve", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_12_XSCompare.py",
+  
+  "3", "LongitudinalProfile", "toolbox", "Extract elevation profile", "DEM, flowline", "Profile elevations", "FlowlinePoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_13_LongitudinalProfile.py",
+  "3", "Slope", "toolbox", "Calculate slopes", "Profile elevations", "Reach/local slopes", "LongitudinalProfile", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14_Slope.py",
+  "3", "Riffle", "toolbox", "Identify riffles", "Profile, slope", "Riffle locations", "Slope", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15_Riffle.py",
+  "3", "Pool", "toolbox", "Identify pools", "Profile, slope", "Pool locations", "Slope", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_16_Pool.py",
+  "3", "PoolRiffle", "toolbox", "Analyze pool-riffle", "Pools, riffles", "Spacing, characteristics", "Pool, Riffle", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_17_PoolRiffle.py",
+  
+  "4", "Sinuosity", "toolbox", "Calculate sinuosity", "Flowline, valley", "Sinuosity ratio", "FlowlinePoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_18_Sinuosity.py",
+  "4", "Meander", "toolbox", "Analyze meanders", "Flowline", "Wavelength, amplitude", "Sinuosity", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_19_Meander.py",
+  "4", "BanklineLength", "toolbox", "Calculate bankline length", "Banklines", "Length measurements", "BanklinePoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_20_BanklineLength.py",
+  "4", "BanklineGradient", "toolbox", "Calculate bankline gradient", "Bankline points", "Gradient values", "BanklinePoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_21_BanklineGradient.py",
+  "4", "ValleyWidth", "toolbox", "Measure valley width", "Valley polygon", "Width, confinement", "XSDimensions", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_22_ValleyWidth.py",
+  "4", "BankfullWidth", "toolbox", "Calculate bankfull width", "XS dimensions", "Bankfull width", "XSDimensions", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_23_BankfullWidth.py",
+  "4", "FloodplainWidth", "toolbox", "Measure floodplain width", "Floodplain polygon", "Width measurements", "FlowlinePoints", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_24_FloodplainWidth.py",
+  
+  "5", "RegionalCurve", "toolbox", "Estimate bankfull dimensions", "Drainage area", "Estimated dimensions", "Drainage area", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_25_RegionalCurve.py",
+  "5", "RHGDimensions", "toolbox", "Calculate hydraulic geometry", "XS at multiple flows", "RHG relations", "XSDimensions", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_26_RHGDimensions.py",
+  "5", "RHGCompare", "toolbox", "Compare RHG to regional", "RHG, regional curves", "Departure metrics", "RHGDimensions, RegionalCurve", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_27_RHGCompare.py",
+  
+  "6", "ManningsN", "toolbox", "Estimate roughness", "Bed, vegetation", "Manning's n", "Field observations", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_28_ManningsN.py",
+  "6", "Velocity", "toolbox", "Calculate velocity", "n, R, slope", "Flow velocity", "ManningsN, Slope, XSDimensions", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_29_Velocity.py",
+  "6", "ShearStress", "toolbox", "Calculate shear stress", "R, slope", "Boundary shear", "XSDimensions, Slope", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_30_ShearStress.py",
+  "6", "StreamPower", "toolbox", "Calculate stream power", "Q, slope, width", "Unit/specific power", "Slope, XSDimensions", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_31_StreamPower.py",
+  
+  "7", "GrainSize", "toolbox", "Analyze grain size", "Pebble count", "D16, D50, D84", "Field pebble count", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_32_GrainSize.py",
+  "7", "Shields", "toolbox", "Calculate Shields parameter", "Shear, grain size", "Shields, critical τ", "ShearStress, GrainSize", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_33_Shields.py",
+  "7", "BedloadTransport", "toolbox", "Calculate bedload", "Shields, grain size", "Transport rate", "Shields", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_34_BedloadTransport.py",
+  
+  "8", "StreamClassification", "toolbox", "Classify stream type", "All metrics", "Stream type", "Multiple tools", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_35_StreamClassification.py",
+  "8", "XSVisualization", "toolbox", "Create XS plots", "XS data", "Plots", "XSDimensions", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_36_XSVisualization.py",
+  "8", "ReportGeneration", "toolbox", "Generate reports", "All outputs", "HTML/PDF reports", "All tools", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_37_ReportGeneration.py"
+)
+
+tools %>%
+  mutate(
+    Tool = paste0('<a href="', GitHub_Link, '" target="_blank">', Tool, '</a>')
+  ) %>%
+  select(-GitHub_Link) %>%
+  kable(format = "html", escape = FALSE,
+        col.names = c("Phase", "Tool", "Package", "Purpose", "Inputs", "Outputs", "Dependencies")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE,
+                font_size = 12) %>%
+  column_spec(1, bold = TRUE, width = "4em") %>%
+  column_spec(2, width = "12em") %>%
+  pack_rows("Phase 1: Data Preparation", 1, 5, label_row_css = "background-color: #E8F4F8;") %>%
+  pack_rows("Phase 2: Cross Section", 6, 12, label_row_css = "background-color: #FFF4E6;") %>%
+  pack_rows("Phase 3: Profile", 13, 17, label_row_css = "background-color: #E8F5E9;") %>%
+  pack_rows("Phase 4: Planform", 18, 24, label_row_css = "background-color: #F3E5F5;") %>%
+  pack_rows("Phase 5: Hydraulic Geometry", 25, 27, label_row_css = "background-color: #FCE4EC;") %>%
+  pack_rows("Phase 6: Hydraulics", 28, 31, label_row_css = "background-color: #E3F2FD;") %>%
+  pack_rows("Phase 7: Sediment", 32, 34, label_row_css = "background-color: #FFF3E0;") %>%
+  pack_rows("Phase 8: Assessment", 35, 37, label_row_css = "background-color: #F1F8E9;")
+```
+
+::: {.callout-note}
+This workflow includes all 37 tools from the FluvialGeomorph toolbox. Tool names and links point to the actual Python scripts in the GitHub repository.
+:::
+
+
