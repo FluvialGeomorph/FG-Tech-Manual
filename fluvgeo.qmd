@@ -2,20 +2,8 @@
 title: "fluvgeo R Package"
 format: html
 ---
----
-title: "fluvgeo Package"
-subtitle: "Fluvial Geomorphology Analysis Tools"
-author: "FluvialGeomorph Team"
-date: today
-format:
-  html:
-    toc: true
-    toc-depth: 3
-    toc-location: left
-    code-fold: show
-    code-tools: true
-    theme: cosmo
----
+
+
 
 ## Overview
 
