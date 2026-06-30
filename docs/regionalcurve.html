@@ -492,7 +492,7 @@ window.Quarto = {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Regional curves are empirical relationships between channel dimensions (bankfull width, depth, and cross-sectional area) and watershed drainage area or bankfull discharge. These relationships, first systematically documented by <span class="citation" data-cites="leopold1953hydraulic">Leopold and Maddock (<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">1953</a>)</span>, provide a powerful tool for stream assessment and restoration design by characterizing how channel size scales predictably with watershed size within physiographically similar regions.</p>
+<p>Regional curves are empirical relationships between channel dimensions (bankfull width, depth, and cross-sectional area) and watershed drainage area or bankfull discharge. These relationships, first systematically documented by <span class="citation" data-cites="leopold1953hydraulic">Leopold and Maddock (<a href="#ref-leopold1953hydraulic" role="doc-biblioref">1953</a>)</span>, provide a powerful tool for stream assessment and restoration design by characterizing how channel size scales predictably with watershed size within physiographically similar regions.</p>
 <p>Regional curves serve multiple purposes in fluvial geomorphic analysis:</p>
 <ul>
 <li><strong>Assessment</strong>: Compare existing channel dimensions to regional expectations</li>
@@ -501,7 +501,7 @@ window.Quarto = {
 <li><strong>Validation</strong>: Verify detailed design calculations</li>
 <li><strong>Prediction</strong>: Estimate dimensions at ungaged locations</li>
 </ul>
-<p>Traditional regional curve development has been limited by the cost and time required to survey sufficient sites to establish robust relationships <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span>. FluvialGeomorph addresses this limitation by enabling the integration of LiDAR-derived measurements with field validation data, dramatically expanding sample sizes while maintaining accuracy through strategic field verification.</p>
+<p>Traditional regional curve development has been limited by the cost and time required to survey sufficient sites to establish robust relationships <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span>. FluvialGeomorph addresses this limitation by enabling the integration of LiDAR-derived measurements with field validation data, dramatically expanding sample sizes while maintaining accuracy through strategic field verification.</p>
 <p>This chapter describes methods for developing regional curves that combine:</p>
 <ul>
 <li><strong>LiDAR-derived measurements</strong>: Providing large sample sizes and comprehensive spatial coverage</li>
@@ -514,7 +514,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="theoretical-foundation">Theoretical Foundation</h2>
 <section id="hydraulic-geometry-principles" class="level3">
 <h3 class="anchored" data-anchor-id="hydraulic-geometry-principles">Hydraulic Geometry Principles</h3>
-<p>Regional curves are based on the principle that channel dimensions adjust to accommodate the flow and sediment regime imposed by the watershed <span class="citation" data-cites="leopold1953hydraulic dunne1978water">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>; <a href="References.html#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span>. For streams in quasi-equilibrium within a physiographically similar region, channel dimensions scale predictably with drainage area:</p>
+<p>Regional curves are based on the principle that channel dimensions adjust to accommodate the flow and sediment regime imposed by the watershed <span class="citation" data-cites="leopold1953hydraulic dunne1978water">(<a href="#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>; <a href="#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span>. For streams in quasi-equilibrium within a physiographically similar region, channel dimensions scale predictably with drainage area:</p>
 <p><span class="math display">\[W_{bf} = aA^b\]</span></p>
 <p><span class="math display">\[D_{bf} = cA^f\]</span></p>
 <p><span class="math display">\[A_{bf} = kA^m\]</span></p>
@@ -531,7 +531,7 @@ window.Quarto = {
 <li><strong>Land use</strong>: Similar watershed disturbance patterns</li>
 <li><strong>Sediment supply</strong>: Comparable sediment sources and delivery</li>
 </ul>
-<p>Regional curves developed from stable, reference-quality streams represent the expected dimensions for channels in dynamic equilibrium with their flow and sediment regime <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span>.</p>
+<p>Regional curves developed from stable, reference-quality streams represent the expected dimensions for channels in dynamic equilibrium with their flow and sediment regime <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span>.</p>
 </section>
 <section id="drainage-area-as-surrogate" class="level3">
 <h3 class="anchored" data-anchor-id="drainage-area-as-surrogate">Drainage Area as Surrogate</h3>
@@ -548,7 +548,7 @@ window.Quarto = {
 </section>
 <section id="exponent-relationships" class="level3">
 <h3 class="anchored" data-anchor-id="exponent-relationships">Exponent Relationships</h3>
-<p>Theoretical considerations suggest relationships among exponents <span class="citation" data-cites="leopold1953hydraulic">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>)</span>:</p>
+<p>Theoretical considerations suggest relationships among exponents <span class="citation" data-cites="leopold1953hydraulic">(<a href="#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>)</span>:</p>
 <p><span class="math display">\[b + f = m\]</span></p>
 <p>This relationship reflects the fact that cross-sectional area equals width times depth. In practice, exponents derived from field data may not satisfy this relationship exactly due to measurement error and natural variability.</p>
 <p>Typical exponent ranges: - Width exponent (<span class="math inline">\(b\)</span>): 0.4-0.6 - Depth exponent (<span class="math inline">\(f\)</span>): 0.3-0.5 - Area exponent (<span class="math inline">\(m\)</span>): 0.7-1.0</p>
@@ -1025,7 +1025,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="step-9-validate-regional-curves">Step 9: Validate Regional Curves</h3>
 <p><strong>Independent Validation:</strong> - Reserve 20-30% of sites for validation - Apply curves to validation sites - Compare predicted vs.&nbsp;observed dimensions - Calculate validation statistics - Assess prediction accuracy</p>
 <p><strong>Cross-Validation:</strong> - Leave-one-out cross-validation - K-fold cross-validation - Calculate cross-validation error - Compare with model fit statistics</p>
-<p><strong>Comparison with Existing Curves:</strong> - Compare with published regional curves <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span> - Assess consistency or differences - Explain discrepancies (methods, time period, site selection) - Document relationship to existing work</p>
+<p><strong>Comparison with Existing Curves:</strong> - Compare with published regional curves <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span> - Assess consistency or differences - Explain discrepancies (methods, time period, site selection) - Document relationship to existing work</p>
 </section>
 <section id="step-10-document-and-publish" class="level3">
 <h3 class="anchored" data-anchor-id="step-10-document-and-publish">Step 10: Document and Publish</h3>
@@ -1094,14 +1094,14 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="citation" data-cites="harman1999bankfull">Harman et al. (<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">1999</a>)</span></td>
+<td><span class="citation" data-cites="harman1999bankfull">Harman et al. (<a href="#ref-harman1999bankfull" role="doc-biblioref">1999</a>)</span></td>
 <td>Field</td>
 <td>48</td>
 <td>0.46</td>
 <td>0.39</td>
 </tr>
 <tr class="even">
-<td><span class="citation" data-cites="doll2003hydraulic">Doll et al. (<a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">2003</a>)</span></td>
+<td><span class="citation" data-cites="doll2003hydraulic">Doll et al. (<a href="#ref-doll2003hydraulic" role="doc-biblioref">2003</a>)</span></td>
 <td>Field</td>
 <td>87</td>
 <td>0.50</td>
@@ -1170,7 +1170,7 @@ window.Quarto = {
 <section id="key-points" class="level3">
 <h3 class="anchored" data-anchor-id="key-points">Key Points</h3>
 <ol type="1">
-<li><p><strong>Regional curves provide powerful tools</strong> for stream assessment and design, characterizing expected channel dimensions based on drainage area <span class="citation" data-cites="leopold1953hydraulic dunne1978water">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>; <a href="References.html#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span></p></li>
+<li><p><strong>Regional curves provide powerful tools</strong> for stream assessment and design, characterizing expected channel dimensions based on drainage area <span class="citation" data-cites="leopold1953hydraulic dunne1978water">(<a href="#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>; <a href="#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span></p></li>
 <li><p><strong>LiDAR dramatically expands sample sizes</strong> from typical 20-50 sites to 100-200+ sites, improving statistical robustness and regional coverage</p></li>
 <li><p><strong>Field validation is essential</strong> to verify LiDAR-derived measurements and establish accuracy, typically requiring 20-30 validation sites</p></li>
 <li><p><strong>Integration of LiDAR and field data</strong> leverages the strengths of both approaches: comprehensive coverage from LiDAR and accuracy from field surveys</p></li>
@@ -1195,7 +1195,7 @@ window.Quarto = {
 <p>The integration of LiDAR-derived measurements with field validation data represents a significant advance in regional curve development, enabling more robust relationships based on larger sample sizes while maintaining accuracy through strategic field verification. FluvialGeomorph provides the tools to efficiently implement this integrated approach, supporting improved stream assessment and restoration design across watersheds and regions.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-doll2003hydraulic" class="csl-entry" role="listitem">
 Doll, Barbara A., D. E. Wise-Frederick, C. M. Buckner, S. D. Wilkerson, W. A. Harman, R. E. Smith, and J. Spooner. 2003. <span>“Hydraulic Geometry Relationships for Urban Streams Throughout the <span>Piedmont</span> of <span>North Carolina</span>.”</span> <em>Journal of the American Water Resources Association</em> 38 (3): 641–51. <a href="https://doi.org/10.1111/j.1752-1688.2003.tb03683.x">https://doi.org/10.1111/j.1752-1688.2003.tb03683.x</a>.
 </div>
