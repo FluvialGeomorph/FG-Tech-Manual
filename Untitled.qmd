@@ -1,6 +1,6 @@
-
 ---
 title: "Regional Curve"
+format: html
 ---
 
 ## Overview
@@ -30,7 +30,7 @@ $$A_{bf} = kA^m$$
 Where:
 
 - $W_{bf}$ = bankfull width (m or ft)
-- $D_{bf}$ = bankfull mean depth (m or ft)
+- $D_{bf}$ = bankfull mean depth (m or ft)  
 - $A_{bf}$ = bankfull cross-sectional area (m² or ft²)
 - $A$ = drainage area (km² or mi²)
 - $a$, $c$, $k$ = coefficients (intercepts)
@@ -85,7 +85,6 @@ FluvialGeomorph regional curve functions require a data frame with the following
 
 Use FluvialGeomorph cross-section analysis functions to extract bankfull dimensions:
 
-```{r}
 #| eval: false
 
 library(fluvialgeomorph)
@@ -97,7 +96,6 @@ xs_dimensions <- xs_dimensions(xs,
 
 # Aggregate to reach-scale means
 reach_dims <- xs_reach_dimensions(xs_dimensions)
-```
 
 The `xs_dimensions` function calculates:
 
@@ -111,7 +109,6 @@ The `xs_dimensions` function calculates:
 
 Combine reach-scale dimensions from multiple sites into a regional curve dataset:
 
-```{r}
 #| eval: false
 
 # Create regional curve dataset
@@ -127,13 +124,11 @@ rc_data <- data.frame(
 # View dataset structure
 str(rc_data)
 head(rc_data)
-```
 
 ### Step 3: Quality Control and Screening
 
 Apply quality control procedures to the regional dataset:
 
-```{r}
 #| eval: false
 
 # Summary statistics
@@ -148,13 +143,11 @@ outliers <- rc_data[abs(rc_data$width_zscore) > 3, ]
 
 # Remove outliers if justified
 rc_data_clean <- rc_data[abs(rc_data$width_zscore) <= 3, ]
-```
 
 ### Step 4: Develop Regional Curves
 
 Use FluvialGeomorph functions to develop regional curve relationships:
 
-```{r}
 #| eval: false
 
 # Develop width regional curve
@@ -174,7 +167,6 @@ depth_curve <- regional_curve(rc_data_clean, "bankfull_depth_m",
                              "Drainage_Area_km2")
 area_curve <- regional_curve(rc_data_clean, "bankfull_area_m2",
                             "Drainage_Area_km2")
-```
 
 The `regional_curve` function:
 
@@ -188,7 +180,6 @@ The `regional_curve` function:
 
 Assess regional curve quality using diagnostic functions:
 
-```{r}
 #| eval: false
 
 # Goodness of fit statistics
@@ -202,7 +193,6 @@ plot(rc_residuals)
 # Check regression assumptions
 par(mfrow = c(2, 2))
 plot(width_curve$model)
-```
 
 Key statistics to evaluate:
 
@@ -215,7 +205,6 @@ Key statistics to evaluate:
 
 Create publication-quality regional curve plots:
 
-```{r}
 #| eval: false
 
 # Basic regional curve plot
@@ -242,13 +231,11 @@ par(mfrow = c(1, 3))
 plot_regional_curve(width_curve, main = "Width")
 plot_regional_curve(depth_curve, main = "Depth")
 plot_regional_curve(area_curve, main = "Area")
-```
 
 ### Step 7: Apply Regional Curves
 
 Use developed curves to predict dimensions at new sites:
 
-```{r}
 #| eval: false
 
 # Predict dimensions for new drainage areas
@@ -275,13 +262,11 @@ rc_data_clean$residual <- rc_data_clean$bankfull_width_m -
 # Calculate percent difference
 rc_data_clean$percent_diff <- 100 * rc_data_clean$residual / 
                               rc_data_clean$predicted_width
-```
 
 ### Step 8: Export Results
 
 Export regional curve parameters and predictions:
 
-```{r}
 #| eval: false
 
 # Export curve coefficients
@@ -311,7 +296,6 @@ write.csv(predictions, "regional_curve_predictions.csv",
 # Export dataset with predictions
 write.csv(rc_data_clean, "regional_curve_dataset.csv",
          row.names = FALSE)
-```
 
 ## Advanced Applications
 
@@ -319,7 +303,6 @@ write.csv(rc_data_clean, "regional_curve_dataset.csv",
 
 Develop separate curves for different regions or channel types:
 
-```{r}
 #| eval: false
 
 # Stratify by region
@@ -336,13 +319,11 @@ names(region_curves) <- regions
 # Compare regional curves
 plot_regional_curves_comparison(region_curves, 
                                legend_labels = regions)
-```
 
 ### Validation Analysis
 
 Validate regional curves using independent datasets:
 
-```{r}
 #| eval: false
 
 # Split data into calibration and validation sets
@@ -368,13 +349,11 @@ validation_stats <- data.frame(
 )
 
 print(validation_stats)
-```
 
 ### Comparison with Existing Curves
 
 Compare FluvialGeomorph-derived curves with published regional curves:
 
-```{r}
 #| eval: false
 
 # Define published curve parameters
@@ -400,13 +379,11 @@ comparison_plot <- ggplot(rc_data_clean,
   theme_minimal()
 
 print(comparison_plot)
-```
 
 ### Uncertainty Analysis
 
 Quantify and visualize prediction uncertainty:
 
-```{r}
 #| eval: false
 
 # Calculate prediction intervals
@@ -430,13 +407,11 @@ print(paste(nrow(outside_sites), "sites outside 95% prediction interval"))
 plot_regional_curve_uncertainty(width_curve,
                                data = rc_data_clean,
                                highlight_outliers = TRUE)
-```
 
-### Regional Curve Reports
+## Regional Curve Reports
 
 Generate comprehensive regional curve reports:
 
-```{r}
 #| eval: false
 
 # Create regional curve report
@@ -452,7 +427,6 @@ regional_curve_report(
   include_diagnostics = TRUE,
   include_validation = TRUE
 )
-```
 
 The report includes:
 
@@ -521,7 +495,6 @@ The report includes:
 
 ## Example: Complete Workflow
 
-```{r}
 #| eval: false
 
 # Load FluvialGeomorph
@@ -572,18 +545,16 @@ regional_curve_report(
   data = rc_data_clean,
   output_file = "regional_curve_report.html"
 )
-```
 
 ## Summary
 
 FluvialGeomorph provides a comprehensive toolkit for regional curve development and application:
 
-- Automated extraction of bankfull dimensions from cross-sections
-- Data management functions for organizing regional datasets
-- Statistical analysis tools for developing robust relationships
-- Visualization functions for publication-quality plots
-- Application tools for predicting dimensions and assessing conditions
-- Reporting capabilities for documenting results
+- **Automated extraction** of bankfull dimensions from cross-sections
+- **Data management** functions for organizing regional datasets
+- **Statistical analysis** tools for developing robust relationships
+- **Visualization** functions for publication-quality plots
+- **Application** tools for predicting dimensions and assessing conditions
+- **Reporting** capabilities for documenting results
 
 Regional curves developed with FluvialGeomorph support stream assessment and restoration design by providing empirical relationships between channel dimensions and drainage area, enabling rapid screening of channel conditions and preliminary design guidance across watersheds and regions.
-```

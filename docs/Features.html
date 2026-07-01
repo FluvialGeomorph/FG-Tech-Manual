@@ -290,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./regionalcurve.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve R Package</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -337,7 +337,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./codediagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Tools &amp; Dependencies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Analysis Process and Tool Dependencies</span></span></a>
   </div>
 </li>
       </ul>
@@ -492,7 +492,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="dem-hydro-raster" class="level3">
 <h3 class="anchored" data-anchor-id="dem-hydro-raster">Hydro Modified DEM Raster</h3>
-<p>Before the <code>dem</code> terrain model raster can be used for synthetically deriving stream features, it must first be hydrologically modified using the <code>cutlines</code> feature class to “burn” flow paths into the <code>dem</code> raster. The <a href="#hydro-dem-tool"><code>02 - Hydro DEM</code></a> tool creates a “hydro-enforced” DEM named <code>dem_hydro</code> using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#hydro-modify-dem">user manual</a>.</p>
+<p>Before the <code>dem</code> terrain model raster can be used for synthetically deriving stream features, it must first be hydrologically modified using the <code>cutlines</code> feature class to “burn” flow paths into the <code>dem</code> raster. The <a href="Toolbox.html#hydro-dem-tool"><code>02 - Hydro DEM</code></a> tool creates a “hydro-enforced” DEM named <code>dem_hydro</code> using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#hydro-modify-dem">user manual</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -778,7 +778,7 @@ Table: Watershed Fields.
 </section>
 <section id="flowline-points-fc" class="level3">
 <h3 class="anchored" data-anchor-id="flowline-points-fc">Flowline Points</h3>
-<p>The <a href="#flowline-points-tool"><code>06 - Flowline Points</code></a> tool creates the <code>flowline_points</code> point feature class and is used to represent regularly spaced points along a <code>flowline</code> feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-flowline-points">user manual</a>. These <code>flowline_points</code> features are used to store elevation and route position (longitudinal stream stationing) information for a <code>flowline</code> feature. <code>flowline_points</code> are used to calculate a series of stream longitudinal dimensions.</p>
+<p>The <a href="Toolbox.html#flowline-points-tool"><code>06 - Flowline Points</code></a> tool creates the <code>flowline_points</code> point feature class and is used to represent regularly spaced points along a <code>flowline</code> feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-flowline-points">user manual</a>. These <code>flowline_points</code> features are used to store elevation and route position (longitudinal stream stationing) information for a <code>flowline</code> feature. <code>flowline_points</code> are used to calculate a series of stream longitudinal dimensions.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -842,7 +842,7 @@ Table: Watershed Fields.
 </section>
 <section id="detrend-raster" class="level3">
 <h3 class="anchored" data-anchor-id="detrend-raster">Relative Elevation Model Raster</h3>
-<p>The <a href="#detrend-dem-tool"><code>07 - REM</code></a> tool creates the <code>detrend</code> raster dataset using these instruction from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#detrend-dem">user manual</a>. The <code>detrend</code> raster is a relative elevation model where the downstream slope of the <code>dem_hydro</code> has been removed.</p>
+<p>The <a href="Toolbox.html#detrend-dem-tool"><code>07 - REM</code></a> tool creates the <code>detrend</code> raster dataset using these instruction from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#detrend-dem">user manual</a>. The <code>detrend</code> raster is a relative elevation model where the downstream slope of the <code>dem_hydro</code> has been removed.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -912,7 +912,7 @@ Table: Water Surface Extent Fields.
 </section>
 <section id="regular-xs-fc" class="level3">
 <h3 class="anchored" data-anchor-id="regular-xs-fc">Regular Cross Sections</h3>
-<p>The <a href="#xs-layout-tool"><code>11 - XS Layout</code></a> tool is used to create a regularly spaced cross section <code>xs_*</code> polyline feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-cross-sections-only-for-newest-dataset">user manual</a>. Cross sections are polyline feature classes drawn perpendicular to the <code>flowline</code> feature and are long enough to extend across some portion of the channel and floodplain. Cross section features are used to define channel cross section dimensions. Regular cross sections are spaced equal distances longitudinally along the <code>flowline</code>. Regularly spaced cross sections are used to sample conditions within a stream reach to display a continuous series of values and calculate aggregate stream values.</p>
+<p>The <a href="Toolbox.html#xs-layout-tool"><code>11 - XS Layout</code></a> tool is used to create a regularly spaced cross section <code>xs_*</code> polyline feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-cross-sections-only-for-newest-dataset">user manual</a>. Cross sections are polyline feature classes drawn perpendicular to the <code>flowline</code> feature and are long enough to extend across some portion of the channel and floodplain. Cross section features are used to define channel cross section dimensions. Regular cross sections are spaced equal distances longitudinally along the <code>flowline</code>. Regularly spaced cross sections are used to sample conditions within a stream reach to display a continuous series of values and calculate aggregate stream values.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -1166,7 +1166,7 @@ Table: Water Surface Extent Fields.
 </section>
 <section id="xs-points-fc" class="level3">
 <h3 class="anchored" data-anchor-id="xs-points-fc">Cross Section Points</h3>
-<p>The <a href="#xs-points-tool"><code>14 - XS Points</code></a> tool creates the <code>*_points</code> points feature class using these instructions from the user manual for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#xs-points">Level 1</a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-2-2.html#xs-points">Level 2</a>. Cross sections polyline feature classes (i.e., regularly spaced cross sections and riffle cross sections: <code>riffle_floodplain</code>, <code>riffle_channel</code>) can be converted to a set of regularly spaced points along the cross section. These points are used to store elevation and route position (lateral stream stationing) information for a cross section feature class. Cross section points are used to calculate a series of cross section dimensions.</p>
+<p>The <a href="Toolbox.html#xs-points-tool"><code>14 - XS Points</code></a> tool creates the <code>*_points</code> points feature class using these instructions from the user manual for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#xs-points">Level 1</a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-2-2.html#xs-points">Level 2</a>. Cross sections polyline feature classes (i.e., regularly spaced cross sections and riffle cross sections: <code>riffle_floodplain</code>, <code>riffle_channel</code>) can be converted to a set of regularly spaced points along the cross section. These points are used to store elevation and route position (lateral stream stationing) information for a cross section feature class. Cross section points are used to calculate a series of cross section dimensions.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -1302,9 +1302,9 @@ Table: Water Surface Extent Fields.
 <h3 class="anchored" data-anchor-id="xs-dimensions-fc">Cross Section Dimensions</h3>
 <p>Cross section dimension polyline feature classes are used to store the hydraulic dimensions calculated for each cross section. Since the FluvialGeomorph workflow is divided into three levels, cross section dimensions are calculated at each level. Each level allows for an increasingly complex set of dimensions to be calculated, with each level building on the complexity of the previous level. There are three cross section dimension feature classes, one for each level <code>*_dims_L1</code>, <code>*_dims_L2</code>, and <code>*_dims_L3</code>. Cross section dimensions are calculated using the following tools:</p>
 <ul>
-<li><strong>Level 1 Dimensions</strong> - The <a href="#xs-dimensions-L1-tool"><code>15a XS Dimensions, Level 1</code></a> tool creates the <code>*_dims_L1</code> feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#xs-dimensions-level-1">user manual</a>.</li>
-<li><strong>Level 2 Dimensions</strong> - The <a href="#xs-dimensions-L2-tool"><code>15b XS Dimensions, Level 2</code></a> tool creates the <code>*_dims_L2</code> feature class using these instructions from the user manual for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-2-2.html#l2-xs-dimensions">L2 Initial</a>.</li>
-<li><strong>Level 3 Dimensions</strong> - The <a href="#xs-dimensions-L3-tool"><code>15c XS Planform, Level 3</code></a> tool creates the <code>*_dims_L3</code> feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#calculate-cross-section-l3-dimensions">user manual</a>.</li>
+<li><strong>Level 1 Dimensions</strong> - The <a href="Toolbox.html#xs-dimensions-L1-tool"><code>15a XS Dimensions, Level 1</code></a> tool creates the <code>*_dims_L1</code> feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#xs-dimensions-level-1">user manual</a>.</li>
+<li><strong>Level 2 Dimensions</strong> - The <a href="Toolbox.html#xs-dimensions-L2-tool"><code>15b XS Dimensions, Level 2</code></a> tool creates the <code>*_dims_L2</code> feature class using these instructions from the user manual for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-2-2.html#l2-xs-dimensions">L2 Initial</a>.</li>
+<li><strong>Level 3 Dimensions</strong> - The <a href="Toolbox.html#xs-dimensions-L3-tool"><code>15c XS Planform, Level 3</code></a> tool creates the <code>*_dims_L3</code> feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#calculate-cross-section-l3-dimensions">user manual</a>.</li>
 </ul>
 <p>Cross section dimensions can be calculated for the various types of cross sections (regular cross sections or riffle cross sections). The name of the cross section feature for which dimensions were calculated is prepended to the output dimension feature class. Metrics calculated at previous levels are included in the attribute table of each dimension feature class. Therefore, to avoid repetition only the new fields calculated at each level are included in the tables of fields in this section. The attributes of the original cross section feature class are also omitted since they depend on the cross section type used.</p>
 <div class="cell">
@@ -1877,7 +1877,7 @@ Table: Water Surface Extent Fields.
 </section>
 <section id="bankline-points-fc" class="level3">
 <h3 class="anchored" data-anchor-id="bankline-points-fc">Bankline Points</h3>
-<p>The <a href="#bankline-points-tool"><code>14b - Bankline Points</code></a> tool creates the <code>bankline_points</code> point feature class using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#derive-bankline-points">user manual</a>. The <code>bankline_points</code> point feature class is a set of regularly spaced point features located along each <code>banklines</code> feature. These points are used to store elevation and route position (longitudinal bankline stationing) information for each bankline.</p>
+<p>The <a href="Toolbox.html#bankline-points-tool"><code>14b - Bankline Points</code></a> tool creates the <code>bankline_points</code> point feature class using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#derive-bankline-points">user manual</a>. The <code>bankline_points</code> point feature class is a set of regularly spaced point features located along each <code>banklines</code> feature. These points are used to store elevation and route position (longitudinal bankline stationing) information for each bankline.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
