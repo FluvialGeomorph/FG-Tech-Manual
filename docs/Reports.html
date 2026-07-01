@@ -290,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./regionalcurve.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve R Package</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -337,7 +337,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./codediagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Tools &amp; Dependencies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Analysis Process and Tool Dependencies</span></span></a>
   </div>
 </li>
       </ul>
@@ -385,7 +385,7 @@ ul.task-list li input[type="checkbox"] {
 <p>FluvialGeomorph produces a series of reports that help to define stream conditions.</p>
 <section id="longitudinal-profile-compare-graph" class="level3">
 <h3 class="anchored" data-anchor-id="longitudinal-profile-compare-graph"><code>Graph - Longitudinal Profile Compare</code></h3>
-<p>This graph is produced using the <a href="#longitudinal-profile-compare-graph-tool"><code>Graph - Longitudinal Profile Compare</code></a> tool.</p>
+<p>This graph is produced using the <a href="Toolbox.html#longitudinal-profile-compare-graph-tool"><code>Graph - Longitudinal Profile Compare</code></a> tool.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -409,9 +409,9 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
 <ul>
-<li>Longitudinal Profile - This longitudinal profile graph is created from the <a href="#flowline-points-fc"><code>flowline_points</code></a> feature class for several surveys if available. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/compare_long_profile.R"><code>fluvgeo::compare_long_profile.R</code></a>.<br>
+<li>Longitudinal Profile - This longitudinal profile graph is created from the <a href="Features.html#flowline-points-fc"><code>flowline_points</code></a> feature class for several surveys if available. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/compare_long_profile.R"><code>fluvgeo::compare_long_profile.R</code></a>.<br>
 </li>
-<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="#regular-xs-fc">regular cross sections</a> feature class. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/compare_xs_long_profile.R"><code>fluvgeo::compare_xs_long_profile</code></a>.</li>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="Features.html#regular-xs-fc">regular cross sections</a> feature class. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/compare_xs_long_profile.R"><code>fluvgeo::compare_xs_long_profile</code></a>.</li>
 </ul></li>
 <li><strong>Cross Section Metrics</strong> - This section displays metrics for the cross sections of a stream reach.
 <ul>
@@ -436,7 +436,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="estimate-bankfull-report" class="level3">
 <h3 class="anchored" data-anchor-id="estimate-bankfull-report"><code>Report - L2 Estimate Bankfull</code></h3>
-<p><strong>Purpose</strong> - The Estimate Bankfull Report is used to help estimate the bankfull water surface elevation for an ungaged stream with the assistance of regional curves and visual observation of geomorphic indicators from LiDAR surveys. This report is produced using the <a href="#estimate-bankfull-report-tool"><code>Report - L2 Estimate Bankfull</code></a> tool using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#estimate-bankfull">user manual</a>.</p>
+<p><strong>Purpose</strong> - The Estimate Bankfull Report is used to help estimate the bankfull water surface elevation for an ungaged stream with the assistance of regional curves and visual observation of geomorphic indicators from LiDAR surveys. This report is produced using the <a href="Toolbox.html#estimate-bankfull-report-tool"><code>Report - L2 Estimate Bankfull</code></a> tool using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#estimate-bankfull">user manual</a>.</p>
 <p><strong>Code</strong> - This report is created by the <a href="https://bookdown.org/yihui/rmarkdown/parameterized-reports.html">R Markdown parameterized report</a> in the R package <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/estimate_bankfull_report.Rmd"><code>fluvgeo/reports/estimate_bankfull_report.Rmd</code></a>.</p>
 <p>This report contains the follow sections:</p>
 <ul>
@@ -452,7 +452,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
 <ul>
-<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="#riffle-xs-fc"><code>riffle_channel</code></a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="Features.html#riffle-xs-fc"><code>riffle_channel</code></a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
 </ul></li>
 <li><strong>Cross Section Metrics</strong> - This section displays metrics the Level 2 metrics for the riffle cross sections of a stream reach.
 <ul>
@@ -479,7 +479,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="L2-report" class="level3">
 <h3 class="anchored" data-anchor-id="L2-report"><code>Report - L2</code></h3>
-<p><strong>Purpose</strong> - The Level 2 Report contains a set of maps and graphs that describe the Level 2 channel dimensions calculated at the specified bankfull elevation, estimated using the <a href="#estimate-bankfull-report">L2 Estimate Bankfull Report</a>. This report is produced using the <a href="#L2-report-tool"><code>Report - L2</code></a> tool using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#run-report-1">user manual</a>.</p>
+<p><strong>Purpose</strong> - The Level 2 Report contains a set of maps and graphs that describe the Level 2 channel dimensions calculated at the specified bankfull elevation, estimated using the <a href="#estimate-bankfull-report">L2 Estimate Bankfull Report</a>. This report is produced using the <a href="Toolbox.html#L2-report-tool"><code>Report - L2</code></a> tool using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#run-report-1">user manual</a>.</p>
 <p><strong>Code</strong> - This report is created by the <a href="https://bookdown.org/yihui/rmarkdown/parameterized-reports.html">R Markdown parameterized report</a> in the R package <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_2_report.Rmd"><code>fluvgeo/reports/level_2_report.Rmd</code></a>.</p>
 <p>This report contains the following sections:</p>
 <ul>
@@ -489,7 +489,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
 <ul>
-<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="#xs-dimensions-fc">Level 2 cross section dimensions</a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="Features.html#xs-dimensions-fc">Level 2 cross section dimensions</a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
 </ul></li>
 <li><strong>Cross Section Metrics</strong> - This section displays metrics for the Level 2 dimensions calculated for the regular cross sections of a stream reach.
 <ul>
@@ -518,7 +518,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="L3-report" class="level3">
 <h3 class="anchored" data-anchor-id="L3-report"><code>Report - L3</code></h3>
-<p><strong>Purpose</strong> - The Level 3 Report contains a set of maps and graphs that describe the Level 3 channel dimensions calculated at the specified bankfull elevation, estimated using the <a href="#estimate-bankfull-report">L2 Estimate Bankfull Report</a>. This report is produced using the <a href="#L3-report-tool"><code>Report - L3</code></a> tool using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#run-report-2">user manual</a>.</p>
+<p><strong>Purpose</strong> - The Level 3 Report contains a set of maps and graphs that describe the Level 3 channel dimensions calculated at the specified bankfull elevation, estimated using the <a href="#estimate-bankfull-report">L2 Estimate Bankfull Report</a>. This report is produced using the <a href="Toolbox.html#L3-report-tool"><code>Report - L3</code></a> tool using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#run-report-2">user manual</a>.</p>
 <p><strong>Code</strong> - This report is created by the <a href="https://bookdown.org/yihui/rmarkdown/parameterized-reports.html">R Markdown parameterized report</a> in the R package <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_3_report.Rmd"><code>fluvgeo/reports/level_3_report.Rmd</code></a>.</p>
 <p>This report contains the following sections:</p>
 <ul>
@@ -528,7 +528,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><strong>Longitudinal Profile</strong> - This section displays the elevation (y-axis) of the stream reach along its length (x-axis) beginning from the downstream end of the reach moving upstream (typically referred to as a longitudinal profile).
 <ul>
-<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="#xs-dimensions-fc">Level 3 cross section dimensions</a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
+<li>XS Longitudinal Profile - This longitudinal profile graph is created using a <a href="Features.html#xs-dimensions-fc">Level 3 cross section dimensions</a> feature class for the survey used to generate the bankfull estimate. This figure is produced by the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/xs_profile_plot.R"><code>fluvgeo::xs_profile_plot</code></a>.</li>
 </ul></li>
 <li><strong>Cross Section Metrics</strong> - This section displays metrics for the Level 3 dimensions calculated for the regular cross sections of a stream reach.
 <ul>
