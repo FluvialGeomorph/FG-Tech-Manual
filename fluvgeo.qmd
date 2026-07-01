@@ -3,7 +3,7 @@ title: "fluvgeo R Package"
 format: html
 ---
 
-
+{{< badge theory >}}
 
 ## Overview
 

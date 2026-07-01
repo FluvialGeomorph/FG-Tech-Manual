@@ -3,4 +3,6 @@ title: "Floodplain Connectivity RAT"
 format: html
 ---
 
+{{< badge practical >}}
+
 In progress.

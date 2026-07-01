@@ -1,4 +1,7 @@
 # Tutorial Data {#tutorial_data}
+
+{{< badge practical >}} {{< badge resource >}}
+
 This chapter describes how to download the tutorial data and configure your workspace. 
 
 ## Map Templates  

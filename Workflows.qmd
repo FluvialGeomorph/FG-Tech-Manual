@@ -1,5 +1,7 @@
 # Workflows
 
+{{< badge practical >}}
+
 ## Developing Regional Curves
 
 ## Watershed Analysis

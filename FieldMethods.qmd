@@ -1,5 +1,7 @@
 # Field Methods {#sec-field-methods}
 
+{{< badge reference >}} {{< badge resource >}}
+
 ## Overview
 
 Stream channel surveys provide the fundamental data for fluvial geomorphic analysis. Traditionally, these surveys have been conducted using ground-based methods with survey crews physically measuring channel dimensions in the field. The advent of high-resolution LiDAR (Light Detection and Ranging) technology has transformed stream surveying by enabling rapid, cost-effective extraction of channel geometry across large spatial extents.

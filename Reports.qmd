@@ -1,4 +1,7 @@
 # Reports
+
+{{< badge reference >}} {{< badge practical >}} {{< badge theory >}}
+
 FluvialGeomorph produces a series of reports that help to define stream conditions. 
 
 

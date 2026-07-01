@@ -3,6 +3,8 @@
 title: "Regional Curve"
 ---
 
+{{< badge theory >}}
+
 ## Overview
 
 Regional curves are empirical relationships between channel dimensions (bankfull width, depth, and cross-sectional area) and watershed drainage area. These power-law relationships provide a tool for stream assessment and restoration design by characterizing how channel size scales predictably with watershed size within physiographically similar regions.

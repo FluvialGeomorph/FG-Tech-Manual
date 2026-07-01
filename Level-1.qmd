@@ -2,7 +2,8 @@
 title: "Level-1 Initial Channel Analysis Workflow"
 format: html
 ---
-{{< badge theory >}}
+{{< badge practical >}} {{< badge theory >}}
+
 ## Level 1 Workflow
 This chapter describes the workflow processes to complete a Level 1 (L1) FluvialGeomorph analysis. The purpose of this level is to extract basic channel dimensions from LiDAR surveys. Developing terrain models for the project study area for all available LiDAR survey events.Multiple survey events provide comparable channel dimensions for a reach overtime.
 

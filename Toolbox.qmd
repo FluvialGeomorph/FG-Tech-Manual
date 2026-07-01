@@ -5,6 +5,8 @@ library(dplyr)
 library(magrittr)
 ```
 
+{{< badge reference >}} {{< badge theory >}}
+
 ```{r import, include=FALSE}
 params_df <- read.csv("parameters.csv")
 ```

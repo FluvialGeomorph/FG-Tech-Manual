@@ -2,7 +2,8 @@
 title: "Level-2-EB Estimate Bankfull Analysis Workflow"
 format: html
 ---
-{{< badge theory >}}
+{{< badge practical >}} {{< badge theory >}}
+
 ## Level 2 Workflow
 This chapter describes the workflow steps necessary to complete a Level 2 (L2) FluvialGeomorph analysis. The purpose of this level is to calculate bankfull channel dimensions.  
 

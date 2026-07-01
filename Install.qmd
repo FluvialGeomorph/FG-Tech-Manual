@@ -1,5 +1,7 @@
 # Install
 
+{{< badge practical >}} {{< badge resource >}}
+
 This chapter describes the requirements for installing and configuring the FluvialGeomorph toolbox and its required software components. There is more detailed information here than the user manual for requirement and configuration than the user manual.
 
 

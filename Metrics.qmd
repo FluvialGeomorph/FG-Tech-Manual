@@ -2,7 +2,7 @@
 
 ## Level 1
 
-
+{{< badge theory >}} {{< badge reference >}}
 
 ### Drainage Area {#sec-drainage-area}
 

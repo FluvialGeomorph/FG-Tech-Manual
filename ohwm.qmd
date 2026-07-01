@@ -3,4 +3,6 @@ title: "Ordinary Highwater Mark RAT"
 format: html
 ---
 
+{{< badge practical >}}
+
 In progress.

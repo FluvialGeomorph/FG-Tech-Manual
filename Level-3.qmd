@@ -2,7 +2,8 @@
 title: "Level-3 Planform Analysis Workflow"
 format: html
 ---
-{{< badge theory >}}
+{{< badge practical >}} {{< badge theory >}}
+
 ## Level 3 Workflow
 This chapter describes the workflow steps necessary to complete a Level 3 (L3) FluvialGeomorph analysis. The purpose of this level is to extract planform dimensions. 
 
