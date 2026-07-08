@@ -5,8 +5,9 @@ format: html
 
 {{< badge resource >}}
 
-# Which Manual Do I Need?
+## Which Manual Do I Need?
 The FluvialGeomorph 
+
 ## Quick Decision Flowchart
 
 ```{mermaid}

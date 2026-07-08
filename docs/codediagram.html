@@ -69,10 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-
-<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 
 
 <link rel="stylesheet" href="styles.css">
@@ -293,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./regionalcurve.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve R Package</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -356,10 +352,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#critical-thinking-in-fluvialgeomorph-analysis" id="toc-critical-thinking-in-fluvialgeomorph-analysis" class="nav-link" data-scroll-target="#critical-thinking-in-fluvialgeomorph-analysis">Critical Thinking in FluvialGeomorph Analysis</a></li>
   <li><a href="#interactive-workflow-diagram" id="toc-interactive-workflow-diagram" class="nav-link" data-scroll-target="#interactive-workflow-diagram">Interactive Workflow Diagram</a></li>
   <li><a href="#tool-reference-table" id="toc-tool-reference-table" class="nav-link" data-scroll-target="#tool-reference-table">Tool Reference Table</a></li>
-  <li><a href="#key-considerations" id="toc-key-considerations" class="nav-link" data-scroll-target="#key-considerations">Key Considerations</a></li>
   </ul>
 </nav>
     </div>
@@ -537,12 +531,12 @@ ul.task-list li input[type="checkbox"] {
 .critical-thinking {
     background: #fffbf0;
     border-left: 4px solid #f39c12;
-    padding: 20px;
-    margin: 20px 0 30px 0;
+    padding: 15px;
+    margin: 15px 0;
     border-radius: 4px;
 }
 
-.critical-thinking h3 {
+.critical-thinking h4 {
     color: #f39c12;
     margin-top: 0;
 }
@@ -569,106 +563,50 @@ How to Use
 </div>
 </div>
 </section>
-<section id="critical-thinking-in-fluvialgeomorph-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="critical-thinking-in-fluvialgeomorph-analysis">Critical Thinking in FluvialGeomorph Analysis</h2>
+<section id="interactive-workflow-diagram" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-workflow-diagram">Interactive Workflow Diagram</h2>
+<div class="workflow-container">
+<section id="phase-1-data-preparation-critical-spatial-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-data-preparation-critical-spatial-analysis">Phase 1: Data Preparation &amp; Critical Spatial Analysis</h3>
 <div class="critical-thinking">
-<h3 class="anchored">
-🤔 Think Before You Click
-</h3>
-<p>Valley bottom delineation is <strong>not a push-button analysis</strong>. Success requires careful consideration of your landscape, data quality, and analytical goals before running any tools. This workflow emphasizes critical spatial thinking at every step.</p>
-<p><strong>Key Questions to Consider Throughout:</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Watershed Context</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">DEM Quality</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Stream Network</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Valley Definition</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<h4 class="anchored">
+🤔 Critical Thinking Required
+</h4>
+<p><strong>Before running tools, consider:</strong></p>
+<ol type="1">
+<li><strong>Watershed Boundary Assessment</strong>
 <ul>
 <li>Does your watershed boundary accurately represent the hydrologic unit?</li>
 <li>Are there edge effects or artifacts from the delineation process?</li>
 <li>Do you need to buffer or expand the boundary for context?</li>
-<li>How do upstream conditions influence your study area?</li>
-</ul>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+</ul></li>
+<li><strong>DEM Quality Evaluation</strong>
 <ul>
-<li>Is the resolution appropriate for your stream scale?</li>
-<li>What artifacts exist (pits, flat areas, bridges, culverts)?</li>
-<li>Is vertical accuracy sufficient for subtle geomorphic features?</li>
+<li>Resolution appropriate for your stream scale?</li>
+<li>Artifacts (pits, flat areas, bridges, culverts)?</li>
+<li>Vertical accuracy sufficient for subtle geomorphic features?</li>
 <li>Do you need to condition the DEM (breach, fill sinks)?</li>
-<li>When was the LiDAR collected? Has the landscape changed?</li>
-</ul>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+</ul></li>
+<li><strong>Stream Network Decisions</strong>
 <ul>
 <li>Using existing mapped streams vs.&nbsp;deriving from DEM?</li>
 <li>If mapped: Are they accurate? Complete? At appropriate scale?</li>
 <li>If derived: What flow accumulation threshold represents actual channels?</li>
 <li>How do you handle intermittent vs.&nbsp;perennial streams?</li>
-<li>Does the network match what you see in aerial imagery?</li>
-</ul>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+</ul></li>
+<li><strong>Valley Bottom Conceptualization</strong>
 <ul>
-<li>What defines “valley bottom” in <strong>your</strong> landscape?</li>
+<li>What defines “valley bottom” in your landscape?</li>
 <li>Floodplain? Terrace? Active channel migration zone?</li>
 <li>How wide should the valley be in different stream orders?</li>
-<li>Are you mapping geomorphic features or regulatory boundaries?</li>
-<li>What time scale are you considering (modern, Holocene, Pleistocene)?</li>
-</ul>
+</ul></li>
+</ol>
 </div>
-</div>
-</div>
-<p><strong>Remember:</strong> The tools execute your decisions. Your expertise in geomorphology, hydrology, and local conditions determines the quality of the results. Validate, iterate, and document your reasoning.</p>
-</div>
-</section>
-<section id="interactive-workflow-diagram" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-workflow-diagram">Interactive Workflow Diagram</h2>
-<div class="workflow-container">
-<section id="phase-1-data-import-preparation" class="level3">
-<h3 class="anchored" data-anchor-id="phase-1-data-import-preparation">Phase 1: Data Import &amp; Preparation</h3>
 <div class="phase-row" style="background: #E8F4F8;">
 <div class="phase-label">
-LiDAR Processing
+Data Preparation Tools
 </div>
 <div class="tools-container">
-<div class="tooltip-box">
-<div class="tool-card">
-<a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/las-dataset-to-raster.htm" target="_blank" style="text-decoration: none; color: inherit;">
-<h4 class="anchored">
-LAS Dataset to Raster
-</h4>
-</a><p><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/las-dataset-to-raster.htm" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">ArcGIS Pro</span> </a></p>
-</div>
-<p><span class="tooltiptext"> Converts LAS point cloud data to raster DEM </span></p>
-</div>
-<div class="arrow">
-→
-</div>
-<div class="tooltip-box">
-<div class="tool-card">
-<a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/mosaic-to-new-raster.htm" target="_blank" style="text-decoration: none; color: inherit;">
-<h4 class="anchored">
-Mosaic to New Raster
-</h4>
-</a><p><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/mosaic-to-new-raster.htm" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">ArcGIS Pro</span> </a></p>
-</div>
-<p><span class="tooltiptext"> Mosaics multiple DEM tiles into single raster (if needed) </span></p>
-</div>
-<div class="arrow">
-→
-</div>
-<div class="tooltip-box">
-<div class="tool-card">
-<a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip-raster.htm" target="_blank" style="text-decoration: none; color: inherit;">
-<h4 class="anchored">
-Clip Raster
-</h4>
-</a><p><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip-raster.htm" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">ArcGIS Pro</span> </a></p>
-</div>
-<p><span class="tooltiptext"> Clips DEM to study area extent </span></p>
-</div>
-<div class="arrow">
-→
-</div>
 <div class="tooltip-box">
 <div class="tool-card">
 <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/project-raster.htm" target="_blank" style="text-decoration: none; color: inherit;">
@@ -679,13 +617,9 @@ Project Raster
 </div>
 <p><span class="tooltiptext"> Projects raster to different coordinate system if needed for alignment </span></p>
 </div>
+<div class="arrow">
+→
 </div>
-</div>
-<div class="phase-row" style="background: #E8F4F8;">
-<div class="phase-label">
-Field Data Import
-</div>
-<div class="tools-container">
 <div class="tooltip-box">
 <div class="tool-card">
 <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01a_ImportThalweg.py" target="_blank" style="text-decoration: none; color: inherit;">
@@ -720,7 +654,7 @@ DEMFromField
 </h4>
 </a><p><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01c_DEMFromField.py" target="_blank" style="text-decoration: none; color: inherit;"><span class="package-badge">toolbox</span> </a></p>
 </div>
-<p><span class="tooltiptext"> Creates a DEM from field survey points (alternative to LiDAR) </span></p>
+<p><span class="tooltiptext"> Creates a DEM from field survey points </span></p>
 </div>
 </div>
 </div>
@@ -925,8 +859,8 @@ Lateral Confinement
 </div>
 </div>
 </section>
-<section id="phase-5-stream-network" class="level3">
-<h3 class="anchored" data-anchor-id="phase-5-stream-network">Phase 5: Stream Network</h3>
+<section id="additional-fluvialgeomorph-tools" class="level3">
+<h3 class="anchored" data-anchor-id="additional-fluvialgeomorph-tools">Additional FluvialGeomorph Tools</h3>
 <div class="phase-row" style="background: #FCE4EC;">
 <div class="phase-label">
 Stream Network
@@ -970,9 +904,6 @@ Watersheds
 </div>
 </div>
 </div>
-</section>
-<section id="phase-6-flowline" class="level3">
-<h3 class="anchored" data-anchor-id="phase-6-flowline">Phase 6: Flowline</h3>
 <div class="phase-row" style="background: #E3F2FD;">
 <div class="phase-label">
 Flowline
@@ -1016,9 +947,6 @@ FlowlinePoints
 </div>
 </div>
 </div>
-</section>
-<section id="phase-7-water-surface-channel" class="level3">
-<h3 class="anchored" data-anchor-id="phase-7-water-surface-channel">Phase 7: Water Surface &amp; Channel</h3>
 <div class="phase-row" style="background: #FFF3E0;">
 <div class="phase-label">
 Water Surface &amp; Channel
@@ -1062,9 +990,6 @@ Centerline
 </div>
 </div>
 </div>
-</section>
-<section id="phase-8-cross-sections" class="level3">
-<h3 class="anchored" data-anchor-id="phase-8-cross-sections">Phase 8: Cross Sections</h3>
 <div class="phase-row" style="background: #F1F8E9;">
 <div class="phase-label">
 Cross Sections
@@ -1134,9 +1059,6 @@ XSResequence
 </div>
 </div>
 </div>
-</section>
-<section id="phase-9-cross-section-points" class="level3">
-<h3 class="anchored" data-anchor-id="phase-9-cross-section-points">Phase 9: Cross Section Points</h3>
 <div class="phase-row" style="background: #E8F4F8;">
 <div class="phase-label">
 Cross Section Points
@@ -1193,9 +1115,6 @@ XSAssignLoops
 </div>
 </div>
 </div>
-</section>
-<section id="phase-10-xs-analysis-r" class="level3">
-<h3 class="anchored" data-anchor-id="phase-10-xs-analysis-r">Phase 10: XS Analysis (R)</h3>
 <div class="phase-row" style="background: #FFF4E6;">
 <div class="phase-label">
 XS Analysis (R)
@@ -1239,9 +1158,6 @@ XSPlanform
 </div>
 </div>
 </div>
-</section>
-<section id="phase-11-hydraulic-modeling" class="level3">
-<h3 class="anchored" data-anchor-id="phase-11-hydraulic-modeling">Phase 11: Hydraulic Modeling</h3>
 <div class="phase-row" style="background: #E8F5E9;">
 <div class="phase-label">
 Hydraulic Modeling
@@ -1259,9 +1175,6 @@ XS_RAS_WaterSurface
 </div>
 </div>
 </div>
-</section>
-<section id="phase-12-additional-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="phase-12-additional-analysis">Phase 12: Additional Analysis</h3>
 <div class="phase-row" style="background: #F3E5F5;">
 <div class="phase-label">
 Additional Analysis
@@ -1297,468 +1210,22 @@ Point_Landcover
 </section>
 <section id="tool-reference-table" class="level2">
 <h2 class="anchored" data-anchor-id="tool-reference-table">Tool Reference Table</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Phase</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Tool</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Package</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Purpose</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Inputs</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Outputs</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Dependencies</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd" data-grouplength="7">
-<td colspan="7" style="background-color: #E8F4F8"><strong>Phase 1: Data Import &amp; Preparation</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/las-dataset-to-raster.htm" target="_blank">LAS Dataset to Raster</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Convert LAS to DEM</td>
-<td style="text-align: left;">LAS files</td>
-<td style="text-align: left;">DEM raster</td>
-<td style="text-align: left;">None</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/mosaic-to-new-raster.htm" target="_blank">Mosaic to New Raster</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Mosaic DEM tiles</td>
-<td style="text-align: left;">Multiple DEMs</td>
-<td style="text-align: left;">Mosaicked DEM</td>
-<td style="text-align: left;">LAS to Raster</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip-raster.htm" target="_blank">Clip Raster</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Clip DEM to extent</td>
-<td style="text-align: left;">DEM, polygon</td>
-<td style="text-align: left;">Clipped DEM</td>
-<td style="text-align: left;">Mosaic</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/project-raster.htm" target="_blank">Project Raster</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Project coordinate system</td>
-<td style="text-align: left;">DEM</td>
-<td style="text-align: left;">Projected DEM</td>
-<td style="text-align: left;">Clip</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01a_ImportThalweg.py" target="_blank">ImportThalweg</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Import thalweg survey data</td>
-<td style="text-align: left;">Survey data</td>
-<td style="text-align: left;">Thalweg features</td>
-<td style="text-align: left;">None</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01b_ImportFieldXS.py" target="_blank">ImportFieldXS</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Import field XS survey</td>
-<td style="text-align: left;">Survey data</td>
-<td style="text-align: left;">XS features</td>
-<td style="text-align: left;">None</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">1</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01c_DEMFromField.py" target="_blank">DEMFromField</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Create DEM from field data</td>
-<td style="text-align: left;">Survey points</td>
-<td style="text-align: left;">DEM raster</td>
-<td style="text-align: left;">Field survey</td>
-</tr>
-<tr class="odd" data-grouplength="6">
-<td colspan="7" style="background-color: #FFF4E6"><strong>Phase 2: Geomorphic Analysis</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_02_HydroDEM.py" target="_blank">HydroDEM</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Create hydro-conditioned DEM</td>
-<td style="text-align: left;">DEM</td>
-<td style="text-align: left;">Hydro DEM</td>
-<td style="text-align: left;">DEM</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/flow-direction.htm" target="_blank">Flow Direction</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Calculate flow direction</td>
-<td style="text-align: left;">Hydro DEM</td>
-<td style="text-align: left;">Flow direction raster</td>
-<td style="text-align: left;">HydroDEM</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_03_ContributingArea.py" target="_blank">Flow Accumulation</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Calculate drainage area</td>
-<td style="text-align: left;">Flow direction</td>
-<td style="text-align: left;">Contributing area</td>
-<td style="text-align: left;">Flow Direction</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/slope.htm" target="_blank">Slope</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Calculate slope</td>
-<td style="text-align: left;">DEM</td>
-<td style="text-align: left;">Slope raster</td>
-<td style="text-align: left;">DEM</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_DetrendDEM.py" target="_blank">REM</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Relative Elevation Model</td>
-<td style="text-align: left;">DEM, flowline</td>
-<td style="text-align: left;">REM raster</td>
-<td style="text-align: left;">HydroDEM</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">2</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/topographic-position-index.htm" target="_blank">TPI</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Topographic Position Index</td>
-<td style="text-align: left;">DEM</td>
-<td style="text-align: left;">TPI raster</td>
-<td style="text-align: left;">DEM</td>
-</tr>
-<tr class="even" data-grouplength="5">
-<td colspan="7" style="background-color: #E8F5E9"><strong>Phase 3: Valley Bottom Delineation</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">3</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/raster-calculator.htm" target="_blank">Stream Network Creation</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Threshold flow accumulation</td>
-<td style="text-align: left;">Flow accumulation</td>
-<td style="text-align: left;">Stream raster</td>
-<td style="text-align: left;">Flow Accumulation</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">3</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/euclidean-distance.htm" target="_blank">Euclidean Distance</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Distance from streams</td>
-<td style="text-align: left;">Stream raster</td>
-<td style="text-align: left;">Distance raster</td>
-<td style="text-align: left;">Stream Network</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">3</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/raster-calculator.htm" target="_blank">Raster Calculator</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Combine geomorphic criteria</td>
-<td style="text-align: left;">Slope, REM, Distance, TPI</td>
-<td style="text-align: left;">Valley bottom raster</td>
-<td style="text-align: left;">Multiple inputs</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">3</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/conversion/raster-to-polygon.htm" target="_blank">Raster to Polygon</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Convert to vector</td>
-<td style="text-align: left;">Valley bottom raster</td>
-<td style="text-align: left;">Valley polygon</td>
-<td style="text-align: left;">Raster Calculator</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">3</td>
-<td style="text-align: left; width: 12em;"><a href="NA" target="_blank">Manual Editing</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Refine boundaries</td>
-<td style="text-align: left;">Valley polygon</td>
-<td style="text-align: left;">Final valley bottom</td>
-<td style="text-align: left;">Raster to Polygon</td>
-</tr>
-<tr class="even" data-grouplength="3">
-<td colspan="7" style="background-color: #F3E5F5"><strong>Phase 4: Confinement Analysis</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">4</td>
-<td style="text-align: left; width: 12em;"><a href="NA" target="_blank">Valley Width Measurement</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Measure valley width</td>
-<td style="text-align: left;">Valley polygon, centerline</td>
-<td style="text-align: left;">Width transects</td>
-<td style="text-align: left;">Valley polygon</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">4</td>
-<td style="text-align: left; width: 12em;"><a href="NA" target="_blank">Confinement Ratio</a></td>
-<td style="text-align: left;">Analysis</td>
-<td style="text-align: left;">Calculate confinement</td>
-<td style="text-align: left;">Valley width, channel width</td>
-<td style="text-align: left;">Confinement values</td>
-<td style="text-align: left;">Width measurements</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">4</td>
-<td style="text-align: left; width: 12em;"><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/analysis/buffer.htm" target="_blank">Lateral Confinement</a></td>
-<td style="text-align: left;">ArcGIS Pro</td>
-<td style="text-align: left;">Map confinement zones</td>
-<td style="text-align: left;">Valley polygon, channel</td>
-<td style="text-align: left;">Confinement polygons</td>
-<td style="text-align: left;">Valley polygon</td>
-</tr>
-<tr class="even" data-grouplength="3">
-<td colspan="7" style="background-color: #FCE4EC"><strong>Phase 5: Stream Network</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">5</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04_StreamNetwork.py" target="_blank">StreamNetwork</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Delineate stream network</td>
-<td style="text-align: left;">Flow accumulation</td>
-<td style="text-align: left;">Stream lines</td>
-<td style="text-align: left;">ContributingArea</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">5</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04a_StreamNetworkPoints.py" target="_blank">StreamNetworkPoints</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Create stream points</td>
-<td style="text-align: left;">Stream network</td>
-<td style="text-align: left;">Stream points</td>
-<td style="text-align: left;">StreamNetwork</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">5</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04c_Watersheds.py" target="_blank">Watersheds</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Delineate watersheds</td>
-<td style="text-align: left;">Flow direction, points</td>
-<td style="text-align: left;">Watershed polygons</td>
-<td style="text-align: left;">ContributingArea</td>
-</tr>
-<tr class="even" data-grouplength="3">
-<td colspan="7" style="background-color: #E3F2FD"><strong>Phase 6: Flowline</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">6</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_05a_Flowline.py" target="_blank">Flowline</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Create flowline</td>
-<td style="text-align: left;">Stream network</td>
-<td style="text-align: left;">Flowline</td>
-<td style="text-align: left;">StreamNetwork</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">6</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_05b_FlowlineThalweg.py" target="_blank">FlowlineThalweg</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Flowline from thalweg</td>
-<td style="text-align: left;">Thalweg survey</td>
-<td style="text-align: left;">Flowline</td>
-<td style="text-align: left;">ImportThalweg</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">6</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_06_FlowlinePoints.py" target="_blank">FlowlinePoints</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Create flowline points</td>
-<td style="text-align: left;">Flowline, spacing</td>
-<td style="text-align: left;">Flowline points</td>
-<td style="text-align: left;">Flowline</td>
-</tr>
-<tr class="even" data-grouplength="3">
-<td colspan="7" style="background-color: #FFF3E0"><strong>Phase 7: Water Surface &amp; Channel</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">7</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_08_WaterSurfaceExtent.py" target="_blank">WaterSurfaceExtent</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Delineate water surface</td>
-<td style="text-align: left;">DEM</td>
-<td style="text-align: left;">Water surface polygon</td>
-<td style="text-align: left;">HydroDEM</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">7</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_09_ChannelSlope.py" target="_blank">ChannelSlope</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Calculate channel slope</td>
-<td style="text-align: left;">DEM, flowline</td>
-<td style="text-align: left;">Slope values</td>
-<td style="text-align: left;">Flowline</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">7</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_10_Centerline.py" target="_blank">Centerline</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Create centerline</td>
-<td style="text-align: left;">Banklines</td>
-<td style="text-align: left;">Centerline</td>
-<td style="text-align: left;">Banklines</td>
-</tr>
-<tr class="even" data-grouplength="5">
-<td colspan="7" style="background-color: #F1F8E9"><strong>Phase 8: Cross Sections</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">8</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_11_XSLayout.py" target="_blank">XSLayout</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Create XS layout</td>
-<td style="text-align: left;">Flowline, spacing</td>
-<td style="text-align: left;">XS lines</td>
-<td style="text-align: left;">Flowline</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">8</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_11b_XSField.py" target="_blank">XSField</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">XS from field survey</td>
-<td style="text-align: left;">Field survey</td>
-<td style="text-align: left;">XS lines</td>
-<td style="text-align: left;">ImportFieldXS</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">8</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_12_XSWatershedArea.py" target="_blank">XSWatershedArea</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">XS watershed area</td>
-<td style="text-align: left;">XS lines, watersheds</td>
-<td style="text-align: left;">Area values</td>
-<td style="text-align: left;">XSLayout, Watersheds</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">8</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_13_XSRiverPosition.py" target="_blank">XSRiverPosition</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Assign river position</td>
-<td style="text-align: left;">XS points</td>
-<td style="text-align: left;">Position attributes</td>
-<td style="text-align: left;">XSPoints</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">8</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_13a_XSResequence.py" target="_blank">XSResequence</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Resequence XS</td>
-<td style="text-align: left;">XS lines</td>
-<td style="text-align: left;">Resequenced XS</td>
-<td style="text-align: left;">XSLayout</td>
-</tr>
-<tr class="even" data-grouplength="4">
-<td colspan="7" style="background-color: #E8F4F8"><strong>Phase 9: Cross Section Points</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">9</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14_XSPoints.py" target="_blank">XSPoints</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Create XS points</td>
-<td style="text-align: left;">XS lines, DEM</td>
-<td style="text-align: left;">XS points</td>
-<td style="text-align: left;">XSLayout</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">9</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14a_XSPoints_Classify.py" target="_blank">XSPoints_Classify</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Classify XS points</td>
-<td style="text-align: left;">XS points</td>
-<td style="text-align: left;">Classified points</td>
-<td style="text-align: left;">XSPoints</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">9</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14b_BanklinePoints.py" target="_blank">BanklinePoints</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Create bankline points</td>
-<td style="text-align: left;">Banklines</td>
-<td style="text-align: left;">Bankline points</td>
-<td style="text-align: left;">Banklines</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">9</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14c_XSAssignLoops.py" target="_blank">XSAssignLoops</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Assign loop IDs</td>
-<td style="text-align: left;">XS lines, loops</td>
-<td style="text-align: left;">Loop attributes</td>
-<td style="text-align: left;">XSLayout</td>
-</tr>
-<tr class="odd" data-grouplength="3">
-<td colspan="7" style="background-color: #FFF4E6"><strong>Phase 10: XS Analysis (R)</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">10</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15a_XSDimensions.R" target="_blank">XSDimensions</a></td>
-<td style="text-align: left;">R</td>
-<td style="text-align: left;">Calculate XS dimensions</td>
-<td style="text-align: left;">XS points</td>
-<td style="text-align: left;">Dimensions</td>
-<td style="text-align: left;">XSRiverPosition</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">10</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15b_XSDimensions.R" target="_blank">XSDimensions (alt)</a></td>
-<td style="text-align: left;">R</td>
-<td style="text-align: left;">Calculate XS dimensions</td>
-<td style="text-align: left;">XS points</td>
-<td style="text-align: left;">Dimensions</td>
-<td style="text-align: left;">XSRiverPosition</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">10</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15c_XSPlanform.R" target="_blank">XSPlanform</a></td>
-<td style="text-align: left;">R</td>
-<td style="text-align: left;">Analyze XS planform</td>
-<td style="text-align: left;">XS points</td>
-<td style="text-align: left;">Planform metrics</td>
-<td style="text-align: left;">XSDimensions</td>
-</tr>
-<tr class="odd" data-grouplength="1">
-<td colspan="7" style="background-color: #E8F5E9"><strong>Phase 11: Hydraulic Modeling</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">11</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_16_XS_RAS_WaterSurface.py" target="_blank">XS_RAS_WaterSurface</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Extract RAS water surface</td>
-<td style="text-align: left;">HEC-RAS results</td>
-<td style="text-align: left;">Water surface</td>
-<td style="text-align: left;">HEC-RAS model</td>
-</tr>
-<tr class="odd" data-grouplength="2">
-<td colspan="7" style="background-color: #F3E5F5"><strong>Phase 12: Additional Analysis</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">12</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04b_Gradient.R" target="_blank">Gradient</a></td>
-<td style="text-align: left;">R</td>
-<td style="text-align: left;">Calculate gradient</td>
-<td style="text-align: left;">Profile points</td>
-<td style="text-align: left;">Gradient values</td>
-<td style="text-align: left;">FlowlinePoints</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; width: 4em; font-weight: bold; padding-left: 2em;" data-indentlevel="1">12</td>
-<td style="text-align: left; width: 12em;"><a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_Point_Landcover_parallel.py" target="_blank">Point_Landcover</a></td>
-<td style="text-align: left;">toolbox</td>
-<td style="text-align: left;">Extract landcover</td>
-<td style="text-align: left;">Points, landcover raster</td>
-<td style="text-align: left;">Landcover attributes</td>
-<td style="text-align: left;">Points</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
+<p>#| echo: false #| message: false #| warning: false</p>
+<p>library(tidyverse) library(knitr) library(kableExtra)</p>
+<p>tools &lt;- tribble( ~Phase, ~Tool, ~Package, ~Purpose, ~Inputs, ~Outputs, ~Dependencies, ~GitHub_Link,</p>
+<p>“1”, “Project Raster”, “ArcGIS Pro”, “Project coordinate system”, “DEM”, “Projected DEM”, “None”, “https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/project-raster.htm”, “1”, “ImportThalweg”, “toolbox”, “Import thalweg survey data”, “Survey data”, “Thalweg features”, “None”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01a_ImportThalweg.py”, “1”, “ImportFieldXS”, “toolbox”, “Import field XS survey”, “Survey data”, “XS features”, “None”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01b_ImportFieldXS.py”, “1”, “DEMFromField”, “toolbox”, “Create DEM from field data”, “Survey points”, “DEM raster”, “Field survey”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_01c_DEMFromField.py”,</p>
+<p>“2”, “HydroDEM”, “toolbox”, “Create hydro-conditioned DEM”, “DEM”, “Hydro DEM”, “DEM”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_02_HydroDEM.py”, “2”, “Flow Direction”, “ArcGIS Pro”, “Calculate flow direction”, “Hydro DEM”, “Flow direction raster”, “HydroDEM”, “https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/flow-direction.htm”, “2”, “Flow Accumulation”, “toolbox”, “Calculate drainage area”, “Flow direction”, “Contributing area”, “Flow Direction”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_03_ContributingArea.py”, “2”, “Slope”, “ArcGIS Pro”, “Calculate slope”, “DEM”, “Slope raster”, “DEM”, “https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/slope.htm”, “2”, “REM”, “toolbox”, “Relative Elevation Model”, “DEM, flowline”, “REM raster”, “HydroDEM”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_DetrendDEM.py”, “2”, “TPI”, “ArcGIS Pro”, “Topographic Position Index”, “DEM”, “TPI raster”, “DEM”, “https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/topographic-position-index.htm”,</p>
+<p>“3”, “Stream Network Creation”, “ArcGIS Pro”, “Threshold flow accumulation”, “Flow accumulation”, “Stream raster”, “Flow Accumulation”, “https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/raster-calculator.htm”, “3”, “Euclidean Distance”, “ArcGIS Pro”, “Distance from streams”, “Stream raster”, “Distance raster”, “Stream Network”, “https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/euclidean-distance.htm”, “3”, “Raster Calculator”, “ArcGIS Pro”, “Combine geomorphic criteria”, “Slope, REM, Distance, TPI”, “Valley bottom raster”, “Multiple inputs”, “https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/raster-calculator.htm”, “3”, “Raster to Polygon”, “ArcGIS Pro”, “Convert to vector”, “Valley bottom raster”, “Valley polygon”, “Raster Calculator”, “https://pro.arcgis.com/en/pro-app/latest/tool-reference/conversion/raster-to-polygon.htm”, “3”, “Manual Editing”, “ArcGIS Pro”, “Refine boundaries”, “Valley polygon”, “Final valley bottom”, “Raster to Polygon”, “NA”,</p>
+<p>“4”, “Valley Width Measurement”, “ArcGIS Pro”, “Measure valley width”, “Valley polygon, centerline”, “Width transects”, “Valley polygon”, “NA”, “4”, “Confinement Ratio”, “Analysis”, “Calculate confinement”, “Valley width, channel width”, “Confinement values”, “Width measurements”, “NA”, “4”, “Lateral Confinement”, “ArcGIS Pro”, “Map confinement zones”, “Valley polygon, channel”, “Confinement polygons”, “Valley polygon”, “https://pro.arcgis.com/en/pro-app/latest/tool-reference/analysis/buffer.htm”,</p>
+<p>“5”, “StreamNetwork”, “toolbox”, “Delineate stream network”, “Flow accumulation”, “Stream lines”, “ContributingArea”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04_StreamNetwork.py”, “5”, “StreamNetworkPoints”, “toolbox”, “Create stream points”, “Stream network”, “Stream points”, “StreamNetwork”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04a_StreamNetworkPoints.py”, “5”, “Watersheds”, “toolbox”, “Delineate watersheds”, “Flow direction, points”, “Watershed polygons”, “ContributingArea”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04c_Watersheds.py”,</p>
+<p>“6”, “Flowline”, “toolbox”, “Create flowline”, “Stream network”, “Flowline”, “StreamNetwork”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_05a_Flowline.py”, “6”, “FlowlineThalweg”, “toolbox”, “Flowline from thalweg”, “Thalweg survey”, “Flowline”, “ImportThalweg”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_05b_FlowlineThalweg.py”, “6”, “FlowlinePoints”, “toolbox”, “Create flowline points”, “Flowline, spacing”, “Flowline points”, “Flowline”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_06_FlowlinePoints.py”,</p>
+<p>“7”, “WaterSurfaceExtent”, “toolbox”, “Delineate water surface”, “DEM”, “Water surface polygon”, “HydroDEM”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_08_WaterSurfaceExtent.py”, “7”, “ChannelSlope”, “toolbox”, “Calculate channel slope”, “DEM, flowline”, “Slope values”, “Flowline”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_09_ChannelSlope.py”, “7”, “Centerline”, “toolbox”, “Create centerline”, “Banklines”, “Centerline”, “Banklines”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_10_Centerline.py”,</p>
+<p>“8”, “XSLayout”, “toolbox”, “Create XS layout”, “Flowline, spacing”, “XS lines”, “Flowline”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_11_XSLayout.py”, “8”, “XSField”, “toolbox”, “XS from field survey”, “Field survey”, “XS lines”, “ImportFieldXS”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_11b_XSField.py”, “8”, “XSWatershedArea”, “toolbox”, “XS watershed area”, “XS lines, watersheds”, “Area values”, “XSLayout, Watersheds”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_12_XSWatershedArea.py”, “8”, “XSRiverPosition”, “toolbox”, “Assign river position”, “XS points”, “Position attributes”, “XSPoints”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_13_XSRiverPosition.py”, “8”, “XSResequence”, “toolbox”, “Resequence XS”, “XS lines”, “Resequenced XS”, “XSLayout”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_13a_XSResequence.py”,</p>
+<p>“9”, “XSPoints”, “toolbox”, “Create XS points”, “XS lines, DEM”, “XS points”, “XSLayout”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14_XSPoints.py”, “9”, “XSPoints_Classify”, “toolbox”, “Classify XS points”, “XS points”, “Classified points”, “XSPoints”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14a_XSPoints_Classify.py”, “9”, “BanklinePoints”, “toolbox”, “Create bankline points”, “Banklines”, “Bankline points”, “Banklines”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14b_BanklinePoints.py”, “9”, “XSAssignLoops”, “toolbox”, “Assign loop IDs”, “XS lines, loops”, “Loop attributes”, “XSLayout”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_14c_XSAssignLoops.py”,</p>
+<p>“10”, “XSDimensions”, “R”, “Calculate XS dimensions”, “XS points”, “Dimensions”, “XSRiverPosition”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15a_XSDimensions.R”, “10”, “XSDimensions (alt)”, “R”, “Calculate XS dimensions”, “XS points”, “Dimensions”, “XSRiverPosition”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15b_XSDimensions.R”, “10”, “XSPlanform”, “R”, “Analyze XS planform”, “XS points”, “Planform metrics”, “XSDimensions”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_15c_XSPlanform.R”,</p>
+<p>“11”, “XS_RAS_WaterSurface”, “toolbox”, “Extract RAS water surface”, “HEC-RAS results”, “Water surface”, “HEC-RAS model”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_16_XS_RAS_WaterSurface.py”,</p>
+<p>“12”, “Gradient”, “R”, “Calculate gradient”, “Profile points”, “Gradient values”, “FlowlinePoints”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_04b_Gradient.R”, “12”, “Point_Landcover”, “toolbox”, “Extract landcover”, “Points, landcover raster”, “Landcover attributes”, “Points”, “https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_Point_Landcover_parallel.py” )</p>
+<p>tools %&gt;% mutate( Tool = paste0(‘<a href="', GitHub_Link, '" target="_blank">’, Tool, ‘</a>’) ) %&gt;% select(-GitHub_Link) %&gt;% kable(format = “html”, escape = FALSE, col.names = c(“Phase”, “Tool”, “Package”, “Purpose”, “Inputs”, “Outputs”, “Dependencies”)) %&gt;% kable_styling(bootstrap_options = c(“striped”, “hover”, “condensed”), full_width = TRUE, font_size = 12) %&gt;% column_spec(1, bold = TRUE, width = “4em”) %&gt;% column_spec(2, width = “12em”) %&gt;% pack_rows(“Phase 1: Data Preparation &amp; Critical Spatial Analysis”, 1, 4, label_row_css = “background-color: #E8F4F8;”) %&gt;% pack_rows(“Phase 2: Geomorphic Analysis”, 5, 10, label_row_css = “background-color: #FFF4E6;”) %&gt;% pack_rows(“Phase 3: Valley Bottom Delineation”, 11, 15, label_row_css = “background-color: #E8F5E9;”) %&gt;% pack_rows(“Phase 4: Confinement Analysis”, 16, 18, label_row_css = “background-color: #F3E5F5;”) %&gt;% pack_rows(“Phase 5: Stream Network”, 19, 21, label_row_css = “background-color: #FCE4EC;”) %&gt;% pack_rows(“Phase 6: Flowline”, 22, 24, label_row_css = “background-color: #E3F2FD;”) %&gt;% pack_rows(“Phase 7: Water Surface &amp; Channel”, 25, 27, label_row_css = “background-color: #FFF3E0;”) %&gt;% pack_rows(“Phase 8: Cross Sections”, 28, 32, label_row_css = “background-color: #F1F8E9;”) %&gt;% pack_rows(“Phase 9: Cross Section Points”, 33, 36, label_row_css = “background-color: #E8F4F8;”) %&gt;% pack_rows(“Phase 10: XS Analysis (R)”, 37, 39, label_row_css = “background-color: #FFF4E6;”) %&gt;% pack_rows(“Phase 11: Hydraulic Modeling”, 40, 40, label_row_css = “background-color: #E8F5E9;”) %&gt;% pack_rows(“Phase 12: Additional Analysis”, 41, 42, label_row_css = “background-color: #F3E5F5;”)</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1769,41 +1236,16 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Valley Bottom Workflow Focus This workflow emphasizes critical thinking before tool execution. Phase 1 includes LiDAR processing to create the DEM and field data import tools. Phase 2 generates the geomorphic datasets (Flow Direction, Flow Accumulation, Slope, REM, TPI) that are then combined in Phase 3 to delineate valley bottoms. Phase 4 analyzes channel confinement within the delineated valley. Key Change: DetrendDEM is now called REM (Relative Elevation Model) to better reflect its purpose of showing relative topographic position.</p>
+<p>Valley Bottom Workflow Focus This workflow emphasizes the critical thinking required in Phase 1 before running any tools. The actual tools run are minimal - primarily Project Raster and data import tools. Phase 2 generates the geomorphic datasets (Flow Direction, Flow Accumulation, Slope, REM, TPI) that are then combined in Phase 3 to delineate valley bottoms. Phase 4 analyzes channel confinement within the delineated valley. Key Change: DetrendDEM is now called REM (Relative Elevation Model) to better reflect its purpose of showing relative topographic position.</p>
 </div>
 </div>
-</section>
-<section id="key-considerations" class="level2">
-<h2 class="anchored" data-anchor-id="key-considerations">Key Considerations</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Quality Control</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Iteration</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Scale Considerations</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<ul>
-<li>Visual comparison with aerial imagery</li>
-<li>Field validation of key reaches</li>
-<li>Check for systematic errors</li>
-<li>Document assumptions and decisions</li>
-</ul>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<ul>
-<li>Valley bottom delineation is iterative</li>
-<li>Adjust thresholds based on local conditions</li>
-<li>Test sensitivity to parameter changes</li>
-<li>Validate against known geomorphic features</li>
-</ul>
-</div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<ul>
-<li>DEM resolution affects feature detection</li>
-<li>Stream order influences valley width</li>
-<li>Adjust analysis parameters by stream size</li>
-<li>Consider multi-scale approaches</li>
-</ul>
-</div>
-</div>
-</div>
+<p>Key Considerations ::: {.panel-tabset} Quality Control</p>
+<p>Visual comparison with aerial imagery Field validation of key reaches Check for systematic errors Document assumptions and decisions</p>
+<p>Iteration</p>
+<p>Valley bottom delineation is iterative Adjust thresholds based on local conditions Test sensitivity to parameter changes Validate against known geomorphic features</p>
+<p>Scale Considerations</p>
+<p>DEM resolution affects feature detection Stream order influences valley width Adjust analysis parameters by stream size Consider multi-scale approaches</p>
+<p>:::</p>
 
 
 </section>
