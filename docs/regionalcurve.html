@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>21&nbsp; Regional Curve R Package – FluvialGeomorph Technical Manual</title>
+<title>21&nbsp; Regional Curve – FluvialGeomorph Technical Manual</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -20,27 +23,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -52,17 +70,20 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./fluvgeo.html" rel="next">
 <link href="./chute.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-d89583f96eb081ebb470fbdadb779a08.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1b65013b8b4bad335ef82791a5ebe532.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-d89583f96eb081ebb470fbdadb779a08.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -92,7 +113,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -105,7 +126,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -124,7 +145,178 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -133,7 +325,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regionalcurve.html">R Packages</a></li><li class="breadcrumb-item"><a href="./regionalcurve.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve R Package</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regionalcurve.html">R Packages</a></li><li class="breadcrumb-item"><a href="./regionalcurve.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -339,7 +531,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./regionalcurve.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve R Package</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -402,78 +594,49 @@ window.Quarto = {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#theoretical-foundation" id="toc-theoretical-foundation" class="nav-link" data-scroll-target="#theoretical-foundation">Theoretical Foundation</a>
-  <ul class="collapse">
-  <li><a href="#hydraulic-geometry-principles" id="toc-hydraulic-geometry-principles" class="nav-link" data-scroll-target="#hydraulic-geometry-principles">Hydraulic Geometry Principles</a></li>
-  <li><a href="#regional-consistency" id="toc-regional-consistency" class="nav-link" data-scroll-target="#regional-consistency">Regional Consistency</a></li>
-  <li><a href="#drainage-area-as-surrogate" id="toc-drainage-area-as-surrogate" class="nav-link" data-scroll-target="#drainage-area-as-surrogate">Drainage Area as Surrogate</a></li>
-  <li><a href="#exponent-relationships" id="toc-exponent-relationships" class="nav-link" data-scroll-target="#exponent-relationships">Exponent Relationships</a></li>
-  </ul></li>
+  <li><a href="#regional-curve-theory" id="toc-regional-curve-theory" class="nav-link" data-scroll-target="#regional-curve-theory">Regional Curve Theory</a></li>
   <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data Requirements</a>
   <ul class="collapse">
-  <li><a href="#site-selection-criteria" id="toc-site-selection-criteria" class="nav-link" data-scroll-target="#site-selection-criteria">Site Selection Criteria</a></li>
-  <li><a href="#sample-size-requirements" id="toc-sample-size-requirements" class="nav-link" data-scroll-target="#sample-size-requirements">Sample Size Requirements</a></li>
-  <li><a href="#lidar-data-requirements" id="toc-lidar-data-requirements" class="nav-link" data-scroll-target="#lidar-data-requirements">LiDAR Data Requirements</a></li>
-  <li><a href="#field-validation-data-requirements" id="toc-field-validation-data-requirements" class="nav-link" data-scroll-target="#field-validation-data-requirements">Field Validation Data Requirements</a></li>
+  <li><a href="#input-data-structure" id="toc-input-data-structure" class="nav-link" data-scroll-target="#input-data-structure">Input Data Structure</a></li>
+  <li><a href="#sample-size-guidelines" id="toc-sample-size-guidelines" class="nav-link" data-scroll-target="#sample-size-guidelines">Sample Size Guidelines</a></li>
   </ul></li>
-  <li><a href="#data-collection-and-processing" id="toc-data-collection-and-processing" class="nav-link" data-scroll-target="#data-collection-and-processing">Data Collection and Processing</a>
+  <li><a href="#fluvialgeomorph-workflow" id="toc-fluvialgeomorph-workflow" class="nav-link" data-scroll-target="#fluvialgeomorph-workflow">FluvialGeomorph Workflow</a>
   <ul class="collapse">
-  <li><a href="#lidar-based-dimension-extraction" id="toc-lidar-based-dimension-extraction" class="nav-link" data-scroll-target="#lidar-based-dimension-extraction">LiDAR-Based Dimension Extraction</a></li>
-  <li><a href="#field-validation-data-collection" id="toc-field-validation-data-collection" class="nav-link" data-scroll-target="#field-validation-data-collection">Field Validation Data Collection</a></li>
-  <li><a href="#comparison-and-validation" id="toc-comparison-and-validation" class="nav-link" data-scroll-target="#comparison-and-validation">Comparison and Validation</a></li>
-  <li><a href="#data-integration" id="toc-data-integration" class="nav-link" data-scroll-target="#data-integration">Data Integration</a></li>
+  <li><a href="#step-1-extract-dimensions-from-cross-sections" id="toc-step-1-extract-dimensions-from-cross-sections" class="nav-link" data-scroll-target="#step-1-extract-dimensions-from-cross-sections">Step 1: Extract Dimensions from Cross-Sections</a></li>
+  <li><a href="#step-2-compile-regional-dataset" id="toc-step-2-compile-regional-dataset" class="nav-link" data-scroll-target="#step-2-compile-regional-dataset">Step 2: Compile Regional Dataset</a></li>
+  <li><a href="#step-3-quality-control-and-screening" id="toc-step-3-quality-control-and-screening" class="nav-link" data-scroll-target="#step-3-quality-control-and-screening">Step 3: Quality Control and Screening</a></li>
+  <li><a href="#step-4-develop-regional-curves" id="toc-step-4-develop-regional-curves" class="nav-link" data-scroll-target="#step-4-develop-regional-curves">Step 4: Develop Regional Curves</a></li>
+  <li><a href="#step-5-evaluate-model-fit" id="toc-step-5-evaluate-model-fit" class="nav-link" data-scroll-target="#step-5-evaluate-model-fit">Step 5: Evaluate Model Fit</a></li>
+  <li><a href="#step-6-visualize-regional-curves" id="toc-step-6-visualize-regional-curves" class="nav-link" data-scroll-target="#step-6-visualize-regional-curves">Step 6: Visualize Regional Curves</a></li>
+  <li><a href="#step-7-apply-regional-curves" id="toc-step-7-apply-regional-curves" class="nav-link" data-scroll-target="#step-7-apply-regional-curves">Step 7: Apply Regional Curves</a></li>
+  <li><a href="#step-8-export-results" id="toc-step-8-export-results" class="nav-link" data-scroll-target="#step-8-export-results">Step 8: Export Results</a></li>
   </ul></li>
-  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis">Statistical Analysis</a>
+  <li><a href="#advanced-applications" id="toc-advanced-applications" class="nav-link" data-scroll-target="#advanced-applications">Advanced Applications</a>
   <ul class="collapse">
-  <li><a href="#regression-methods" id="toc-regression-methods" class="nav-link" data-scroll-target="#regression-methods">Regression Methods</a></li>
-  <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation">Model Evaluation</a></li>
-  <li><a href="#uncertainty-quantification" id="toc-uncertainty-quantification" class="nav-link" data-scroll-target="#uncertainty-quantification">Uncertainty Quantification</a></li>
+  <li><a href="#stratified-regional-curves" id="toc-stratified-regional-curves" class="nav-link" data-scroll-target="#stratified-regional-curves">Stratified Regional Curves</a></li>
+  <li><a href="#validation-analysis" id="toc-validation-analysis" class="nav-link" data-scroll-target="#validation-analysis">Validation Analysis</a></li>
+  <li><a href="#comparison-with-existing-curves" id="toc-comparison-with-existing-curves" class="nav-link" data-scroll-target="#comparison-with-existing-curves">Comparison with Existing Curves</a></li>
+  <li><a href="#uncertainty-analysis" id="toc-uncertainty-analysis" class="nav-link" data-scroll-target="#uncertainty-analysis">Uncertainty Analysis</a></li>
+  <li><a href="#regional-curve-reports" id="toc-regional-curve-reports" class="nav-link" data-scroll-target="#regional-curve-reports">Regional Curve Reports</a></li>
   </ul></li>
-  <li><a href="#regional-curve-development-workflow" id="toc-regional-curve-development-workflow" class="nav-link" data-scroll-target="#regional-curve-development-workflow">Regional Curve Development Workflow</a>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a>
   <ul class="collapse">
-  <li><a href="#step-1-define-region-and-objectives" id="toc-step-1-define-region-and-objectives" class="nav-link" data-scroll-target="#step-1-define-region-and-objectives">Step 1: Define Region and Objectives</a></li>
-  <li><a href="#step-2-compile-lidar-data" id="toc-step-2-compile-lidar-data" class="nav-link" data-scroll-target="#step-2-compile-lidar-data">Step 2: Compile LiDAR Data</a></li>
-  <li><a href="#step-3-select-study-sites" id="toc-step-3-select-study-sites" class="nav-link" data-scroll-target="#step-3-select-study-sites">Step 3: Select Study Sites</a></li>
-  <li><a href="#step-4-extract-lidar-derived-dimensions" id="toc-step-4-extract-lidar-derived-dimensions" class="nav-link" data-scroll-target="#step-4-extract-lidar-derived-dimensions">Step 4: Extract LiDAR-Derived Dimensions</a></li>
-  <li><a href="#step-5-conduct-field-validation" id="toc-step-5-conduct-field-validation" class="nav-link" data-scroll-target="#step-5-conduct-field-validation">Step 5: Conduct Field Validation</a></li>
-  <li><a href="#step-6-validate-and-calibrate" id="toc-step-6-validate-and-calibrate" class="nav-link" data-scroll-target="#step-6-validate-and-calibrate">Step 6: Validate and Calibrate</a></li>
-  <li><a href="#step-7-integrate-datasets" id="toc-step-7-integrate-datasets" class="nav-link" data-scroll-target="#step-7-integrate-datasets">Step 7: Integrate Datasets</a></li>
-  <li><a href="#step-8-develop-regional-curves" id="toc-step-8-develop-regional-curves" class="nav-link" data-scroll-target="#step-8-develop-regional-curves">Step 8: Develop Regional Curves</a></li>
-  <li><a href="#step-9-validate-regional-curves" id="toc-step-9-validate-regional-curves" class="nav-link" data-scroll-target="#step-9-validate-regional-curves">Step 9: Validate Regional Curves</a></li>
-  <li><a href="#step-10-document-and-publish" id="toc-step-10-document-and-publish" class="nav-link" data-scroll-target="#step-10-document-and-publish">Step 10: Document and Publish</a></li>
+  <li><a href="#data-quality" id="toc-data-quality" class="nav-link" data-scroll-target="#data-quality">Data Quality</a></li>
+  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis">Statistical Analysis</a></li>
+  <li><a href="#application-guidelines" id="toc-application-guidelines" class="nav-link" data-scroll-target="#application-guidelines">Application Guidelines</a></li>
   </ul></li>
-  <li><a href="#example-regional-curve-development" id="toc-example-regional-curve-development" class="nav-link" data-scroll-target="#example-regional-curve-development">Example Regional Curve Development</a>
-  <ul class="collapse">
-  <li><a href="#case-study-piedmont-region" id="toc-case-study-piedmont-region" class="nav-link" data-scroll-target="#case-study-piedmont-region">Case Study: Piedmont Region</a></li>
-  </ul></li>
-  <li><a href="#quality-assurance-and-limitations" id="toc-quality-assurance-and-limitations" class="nav-link" data-scroll-target="#quality-assurance-and-limitations">Quality Assurance and Limitations</a>
-  <ul class="collapse">
-  <li><a href="#quality-control-procedures" id="toc-quality-control-procedures" class="nav-link" data-scroll-target="#quality-control-procedures">Quality Control Procedures</a></li>
-  <li><a href="#limitations-and-uncertainties" id="toc-limitations-and-uncertainties" class="nav-link" data-scroll-target="#limitations-and-uncertainties">Limitations and Uncertainties</a></li>
-  <li><a href="#appropriate-use" id="toc-appropriate-use" class="nav-link" data-scroll-target="#appropriate-use">Appropriate Use</a></li>
-  </ul></li>
-  <li><a href="#advanced-topics" id="toc-advanced-topics" class="nav-link" data-scroll-target="#advanced-topics">Advanced Topics</a>
-  <ul class="collapse">
-  <li><a href="#stratification-by-channel-type" id="toc-stratification-by-channel-type" class="nav-link" data-scroll-target="#stratification-by-channel-type">Stratification by Channel Type</a></li>
-  <li><a href="#multiple-regression-models" id="toc-multiple-regression-models" class="nav-link" data-scroll-target="#multiple-regression-models">Multiple Regression Models</a></li>
-  <li><a href="#temporal-analysis" id="toc-temporal-analysis" class="nav-link" data-scroll-target="#temporal-analysis">Temporal Analysis</a></li>
-  <li><a href="#discharge-based-curves" id="toc-discharge-based-curves" class="nav-link" data-scroll-target="#discharge-based-curves">Discharge-Based Curves</a></li>
-  </ul></li>
-  <li><a href="#summary-and-recommendations" id="toc-summary-and-recommendations" class="nav-link" data-scroll-target="#summary-and-recommendations">Summary and Recommendations</a>
-  <ul class="collapse">
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key Points</a></li>
-  <li><a href="#recommendations-for-practitioners" id="toc-recommendations-for-practitioners" class="nav-link" data-scroll-target="#recommendations-for-practitioners">Recommendations for Practitioners</a></li>
-  <li><a href="#future-directions" id="toc-future-directions" class="nav-link" data-scroll-target="#future-directions">Future Directions</a></li>
-  </ul></li>
+  <li><a href="#example-complete-workflow" id="toc-example-complete-workflow" class="nav-link" data-scroll-target="#example-complete-workflow">Example: Complete Workflow</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regionalcurve.html">R Packages</a></li><li class="breadcrumb-item"><a href="./regionalcurve.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve R Package</span></a></li></ol></nav>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regionalcurve.html">R Packages</a></li><li class="breadcrumb-item"><a href="./regionalcurve.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve R Package</span></h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Regional Curve</span></h1>
 </div>
 
 
@@ -490,1107 +653,809 @@ window.Quarto = {
 </header>
 
 
+<p><span class="badge badge-theory">📐 Theory</span></p>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Regional curves are empirical relationships between channel dimensions (bankfull width, depth, and cross-sectional area) and watershed drainage area or bankfull discharge. These relationships, first systematically documented by <span class="citation" data-cites="leopold1953hydraulic">Leopold and Maddock (<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">1953</a>)</span>, provide a powerful tool for stream assessment and restoration design by characterizing how channel size scales predictably with watershed size within physiographically similar regions.</p>
-<p>Regional curves serve multiple purposes in fluvial geomorphic analysis:</p>
+<p>Regional curves are empirical relationships between channel dimensions (bankfull width, depth, and cross-sectional area) and watershed drainage area. These power-law relationships provide a tool for stream assessment and restoration design by characterizing how channel size scales predictably with watershed size within physiographically similar regions.</p>
+<p>The FluvialGeomorph toolbox supports regional curve development through:</p>
 <ul>
-<li><strong>Assessment</strong>: Compare existing channel dimensions to regional expectations</li>
-<li><strong>Design</strong>: Estimate appropriate channel dimensions for restoration projects</li>
-<li><strong>Screening</strong>: Rapidly evaluate channel condition across watersheds</li>
-<li><strong>Validation</strong>: Verify detailed design calculations</li>
-<li><strong>Prediction</strong>: Estimate dimensions at ungaged locations</li>
+<li><strong>Automated dimension extraction</strong>: Extract bankfull dimensions from cross-sections</li>
+<li><strong>Data management</strong>: Organize and quality control regional curve datasets</li>
+<li><strong>Statistical analysis</strong>: Develop regional curve relationships with uncertainty quantification</li>
+<li><strong>Visualization</strong>: Create publication-quality regional curve plots</li>
+<li><strong>Application</strong>: Apply regional curves to assess channel conditions</li>
 </ul>
-<p>Traditional regional curve development has been limited by the cost and time required to survey sufficient sites to establish robust relationships <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span>. FluvialGeomorph addresses this limitation by enabling the integration of LiDAR-derived measurements with field validation data, dramatically expanding sample sizes while maintaining accuracy through strategic field verification.</p>
-<p>This chapter describes methods for developing regional curves that combine:</p>
-<ul>
-<li><strong>LiDAR-derived measurements</strong>: Providing large sample sizes and comprehensive spatial coverage</li>
-<li><strong>Field validation data</strong>: Ensuring accuracy and verifying bankfull identification</li>
-<li><strong>Statistical methods</strong>: Establishing robust relationships with quantified uncertainty</li>
-<li><strong>Quality control procedures</strong>: Maintaining data integrity and reliability</li>
-</ul>
+<p>This chapter describes how to use FluvialGeomorph functions to develop and apply regional curves for stream assessment and restoration design.</p>
 </section>
-<section id="theoretical-foundation" class="level2">
-<h2 class="anchored" data-anchor-id="theoretical-foundation">Theoretical Foundation</h2>
-<section id="hydraulic-geometry-principles" class="level3">
-<h3 class="anchored" data-anchor-id="hydraulic-geometry-principles">Hydraulic Geometry Principles</h3>
-<p>Regional curves are based on the principle that channel dimensions adjust to accommodate the flow and sediment regime imposed by the watershed <span class="citation" data-cites="leopold1953hydraulic dunne1978water">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>; <a href="References.html#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span>. For streams in quasi-equilibrium within a physiographically similar region, channel dimensions scale predictably with drainage area:</p>
+<section id="regional-curve-theory" class="level2">
+<h2 class="anchored" data-anchor-id="regional-curve-theory">Regional Curve Theory</h2>
+<p>Regional curves are based on hydraulic geometry principles where channel dimensions scale with drainage area according to power-law relationships:</p>
 <p><span class="math display">\[W_{bf} = aA^b\]</span></p>
 <p><span class="math display">\[D_{bf} = cA^f\]</span></p>
 <p><span class="math display">\[A_{bf} = kA^m\]</span></p>
-<p>Where: - <span class="math inline">\(W_{bf}\)</span> = bankfull width (m or ft) - <span class="math inline">\(D_{bf}\)</span> = bankfull mean depth (m or ft) - <span class="math inline">\(A_{bf}\)</span> = bankfull cross-sectional area (m² or ft²) - <span class="math inline">\(A\)</span> = drainage area (km² or mi²) - <span class="math inline">\(a\)</span>, <span class="math inline">\(c\)</span>, <span class="math inline">\(k\)</span> = coefficients (intercepts) - <span class="math inline">\(b\)</span>, <span class="math inline">\(f\)</span>, <span class="math inline">\(m\)</span> = exponents (slopes on log-log plot)</p>
-</section>
-<section id="regional-consistency" class="level3">
-<h3 class="anchored" data-anchor-id="regional-consistency">Regional Consistency</h3>
-<p>Streams within a physiographically similar region exhibit consistent dimension-drainage area relationships because they share:</p>
+<p>Where:</p>
 <ul>
-<li><strong>Climate</strong>: Similar precipitation patterns and runoff characteristics</li>
-<li><strong>Geology</strong>: Common bedrock and surficial geology</li>
-<li><strong>Topography</strong>: Similar valley slopes and relief</li>
-<li><strong>Vegetation</strong>: Comparable vegetation types and density</li>
-<li><strong>Land use</strong>: Similar watershed disturbance patterns</li>
-<li><strong>Sediment supply</strong>: Comparable sediment sources and delivery</li>
+<li><span class="math inline">\(W_{bf}\)</span> = bankfull width (m or ft)</li>
+<li><span class="math inline">\(D_{bf}\)</span> = bankfull mean depth (m or ft)</li>
+<li><span class="math inline">\(A_{bf}\)</span> = bankfull cross-sectional area (m² or ft²)</li>
+<li><span class="math inline">\(A\)</span> = drainage area (km² or mi²)</li>
+<li><span class="math inline">\(a\)</span>, <span class="math inline">\(c\)</span>, <span class="math inline">\(k\)</span> = coefficients (intercepts)</li>
+<li><span class="math inline">\(b\)</span>, <span class="math inline">\(f\)</span>, <span class="math inline">\(m\)</span> = exponents (slopes on log-log plot)</li>
 </ul>
-<p>Regional curves developed from stable, reference-quality streams represent the expected dimensions for channels in dynamic equilibrium with their flow and sediment regime <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span>.</p>
-</section>
-<section id="drainage-area-as-surrogate" class="level3">
-<h3 class="anchored" data-anchor-id="drainage-area-as-surrogate">Drainage Area as Surrogate</h3>
-<p>Drainage area serves as a surrogate for bankfull discharge in regional curves:</p>
+<p>FluvialGeomorph uses these relationships to:</p>
 <ul>
-<li>Drainage area is easily determined from topographic data or GIS</li>
-<li>Bankfull discharge is difficult to measure directly</li>
-<li>Strong correlation exists between drainage area and bankfull discharge within regions</li>
-<li>Drainage area is available for all locations (gaged and ungaged)</li>
+<li>Compare observed dimensions to regional expectations</li>
+<li>Estimate appropriate dimensions for restoration design</li>
+<li>Screen channel conditions across watersheds</li>
+<li>Validate detailed design calculations</li>
 </ul>
-<p>The relationship between bankfull discharge and drainage area is typically:</p>
-<p><span class="math display">\[Q_{bf} = \alpha A^\beta\]</span></p>
-<p>Where: - <span class="math inline">\(Q_{bf}\)</span> = bankfull discharge (m³/s or ft³/s) - <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> = regional coefficients</p>
-</section>
-<section id="exponent-relationships" class="level3">
-<h3 class="anchored" data-anchor-id="exponent-relationships">Exponent Relationships</h3>
-<p>Theoretical considerations suggest relationships among exponents <span class="citation" data-cites="leopold1953hydraulic">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>)</span>:</p>
-<p><span class="math display">\[b + f = m\]</span></p>
-<p>This relationship reflects the fact that cross-sectional area equals width times depth. In practice, exponents derived from field data may not satisfy this relationship exactly due to measurement error and natural variability.</p>
-<p>Typical exponent ranges: - Width exponent (<span class="math inline">\(b\)</span>): 0.4-0.6 - Depth exponent (<span class="math inline">\(f\)</span>): 0.3-0.5 - Area exponent (<span class="math inline">\(m\)</span>): 0.7-1.0</p>
-</section>
 </section>
 <section id="data-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="data-requirements">Data Requirements</h2>
-<section id="site-selection-criteria" class="level3">
-<h3 class="anchored" data-anchor-id="site-selection-criteria">Site Selection Criteria</h3>
-<p>Regional curves should be developed from streams that represent stable, reference conditions:</p>
-<p><strong>Inclusion Criteria:</strong> - Alluvial channels (able to adjust form) - Stable condition (not actively incising or aggrading) - Natural or near-natural condition - Clear bankfull indicators present - Minimal human disturbance - Representative of region</p>
-<p><strong>Exclusion Criteria:</strong> - Bedrock-controlled channels - Actively incising or degrading channels - Recently disturbed channels (channelization, dredging) - Heavily modified channels (concrete, rip-rap) - Channels lacking clear bankfull features - Tidal or backwater-affected reaches - Braided or anastomosing channels (unless developing curves specifically for these types)</p>
+<section id="input-data-structure" class="level3">
+<h3 class="anchored" data-anchor-id="input-data-structure">Input Data Structure</h3>
+<p>FluvialGeomorph regional curve functions require a data frame with the following fields:</p>
+<p><strong>Required Fields:</strong></p>
+<ul>
+<li><code>ReachName</code>: Unique site identifier</li>
+<li><code>Drainage_Area_km2</code>: Drainage area in square kilometers (or <code>Drainage_Area_mi2</code>)</li>
+<li><code>bankfull_width_m</code>: Bankfull width in meters (or <code>_ft</code>)</li>
+<li><code>bankfull_depth_m</code>: Bankfull mean depth in meters (or <code>_ft</code>)</li>
+<li><code>bankfull_area_m2</code>: Bankfull cross-sectional area in square meters (or <code>_ft2</code>)</li>
+</ul>
+<p><strong>Optional Fields:</strong></p>
+<ul>
+<li><code>Region</code>: Regional grouping for stratified analysis</li>
+<li><code>ChannelType</code>: Channel classification</li>
+<li><code>DataSource</code>: Field, LiDAR, or combined</li>
+<li><code>QualityRating</code>: Data quality indicator</li>
+</ul>
 </section>
-<section id="sample-size-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="sample-size-requirements">Sample Size Requirements</h3>
-<p><strong>Minimum Sample Sizes:</strong> - Statistical validity: 20-30 sites minimum - Robust relationships: 50-100 sites preferred - Comprehensive regional coverage: 100+ sites ideal - Stratification by drainage area: 5-10 sites per order of magnitude</p>
-<p><strong>Drainage Area Range:</strong> - Span 2-3 orders of magnitude minimum - Example: 1-100 km² or 10-1000 km² - Adequate coverage across range (avoid gaps) - Sufficient sites at small and large end of range - Logarithmic distribution preferred over linear</p>
-<p><strong>Spatial Distribution:</strong> - Geographic coverage across region - Multiple watersheds represented - Range of valley settings - Various channel types within region - Avoid clustering in single watershed</p>
+<section id="sample-size-guidelines" class="level3">
+<h3 class="anchored" data-anchor-id="sample-size-guidelines">Sample Size Guidelines</h3>
+<p><strong>Minimum Requirements:</strong></p>
+<ul>
+<li>20-30 sites for basic regional curves</li>
+<li>50-100 sites for robust relationships</li>
+<li>100+ sites for comprehensive regional coverage</li>
+<li>5-10 sites per order of magnitude of drainage area</li>
+</ul>
+<p><strong>Drainage Area Range:</strong></p>
+<ul>
+<li>Span 2-3 orders of magnitude minimum</li>
+<li>Adequate coverage across range (avoid gaps)</li>
+<li>Sufficient sites at small and large end of range</li>
+</ul>
 </section>
-<section id="lidar-data-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="lidar-data-requirements">LiDAR Data Requirements</h3>
-<p><strong>LiDAR Specifications:</strong> - Spatial resolution: 1-m preferred; 3-m maximum - Vertical accuracy: ±15 cm RMSE or better - Point density: ≥2 points/m² - Bare earth classification: High quality - Acquisition timing: Leaf-off, low-flow conditions - Coverage: Complete for all study sites</p>
-<p><strong>Quality Considerations:</strong> - Consistent acquisition specifications across region - Similar processing methods for all data - Comparable vegetation conditions during acquisition - Similar water levels during acquisition - Minimal time span between acquisitions (if multiple datasets)</p>
 </section>
-<section id="field-validation-data-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="field-validation-data-requirements">Field Validation Data Requirements</h3>
-<p><strong>Validation Site Selection:</strong> - Subset of LiDAR analysis sites (typically 10-30%) - Representative of range of conditions - Stratified by drainage area - Range of channel types and settings - Accessible locations with clear bankfull indicators - High-quality LiDAR coverage</p>
-<p><strong>Field Measurements:</strong> - Bankfull elevation at multiple points (10-20 per reach) - Cross-section surveys at 3-5 locations per reach - Bankfull width measurements (10-20 per reach) - Bankfull indicators documented and photographed - Substrate characterization - Channel condition assessment - GPS coordinates and site documentation</p>
-<p><strong>Validation Data Quality:</strong> - Vertical accuracy: ±0.03 m (±0.1 ft) - Horizontal accuracy: ±0.3 m (±1 ft) - Multiple bankfull indicators verified - Consistent methodology across sites - Complete documentation - Quality control procedures followed</p>
-</section>
-</section>
-<section id="data-collection-and-processing" class="level2">
-<h2 class="anchored" data-anchor-id="data-collection-and-processing">Data Collection and Processing</h2>
-<section id="lidar-based-dimension-extraction" class="level3">
-<h3 class="anchored" data-anchor-id="lidar-based-dimension-extraction">LiDAR-Based Dimension Extraction</h3>
-<section id="stream-network-preparation" class="level4">
-<h4 class="anchored" data-anchor-id="stream-network-preparation">Stream Network Preparation</h4>
-<ol type="1">
-<li><strong>Delineate or Import Stream Network:</strong>
+<section id="fluvialgeomorph-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="fluvialgeomorph-workflow">FluvialGeomorph Workflow</h2>
+<section id="step-1-extract-dimensions-from-cross-sections" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-extract-dimensions-from-cross-sections">Step 1: Extract Dimensions from Cross-Sections</h3>
+<p>Use FluvialGeomorph cross-section analysis functions to extract bankfull dimensions:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fluvialgeomorph)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate bankfull dimensions for each cross-section</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>xs_dimensions <span class="ot">&lt;-</span> <span class="fu">xs_dimensions</span>(xs, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">bankfull_elevation =</span> bf_elevation,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">reach_name =</span> <span class="st">"Site_01"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate to reach-scale means</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>reach_dims <span class="ot">&lt;-</span> <span class="fu">xs_reach_dimensions</span>(xs_dimensions)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The <code>xs_dimensions</code> function calculates:</p>
 <ul>
-<li>Use DEM-derived flow accumulation</li>
-<li>Or import existing stream network (NHD, state data)</li>
-<li>Define drainage area threshold for stream initiation</li>
-<li>Verify network accuracy against imagery or maps</li>
-</ul></li>
-<li><strong>Calculate Drainage Area:</strong>
-<ul>
-<li>Use flow accumulation from DEM</li>
-<li>Or calculate from watershed boundaries</li>
-<li>Verify against published values where available</li>
-<li>Document method and data sources</li>
-</ul></li>
-<li><strong>Segment Stream Network:</strong>
-<ul>
-<li>Divide into reaches of consistent character</li>
-<li>Typical reach length: 10-20 bankfull widths</li>
-<li>Avoid reaches with confluences or major disturbances</li>
-<li>Assign unique reach identifiers</li>
-</ul></li>
-</ol>
-</section>
-<section id="cross-section-extraction" class="level4">
-<h4 class="anchored" data-anchor-id="cross-section-extraction">Cross-Section Extraction</h4>
-<ol type="1">
-<li><strong>Generate Cross-Sections:</strong>
-<ul>
-<li>Automated placement perpendicular to flow</li>
-<li>Spacing: 10-50 m typical (based on channel size)</li>
-<li>Extend across channel and floodplain</li>
-<li>Extract elevation profiles from DEM</li>
-</ul></li>
-<li><strong>Quality Control:</strong>
-<ul>
-<li>Visual inspection of cross-section locations</li>
-<li>Verify perpendicular orientation</li>
-<li>Check for artifacts or errors</li>
-<li>Remove sections at confluences or structures</li>
-<li>Ensure adequate floodplain coverage</li>
-</ul></li>
-</ol>
-</section>
-<section id="bankfull-identification" class="level4">
-<h4 class="anchored" data-anchor-id="bankfull-identification">Bankfull Identification</h4>
-<ol type="1">
-<li><strong>Automated Bankfull Detection:</strong>
-<ul>
-<li>Apply topographic break detection algorithms</li>
-<li>Slope-based methods</li>
-<li>Statistical analysis of elevation distribution</li>
-<li>Identify bankfull elevation on both banks</li>
-</ul></li>
-<li><strong>Quality Screening:</strong>
-<ul>
-<li>Visual review of bankfull identification</li>
-<li>Check for consistency along reach</li>
-<li>Flag uncertain identifications</li>
-<li>Remove sections with poor bankfull definition</li>
-<li>Document quality ratings</li>
-</ul></li>
-<li><strong>Manual Refinement:</strong>
-<ul>
-<li>Adjust bankfull elevation where needed</li>
-<li>Use consistent criteria across all sites</li>
-<li>Document adjustments and rationale</li>
-<li>Maintain quality control records</li>
-</ul></li>
-</ol>
-</section>
-<section id="dimension-calculation" class="level4">
-<h4 class="anchored" data-anchor-id="dimension-calculation">Dimension Calculation</h4>
-<ol type="1">
-<li><strong>Extract Dimensions at Each Cross-Section:</strong>
-<ul>
-<li>Bankfull width (distance between bankfull points)</li>
-<li>Bankfull mean depth (area divided by width)</li>
+<li>Bankfull width</li>
+<li>Bankfull mean depth</li>
 <li>Bankfull cross-sectional area</li>
 <li>Width-depth ratio</li>
-<li>Bank height and floodplain width</li>
-</ul></li>
-<li><strong>Reach-Scale Aggregation:</strong>
+<li>Other hydraulic geometry parameters</li>
+</ul>
+</section>
+<section id="step-2-compile-regional-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-compile-regional-dataset">Step 2: Compile Regional Dataset</h3>
+<p>Combine reach-scale dimensions from multiple sites into a regional curve dataset:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create regional curve dataset</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rc_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">ReachName =</span> reach_names,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Drainage_Area_km2 =</span> drainage_areas,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">bankfull_width_m =</span> bf_widths,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">bankfull_depth_m =</span> bf_depths,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">bankfull_area_m2 =</span> bf_areas,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">DataSource =</span> data_sources</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># View dataset structure</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(rc_data)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rc_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-3-quality-control-and-screening" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-quality-control-and-screening">Step 3: Quality Control and Screening</h3>
+<p>Apply quality control procedures to the regional dataset:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rc_data)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for missing values</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(rc_data))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify potential outliers (&gt;3 standard deviations)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>rc_data<span class="sc">$</span>width_zscore <span class="ot">&lt;-</span> <span class="fu">scale</span>(<span class="fu">log10</span>(rc_data<span class="sc">$</span>bankfull_width_m))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> rc_data[<span class="fu">abs</span>(rc_data<span class="sc">$</span>width_zscore) <span class="sc">&gt;</span> <span class="dv">3</span>, ]</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove outliers if justified</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>rc_data_clean <span class="ot">&lt;-</span> rc_data[<span class="fu">abs</span>(rc_data<span class="sc">$</span>width_zscore) <span class="sc">&lt;=</span> <span class="dv">3</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-4-develop-regional-curves" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-develop-regional-curves">Step 4: Develop Regional Curves</h3>
+<p>Use FluvialGeomorph functions to develop regional curve relationships:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Develop width regional curve</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>width_curve <span class="ot">&lt;-</span> <span class="fu">regional_curve</span>(<span class="at">data =</span> rc_data_clean,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">dimension =</span> <span class="st">"bankfull_width_m"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">drainage_area =</span> <span class="st">"Drainage_Area_km2"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                              <span class="at">method =</span> <span class="st">"ols"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># View curve parameters</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(width_curve)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract coefficients and exponents</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(width_curve)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Develop curves for all dimensions</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>depth_curve <span class="ot">&lt;-</span> <span class="fu">regional_curve</span>(rc_data_clean, <span class="st">"bankfull_depth_m"</span>, </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Drainage_Area_km2"</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>area_curve <span class="ot">&lt;-</span> <span class="fu">regional_curve</span>(rc_data_clean, <span class="st">"bankfull_area_m2"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"Drainage_Area_km2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The <code>regional_curve</code> function:</p>
 <ul>
-<li>Calculate mean dimensions for each reach</li>
-<li>Calculate standard deviation and coefficient of variation</li>
-<li>Identify and remove outliers (&gt;3 standard deviations)</li>
-<li>Document number of cross-sections per reach</li>
-<li>Assess within-reach variability</li>
-</ul></li>
-</ol>
+<li>Log-transforms data</li>
+<li>Performs regression analysis</li>
+<li>Calculates goodness-of-fit statistics (R², SEE)</li>
+<li>Computes confidence and prediction intervals</li>
+<li>Returns model object for further analysis</li>
+</ul>
 </section>
-</section>
-<section id="field-validation-data-collection" class="level3">
-<h3 class="anchored" data-anchor-id="field-validation-data-collection">Field Validation Data Collection</h3>
-<section id="site-survey" class="level4">
-<h4 class="anchored" data-anchor-id="site-survey">Site Survey</h4>
-<ol type="1">
-<li><strong>Bankfull Verification:</strong>
+<section id="step-5-evaluate-model-fit" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-evaluate-model-fit">Step 5: Evaluate Model Fit</h3>
+<p>Assess regional curve quality using diagnostic functions:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Goodness of fit statistics</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rc_stats <span class="ot">&lt;-</span> <span class="fu">regional_curve_stats</span>(width_curve)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(rc_stats)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Residual analysis</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>rc_residuals <span class="ot">&lt;-</span> <span class="fu">regional_curve_residuals</span>(width_curve)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(rc_residuals)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check regression assumptions</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(width_curve<span class="sc">$</span>model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Key statistics to evaluate:</p>
 <ul>
-<li>Identify bankfull indicators in field</li>
-<li>Survey bankfull elevation at 10-20 points</li>
-<li>Measure bankfull width at 10-20 locations</li>
-<li>Document indicators with photos</li>
-<li>Record confidence level for bankfull identification</li>
-</ul></li>
-<li><strong>Cross-Section Surveys:</strong>
+<li><strong>R²</strong>: Proportion of variance explained (0.7-0.95 typical)</li>
+<li><strong>SEE</strong>: Standard error of estimate in log space</li>
+<li><strong>RMSE</strong>: Root mean square error in original units</li>
+<li><strong>Residual patterns</strong>: Check for systematic bias</li>
+</ul>
+</section>
+<section id="step-6-visualize-regional-curves" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-visualize-regional-curves">Step 6: Visualize Regional Curves</h3>
+<p>Create publication-quality regional curve plots:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic regional curve plot</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curve</span>(width_curve, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">title =</span> <span class="st">"Bankfull Width Regional Curve"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">xlab =</span> <span class="st">"Drainage Area (km²)"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">ylab =</span> <span class="st">"Bankfull Width (m)"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Add prediction intervals</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curve</span>(width_curve, </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">prediction_interval =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">confidence_interval =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pi_level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Customize plot appearance</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curve</span>(width_curve,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                   <span class="at">point_color =</span> <span class="st">"blue"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                   <span class="at">line_color =</span> <span class="st">"red"</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                   <span class="at">show_equation =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                   <span class="at">show_stats =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Multi-panel plot for all dimensions</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curve</span>(width_curve, <span class="at">main =</span> <span class="st">"Width"</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curve</span>(depth_curve, <span class="at">main =</span> <span class="st">"Depth"</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curve</span>(area_curve, <span class="at">main =</span> <span class="st">"Area"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-7-apply-regional-curves" class="level3">
+<h3 class="anchored" data-anchor-id="step-7-apply-regional-curves">Step 7: Apply Regional Curves</h3>
+<p>Use developed curves to predict dimensions at new sites:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict dimensions for new drainage areas</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>new_sites <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">ReachName =</span> <span class="fu">c</span>(<span class="st">"New_Site_1"</span>, <span class="st">"New_Site_2"</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Drainage_Area_km2 =</span> <span class="fu">c</span>(<span class="fl">15.5</span>, <span class="fl">42.3</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply regional curves</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict_regional_curve</span>(width_curve, </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">newdata =</span> new_sites,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">interval =</span> <span class="st">"prediction"</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># View predictions with intervals</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(predictions)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare observed vs. predicted dimensions</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>rc_data_clean<span class="sc">$</span>predicted_width <span class="ot">&lt;-</span> <span class="fu">predict</span>(width_curve, </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">newdata =</span> rc_data_clean)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>rc_data_clean<span class="sc">$</span>residual <span class="ot">&lt;-</span> rc_data_clean<span class="sc">$</span>bankfull_width_m <span class="sc">-</span> </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                          rc_data_clean<span class="sc">$</span>predicted_width</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate percent difference</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>rc_data_clean<span class="sc">$</span>percent_diff <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> rc_data_clean<span class="sc">$</span>residual <span class="sc">/</span> </span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>                              rc_data_clean<span class="sc">$</span>predicted_width</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-8-export-results" class="level3">
+<h3 class="anchored" data-anchor-id="step-8-export-results">Step 8: Export Results</h3>
+<p>Export regional curve parameters and predictions:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Export curve coefficients</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>curve_params <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dimension =</span> <span class="fu">c</span>(<span class="st">"Width"</span>, <span class="st">"Depth"</span>, <span class="st">"Area"</span>),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Coefficient =</span> <span class="fu">c</span>(<span class="fu">coef</span>(width_curve)[<span class="dv">1</span>], </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">coef</span>(depth_curve)[<span class="dv">1</span>],</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">coef</span>(area_curve)[<span class="dv">1</span>]),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Exponent =</span> <span class="fu">c</span>(<span class="fu">coef</span>(width_curve)[<span class="dv">2</span>],</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>              <span class="fu">coef</span>(depth_curve)[<span class="dv">2</span>], </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>              <span class="fu">coef</span>(area_curve)[<span class="dv">2</span>]),</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">R_squared =</span> <span class="fu">c</span>(<span class="fu">summary</span>(width_curve)<span class="sc">$</span>r.squared,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>               <span class="fu">summary</span>(depth_curve)<span class="sc">$</span>r.squared,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>               <span class="fu">summary</span>(area_curve)<span class="sc">$</span>r.squared),</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">SEE =</span> <span class="fu">c</span>(<span class="fu">summary</span>(width_curve)<span class="sc">$</span>sigma,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>         <span class="fu">summary</span>(depth_curve)<span class="sc">$</span>sigma,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>         <span class="fu">summary</span>(area_curve)<span class="sc">$</span>sigma)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(curve_params, <span class="st">"regional_curve_parameters.csv"</span>, </span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Export predictions</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(predictions, <span class="st">"regional_curve_predictions.csv"</span>,</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>         <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Export dataset with predictions</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(rc_data_clean, <span class="st">"regional_curve_dataset.csv"</span>,</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>         <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="advanced-applications" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-applications">Advanced Applications</h2>
+<section id="stratified-regional-curves" class="level3">
+<h3 class="anchored" data-anchor-id="stratified-regional-curves">Stratified Regional Curves</h3>
+<p>Develop separate curves for different regions or channel types:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stratify by region</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>regions <span class="ot">&lt;-</span> <span class="fu">unique</span>(rc_data_clean<span class="sc">$</span>Region)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Develop curves for each region</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>region_curves <span class="ot">&lt;-</span> <span class="fu">lapply</span>(regions, <span class="cf">function</span>(r) {</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  subset_data <span class="ot">&lt;-</span> rc_data_clean[rc_data_clean<span class="sc">$</span>Region <span class="sc">==</span> r, ]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">regional_curve</span>(subset_data, <span class="st">"bankfull_width_m"</span>, <span class="st">"Drainage_Area_km2"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(region_curves) <span class="ot">&lt;-</span> regions</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare regional curves</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curves_comparison</span>(region_curves, </span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                               <span class="at">legend_labels =</span> regions)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="validation-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="validation-analysis">Validation Analysis</h3>
+<p>Validate regional curves using independent datasets:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split data into calibration and validation sets</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>train_idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(rc_data_clean), </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">size =</span> <span class="fl">0.7</span> <span class="sc">*</span> <span class="fu">nrow</span>(rc_data_clean))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>train_data <span class="ot">&lt;-</span> rc_data_clean[train_idx, ]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>valid_data <span class="ot">&lt;-</span> rc_data_clean[<span class="sc">-</span>train_idx, ]</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Develop curve on training data</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>train_curve <span class="ot">&lt;-</span> <span class="fu">regional_curve</span>(train_data, <span class="st">"bankfull_width_m"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Drainage_Area_km2"</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Validate on independent data</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>valid_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(train_curve, <span class="at">newdata =</span> valid_data)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>valid_data<span class="sc">$</span>predicted <span class="ot">&lt;-</span> valid_pred</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate validation statistics</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>validation_stats <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">RMSE =</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((valid_data<span class="sc">$</span>bankfull_width_m <span class="sc">-</span> valid_pred)<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">MAE =</span> <span class="fu">mean</span>(<span class="fu">abs</span>(valid_data<span class="sc">$</span>bankfull_width_m <span class="sc">-</span> valid_pred)),</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">R_squared =</span> <span class="fu">cor</span>(valid_data<span class="sc">$</span>bankfull_width_m, valid_pred)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(validation_stats)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="comparison-with-existing-curves" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-with-existing-curves">Comparison with Existing Curves</h3>
+<p>Compare FluvialGeomorph-derived curves with published regional curves:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define published curve parameters</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>published_curve <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">coefficient =</span> <span class="fl">4.23</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">exponent =</span> <span class="fl">0.48</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">source =</span> <span class="st">"Harman et al. 1999"</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply published curve to dataset</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>rc_data_clean<span class="sc">$</span>published_pred <span class="ot">&lt;-</span> published_curve<span class="sc">$</span>coefficient <span class="sc">*</span> </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                                rc_data_clean<span class="sc">$</span>Drainage_Area_km2<span class="sc">^</span>published_curve<span class="sc">$</span>exponent</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare predictions</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>comparison_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(rc_data_clean, </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">aes</span>(<span class="at">x =</span> bankfull_width_m)) <span class="sc">+</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> predicted_width, <span class="at">color =</span> <span class="st">"FluvialGeomorph"</span>)) <span class="sc">+</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> published_pred, <span class="at">color =</span> <span class="st">"Published"</span>)) <span class="sc">+</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>, <span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Observed Width (m)"</span>, </span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Predicted Width (m)"</span>,</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Curve Source"</span>) <span class="sc">+</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(comparison_plot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="uncertainty-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="uncertainty-analysis">Uncertainty Analysis</h3>
+<p>Quantify and visualize prediction uncertainty:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate prediction intervals</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>pred_intervals <span class="ot">&lt;-</span> <span class="fu">predict</span>(width_curve, </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">newdata =</span> rc_data_clean,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">interval =</span> <span class="st">"prediction"</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>rc_data_clean<span class="sc">$</span>pred_lower <span class="ot">&lt;-</span> pred_intervals[, <span class="st">"lwr"</span>]</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>rc_data_clean<span class="sc">$</span>pred_upper <span class="ot">&lt;-</span> pred_intervals[, <span class="st">"upr"</span>]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify sites outside prediction interval</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>rc_data_clean<span class="sc">$</span>outside_PI <span class="ot">&lt;-</span> rc_data_clean<span class="sc">$</span>bankfull_width_m <span class="sc">&lt;</span> rc_data_clean<span class="sc">$</span>pred_lower <span class="sc">|</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                            rc_data_clean<span class="sc">$</span>bankfull_width_m <span class="sc">&gt;</span> rc_data_clean<span class="sc">$</span>pred_upper</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize sites outside prediction interval</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>outside_sites <span class="ot">&lt;-</span> rc_data_clean[rc_data_clean<span class="sc">$</span>outside_PI, ]</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="fu">nrow</span>(outside_sites), <span class="st">"sites outside 95% prediction interval"</span>))</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot with uncertainty bands</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curve_uncertainty</span>(width_curve,</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>                               <span class="at">data =</span> rc_data_clean,</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>                               <span class="at">highlight_outliers =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="regional-curve-reports" class="level3">
+<h3 class="anchored" data-anchor-id="regional-curve-reports">Regional Curve Reports</h3>
+<p>Generate comprehensive regional curve reports:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create regional curve report</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">regional_curve_report</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">curves =</span> <span class="fu">list</span>(<span class="at">width =</span> width_curve, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">depth =</span> depth_curve,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">area =</span> area_curve),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> rc_data_clean,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">"regional_curve_report.html"</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Piedmont Regional Curves"</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">author =</span> <span class="st">"Your Name"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">date =</span> <span class="fu">Sys.Date</span>(),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">include_diagnostics =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">include_validation =</span> <span class="cn">TRUE</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The report includes:</p>
 <ul>
-<li>Survey 3-5 cross-sections per reach</li>
-<li>Co-locate with LiDAR-extracted sections where possible</li>
-<li>Measure elevation at breaks in slope</li>
-<li>Include bankfull points, thalweg, floodplain</li>
-<li>Calculate dimensions from surveyed sections</li>
-</ul></li>
-<li><strong>Site Documentation:</strong>
+<li>Curve equations and parameters</li>
+<li>Goodness-of-fit statistics</li>
+<li>Diagnostic plots</li>
+<li>Data summary tables</li>
+<li>Validation results</li>
+<li>Application guidance</li>
+</ul>
+</section>
+</section>
+<section id="best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
+<section id="data-quality" class="level3">
+<h3 class="anchored" data-anchor-id="data-quality">Data Quality</h3>
+<p><strong>Site Selection:</strong></p>
 <ul>
-<li>GPS coordinates</li>
-<li>Drainage area verification</li>
-<li>Channel type and condition</li>
-<li>Substrate characterization</li>
-<li>Vegetation description</li>
-<li>Photo documentation</li>
-<li>Field notes and observations</li>
-</ul></li>
-</ol>
-</section>
-<section id="data-processing" class="level4">
-<h4 class="anchored" data-anchor-id="data-processing">Data Processing</h4>
-<ol type="1">
-<li><strong>Calculate Field Dimensions:</strong>
+<li>Use stable, reference-quality streams</li>
+<li>Avoid recently disturbed or modified channels</li>
+<li>Ensure clear bankfull indicators</li>
+<li>Stratify by drainage area</li>
+<li>Maintain geographic distribution</li>
+</ul>
+<p><strong>Dimension Extraction:</strong></p>
 <ul>
-<li>Process survey data to elevations</li>
-<li>Identify bankfull elevation from field indicators</li>
-<li>Calculate width, depth, area from cross-sections</li>
-<li>Average dimensions across reach</li>
-<li>Calculate uncertainty estimates</li>
-</ul></li>
-<li><strong>Quality Control:</strong>
+<li>Use consistent bankfull identification methods</li>
+<li>Extract dimensions from multiple cross-sections per reach</li>
+<li>Calculate reach-scale means</li>
+<li>Document quality ratings</li>
+<li>Remove poor-quality sites</li>
+</ul>
+</section>
+<section id="statistical-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="statistical-analysis">Statistical Analysis</h3>
+<p><strong>Regression Methods:</strong></p>
 <ul>
-<li>Check for survey errors or closures</li>
-<li>Verify calculations</li>
-<li>Compare dimensions across cross-sections</li>
-<li>Assess consistency of bankfull identification</li>
-<li>Document data quality</li>
-</ul></li>
-</ol>
-</section>
-</section>
-<section id="comparison-and-validation" class="level3">
-<h3 class="anchored" data-anchor-id="comparison-and-validation">Comparison and Validation</h3>
-<section id="lidar-vs.-field-comparison" class="level4">
-<h4 class="anchored" data-anchor-id="lidar-vs.-field-comparison">LiDAR vs.&nbsp;Field Comparison</h4>
-<ol type="1">
-<li><strong>Direct Comparison:</strong>
+<li>Use log-transformation for power-law relationships</li>
+<li>Check regression assumptions (linearity, homoscedasticity, normality)</li>
+<li>Analyze residuals for patterns</li>
+<li>Remove outliers only if justified</li>
+<li>Document all decisions</li>
+</ul>
+<p><strong>Model Evaluation:</strong></p>
 <ul>
-<li>Match LiDAR and field sites</li>
-<li>Compare bankfull elevations</li>
-<li>Compare dimensions (width, depth, area)</li>
-<li>Calculate differences and percent errors</li>
-<li>Identify systematic biases</li>
-</ul></li>
-<li><strong>Statistical Analysis:</strong>
+<li>Calculate goodness-of-fit statistics (R², SEE, RMSE)</li>
+<li>Perform residual analysis</li>
+<li>Validate with independent data</li>
+<li>Compare with existing curves</li>
+<li>Quantify uncertainty</li>
+</ul>
+</section>
+<section id="application-guidelines" class="level3">
+<h3 class="anchored" data-anchor-id="application-guidelines">Application Guidelines</h3>
+<p><strong>Appropriate Uses:</strong></p>
 <ul>
-<li>Calculate mean error and standard deviation</li>
-<li>Perform paired t-tests</li>
-<li>Calculate correlation coefficients</li>
-<li>Assess accuracy across range of channel sizes</li>
-<li>Identify factors affecting accuracy</li>
-</ul></li>
-<li><strong>Error Assessment:</strong>
+<li>Preliminary assessment of channel condition</li>
+<li>Screening-level analysis across watersheds</li>
+<li>Initial dimensioning for restoration design</li>
+<li>Validation of detailed design calculations</li>
+<li>Comparison with field measurements</li>
+</ul>
+<p><strong>Limitations:</strong></p>
 <ul>
-<li>Vertical error in bankfull elevation</li>
-<li>Percent error in width, depth, area</li>
-<li>Relationship between error and channel size</li>
-<li>Relationship between error and vegetation cover</li>
-<li>Relationship between error and channel condition</li>
-</ul></li>
-</ol>
-<p><strong>Example Validation Results:</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Dimension</th>
-<th>Mean Error</th>
-<th>Std Dev</th>
-<th>RMSE</th>
-<th>R²</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Bankfull Elevation</td>
-<td>+0.08 m</td>
-<td>0.12 m</td>
-<td>0.14 m</td>
-<td>-</td>
-</tr>
-<tr class="even">
-<td>Bankfull Width</td>
-<td>-3.2%</td>
-<td>8.5%</td>
-<td>9.1%</td>
-<td>0.95</td>
-</tr>
-<tr class="odd">
-<td>Bankfull Depth</td>
-<td>+5.1%</td>
-<td>12.3%</td>
-<td>13.3%</td>
-<td>0.88</td>
-</tr>
-<tr class="even">
-<td>Bankfull Area</td>
-<td>+1.8%</td>
-<td>15.2%</td>
-<td>15.3%</td>
-<td>0.92</td>
-</tr>
-</tbody>
-</table>
+<li>Curves represent average conditions for stable streams</li>
+<li>Prediction intervals are wide (±30-40% typical)</li>
+<li>Should be verified with field observations</li>
+<li>Not applicable to highly modified channels</li>
+<li>Extrapolation beyond data range uncertain</li>
+</ul>
 </section>
-<section id="calibration" class="level4">
-<h4 class="anchored" data-anchor-id="calibration">Calibration</h4>
-<ol type="1">
-<li><strong>Assess Systematic Bias:</strong>
+</section>
+<section id="example-complete-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="example-complete-workflow">Example: Complete Workflow</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load FluvialGeomorph</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fluvialgeomorph)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Load regional dataset</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>rc_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"regional_curve_data.csv"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Quality control</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>rc_data_clean <span class="ot">&lt;-</span> rc_data[<span class="fu">complete.cases</span>(rc_data), ]</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>rc_data_clean <span class="ot">&lt;-</span> rc_data_clean[rc_data_clean<span class="sc">$</span>QualityRating <span class="sc">&gt;=</span> <span class="dv">3</span>, ]</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Develop regional curves</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>width_curve <span class="ot">&lt;-</span> <span class="fu">regional_curve</span>(rc_data_clean, </span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"bankfull_width_m"</span>,</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Drainage_Area_km2"</span>)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>depth_curve <span class="ot">&lt;-</span> <span class="fu">regional_curve</span>(rc_data_clean,</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"bankfull_depth_m"</span>, </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Drainage_Area_km2"</span>)</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>area_curve <span class="ot">&lt;-</span> <span class="fu">regional_curve</span>(rc_data_clean,</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"bankfull_area_m2"</span>,</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"Drainage_Area_km2"</span>)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Evaluate models</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(width_curve)</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(width_curve<span class="sc">$</span>model)</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Visualize curves</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curve</span>(width_curve, <span class="at">main =</span> <span class="st">"Bankfull Width"</span>)</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curve</span>(depth_curve, <span class="at">main =</span> <span class="st">"Bankfull Depth"</span>)</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_regional_curve</span>(area_curve, <span class="at">main =</span> <span class="st">"Bankfull Area"</span>)</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Apply to new sites</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>new_sites <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Drainage_Area_km2 =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">100</span>))</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict_regional_curve</span>(width_curve, </span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">newdata =</span> new_sites,</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">interval =</span> <span class="st">"prediction"</span>)</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Export results</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(predictions, <span class="st">"predictions.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. Generate report</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="fu">regional_curve_report</span>(</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">curves =</span> <span class="fu">list</span>(<span class="at">width =</span> width_curve, </span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>               <span class="at">depth =</span> depth_curve, </span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>               <span class="at">area =</span> area_curve),</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> rc_data_clean,</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">"regional_curve_report.html"</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>FluvialGeomorph provides a comprehensive toolkit for regional curve development and application:</p>
 <ul>
-<li>Determine if LiDAR consistently over- or under-estimates</li>
-<li>Calculate bias correction factors if needed</li>
-<li>Test correction on independent validation sites</li>
-<li>Document calibration procedure</li>
-</ul></li>
-<li><strong>Refine Automated Methods:</strong>
-<ul>
-<li>Adjust bankfull detection algorithm parameters</li>
-<li>Use field data as training dataset</li>
-<li>Test refined methods on validation sites</li>
-<li>Iterate to optimize accuracy</li>
-<li>Document optimal parameter settings</li>
-</ul></li>
-<li><strong>Establish Confidence Intervals:</strong>
-<ul>
-<li>Calculate prediction intervals from validation data</li>
-<li>Quantify uncertainty in LiDAR-derived dimensions</li>
-<li>Develop correction factors if appropriate</li>
-<li>Document accuracy by channel size or condition</li>
-</ul></li>
-</ol>
-</section>
-</section>
-<section id="data-integration" class="level3">
-<h3 class="anchored" data-anchor-id="data-integration">Data Integration</h3>
-<section id="combined-dataset-development" class="level4">
-<h4 class="anchored" data-anchor-id="combined-dataset-development">Combined Dataset Development</h4>
-<ol type="1">
-<li><strong>Merge LiDAR and Field Data:</strong>
-<ul>
-<li>Include all field-validated sites in dataset</li>
-<li>Include LiDAR sites that pass quality screening</li>
-<li>Apply calibration corrections if developed</li>
-<li>Flag data source for each site (field, LiDAR, or both)</li>
-<li>Maintain data quality ratings</li>
-</ul></li>
-<li><strong>Quality Screening:</strong>
-<ul>
-<li>Remove sites with poor bankfull identification</li>
-<li>Remove outliers (&gt;3 standard deviations from regression)</li>
-<li>Remove sites with known disturbances</li>
-<li>Remove sites outside drainage area range of interest</li>
-<li>Document exclusion criteria and removed sites</li>
-</ul></li>
-<li><strong>Final Dataset:</strong>
-<ul>
-<li>Site ID and location</li>
-<li>Drainage area</li>
-<li>Bankfull width, depth, area</li>
-<li>Data source (field, LiDAR, or both)</li>
-<li>Quality rating</li>
-<li>Channel type and condition</li>
-<li>Notes and documentation</li>
-</ul></li>
-</ol>
-<p><strong>Example Dataset Summary:</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Data Source</th>
-<th>Number of Sites</th>
-<th>Drainage Area Range (km²)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Field Only</td>
-<td>25</td>
-<td>2.5 - 180</td>
-</tr>
-<tr class="even">
-<td>LiDAR Only</td>
-<td>175</td>
-<td>1.2 - 250</td>
-</tr>
-<tr class="odd">
-<td>Both (Validation)</td>
-<td>30</td>
-<td>3.0 - 200</td>
-</tr>
-<tr class="even">
-<td><strong>Total</strong></td>
-<td><strong>230</strong></td>
-<td><strong>1.2 - 250</strong></td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-</section>
-<section id="statistical-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-analysis">Statistical Analysis</h2>
-<section id="regression-methods" class="level3">
-<h3 class="anchored" data-anchor-id="regression-methods">Regression Methods</h3>
-<section id="log-transformation" class="level4">
-<h4 class="anchored" data-anchor-id="log-transformation">Log-Transformation</h4>
-<p>Regional curves are typically developed using log-transformed data:</p>
-<p><span class="math display">\[\log(W_{bf}) = \log(a) + b \cdot \log(A)\]</span></p>
-<p>Log-transformation: - Linearizes power-law relationships - Stabilizes variance across range of drainage areas - Enables use of ordinary least squares regression - Facilitates interpretation of exponents</p>
-</section>
-<section id="ordinary-least-squares-ols-regression" class="level4">
-<h4 class="anchored" data-anchor-id="ordinary-least-squares-ols-regression">Ordinary Least Squares (OLS) Regression</h4>
-<p><strong>Procedure:</strong> 1. Log-transform dimension and drainage area data 2. Perform linear regression: <span class="math inline">\(\log(Y) = \log(a) + b \cdot \log(X)\)</span> 3. Calculate regression coefficients and statistics 4. Back-transform to power-law form: <span class="math inline">\(Y = aX^b\)</span></p>
-<p><strong>Assumptions:</strong> - Linear relationship in log-log space - Homoscedastic errors (constant variance) - Independent observations - Normally distributed residuals</p>
-<p><strong>Outputs:</strong> - Coefficient (<span class="math inline">\(a\)</span>) and exponent (<span class="math inline">\(b\)</span>) - R² (coefficient of determination) - Standard error of estimate - Confidence intervals for coefficients - Prediction intervals</p>
-</section>
-<section id="alternative-regression-methods" class="level4">
-<h4 class="anchored" data-anchor-id="alternative-regression-methods">Alternative Regression Methods</h4>
-<p><strong>Reduced Major Axis (RMA) Regression:</strong> - Accounts for error in both variables - Appropriate when drainage area has uncertainty - Produces steeper slopes than OLS - Use when both variables are measured with error</p>
-<p><strong>Weighted Least Squares:</strong> - Weights observations by inverse variance - Appropriate when error varies with channel size - Can weight field data more heavily than LiDAR data - Use when data quality varies among sites</p>
-<p><strong>Robust Regression:</strong> - Less sensitive to outliers - Appropriate when dataset includes some questionable sites - Various methods available (M-estimators, least trimmed squares) - Use when outliers cannot be definitively removed</p>
-</section>
-</section>
-<section id="model-evaluation" class="level3">
-<h3 class="anchored" data-anchor-id="model-evaluation">Model Evaluation</h3>
-<section id="goodness-of-fit" class="level4">
-<h4 class="anchored" data-anchor-id="goodness-of-fit">Goodness of Fit</h4>
-<p><strong>R² (Coefficient of Determination):</strong> - Proportion of variance explained by model - Range: 0 to 1 (higher is better) - Typical values for regional curves: 0.7-0.95 - Lower values may indicate: - High natural variability - Mixed channel types or conditions - Poor data quality - Inappropriate regional grouping</p>
-<p><strong>Standard Error of Estimate (SEE):</strong> - Average deviation of observations from regression line - In log space: <span class="math inline">\(SEE = \sqrt{\frac{\sum(log(Y_{obs}) - log(Y_{pred}))^2}{n-2}}\)</span> - Back-transformed to percent error: <span class="math inline">\(PE = 100 \times (10^{SEE} - 1)\)</span> - Typical values: 20-40% for width, 30-50% for depth</p>
-<p><strong>Root Mean Square Error (RMSE):</strong> - Similar to SEE but calculated in original units - <span class="math inline">\(RMSE = \sqrt{\frac{\sum(Y_{obs} - Y_{pred})^2}{n}}\)</span> - Useful for comparing models in original units</p>
-</section>
-<section id="residual-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="residual-analysis">Residual Analysis</h4>
-<p><strong>Residual Plots:</strong> - Plot residuals vs.&nbsp;predicted values - Plot residuals vs.&nbsp;drainage area - Check for patterns indicating: - Non-linear relationships - Heteroscedasticity (non-constant variance) - Outliers or influential points - Systematic bias</p>
-<p><strong>Normal Probability Plot:</strong> - Plot residuals vs.&nbsp;theoretical normal quantiles - Check for normality of residuals - Deviations indicate: - Skewed distribution - Outliers - Non-normal errors</p>
-<p><strong>Influence Diagnostics:</strong> - Cook’s distance: Identifies influential points - Leverage: Identifies points with unusual predictor values - DFBETAS: Change in coefficients when point removed - Remove or investigate high-influence points</p>
-</section>
-<section id="model-comparison" class="level4">
-<h4 class="anchored" data-anchor-id="model-comparison">Model Comparison</h4>
-<p><strong>Compare Alternative Models:</strong> - Different regional groupings - Different regression methods - With and without outliers - Field-only vs.&nbsp;combined datasets</p>
-<p><strong>Comparison Criteria:</strong> - R² and adjusted R² - Standard error of estimate - AIC (Akaike Information Criterion) - BIC (Bayesian Information Criterion) - Cross-validation error - Prediction interval width</p>
-</section>
-</section>
-<section id="uncertainty-quantification" class="level3">
-<h3 class="anchored" data-anchor-id="uncertainty-quantification">Uncertainty Quantification</h3>
-<section id="confidence-intervals" class="level4">
-<h4 class="anchored" data-anchor-id="confidence-intervals">Confidence Intervals</h4>
-<p><strong>Confidence Interval for Regression Line:</strong> - Uncertainty in mean predicted value - Narrower than prediction intervals - Width increases away from mean drainage area - 95% confidence interval typical</p>
-<p><strong>Calculation:</strong> <span class="math display">\[CI = \hat{Y} \pm t_{\alpha/2, n-2} \cdot SE_{\hat{Y}}\]</span></p>
-<p>Where: - <span class="math inline">\(\hat{Y}\)</span> = predicted value - <span class="math inline">\(t_{\alpha/2, n-2}\)</span> = t-value for desired confidence level - <span class="math inline">\(SE_{\hat{Y}}\)</span> = standard error of predicted mean</p>
-</section>
-<section id="prediction-intervals" class="level4">
-<h4 class="anchored" data-anchor-id="prediction-intervals">Prediction Intervals</h4>
-<p><strong>Prediction Interval for Individual Observations:</strong> - Uncertainty in predicting dimension at new site - Wider than confidence intervals - Accounts for both regression uncertainty and natural variability - 95% prediction interval typical</p>
-<p><strong>Calculation:</strong> <span class="math display">\[PI = \hat{Y} \pm t_{\alpha/2, n-2} \cdot SE_{pred}\]</span></p>
-<p>Where: <span class="math display">\[SE_{pred} = SEE \sqrt{1 + \frac{1}{n} + \frac{(X - \bar{X})^2}{\sum(X_i - \bar{X})^2}}\]</span></p>
-<p><strong>Interpretation:</strong> - 95% of stable streams should fall within prediction interval - Sites outside interval may be: - Unstable or disturbed - Different channel type - Measurement error - Natural variability</p>
-</section>
-<section id="uncertainty-from-data-integration" class="level4">
-<h4 class="anchored" data-anchor-id="uncertainty-from-data-integration">Uncertainty from Data Integration</h4>
-<p><strong>Combined Uncertainty:</strong> When integrating field and LiDAR data, total uncertainty includes:</p>
-<ol type="1">
-<li><strong>Field measurement error</strong>: ±3-5% typical</li>
-<li><strong>LiDAR measurement error</strong>: ±10-15% typical</li>
-<li><strong>Natural variability</strong>: ±20-30% typical</li>
-<li><strong>Regression error</strong>: Captured in prediction intervals</li>
-</ol>
-<p><strong>Weighting Approaches:</strong> - Weight field data more heavily (higher accuracy) - Weight by inverse variance - Equal weighting if LiDAR well-validated - Sensitivity analysis to assess impact of weighting</p>
-<p><strong>Propagation of Error:</strong> - Combine error sources using root-sum-square - Total uncertainty typically dominated by natural variability - Document all error sources and assumptions</p>
-</section>
-</section>
-</section>
-<section id="regional-curve-development-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="regional-curve-development-workflow">Regional Curve Development Workflow</h2>
-<section id="step-1-define-region-and-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-define-region-and-objectives">Step 1: Define Region and Objectives</h3>
-<p><strong>Regional Definition:</strong> - Physiographic province or ecoregion - Watershed or river basin - Geologic or soil region - Climate zone - Custom region based on similarity</p>
-<p><strong>Objectives:</strong> - Assessment of channel condition - Restoration design guidance - Screening-level analysis - Detailed design verification - Research or monitoring</p>
-<p><strong>Target Drainage Area Range:</strong> - Define based on stream types of interest - Ensure adequate sample size across range - Consider extrapolation limits</p>
-</section>
-<section id="step-2-compile-lidar-data" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-compile-lidar-data">Step 2: Compile LiDAR Data</h3>
-<p><strong>Data Acquisition:</strong> - Identify available LiDAR coverage - Assess data quality and specifications - Acquire or access LiDAR DEMs - Verify coordinate systems and datums - Document data sources and dates</p>
-<p><strong>Data Preparation:</strong> - Mosaic multiple LiDAR tiles if needed - Reproject to common coordinate system - Resample to consistent resolution if needed - Quality check for artifacts or errors - Prepare metadata documentation</p>
-</section>
-<section id="step-3-select-study-sites" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-select-study-sites">Step 3: Select Study Sites</h3>
-<p><strong>Site Identification:</strong> - Identify potential sites from maps and imagery - Apply inclusion/exclusion criteria - Stratify by drainage area - Ensure geographic distribution - Target 100-200+ sites for LiDAR analysis</p>
-<p><strong>Site Screening:</strong> - Visual inspection using imagery - Check for disturbances or modifications - Verify LiDAR coverage and quality - Assess vegetation cover - Prioritize high-quality sites</p>
-<p><strong>Validation Site Selection:</strong> - Select 20-30 sites for field validation - Representative of range of conditions - Stratified by drainage area - Accessible locations - High-quality LiDAR coverage</p>
-</section>
-<section id="step-4-extract-lidar-derived-dimensions" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-extract-lidar-derived-dimensions">Step 4: Extract LiDAR-Derived Dimensions</h3>
-<p><strong>FluvialGeomorph Processing:</strong> 1. Import stream network and drainage areas 2. Generate cross-sections (10-50 m spacing) 3. Extract elevation profiles from DEM 4. Apply automated bankfull identification 5. Calculate dimensions at each cross-section 6. Aggregate to reach-scale means 7. Quality control and screening</p>
-<p><strong>Quality Control:</strong> - Visual review of bankfull identification - Check for consistency within reaches - Remove poor-quality sections - Flag uncertain identifications - Document quality ratings</p>
-<p><strong>Initial Dataset:</strong> - Site ID, location, drainage area - Mean bankfull width, depth, area - Number of cross-sections per site - Within-site variability (CV) - Quality rating</p>
-</section>
-<section id="step-5-conduct-field-validation" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-conduct-field-validation">Step 5: Conduct Field Validation</h3>
-<p><strong>Field Surveys:</strong> - Survey validation sites (20-30 sites) - Verify bankfull elevation and indicators - Measure dimensions at multiple locations - Document channel condition - Collect substrate and vegetation data - Photo documentation</p>
-<p><strong>Data Processing:</strong> - Calculate field-measured dimensions - Average across reach - Calculate uncertainty estimates - Quality control checks - Complete site documentation</p>
-</section>
-<section id="step-6-validate-and-calibrate" class="level3">
-<h3 class="anchored" data-anchor-id="step-6-validate-and-calibrate">Step 6: Validate and Calibrate</h3>
-<p><strong>Comparison Analysis:</strong> - Match LiDAR and field sites - Compare bankfull elevations - Compare dimensions (width, depth, area) - Calculate errors and statistics - Identify systematic biases</p>
-<p><strong>Accuracy Assessment:</strong> - Mean error and standard deviation - RMSE and percent error - Correlation analysis - Error vs.&nbsp;channel size - Error vs.&nbsp;vegetation or condition</p>
-<p><strong>Calibration:</strong> - Develop bias corrections if needed - Refine automated methods - Test on independent sites - Establish confidence intervals - Document calibration procedure</p>
-</section>
-<section id="step-7-integrate-datasets" class="level3">
-<h3 class="anchored" data-anchor-id="step-7-integrate-datasets">Step 7: Integrate Datasets</h3>
-<p><strong>Combine Data:</strong> - Merge field and LiDAR datasets - Apply calibration corrections - Quality screening and outlier removal - Flag data sources - Final dataset compilation</p>
-<p><strong>Dataset Summary:</strong> - Total number of sites - Drainage area range - Data source breakdown - Quality distribution - Geographic coverage</p>
-</section>
-<section id="step-8-develop-regional-curves" class="level3">
-<h3 class="anchored" data-anchor-id="step-8-develop-regional-curves">Step 8: Develop Regional Curves</h3>
-<p><strong>Regression Analysis:</strong> - Log-transform data - Perform OLS regression (or alternative method) - Calculate coefficients and exponents - Assess goodness of fit (R², SEE) - Analyze residuals</p>
-<p><strong>Model Refinement:</strong> - Remove outliers if justified - Test alternative regional groupings - Compare regression methods - Evaluate model assumptions - Select final model</p>
-<p><strong>Uncertainty Quantification:</strong> - Calculate confidence intervals - Calculate prediction intervals - Assess uncertainty sources - Document limitations</p>
-</section>
-<section id="step-9-validate-regional-curves" class="level3">
-<h3 class="anchored" data-anchor-id="step-9-validate-regional-curves">Step 9: Validate Regional Curves</h3>
-<p><strong>Independent Validation:</strong> - Reserve 20-30% of sites for validation - Apply curves to validation sites - Compare predicted vs.&nbsp;observed dimensions - Calculate validation statistics - Assess prediction accuracy</p>
-<p><strong>Cross-Validation:</strong> - Leave-one-out cross-validation - K-fold cross-validation - Calculate cross-validation error - Compare with model fit statistics</p>
-<p><strong>Comparison with Existing Curves:</strong> - Compare with published regional curves <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span> - Assess consistency or differences - Explain discrepancies (methods, time period, site selection) - Document relationship to existing work</p>
-</section>
-<section id="step-10-document-and-publish" class="level3">
-<h3 class="anchored" data-anchor-id="step-10-document-and-publish">Step 10: Document and Publish</h3>
-<p><strong>Technical Documentation:</strong> - Methods and procedures - Site selection criteria - Data sources and quality - Statistical methods - Validation results - Limitations and appropriate use</p>
-<p><strong>Curve Equations:</strong> - Power-law equations with coefficients - Applicable drainage area range - R², SEE, and other statistics - Confidence and prediction intervals - Graphical presentation</p>
-<p><strong>Application Guidance:</strong> - Appropriate uses - Limitations and cautions - Extrapolation limits - Comparison with field measurements - Quality assurance recommendations</p>
-</section>
-</section>
-<section id="example-regional-curve-development" class="level2">
-<h2 class="anchored" data-anchor-id="example-regional-curve-development">Example Regional Curve Development</h2>
-<section id="case-study-piedmont-region" class="level3">
-<h3 class="anchored" data-anchor-id="case-study-piedmont-region">Case Study: Piedmont Region</h3>
-<p><strong>Objective:</strong> Develop regional curves for Piedmont streams using combined LiDAR and field data</p>
-<p><strong>Region Definition:</strong> - Piedmont physiographic province - Drainage area range: 1-500 km² - Mixed land use (forest, agriculture, urban) - Similar geology and climate</p>
-<p><strong>Data Collection:</strong></p>
-<p><em>LiDAR Analysis:</em> - 185 sites analyzed from 1-m LiDAR - Drainage area range: 1.2-450 km² - 10-50 cross-sections per site - Automated bankfull identification - Quality screening applied</p>
-<p><em>Field Validation:</em> - 28 sites field-surveyed - Drainage area range: 2.5-380 km² - 3-5 cross-sections per site - Bankfull indicators verified - Dimensions measured</p>
-<p><strong>Validation Results:</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Dimension</th>
-<th>Mean Error</th>
-<th>RMSE</th>
-<th>R²</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Bankfull Width</td>
-<td>-2.8%</td>
-<td>8.7%</td>
-<td>0.96</td>
-</tr>
-<tr class="even">
-<td>Bankfull Depth</td>
-<td>+4.2%</td>
-<td>11.5%</td>
-<td>0.89</td>
-</tr>
-<tr class="odd">
-<td>Bankfull Area</td>
-<td>+1.3%</td>
-<td>14.2%</td>
-<td>0.93</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Calibration:</strong> - No systematic bias detected - No calibration correction applied - Confidence intervals established from validation data</p>
-<p><strong>Combined Dataset:</strong> - 213 total sites (185 LiDAR + 28 field) - Drainage area range: 1.2-450 km² - 15 outliers removed (&gt;3 SD) - Final dataset: 198 sites</p>
-<p><strong>Regional Curve Results:</strong></p>
-<p><em>Bankfull Width:</em> <span class="math display">\[W_{bf} = 4.23 \cdot A^{0.48}\]</span> - R² = 0.89 - SEE = 0.12 (±30% at 95% PI) - n = 198</p>
-<p><em>Bankfull Mean Depth:</em> <span class="math display">\[D_{bf} = 0.32 \cdot A^{0.38}\]</span> - R² = 0.82 - SEE = 0.14 (±35% at 95% PI) - n = 198</p>
-<p><em>Bankfull Cross-Sectional Area:</em> <span class="math display">\[A_{bf} = 1.35 \cdot A^{0.86}\]</span> - R² = 0.91 - SEE = 0.13 (±32% at 95% PI) - n = 198</p>
-<p>Where: - Dimensions in meters - Drainage area in km²</p>
-<p><strong>Comparison with Previous Studies:</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Study</th>
-<th>Method</th>
-<th>n</th>
-<th>Width Exponent</th>
-<th>Depth Exponent</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="citation" data-cites="harman1999bankfull">Harman et al. (<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">1999</a>)</span></td>
-<td>Field</td>
-<td>48</td>
-<td>0.46</td>
-<td>0.39</td>
-</tr>
-<tr class="even">
-<td><span class="citation" data-cites="doll2003hydraulic">Doll et al. (<a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">2003</a>)</span></td>
-<td>Field</td>
-<td>87</td>
-<td>0.50</td>
-<td>0.36</td>
-</tr>
-<tr class="odd">
-<td>This Study</td>
-<td>LiDAR + Field</td>
-<td>198</td>
-<td>0.48</td>
-<td>0.38</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Interpretation:</strong> - Exponents consistent with previous studies - Larger sample size improves confidence - Prediction intervals similar to field-only studies - LiDAR enables more comprehensive regional coverage</p>
-</section>
-</section>
-<section id="quality-assurance-and-limitations" class="level2">
-<h2 class="anchored" data-anchor-id="quality-assurance-and-limitations">Quality Assurance and Limitations</h2>
-<section id="quality-control-procedures" class="level3">
-<h3 class="anchored" data-anchor-id="quality-control-procedures">Quality Control Procedures</h3>
-<p><strong>Data Quality:</strong> - Verify LiDAR specifications meet requirements - Screen sites for disturbances and modifications - Visual review of bankfull identification - Statistical outlier detection and removal - Independent validation of subset of sites</p>
-<p><strong>Analysis Quality:</strong> - Check regression assumptions - Analyze residuals for patterns - Assess influence of individual points - Compare alternative models - Cross-validation</p>
-<p><strong>Documentation Quality:</strong> - Complete metadata for all sites - Document exclusions and adjustments - Record quality ratings - Maintain photo documentation - Preserve raw data and processing records</p>
-</section>
-<section id="limitations-and-uncertainties" class="level3">
-<h3 class="anchored" data-anchor-id="limitations-and-uncertainties">Limitations and Uncertainties</h3>
-<p><strong>Data Limitations:</strong> - LiDAR cannot measure below water surface - Dense vegetation affects ground point density - Small streams may not be resolved - Temporal mismatch between LiDAR acquisitions - Limited to streams with clear bankfull indicators</p>
-<p><strong>Method Limitations:</strong> - Automated bankfull identification may fail in some settings - Assumes streams are in quasi-equilibrium - Regional curves represent average conditions - Natural variability not fully captured - Extrapolation beyond data range uncertain</p>
-<p><strong>Application Limitations:</strong> - Curves apply to stable, reference-quality streams - May not apply to disturbed or modified channels - Prediction intervals are wide (±30-40% typical) - Should be verified with field observations - Not a substitute for detailed site investigation</p>
-</section>
-<section id="appropriate-use" class="level3">
-<h3 class="anchored" data-anchor-id="appropriate-use">Appropriate Use</h3>
-<p><strong>Regional Curves Are Appropriate For:</strong> - Preliminary assessment of channel condition - Screening-level analysis across watersheds - Initial dimensioning for restoration design - Validation of detailed design calculations - Comparison with field measurements - Research and monitoring applications</p>
-<p><strong>Regional Curves Should Not Be Used For:</strong> - Final design dimensions without field verification - Highly modified or disturbed channels - Channel types not represented in dataset - Drainage areas outside curve range - Situations requiring high accuracy (±5%) - Substitute for site-specific analysis</p>
-</section>
-</section>
-<section id="advanced-topics" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-topics">Advanced Topics</h2>
-<section id="stratification-by-channel-type" class="level3">
-<h3 class="anchored" data-anchor-id="stratification-by-channel-type">Stratification by Channel Type</h3>
-<p><strong>Rationale:</strong> - Different channel types may have different dimension-drainage area relationships - Pool-riffle vs.&nbsp;plane-bed vs.&nbsp;step-pool - Confined vs.&nbsp;unconfined valleys - Different substrate types</p>
-<p><strong>Approach:</strong> - Classify sites by channel type - Develop separate curves for each type - Compare curves statistically - Assess if stratification improves predictions</p>
-<p><strong>Considerations:</strong> - Requires sufficient sample size for each type (30+ sites) - Classification must be objective and repeatable - May reduce overall sample size - Increases complexity of application</p>
-</section>
-<section id="multiple-regression-models" class="level3">
-<h3 class="anchored" data-anchor-id="multiple-regression-models">Multiple Regression Models</h3>
-<p><strong>Additional Predictor Variables:</strong> - Valley slope - Substrate size (D50) - Precipitation or runoff - Land use or impervious cover - Vegetation or forest cover</p>
-<p><strong>Model Form:</strong> <span class="math display">\[W_{bf} = a \cdot A^{b_1} \cdot S^{b_2} \cdot D_{50}^{b_3}\]</span></p>
-<p><strong>Advantages:</strong> - May improve predictions - Captures additional controls on channel size - Enables assessment of multiple factors</p>
-<p><strong>Disadvantages:</strong> - Requires additional data for all sites - More complex to apply - Risk of overfitting - Collinearity among predictors</p>
-</section>
-<section id="temporal-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="temporal-analysis">Temporal Analysis</h3>
-<p><strong>Multi-Temporal Regional Curves:</strong> - Develop curves from different time periods - Compare to assess temporal changes - Identify trends in channel dimensions - Assess impacts of land use change or climate</p>
-<p><strong>Requirements:</strong> - Multiple LiDAR datasets over time - Consistent processing methods - Sufficient time between acquisitions (5-10+ years) - Stable reference sites for comparison</p>
-</section>
-<section id="discharge-based-curves" class="level3">
-<h3 class="anchored" data-anchor-id="discharge-based-curves">Discharge-Based Curves</h3>
-<p><strong>Bankfull Discharge Relationships:</strong> - Develop curves using bankfull discharge instead of drainage area - Requires discharge estimates for all sites - More direct relationship with channel dimensions - Enables comparison across regions</p>
-<p><strong>Discharge Estimation Methods:</strong> - Gage analysis (where available) - Regional discharge-drainage area relationships - Hydraulic calculations (Manning’s equation) - Hydrologic modeling</p>
-</section>
-</section>
-<section id="summary-and-recommendations" class="level2">
-<h2 class="anchored" data-anchor-id="summary-and-recommendations">Summary and Recommendations</h2>
-<section id="key-points" class="level3">
-<h3 class="anchored" data-anchor-id="key-points">Key Points</h3>
-<ol type="1">
-<li><p><strong>Regional curves provide powerful tools</strong> for stream assessment and design, characterizing expected channel dimensions based on drainage area <span class="citation" data-cites="leopold1953hydraulic dunne1978water">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>; <a href="References.html#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span></p></li>
-<li><p><strong>LiDAR dramatically expands sample sizes</strong> from typical 20-50 sites to 100-200+ sites, improving statistical robustness and regional coverage</p></li>
-<li><p><strong>Field validation is essential</strong> to verify LiDAR-derived measurements and establish accuracy, typically requiring 20-30 validation sites</p></li>
-<li><p><strong>Integration of LiDAR and field data</strong> leverages the strengths of both approaches: comprehensive coverage from LiDAR and accuracy from field surveys</p></li>
-<li><p><strong>Proper statistical methods</strong> including log-transformation, regression analysis, and uncertainty quantification are critical for developing reliable curves</p></li>
-<li><p><strong>Quality control procedures</strong> ensure data integrity and appropriate site selection, with systematic screening and validation</p></li>
-<li><p><strong>Prediction intervals are wide</strong> (±30-40% typical), reflecting natural variability and measurement uncertainty</p></li>
-<li><p><strong>Regional curves are screening tools</strong> that should be verified with field observations for important applications</p></li>
-</ol>
-</section>
-<section id="recommendations-for-practitioners" class="level3">
-<h3 class="anchored" data-anchor-id="recommendations-for-practitioners">Recommendations for Practitioners</h3>
-<p><strong>Planning:</strong> - Define region based on physiographic similarity - Target 100-200+ sites for LiDAR analysis - Plan 20-30 field validation sites - Stratify by drainage area and geography - Ensure adequate LiDAR coverage and quality</p>
-<p><strong>Data Collection:</strong> - Use high-quality LiDAR (1-m resolution, ±15 cm accuracy) - Apply consistent site selection criteria - Conduct thorough field validation - Document all sites completely - Maintain quality control throughout</p>
-<p><strong>Analysis:</strong> - Use appropriate statistical methods - Validate with independent sites - Quantify uncertainty - Compare with existing curves - Document limitations clearly</p>
-<p><strong>Application:</strong> - Use curves for preliminary assessment - Verify predictions with field observations - Stay within drainage area range - Apply only to stable, reference-quality streams - Combine with other lines of evidence</p>
-<p><strong>Documentation:</strong> - Publish methods and results - Provide complete curve equations and statistics - Include application guidance - Share data when possible - Contribute to regional knowledge base</p>
-</section>
-<section id="future-directions" class="level3">
-<h3 class="anchored" data-anchor-id="future-directions">Future Directions</h3>
-<p><strong>Emerging Opportunities:</strong> - Increasing LiDAR coverage and quality - Multi-temporal analysis for change detection - Integration with other remote sensing data - Machine learning for bankfull identification - Web-based tools for curve application - Standardized regional curve databases</p>
-<p><strong>Research Needs:</strong> - Improved bankfull identification algorithms - Better understanding of uncertainty sources - Methods for disturbed or modified channels - Integration of discharge data - Temporal dynamics and channel evolution - Climate change impacts on regional relationships</p>
-<p>The integration of LiDAR-derived measurements with field validation data represents a significant advance in regional curve development, enabling more robust relationships based on larger sample sizes while maintaining accuracy through strategic field verification. FluvialGeomorph provides the tools to efficiently implement this integrated approach, supporting improved stream assessment and restoration design across watersheds and regions.</p>
+<li>Automated extraction of bankfull dimensions from cross-sections</li>
+<li>Data management functions for organizing regional datasets</li>
+<li>Statistical analysis tools for developing robust relationships</li>
+<li>Visualization functions for publication-quality plots</li>
+<li>Application tools for predicting dimensions and assessing conditions</li>
+<li>Reporting capabilities for documenting results</li>
+</ul>
+<p>Regional curves developed with FluvialGeomorph support stream assessment and restoration design by providing empirical relationships between channel dimensions and drainage area, enabling rapid screening of channel conditions and preliminary design guidance across watersheds and regions. ```</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-doll2003hydraulic" class="csl-entry" role="listitem">
-Doll, Barbara A., D. E. Wise-Frederick, C. M. Buckner, S. D. Wilkerson, W. A. Harman, R. E. Smith, and J. Spooner. 2003. <span>“Hydraulic Geometry Relationships for Urban Streams Throughout the <span>Piedmont</span> of <span>North Carolina</span>.”</span> <em>Journal of the American Water Resources Association</em> 38 (3): 641–51. <a href="https://doi.org/10.1111/j.1752-1688.2003.tb03683.x">https://doi.org/10.1111/j.1752-1688.2003.tb03683.x</a>.
-</div>
-<div id="ref-dunne1978water" class="csl-entry" role="listitem">
-Dunne, Thomas, and Luna B. Leopold. 1978. <em>Water in Environmental Planning</em>. New York: W.H. Freeman; Company.
-</div>
-<div id="ref-harman1999bankfull" class="csl-entry" role="listitem">
-Harman, W. A., G. D. Jennings, J. M. Patterson, D. R. Clinton, L. O. Slate, A. G. Jessup, J. R. Everhart, and R. E. Smith. 1999. <span>“Bankfull Hydraulic Geometry Relationships for <span>North Carolina</span> Streams.”</span> In <em>Wildland Hydrology</em>. American Water Resources Association.
-</div>
-<div id="ref-leopold1953hydraulic" class="csl-entry" role="listitem">
-Leopold, Luna B., and Thomas Maddock. 1953. <span>“The Hydraulic Geometry of Stream Channels and Some Physiographic Implications.”</span> Professional Paper 252. Washington, D.C.: U.S. Geological Survey.
-</div>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
       return false;
     }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1598,185 +1463,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./chute.html" class="pagination-link" aria-label="Chute Design RAT">

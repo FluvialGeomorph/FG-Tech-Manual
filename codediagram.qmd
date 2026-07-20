@@ -181,8 +181,9 @@ This page provides a visual guide to the FluvialGeomorph toolbox analysis workfl
 
 ## Critical Thinking in FluvialGeomorph Analysis
 
-<div class="critical-thinking">
-<h3>🤔 Think Before You Click</h3>
+::: {.callout-warning icon=false}
+
+### 🤔 Think Before You Click 
 
 Valley bottom delineation is **not a push-button analysis**. Success requires careful consideration of your landscape, data quality, and analytical goals before running any tools. This workflow emphasizes critical spatial thinking at every step.
 
@@ -190,27 +191,27 @@ Valley bottom delineation is **not a push-button analysis**. Success requires ca
 
 ::: {.panel-tabset}
 
-### Watershed Context
+#### Watershed Context
 - Does your watershed boundary accurately represent the hydrologic unit?
 - Are there edge effects or artifacts from the delineation process?
 - Do you need to buffer or expand the boundary for context?
 - How do upstream conditions influence your study area?
 
-### DEM Quality
+#### DEM Quality
 - Is the resolution appropriate for your stream scale?
 - What artifacts exist (pits, flat areas, bridges, culverts)?
 - Is vertical accuracy sufficient for subtle geomorphic features?
 - Do you need to condition the DEM (breach, fill sinks)?
 - When was the LiDAR collected? Has the landscape changed?
 
-### Stream Network
+#### Stream Network
 - Using existing mapped streams vs. deriving from DEM?
 - If mapped: Are they accurate? Complete? At appropriate scale?
 - If derived: What flow accumulation threshold represents actual channels?
 - How do you handle intermittent vs. perennial streams?
 - Does the network match what you see in aerial imagery?
 
-### Valley Definition
+#### Valley Definition
 - What defines "valley bottom" in **your** landscape?
 - Floodplain? Terrace? Active channel migration zone?
 - How wide should the valley be in different stream orders?
@@ -221,7 +222,7 @@ Valley bottom delineation is **not a push-button analysis**. Success requires ca
 
 **Remember:** The tools execute your decisions. Your expertise in geomorphology, hydrology, and local conditions determines the quality of the results. Validate, iterate, and document your reasoning.
 
-</div>
+:::
 
 ## Interactive Workflow Diagram
 

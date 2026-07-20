@@ -1,0 +1,29 @@
+<style>
+/* Light Mode Enforcements */
+body.quarto-light .critical-thinking,
+body.quarto-light .critical-thinking .panel-tabset,
+body.quarto-light .critical-thinking .tab-content,
+body.quarto-light .critical-thinking li,
+body.quarto-light .critical-thinking p {
+    color: #212529 !important;
+}
+
+/* Dark Mode Enforcements */
+body.quarto-dark .critical-thinking,
+body.quarto-dark .critical-thinking .panel-tabset,
+body.quarto-dark .critical-thinking .tab-content,
+body.quarto-dark .critical-thinking li,
+body.quarto-dark .critical-thinking p {
+    color: #f8f9fa !important;
+}
+
+/* Tab Header Controls */
+.critical-thinking .nav-tabs .nav-link {
+    color: var(--quarto-body-color) !important;
+}
+.critical-thinking .nav-tabs .nav-link.active {
+    color: var(--quarto-body-color) !important;
+    font-weight: bold !important;
+    border-bottom: 2px solid var(--quarto-primary) !important;
+}
+</style>
