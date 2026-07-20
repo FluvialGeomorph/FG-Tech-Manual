@@ -78,5 +78,5 @@ format:
       - quarto
       - fontawesome
     respect-user-color-scheme: true
-    css: styles.css
+    css: [styles.css, custom.css]
 editor: source
