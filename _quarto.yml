@@ -53,7 +53,7 @@ book:
   appendices:
     - QA-checklist.qmd
     - DB-migration.qmd
-    - codediagram.qmd
+    - dependencies.qmd
 
 
   sidebar:
