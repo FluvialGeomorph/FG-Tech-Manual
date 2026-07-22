@@ -3,6 +3,7 @@ title: "Validation"
 format: html
 ---
 
+### This page is under construction and being revised on a continued basis. Please check back later for updates.
 
 ```{r library, include=FALSE}
 library(knitr)
@@ -187,3 +188,62 @@ params_table(params_df, "ras_watersurface", "XS RAS Watersurface Tool Parameters
 ```{r echo=FALSE, fig.cap="16 - XS RAS Watersurface Tool."}
 knitr::include_graphics("figures/toolbox/tool_XS_RAS_Watersurface.png")
 ```
+
+
+#### Calculate Contributing Area (Level 2)
+Calculate the contributing drainage area for each pixel in the DEM. 
+
+* Use the `🛠️Contributing Area D8` tool to calculate the contributing area for the study area watershed. This tool creates the `🗺️contributing_area` raster. Rename this DEM `🗺️watershed_contributing_area`. 
+* Use the `🛠️Contributing Area D8` tool to calculate the contributing area for the high resolution DEM. If created, use the `🗺️dem_hydro` raster as input.  
+* The `📊processes` parameter of the `🛠️ Contributing Area D8` tool can be safely set to approximately 2 less than the number of cores on the computer running the tool. 
+
+### Calculate Slope and Sinuosity (Level 2)
+Examine the stream network slope and sinuosity to help make decisions about how best to define study reaches. 
+
+* Use the `🛠️Stream Network Points` tool to convert the `🗺️stream_network` feature class into the `🗺️stream_networks_points` feature class. 
+
+**Determine the moving window size**   
+Slope and sinuosity are scale dependent metrics. This means that these metrics are affected by the size of the upstream moving window used in their calculation. To determine the appropriate size of this moving window for this study area, use the following steps:
+
+* It is recommended that slope and sinuosity be calculated using a moving window size equal to two meander wavelengths. 
+* Estimate a rough initial bankfull width for the reach. Use the DEM to examine several representative locations throughout the study area. 
+* Estimate the length of two meander wavelengths by multiplying the rough bankfull width by `🧮10` (e.g., 30ft bankfull width * 10 = 300ft, two meander wavelengths).  
+* Determine how many `🗺️stream_networks_points` two meander wavelengths represent. For example, if `🗺️stream_networks_points` are spaced 1m apart on average, then two meander wavelengths would be 91 points (i.e., 300ft / 3.28084ft per m). 
+
+**Calculate Slope and Sinuosity**   
+
+* Use the `🛠️Slope and Sinuosity` tool to calculate the slope and sinuosity of the `🗺️stream_networks_points` feature class. 
+* Set the `📊gradient_distance` parameter to the number of upstream `🗺️stream_networks_points` that you calculated in a previous step. 
+* If the elevations in the channel seem noisy, check the `📊use_smoothing` parameter and set the `📊loess_span` parameter to a value between `🧮0-1`. 
+
+**Confirm the degree of smoothing** 
+
+* Use a chart to verify the choice of the smoothing `loess_span` parameter. 
+* Right-click on the `🗺️gradient_*` feature class in the map Table of Contents and select "Create Chart", and select "Line". In the `Date or Number` dropdown, choose the field `POINT_M`. In the `📊Aggregation` dropdown, choose `🧮None`. In the `📊Numeric field(s)` checklist, check the boxes next to `📊Z` and `📊Z_smooth`. Click the "Apply" button to view the chart.
+* Visually assess the degree of smoothing. The smoothing should be high enough to eliminate LiDAR elevation noise, but not so high as to eliminate meaningful channel elevation change. 
+* If the smoothing is not ideal, re-run the tool and adjust the `📊loess_span` parameter. 
+
+### Delineate Watersheds
+Delineate the areal extent of watersheds for each reach in the study area. 
+
+* In the `🗺️stream_network_points` feature class, select points that represent the downstream location of each of the sites in the project study area. 
+* Export these point features to a new feature class named `🗺️watershed_points` in the study area geodatabase. 
+* Use the `🛠️Watershed` tool to create a watershed polygon for each feature in the `🗺️watershed_points` feature class. 
+
+### Create the site geodatabase
+The purpose of this step is to create a new site geodatabase and populate it with initial data. 
+
+* In the `🗃️study area folder`, begin by creating a new site folder named for the site.  
+* In the new site folder, create a new "Data" folder. 
+* In the new site data folder, create a new site geodatabase for each LiDAR survey. In the example above, the Papillion Creek project study area will be subdivided into a specific site called Cole Creek. Since there are multiple LiDAR surveys for this study area (e.g., 2016, 2010, 2006), three site geodatabases will need to be created.  
+
+  * Cole_Creek_2016.gdb   
+  * Cole_Creek_2010.gdb   
+  * Cole_Creek_2006.gdb   
+
+* Back in the study area geodatabase, select the features in the `🗺️stream_network` feature class representing the current site. Use the `🛠️Data | Export Features` function to export the selected site features to the new site geodatabase. Name the exported feature class `🗺️stream_network` 
+* Examine the `🗺️dem_hydro` raster and determine the maximum width of the active floodplain along the entire site. Be conservative with this estimate. Given its later use, it is important to generously overestimate this value. 
+* Use this maximum floodplain width estimate to buffer the reach `🗺️stream_network` feature class and name it `🗺️stream_network_buffer`. 
+* Use the ESRI `🛠️Clip Raster` tool to clip the study area geodatabase `🗺️dem_hydro` to the extent of the reach using the `🗺️stream_network_buffer` feature class. Save the clipped raster to the reach geodatabase and name it `🗺️dem_hydro_<buffer distance>` (e.g., dem_hydro_1000 for a buffer distance of 1000 meters). 
+* Use the ESRI `🛠️Clip Raster` tool to clip the study area geodatabase `🗺️contributing_area` to the extent of the reach using the `🗺️stream_network_buffer` feature class. Save the clipped raster to the reach geodatabase and name it `🗺️contributing_area_<buffer distance>` (e.g., contributing_area_1000 for a buffer distance of 1000 meters).  
+* If you discover in later steps that the buffer distance was underestimated, you will need to repeat this step with a wider buffer. 
