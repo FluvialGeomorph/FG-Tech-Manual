@@ -625,8 +625,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The following is an example of how to organize the working directory:</p>
 <ul>
 <li>Create a new folder on a local workstation drive. Name it for the project study area.</li>
-<li>Within the project study area folder create an <code>🗃️LPC</code> folder.</li>
-<li>Within the <code>🗃️LPC</code> folder, create folders to store the data.</li>
+<li>Within the project study area folder create an <code>📁LPC</code> folder.</li>
+<li>Within the <code>📁LPC</code> folder, create folders to store the data.</li>
 <li>Name each folder using the project name and suffixed with the LiDAR survey event (<project name="">_&lt;LiDAR survey 4-digit event&gt;). For example, if the project name is “Papillion Creek” and the LiDAR survey event year is 2016, then the folder would be named <code>📁Papillion_Creek_2016</code>.</project></li>
 <li>Within each LiDAR survey folder. This will be used in later steps if needed to store and process the raw LiDAR data for each survey.</li>
 <li>Within each LiDAR survey folder.</li>
@@ -829,7 +829,7 @@ Since the study area watershed boundaries are unlikely to have changed between L
 </tbody>
 </table>
 <ul>
-<li>In the <code>🗃️site data folder</code>(#folder_structure), create a new reach geodatabase named for the reach. Use the <code>📊ReachName</code> value for the name of this new reach file geodatabase.</li>
+<li>In the <code>📁site data folder</code>(#folder_structure), create a new reach geodatabase named for the reach. Use the <code>📊ReachName</code> value for the name of this new reach file geodatabase.</li>
 <li>Reach names are typically created using the site name and adding a suffix for the reach (e.g., R1, R2, etc.).</li>
 <li>Back in the site geodatabase, select the feature in the <code>🗺️flowline</code> feature class representing the current study reach. Use the “Data | Export Features” function to export the selected reach feature to the new reach geodatabase. Name the exported feature class <code>🗺️flowline</code>.</li>
 <li>Ensure this new reach geodatabase version of <code>🗺️flowline</code> contains only one feature representing the current reach.</li>
@@ -845,10 +845,10 @@ Since the study area watershed boundaries are unlikely to have changed between L
 <li>For a site with multiple reaches, set the <code>📊km_to_mouth</code> parameter for the downstream-most reach to <code>🧮0</code>.</li>
 <li>Set the <code>📊km_to_mouth</code> parameter for each upstream reach to the upstream-most value (i.e., the highest <code>📊km_to_mouth</code> value of the downstream reach’s <code>🗺️flowline_points</code> feature class of the downstream reach. For example, set the <code>📊km_to_mouth</code> of the Reach-2 <code>🗺️flowline_points</code> feature class to <code>🧮1.2345</code> if the maximum value of Reach-1’s <code>🗺️flowline_points</code> feature class <code>📊km_to_mouth</code> field is <code>🧮1.2345</code>.</li>
 <li>The goal is that longitudinal stationing within a site containing multiple reaches should be sequential and unique throughout the site (i.e., lower station values at the bottom of the site and higher station values at the top of the site). This allows reach feature classes to be combined after reach-level analysis is complete.</li>
-<li>The <code>🗺️calibration_points</code>, <code>📊point_id_field</code>, and <code>📊measure_field</code> parameters can be left blank when processing the <code>🗃️base event</code>(#units_of_analysis).</li>
+<li>The <code>🗺️calibration_points</code>, <code>📊point_id_field</code>, and <code>📊measure_field</code> parameters can be left blank when processing the <code>📁base event</code>(#units_of_analysis).</li>
 </ul>
 <p><strong>Multiple Surveys</strong><br>
-To make LiDAR surveys collected before the <code>🗃️base event</code>(#units_of_analysis) directly comparable to the base year, the <code>🗺️flowline</code> from each previous survey must be <code>📊calibrated</code> to the base year. This adjusts any changes in flowline planform between survey events to be expressed in terms of the base year longitudinal stationing.</p>
+To make LiDAR surveys collected before the <code>📁base event</code>(#units_of_analysis) directly comparable to the base year, the <code>🗺️flowline</code> from each previous survey must be <code>📊calibrated</code> to the base year. This adjusts any changes in flowline planform between survey events to be expressed in terms of the base year longitudinal stationing.</p>
 <ul>
 <li>If multiple LiDAR surveys exist for a project study area, the <code>🗺️flowline_points</code> for any previous LiDAR survey must be calibrated using the <code>🗺️flowline_points</code> of the base year.</li>
 <li>For example, if 2016 is the base year, when deriving the <code>🗺️flowline_points</code> for a LiDAR survey from 2010, the base year’s <code>🗺️flowline_points</code> (2016) must be used for the <code>🛠️Flowline Points</code> tool’s <code>📊calibration_points</code> parameter value.</li>
@@ -981,7 +981,7 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 <p><strong>Confirm the degree of smoothing</strong></p>
 <ul>
 <li>Use a chart to verify the choice of the smoothing <code>📊loess_span</code> parameter.</li>
-<li>Right-click on the <code>🗺️*_dims_L1</code> feature class in the map Table of Contents and select “📊Create Chart”, and select “📊Line”. In the <code>📊Date or Number</code> dropdown, choose the field <code>🧮POINT_M</code>. In the <code>Aggregation</code> dropdown, choose <code>🧮None</code>. In the <code>📊Numeric field(s)</code> checklist, check the boxes next to <code>🧮Z</code> and <code>🧮Z_smooth</code>. Click the [Apply] button to view the chart.</li>
+<li>Right-click on the <code>🗺️*_dims_L1</code> feature class in the map Table of Contents and select “📊Create Chart”, and select “📊Line”. In the <code>📊Date or Number</code> dropdown, choose the field <code>🧮POINT_M</code>. In the <code>Aggregation</code> dropdown, choose <code>🧮None</code>. In the <code>📊Numeric field(s)</code> checklist, check the boxes next to <code>🧮Z</code> and <code>🧮Z_smooth</code>. Click the “Apply” button to view the chart.</li>
 <li>Visually assess the degree of smoothing. The smoothing should be high enough to eliminate LiDAR elevation noise, but not so high as to eliminate meaningful channel elevation change.</li>
 <li>If the smoothing is not ideal, re-run the tool and adjust the <code>📊loess_span</code> parameter.</li>
 </ul>
