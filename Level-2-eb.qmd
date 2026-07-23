@@ -125,7 +125,7 @@ The purpose of this stage is to estimate the detrended bankfull elevation for th
 ### Run the Estimate Bankfull Report
 The purpose of this step is to run the Estimate Bankfull report for each reach. 
 
-* In the `🛠️Reports` toolset, use the `🛠️L2 Estimate Bankfull` tool to produce the Estimate Bankfull Report. 
+* In the `🧰 Reports` toolset, use the `🛠️L2 Estimate Bankfull` tool to produce the Estimate Bankfull Report. 
 * For the `📊stream` parameter, use the value of the `📊ReachName` field used in the `🗺️flowline` feature class. 
 * For the `📊flowline_fc` parameter, enter the `🗺️flowline` feature class for the base event survey. 
 * For the `📊xs_dims_fc` parameter, use the `🗺️riffle_channel_dims_L2` feature class calculated for the base event. 
