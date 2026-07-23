@@ -5,7 +5,7 @@ format: html
 {{< badge practical >}} {{< badge theory >}}
 
 ## Level 1 Workflow
-This chapter describes the tool workflows and processes to complete a Level 1 (L1) FluvialGeomorph analysis. The purpose of this level is to extract basic channel dimensions from LiDAR surveys. Developing terrain models for the project study area for all available LiDAR survey events (years).Multiple survey events provide comparable channel dimensions for a reach overtime.
+This chapter describes the tool workflows and processes to complete a Level 1 (L1) FluvialGeomorph analysis. The purpose of this level is to extract basic channel dimensions from LiDAR surveys. Developing terrain models for the project study area for all available LiDAR survey events (events).Multiple survey events provide comparable channel dimensions for a reach overtime.
 
 ## Level 1
 
@@ -17,14 +17,14 @@ Choose a horizontal and vertical coordinate system for all of the vector and ras
 
 
 ### Create Study Area Geodatabases
-Creation of a folder structure to store the the study area elevation data is the first step in managing  the spataial data for this workflow. Next, sub-folders will be created to store the terrain data for each available `🗺️LiDAR survey`(#units_of_analysis). Initially, you will not know what LiDAR surveys exist for your study area until you begin your search for data described below. You will repeat the following steps for each LiDAR survey that exists for this project study area. The elevation data for each LiDAR survey will be processed separately and a synthetic stream network will be derived for each LiDAR survey independently. You will begin processing the data for the `🗺️event year` LiDAR survey first, then work backward in time to process earlier LiDAR surveys in reverse chronological order. Several analysis steps require the base year data to be processed first. For some tools, surveys prior to the base year use the base year data as inputs. This is done to express earlier surveys in terms of the base year for comparison purposes. 
+Creation of a folder structure to store the the study area elevation data is the first step in managing  the spataial data for this workflow. Next, sub-folders will be created to store the terrain data for each available `🗺️LiDAR survey`(#units_of_analysis). Initially, you will not know what LiDAR surveys exist for your study area until you begin your search for data described below. You will repeat the following steps for each LiDAR survey that exists for this project study area. The elevation data for each LiDAR survey will be processed separately and a synthetic stream network will be derived for each LiDAR survey independently. You will begin processing the data for the `🗺️event event` LiDAR survey first, then work backward in time to process earlier LiDAR surveys in reverse chronological order. Several analysis steps require the base event data to be processed first. For some tools, surveys prior to the base event use the base event data as inputs. This is done to express earlier surveys in terms of the base event for comparison purposes. 
 
 The following is an example of how to organize the working directory:   
 
 * Create a new folder on a local workstation drive. Name it for the project study area. 
 * Within the project study area folder create an `📁LPC` folder. 
 * Within the `📁LPC` folder, create folders to store the data. 
-* Name each folder using the project name and suffixed with the LiDAR survey event (<project name>_<LiDAR survey 4-digit event>). For example, if the project name is "Papillion Creek" and the LiDAR survey event year is 2016, then the folder would be named `📁Papillion_Creek_2016`.
+* Name each folder using the project name and suffixed with the LiDAR survey event (<project name>_<LiDAR survey 4-digit event>). For example, if the project name is "Papillion Creek" and the LiDAR survey event event is 2016, then the folder would be named `📁Papillion_Creek_2016`.
 * Within each LiDAR survey folder. This will be used in later steps if needed to store and process the raw LiDAR data for each survey. 
 * Within each LiDAR survey folder. 
 * Name each file geodatabase using the project name and suffixed with the LiDAR survey event (<project name>_<LiDAR survey 4-digit event>). 
@@ -33,17 +33,17 @@ The following is an example of how to organize the working directory:
 ```
 Project_Name
 └─── LPC 
-│    └─── ProjectName_Year1
+│    └─── ProjectName_event1
 │    │    └─── LAS
-│    └─── ProjectName_Year2
+│    └─── ProjectName_event2
 │    |    └─── LAS
-│    └─── ProjectName_Year3
+│    └─── ProjectName_event3
 │         └─── LAS
-└─── ProjectName_Year1.gdb
+└─── ProjectName_event1.gdb
 |
-└─── ProjectName_Year2.gdb
+└─── ProjectName_event2.gdb
 |
-└─── ProjectName_Year3.gdb
+└─── ProjectName_event3.gdb
 │         ...
 └─── Exports
 └─── Maps
@@ -77,7 +77,7 @@ Acquire an existing, pre-made DEM of the entire study area contributing watershe
 * Calculate reach scale drainage area. The coverage of this DEM should cover the entire upstream contributing watershed of the study area. 
 
 **Multiple LiDAR Surveys**   
-Since the study area watershed boundaries are unlikely to have changed between LiDAR surveys, it is unnecessary to acquire the entire watershed elevation model for LiDAR survey dates prior to the `📊base event`. Only the watershed elevation model representing the base year needs to be acquired. 
+Since the study area watershed boundaries are unlikely to have changed between LiDAR surveys, it is unnecessary to acquire the entire watershed elevation model for LiDAR survey dates prior to the `📊base event`. Only the watershed elevation model representing the base event needs to be acquired. 
 
 
 
@@ -207,12 +207,12 @@ Now converting the `🗺️flowline` into a series of points along the reach is 
 * The `🗺️calibration_points`, `📊point_id_field`, and `📊measure_field` parameters can be left blank when processing the `📁base event`(#units_of_analysis).
 
 **Multiple Surveys**   
-To make LiDAR surveys collected before the `📁base event`(#units_of_analysis) directly comparable to the base year, the `🗺️flowline` from each previous survey must be `📊calibrated` to the base year. This adjusts any changes in flowline planform between survey events to be expressed in terms of the base year longitudinal stationing. 
+To make LiDAR surveys collected before the `📁base event`(#units_of_analysis) directly comparable to the base event, the `🗺️flowline` from each previous survey must be `📊calibrated` to the base event. This adjusts any changes in flowline planform between survey events to be expressed in terms of the base event longitudinal stationing. 
 
-* If multiple LiDAR surveys exist for a project study area, the `🗺️flowline_points` for any previous LiDAR survey must be calibrated using the `🗺️flowline_points` of the base year. 
-* For example, if 2016 is the base year, when deriving the `🗺️flowline_points` for a LiDAR survey from 2010, the base year's `🗺️flowline_points` (2016) must be used for the `🛠️Flowline Points` tool's `📊calibration_points` parameter value. 
-* Set the `📊point_id_field` and `📊measure_field` parameters to the fields in the base year's `🗺️flowline_points` feature class. 
-* Set the `📊search_radius` parameter to the maximum distance between the `🗺️flowline` of the current survey and the base year `🗺️flowline`. 
+* If multiple LiDAR surveys exist for a project study area, the `🗺️flowline_points` for any previous LiDAR survey must be calibrated using the `🗺️flowline_points` of the base event. 
+* For example, if 2016 is the base event, when deriving the `🗺️flowline_points` for a LiDAR survey from 2010, the base event's `🗺️flowline_points` (2016) must be used for the `🛠️Flowline Points` tool's `📊calibration_points` parameter value. 
+* Set the `📊point_id_field` and `📊measure_field` parameters to the fields in the base event's `🗺️flowline_points` feature class. 
+* Set the `📊search_radius` parameter to the maximum distance between the `🗺️flowline` of the current survey and the base event `🗺️flowline`. 
 
 ***
 

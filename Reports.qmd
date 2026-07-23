@@ -14,7 +14,7 @@ knitr::include_graphics("figures/toolbox/Graph-Longitudinal_Profile_Compare.png"
 
 
 ### `Report - L1` {#L1-report}
-**Purpose** - The Level 1 Report contains a set of maps and graphs that describe the channel as measured from the LiDAR derived DEM. This report is produced using the [`Report - L1`](#L1-report-tool) tool using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#run-report). 
+**Purpose** - The Level 1 Report contains a set of maps and graphs that describe the channel as measured from the LiDAR derived DEM. This report is produced using the `🛠️Report - L1` tool using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#run-report). 
 
 **Code** - This report is created by the [R Markdown parameterized report](https://bookdown.org/yihui/rmarkdown/parameterized-reports.html) in the R package [`fluvgeo/reports/level_1_report.Rmd`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_1_report.Rmd). 
 

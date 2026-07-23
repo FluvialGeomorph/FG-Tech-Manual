@@ -120,7 +120,7 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 ***
 
 ## Estimate Bankfull
-The purpose of this stage is to estimate the detrended bankfull elevation for the base year for each reach. This report conducts a sensitivity analysis using the regional curve estimates of channel dimensions across a range of elevation values to identify the detrended bankfull elevation value that best fits the regional curve estimate. 
+The purpose of this stage is to estimate the detrended bankfull elevation for the base event for each reach. This report conducts a sensitivity analysis using the regional curve estimates of channel dimensions across a range of elevation values to identify the detrended bankfull elevation value that best fits the regional curve estimate. 
 
 ### Run the Estimate Bankfull Report
 The purpose of this step is to run the Estimate Bankfull report for each reach. 

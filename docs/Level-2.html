@@ -591,7 +591,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The purpose of this step is to use the final bankfull elevation determined in the previous step to derive a final <code>🗺️bankfull_area</code> polygon for each reach.</p>
 <ul>
 <li>From the final Estimate Bankfull Report, use the detrended bankfull elevation identified in the last step. In the example above, this value was 104 ft.</li>
-<li>Use the <code>🛠️08 - Water Surface Extent</code> tool to extract a bankfull area polygon. This tool creates a new polygon feature class named <code>🗺️banks_raw_xxx</code>, where xxx is the detrended elevation specified.</li>
+<li>Use the <code>🛠️ Water Surface Extent</code> tool to extract a bankfull area polygon. This tool creates a new polygon feature class named <code>🗺️banks_raw_xxx</code>, where xxx is the detrended elevation specified.</li>
 <li>The <code>🗺️banks_raw_xxx</code> feature class must be edited to select only the polygons that represent the bankfull area polygon(s).</li>
 <li>Open the attribute table for the <code>🗺️banks_raw_xxx</code> feature class and use advanced sorting to sort first by <code>📊gridcode</code> and then by <code>📊Shape_Area</code>.</li>
 <li>Polygons with <code>📊gridcode</code> = <code>🧮1</code> are polygons inundated at the detrended elevation.</li>

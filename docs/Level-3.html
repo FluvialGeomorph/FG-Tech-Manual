@@ -598,77 +598,77 @@ ul.task-list li input[type="checkbox"] {
 <code>2 * 4 ft bankfull depth = 8 ft flood prone height</code></p></li>
 <li><p>Therefore, the flood prone detrended elevation would be 108 ft:<br>
 <code>100 ft detrended stream base index + 8 ft flood prone height = 108 ft detrended flood prone height</code></p></li>
-<li><p>With the detrended flood prone elevation for your reach determined in the last step, use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#water-surface-extent"><code>08 - Water Surface Extent</code></a> tool to extract a flood prone area polygon. This tool creates a new polygon feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a>, where xxx is the detrended elevation selected.</p></li>
-<li><p>This feature class must be edited to select the flood prone area polygon(s). Open the attribute table for the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class and use advanced sorting to sort first by <code>gridcode</code> and then by <code>Shape_Area</code>. Polygons with <code>gridcode</code> = 1 are polygons inundated at the detrended elevation. Typically, the polygons with the largest area represent the channel. Begin selecting <code>gridcode</code> = 1 polygons with the largest area until the entire flood prone area is selected.</p></li>
+<li><p>With the detrended flood prone elevation for your reach determined in the last step, use the <code>🛠️ Water Surface Extent</code> tool to extract a flood prone area polygon. This tool creates a new polygon feature class named <code>🗺️banks_raw_xxx</code>, where xxx is the detrended elevation selected.</p></li>
+<li><p>This feature class must be edited to select the flood prone area polygon(s). Open the attribute table for the <code>🗺️banks_raw_xxx</code> feature class and use advanced sorting to sort first by <code>📊gridcode</code> and then by <code>📊Shape_Area</code>. Polygons with <code>📊gridcode</code> = <code>🧮1</code> are polygons inundated at the detrended elevation. Typically, the polygons with the largest area represent the channel. Begin selecting <code>📊gridcode</code> = <code>🧮1</code> polygons with the largest area until the entire flood prone area is selected.</p></li>
 <li><p>Export these selected features to a new feature class named <code>flood_prone</code>.</p></li>
-<li><p>Delete the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#bankfull-area-fc"><code>banks_raw_xxx</code></a> feature class created in this section.</p></li>
+<li><p>Delete the <code>🗺️banks_raw_xxx</code> feature class created in this section.</p></li>
 </ul>
 </section>
 <section id="develop-candidate-valleylines" class="level3">
 <h3 class="anchored" data-anchor-id="develop-candidate-valleylines">Develop Candidate Valleylines</h3>
-<p>The purpose of this step is to create a set of candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes through iterative smoothing of the flowline for each reach.</p>
+<p>The purpose of this step is to create a set of candidate <code>🗺️valleyline</code> feature classes through iterative smoothing of the flowline for each reach.</p>
 <ul>
-<li>The following steps are performed in the site geodatabase for the base year. This is done to ensure that a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class is created smoothly through all of the reaches in a site.</li>
-<li>In the site geodatabase for the base year, use the <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/smooth-line.htm">ESRI <code>Smooth Line</code></a> tool to smooth the site <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class.</li>
-<li>Choose the <code>PAEK</code> smoothing algorithm.</li>
-<li>For the first candidate valleyline, use a <code>Smoothing Tolarance</code> value of 200 meters. In this case you would name the output feature class <code>valleyline_200</code></li>
-<li>Repeat the previous step using the <code>Smoothing Tolerance</code> values such as 400, 800, and 1000.</li>
-<li>Depending on the detail of the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> feature class geometry, you may need to select a different range or set of step values of the <code>Smoothing Tolerance</code> parameter values to evaluate.</li>
-<li>The goal is to create a wide degree of flowline smoothing in the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes to select from in the next step.</li>
+<li>The following steps are performed in the site geodatabase for the base event. This is done to ensure that a <code>🗺️valleyline</code> feature class is created smoothly through all of the reaches in a site.</li>
+<li>In the site geodatabase for the base event, use the ESRI <code>🛠️Smooth Line</code> tool to smooth the site <code>🗺️flowline</code> feature class.</li>
+<li>Choose the <code>📊PAEK</code> smoothing algorithm.</li>
+<li>For the first candidate valleyline, use a <code>📊Smoothing Tolarance</code> value of 200 meters. In this case you would name the output feature class <code>🗺️valleyline_200</code></li>
+<li>Repeat the previous step using the <code>📊Smoothing Tolerance</code> values such as 400, 800, and 1000.</li>
+<li>Depending on the detail of the <code>🗺️flowline</code> feature class geometry, you may need to select a different range or set of step values of the <code>Smoothing Tolerance</code> parameter values to evaluate.</li>
+<li>The goal is to create a wide degree of flowline smoothing in the candidate <code>🗺️valleyline</code> feature classes to select from in the next step.</li>
 </ul>
 </section>
 <section id="choose-final-valleyline" class="level3">
 <h3 class="anchored" data-anchor-id="choose-final-valleyline">Choose Final Valleyline</h3>
-<p>The purpose of this step is to choose from the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes the one that best captures the overall valley trend line.</p>
+<p>The purpose of this step is to choose from the candidate <code>🗺️valleyline</code> feature classes the one that best captures the overall valley trend line.</p>
 <ul>
-<li>The goal of this step is to select from the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes the one that is the most smoothed, yet still fits primarily within the <code>flood_prone</code> polygon extent.</li>
-<li>Add the <code>flood_prone</code> polygon and all of the candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes to the current map.</li>
-<li>Identify the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class that has the highest smoothing tolerance value that also is mostly contained within the extent of the <code>flood_prone</code> polygon.</li>
-<li>In the site geodatabase of the base year, rename the selected valley line to <code>valleyline</code>.</li>
-<li>Delete the unused candidate <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature classes from the site geodatabase of the base year.</li>
-<li>Copy the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> feature class you just created from the site geodatabase to each of the base year reach geodatabases.</li>
+<li>The goal of this step is to select from the candidate <code>🗺️valleyline</code> feature classes the one that is the most smoothed, yet still fits primarily within the <code>📊flood_prone</code> polygon extent.</li>
+<li>Add the <code>📊flood_prone</code> polygon and all of the candidate <code>🗺️valleyline</code> feature classes to the current map.</li>
+<li>Identify the <code>🗺️valleyline</code> feature class that has the highest smoothing tolerance value that also is mostly contained within the extent of the <code>📊flood_prone</code> polygon.</li>
+<li>In the site geodatabase of the base event, rename the selected valley line to <code>🗺️valleyline</code>.</li>
+<li>Delete the unused candidate <code>🗺️valleyline</code> feature classes from the site geodatabase of the base event.</li>
+<li>Copy the <code>🗺️valleyline</code> feature class you just created from the site geodatabase to each of the base event reach geodatabases.</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="define-meander-loops" class="level2">
 <h2 class="anchored" data-anchor-id="define-meander-loops">Define Meander Loops</h2>
-<p>The purpose of this stage is to define meander loops and bends for the base year for each reach.</p>
+<p>The purpose of this stage is to define meander loops and bends for the base event for each reach.</p>
 <section id="define-loop-points" class="level3">
 <h3 class="anchored" data-anchor-id="define-loop-points">Define Loop Points</h3>
-<p>The purpose of this step is to create a new feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> and use it to identify the start and end stream meander loops and bends.</p>
+<p>The purpose of this step is to create a new feature class named <code>🗺️loop_points</code> and use it to identify the start and end stream meander loops and bends.</p>
 <ul>
-<li>Create a new point feature class named <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a>. Enable z and m values. The feature class should contain the following fields:
+<li>Create a new point feature class named <code>🗺️loop_points</code>. Enable z and m values. The feature class should contain the following fields:
 <ul>
-<li><code>ReachName</code>: Text (50) - The purpose of this field is to store the reach name.</li>
-<li><code>loop</code>: Long Integer - The purpose of this field is to store the loop unique identifier for the point.</li>
-<li><code>bend</code>: Long Integer - The purpose of the field is to store the bend identifier for the point.</li>
-<li><code>position</code>: Text (10) - The purpose of this field is to store position identifier for the point. This field must have one three values: “start”, “end”, or “apex”.</li>
+<li><code>📊ReachName</code>: Text (50) - The purpose of this field is to store the reach name.</li>
+<li><code>📊loop</code>: Long Integer - The purpose of this field is to store the loop unique identifier for the point.</li>
+<li><code>📊bend</code>: Long Integer - The purpose of the field is to store the bend identifier for the point.</li>
+<li><code>📊position</code>: Text (10) - The purpose of this field is to store position identifier for the point. This field must have one three values: “start”, “end”, or “apex”.</li>
 </ul></li>
 </ul>
 <p><strong>Create Loop Points</strong></p>
 <ul>
-<li><a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> features are used to define the start and end location of loop bends and the location of a loop’s apex.</li>
-<li><a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> features are always placed along (i.e., snapped to) a <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#banklines-fc"><code>bankline</code></a> feature.</li>
+<li><code>🗺️loop_points</code>features are used to define the start and end location of loop bends and the location of a loop’s apex.</li>
+<li><code>🗺️loop_points</code> features are always placed along (i.e., snapped to) a <code>🗺️bankline</code> feature.</li>
 <li>Begin numbering loops starting at the downstream end of the reach and increment the <code>loop</code> integer values moving upstream.</li>
-<li>In FluvialGeomorph, the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#valleyline-fc"><code>valleyline</code></a> is used segment the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#flowline-fc"><code>flowline</code></a> into loops.</li>
-<li>The beginning and end of loops are delineated where the <code>valleyline</code> <em>definitively</em> crosses the <code>flowline</code>.</li>
-<li>If the <code>flowline</code> crosses the <code>valleyline</code> and then crosses back over in a short distance, this is not considered a <em>definitive</em> crossing. A definitive crossing is one where the <code>flowline</code> approaches the <code>valleyline</code>, crosses it, and then continues to move away from the <code>valleyline</code> for a significant longitudinal distance.</li>
+<li>In FluvialGeomorph, the <code>🗺️valleyline</code> is used segment the <code>🗺️flowline</code> into loops.</li>
+<li>The beginning and end of loops are delineated where the <code>🗺️valleyline</code> <em>definitively</em> crosses the <code>🗺️flowline</code>.</li>
+<li>If the <code>🗺️flowline</code> crosses the <code>🗺️valleyline</code> and then crosses back over in a short distance, this is not considered a <em>definitive</em> crossing. A definitive crossing is one where the <code>flowline</code> approaches the <code>🗺️valleyline</code>, crosses it, and then continues to move away from the <code>🗺️valleyline</code> for a significant longitudinal distance.</li>
 <li>Loops must alternate from one bank to the opposite bank. For example, if loop 1 is delineated along the right descending bank, then loop 2 is delineated along the left descending bank.</li>
 <li>Loops are composed of one or more bends (bends nest inside of loops). For example, loop 1 can have bends 1, 2, and 3 (i.e., loop 1, bend 1; loop 1, bend 2; loop 1, bend 3).</li>
 <li>Bend numbering restarts within each loop. The first <code>bend</code> value within a loop always begins with the value 1.</li>
 </ul>
 <p><strong>Multiple Reaches: </strong></p>
 <ul>
-<li>For a site with multiple reaches, loops must be uniquely numbered across all reaches. The <code>loop</code> field values of <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> should not repeat within the reaches of a site.<br>
+<li>For a site with multiple reaches, loops must be uniquely numbered across all reaches. The <code>📊loop</code> field values of <code>🗺️loop_points</code> should not repeat within the reaches of a site.<br>
 </li>
-<li>The downstream-most loop in the site should be numbered starting with the <code>loop</code> field value of 1 and increase moving upstream.<br>
+<li>The downstream-most loop in the site should be numbered starting with the <code>📊loop</code> field value of 1 and increase moving upstream.<br>
 </li>
-<li>Set the <code>loop</code> field value for each upstream reach to the upstream-most value (i.e., the highest <code>loop</code> value of the downstream reach’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> feature class) of the downstream reach. For example, set the value of the field <code>loop</code> of the first Reach-2 <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> feature to 8 if the maximum value of Reach-1’s <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#loop-points-fc"><code>loop_points</code></a> feature class <code>loop</code> field is 7.</li>
+<li>Set the <code>📊loop</code> field value for each upstream reach to the upstream-most value i.e., the highest <code>📊loop</code> value of the downstream reach’s <code>🗺️loop_points</code> feature class of the downstream reach. For example, set the value of the field <code>📊loop</code> of the first Reach-2 <code>🗺️loop_points</code> feature to 8 if the maximum value of Reach-1’s <code>🗺️loop_points</code> feature class <code>📊loop</code> field is 7.</li>
 </ul>
 <p><strong>Check Loop Points: </strong></p>
 <ul>
-<li>Use the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#check-loop-points-tool"><code>Check Loop Points</code></a> tool in the <a href="https://www.techmanual.fluvialgeomorph.org/toolbox.html#check-toolset"><code>Check</code></a> toolset to verify that loops and bends are defined correctly.</li>
+<li>Use the <code>🛠️Check Loop Points</code> tool in the <code>🧰Check</code> toolset to verify that loops and bends are defined correctly.</li>
 <li>Review the messages produced by this tool to identify and correct problems with loop and bend delineation.</li>
 </ul>
 </section>
