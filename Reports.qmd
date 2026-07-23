@@ -6,17 +6,18 @@ FluvialGeomorph produces a series of reports that help to define stream conditio
 
 
 ### `Graph - Longitudinal Profile Compare` {#longitudinal-profile-compare-graph}
-This graph is produced using the [`Graph - Longitudinal Profile Compare`](#longitudinal-profile-compare-graph-tool) tool. 
+This graph is produced using the `🛠️Graph - Longitudinal Profile Compare` tool. 
 
 ```{r echo=FALSE, fig.cap="Longitudinal Profile Plot.", out.width="100%"}
 knitr::include_graphics("figures/toolbox/Graph-Longitudinal_Profile_Compare.png")
 ```
 
 
-### `Report - L1` {#L1-report}
+### Report - L1 {#L1-report}
 **Purpose** - The Level 1 Report contains a set of maps and graphs that describe the channel as measured from the LiDAR derived DEM. This report is produced using the `🛠️Report - L1` tool using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#run-report). 
 
-**Code** - This report is created by the [R Markdown parameterized report](https://bookdown.org/yihui/rmarkdown/parameterized-reports.html) in the R package [`fluvgeo/reports/level_1_report.Rmd`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_1_report.Rmd). 
+**Code** - This report is created by the [R Markdown parameterized report](https://bookdown.org/yihui/rmarkdown/parameterized-reports.html) in the R pac
+kage [`fluvgeo/reports/level_1_report.Rmd`](https://github.com/FluvialGeomorph/fluvgeo/blob/master/inst/reports/level_1_report.Rmd). 
 
 This report contains the following sections:   
 

@@ -572,7 +572,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><span class="badge badge-practical">🔧 Practical</span> <span class="badge badge-theory">📐 Theory</span></p>
+<p><span class="badge badge-practical">🪛 Practical</span> <span class="badge badge-theory">🔬 Theory</span></p>
 <section id="level-2-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="level-2-workflow">Level 2 Workflow</h2>
 <p>This chapter describes the workflow steps necessary to complete a Level 2 (L2) FluvialGeomorph analysis. The purpose of this level is to calculate bankfull channel dimensions.</p>
@@ -639,7 +639,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="calculate-final-l2-cross-section-geometry" class="level2">
 <h2 class="anchored" data-anchor-id="calculate-final-l2-cross-section-geometry">Calculate Final L2 Cross Section Geometry</h2>
-<p>The purpose of this stage is to use the bankfull elevation determined in the last stage to calculate the final level 2 cross section dimensions for the base year for each reach.</p>
+<p>The purpose of this stage is to use the bankfull elevation determined in the last stage to calculate the final level 2 cross section dimensions for the base event for each reach.</p>
 <section id="calculate-final-cross-section-l2-dimensions" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-final-cross-section-l2-dimensions">Calculate Final Cross Section L2 Dimensions</h3>
 <p>The purpose of this step is to calculate the final L2 dimensions for the regularly spaced and riffle cross section feature classes for each reach. Repeat the following steps for <code>🗺️regular spaced cross section</code> feature class, the <code>🗺️riffle_floodplain</code> feature class, and the <code>🗺️riffle_channel</code> feature class.</p>
@@ -690,15 +690,15 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 <ul>
 <li>In the <code>🧰Reports</code> toolset, use the <code>🛠️Level 2 Report</code> tool to produce the Level 2 Report.</li>
 <li>For the <code>📊stream</code> parameter, use the value of the <code>📊ReachName</code> field used in the <code>flowline</code> feature class.</li>
-<li>For the <code>📊flowline_fc</code> parameter, enter the <code>🗺️flowline</code> feature class for the base year survey.</li>
+<li>For the <code>📊flowline_fc</code> parameter, enter the <code>🗺️flowline</code> feature class for the base event survey.</li>
 <li>For the <code>📊xs_dims_fc</code> parameter, use the <code>🗺️*_dims_L2</code> feature class calculated for the regular cross sections of the base event.</li>
 <li>The <code>📊xs_points_*</code> parameters should be entered with the feature class for the most recent survey first (i.e., the base event) and then the previous surveys in reverse chronological order (e.g., 2016, 2010, 2006).</li>
 <li>The <code>📊survey_name_*</code> parameters are used to label the surveys in maps and graphs.</li>
 <li>The feature classes and labels used for the <code>📊flowline_points_*</code>, <code>📊xs_points_*</code>, and <code>📊survey_name_*</code> parameters must be entered in the same order (e.g., 2016, 2010, 2006) in each set of numbered parameters.</li>
 <li>For the <code>📊hyrodem</code> parameter, enter the <code>🗺️hydroDEM</code> for the base event survey.</li>
-<li>For the <code>📊banklines_fc</code> parameter, enter the <code>🗺️banklines</code> feature class created for the base year survey.<br>
+<li>For the <code>📊banklines_fc</code> parameter, enter the <code>🗺️banklines</code> feature class created for the base event survey.<br>
 </li>
-<li>For the <code>📊features_fc</code> parameter, enter the <code>🗺️features</code> feature class for the base year survey.</li>
+<li>For the <code>📊features_fc</code> parameter, enter the <code>🗺️features</code> feature class for the base event survey.</li>
 <li>For the <code>📊bf_estimate</code> parameter, specify the detrended elevation value that represents the bankfull water surface elevation.</li>
 <li>For the <code>📊regions</code> parameter, select the regions to use for estimating the bankfull water surface elevation.</li>
 </ul>

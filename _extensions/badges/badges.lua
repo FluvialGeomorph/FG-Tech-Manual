@@ -13,8 +13,8 @@ Further information can be added.
     advanced = {text = "Advanced", class = "badge-advanced", icon = "🔴"},
     reference = {text = "Quick Reference", class = "badge-reference", icon = "⚡"},
     resource = {text = "Resource", class = "badge-resource", icon = "📚️"},
-    theory = {text = "Theory", class = "badge-theory", icon = "📐"},
-    practical = {text = "Practical", class = "badge-practical", icon = "🔧"},
+    theory = {text = "Theory", class = "badge-theory", icon = "🔬"},
+    practical = {text = "Practical", class = "badge-practical", icon = "🪛"},
     caution = {text = "Caution", class = "badge-caution", icon = "⚠️"},
     evaluate = {text = "Evaluate", class = "badge-evaluate", icon = "☑️"},
     code = {text = "Code", class = "badge-code", icon = "📜"}

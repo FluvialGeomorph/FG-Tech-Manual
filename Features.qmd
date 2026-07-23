@@ -38,7 +38,7 @@ dd_table <- function(dd_df, feature_class, caption) {
 FluvialGeomorph defines a standard set of feature classes that are used through the tool chain. The definition of a common set of derived features is an important step in standardizing the FluvialGeomorph workflow. These database objects form a tightly linked set of features that work together in a particular order to accomplish the analysis. They are presented here in the approximate order in which they are produced. 
 
 ### Reach {#reach-fc}
-The `boundary` polygon feature class is created manually by the analyst using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-a-boundary). 
+The `🗺️boundary` polygon feature class is created manually by the analyst using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-a-boundary). 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "boundary", "Reach Boundary Fields.")
@@ -52,14 +52,14 @@ dd_table(dd_df, "dem", "DEM Raster Pixel Values.")
 ```
 
 ### Cutlines {#cutlines-fc}
-The `cutlines` polyline feature class is created manually by the analyst using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-cutlines-line-feature-class). The `cutlines` polyline feature class is used to store geometry needed to hydrologically modify a terrain model to ensure that water can accurately flow over the land surface as it does in the real world. LiDAR derived terrain models frequently contain flow blockages (e.g., road berms) that must be "cut-through" to represent the presence of flow structures (e.g., culverts, bridges) that cannot be resolved directly from the LiDAR terrain model. 
+The `🗺️cutlines` polyline feature class is created manually by the analyst using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-cutlines-line-feature-class). The `🗺️cutlines` polyline feature class is used to store geometry needed to hydrologically modify a terrain model to ensure that water can accurately flow over the land surface as it does in the real world. LiDAR derived terrain models frequently contain flow blockages (e.g., road berms) that must be "cut-through" to represent the presence of flow structures (e.g., culverts, bridges) that cannot be resolved directly from the LiDAR terrain model. 
 
 ```{r echo=FALSE}
 dd_table(dd_df, "cutlines", "Cutlines Fields.")
 ```
 
 ### Hydro Modified DEM Raster {#dem-hydro-raster}
-Before the `dem` terrain model raster can be used for synthetically deriving stream features, it must first be hydrologically modified using the `cutlines` feature class to "burn" flow paths into the `dem` raster. The [`02 - Hydro DEM`](#hydro-dem-tool) tool creates a "hydro-enforced" DEM named `dem_hydro` using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#hydro-modify-dem). 
+Before the `🗺️dem` terrain model raster can be used for synthetically deriving stream features, it must first be hydrologically modified using the `🗺️cutlines` feature class to "burn" flow paths into the `dem` raster. The `🛠️Hydro DEM` tool creates a "hydro-enforced" DEM named `🗺️dem_hydro` using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#hydro-modify-dem). 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "dem_hydro", "Hydro DEM Raster Pixel Values.")
@@ -82,7 +82,7 @@ dd_table(dd_df, "flow_direction_d8", "Flow Direction D8 Raster Pixel Values.")
 -->
 
 ### Stream Network {#stream-network-fc}
-The [`Derive Stream as Line Tool`](#Derive Stream as Line Tool) tool uses the `hydro_dem` raster to derive a synthetic `stream_network` polyline feature class representing the stream network of the site using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#derive-stream-as-line-tool-esri-spatial-analyst-toolbox). 
+The `🛠️Derive Stream as Line Tool` tool uses the `🗺️hydro_dem` raster to derive a synthetic `🗺️stream_network` polyline feature class representing the stream network of the site using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#derive-stream-as-line-tool-esri-spatial-analyst-toolbox). 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "stream_network", "Stream Network Fields.")
@@ -118,21 +118,21 @@ dd_table(dd_df, "watershed", "Watershed Fields.")
 -->
 
 ### Flowline {#flowline-fc}
-The [`Flowline`](#flowline) tool creates the `flowline` polyline feature class and is used to represent the likely flow path of a stream reach within a study area using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-flowline). This is the primary flow path feature used in the FluvialGeomorph toolbox. Since non-bathymetric LiDAR is often used to derive `flowline` features, this should not be interpreted as the thalweg when water is present in the DEM.  
+The `🛠️Flowline` tool creates the `🗺️flowline` polyline feature class and is used to represent the likely flow path of a stream reach within a study area using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-flowline). This is the primary flow path feature used in the FluvialGeomorph toolbox. Since non-bathymetric LiDAR is often used to derive `flowline` features, this should not be interpreted as the thalweg when water is present in the DEM.  
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "flowline", "Flowline Fields.")
 ```
 
 ### Flowline Points {#flowline-points-fc}
-The [`Flowline Points`](#flowline-points-tool) tool creates the `flowline_points` point feature class and is used to represent regularly spaced points along a `flowline` feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-flowline-points). These `flowline_points` features are used to store elevation and route position (longitudinal stream stationing) information for a `flowline` feature. `flowline_points` are used to calculate a series of stream longitudinal dimensions. 
+The `🛠️Flowline Points` tool creates the `🗺️flowline_points` point feature class and is used to represent regularly spaced points along a `🗺️flowline` feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-flowline-points). These `🗺️flowline_points` features are used to store elevation and route position (longitudinal stream stationing) information for a `🗺️flowline` feature. `🗺️flowline_points` are used to calculate a series of stream longitudinal dimensions. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "flowline_points", "Flowline Points Fields.")
 ```
 
 ### Relative Elevation Model Raster {#detrend-raster}
-The [`REM`](#detrend-dem-tool) tool creates the `detrend` raster dataset using these instruction from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#detrend-dem). The `detrend` raster is a relative elevation model where the downstream slope of the `dem_hydro` has been removed. 
+The `🛠️REM` tool creates the `🗺️REM` raster dataset using these instruction from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#detrend-dem). The `🗺️REM` raster is a relative elevation model where the downstream slope of the `🗺️0dem_hydro` has been removed. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "detrend", "Hydro DEM Raster Pixel Values.")
@@ -155,32 +155,32 @@ dd_table(dd_df, "centerline", "Water Surface Extent Fields.")
 -->
 
 ### Regular Cross Sections {#regular-xs-fc}
-The [`XS Layout`](#xs-layout-tool) tool is used to create a regularly spaced cross section `xs_*` polyline feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-cross-sections-only-for-newest-dataset). Cross sections are polyline feature classes drawn perpendicular to the `flowline` feature and are long enough to extend across some portion of the channel and floodplain. Cross section features are used to define channel cross section dimensions. Regular cross sections are spaced equal distances longitudinally along the `flowline`. Regularly spaced cross sections are used to sample conditions within a stream reach to display a continuous series of values and calculate aggregate stream values. 
+The `🛠️XS Layout` tool is used to create a regularly spaced cross section `🗺️xs_*` polyline feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-cross-sections-only-for-newest-dataset). Cross sections are polyline feature classes drawn perpendicular to the `flowline` feature and are long enough to extend across some portion of the channel and floodplain. Cross section features are used to define channel cross section dimensions. Regular cross sections are spaced equal distances longitudinally along the `🗺️flowline`. Regularly spaced cross sections are used to sample conditions within a stream reach to display a continuous series of values and calculate aggregate stream values. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "xs", "Regular Cross Section Fields.")
 ```
 
 ### Riffle Cross Sections {#riffle-xs-fc}
-Riffle cross sections (i.e., `riffle_floodplain`, `riffle_channel`) are a unique type of cross section manually drawn by the analyst within a riffle stream feature using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-2.html#create-riffle-cross-section-layers-for-channel). In contrast to regularly spaced cross sections that are delineated by a script, riffles irregularly spaced along a stream and are manually drawn by a GIS analyst. Analysts are trained to identify riffles using a set of guidelines from the literature and interpretation of the DEM and aerial imagery. The `riffle_floodplain` polyline feature class is drawn longitudinally within riffle features and extend laterally across the active floodplain. The `riffle_channel` polyline feature class is also drawn longitudinally within riffle features, but only extend laterally across the bankfull channel area. 
+Riffle cross sections (i.e., `🗺️riffle_floodplain`, `🗺️riffle_channel`) are a unique type of cross section manually drawn by the analyst within a riffle stream feature using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-2.html#create-riffle-cross-section-layers-for-channel). In contrast to regularly spaced cross sections that are delineated by a script, riffles irregularly spaced along a stream and are manually drawn by a GIS analyst. Analysts are trained to identify riffles using a set of guidelines from the literature and interpretation of the DEM and aerial imagery. The `🗺️riffle_floodplain` polyline feature class is drawn longitudinally within riffle features and extend laterally across the active floodplain. The `🗺️riffle_channel` polyline feature class is also drawn longitudinally within riffle features, but only extend laterally across the bankfull channel area. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "riffle_floodplain", "Riffle Floodplain Riffle Channel Cross Section Fields.")
 ```
 
 ### Cross Section Points {#xs-points-fc}
-The [`XS Points`](#xs-points-tool) tool creates the `*_points` points feature class using these instructions from the user manual for [Level 1](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#xs-points) and [Level 2](https://fluvialgeomorph.github.io/FG-User-Manual/Level-2-2.html#xs-points). Cross sections polyline feature classes (i.e., regularly spaced cross sections and riffle cross sections: `riffle_floodplain`, `riffle_channel`) can be converted to a set of regularly spaced points along the cross section. These points are used to store elevation and route position (lateral stream stationing) information for a cross section feature class. Cross section points are used to calculate a series of cross section dimensions. 
+The `🛠️XS Points` tool creates the `🗺️*_points` points feature class using these instructions from the user manual for [Level 1](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#xs-points) and [Level 2](https://fluvialgeomorph.github.io/FG-User-Manual/Level-2-2.html#xs-points). Cross sections polyline feature classes (i.e., regularly spaced cross sections and riffle cross sections: `🗺️riffle_floodplain`, `🗺️riffle_channel`) can be converted to a set of regularly spaced points along the cross section. These points are used to store elevation and route position (lateral stream stationing) information for a cross section feature class. Cross section points are used to calculate a series of cross section dimensions. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "xs_points", "Cross Section Points Fields.")
 ```
 
 ### Cross Section Dimensions {#xs-dimensions-fc}
-Cross section dimension polyline feature classes are used to store the hydraulic dimensions calculated for each cross section. Since the FluvialGeomorph workflow is divided into three levels, cross section dimensions are calculated at each level. Each level allows for an increasingly complex set of dimensions to be calculated, with each level building on the complexity of the previous level.  There are three cross section dimension feature classes, one for each level `*_dims_L1`, `*_dims_L2`, and `*_dims_L3`. Cross section dimensions are calculated using the following tools:
+Cross section dimension polyline feature classes are used to store the hydraulic dimensions calculated for each cross section. Since the FluvialGeomorph workflow is divided into three levels, cross section dimensions are calculated at each level. Each level allows for an increasingly complex set of dimensions to be calculated, with each level building on the complexity of the previous level.  There are three cross section dimension feature classes, one for each level `🗺️*_dims_L1`, `🗺️*_dims_L2`, and `🗺️*_dims_L3`. Cross section dimensions are calculated using the following tools:
 
-* **Level 1 Dimensions** - The [`XS Dimensions, Level 1`](#xs-dimensions-L1-tool) tool creates the `*_dims_L1` feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#xs-dimensions-level-1). 
-* **Level 2 Dimensions** - The [`XS Dimensions, Level 2`](#xs-dimensions-L2-tool) tool creates the `*_dims_L2` feature class using these instructions from the user manual for [L2 Initial](https://fluvialgeomorph.github.io/FG-User-Manual/Level-2-2.html#l2-xs-dimensions). 
-* **Level 3 Dimensions** - The [`XS Planform, Level 3`](#xs-dimensions-L3-tool) tool creates the `*_dims_L3` feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#calculate-cross-section-l3-dimensions). 
+* **Level 1 Dimensions** - The `🛠️XS Dimensions, Level 1` tool creates the `🗺️*_dims_L1` feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#xs-dimensions-level-1). 
+* **Level 2 Dimensions** - The `🛠️XS Dimensions, Level 2` tool creates the `🗺️*_dims_L2` feature class using these instructions from the user manual for [L2 Initial](https://fluvialgeomorph.github.io/FG-User-Manual/Level-2-2.html#l2-xs-dimensions). 
+* **Level 3 Dimensions** - The `🛠️XS Planform, Level 3` tool creates the `🗺️*_dims_L3` feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#calculate-cross-section-l3-dimensions). 
 
 Cross section dimensions can be calculated for the various types of cross sections (regular cross sections or riffle cross sections). The name of the cross section feature for which dimensions were calculated is prepended to the output dimension feature class. Metrics calculated at previous levels are included in the attribute table of each dimension feature class. Therefore, to avoid repetition only the new fields calculated at each level are included in the tables of fields in this section. The attributes of the original cross section feature class are also omitted since they depend on the cross section type used. 
 
@@ -197,42 +197,42 @@ dd_table(dd_df, "_dims_L3", "Level 3 Cross Section Dimension Fields.")
 ```
 
 ### Bankfull Area {#bankfull-area-fc}
-The [`Water Surface Extent`](#water-surface-extent-tool) tool is used to create the `bankfull_area` polygon feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#find-the-channel-and-floodplain). The `bankfull_area` polygon feature class represents the channel area typically inundated during bankfull events. The `detrend` raster dataset is used to interactively "flood" the channel to define this extent. 
+The `🛠️Water Surface Extent` tool is used to create the `🗺️bankfull_area` polygon feature class using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#find-the-channel-and-floodplain). The `🗺️bankfull_area` polygon feature class represents the channel area typically inundated during bankfull events. The `🗺️REM` raster dataset is used to interactively "flood" the channel to define this extent. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "bankfull_area", "Bankfull Area Fields.")
 ```
 
 ### Banklines {#banklines-fc}
-The `banklines` feature class is manually created from the `bankfull_area` using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-2-2.html#create-banklines). The `banklines` polyline feature class represents the stream banks at bankfull. The edge of the `bankfull_area` polygon features are used to create to banklines, one representing the left descending bank and another the right descending bank. 
+The `🗺️banklines` feature class is manually created from the `🗺️bankfull_area` using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-2-2.html#create-banklines). The `🗺️banklines` polyline feature class represents the stream banks at bankfull. The edge of the `🗺️bankfull_area` polygon features are used to create to banklines, one representing the left descending bank and another the right descending bank. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "banklines", "Banklines Fields.")
 ```
 
 ### Bankline Points {#bankline-points-fc}
-The [`Bankline Points`](#bankline-points-tool) tool creates the `bankline_points` point feature class using these instructions in the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#derive-bankline-points). The `bankline_points` point feature class is a set of regularly spaced point features located along each `banklines` feature. These points are used to store elevation and route position (longitudinal bankline stationing) information for each bankline. 
+The `🛠️Bankline Points` tool creates the `🗺️bankline_points` point feature class using these instructions in the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#derive-bankline-points). The `🗺️bankline_points` point feature class is a set of regularly spaced point features located along each `🗺️banklines` feature. These points are used to store elevation and route position (longitudinal bankline stationing) information for each bankline. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "bankline_points", "Bankline Points Fields.")
 ```
 
 ### Valleyline {#valleyline-fc}
-The `valleyline` is created using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#define-valley-line). The `valleyline` polyline feature class represents the trend line of the down-valley axis. It bisects stream meanders as the stream swings from side to side across its floodplain. 
+The `🗺️valleyline` is created using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#define-valley-line). The `🗺️valleyline` polyline feature class represents the trend line of the down-valley axis. It bisects stream meanders as the stream swings from side to side across its floodplain. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "valleyline", "Valleyline Fields.")
 ```
 
 ### Loop Points {#loop-points-fc}
-The `loop_points` point feature class is manually created by the analyst using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#define-meander-loops). The `loop_points` point feature class is used to store the longitudinal extents of loops and bends used for planform analysis. Within the FluvialGeomorph toolbox, the term "loop" is defined as a single meander as it swings across the `valleyline`. Moving downstream along a single loop, once the stream swings substantially across the valleyline, another loop begins. The point of maximum distance of a flowline from the valeyline (laterally across the floodplain) defines a loop "apex". Moving to a finer scale, "bends" are defined as stream undulations within a particular loop. Therefore, a single loop may contain many bends. These loop and bend extents and loop apices are used to calculate a set of planform dimensions. 
+The `🗺️loop_points` point feature class is manually created by the analyst using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-3.html#define-meander-loops). The `🗺️loop_points` point feature class is used to store the longitudinal extents of loops and bends used for planform analysis. Within the FluvialGeomorph toolbox, the term "loop" is defined as a single meander as it swings across the `🗺️valleyline`. Moving downstream along a single loop, once the stream swings substantially across the valleyline, another loop begins. The point of maximum distance of a flowline from the valeyline (laterally across the floodplain) defines a loop "apex". Moving to a finer scale, "bends" are defined as stream undulations within a particular loop. Therefore, a single loop may contain many bends. These loop and bend extents and loop apices are used to calculate a set of planform dimensions. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "loop_points", "Loop Points Fields.")
 ```
 
 ### Features {#features-fc}
-The `features` point feature class is created manually by the analyst using these instructions in the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-features). The `features` point feature class is used to identify and label key stream features and their longitudinal position. Instances of features typically include relevant tributaries, localities, and infrastructure built within the floodplain affecting flow. 
+The `🗺️features` point feature class is created manually by the analyst using these instructions in the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/Level-1.html#create-features). The `🗺️features` point feature class is used to identify and label key stream features and their longitudinal position. Instances of features typically include relevant tributaries, localities, and infrastructure built within the floodplain affecting flow. 
 
 ```{r, echo=FALSE}
 dd_table(dd_df, "features", "Features Fields.")
