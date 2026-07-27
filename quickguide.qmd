@@ -52,7 +52,7 @@ The **Fluvial Geomorphology Technical Manual** and **User Manual** are companion
 
 
 ### 🏷 Content Breakdown
-**Purpose:** Shows you what the badges/tags mean and how they are used in both manuals.
+**Purpose:** Shows you what the badges/tags and icons mean and how they are used in both manuals.
 
 :::: {.columns}
 
@@ -65,6 +65,7 @@ Skill Levels:
 - {{< badge intermediate >}}
 - {{< badge advanced >}}
 
+
 Topic Classifications:
 
 - {{< badge reference >}}
@@ -73,22 +74,59 @@ Topic Classifications:
 - {{< badge practical >}}
 - {{< badge caution >}}
 - {{< badge evaluate >}}
+
+<br>
+<br>
+<br>
+Icon Types:
+
+- 🧰 **Toolset**
+- 🗺️ **Map Layer**
+- 🗃️ **File Location**
+- 📁 **Folder**
+- 🛠️ **Tool**
+- 📊 **Parameter**
+- 🧮 **Value**
+- 📑 **Reports**
+- 📄 **File**
+- 📜 **Script**
+
 :::
 
 ::: {.column width="70%"}
 **Uses:**
 
-- Skill levels are set by proficiency level of GIS skills and concept understanding. 
+- Skill levels are set by proficiency level of GIS skills and concept understanding.
+<br>
+<br>
+<br>
+<br> 
+<br>
+
 - Topic classifications are based on the following:
   - **References** provide extensive information and explanation of the material in the manuals.
   - **Resources** provides a breakdown of icons, classifications, and how the 2 manuals work together.
   - **Theory** provides background on the sources and methods used in the tools and process.
-  - **Practical** labels the application based portions of the manuals
-  - **Caution marks** contents to pay special attention to based on need or common errors.
+  - **Practical** labels the application-based portions of the manuals.
+  - **Caution** marks content to pay special attention to based on need or common errors.
   - **Evaluate** notes parts that cover evaluating application inputs and outputs.
+  <br>
+
+  
+- Icon types are to identify key items within the context of the manual:
+  - 🧰 **Toolset** – A group of related tools (for example, ArcGIS toolsets) referenced in workflows.
+  - 🗺️ **Map Layer** – Layers in a map or project (feature classes, rasters, rasters, etc.).
+  - 🗃️ **File Location** – Folders or directory paths where data, projects, and outputs are stored.
+  - 📁 **Folder** – A specific folder used in examples for organizing project data.
+  - 🛠️ **Tool** – Individual geoprocessing or analysis tools used in the manuals.
+  - 📊 **Parameter** – Inputs or options within tools that you configure for a given run.
+  - 🧮 **Value** – Example settings, numeric values, or choices used for parameters or outputs.
+  - 📑 **Reports** – Generated report products (tables, summaries, documents) used to review results.
+  - 📄 **File** – Individual data or project files (e.g., `.gdb`, `.tif`, `.shp`, `.csv`).
+  - 📜 **Script** – Code or scripts (e.g., Python) used to automate or extend workflows.
 :::
 
-::::
+:::::
 
 ---
 
