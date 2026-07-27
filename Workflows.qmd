@@ -3,9 +3,14 @@
 {{< badge practical >}}
 
 ## Developing Regional Curves
+Regional curves are developed by analyzing stream gage data and channel cross section data to establish relationships between drainage area and channel characteristics such as bankfull width, depth, and cross-sectional area. The following steps outline the workflow for developing regional curves:
 
 ## Watershed Analysis
+Watershed analysis involves delineating the watershed boundary, calculating drainage area, and identifying stream networks. This information is essential for understanding the hydrologic characteristics of the watershed and for developing regional curves.
 
 ## Channel Cross Sectional Change
+Channel cross-sectional change analysis involves measuring and analyzing changes in the channel cross section over time. This can be done by comparing historical cross section data with current data to identify trends in channel morphology, such as widening, deepening, or aggradation.
 
 ## Longitudinal Profile Change
+Longitudinal profile change analysis involves examining changes in the streambed elevation along the length of the channel. This can be done by comparing historical longitudinal profile data with current data to identify trends in channel slope, sediment transport, and erosion or deposition patterns.
+

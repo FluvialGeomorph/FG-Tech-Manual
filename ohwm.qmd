@@ -5,4 +5,103 @@ format: html
 
 {{< badge practical >}}
 
-In progress.
+
+### Purpose
+
+The **Floodplain Connectivity Web Application** is an interactive, browser‑based tool for assessing hydraulic connectivity between a river channel and its adjacent floodplain. It provides a structured workflow for entering site data, computing connectivity metrics, and summarizing results to support the design and evaluation of floodplain restoration and management projects.
+
+The application is intended for fluvial geomorphologists, hydraulic engineers, river restoration practitioners, and water‑resources planners.
+
+### Access and Platform
+
+- **URL:** <https://fluvialgeomorph-floodplainconnectivity.share.connect.posit.cloud/>
+- **Platform:** R Shiny application deployed on **Posit Connect**.
+- **Interface:** Web‑based graphical user interface (GUI) accessible via a standard browser.
+- **Computation Engine:** All calculations are performed server‑side in R.
+
+### Scope and Capabilities
+
+At a high level, the application:
+
+- Accepts user‑defined topographic, hydraulic, and geometric inputs describing a river reach and its floodplain.
+- Determines the flow conditions under which different portions of the floodplain become inundated or hydraulically connected to the channel.
+- Computes connectivity metrics such as thresholds for floodplain activation (e.g., water surface elevation, discharge, and associated return interval when available).
+- Produces tabular and graphical outputs to support screening, comparison, and documentation of floodplain connectivity conditions.
+
+### Typical Workflow
+
+#### 1. Project Setup
+
+Users begin by defining the analysis context:
+
+- Enter project or reach identifiers, analyst name, and date.
+- Specify the objective (e.g., existing conditions assessment, alternative comparison, or restoration scenario evaluation).
+
+#### 2. Input Data
+
+The application typically requires the following information (exact fields depend on the specific configuration):
+
+- **Topography and Geometry**
+  - Channel bank elevations and floodplain surface elevations.
+  - Cross‑section data and/or representative station–elevation points.
+  - Delineation of floodplain units or surfaces, if applicable.
+
+- **Hydraulic Information**
+  - Stage–discharge relationship or rating curve for the reach.
+  - Design flows or a range of discharges for analysis (e.g., annual exceedance probabilities or specific return intervals).
+  - Optional roughness or land‑cover parameters when needed.
+
+Input fields are provided through numeric entry boxes, drop‑down selectors, and file upload controls (if the application is configured to accept external data).
+
+#### 3. Connectivity Computation
+
+Based on the entered data, the application:
+
+- Identifies the water surface elevation and discharge at which the main channel first spills onto adjacent floodplain surfaces (onset of connectivity).
+- Tracks the progression of inundation or connectivity across different floodplain units as flow increases.
+- Associates connectivity thresholds with return intervals or exceedance probabilities, when appropriate flow–frequency information is supplied.
+
+#### 4. Metrics and Diagnostics
+
+The application computes and reports metrics such as (where applicable):
+
+- Elevation and discharge at initial floodplain activation.
+- Connectivity thresholds for individual floodplain units or surfaces.
+- Incremental changes in inundated area, depth, or connectivity status across the analyzed flow range.
+- Indicators of disconnection (e.g., surfaces that are only inundated during high‑magnitude, low‑frequency events).
+
+These metrics help characterize how frequently, how deeply, and under what conditions the floodplain is connected to the channel.
+
+#### 5. Visualization and Output
+
+The tool provides visual and tabular summaries to support interpretation and documentation, including:
+
+- Plots of water surface elevation vs. discharge with floodplain activation thresholds highlighted.
+- Longitudinal or cross‑sectional views showing channel banks, floodplain elevations, and connectivity stages.
+- Tables listing connectivity thresholds (elevation, discharge, and, where available, return interval) for each defined floodplain unit or location.
+
+Results can be copied or exported (e.g., as CSV tables or images) for inclusion in reports, figures, or further analysis.
+
+#### 6. Scenario Evaluation and Iteration
+
+Users can:
+
+- Modify topographic or hydraulic inputs to represent alternative conditions (e.g., proposed grading, levee removal, or reconnection features).
+- Re‑run the analysis to compare connectivity metrics across scenarios.
+- Iteratively refine restoration or management designs to achieve desired floodplain activation frequencies and depths.
+
+### Intended Use and Limitations
+
+The Floodplain Connectivity Web Application is intended as a **decision‑support and screening tool**. It is not a substitute for detailed hydraulic modeling or professional judgment.
+
+Key assumptions typically include:
+
+- Simplified hydraulic representation, often based on one‑dimensional stage–discharge relationships.
+- Generalized characterization of floodplain topography, constrained by the resolution and accuracy of available data.
+- Focus on connectivity thresholds and patterns rather than full two‑dimensional floodplain flow dynamics.
+
+Users should:
+
+- Verify that input data and assumptions are appropriate for the project scale and objectives.
+- Cross‑check key thresholds and metrics against field observations, detailed hydraulic models, or additional analyses when required.
+- Document input sources, processing steps, and scenario definitions for transparency and reproducibility.

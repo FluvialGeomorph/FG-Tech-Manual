@@ -134,19 +134,32 @@ Since the study area watershed boundaries are unlikely to have changed between L
 The purpose of this step is to combine the pre-made, coarse-scale DEMs into a single DEM covering the project study area contributing watershed area. 
 
 
-
-
-
 ### Determine if the pre-made DEM has sufficient resolution
+Resolution is a measure of the smallest feature that can be represented in a dataset. The purpose of this step is to determine if the pre-made DEM has sufficient resolution to represent the stream channel and floodplain features in the project study area. If the pre-made DEM does not have sufficient resolution, it will be necessary to acquire LiDAR data and create a high resolution DEM for the project study area.
+
 ### Verify that the DEM elevations are in feet
+Elevations in the pre-made DEM may be in meters or feet. The purpose of this step is to verify that the DEM elevations are in feet. If the DEM elevations are in meters, it will be necessary to convert the DEM elevations to feet.
+
 ### Create a hillshade to improve visualization
+Hillshades are a visualization technique that simulates the appearance of sunlight on a surface. The purpose of this step is to create a hillshade from the pre-made DEM to improve visualization of the terrain features in the project study area.
 
 ## Develop High Resolution Elevation Model
 The purpose of this DEM is to derive a detailed stream terrain model that meets the resolution requirements of the study. 
 
 ### Download LiDAR point cloud data
+LiDAR point cloud data is the raw data collected by LiDAR sensors. The purpose of this step is to acquire the LiDAR point cloud data for the project study area. This data will be used to create a high resolution DEM for the project study area.
+
 ### Build a DEM from LiDAR point cloud data
+LiDAR point cloud data is a collection of points in 3D space that represent the surface of the terrain. The purpose of this step is to create a high resolution DEM from the LiDAR point cloud data. This DEM will be used to derive a detailed stream terrain model for the project study area.
+
 ### Verify that the DEM elevations are in feet
+Elevations in the high resolution DEM may be in meters or feet. The purpose of this step is to verify that the DEM elevations are in feet. If the DEM elevations are in meters, it will be necessary to convert the DEM elevations to feet.
+
 ### Create a hillshade to improve visualization
+Hillshades are a visualization technique that simulates the appearance of sunlight on a surface. The purpose of this step is to create a hillshade from the high resolution DEM to improve visualization of the terrain features in the project study area.
 
 
+<!-- ### Calculate Channel Slope Raster
+The purpose of this step is to create a channel slope raster that can be used in the visual identification of riffle locations in following step. 
+
+* Use the `🛠️Channel Slope` tool to calculate a raster of the channel slope. Use the `🗺️intitial_channel_extent` polygon created earlier to define the channel area within which the slope raster will be calculated. This tool creates a new feature class named `🗺️channel_slope`. -->

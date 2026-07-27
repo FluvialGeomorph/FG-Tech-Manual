@@ -4,4 +4,124 @@ format: html
 ---
 {{< badge practical >}}
 
-In progress.
+Here’s Quarto-ready text for the Chute Design web application. You can paste this directly into a .qmd file and adjust headings to fit your book structure.
+
+
+## Chute Design Web Application
+
+### Purpose
+
+The **Chute Design Web Application** is an interactive, browser‑based tool for designing and evaluating river channel chutes. It provides a consistent framework for entering site data, performing hydraulic and geomorphic calculations, and documenting design assumptions and results.
+
+The application is intended for fluvial geomorphologists, hydraulic engineers, and river restoration practitioners involved in both preliminary and detailed design.
+
+### Access and Platform
+
+- **URL:** <https://fluvialgeomorph-chutedesign.share.connect.posit.cloud/>
+- **Platform:** R Shiny application deployed on **Posit Connect**.
+- **Interface:** Web‑based graphical user interface (GUI) accessible via a standard browser.
+- **Computation Engine:** All calculations are performed server‑side in R using open‑channel hydraulics and geomorphic analysis routines.
+
+### Scope and Capabilities
+
+At a high level, the application:
+
+- Accepts user‑defined hydraulic, geometric, and (optionally) sediment parameters describing an existing channel and proposed chute.
+- Computes key open‑channel flow metrics for the chute using standard hydraulic equations.
+- Evaluates geomorphic suitability and potential stability issues based on shear stress and related indicators.
+- Produces tabular and graphical outputs to support design decisions and documentation.
+
+### Typical Workflow
+
+#### 1. Project Setup
+
+Users begin by defining the design context:
+
+- Enter basic project metadata (e.g., site name, reach identifier, designer, and date).
+- Specify the design objective (e.g., bypass chute, grade control feature, or restoration chute realignment).
+- Select or define relevant design flows (e.g., bankfull discharge, specific design events).
+
+#### 2. Input Data
+
+The application typically requires the following information (exact fields depend on the current configuration):
+
+- **Channel and Chute Geometry**
+  - Existing channel slope, reach length, and representative cross‑section characteristics.
+  - Proposed chute alignment and slope.
+  - Chute dimensions (e.g., bottom width, side slopes, design depth, and length).
+
+- **Hydraulic Parameters**
+  - Design discharge(s) or a range of flows for analysis.
+  - Roughness coefficients (e.g., Manning’s *n*) for the chute and, if relevant, the existing channel.
+  - Boundary conditions or reference water surface elevations, where required.
+
+- **Sediment / Geomorphic Inputs** (if applicable)
+  - Representative bed material size (e.g., *D*50, *D*84).
+  - Additional site descriptors relevant to stability assessment.
+
+Inputs are provided through numeric entry fields, drop‑down selectors, and other GUI controls, with basic validation to prevent non‑physical values.
+
+#### 3. Hydraulic Computation
+
+Based on the supplied geometry and hydraulic parameters, the application:
+
+- Applies standard open‑channel flow relationships (e.g., Manning’s equation) to estimate:
+  - Flow depth.
+  - Mean velocity.
+  - Hydraulic radius and flow area.
+- Computes diagnostic parameters such as:
+  - Froude number to classify flow regime (subcritical vs. supercritical).
+  - Energy slope and related hydraulic characteristics.
+
+Calculations are typically performed for one or more user‑selected design flows.
+
+#### 4. Geomorphic and Stability Evaluation
+
+Using computed hydraulic parameters and (if provided) sediment characteristics, the application:
+
+- Estimates bed shear stress and, where configured, unit stream power.
+- Compares calculated stresses or powers to typical thresholds associated with mobility of the representative bed material.
+- Identifies conditions where:
+  - The chute may be prone to bed erosion or incision.
+  - The chute may be depositional or undersized for the expected sediment load.
+- Provides indicators that support evaluation of chute compatibility with the existing channel and sediment regime.
+
+#### 5. Visualization and Output
+
+The tool provides visual and tabular summaries to aid interpretation and documentation, such as:
+
+- **Profiles and Sections**
+  - Longitudinal profile plots comparing the existing channel and proposed chute.
+  - Cross‑section views illustrating proposed chute geometry and water surface.
+
+- **Hydraulic and Geomorphic Plots**
+  - Graphs of depth, velocity, Froude number, and shear stress versus distance along the chute (as applicable).
+  - Comparison of metrics across design flows.
+
+- **Tabular Outputs**
+  - Tables summarizing input parameters, computed hydraulic variables, and geomorphic indicators.
+  - Results suitable for export (e.g., CSV) and inclusion in design reports or additional analysis.
+
+#### 6. Design Iteration
+
+The application is designed to support iterative refinement:
+
+- Users can adjust chute slope, dimensions, roughness, and design flows.
+- Outputs update in response to new inputs, enabling rapid exploration of alternatives.
+- Multiple runs can be used to screen options and converge on a configuration that balances hydraulic performance, geomorphic stability, and project objectives.
+
+### Intended Use and Limitations
+
+The Chute Design Web Application is intended as a **decision‑support tool**. It is not a substitute for detailed hydraulic or sediment transport modeling or for professional engineering judgment.
+
+Key assumptions typically include:
+
+- One‑dimensional, steady, gradually varied open‑channel flow within the range of validity of the underlying equations (e.g., Manning’s equation).
+- Idealized representation of cross‑sectional geometry and roughness.
+- Simplified treatment of sediment transport and stability, based on threshold‑type evaluations rather than full transport modeling.
+
+Users should:
+
+- Verify that inputs (geometry, roughness, flows, and sediment properties) are consistent with field data and project requirements.
+- Cross‑check critical results against independent calculations, detailed models, and site observations where appropriate.
+- Document all key assumptions, sources of input data, and design scenarios evaluated within the application for transparency and reproducibility.

@@ -29,11 +29,13 @@ book:
         - TutorialData.qmd
         - Toolbox.qmd
         - Features.qmd
-        - Reports.qmd
+    - part: "FluvialGeomorph Analysis"
+      chapters:
         - Level-1.qmd
         - Level-2-eb.qmd
         - Level-2.qmd
         - Level-3.qmd
+        - Reports.qmd
         - FromField.qmd
         - Validation.qmd
     - part: "Rapid Assessment Tools"

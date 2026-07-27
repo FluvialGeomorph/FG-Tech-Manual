@@ -85,11 +85,18 @@ Since the study area watershed boundaries are unlikely to have changed between L
 This DEM is used to derive a detailed stream terrain model that meets the resolution requirements of the study. 
 
 ### Download LiDAR point cloud data
+LiDAR point cloud data is typically available from state or federal agencies. The following are some examples of where LiDAR point cloud data can be obtained:
+* [USGS National Elevation Dataset (NED)](https://www.usgs.gov/core-science-systems/ngp/national-elevation-dataset)
+* [State-specific LiDAR data sources](https://www.fgdc.gov/standards/projects/fgdc-standards-projects/lidar-data)
+
 ### Build a DEM from LiDAR point cloud data
+The LiDAR point cloud data is processed to create a high-resolution DEM. This DEM will be used for detailed analysis of the stream and its surrounding terrain.
+
 ### Verify that the DEM elevations are in feet
+The DEM must have vertical units of feet. If the DEM is in meters, it must be converted to feet before proceeding with the analysis.
+
 ### Create a hillshade to improve visualization
-
-
+This step is optional, but creating a hillshade can help visualize the terrain and identify features of interest in the study area.
 
 
 ### Hydro Modify DEM
@@ -396,9 +403,6 @@ The purpose of this step is to determine what further steps need to be taken.
 ***
  
 
-### Calculate Channel Slope Raster
-The purpose of this step is to create a channel slope raster that can be used in the visual identification of riffle locations in following step. 
 
-* Use the `🛠️Channel Slope` tool to calculate a raster of the channel slope. Use the `🗺️intitial_channel_extent` polygon created earlier to define the channel area within which the slope raster will be calculated. This tool creates a new feature class named `🗺️channel_slope`. 
 
  

@@ -4,22 +4,22 @@ This chapter describes the items an analyst needs to check to ensure that the Fl
 ## Level 1 Report {#L1_report_qa}
 
 ### Study Area Overview {#L1_study_area_overview}
-This report section contains a set of reach overview maps drawn using the `flowline` and the regularly spaced cross section dimensions, `*_dims_L1`, feature classes (fc). Both the aerial photo and elevation are provided by [Mapbox Raster Tiles](https://docs.mapbox.com/api/maps/#raster-tiles).  
+This report section contains a set of reach overview maps drawn using the `🗺️flowline` and the regularly spaced cross section dimensions, `🗺️*_dims_L1`, feature classes (fc). Both the aerial photo and elevation are provided by [Mapbox Raster Tiles](https://docs.mapbox.com/api/maps/#raster-tiles).  
 
 #### Check the stream name
 All of the tools depend on consistent reach naming! Ensuring consistent naming begins with deriving the "flowline" fc. The ReachName field must contain the same value for all of the fc's within a reach geodatabase. This is the single biggest gotcha we find running these tools. If tools aren't working correctly and you're sure you've done everything else right, consistent stream names is the first thing to check!  
 
 #### Cross section labels at the correct interval
-Cross section labels usually cannot be placed on every cross section or the map or graph becomes unreadable due to label crowding. The `xs_label_freq` parameter can be adjusted to adequately space cross section labels. Typically `xs_label_freq` = 10 works for regularly spaced cross sections and `xs_label_freq` = 2 works for riffle cross sections.  
+Cross section labels usually cannot be placed on every cross section or the map or graph becomes unreadable due to label crowding. The `📊xs_label_freq` parameter can be adjusted to adequately space cross section labels. Typically `📊xs_label_freq` = 10 works for regularly spaced cross sections and `📊xs_label_freq` = 2 works for riffle cross sections.  
 
 #### Cross sections cover the full extent of the flowine
-The `flowline` fc extends from the downstream end of the reach to the upstream end. Cross sections should be spaced regularly across the entire reach, without any gaps at the upper or lower end.  
+The `🗺️flowline` fc extends from the downstream end of the reach to the upstream end. Cross sections should be spaced regularly across the entire reach, without any gaps at the upper or lower end.  
 
 #### Map basemap displaying correctly
 The overview maps should contain an aerial photo or shaded relief elevation basemap.  
 
 ### Longitudinal Profiles {#L1_long_profiles}
-This report section contains two longitudinal profile graphs, one drawn using the `flowline_points` fc, and the second is drawn using the cross section dimensions,  `*_dims_L1` fc.  
+This report section contains two longitudinal profile graphs, one drawn using the `🗺️flowline_points` fc, and the second is drawn using the cross section dimensions,  `🗺️*_dims_L1` fc.  
 
 #### Elevation values are reasonable
 The elevation values displayed on the map or graph should be reasonable. Use the ESRI `Explore` tool to check the DEM elevation values. By convention in FluvialGeomorph, DEM values must always have vertical units = feet. 
@@ -42,23 +42,23 @@ If all of the surveys' last station values do not align, it means that the previ
 Units can be chosen for the longitudinal profile stationing. Ensure that the correct units are selected.  
 
 #### Stream feature labels display correctly
-Longitudinal graphs are labeled using the rows in the `features` fc. Ensure these river features are labeled correctly and are located at the correct longitudinal position. 
+Longitudinal graphs are labeled using the rows in the `🗺️features` fc. Ensure these river features are labeled correctly and are located at the correct longitudinal position. 
 
 
 ### Cross Section Metrics {#L1_xs_metrics}
-This report section contains a Level 1 cross section metrics plot drawn using the cross section dimensions fc, `*_dims_L1`. 
+This report section contains a Level 1 cross section metrics plot drawn using the cross section dimensions fc, `🗺️*_dims_L1`. 
 
 #### Cross section watershed area calculated correctly
-The watershed area metric is calculated by the `XS Watershed Area` tool. Given the complexities of automatically calculating watershed area for high resolution stream features, some watershed areas may not have been calculated correctly. Rerunning the Watershed Area tool or manual adjustment of the `Watershed_Area_SqMile` field may be required.  
+The watershed area metric is calculated by the `🛠️XS Watershed Area` tool. Given the complexities of automatically calculating watershed area for high resolution stream features, some watershed areas may not have been calculated correctly. Rerunning the Watershed Area tool or manual adjustment of the `📊Watershed_Area_SqMile` field may be required.  
 
 * Watershed values are reasonable. 
 * Watershed area must increase moving downstream. 
 
 #### Elevation smoothing is acceptable
-High resolution LiDAR derived stream elevations can be noisy. Smoothing the elevations longitudinally is a way reduce noise. However, too much smoothing can be applied, eliminating any of the relationships we want to observe. By visually comparing the raw elevation and the smoothed elevation graphs, verify that the amount of smoothing sufficiently reduces noise, but does not not go too far and removes substantive variation. Smoothing is controlled in the `XS Dimension` tools using the "loess_span" parameter. 
+High resolution LiDAR derived stream elevations can be noisy. Smoothing the elevations longitudinally is a way reduce noise. However, too much smoothing can be applied, eliminating any of the relationships we want to observe. By visually comparing the raw elevation and the smoothed elevation graphs, verify that the amount of smoothing sufficiently reduces noise, but does not not go too far and removes substantive variation. Smoothing is controlled in the `🛠️XS Dimension` tools using the "📊loess_span" parameter. 
 
 #### Ensure metrics values are smooth
-Many reach metrics are calculated using a longitudinal moving window analysis. The size of the moving window is controlled in the `XS Dimensions` tools using the "lead_n" parameter. A smaller value applies a narrower moving mindow and a larger value applies a wider moving window. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced. 
+Many reach metrics are calculated using a longitudinal moving window analysis. The size of the moving window is controlled in the `🛠️XS Dimensions` tools using the "📊lead_n" parameter. A smaller value applies a narrower moving mindow and a larger value applies a wider moving window. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced. 
 
 #### Slope values are reasonable
 Slope values should be greater than zero. If negative slopes are being recorded, it usually means that the moving window size needs to be increased. 
@@ -68,109 +68,133 @@ Sinuosity values should be greater than one.
 
 
 ### Cross Section Profiles {#L1_xs_profiles}
-This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the cross section dimensions `*_dims_L1` fc and the `dem_hydro` raster. The cross section profile graph is drawn using the cross section points fc's for each survey.  
+This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the cross section dimensions `🗺️*_dims_L1` fc and the `🗺️dem_hydro` raster. The cross section profile graph is drawn using the cross section points fc's for each survey.  
 
 #### Cross section must be digitized from left to right
 The graph is being viewed from the perspective of standing in the stream, looking downstream. To ensure this orientation, cross sections must be digitized from the left descending bank to the right descending bank. 
 
 
 #### Cross section perpenduicular to the channel
+The cross section should be drawn perpendicular to the channel centerline. If the cross section is not perpendicular, the cross section profile graph will not accurately represent the stream channel.
 
 #### Cross section covers the channel extent
+Cross section should extend from the left descending bank to the right descending bank. If the cross section does not cover the full channel extent, the cross section profile graph will not accurately represent the stream channel.
 
 #### Cross section extends onto floodplain
+Floodplain areas are important to include in the cross section profile graph. If the cross section does not extend onto the floodplain, the cross section profile graph will not accurately represent the stream channel and its surrounding environment.
 
 #### Cross section not located on built infrastructure
+Built infrastructure, such as bridges, culverts, and dams, can affect the cross section profile graph. If the cross section is located on built infrastructure, the cross section profile graph will not accurately represent the stream channel and its surrounding environment.
 
 #### Cross section drawn within the DEM extent
+Cross sections should be drawn within the extent of the DEM. If the cross section is drawn outside the DEM extent, the cross section profile graph will not accurately represent the stream channel and its surrounding environment.
 
 #### Cross section y-axis range is not too large
+Review the y-axis range of the cross section profile graph. If the y-axis range is too large, it can make it difficult to see the details of the cross section profile graph. Adjust the y-axis range to ensure that the cross section profile graph is easily readable.
 
 #### Cross section x-axis range is not too large
+Review the x-axis range of the cross section profile graph. If the x-axis range is too large, it can make it difficult to see the details of the cross section profile graph. Adjust the x-axis range to ensure that the cross section profile graph is easily readable.
 
 
 
 ## Estimate Bankfull Report {#estimate_bankfull_report_qa}
 
 ### Study Area Overview
-This report section contains a set of reach overview maps drawn using the `flowline` and the riffle cross section dimensions, `*_dims_L2`, feature classes (fc). Both the aerial photo and elevation are provided by [Mapbox Raster Tiles](https://docs.mapbox.com/api/maps/#raster-tiles). See the QA checklist items in the [Level 1 Report, Study Area Overview](#L1_study_area_overview) section.  
+This report section contains a set of reach overview maps drawn using the `🗺️flowline` and the riffle cross section dimensions, `🗺️*_dims_L2`, feature classes (fc). Both the aerial photo and elevation are provided by [Mapbox Raster Tiles](https://docs.mapbox.com/api/maps/#raster-tiles). See the QA checklist items in the [Level 1 Report, Study Area Overview](#L1_study_area_overview) section.  
 
 ### Bankfull Elevation Sensitivity Analysis
 This report section contains the Bankfull Elevation sensitivity analysis Goodness of Fit graph and the Regional Hydraulic Geometry Curves graph drawn using the base year's riffle cross section points fc. 
 
 #### Correct regions included
+Regions are defined in the `🗺️regions` fc. The regions included in the analysis should be appropriate for the study area. If the study area is located in a region that is not included in the `🗺️regions` fc, the analyst will need to add the region to the fc and rerun the analysis.
 
 #### Adequate range of bankfull elevations
+Elevation values are tested in the sensitivity analysis. The range of elevations tested should be adequate to ensure that the best fit bankfull elevation is identified. If the range of elevations tested is too narrow, the analyst will need to rerun the analysis with a wider range of elevations.
 
 #### Detrended bankfull elevation set to a reasonable value
+Bankfull elevations are detrended to remove the effect of longitudinal slope. The detrended bankfull elevation should be set to a reasonable value. If the detrended bankfull elevation is set to an unreasonable value, the analyst will need to rerun the analysis with a more reasonable value.
 
 #### Drainage Area values are reasonable
+Values for drainage area are derived from the `🗺️flowline` fc. The drainage area values should be reasonable. If the drainage area values are not reasonable, the analyst will need to check the `🗺️flowline` fc and rerun the analysis.
 
 
 ### Longitudinal Profile {#estimate_bankfull_long_profile}
-This section of the report contains a cross section longitudinal profile graph drawn using the riffle cross section dimensions, `riffle_channel_dims_L2` fc. 
+This section of the report contains a cross section longitudinal profile graph drawn using the riffle cross section dimensions, `🗺️riffle_channel_dims_L2` fc. 
 
 #### Elevation values are reasonable
+The elevation values displayed on the map or graph should be reasonable. Use the ESRI `Explore` tool to check the DEM elevation values. By convention in FluvialGeomorph, DEM values must always have vertical units = feet.
 
 #### Stationing in the correct units
+The longitudinal profile graph can be drawn in either feet or miles. Ensure that the correct units are selected.
 
 #### Stream feature labels display correctly
+The longitudinal profile graph is labeled using the rows in the `🗺️features` fc. Ensure these river features are labeled correctly and are located at the correct longitudinal position.
 
 
 ### Cross Section Metrics {#estimate_bankfull_xs_metrics}
-This report section contains a Level 2 cross section metrics plot drawn using the `riffle_channel_dims_L2` fc.  
+This report section contains a Level 2 cross section metrics plot drawn using the `🗺️riffle_channel_dims_L2` fc.  
 
 #### Width-Depth Ratio values are reasonable
+Consideration should be given to the moving window size used to calculate the width-depth ratio. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced.
 
 #### Entrenchment Ratio values are reasonable
+Consideration should be given to the moving window size used to calculate the entrenchment ratio. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced.
 
 #### Slope values are reasonable
+The moving window size is used to calculate the slope. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced.
 
 #### Sinuosity values are reasonable
+The sinuosity metric is calculated using a moving window analysis. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced.
+
 
 #### Shear Stress values are reasonable
+The shear stress metric is calculated using a moving window analysis. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced.
 
 #### Unit Stream Power values are reasonable
+The unit stream power metric is calculated using a moving window analysis. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced.
 
 
 ### Cross Section Profiles
-This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the cross section dimensions fc `riffle_channel_dims_L2` and the `dem_hydro` raster. The cross section profile graph is drawn using the `riffle_channel_points` fc's for each survey. see the QA checklist items in the [Level 1 Report, Cross Section Profiles](#L1_xs_profiles) section.  
+This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the cross section dimensions fc `🗺️riffle_channel_dims_L2` and the `🗺️dem_hydro` raster. The cross section profile graph is drawn using the `🗺️riffle_channel_points` fc's for each survey. see the QA checklist items in the `📑Level 1 Report, Cross Section Profiles` section.  
 
 
 ## Level 2 Report {#L2_report_qa}
 
 ### Study Area Overview
-This report section contains a set of reach overview maps drawn using the `flowline` and the regularly spaced cross section dimensions, `*_dims_L2`, feature classes (fc). Both the aerial photo and elevation are provided by [Mapbox Raster Tiles](https://docs.mapbox.com/api/maps/#raster-tiles). See the QA checklist items in the [Level 1 Report, Study Area Overview](#L1_study_area_overview) section.  
+This report section contains a set of reach overview maps drawn using the `🗺️flowline` and the regularly spaced cross section dimensions, `🗺️*_dims_L2`, feature classes (fc). Both the aerial photo and elevation are provided by [Mapbox Raster Tiles](https://docs.mapbox.com/api/maps/#raster-tiles). See the QA checklist items in the [Level 1 Report, Study Area Overview](#L1_study_area_overview) section.  
 
 ### Longitudinal Profile
-This section of the report contains a cross section longitudinal profile graph drawn using the regularly spaced cross section dimensions, `*_dims_L2` fc. See the QA checklist items in the [Estimate Bankfull, Longitudinal Profile](#estimate_bankfull_long_profile) section. 
+This section of the report contains a cross section longitudinal profile graph drawn using the regularly spaced cross section dimensions, `🗺️*_dims_L2` fc. See the QA checklist items in the [Estimate Bankfull, Longitudinal Profile](#estimate_bankfull_long_profile) section. 
 
 ### Cross Section Metrics
-This report section contains a Level 2 cross section metrics plot drawn using the regularly spaced cross section dimensions, `*_dims_L2` fc.See the QA checklist items in the [Estimate Bankfull, Cross section Metrics](#estimate_bankfull_xs_metrics) section.
+This report section contains a Level 2 cross section metrics plot drawn using the regularly spaced cross section dimensions, `🗺️*_dims_L2` fc.See the QA checklist items in the [Estimate Bankfull, Cross section Metrics](#estimate_bankfull_xs_metrics) section.
 
 #### Ensure metrics values are smooth
+The metrics values are calculated using a longitudinal moving window analysis. The size of the moving window is controlled in the `🛠️XS Dimensions` tools using the "📊lead_n" parameter. A smaller value applies a narrower moving mindow and a larger value applies a wider moving window. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced.
 
 ### Cross Section Profiles
-This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the regularly spaced cross section dimensions fc `*_dims_L2` and the `dem_hydro` raster. The cross section profile graph is drawn using the cross section `*_points` fc's for each survey. see the QA checklist items in the [Level 1 Report, Cross Section Profiles](#L1_xs_profiles) section. 
+This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the regularly spaced cross section dimensions fc `🗺️*_dims_L2` and the `🗺️dem_hydro` raster. The cross section profile graph is drawn using the cross section `🗺️*_points` fc's for each survey. see the QA checklist items in the [Level 1 Report, Cross Section Profiles](#L1_xs_profiles) section. 
 
 
 ## Level 3 Report {#L3_report_qa}
 
 ### Study Area Overview
-This report section contains a set of reach overview maps drawn using the `flowline` and the regularly spaced cross section dimensions, `*_dims_L3`, feature classes (fc). Both the aerial photo and elevation are provided by [Mapbox Raster Tiles](https://docs.mapbox.com/api/maps/#raster-tiles). See the QA checklist items in the [Level 1 Report, Study Area Overview](#L1_study_area_overview) section.  
+This report section contains a set of reach overview maps drawn using the `🗺️flowline` and the regularly spaced cross section dimensions, `🗺️*_dims_L3`, feature classes (fc). Both the aerial photo and elevation are provided by [Mapbox Raster Tiles](https://docs.mapbox.com/api/maps/#raster-tiles). See the QA checklist items in the [Level 1 Report, Study Area Overview](#L1_study_area_overview) section.  
 
 ### Longitudinal Profile
-This section of the report contains a cross section longitudinal profile graph drawn using the regularly spaced cross section dimensions, `*_dims_L3` fc. See the QA checklist items in the [Estimate Bankfull, Longitudinal Profile](#estimate_bankfull_long_profile) section. 
+This section of the report contains a cross section longitudinal profile graph drawn using the regularly spaced cross section dimensions, `🗺️*_dims_L3` fc. See the QA checklist items in the [Estimate Bankfull, Longitudinal Profile](#estimate_bankfull_long_profile) section. 
 
 ### Cross Section Metrics
-This report section contains a Level 2 cross section metrics plot drawn using the regularly spaced cross section dimensions, `*_dims_L3` fc.See the QA checklist items in the [Estimate Bankfull, Cross section Metrics](#estimate_bankfull_xs_metrics) section.
+This report section contains a Level 2 cross section metrics plot drawn using the regularly spaced cross section dimensions, `🗺️*_dims_L3` fc.See the QA checklist items in the [Estimate Bankfull, Cross section Metrics](#estimate_bankfull_xs_metrics) section.
 
 #### Ensure metrics values are smooth
+Smoothing the metrics values is controlled in the `🛠️XS Dimensions` tools using the "📊lead_n" parameter. A smaller value applies a narrower moving mindow and a larger value applies a wider moving window. If the moving window is too small, metric values will be highly variable along the stream. As the moving window size gets larger, metric value variation will be reduced.
 
 #### Radius of Curvature to Bankfull Width values are reasonable
+Curvature values should be greater than zero. If negative curvature values are being recorded, it usually means that the moving window size needs to be increased.
 
 ### Cross Section Profiles
-This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the regularly spaced cross section dimensions fc `*_dims_L3` and the `dem_hydro` raster. The cross section profile graph is drawn using the cross section "_points" fc's for each survey. see the QA checklist items in the [Level 1 Report, Cross Section Profiles](#L1_xs_profiles) section. 
+This report section contains a cross section map and a cross section profile graph for each cross section in the reach. The map is drawn from the regularly spaced cross section dimensions fc `🗺️*_dims_L3` and the `🗺️dem_hydro` raster. The cross section profile graph is drawn using the cross section "🗺️_points" fc's for each survey. see the QA checklist items in the [Level 1 Report, Cross Section Profiles](#L1_xs_profiles) section. 
 
 
 ***
