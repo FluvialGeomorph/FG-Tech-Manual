@@ -184,7 +184,7 @@ Deriving the site flowline is next. The `🛠️Flowline` tool converts a `🗺�
 
 
 ### Create the Reach Geodatabase
-Create a set of new reach geodatabases for each reach in a site and populate these reach geodatabases with initial data. This step will need to be repeated for each reach AND survey in the project study area `🗃️site` (#units_of_analysis). For example, if a site has five reaches (e.g., R1-R5) and three LiDAR surveys (e.g., 2016, 2010, 2006), then a total of 15 reach geodatabases must be created at this stage:
+Create a set of new reach geodatabases for each reach in a site and populate these reach geodatabases with initial data. This step will need to be repeated for each reach AND survey in the project study area `🗃️site`. For example, if a site has five reaches (e.g., R1-R5) and three LiDAR surveys (e.g., 2016, 2010, 2006), then a total of 15 reach geodatabases must be created at this stage:
 
 2016         | 2010         | 2006 
 :---         | :---         | :---
@@ -211,10 +211,10 @@ Now converting the `🗺️flowline` into a series of points along the reach is 
 * For a site with multiple reaches, set the `📊km_to_mouth` parameter for the downstream-most reach to `🧮0`. 
 * Set the `📊km_to_mouth` parameter for each upstream reach to the upstream-most value (i.e., the highest `📊km_to_mouth` value of the downstream reach's `🗺️flowline_points` feature class of the downstream reach. For example, set the `📊km_to_mouth` of the Reach-2 `🗺️flowline_points` feature class to `🧮1.2345` if the maximum value of Reach-1's `🗺️flowline_points` feature class `📊km_to_mouth` field is `🧮1.2345`. 
 * The goal is that longitudinal stationing within a site containing multiple reaches should be sequential and unique throughout the site (i.e., lower station values at the bottom of the site and higher station values at the top of the site). This allows reach feature classes to be combined after reach-level analysis is complete. 
-* The `🗺️calibration_points`, `📊point_id_field`, and `📊measure_field` parameters can be left blank when processing the `📁base event`(#units_of_analysis).
+* The `🗺️calibration_points`, `📊point_id_field`, and `📊measure_field` parameters can be left blank when processing the `📁base event`.
 
 **Multiple Surveys**   
-To make LiDAR surveys collected before the `📁base event`(#units_of_analysis) directly comparable to the base event, the `🗺️flowline` from each previous survey must be `📊calibrated` to the base event. This adjusts any changes in flowline planform between survey events to be expressed in terms of the base event longitudinal stationing. 
+To make LiDAR surveys collected before the `📁base event` directly comparable to the base event, the `🗺️flowline` from each previous survey must be `📊calibrated` to the base event. This adjusts any changes in flowline planform between survey events to be expressed in terms of the base event longitudinal stationing. 
 
 * If multiple LiDAR surveys exist for a project study area, the `🗺️flowline_points` for any previous LiDAR survey must be calibrated using the `🗺️flowline_points` of the base event. 
 * For example, if 2016 is the base event, when deriving the `🗺️flowline_points` for a LiDAR survey from 2010, the base event's `🗺️flowline_points` (2016) must be used for the `🛠️Flowline Points` tool's `📊calibration_points` parameter value. 
