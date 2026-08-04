@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction – FluvialGeomorph Technical Manual</title>
+<title>17&nbsp; Validation – FluvialGeomorph Technical Manual</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -52,8 +33,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./quickguide.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./floodplain.html" rel="next">
+<link href="./FromField.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -281,7 +262,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Intro.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Level-1.html">FluvialGeomorph Analysis</a></li><li class="breadcrumb-item"><a href="./Validation.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Validation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -318,7 +299,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -451,7 +432,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Validation.html" class="sidebar-item-text sidebar-link">
+  <a href="./Validation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Validation</span></span></a>
   </div>
 </li>
@@ -560,56 +541,10 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#purpose-and-scope" id="toc-purpose-and-scope" class="nav-link" data-scroll-target="#purpose-and-scope">Purpose and Scope</a>
-  <ul class="collapse">
-  <li><a href="#purpose-of-this-manual" id="toc-purpose-of-this-manual" class="nav-link" data-scroll-target="#purpose-of-this-manual">Purpose of this Manual</a></li>
-  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope">Scope</a></li>
-  </ul></li>
-  <li><a href="#background-and-development" id="toc-background-and-development" class="nav-link" data-scroll-target="#background-and-development">Background and Development</a>
-  <ul class="collapse">
-  <li><a href="#the-need-for-rapid-assessment-methods" id="toc-the-need-for-rapid-assessment-methods" class="nav-link" data-scroll-target="#the-need-for-rapid-assessment-methods">The Need for Rapid Assessment Methods</a></li>
-  <li><a href="#development-history" id="toc-development-history" class="nav-link" data-scroll-target="#development-history">Development History</a></li>
-  </ul></li>
-  <li><a href="#analytical-framework" id="toc-analytical-framework" class="nav-link" data-scroll-target="#analytical-framework">Analytical Framework</a>
-  <ul class="collapse">
-  <li><a href="#core-principles" id="toc-core-principles" class="nav-link" data-scroll-target="#core-principles">Core Principles</a></li>
-  <li><a href="#lidar-based-analysis" id="toc-lidar-based-analysis" class="nav-link" data-scroll-target="#lidar-based-analysis">LiDAR-Based Analysis</a></li>
-  <li><a href="#integration-with-field-data" id="toc-integration-with-field-data" class="nav-link" data-scroll-target="#integration-with-field-data">Integration with Field Data</a></li>
-  </ul></li>
-  <li><a href="#relationship-to-user-manual" id="toc-relationship-to-user-manual" class="nav-link" data-scroll-target="#relationship-to-user-manual">Relationship to User Manual</a></li>
-  <li><a href="#software-architecture" id="toc-software-architecture" class="nav-link" data-scroll-target="#software-architecture">Software Architecture</a>
-  <ul class="collapse">
-  <li><a href="#dual-implementation" id="toc-dual-implementation" class="nav-link" data-scroll-target="#dual-implementation">Dual Implementation</a></li>
-  </ul></li>
-  <li><a href="#lidar-data-requirements" id="toc-lidar-data-requirements" class="nav-link" data-scroll-target="#lidar-data-requirements">LiDAR Data Requirements</a>
-  <ul class="collapse">
-  <li><a href="#data-specifications" id="toc-data-specifications" class="nav-link" data-scroll-target="#data-specifications">Data Specifications</a></li>
-  <li><a href="#data-quality-considerations" id="toc-data-quality-considerations" class="nav-link" data-scroll-target="#data-quality-considerations">Data Quality Considerations</a></li>
-  </ul></li>
-  <li><a href="#assumptions-and-limitations" id="toc-assumptions-and-limitations" class="nav-link" data-scroll-target="#assumptions-and-limitations">Assumptions and Limitations</a>
-  <ul class="collapse">
-  <li><a href="#general-assumptions" id="toc-general-assumptions" class="nav-link" data-scroll-target="#general-assumptions">General Assumptions</a></li>
-  <li><a href="#key-limitations" id="toc-key-limitations" class="nav-link" data-scroll-target="#key-limitations">Key Limitations</a></li>
-  <li><a href="#appropriate-applications" id="toc-appropriate-applications" class="nav-link" data-scroll-target="#appropriate-applications">Appropriate Applications</a></li>
-  </ul></li>
-  <li><a href="#quality-assurance-and-validation" id="toc-quality-assurance-and-validation" class="nav-link" data-scroll-target="#quality-assurance-and-validation">Quality Assurance and Validation</a>
-  <ul class="collapse">
-  <li><a href="#quality-assurance" id="toc-quality-assurance" class="nav-link" data-scroll-target="#quality-assurance">Quality Assurance</a></li>
-  <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
-  </ul></li>
-  <li><a href="#using-this-manual" id="toc-using-this-manual" class="nav-link" data-scroll-target="#using-this-manual">Using This Manual</a>
-  <ul class="collapse">
-  <li><a href="#manual-organization" id="toc-manual-organization" class="nav-link" data-scroll-target="#manual-organization">Manual Organization</a></li>
-  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a></li>
-  <li><a href="#for-different-users" id="toc-for-different-users" class="nav-link" data-scroll-target="#for-different-users">For Different Users</a></li>
-  </ul></li>
-  <li><a href="#contributing-and-support" id="toc-contributing-and-support" class="nav-link" data-scroll-target="#contributing-and-support">Contributing and Support</a>
-  <ul class="collapse">
-  <li><a href="#open-source-development" id="toc-open-source-development" class="nav-link" data-scroll-target="#open-source-development">Open Source Development</a></li>
-  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
-  <li><a href="#citing-fluvialgeomorph" id="toc-citing-fluvialgeomorph" class="nav-link" data-scroll-target="#citing-fluvialgeomorph">Citing FluvialGeomorph</a></li>
-  </ul></li>
+  <li><a href="#this-page-is-under-construction-and-being-revised-on-a-continued-basis.-please-check-back-later-for-updates." id="toc-this-page-is-under-construction-and-being-revised-on-a-continued-basis.-please-check-back-later-for-updates." class="nav-link active" data-scroll-target="#this-page-is-under-construction-and-being-revised-on-a-continued-basis.-please-check-back-later-for-updates.">This page is under construction and being revised on a continued basis. Please check back later for updates.</a></li>
+  <li><a href="#calculate-slope-and-sinuosity-level-2" id="toc-calculate-slope-and-sinuosity-level-2" class="nav-link" data-scroll-target="#calculate-slope-and-sinuosity-level-2">Calculate Slope and Sinuosity (Level 2)</a></li>
+  <li><a href="#delineate-watersheds" id="toc-delineate-watersheds" class="nav-link" data-scroll-target="#delineate-watersheds">Delineate Watersheds</a></li>
+  <li><a href="#create-the-site-geodatabase" id="toc-create-the-site-geodatabase" class="nav-link" data-scroll-target="#create-the-site-geodatabase">Create the site geodatabase</a></li>
   </ul>
 </nav>
     </div>
@@ -617,9 +552,9 @@ div.csl-indent {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Level-1.html">FluvialGeomorph Analysis</a></li><li class="breadcrumb-item"><a href="./Validation.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Validation</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Validation</span></h1>
 </div>
 
 
@@ -636,324 +571,663 @@ div.csl-indent {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>The <strong>FluvialGeomorph</strong> toolbox is an open-source ArcGIS toolbox and R package designed to support rapid fluvial geomorphic analysis and assessment. FluvialGeomorph provides a standardized toolset for conducting cost-effective stream channel analysis by leveraging high-resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to extract stream channel dimensions at fine scale across large spatial extents.</p>
-<p>Traditional field-based stream surveys are time-consuming, expensive, and limited in spatial coverage. FluvialGeomorph addresses these limitations by enabling practitioners to systematically extract channel geometry from LiDAR-derived digital elevation models (DEMs), dramatically expanding the scale and efficiency of fluvial geomorphic assessment.</p>
-</section>
-<section id="purpose-and-scope" class="level2">
-<h2 class="anchored" data-anchor-id="purpose-and-scope">Purpose and Scope</h2>
-<section id="purpose-of-this-manual" class="level3">
-<h3 class="anchored" data-anchor-id="purpose-of-this-manual">Purpose of this Manual</h3>
-<p>This technical manual serves as the authoritative reference for the analytical methods implemented in FluvialGeomorph. It documents the algorithms, procedures, and scientific foundations underlying the toolbox capabilities. This manual is intended for:</p>
-<ul>
-<li><strong>Practitioners</strong> seeking to understand the methods and assumptions behind the analyses</li>
-<li><strong>Researchers</strong> looking to validate or build upon the analytical approaches</li>
-<li><strong>Reviewers</strong> evaluating the technical basis of FluvialGeomorph analyses</li>
-<li><strong>Developers</strong> contributing to or extending the FluvialGeomorph codebase</li>
-</ul>
-<p>While the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/">FluvialGeomorph User Manual</a> provides step-by-step instructions for using the toolbox, this technical manual focuses on <em>why</em> and <em>how</em> the methods work, including:</p>
-<ul>
-<li>Theoretical foundations and literature basis</li>
-<li>Mathematical formulations and algorithms</li>
-<li>LiDAR data requirements and processing methods</li>
-<li>Assumptions, limitations, and appropriate applications</li>
-<li>Validation and uncertainty quantification</li>
-</ul>
-</section>
-<section id="scope" class="level3">
-<h3 class="anchored" data-anchor-id="scope">Scope</h3>
-<p>This manual documents the analytical methods for extracting fluvial geomorphic information from LiDAR terrain data, including:</p>
-<ul>
-<li>Cross-section extraction and processing</li>
-<li>Bankfull identification from topographic signatures</li>
-<li>Channel dimension calculation (width, depth, cross-sectional area)</li>
-<li>Longitudinal profile and slope analysis</li>
-<li>Planform characterization (sinuosity, meander metrics)</li>
-<li>Regional curve development and application</li>
-<li>Reach-scale assessment and aggregation</li>
-</ul>
-</section>
-</section>
-<section id="background-and-development" class="level2">
-<h2 class="anchored" data-anchor-id="background-and-development">Background and Development</h2>
-<section id="the-need-for-rapid-assessment-methods" class="level3">
-<h3 class="anchored" data-anchor-id="the-need-for-rapid-assessment-methods">The Need for Rapid Assessment Methods</h3>
-<p>Stream restoration and management require accurate information about channel geometry across watersheds and regions. However, traditional field survey methods face significant challenges:</p>
-<ul>
-<li><strong>Limited spatial coverage</strong>: Field surveys typically capture only a few cross-sections per reach</li>
-<li><strong>High cost</strong>: Survey crews, equipment, and access requirements are expensive</li>
-<li><strong>Time constraints</strong>: Field work is weather-dependent and time-intensive</li>
-<li><strong>Temporal snapshots</strong>: Resurveys to assess change are rarely feasible</li>
-<li><strong>Access limitations</strong>: Private property and difficult terrain restrict survey locations</li>
-</ul>
-<p>The widespread availability of high-resolution LiDAR data presents an opportunity to overcome these limitations. LiDAR-derived DEMs provide continuous terrain coverage across entire watersheds with consistent, repeatable measurements at fine spatial resolution (often 1-meter or better). FluvialGeomorph was developed to systematically extract fluvial geomorphic information from LiDAR data, enabling rapid assessment at scales previously impractical with field methods alone.</p>
-</section>
-<section id="development-history" class="level3">
-<h3 class="anchored" data-anchor-id="development-history">Development History</h3>
-<p>FluvialGeomorph was developed by the U.S. Army Corps of Engineers to support stream assessment, restoration planning, and regional studies. The toolbox builds upon:</p>
-<ul>
-<li>Established fluvial geomorphology principles <span class="citation" data-cites="leopold1953hydraulic dunne1978water">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>; <a href="References.html#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span></li>
-<li>Regional hydraulic geometry methods <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span></li>
-<li>Advances in LiDAR remote sensing and terrain analysis</li>
-<li>Geospatial analysis and automation techniques</li>
-</ul>
-<p>The toolbox has been applied to numerous watersheds and regional studies, demonstrating the value of LiDAR-based analysis for regional curve development, stream condition assessment, restoration site screening, and pre- and post-project monitoring.</p>
-</section>
-</section>
-<section id="analytical-framework" class="level2">
-<h2 class="anchored" data-anchor-id="analytical-framework">Analytical Framework</h2>
-<section id="core-principles" class="level3">
-<h3 class="anchored" data-anchor-id="core-principles">Core Principles</h3>
-<p>FluvialGeomorph is built on fundamental principles of fluvial geomorphology:</p>
-<ol type="1">
-<li><strong>Hydraulic geometry relationships</strong>: Channel dimensions scale predictably with discharge and drainage area <span class="citation" data-cites="leopold1953hydraulic">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>)</span></li>
-<li><strong>Topographic signature</strong>: Bankfull elevation creates detectable topographic breaks in the landscape</li>
-<li><strong>Regional consistency</strong>: Streams within physiographic regions exhibit similar dimension-discharge relationships <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span></li>
-<li><strong>Dynamic equilibrium</strong>: Stable channels reflect a balance between flow, sediment, and boundary conditions <span class="citation" data-cites="dunne1978water">(<a href="References.html#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span></li>
-</ol>
-<p>These principles enable the extraction of meaningful channel dimensions from topographic data and support the development of regional relationships for assessment and design.</p>
-</section>
-<section id="lidar-based-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="lidar-based-analysis">LiDAR-Based Analysis</h3>
-<p>FluvialGeomorph leverages the unique capabilities of LiDAR terrain data:</p>
-<ul>
-<li><strong>High spatial resolution</strong>: Captures fine-scale topographic features including bankfull breaks</li>
-<li><strong>Continuous coverage</strong>: Enables measurement at any location along the stream network</li>
-<li><strong>Consistent methodology</strong>: Standardized processing ensures comparable results across sites</li>
-<li><strong>Efficient analysis</strong>: Automated extraction dramatically reduces time and cost compared to field surveys</li>
-<li><strong>Temporal analysis</strong>: Multi-temporal LiDAR datasets enable change detection</li>
-</ul>
-<p>The toolbox automates the extraction of cross-sections, identification of bankfull elevation, and calculation of channel dimensions from LiDAR DEMs, providing rapid assessment capabilities while maintaining scientific rigor.</p>
-</section>
-<section id="integration-with-field-data" class="level3">
-<h3 class="anchored" data-anchor-id="integration-with-field-data">Integration with Field Data</h3>
-<p>While FluvialGeomorph enables rapid LiDAR-based analysis, it is designed to complement, not replace, field observations. The most robust assessments integrate:</p>
-<ul>
-<li><strong>LiDAR-derived measurements</strong>: Provide extensive spatial coverage and consistent methodology</li>
-<li><strong>Field validation</strong>: Ground-truthing confirms bankfull identification and dimension accuracy</li>
-<li><strong>Field indicators</strong>: Bankfull features, vegetation lines, and sediment characteristics validate remote sensing</li>
-<li><strong>Substrate data</strong>: Bed and bank material information not available from LiDAR</li>
-<li><strong>Ecological observations</strong>: Habitat and biological data complement geomorphic measurements</li>
-</ul>
-<p>This integrated approach leverages the strengths of both remote sensing and field methods.</p>
-</section>
-</section>
-<section id="relationship-to-user-manual" class="level2">
-<h2 class="anchored" data-anchor-id="relationship-to-user-manual">Relationship to User Manual</h2>
-<p>This technical manual is complemented by the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/">FluvialGeomorph User Manual</a>, which provides:</p>
-<ul>
-<li>Installation and setup instructions</li>
-<li>Step-by-step tool usage guidance</li>
-<li>Workflow examples and tutorials</li>
-<li>Data preparation guidelines</li>
-<li>Troubleshooting and FAQs</li>
-</ul>
-<p><strong>Use the User Manual when you need to know <em>how</em> to use the tools.</strong></p>
-<p><strong>Use this Technical Manual when you need to understand <em>what</em> the tools calculate and <em>why</em> the methods work.</strong></p>
-<p>Together, these manuals provide comprehensive documentation for both using and understanding FluvialGeomorph.</p>
-</section>
-<section id="software-architecture" class="level2">
-<h2 class="anchored" data-anchor-id="software-architecture">Software Architecture</h2>
-<section id="dual-implementation" class="level3">
-<h3 class="anchored" data-anchor-id="dual-implementation">Dual Implementation</h3>
-<p>FluvialGeomorph is available in two complementary implementations:</p>
-<p><strong>ArcGIS Toolbox</strong> - Graphical user interface for interactive analysis - Map-based visualization and quality control - Integration with existing GIS workflows - Built with ArcPy, Python, and Spatial Analyst - Ideal for users familiar with ArcGIS environments</p>
-<p><strong>R Package</strong> - Programmatic access for reproducible workflows - Statistical analysis and regional curve development - Batch processing and automation capabilities - Built with sf, terra, dplyr, and ggplot2 - Ideal for users familiar with R/RStudio environments</p>
-<p>Both implementations use common algorithms and produce consistent results. Data can be exchanged between platforms using standard formats (shapefiles, GeoPackage, GeoTIFF, CSV).</p>
-</section>
-</section>
-<section id="lidar-data-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="lidar-data-requirements">LiDAR Data Requirements</h2>
-<section id="data-specifications" class="level3">
-<h3 class="anchored" data-anchor-id="data-specifications">Data Specifications</h3>
-<p>FluvialGeomorph requires high-quality LiDAR-derived elevation data with the following characteristics:</p>
-<ul>
-<li><strong>Spatial resolution</strong>: 1-meter or finer recommended; 3-meter maximum</li>
-<li><strong>Vertical accuracy</strong>: ±15 cm RMSE or better</li>
-<li><strong>Point density</strong>: Sufficient to resolve channel features (typically ≥1 point/m²)</li>
-<li><strong>Bare earth classification</strong>: Vegetation and structures properly removed</li>
-<li><strong>Format</strong>: GeoTIFF or other standard raster format</li>
-<li><strong>Coordinate system</strong>: Projected coordinate system (not geographic)</li>
-<li><strong>Vertical datum</strong>: Consistent across study area</li>
-</ul>
-</section>
-<section id="data-quality-considerations" class="level3">
-<h3 class="anchored" data-anchor-id="data-quality-considerations">Data Quality Considerations</h3>
-<p>LiDAR data quality directly affects analysis results. Key considerations include:</p>
-<ul>
-<li><strong>Vegetation effects</strong>: Dense canopy can limit ground point density and accuracy</li>
-<li><strong>Water penetration</strong>: LiDAR typically does not penetrate water; channel bed may not be captured</li>
-<li><strong>Acquisition timing</strong>: Low-flow conditions and leaf-off vegetation improve results</li>
-<li><strong>Processing quality</strong>: Classification errors and interpolation artifacts can affect measurements</li>
-<li><strong>Temporal consistency</strong>: Multi-temporal analysis requires consistent processing methods</li>
-</ul>
-<p>Users should assess LiDAR data quality before analysis and understand how data limitations may affect results. Detailed data specifications and quality assessment procedures are provided in subsequent chapters.</p>
-</section>
-</section>
-<section id="assumptions-and-limitations" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-and-limitations">Assumptions and Limitations</h2>
-<section id="general-assumptions" class="level3">
-<h3 class="anchored" data-anchor-id="general-assumptions">General Assumptions</h3>
-<p>FluvialGeomorph methods are based on several fundamental assumptions:</p>
-<ol type="1">
-<li><strong>Topographic signature</strong>: Bankfull elevation creates a detectable topographic break in the cross-section</li>
-<li><strong>LiDAR accuracy</strong>: Elevation data are sufficiently accurate for dimension extraction at the scale of analysis</li>
-<li><strong>Bare earth representation</strong>: Vegetation and structures have been properly removed from the DEM</li>
-<li><strong>Channel visibility</strong>: Stream channel is visible in LiDAR data (not obscured by dense canopy or water)</li>
-<li><strong>Quasi-equilibrium</strong>: Methods work best on channels in approximate dynamic equilibrium</li>
-</ol>
-</section>
-<section id="key-limitations" class="level3">
-<h3 class="anchored" data-anchor-id="key-limitations">Key Limitations</h3>
-<p>Users should be aware of important limitations:</p>
-<ul>
-<li><strong>Submerged channels</strong>: LiDAR cannot measure below water surface; low-flow acquisition conditions required</li>
-<li><strong>Dense vegetation</strong>: Heavy canopy cover may prevent accurate ground elevation measurement</li>
-<li><strong>Small streams</strong>: Very small channels (&lt; 2-3 meters wide) may not be resolved at typical LiDAR resolution</li>
-<li><strong>Bankfull identification</strong>: Automated methods may not work in all settings; field validation recommended</li>
-<li><strong>Incised channels</strong>: Deeply incised or entrenched channels may lack clear bankfull indicators</li>
-<li><strong>Modified channels</strong>: Artificial or heavily modified channels may not exhibit natural topographic signatures</li>
-<li><strong>Temporal representation</strong>: Single LiDAR dataset provides a snapshot; channel may have changed since acquisition</li>
-</ul>
-</section>
-<section id="appropriate-applications" class="level3">
-<h3 class="anchored" data-anchor-id="appropriate-applications">Appropriate Applications</h3>
-<p>FluvialGeomorph is most appropriate for:</p>
-<ul>
-<li>Wadeable streams and small to medium rivers (typically 2-50 meter bankfull width)</li>
-<li>Channels with visible topographic bankfull indicators</li>
-<li>Areas with high-quality LiDAR coverage</li>
-<li>Alluvial channels in natural or semi-natural condition</li>
-<li>Regional studies requiring consistent methodology across large areas</li>
-<li>Preliminary assessment and screening-level analysis</li>
-</ul>
-<p>Methods may require adaptation or may not be suitable for bedrock channels, braided systems, highly incised channels, or streams smaller than LiDAR resolution. Specific limitations for individual methods are discussed in relevant chapters.</p>
-</section>
-</section>
-<section id="quality-assurance-and-validation" class="level2">
-<h2 class="anchored" data-anchor-id="quality-assurance-and-validation">Quality Assurance and Validation</h2>
-<section id="quality-assurance" class="level3">
-<h3 class="anchored" data-anchor-id="quality-assurance">Quality Assurance</h3>
-<p>FluvialGeomorph incorporates multiple quality assurance mechanisms:</p>
-<ul>
-<li><strong>Input validation</strong>: Tools check data formats, coordinate systems, and spatial resolution</li>
-<li><strong>Range checking</strong>: Calculated dimensions are checked against reasonable ranges</li>
-<li><strong>Visualization</strong>: Graphical outputs enable visual quality review</li>
-<li><strong>Statistical screening</strong>: Automated flagging of unusual measurements</li>
-<li><strong>Documentation</strong>: Metadata and processing logs for all analyses</li>
-</ul>
-</section>
-<section id="validation" class="level3">
-<h3 class="anchored" data-anchor-id="validation">Validation</h3>
-<p>LiDAR-derived measurements should be validated through comparison with field surveys, verification of bankfull indicators, assessment of regional consistency, and independent review by experienced practitioners. Validation studies demonstrate that FluvialGeomorph methods can achieve accuracy comparable to field surveys when applied to appropriate stream types with high-quality LiDAR data.</p>
-<p>Detailed validation results and accuracy assessments are presented in subsequent chapters.</p>
-</section>
-</section>
-<section id="using-this-manual" class="level2">
-<h2 class="anchored" data-anchor-id="using-this-manual">Using This Manual</h2>
-<section id="manual-organization" class="level3">
-<h3 class="anchored" data-anchor-id="manual-organization">Manual Organization</h3>
-<p>This manual is organized to support both learning and reference use:</p>
-<ul>
-<li><strong>Early chapters</strong> cover data requirements, processing methods, and fundamental algorithms</li>
-<li><strong>Middle chapters</strong> document specific analytical methods (cross-sections, bankfull, dimensions, profiles, planform)</li>
-<li><strong>Later chapters</strong> address regional analysis, validation, and uncertainty quantification</li>
-<li><strong>Appendices</strong> provide supplementary information, code examples, and reference tables</li>
-</ul>
-<p>Cross-references throughout the manual link related topics and methods.</p>
-</section>
-<section id="navigation" class="level3">
-<h3 class="anchored" data-anchor-id="navigation">Navigation</h3>
-<ul>
-<li><strong>Quick Start</strong>: Overview of typical workflows and getting started guidance</li>
-<li><strong>Flowchart</strong>: Visual representation of analysis processes and decision points</li>
-<li><strong>Crosswalk</strong>: Index linking tools, methods, and manual chapters</li>
-<li><strong>Individual chapters</strong>: Detailed documentation of specific methods</li>
-<li><strong>References</strong>: Complete bibliography of cited literature</li>
-</ul>
-</section>
-<section id="for-different-users" class="level3">
-<h3 class="anchored" data-anchor-id="for-different-users">For Different Users</h3>
-<p><strong>New users</strong> should start with the User Manual for basic operation, then consult relevant chapters of this manual to understand the methods being applied.</p>
-<p><strong>Experienced practitioners</strong> can use this manual as a reference for specific methods, algorithms, and validation results.</p>
-<p><strong>Researchers and developers</strong> will find detailed algorithm descriptions, theoretical foundations, and validation studies to support method evaluation and extension.</p>
-</section>
-</section>
-<section id="contributing-and-support" class="level2">
-<h2 class="anchored" data-anchor-id="contributing-and-support">Contributing and Support</h2>
-<section id="open-source-development" class="level3">
-<h3 class="anchored" data-anchor-id="open-source-development">Open Source Development</h3>
-<p>FluvialGeomorph is open source software. We welcome contributions including:</p>
-<ul>
-<li>Bug reports and feature requests</li>
-<li>Code contributions and method improvements</li>
-<li>Documentation enhancements</li>
-<li>Validation studies and case studies</li>
-<li>Application examples from different regions</li>
-</ul>
-<p>Visit the <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox">GitHub repository</a> to contribute.</p>
-</section>
-<section id="getting-help" class="level3">
-<h3 class="anchored" data-anchor-id="getting-help">Getting Help</h3>
-<p>Support resources include:</p>
-<ul>
-<li><strong>User Manual</strong>: Step-by-step guidance and examples</li>
-<li><strong>Technical Manual</strong>: Detailed method documentation (this document)</li>
-<li><strong>GitHub Issues</strong>: Bug reports and technical questions</li>
-<li><strong>Community</strong>: Share experiences and solutions with other users</li>
-</ul>
-</section>
-<section id="citing-fluvialgeomorph" class="level3">
-<h3 class="anchored" data-anchor-id="citing-fluvialgeomorph">Citing FluvialGeomorph</h3>
-<p>If you use FluvialGeomorph in research or publications, please cite appropriately and acknowledge the U.S. Army Corps of Engineers as the developer.</p>
+<section id="this-page-is-under-construction-and-being-revised-on-a-continued-basis.-please-check-back-later-for-updates." class="level3">
+<h3 class="anchored" data-anchor-id="this-page-is-under-construction-and-being-revised-on-a-continued-basis.-please-check-back-later-for-updates.">This page is under construction and being revised on a continued basis. Please check back later for updates.</h3>
+<section id="contributing-area-d8" class="level4">
+<h4 class="anchored" data-anchor-id="contributing-area-d8"><code>🛠️ Contributing Area D8</code></h4>
+<p><strong>Purpose</strong> - This tool creates the D8 <a href="#flow-accumulation-raster"><code>flow_accumulation_d8</code></a> and <a href="#flow-direction-raster"><code>flow_direction_d8</code></a> rasters in the output workspace for a given input DEM using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-contributing-area">user manual</a>.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_03a_ContributingAreaD8.py"><code>FluvialGeomorph-toolbox/tools/_03a_ContributingAreaD8.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Contributing Area D8 Tool Parameters.</caption>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 84%">
+<col style="width: 3%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">output_workspace</td>
+<td style="text-align: left;">Workspace</td>
+<td style="text-align: left;">Path to the output workspace.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dem</td>
+<td style="text-align: left;">Raster Dataset</td>
+<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">processes</td>
+<td style="text-align: left;">long</td>
+<td style="text-align: left;">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
+<td style="text-align: left;">required</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/tool_Contributing_Area_D8.png" class="img-fluid figure-img" width="270"></p>
+<figcaption>03a - Contributing Area D8 Tool.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <hr>
-<p><em>This technical manual is a living document that will be updated as methods are refined and new capabilities are added. Version information and change logs are maintained in the GitHub repository.</em></p>
-<!-- This chapter describes the background and approach used in the development of the FluvialGeomorph project. 
-
-## Purpose
-* Document the methods used in FluvialGeomorph
-* Establish a common set of concepts and terminology between fluvial geomorphologists, geospatial analysts, and biologists/ecologists
-* define terms
-* Describe tools
-* Describe products
-
-## FluvialGeomorph Goals
-* Develop reproducible methods for analyzing streams using remote sensing data
-* Develop a set of fluvial feature extraction tools
-* Develop methods that take advantage of the wealth on new LiDAR survey data
-
-## Design Philosophy
-* Open source
-* Establish a framework to build upon
-* Combine best-of-breed tools
-* Opinionated API
-* Standardize reporting products
-
-## Previous Work
-* River Bathymetry Toolkit
-
-
-## Other Resources
-* How to use the tools is described in the user manual
-* Application of this approach is described in other technical reports. -->
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-doll2003hydraulic" class="csl-entry" role="listitem">
-Doll, Barbara A., D. E. Wise-Frederick, C. M. Buckner, et al. 2003. <span>“Hydraulic Geometry Relationships for Urban Streams Throughout the <span>Piedmont</span> of <span>North Carolina</span>.”</span> <em>Journal of the American Water Resources Association</em> 38 (3): 641–51. <a href="https://doi.org/10.1111/j.1752-1688.2003.tb03683.x">https://doi.org/10.1111/j.1752-1688.2003.tb03683.x</a>.
+</section>
+<section id="contributing-area" class="level4">
+<h4 class="anchored" data-anchor-id="contributing-area"><code>🛠️ Contributing Area</code></h4>
+<p><strong>Purpose</strong> - This tool calculates the <a href="https://hydrology.usu.edu/taudem/taudem5/help53/DInfinityContributingArea.html">D-infinity contributing area</a> for each pixel in the input DEM and creates a <a href="#contributing-area-raster"><code>contributing_area</code></a> raster in the output workspace using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-contributing-area">user manual</a>.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_03_ContributingArea.py"><code>FluvialGeomorph-toolbox/tools/_03_ContributingArea.py</code></a>. This Python script uses the <a href="https://hydrology.usu.edu/taudem/taudem5/index.html">TauDEM</a> <a href="https://hydrology.usu.edu/taudem/taudem5/help53/DInfinityContributingArea.html">D-Infinity Contributing Area tool</a> to calculate the specific catchment area (which is the contributing area per unit contour length using the multiple flow direction D-infinity approach).</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Contributing Area Tool Parameters.</caption>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 84%">
+<col style="width: 3%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">output_workspace</td>
+<td style="text-align: left;">Workspace</td>
+<td style="text-align: left;">Path to the output workspace.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dem</td>
+<td style="text-align: left;">Raster Dataset</td>
+<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">processes</td>
+<td style="text-align: left;">long</td>
+<td style="text-align: left;">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
+<td style="text-align: left;">required</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="ref-dunne1978water" class="csl-entry" role="listitem">
-Dunne, Thomas, and Luna B. Leopold. 1978. <em>Water in Environmental Planning</em>. W.H. Freeman; Company.
 </div>
-<div id="ref-harman1999bankfull" class="csl-entry" role="listitem">
-Harman, W. A., G. D. Jennings, J. M. Patterson, et al. 1999. <span>“Bankfull Hydraulic Geometry Relationships for <span>North Carolina</span> Streams.”</span> <em>Wildland Hydrology</em>.
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/tool_Contributing_Area.png" class="img-fluid figure-img" width="272"></p>
+<figcaption>03 - Contributing Area Tool.</figcaption>
+</figure>
 </div>
-<div id="ref-leopold1953hydraulic" class="csl-entry" role="listitem">
-Leopold, Luna B., and Thomas Maddock. 1953. <em>The Hydraulic Geometry of Stream Channels and Some Physiographic Implications</em>. Professional Paper No. 252. U.S. Geological Survey.
+</div>
+</div>
+<hr>
+</section>
+<section id="stream-network" class="level4">
+<h4 class="anchored" data-anchor-id="stream-network"><code>🛠️ Stream Network</code></h4>
+<p><strong>Purpose</strong> - This tool creates the synthetic flow network <code>🗺️stream_network</code> polyline feature class from a <code>🗺️contributing_area</code> raster for a given stream initiation threshold using these instruction in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#derive-stream-network">user manual</a>.</p>
+<p><strong>Code</strong> - The ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04_StreamNetwork.py"><code>FluvialGeomorph-toolbox/tools/_04_StreamNetwork.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Stream Network Tool Parameters.</caption>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 84%">
+<col style="width: 3%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">output_workspace</td>
+<td style="text-align: left;">Workspace</td>
+<td style="text-align: left;">Path to the output workspace.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">contrib_area</td>
+<td style="text-align: left;">Raster Dataset</td>
+<td style="text-align: left;">Path to the D-Infinity contributing area raster created by the Contributing Area tool.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">threshold</td>
+<td style="text-align: left;">long</td>
+<td style="text-align: left;">Flow accumulation threshold to initiate a stream expressed in the units of the source DEM used to accumulate the flow.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">processes</td>
+<td style="text-align: left;">long</td>
+<td style="text-align: left;">The number of stripes that the DEM will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes. It is recommended to use no more than the number of cores on your computer.</td>
+<td style="text-align: left;">required</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/tool_Stream_Network.png" class="img-fluid figure-img" width="270"></p>
+<figcaption>04 - Stream Network Tool.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="stream-network-points" class="level4">
+<h4 class="anchored" data-anchor-id="stream-network-points"><code>🛠️ Stream Network Points</code></h4>
+<p><strong>Purpose</strong> - This tool converts the <code>🗺️stream_network</code> to the <code>🗺️stream_network_points</code> points feature class using the these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-flowline-points">user manual</a>. This tool extracts elevation information from the DEM and calculates the drainage area.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04a_StreamNetworkPoints.py"><code>FluvialGeomorph-toolbox/tools/_04a_StreamNetworkPoints.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Stream Network Points Tool Parameters.</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 55%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">output_workspace</td>
+<td style="text-align: left;">Workspace</td>
+<td style="text-align: left;">Path to the output workspace.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stream_network</td>
+<td style="text-align: left;">Feature Class</td>
+<td style="text-align: left;">Path to the edited <code>stream_network</code> feature class.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">flow_accum</td>
+<td style="text-align: left;">Raster Dataset</td>
+<td style="text-align: left;">Path to the flow accumulation model.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dem</td>
+<td style="text-align: left;">Raster Dataset</td>
+<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
+<td style="text-align: left;">required</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/tool_Stream_Network_Points.png" class="img-fluid figure-img" width="269"></p>
+<figcaption>04a - Stream Network Point Tool.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="slope-and-sinuosity" class="level4">
+<h4 class="anchored" data-anchor-id="slope-and-sinuosity"><code>🛠️ Slope and Sinuosity</code></h4>
+<p><strong>Purpose</strong> - This tool calculates the <code>🗺️gradient_*</code> points feature class for a <code>🗺️flowline_points</code> or <code>🗺️stream_network</code> feature class using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-slope-and-sinuosity">user manual</a>.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the R script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04b_Gradient.R"><code>FluvialGeomorph-toolbox/tools/_04b_Gradient.R</code></a>. This Python script call the R function <a href="https://github.com/FluvialGeomorph/fluvgeo/blob/master/R/slope_sinuosity.R"><code>fluvgeo::slope_sinuosity</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Stream Network Points Tool Parameters.</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 8%">
+<col style="width: 74%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">flowline_points_fc</td>
+<td style="text-align: left;">Feature Class</td>
+<td style="text-align: left;">The full path to a <code>flowline_points</code> feature class.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gradient_distance</td>
+<td style="text-align: left;">double</td>
+<td style="text-align: left;">The number of features to lead (upstream) and lag (downstream) to calculate the slope and sinuosity. Must be an integer.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">use_smoothing</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Determines if smoothed elevation values are used to calculate gradient and sinuosity (default is FALSE).</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">loess_span</td>
+<td style="text-align: left;">double</td>
+<td style="text-align: left;">The loess regression span parameter (defaults to 0.05).</td>
+<td style="text-align: left;">required</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/tool_Slope_and_Sinuosity.png" class="img-fluid figure-img" width="270"></p>
+<figcaption>04b - Slope and Sinuosity Tool.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="watershed" class="level4">
+<h4 class="anchored" data-anchor-id="watershed"><code>🛠️ Watershed</code></h4>
+<p><strong>Purpose</strong> - This tool creates the <code>🗺️watershed</code> polygon feature class in the output workspace using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#delineate-watersheds">user manual</a>. This tool calculates the extent of the upstream drainage area for each point feature in the input <a href="#watershed-points-fc"><code>watershed_points</code></a> point feature class. This tool optionally calculates the landcover proportion in each watershed feature.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_04c_Watersheds.py"><code>FluvialGeomorph-toolbox/tools/_04c_Watersheds.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Watershed Tool Parameters.</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 65%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">output_workspace</td>
+<td style="text-align: left;">Workspace</td>
+<td style="text-align: left;">Path to the output workspace.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">points</td>
+<td style="text-align: left;">Feature Class</td>
+<td style="text-align: left;">Path to the <code>watershed_points</code> feature class.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">point_ID_field</td>
+<td style="text-align: left;">Field</td>
+<td style="text-align: left;">Field in the <code>watershed_points</code> feature class that contains the point IDs.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">flow_accumulation_d8</td>
+<td style="text-align: left;">Raster Dataset</td>
+<td style="text-align: left;">Path to the flow accumulation model.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">flow_direction_d8</td>
+<td style="text-align: left;">Raster Dataset</td>
+<td style="text-align: left;">Path to the <code>flow_direction_d8</code> model (must use D8 method).</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">snap_distance</td>
+<td style="text-align: left;">double</td>
+<td style="text-align: left;">The distance the point will be snapped to find the cell of highest flow accumulation.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">landcover</td>
+<td style="text-align: left;">Raster Dataset</td>
+<td style="text-align: left;">Path to a categorical land cover raster.</td>
+<td style="text-align: left;">optional</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/tool_Watershed.png" class="img-fluid figure-img" width="272"></p>
+<figcaption>04c - Watershed Tool.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="channel-slope" class="level4">
+<h4 class="anchored" data-anchor-id="channel-slope"><code>🛠️ Channel Slope</code></h4>
+<p><strong>Purpose</strong> - This tool creates the <code>🗺️channel_slope</code> raster using these instructions in the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#calculate-channel-slope-raster">user manual</a>. This tool uses banks extent polygon to calculate a slope raster for the channel area.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_09_ChannelSlope.py"><code>FluvialGeomorph-toolbox/tools/_09_ChannelSlope.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Channel Slope Tool Parameters.</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 71%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">output_workspace</td>
+<td style="text-align: left;">Workspace</td>
+<td style="text-align: left;">Path to the output workspace.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dem</td>
+<td style="text-align: left;">Raster Dataset</td>
+<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">banks_poly</td>
+<td style="text-align: left;">Feature Class</td>
+<td style="text-align: left;">Path to a banks polygon feature class representing the channel area for which slope will be calculated.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">z_factor</td>
+<td style="text-align: left;">double</td>
+<td style="text-align: left;">Number of ground x,y units in one surface z unit.</td>
+<td style="text-align: left;">required</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/tool_Channel_Slope.png" class="img-fluid figure-img" width="270"></p>
+<figcaption>09 - Channel Slope Tool.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="centerline" class="level4">
+<h4 class="anchored" data-anchor-id="centerline"><code>🛠️ Centerline</code></h4>
+<p><strong>Purpose</strong> - This tool creates the <code>🗺️centerline</code> polyline feature class using these instructions for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-initial-centerline">Level 1</a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#create-initial-centerline">Level 2</a> from the user manual. The centerline is the strem flow path that lies midway between the banks at bankfull.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_10_Centerline.py"><code>FluvialGeomorph-toolbox/tools/_10_Centerline.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Centerline Tool Parameters.</caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 76%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">output_workspace</td>
+<td style="text-align: left;">Workspace</td>
+<td style="text-align: left;">Path to the output workspace.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dem</td>
+<td style="text-align: left;">Raster Dataset</td>
+<td style="text-align: left;">Path to the digital elevation model (DEM).</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">banks_poly</td>
+<td style="text-align: left;">Feature Class</td>
+<td style="text-align: left;">Path to a banks polygon representing the channel area for which slope will be calculated.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">smooth_tolerance</td>
+<td style="text-align: left;">long</td>
+<td style="text-align: left;">The PAEK smoothing tolerance that controls the calculating of new vertices. Acceptable smoothing occurs with values between 2 - 5.</td>
+<td style="text-align: left;">required</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/tool_Centerline.png" class="img-fluid figure-img" width="270"></p>
+<figcaption>10 - Centerline Tool.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="xs-ras-watersurface" class="level4">
+<h4 class="anchored" data-anchor-id="xs-ras-watersurface"><code>🛠️ XS RAS Watersurface</code></h4>
+<p><strong>Purpose</strong> - This tool adds or updates the field <code>📊ras_wse_*</code> to a <code>🗺️cross section dimensions</code> feature class using these instructions for <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-2-workflow.html#add-modeled-water-surface-elevation">Level 2</a> and <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-3-workflow.html#add-modeled-water-surface-elevation-1">Level 3</a> from the user manual.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_16_XS_RAS_WaterSurface.py"><code>FluvialGeomorph-toolbox/tools/_16_XS_RAS_WaterSurface.py</code></a>.</p>
+<p><strong>Parameters</strong> - This tool contains the following parameters:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>XS RAS Watersurface Tool Parameters.</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 74%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">output_workspace</td>
+<td style="text-align: left;">Workspace</td>
+<td style="text-align: left;">Path to the output workspace.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">xs_dimensions</td>
+<td style="text-align: left;">Feature Class</td>
+<td style="text-align: left;">Path to a cross section dimension line feature class.</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RAS_depth</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Path to the RAS model depth raster (elevation units feet).</td>
+<td style="text-align: left;">required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RAS_model_name</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Name of the RAS model that the depth raster represents. This name will be used to name the calculated WSE fields.</td>
+<td style="text-align: left;">required</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/toolbox/tool_XS_RAS_Watersurface.png" class="img-fluid figure-img" width="269"></p>
+<figcaption>16 - XS RAS Watersurface Tool.</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
+<section id="calculate-contributing-area-level-2" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-contributing-area-level-2">Calculate Contributing Area (Level 2)</h4>
+<p>Calculate the contributing drainage area for each pixel in the DEM.</p>
+<ul>
+<li>Use the <code>🛠️Contributing Area D8</code> tool to calculate the contributing area for the study area watershed. This tool creates the <code>🗺️contributing_area</code> raster. Rename this DEM <code>🗺️watershed_contributing_area</code>.</li>
+<li>Use the <code>🛠️Contributing Area D8</code> tool to calculate the contributing area for the high resolution DEM. If created, use the <code>🗺️dem_hydro</code> raster as input.<br>
+</li>
+<li>The <code>📊processes</code> parameter of the <code>🛠️ Contributing Area D8</code> tool can be safely set to approximately 2 less than the number of cores on the computer running the tool.</li>
+</ul>
+</section>
+</section>
+<section id="calculate-slope-and-sinuosity-level-2" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-slope-and-sinuosity-level-2">Calculate Slope and Sinuosity (Level 2)</h3>
+<p>Examine the stream network slope and sinuosity to help make decisions about how best to define study reaches.</p>
+<ul>
+<li>Use the <code>🛠️Stream Network Points</code> tool to convert the <code>🗺️stream_network</code> feature class into the <code>🗺️stream_networks_points</code> feature class.</li>
+</ul>
+<p><strong>Determine the moving window size</strong><br>
+Slope and sinuosity are scale dependent metrics. This means that these metrics are affected by the size of the upstream moving window used in their calculation. To determine the appropriate size of this moving window for this study area, use the following steps:</p>
+<ul>
+<li>It is recommended that slope and sinuosity be calculated using a moving window size equal to two meander wavelengths.</li>
+<li>Estimate a rough initial bankfull width for the reach. Use the DEM to examine several representative locations throughout the study area.</li>
+<li>Estimate the length of two meander wavelengths by multiplying the rough bankfull width by <code>🧮10</code> (e.g., 30ft bankfull width * 10 = 300ft, two meander wavelengths).<br>
+</li>
+<li>Determine how many <code>🗺️stream_networks_points</code> two meander wavelengths represent. For example, if <code>🗺️stream_networks_points</code> are spaced 1m apart on average, then two meander wavelengths would be 91 points (i.e., 300ft / 3.28084ft per m).</li>
+</ul>
+<p><strong>Calculate Slope and Sinuosity</strong></p>
+<ul>
+<li>Use the <code>🛠️Slope and Sinuosity</code> tool to calculate the slope and sinuosity of the <code>🗺️stream_networks_points</code> feature class.</li>
+<li>Set the <code>📊gradient_distance</code> parameter to the number of upstream <code>🗺️stream_networks_points</code> that you calculated in a previous step.</li>
+<li>If the elevations in the channel seem noisy, check the <code>📊use_smoothing</code> parameter and set the <code>📊loess_span</code> parameter to a value between <code>🧮0-1</code>.</li>
+</ul>
+<p><strong>Confirm the degree of smoothing</strong></p>
+<ul>
+<li>Use a chart to verify the choice of the smoothing <code>loess_span</code> parameter.</li>
+<li>Right-click on the <code>🗺️gradient_*</code> feature class in the map Table of Contents and select “Create Chart”, and select “Line”. In the <code>Date or Number</code> dropdown, choose the field <code>POINT_M</code>. In the <code>📊Aggregation</code> dropdown, choose <code>🧮None</code>. In the <code>📊Numeric field(s)</code> checklist, check the boxes next to <code>📊Z</code> and <code>📊Z_smooth</code>. Click the “Apply” button to view the chart.</li>
+<li>Visually assess the degree of smoothing. The smoothing should be high enough to eliminate LiDAR elevation noise, but not so high as to eliminate meaningful channel elevation change.</li>
+<li>If the smoothing is not ideal, re-run the tool and adjust the <code>📊loess_span</code> parameter.</li>
+</ul>
+</section>
+<section id="delineate-watersheds" class="level3">
+<h3 class="anchored" data-anchor-id="delineate-watersheds">Delineate Watersheds</h3>
+<p>Delineate the areal extent of watersheds for each reach in the study area.</p>
+<ul>
+<li>In the <code>🗺️stream_network_points</code> feature class, select points that represent the downstream location of each of the sites in the project study area.</li>
+<li>Export these point features to a new feature class named <code>🗺️watershed_points</code> in the study area geodatabase.</li>
+<li>Use the <code>🛠️Watershed</code> tool to create a watershed polygon for each feature in the <code>🗺️watershed_points</code> feature class.</li>
+</ul>
+</section>
+<section id="create-the-site-geodatabase" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-site-geodatabase">Create the site geodatabase</h3>
+<p>The purpose of this step is to create a new site geodatabase and populate it with initial data.</p>
+<ul>
+<li><p>In the <code>📁study area folder</code>, begin by creating a new site folder named for the site.<br>
+</p></li>
+<li><p>In the new site folder, create a new “Data” folder.</p></li>
+<li><p>In the new site data folder, create a new site geodatabase for each LiDAR survey. In the example above, the Papillion Creek project study area will be subdivided into a specific site called Cole Creek. Since there are multiple LiDAR surveys for this study area (e.g., 2016, 2010, 2006), three site geodatabases will need to be created.</p>
+<ul>
+<li>Cole_Creek_2016.gdb<br>
+</li>
+<li>Cole_Creek_2010.gdb<br>
+</li>
+<li>Cole_Creek_2006.gdb</li>
+</ul></li>
+<li><p>Back in the study area geodatabase, select the features in the <code>🗺️stream_network</code> feature class representing the current site. Use the <code>🛠️Data | Export Features</code> function to export the selected site features to the new site geodatabase. Name the exported feature class <code>🗺️stream_network</code></p></li>
+<li><p>Examine the <code>🗺️dem_hydro</code> raster and determine the maximum width of the active floodplain along the entire site. Be conservative with this estimate. Given its later use, it is important to generously overestimate this value.</p></li>
+<li><p>Use this maximum floodplain width estimate to buffer the reach <code>🗺️stream_network</code> feature class and name it <code>🗺️stream_network_buffer</code>.</p></li>
+<li><p>Use the ESRI <code>🛠️Clip Raster</code> tool to clip the study area geodatabase <code>🗺️dem_hydro</code> to the extent of the reach using the <code>🗺️stream_network_buffer</code> feature class. Save the clipped raster to the reach geodatabase and name it <code>🗺️dem_hydro_&lt;buffer distance&gt;</code> (e.g., dem_hydro_1000 for a buffer distance of 1000 meters).</p></li>
+<li><p>Use the ESRI <code>🛠️Clip Raster</code> tool to clip the study area geodatabase <code>🗺️contributing_area</code> to the extent of the reach using the <code>🗺️stream_network_buffer</code> feature class. Save the clipped raster to the reach geodatabase and name it <code>🗺️contributing_area_&lt;buffer distance&gt;</code> (e.g., contributing_area_1000 for a buffer distance of 1000 meters).<br>
+</p></li>
+<li><p>If you discover in later steps that the buffer distance was underestimated, you will need to repeat this step with a wider buffer.</p></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1372,13 +1646,13 @@ Leopold, Luna B., and Thomas Maddock. 1953. <em>The Hydraulic Geometry of Stream
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./FromField.html" class="pagination-link" aria-label="From-Field">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">From-Field</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./quickguide.html" class="pagination-link" aria-label="Quick Guide">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quick Guide</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./floodplain.html" class="pagination-link" aria-label="Floodplain Connectivity RAT">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Floodplain Connectivity RAT</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

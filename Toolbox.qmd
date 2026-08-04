@@ -140,7 +140,7 @@ params_table(params_df, "REM_dem", "REM Tool Parameters.")
 ```
 
 ```{r echo=FALSE, fig.cap=" REM Tool."}
-knitr::include_graphics("figures/toolbox/tool_REM_DEM.png")
+knitr::include_graphics("figures/toolbox/tool_Detrend_DEM.png")
 ```
 
 ***

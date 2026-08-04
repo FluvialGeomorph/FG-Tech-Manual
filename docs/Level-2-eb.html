@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction – FluvialGeomorph Technical Manual</title>
+<title>12&nbsp; Level-2-EB Estimate Bankfull Analysis Workflow – FluvialGeomorph Technical Manual</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -52,8 +33,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./quickguide.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./Level-2.html" rel="next">
+<link href="./Level-1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -281,7 +262,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Intro.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Level-1.html">FluvialGeomorph Analysis</a></li><li class="breadcrumb-item"><a href="./Level-2-eb.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level-2-EB Estimate Bankfull Analysis Workflow</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -318,7 +299,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -421,7 +402,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Level-2-eb.html" class="sidebar-item-text sidebar-link">
+  <a href="./Level-2-eb.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level-2-EB Estimate Bankfull Analysis Workflow</span></span></a>
   </div>
 </li>
@@ -560,55 +541,22 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#purpose-and-scope" id="toc-purpose-and-scope" class="nav-link" data-scroll-target="#purpose-and-scope">Purpose and Scope</a>
+  <li><a href="#level-2-estimate-bankfull-workflow" id="toc-level-2-estimate-bankfull-workflow" class="nav-link active" data-scroll-target="#level-2-estimate-bankfull-workflow">Level 2 Estimate Bankfull Workflow</a></li>
+  <li><a href="#create-initial-riffle-geometry" id="toc-create-initial-riffle-geometry" class="nav-link" data-scroll-target="#create-initial-riffle-geometry">Create Initial Riffle Geometry</a>
   <ul class="collapse">
-  <li><a href="#purpose-of-this-manual" id="toc-purpose-of-this-manual" class="nav-link" data-scroll-target="#purpose-of-this-manual">Purpose of this Manual</a></li>
-  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope">Scope</a></li>
+  <li><a href="#create-riffle-floodplain" id="toc-create-riffle-floodplain" class="nav-link" data-scroll-target="#create-riffle-floodplain">Create Riffle Floodplain</a></li>
+  <li><a href="#assign-cross-section-ids" id="toc-assign-cross-section-ids" class="nav-link" data-scroll-target="#assign-cross-section-ids">Assign Cross Section IDs</a></li>
+  <li><a href="#calculate-cross-section-watershed-area" id="toc-calculate-cross-section-watershed-area" class="nav-link" data-scroll-target="#calculate-cross-section-watershed-area">Calculate Cross Section Watershed Area</a></li>
+  <li><a href="#calculate-cross-section-river-position" id="toc-calculate-cross-section-river-position" class="nav-link" data-scroll-target="#calculate-cross-section-river-position">Calculate Cross Section River Position</a></li>
+  <li><a href="#create-riffle-channel" id="toc-create-riffle-channel" class="nav-link" data-scroll-target="#create-riffle-channel">Create Riffle Channel</a></li>
+  <li><a href="#calculate-cross-section-points" id="toc-calculate-cross-section-points" class="nav-link" data-scroll-target="#calculate-cross-section-points">Calculate Cross Section Points</a></li>
+  <li><a href="#calculate-initial-cross-section-l2-dimension" id="toc-calculate-initial-cross-section-l2-dimension" class="nav-link" data-scroll-target="#calculate-initial-cross-section-l2-dimension">Calculate Initial Cross Section L2 Dimension</a></li>
   </ul></li>
-  <li><a href="#background-and-development" id="toc-background-and-development" class="nav-link" data-scroll-target="#background-and-development">Background and Development</a>
+  <li><a href="#estimate-bankfull" id="toc-estimate-bankfull" class="nav-link" data-scroll-target="#estimate-bankfull">Estimate Bankfull</a>
   <ul class="collapse">
-  <li><a href="#the-need-for-rapid-assessment-methods" id="toc-the-need-for-rapid-assessment-methods" class="nav-link" data-scroll-target="#the-need-for-rapid-assessment-methods">The Need for Rapid Assessment Methods</a></li>
-  <li><a href="#development-history" id="toc-development-history" class="nav-link" data-scroll-target="#development-history">Development History</a></li>
-  </ul></li>
-  <li><a href="#analytical-framework" id="toc-analytical-framework" class="nav-link" data-scroll-target="#analytical-framework">Analytical Framework</a>
-  <ul class="collapse">
-  <li><a href="#core-principles" id="toc-core-principles" class="nav-link" data-scroll-target="#core-principles">Core Principles</a></li>
-  <li><a href="#lidar-based-analysis" id="toc-lidar-based-analysis" class="nav-link" data-scroll-target="#lidar-based-analysis">LiDAR-Based Analysis</a></li>
-  <li><a href="#integration-with-field-data" id="toc-integration-with-field-data" class="nav-link" data-scroll-target="#integration-with-field-data">Integration with Field Data</a></li>
-  </ul></li>
-  <li><a href="#relationship-to-user-manual" id="toc-relationship-to-user-manual" class="nav-link" data-scroll-target="#relationship-to-user-manual">Relationship to User Manual</a></li>
-  <li><a href="#software-architecture" id="toc-software-architecture" class="nav-link" data-scroll-target="#software-architecture">Software Architecture</a>
-  <ul class="collapse">
-  <li><a href="#dual-implementation" id="toc-dual-implementation" class="nav-link" data-scroll-target="#dual-implementation">Dual Implementation</a></li>
-  </ul></li>
-  <li><a href="#lidar-data-requirements" id="toc-lidar-data-requirements" class="nav-link" data-scroll-target="#lidar-data-requirements">LiDAR Data Requirements</a>
-  <ul class="collapse">
-  <li><a href="#data-specifications" id="toc-data-specifications" class="nav-link" data-scroll-target="#data-specifications">Data Specifications</a></li>
-  <li><a href="#data-quality-considerations" id="toc-data-quality-considerations" class="nav-link" data-scroll-target="#data-quality-considerations">Data Quality Considerations</a></li>
-  </ul></li>
-  <li><a href="#assumptions-and-limitations" id="toc-assumptions-and-limitations" class="nav-link" data-scroll-target="#assumptions-and-limitations">Assumptions and Limitations</a>
-  <ul class="collapse">
-  <li><a href="#general-assumptions" id="toc-general-assumptions" class="nav-link" data-scroll-target="#general-assumptions">General Assumptions</a></li>
-  <li><a href="#key-limitations" id="toc-key-limitations" class="nav-link" data-scroll-target="#key-limitations">Key Limitations</a></li>
-  <li><a href="#appropriate-applications" id="toc-appropriate-applications" class="nav-link" data-scroll-target="#appropriate-applications">Appropriate Applications</a></li>
-  </ul></li>
-  <li><a href="#quality-assurance-and-validation" id="toc-quality-assurance-and-validation" class="nav-link" data-scroll-target="#quality-assurance-and-validation">Quality Assurance and Validation</a>
-  <ul class="collapse">
-  <li><a href="#quality-assurance" id="toc-quality-assurance" class="nav-link" data-scroll-target="#quality-assurance">Quality Assurance</a></li>
-  <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
-  </ul></li>
-  <li><a href="#using-this-manual" id="toc-using-this-manual" class="nav-link" data-scroll-target="#using-this-manual">Using This Manual</a>
-  <ul class="collapse">
-  <li><a href="#manual-organization" id="toc-manual-organization" class="nav-link" data-scroll-target="#manual-organization">Manual Organization</a></li>
-  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a></li>
-  <li><a href="#for-different-users" id="toc-for-different-users" class="nav-link" data-scroll-target="#for-different-users">For Different Users</a></li>
-  </ul></li>
-  <li><a href="#contributing-and-support" id="toc-contributing-and-support" class="nav-link" data-scroll-target="#contributing-and-support">Contributing and Support</a>
-  <ul class="collapse">
-  <li><a href="#open-source-development" id="toc-open-source-development" class="nav-link" data-scroll-target="#open-source-development">Open Source Development</a></li>
-  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
-  <li><a href="#citing-fluvialgeomorph" id="toc-citing-fluvialgeomorph" class="nav-link" data-scroll-target="#citing-fluvialgeomorph">Citing FluvialGeomorph</a></li>
+  <li><a href="#run-the-estimate-bankfull-report" id="toc-run-the-estimate-bankfull-report" class="nav-link" data-scroll-target="#run-the-estimate-bankfull-report">Run the Estimate Bankfull Report</a></li>
+  <li><a href="#perform-qa" id="toc-perform-qa" class="nav-link" data-scroll-target="#perform-qa">Perform QA</a></li>
+  <li><a href="#determine-bankfull-elevation" id="toc-determine-bankfull-elevation" class="nav-link" data-scroll-target="#determine-bankfull-elevation">Determine Bankfull Elevation</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -617,9 +565,9 @@ div.csl-indent {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Level-1.html">FluvialGeomorph Analysis</a></li><li class="breadcrumb-item"><a href="./Level-2-eb.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level-2-EB Estimate Bankfull Analysis Workflow</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Level-2-EB Estimate Bankfull Analysis Workflow</span></h1>
 </div>
 
 
@@ -636,323 +584,187 @@ div.csl-indent {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>The <strong>FluvialGeomorph</strong> toolbox is an open-source ArcGIS toolbox and R package designed to support rapid fluvial geomorphic analysis and assessment. FluvialGeomorph provides a standardized toolset for conducting cost-effective stream channel analysis by leveraging high-resolution, remotely sensed LiDAR (Light Detection and Ranging) terrain data to extract stream channel dimensions at fine scale across large spatial extents.</p>
-<p>Traditional field-based stream surveys are time-consuming, expensive, and limited in spatial coverage. FluvialGeomorph addresses these limitations by enabling practitioners to systematically extract channel geometry from LiDAR-derived digital elevation models (DEMs), dramatically expanding the scale and efficiency of fluvial geomorphic assessment.</p>
+<p><span class="badge badge-practical">🪛 Practical</span> <span class="badge badge-theory">🔬 Theory</span></p>
+<section id="level-2-estimate-bankfull-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="level-2-estimate-bankfull-workflow">Level 2 Estimate Bankfull Workflow</h2>
+<p>This chapter describes the tool workflows and processes steps to complete a Level 2 Estimate Bankfull (L2eb) FluvialGeomorph analysis. The purpose of this level is to estimate bankfull channel dimensions.</p>
 </section>
-<section id="purpose-and-scope" class="level2">
-<h2 class="anchored" data-anchor-id="purpose-and-scope">Purpose and Scope</h2>
-<section id="purpose-of-this-manual" class="level3">
-<h3 class="anchored" data-anchor-id="purpose-of-this-manual">Purpose of this Manual</h3>
-<p>This technical manual serves as the authoritative reference for the analytical methods implemented in FluvialGeomorph. It documents the algorithms, procedures, and scientific foundations underlying the toolbox capabilities. This manual is intended for:</p>
+<section id="create-initial-riffle-geometry" class="level2">
+<h2 class="anchored" data-anchor-id="create-initial-riffle-geometry">Create Initial Riffle Geometry</h2>
+<p>The purpose of this stage is to identify and map riffle cross sections and roughly estimate an initial bankfull elevation for the base event for each reach.</p>
+<section id="create-riffle-floodplain" class="level3">
+<h3 class="anchored" data-anchor-id="create-riffle-floodplain">Create Riffle Floodplain</h3>
+<p>The purpose of this step is to identify riffle locations and map these cross sections across the lateral extent of the floodplain for each reach.</p>
+<p>A riffle is a shallow river landform where water flows in a steep, thin sheet <span class="citation" data-cites="luna_bergere_leopold_river_1957">(<a href="References.html#ref-luna_bergere_leopold_river_1957" role="doc-biblioref"><strong>luna_bergere_leopold_river_1957?</strong></a>)</span>. Riffles can be identified with the help of the <code>🗺️ channel_slope</code> raster calculated in Level 1, and confirmed with high resolution aerial imagery. In the <code>🗺️ channel_slope</code> raster, pools appear as relatively smooth areas of low slope due to the absence of LiDAR points (deep water absorbs laser pulses). Shallow water riffles appear as highly textured areas of relatively higher slope between pools due to the higher number of LiDAR points from the exposed bed material.</p>
 <ul>
-<li><strong>Practitioners</strong> seeking to understand the methods and assumptions behind the analyses</li>
-<li><strong>Researchers</strong> looking to validate or build upon the analytical approaches</li>
-<li><strong>Reviewers</strong> evaluating the technical basis of FluvialGeomorph analyses</li>
-<li><strong>Developers</strong> contributing to or extending the FluvialGeomorph codebase</li>
+<li>Create a new line feature class named <code>🗺️ riffle_floodplain</code>to store riffle cross sections. This feature class must use the same coordinate system as the vector datasets of the project. Add the following fields:
+<ul>
+<li><code>📊 ReachName</code>: <code>🧮 Text (50)</code> - The purpose of this field is to store the reach name.</li>
+<li><code>📊 Seq</code>: <code>🧮 long integer</code> - The purpose of this field is to uniquely identify each cross section.</li>
+</ul></li>
 </ul>
-<p>While the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/">FluvialGeomorph User Manual</a> provides step-by-step instructions for using the toolbox, this technical manual focuses on <em>why</em> and <em>how</em> the methods work, including:</p>
+<p><strong>Riffle Identifying Characteristics:</strong></p>
 <ul>
-<li>Theoretical foundations and literature basis</li>
-<li>Mathematical formulations and algorithms</li>
-<li>LiDAR data requirements and processing methods</li>
-<li>Assumptions, limitations, and appropriate applications</li>
-<li>Validation and uncertainty quantification</li>
+<li>A straight reach between two meander bends, areas in the cross-overs between river bends</li>
+<li>Clear indicators of the active floodplain or bankfull discharge</li>
+<li>Presence of one or more terraces</li>
+<li>Channel section and form typical of the stream</li>
+<li>A reasonably clear view of of geomorphic features</li>
+<li>Areas of high water surface slope (in the case of high gradient streams)</li>
+<li>Areas of minimum depth and width</li>
+<li>Channel width parallel and consistent</li>
+<li>Avoid tributary influences</li>
+<li>Cross sections should be drawn wide enough to capture the top of bank</li>
 </ul>
-</section>
-<section id="scope" class="level3">
-<h3 class="anchored" data-anchor-id="scope">Scope</h3>
-<p>This manual documents the analytical methods for extracting fluvial geomorphic information from LiDAR terrain data, including:</p>
+<p><strong>Digitize Riffles</strong></p>
 <ul>
-<li>Cross-section extraction and processing</li>
-<li>Bankfull identification from topographic signatures</li>
-<li>Channel dimension calculation (width, depth, cross-sectional area)</li>
-<li>Longitudinal profile and slope analysis</li>
-<li>Planform characterization (sinuosity, meander metrics)</li>
-<li>Regional curve development and application</li>
-<li>Reach-scale assessment and aggregation</li>
-</ul>
-</section>
-</section>
-<section id="background-and-development" class="level2">
-<h2 class="anchored" data-anchor-id="background-and-development">Background and Development</h2>
-<section id="the-need-for-rapid-assessment-methods" class="level3">
-<h3 class="anchored" data-anchor-id="the-need-for-rapid-assessment-methods">The Need for Rapid Assessment Methods</h3>
-<p>Stream restoration and management require accurate information about channel geometry across watersheds and regions. However, traditional field survey methods face significant challenges:</p>
-<ul>
-<li><strong>Limited spatial coverage</strong>: Field surveys typically capture only a few cross-sections per reach</li>
-<li><strong>High cost</strong>: Survey crews, equipment, and access requirements are expensive</li>
-<li><strong>Time constraints</strong>: Field work is weather-dependent and time-intensive</li>
-<li><strong>Temporal snapshots</strong>: Resurveys to assess change are rarely feasible</li>
-<li><strong>Access limitations</strong>: Private property and difficult terrain restrict survey locations</li>
-</ul>
-<p>The widespread availability of high-resolution LiDAR data presents an opportunity to overcome these limitations. LiDAR-derived DEMs provide continuous terrain coverage across entire watersheds with consistent, repeatable measurements at fine spatial resolution (often 1-meter or better). FluvialGeomorph was developed to systematically extract fluvial geomorphic information from LiDAR data, enabling rapid assessment at scales previously impractical with field methods alone.</p>
-</section>
-<section id="development-history" class="level3">
-<h3 class="anchored" data-anchor-id="development-history">Development History</h3>
-<p>FluvialGeomorph was developed by the U.S. Army Corps of Engineers to support stream assessment, restoration planning, and regional studies. The toolbox builds upon:</p>
-<ul>
-<li>Established fluvial geomorphology principles <span class="citation" data-cites="leopold1953hydraulic dunne1978water">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>; <a href="References.html#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span></li>
-<li>Regional hydraulic geometry methods <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span></li>
-<li>Advances in LiDAR remote sensing and terrain analysis</li>
-<li>Geospatial analysis and automation techniques</li>
-</ul>
-<p>The toolbox has been applied to numerous watersheds and regional studies, demonstrating the value of LiDAR-based analysis for regional curve development, stream condition assessment, restoration site screening, and pre- and post-project monitoring.</p>
-</section>
-</section>
-<section id="analytical-framework" class="level2">
-<h2 class="anchored" data-anchor-id="analytical-framework">Analytical Framework</h2>
-<section id="core-principles" class="level3">
-<h3 class="anchored" data-anchor-id="core-principles">Core Principles</h3>
-<p>FluvialGeomorph is built on fundamental principles of fluvial geomorphology:</p>
-<ol type="1">
-<li><strong>Hydraulic geometry relationships</strong>: Channel dimensions scale predictably with discharge and drainage area <span class="citation" data-cites="leopold1953hydraulic">(<a href="References.html#ref-leopold1953hydraulic" role="doc-biblioref">Leopold and Maddock 1953</a>)</span></li>
-<li><strong>Topographic signature</strong>: Bankfull elevation creates detectable topographic breaks in the landscape</li>
-<li><strong>Regional consistency</strong>: Streams within physiographic regions exhibit similar dimension-discharge relationships <span class="citation" data-cites="harman1999bankfull doll2003hydraulic">(<a href="References.html#ref-harman1999bankfull" role="doc-biblioref">Harman et al. 1999</a>; <a href="References.html#ref-doll2003hydraulic" role="doc-biblioref">Doll et al. 2003</a>)</span></li>
-<li><strong>Dynamic equilibrium</strong>: Stable channels reflect a balance between flow, sediment, and boundary conditions <span class="citation" data-cites="dunne1978water">(<a href="References.html#ref-dunne1978water" role="doc-biblioref">Dunne and Leopold 1978</a>)</span></li>
-</ol>
-<p>These principles enable the extraction of meaningful channel dimensions from topographic data and support the development of regional relationships for assessment and design.</p>
-</section>
-<section id="lidar-based-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="lidar-based-analysis">LiDAR-Based Analysis</h3>
-<p>FluvialGeomorph leverages the unique capabilities of LiDAR terrain data:</p>
-<ul>
-<li><strong>High spatial resolution</strong>: Captures fine-scale topographic features including bankfull breaks</li>
-<li><strong>Continuous coverage</strong>: Enables measurement at any location along the stream network</li>
-<li><strong>Consistent methodology</strong>: Standardized processing ensures comparable results across sites</li>
-<li><strong>Efficient analysis</strong>: Automated extraction dramatically reduces time and cost compared to field surveys</li>
-<li><strong>Temporal analysis</strong>: Multi-temporal LiDAR datasets enable change detection</li>
-</ul>
-<p>The toolbox automates the extraction of cross-sections, identification of bankfull elevation, and calculation of channel dimensions from LiDAR DEMs, providing rapid assessment capabilities while maintaining scientific rigor.</p>
-</section>
-<section id="integration-with-field-data" class="level3">
-<h3 class="anchored" data-anchor-id="integration-with-field-data">Integration with Field Data</h3>
-<p>While FluvialGeomorph enables rapid LiDAR-based analysis, it is designed to complement, not replace, field observations. The most robust assessments integrate:</p>
-<ul>
-<li><strong>LiDAR-derived measurements</strong>: Provide extensive spatial coverage and consistent methodology</li>
-<li><strong>Field validation</strong>: Ground-truthing confirms bankfull identification and dimension accuracy</li>
-<li><strong>Field indicators</strong>: Bankfull features, vegetation lines, and sediment characteristics validate remote sensing</li>
-<li><strong>Substrate data</strong>: Bed and bank material information not available from LiDAR</li>
-<li><strong>Ecological observations</strong>: Habitat and biological data complement geomorphic measurements</li>
-</ul>
-<p>This integrated approach leverages the strengths of both remote sensing and field methods.</p>
-</section>
-</section>
-<section id="relationship-to-user-manual" class="level2">
-<h2 class="anchored" data-anchor-id="relationship-to-user-manual">Relationship to User Manual</h2>
-<p>This technical manual is complemented by the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/">FluvialGeomorph User Manual</a>, which provides:</p>
-<ul>
-<li>Installation and setup instructions</li>
-<li>Step-by-step tool usage guidance</li>
-<li>Workflow examples and tutorials</li>
-<li>Data preparation guidelines</li>
-<li>Troubleshooting and FAQs</li>
-</ul>
-<p><strong>Use the User Manual when you need to know <em>how</em> to use the tools.</strong></p>
-<p><strong>Use this Technical Manual when you need to understand <em>what</em> the tools calculate and <em>why</em> the methods work.</strong></p>
-<p>Together, these manuals provide comprehensive documentation for both using and understanding FluvialGeomorph.</p>
-</section>
-<section id="software-architecture" class="level2">
-<h2 class="anchored" data-anchor-id="software-architecture">Software Architecture</h2>
-<section id="dual-implementation" class="level3">
-<h3 class="anchored" data-anchor-id="dual-implementation">Dual Implementation</h3>
-<p>FluvialGeomorph is available in two complementary implementations:</p>
-<p><strong>ArcGIS Toolbox</strong> - Graphical user interface for interactive analysis - Map-based visualization and quality control - Integration with existing GIS workflows - Built with ArcPy, Python, and Spatial Analyst - Ideal for users familiar with ArcGIS environments</p>
-<p><strong>R Package</strong> - Programmatic access for reproducible workflows - Statistical analysis and regional curve development - Batch processing and automation capabilities - Built with sf, terra, dplyr, and ggplot2 - Ideal for users familiar with R/RStudio environments</p>
-<p>Both implementations use common algorithms and produce consistent results. Data can be exchanged between platforms using standard formats (shapefiles, GeoPackage, GeoTIFF, CSV).</p>
-</section>
-</section>
-<section id="lidar-data-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="lidar-data-requirements">LiDAR Data Requirements</h2>
-<section id="data-specifications" class="level3">
-<h3 class="anchored" data-anchor-id="data-specifications">Data Specifications</h3>
-<p>FluvialGeomorph requires high-quality LiDAR-derived elevation data with the following characteristics:</p>
-<ul>
-<li><strong>Spatial resolution</strong>: 1-meter or finer recommended; 3-meter maximum</li>
-<li><strong>Vertical accuracy</strong>: ±15 cm RMSE or better</li>
-<li><strong>Point density</strong>: Sufficient to resolve channel features (typically ≥1 point/m²)</li>
-<li><strong>Bare earth classification</strong>: Vegetation and structures properly removed</li>
-<li><strong>Format</strong>: GeoTIFF or other standard raster format</li>
-<li><strong>Coordinate system</strong>: Projected coordinate system (not geographic)</li>
-<li><strong>Vertical datum</strong>: Consistent across study area</li>
+<li>Digitize riffle cross sections beginning with the left descending bank. While editing, use the “Reverse Direction” command (aka flip) to ensure riffles are digitized in the correct direction.</li>
+<li>A red vertex denotes the end of a line segment. Therefore, the red end vertex should be on the right descending bank.</li>
+<li>Check that each cross section is digitized in the correct direction (start at the left descending bank and end on the right descending bank) before going on to the next step.</li>
+<li>Ensure that riffle cross sections are digitized to the full width of the active floodplain. Edit each <code>🗺️ riffle_floodplain</code> feature class to ensure that it extends at least to the edge of the <code>🗺️ floodplain_polygon</code> layer, but no further.</li>
+<li>This ensures that each <code>🗺️ riffle_floodplain</code> feature covers the entire floodplain, but does not extend too far into the uplands.<br>
+</li>
+<li>For a site with multiple reaches, riffle cross sections must be uniquely numbered across all reaches. The <code>📊 Seq</code> field values of riffle cross sections should not repeat within the reaches of a site.</li>
+<li>The downstream-most cross section in the site should be numbered starting with the <code>📊 Seq</code> field value of 1 and increase moving upstream.</li>
+<li>If necessary, use the <code>🛠️ XS Resequence</code> tool to set the starting <code>📊 Seq</code> value for each reach.</li>
+<li>Set the <code>📊 Seq</code> field value for each upstream reach to the upstream-most value (i.e., the highest <code>📊 Seq</code> value of the downstream reach’s riffle cross section feature class) of the downstream reach. For example, set the <code>📊 Seq</code> of the Reach-2 riffle cross section feature class to 18 if the maximum value of Reach-1’s riffle cross section feature class <code>📊 Seq</code> field is <code>🧮 17</code>.</li>
 </ul>
 </section>
-<section id="data-quality-considerations" class="level3">
-<h3 class="anchored" data-anchor-id="data-quality-considerations">Data Quality Considerations</h3>
-<p>LiDAR data quality directly affects analysis results. Key considerations include:</p>
+<section id="assign-cross-section-ids" class="level3">
+<h3 class="anchored" data-anchor-id="assign-cross-section-ids">Assign Cross Section IDs</h3>
+<p>The purpose of this step is to ensure that riffle cross section identifiers are properly assigned. Assignment of cross section unique identifiers is critical for later tools to uniquely identify each cross section.</p>
 <ul>
-<li><strong>Vegetation effects</strong>: Dense canopy can limit ground point density and accuracy</li>
-<li><strong>Water penetration</strong>: LiDAR typically does not penetrate water; channel bed may not be captured</li>
-<li><strong>Acquisition timing</strong>: Low-flow conditions and leaf-off vegetation improve results</li>
-<li><strong>Processing quality</strong>: Classification errors and interpolation artifacts can affect measurements</li>
-<li><strong>Temporal consistency</strong>: Multi-temporal analysis requires consistent processing methods</li>
-</ul>
-<p>Users should assess LiDAR data quality before analysis and understand how data limitations may affect results. Detailed data specifications and quality assessment procedures are provided in subsequent chapters.</p>
-</section>
-</section>
-<section id="assumptions-and-limitations" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-and-limitations">Assumptions and Limitations</h2>
-<section id="general-assumptions" class="level3">
-<h3 class="anchored" data-anchor-id="general-assumptions">General Assumptions</h3>
-<p>FluvialGeomorph methods are based on several fundamental assumptions:</p>
-<ol type="1">
-<li><strong>Topographic signature</strong>: Bankfull elevation creates a detectable topographic break in the cross-section</li>
-<li><strong>LiDAR accuracy</strong>: Elevation data are sufficiently accurate for dimension extraction at the scale of analysis</li>
-<li><strong>Bare earth representation</strong>: Vegetation and structures have been properly removed from the DEM</li>
-<li><strong>Channel visibility</strong>: Stream channel is visible in LiDAR data (not obscured by dense canopy or water)</li>
-<li><strong>Quasi-equilibrium</strong>: Methods work best on channels in approximate dynamic equilibrium</li>
-</ol>
-</section>
-<section id="key-limitations" class="level3">
-<h3 class="anchored" data-anchor-id="key-limitations">Key Limitations</h3>
-<p>Users should be aware of important limitations:</p>
-<ul>
-<li><strong>Submerged channels</strong>: LiDAR cannot measure below water surface; low-flow acquisition conditions required</li>
-<li><strong>Dense vegetation</strong>: Heavy canopy cover may prevent accurate ground elevation measurement</li>
-<li><strong>Small streams</strong>: Very small channels (&lt; 2-3 meters wide) may not be resolved at typical LiDAR resolution</li>
-<li><strong>Bankfull identification</strong>: Automated methods may not work in all settings; field validation recommended</li>
-<li><strong>Incised channels</strong>: Deeply incised or entrenched channels may lack clear bankfull indicators</li>
-<li><strong>Modified channels</strong>: Artificial or heavily modified channels may not exhibit natural topographic signatures</li>
-<li><strong>Temporal representation</strong>: Single LiDAR dataset provides a snapshot; channel may have changed since acquisition</li>
+<li>Assign integer values to the <code>📊 Seq</code> field starting with one. Begin numbering at the downstream extent of the study area and moving upstream.</li>
 </ul>
 </section>
-<section id="appropriate-applications" class="level3">
-<h3 class="anchored" data-anchor-id="appropriate-applications">Appropriate Applications</h3>
-<p>FluvialGeomorph is most appropriate for:</p>
+<section id="calculate-cross-section-watershed-area" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-cross-section-watershed-area">Calculate Cross Section Watershed Area</h3>
+<p>The purpose of this step is to calculate the watershed area for each riffle cross section.</p>
 <ul>
-<li>Wadeable streams and small to medium rivers (typically 2-50 meter bankfull width)</li>
-<li>Channels with visible topographic bankfull indicators</li>
-<li>Areas with high-quality LiDAR coverage</li>
-<li>Alluvial channels in natural or semi-natural condition</li>
-<li>Regional studies requiring consistent methodology across large areas</li>
-<li>Preliminary assessment and screening-level analysis</li>
-</ul>
-<p>Methods may require adaptation or may not be suitable for bedrock channels, braided systems, highly incised channels, or streams smaller than LiDAR resolution. Specific limitations for individual methods are discussed in relevant chapters.</p>
-</section>
-</section>
-<section id="quality-assurance-and-validation" class="level2">
-<h2 class="anchored" data-anchor-id="quality-assurance-and-validation">Quality Assurance and Validation</h2>
-<section id="quality-assurance" class="level3">
-<h3 class="anchored" data-anchor-id="quality-assurance">Quality Assurance</h3>
-<p>FluvialGeomorph incorporates multiple quality assurance mechanisms:</p>
-<ul>
-<li><strong>Input validation</strong>: Tools check data formats, coordinate systems, and spatial resolution</li>
-<li><strong>Range checking</strong>: Calculated dimensions are checked against reasonable ranges</li>
-<li><strong>Visualization</strong>: Graphical outputs enable visual quality review</li>
-<li><strong>Statistical screening</strong>: Automated flagging of unusual measurements</li>
-<li><strong>Documentation</strong>: Metadata and processing logs for all analyses</li>
+<li>From the study area geodatabase, use the <code>🗺️ watershed_contributing_area</code> raster that covers the entire contributing watershed of the study area.<br>
+</li>
+<li>Use the ESRI <code>🛠️ Clip Raster</code> tool to clip the <code>watershed_contributing_area</code> raster to <code>🗺️ stream_network_buffer</code> to speed tool run time.</li>
+<li>Add the <code>🗺️ contributing_area_buffer</code> raster to a map and symbolize with a “hot-cold” stretch renderer.</li>
+<li>Add the <code>🗺️ flowline</code>and regular <code>🗺️ XS</code> features classes to the map. Place them on top of the <code>🗺️ contributing_area_buffer</code> raster.</li>
+<li>Determine the maximum distance from the intersection of each cross section and the <code>🗺️ flowline</code> to the nearest pixel of high flow in the <code>🗺️ contributing_area_buffer</code> raster. This value will be used for the <code>📊  snap_distance</code> in the next step.</li>
+<li>Use the <code>🛠️ XS Watershed Area</code> tool to calculate the watershed area for each cross section.</li>
+<li>For the <code>📊 flow_accum</code> parameter, use the <code>🧮 contributing_area_buffer</code> raster.</li>
+<li>For the <code>📊 snap_distance</code> parameter, use the distance you calculated in a previous step.</li>
 </ul>
 </section>
-<section id="validation" class="level3">
-<h3 class="anchored" data-anchor-id="validation">Validation</h3>
-<p>LiDAR-derived measurements should be validated through comparison with field surveys, verification of bankfull indicators, assessment of regional consistency, and independent review by experienced practitioners. Validation studies demonstrate that FluvialGeomorph methods can achieve accuracy comparable to field surveys when applied to appropriate stream types with high-quality LiDAR data.</p>
-<p>Detailed validation results and accuracy assessments are presented in subsequent chapters.</p>
-</section>
-</section>
-<section id="using-this-manual" class="level2">
-<h2 class="anchored" data-anchor-id="using-this-manual">Using This Manual</h2>
-<section id="manual-organization" class="level3">
-<h3 class="anchored" data-anchor-id="manual-organization">Manual Organization</h3>
-<p>This manual is organized to support both learning and reference use:</p>
+<section id="calculate-cross-section-river-position" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-cross-section-river-position">Calculate Cross Section River Position</h3>
+<p>The purpose of this step is to calculate the river position for each riffle cross section.</p>
 <ul>
-<li><strong>Early chapters</strong> cover data requirements, processing methods, and fundamental algorithms</li>
-<li><strong>Middle chapters</strong> document specific analytical methods (cross-sections, bankfull, dimensions, profiles, planform)</li>
-<li><strong>Later chapters</strong> address regional analysis, validation, and uncertainty quantification</li>
-<li><strong>Appendices</strong> provide supplementary information, code examples, and reference tables</li>
-</ul>
-<p>Cross-references throughout the manual link related topics and methods.</p>
-</section>
-<section id="navigation" class="level3">
-<h3 class="anchored" data-anchor-id="navigation">Navigation</h3>
-<ul>
-<li><strong>Quick Start</strong>: Overview of typical workflows and getting started guidance</li>
-<li><strong>Flowchart</strong>: Visual representation of analysis processes and decision points</li>
-<li><strong>Crosswalk</strong>: Index linking tools, methods, and manual chapters</li>
-<li><strong>Individual chapters</strong>: Detailed documentation of specific methods</li>
-<li><strong>References</strong>: Complete bibliography of cited literature</li>
+<li>Use the <code>🛠️ XS River Position</code> tool to calculate the distance to the mouth of the river for each cross section.</li>
+<li>The river position of each cross section will be used in later steps to calculate several channel parameters (i.e., gradient, sinuosity).</li>
 </ul>
 </section>
-<section id="for-different-users" class="level3">
-<h3 class="anchored" data-anchor-id="for-different-users">For Different Users</h3>
-<p><strong>New users</strong> should start with the User Manual for basic operation, then consult relevant chapters of this manual to understand the methods being applied.</p>
-<p><strong>Experienced practitioners</strong> can use this manual as a reference for specific methods, algorithms, and validation results.</p>
-<p><strong>Researchers and developers</strong> will find detailed algorithm descriptions, theoretical foundations, and validation studies to support method evaluation and extension.</p>
-</section>
-</section>
-<section id="contributing-and-support" class="level2">
-<h2 class="anchored" data-anchor-id="contributing-and-support">Contributing and Support</h2>
-<section id="open-source-development" class="level3">
-<h3 class="anchored" data-anchor-id="open-source-development">Open Source Development</h3>
-<p>FluvialGeomorph is open source software. We welcome contributions including:</p>
+<section id="create-riffle-channel" class="level3">
+<h3 class="anchored" data-anchor-id="create-riffle-channel">Create Riffle Channel</h3>
+<p>The purpose of this step is to edit the lateral extent of the <code>🗺️ riffle_channel</code>feature class to just cover the initial channel extent. This allows a more detailed examination of the channel area.</p>
 <ul>
-<li>Bug reports and feature requests</li>
-<li>Code contributions and method improvements</li>
-<li>Documentation enhancements</li>
-<li>Validation studies and case studies</li>
-<li>Application examples from different regions</li>
-</ul>
-<p>Visit the <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox">GitHub repository</a> to contribute.</p>
-</section>
-<section id="getting-help" class="level3">
-<h3 class="anchored" data-anchor-id="getting-help">Getting Help</h3>
-<p>Support resources include:</p>
-<ul>
-<li><strong>User Manual</strong>: Step-by-step guidance and examples</li>
-<li><strong>Technical Manual</strong>: Detailed method documentation (this document)</li>
-<li><strong>GitHub Issues</strong>: Bug reports and technical questions</li>
-<li><strong>Community</strong>: Share experiences and solutions with other users</li>
+<li>In the Catalog window, make a copy of the <code>🗺️ riffle_floodplain</code> feature class and name it <code>riffle_channel</code>.</li>
+<li>Edit each <code>🗺️ riffle_channel</code> feature to ensure that it extends at least to the edge of the <code>🗺️ channel_polygon</code> layer, but no further. This ensures that each <code>🗺️ riffle_channel</code> feature covers the entire channel, but does not extend too far into the floodplain.</li>
+<li>Use snapping to ensure that vertices of the <code>🗺️ riffle_channel</code> features are coincident with the overlapping <code>🗺️ riffle_floodplain</code> features.</li>
 </ul>
 </section>
-<section id="citing-fluvialgeomorph" class="level3">
-<h3 class="anchored" data-anchor-id="citing-fluvialgeomorph">Citing FluvialGeomorph</h3>
-<p>If you use FluvialGeomorph in research or publications, please cite appropriately and acknowledge the U.S. Army Corps of Engineers as the developer.</p>
+<section id="calculate-cross-section-points" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-cross-section-points">Calculate Cross Section Points</h3>
+<p>The purpose of this step is to convert each riffle cross section into a set of evenly stationed points and assign DEM and REM elevation values.</p>
+<ul>
+<li>Use the <code>🛠️ XS Points</code>tool to calculate cross section station points for each cross section.</li>
+<li>The <code>📊 station_distance</code> parameter should be set to approximately the resolution of the DEM. For example, if the DEM has a cell size of 1 foot (0.3048 meter), set the <code>📊 station_distance</code> to that distance (using the linear units of the coordinate system used for the project’s vector data).</li>
+<li>This tool creates a new feature class named <code>🗺️ XS</code> feature class <code>🗺️*_points</code>.</li>
+<li>Repeat this step for both the <code>🗺️ riffle_floodplain</code> and <code>🗺️ riffle_channel</code> feature classes.</li>
+</ul>
+</section>
+<section id="calculate-initial-cross-section-l2-dimension" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-initial-cross-section-l2-dimension">Calculate Initial Cross Section L2 Dimension</h3>
+<p>The purpose of this step is to calculate the initial L2 dimensions for the the riffle cross sections for each reach. Repeat the following steps for both the <code>🗺️ riffle_floodplain</code> and <code>🗺️ riffle_channel</code> feature classes.</p>
+<p><strong>Determine the moving window size</strong><br>
+Many stream metrics are scale dependent, meaning these metrics are affected by the size of the moving window used in their calculation. To determine the appropriate size of the moving window for this reach, use the following steps:</p>
+<ul>
+<li>Many stream metrics are typically calculated using a moving window size equal to two meander wavelengths.</li>
+<li>Using the initial <code>🗺️ channel_polygon</code> feature class that you created earlier, estimate the typical bankfull width for the reach.</li>
+<li>Estimate the length of two meander wavelengths by multiplying the bankfull width estimated in the last step by 10 (e.g., 30ft bankfull width * 10 = 300ft, two meander wavelengths).<br>
+</li>
+<li>Determine how many cross sections two meander wavelengths represent. For example, if riffle cross sections are spaced about 300ft apart, then two meander wavelengths would be 1 riffle cross section (i.e., 300ft / 300ft between riffle cross sections).</li>
+</ul>
+<p><strong>Calculate Initial L2 Dimensions</strong></p>
+<ul>
+<li>Use the <code>🛠️ XS Dimensions, Level 2</code> tool to calculate L2 dimensions.</li>
+<li>Set the <code>📊 xs_fc</code> parameter to the regular <code>🗺️ XS</code> feature class you created in a previous step.</li>
+<li>Set the <code>📊 lead_n</code> parameter to the number of upstream cross sections that you calculated in a previous step.</li>
+<li>If the elevations in the channel seem noisy, check the <code>📊 use_smoothing</code> parameter and set the <code>📊  loess_span</code> parameter to a value between <code>🧮 0-1</code>.</li>
+<li>Confirm that the <code>📊 vert_units</code> of the DEM are in feet.</li>
+</ul>
+<p><strong>Confirm the degree of smoothing</strong></p>
+<ul>
+<li>Use a chart to verify the choice of the smoothing <code>📊 loess_span</code> parameter in the <code>🗺️ *_dims_L2</code> feature class.</li>
+<li>Right-click on the <code>🗺️ *_dims_L2</code> feature class in the map table of contents and select “Create Chart”, and select “📊 Line”. In the <code>📊 Date or Number</code> dropdown, choose the field <code>📊 POINT_M</code>. In the <code>📊 Aggregation</code> dropdown, choose <code>🧮 None</code>. In the <code>📊 Numeric field(s)</code> checklist, check the boxes next to <code>🧮 Z</code> and <code>🧮 Z_smooth</code>. Click the “Apply” button to view the chart.</li>
+<li>Visually assess the degree of smoothing. The smoothing should be high enough to eliminate LiDAR elevation noise, but not so high as to eliminate meaningful channel elevation change.</li>
+<li>If the smoothing is not ideal, re-run the tool and adjust the <code>📊 loess_span</code> parameter.</li>
+</ul>
 <hr>
-<p><em>This technical manual is a living document that will be updated as methods are refined and new capabilities are added. Version information and change logs are maintained in the GitHub repository.</em></p>
-<!-- This chapter describes the background and approach used in the development of the FluvialGeomorph project. 
-
-## Purpose
-* Document the methods used in FluvialGeomorph
-* Establish a common set of concepts and terminology between fluvial geomorphologists, geospatial analysts, and biologists/ecologists
-* define terms
-* Describe tools
-* Describe products
-
-## FluvialGeomorph Goals
-* Develop reproducible methods for analyzing streams using remote sensing data
-* Develop a set of fluvial feature extraction tools
-* Develop methods that take advantage of the wealth on new LiDAR survey data
-
-## Design Philosophy
-* Open source
-* Establish a framework to build upon
-* Combine best-of-breed tools
-* Opinionated API
-* Standardize reporting products
-
-## Previous Work
-* River Bathymetry Toolkit
-
-
-## Other Resources
-* How to use the tools is described in the user manual
-* Application of this approach is described in other technical reports. -->
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-doll2003hydraulic" class="csl-entry" role="listitem">
-Doll, Barbara A., D. E. Wise-Frederick, C. M. Buckner, et al. 2003. <span>“Hydraulic Geometry Relationships for Urban Streams Throughout the <span>Piedmont</span> of <span>North Carolina</span>.”</span> <em>Journal of the American Water Resources Association</em> 38 (3): 641–51. <a href="https://doi.org/10.1111/j.1752-1688.2003.tb03683.x">https://doi.org/10.1111/j.1752-1688.2003.tb03683.x</a>.
+</section>
+</section>
+<section id="estimate-bankfull" class="level2">
+<h2 class="anchored" data-anchor-id="estimate-bankfull">Estimate Bankfull</h2>
+<p>The purpose of this stage is to estimate the REM bankfull elevation for the base event for each reach. This report conducts a sensitivity analysis using the regional curve estimates of channel dimensions across a range of elevation values to identify the REM bankfull elevation value that best fits the regional curve estimate.</p>
+<section id="run-the-estimate-bankfull-report" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-estimate-bankfull-report">Run the Estimate Bankfull Report</h3>
+<p>The purpose of this step is to run the Estimate Bankfull report for each reach.</p>
+<ul>
+<li>In the <code>🧰 Reports</code> toolset, use the <code>🛠️ L2 Estimate Bankfull</code> tool to produce the Estimate Bankfull Report.</li>
+<li>For the <code>📊 stream</code> parameter, use the value of the <code>📊 ReachName</code> field used in the <code>🗺️ flowline</code> feature class.</li>
+<li>For the <code>📊 flowline_fc</code> parameter, enter the <code>🗺️ flowline</code> feature class for the base event survey.</li>
+<li>For the <code>📊 xs_dims_fc</code> parameter, use the <code>🗺️ riffle_channel_dims_L2</code> feature class calculated for the base event.</li>
+<li>The <code>📊 xs_points_ch_*</code> parameter set requires a <code>🗺️ riffle_channel_points</code> feature class. These feature classes should be entered with the feature class for the most recent survey first (i.e., the base event) and then the previous surveys in reverse chronological order (e.g., 2016, 2010, 2006).</li>
+<li>The <code>📊 xs_points_fp_*</code> parameter set requires a <code>🗺️ riffle_floodplain_points</code> feature class. These feature classes should be entered with the feature class for the most recent survey first (i.e., the base event) and then the previous surveys in reverse chronological order (e.g., 2016, 2010, 2006).</li>
+<li>The <code>📊 survey_name_*</code> parameters are used to label the surveys in maps and graphs.</li>
+<li>The feature classes and labels used for the <code>📊 xs_points_*</code> and <code>📊 survey_name_*</code> parameters must be entered in the same order (e.g., 2016, 2010, 2006) in each set of numbered parameters.</li>
+<li>For the <code>📊 features_fc</code> parameter, enter the <code>🗺️ features</code> feature class for the base event survey.</li>
+<li>For the <code>📊 dem</code> parameter, enter the <code>🗺️ hydroDEM</code> for the base event survey.</li>
+<li>For the <code>📊 regions</code> parameter, select the regions to use for estimating the bankfull water surface elevation.</li>
+<li>For the <code>📊 from_elevation</code> parameter, specify the lowest REM elevation value to use for sensitivity analysis.</li>
+<li>For the <code>📊 to_elevation</code> parameter, specify the highest REM elevation value to use for sensitivity analysis.</li>
+<li>For the <code>📊 by_elevation</code> parameter, specify the value to increment the sequence between <code>📊 from_elevation</code> and <code>📊 to_elevation</code>.</li>
+<li>The three values (i.e., <code>📊 from_elevation</code>, <code>📊 to_elevation</code>, and <code>📊 by_elevation</code>) define the sequence used for the sensitivity analysis.</li>
+<li>For the <code>📊 bf_estimate</code> parameter, specify the REM elevation value that represents the bankfull water surface elevation.</li>
+</ul>
+</section>
+<section id="perform-qa" class="level3">
+<h3 class="anchored" data-anchor-id="perform-qa">Perform QA</h3>
+<p><span class="badge badge-evaluate">☑️ Evaluate</span></p>
+<p>The purpose of this step is to use the QA Checklist to verify the reports have run correctly and identify any data mistakes that need to be corrected.</p>
+<ul>
+<li>Follow the instructions in the QA Checklist Chapter, “Estimate Bankfull Report” section, to verify that the reports have run correctly.</li>
+<li>Make the required changes suggested in the QA Checklist and rerun the report.</li>
+<li>Repeat these QA iterations until the reports are correct.</li>
+</ul>
+</section>
+<section id="determine-bankfull-elevation" class="level3">
+<h3 class="anchored" data-anchor-id="determine-bankfull-elevation">Determine Bankfull Elevation</h3>
+<p>The purpose of this step is to interpret the Estimate Bankfull Report to determine the final REM bankfull elevation to be used for the rest of the analysis for each reach. The <code>🛠️ L2 Estimate Bankfull</code>tool is intended to be run iteratively, testing the fit of a range of REM bankfull elevations against different regional curves.</p>
+<ul>
+<li>From the initial <code>📑 Estimate Bankfull Report</code>, use the Bankfull Elevation Goodness of Fit sensitivity analysis graph to examine the effect of choice of REM bankfull elevation on the error statistic.</li>
+<li>Identify the REM bankfull elevation that minimizes error on the Bankfull Elevation Goodness of Fit sensitivity analysis graph.</li>
+<li>In the example figure below, the REM bankfull elevation of 104 ft. minimizes error (y-axis Mean Average Error) for both area and depth. Although 102 ft. appears to be the REM elevation that minimizes error for width, 104 ft. does a better job for area and depth. Using the logic of “best two out three”, a REM bankfull elevation of 104 ft. could be chosen for this reach and will be used for later steps in this analysis. However, other criteria could be used depending on the goals of your study.</li>
+<li>Rerun the report using the value chosen in the previous step.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/reach_gof_graph.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Bankfull Elevation Goodness of Fit</figcaption>
+</figure>
 </div>
-<div id="ref-dunne1978water" class="csl-entry" role="listitem">
-Dunne, Thomas, and Luna B. Leopold. 1978. <em>Water in Environmental Planning</em>. W.H. Freeman; Company.
-</div>
-<div id="ref-harman1999bankfull" class="csl-entry" role="listitem">
-Harman, W. A., G. D. Jennings, J. M. Patterson, et al. 1999. <span>“Bankfull Hydraulic Geometry Relationships for <span>North Carolina</span> Streams.”</span> <em>Wildland Hydrology</em>.
-</div>
-<div id="ref-leopold1953hydraulic" class="csl-entry" role="listitem">
-Leopold, Luna B., and Thomas Maddock. 1953. <em>The Hydraulic Geometry of Stream Channels and Some Physiographic Implications</em>. Professional Paper No. 252. U.S. Geological Survey.
 </div>
 </div>
+
+
 </section>
 </section>
 
@@ -1372,13 +1184,13 @@ Leopold, Luna B., and Thomas Maddock. 1953. <em>The Hydraulic Geometry of Stream
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./Level-1.html" class="pagination-link" aria-label="Level-1 Initial Channel Analysis Workflow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Level-1 Initial Channel Analysis Workflow</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./quickguide.html" class="pagination-link" aria-label="Quick Guide">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quick Guide</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Level-2.html" class="pagination-link" aria-label="Level-2 Bankfull Analysis Workflow">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Level-2 Bankfull Analysis Workflow</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
