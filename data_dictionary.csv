@@ -51,7 +51,7 @@ flowline_points,POINT_X,double,The x-coordinate value (longitude).,linear units 
 flowline_points,POINT_Y,double,The y-coordinate value (latitude).,linear units of fc,1
 flowline_points,POINT_M,double,The m-coordinate value (route position).,,1
 flowline_points,Z,double,The z-coordinate value (elevation).,"feet, NAVD88",1
-REM,detrend_Z,32 bit float,The detrended z-coordinate value (elevation).,"feet, detrended",1
+REM,REM_Z,32 bit float,The REM z-coordinate value (elevation).,"feet, REM",1
 channel_slope,slope,32 bit float,The terrain slope. ,degree,1
 xs,ReachName,text,Name of the reach.,,1
 xs,Seq,short,The cross section unique identifier. ,,1
@@ -105,7 +105,7 @@ xs_points,POINT_M_units,text,The units of the POINT_M field. ,,"1,2"
 xs_points,km_to_mouth,double,The distance to the mouth of the site. ,kilometers,"1,2"
 xs_points,DEM_Z,double,The z-coordinate value (elevation).,"feet, NAVD88","1,2"
 xs_points,dem_units,double,The units of theDEM_Z field. ,,"1,2"
-xs_points,Detrend_DEM_Z,double,The z-coordinate value on the detrended raster.,"feet, detrended","1,2"
+xs_points,REM_DEM_Z,double,The z-coordinate value on the REM raster.,"feet, REM","1,2"
 xs_points,loop,long,The loop number. ,,3
 xs_points,bend,long,The bend number. ,,3
 _dims_L1,z_smooth,double,The smoothed z-coordinate value (elevation). ,"feet, NAVD88",1
@@ -125,7 +125,7 @@ _dims_L1,sinuosity,double,The sinuosity of the stream within the moving window (
 _dims_L1,sinuosity_gte_one,double,"The sinuosity metric, values greater than or equal to one. ",,1
 _dims_L1,slope,double,The slope of the stream within the moving window (rise/run). ,degree,1
 _dims_L1,slope_gte_zero,double,"The slope metric, values greater than of equal to zero. ",degree,1
-_dims_L2,bankfull_elevation,double,The detrended elevation of the water surface at bankfull discharge. ,"feet, detrended",2
+_dims_L2,bankfull_elevation,double,The REM elevation of the water surface at bankfull discharge. ,"feet, REM",2
 _dims_L2,drainage_area,double,The upstream watershed drainage area.,square miles,2
 _dims_L2,xs_area,double,The cross sectional area at the estimated bankfull water surface elevation. ,square feet,2
 _dims_L2,xs_width,double,The cross section width at the estimated bankfull water surface elevation. ,square feet,2
@@ -163,7 +163,7 @@ _dims_L3,rc_bfw_ratio_lte_30,double,The radius of curvature to bankfull width ra
 _dims_L3,mbw_bfw_ratio,double,The meander bend width to bankfull width ratio. ,,3
 _dims_L3,mbw_bfw_ratio_lte_30,double,The meander bend width to bankfull width ratio less than or equal to 30. ,,3
 bankfull_area,Id,long,The polygon unique identifier. ,,2
-bankfull_area,gridcode,long,"Indicates if a polygon is innundated at the specified detrended elevation (1 = innundated, 0 = not innundated). ",,2
+bankfull_area,gridcode,long,"Indicates if a polygon is innundated at the specified REM elevation (1 = innundated, 0 = not innundated). ",,2
 bankfull_area,Shape_Area,double,Area of the polygon. ,linear units of fc,2
 banklines,ReachName,text,Name of the reach.,,2
 banklines,bank_id,long,Bankline numeric unique identifier. ,,2

@@ -548,7 +548,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#stream-network-fc" id="toc-stream-network-fc" class="nav-link" data-scroll-target="#stream-network-fc">Stream Network</a></li>
   <li><a href="#flowline-fc" id="toc-flowline-fc" class="nav-link" data-scroll-target="#flowline-fc">Flowline</a></li>
   <li><a href="#flowline-points-fc" id="toc-flowline-points-fc" class="nav-link" data-scroll-target="#flowline-points-fc">Flowline Points</a></li>
-  <li><a href="#detrend-raster" id="toc-detrend-raster" class="nav-link" data-scroll-target="#detrend-raster">Relative Elevation Model Raster</a></li>
+  <li><a href="#REM-raster" id="toc-REM-raster" class="nav-link" data-scroll-target="#REM-raster">Relative Elevation Model Raster</a></li>
   <li><a href="#regular-xs-fc" id="toc-regular-xs-fc" class="nav-link" data-scroll-target="#regular-xs-fc">Regular Cross Sections</a></li>
   <li><a href="#riffle-xs-fc" id="toc-riffle-xs-fc" class="nav-link" data-scroll-target="#riffle-xs-fc">Riffle Cross Sections</a></li>
   <li><a href="#xs-points-fc" id="toc-xs-points-fc" class="nav-link" data-scroll-target="#xs-points-fc">Cross Section Points</a></li>
@@ -1007,9 +1007,9 @@ Table: Watershed Fields.
 </div>
 </div>
 </section>
-<section id="detrend-raster" class="level3">
-<h3 class="anchored" data-anchor-id="detrend-raster">Relative Elevation Model Raster</h3>
-<p>The <code>🛠️REM</code> tool creates the <code>🗺️REM</code> raster dataset using these instruction from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#detrend-dem">user manual</a>. The <code>🗺️REM</code> raster is a relative elevation model where the downstream slope of the <code>🗺️0dem_hydro</code> has been removed.</p>
+<section id="REM-raster" class="level3">
+<h3 class="anchored" data-anchor-id="REM-raster">Relative Elevation Model Raster</h3>
+<p>The <code>🛠️REM</code> tool creates the <code>🗺️REM</code> raster dataset using these instruction from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#REM-dem">user manual</a>. The <code>🗺️REM</code> raster is a relative elevation model where the downstream slope of the <code>🗺️0dem_hydro</code> has been removed.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -1432,10 +1432,10 @@ Table: Water Surface Extent Fields.
 <td style="text-align: left;">1,2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Detrend_DEM_Z</td>
+<td style="text-align: left;">REM_DEM_Z</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">The z-coordinate value on the detrended raster.</td>
-<td style="text-align: left;">feet, detrended</td>
+<td style="text-align: left;">The z-coordinate value on the REM raster.</td>
+<td style="text-align: left;">feet, REM</td>
 <td style="text-align: left;">1,2</td>
 </tr>
 <tr class="even">
@@ -1634,8 +1634,8 @@ Table: Water Surface Extent Fields.
 <tr class="odd">
 <td style="text-align: left;">bankfull_elevation</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">The detrended elevation of the water surface at bankfull discharge.</td>
-<td style="text-align: left;">feet, detrended</td>
+<td style="text-align: left;">The REM elevation of the water surface at bankfull discharge.</td>
+<td style="text-align: left;">feet, REM</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
@@ -1954,7 +1954,7 @@ Table: Water Surface Extent Fields.
 <tr class="even">
 <td style="text-align: left;">gridcode</td>
 <td style="text-align: left;">long</td>
-<td style="text-align: left;">Indicates if a polygon is innundated at the specified detrended elevation (1 = innundated, 0 = not innundated).</td>
+<td style="text-align: left;">Indicates if a polygon is innundated at the specified REM elevation (1 = innundated, 0 = not innundated).</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;">2</td>
 </tr>

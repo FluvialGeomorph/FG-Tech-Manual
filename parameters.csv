@@ -40,14 +40,14 @@ flowline_points,calibration_points,Feature Class,A point feature class used to c
 flowline_points,point_ID_field,Field,"The field that identifies the route on which each calibration point is located.The values in this field match those in the route identifier field. This field can be numeric or character. If using a flowline_points feature class, the id_field is ""ReachName"".",optional
 flowline_points,measure_field,Field,"The field containing the measure value for each calibration point. This field must be numeric. If using a flowline_points feature class, the measure_field is ""POINT_M"".",optional
 flowline_points,search_radius,string,"Limits how far a calibration point can be from a route by specifying the distance and its unit of measure (e.g., ""25 Meters""). If the units of measure are not specified, the same units as the coordinate system of the route feature class will be used.",optional
-detrend_dem,output_workspace,Workspace,Path to the output workspace. ,required
-detrend_dem,flowline,Feature Class,Path to the `flowline` feature class. ,required
-detrend_dem,flowline_points,Feature Class,Path to the `flowline_points` feature class.,required
-detrend_dem,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
-detrend_dem,buffer distance,double,Distance the `flowline_points` feature class will be buffered to define the extent of the output detrended DEM. Units are defined by the coordinate system of the DEM.,required
+REM_dem,output_workspace,Workspace,Path to the output workspace. ,required
+REM_dem,flowline,Feature Class,Path to the `flowline` feature class. ,required
+REM_dem,flowline_points,Feature Class,Path to the `flowline_points` feature class.,required
+REM_dem,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
+REM_dem,buffer distance,double,Distance the `flowline_points` feature class will be buffered to define the extent of the output REM DEM. Units are defined by the coordinate system of the DEM.,required
 water_surface_extent,output_workspace,Workspace,Path to the output workspace. ,required
-water_surface_extent,detrend_dem,Raster Dataset,Path to the detrended digital elevation model (DEM).,required
-water_surface_extent,detrend_value,double,Detrended elevation value used to define the innundated area. All raster values below this value will be extracted to a polygon. ,required
+water_surface_extent,REM_dem,Raster Dataset,Path to the REM digital elevation model (DEM).,required
+water_surface_extent,REM_value,double,REM elevation value used to define the innundated area. All raster values below this value will be extracted to a polygon. ,required
 water_surface_extent,smoothing,double,"Smoothing factor (0, no smoothing - 5, high smoothing)",required
 channel_slope,output_workspace,Workspace,Path to the output workspace. ,required
 channel_slope,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
@@ -78,7 +78,7 @@ xs_points,output_workspace,Workspace,Path to the output workspace. ,required
 xs_points,cross_section,Feature Class,Path to the cross section line feature class. ,required
 xs_points,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
 xs_points,dem_units,string,"Vertical units of the DEM. Select one of ""m"" or ""ft"".",required
-xs_points,detrend_dem,Raster Dataset,Path to the detrended digital elevation model (DEM).,required
+xs_points,REM_dem,Raster Dataset,Path to the REM digital elevation model (DEM).,required
 xs_points,station_distance,double,Distance between output flowline station points (in the linear units of the flowline feature class). ,required
 bankline_points,output_workspace,Workspace,Path to the output workspace. ,required
 bankline_points,loop_points,Feature Class,Path to the `loop_points` feature class.,required
@@ -96,7 +96,7 @@ xs_dimensions_L1,loess_span,double,The loess regression span parameter (defaults
 xs_dimensions_L1,vert_units,string,"The DEM vertical units. One of: ""m"" (meter), ""ft"" (foot), ""us-ft"" (us survey foot).",required
 xs_dimensions_L2,xs_fc,Feature Class,Path to a cross section feature class.,required
 xs_dimensions_L2,xs_points_fc,Feature Class,The path to an cross section points feature class.,required
-xs_dimensions_L2,bankfull_elevation,double,The bankfull elevation (in detrended feet) that is used to calculate hydraulic geometry.,required
+xs_dimensions_L2,bankfull_elevation,double,The bankfull elevation (in REM feet) that is used to calculate hydraulic geometry.,required
 xs_dimensions_L2,lead_n,long,The number of cross sections to lead (upstream) and lag (downstream) on either side of each cross section to calculate the slope and sinuosity. Must be an integer. ,required
 xs_dimensions_L2,use_smoothing,Boolean,Determines if smoothed elevation values are used to calculate gradient and sinuosity (default is FALSE).,required
 xs_dimensions_L2,loess_span,double,The loess regression span parameter (defaults to 0.05). ,required
@@ -174,10 +174,10 @@ estimate_bankfull_report,features_fc,Feature Class,A stream reach `features` fea
 estimate_bankfull_report,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
 estimate_bankfull_report,show_xs_map,boolean,Add the cross section maps to the report?,required
 estimate_bankfull_report,regions,string value list,The regions that a dimension will be,required
-estimate_bankfull_report,from_elevation,double,The detrended elevation (in feet) to begin calculating Goodness of Fit (GOF) measures.,required
-estimate_bankfull_report,to_elevation,double,The detrended elevation (in feet) to end calculating Goodness of Fit (GOF) measures.,required
-estimate_bankfull_report,by_elevation,double,The detrended elevation (in feet) to step by for calculating Goodness of Fit (GOF) measures. ,required
-estimate_bankfull_report,bf_estimate,double,The detrended bankfull elevation (in feet) that is used to calculate hydraulic geometry.,required
+estimate_bankfull_report,from_elevation,double,The REM elevation (in feet) to begin calculating Goodness of Fit (GOF) measures.,required
+estimate_bankfull_report,to_elevation,double,The REM elevation (in feet) to end calculating Goodness of Fit (GOF) measures.,required
+estimate_bankfull_report,by_elevation,double,The REM elevation (in feet) to step by for calculating Goodness of Fit (GOF) measures. ,required
+estimate_bankfull_report,bf_estimate,double,The REM bankfull elevation (in feet) that is used to calculate hydraulic geometry.,required
 estimate_bankfull_report,stat,string,"The statistic to graph ""RMSE"", ""MAE"" (the default).",required
 estimate_bankfull_report,label_xs,Boolean,Label cross sections?,required
 estimate_bankfull_report,profile_units,string,The units of the longitudinal profile.,required
@@ -202,7 +202,7 @@ L2_report,survey_name_4,string,The label to use for the fourth survey.,optional
 L2_report,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
 L2_report,banklines_fc,Feature Class,The path to the banklines feature class.,required
 L2_report,features_fc,Feature Class,A stream reach `features` feature class. ,required
-L2_report,bf_estimate,double,The detrended bankfull elevation (in feet) that is used to calculate hydraulic geometry.,required
+L2_report,bf_estimate,double,The REM bankfull elevation (in feet) that is used to calculate hydraulic geometry.,required
 L2_report,regions,string value list,The regions that a dimension will be,required
 L2_report,label_xs,Boolean,Label cross sections?,required
 L2_report,show_xs_map,boolean,Add the cross section maps to the report?,required
@@ -228,7 +228,7 @@ L3_report,survey_name_4,string,The label to use for the fourth survey.,optional
 L3_report,dem,Raster Dataset,Path to the digital elevation model (DEM).,required
 L3_report,banklines_fc,Feature Class,The path to the banklines feature class.,required
 L3_report,features_fc,Feature Class,A stream reach `features` feature class. ,required
-L3_report,bf_estimate,double,The detrended bankfull elevation (in feet) that is used to calculate hydraulic geometry.,required
+L3_report,bf_estimate,double,The REM bankfull elevation (in feet) that is used to calculate hydraulic geometry.,required
 L3_report,regions,string value list,The regions that a dimension will be,required
 L3_report,label_xs,Boolean,Label cross sections?,required
 L3_report,show_xs_map,boolean,Add the cross section maps to the report?,required

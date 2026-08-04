@@ -130,17 +130,17 @@ knitr::include_graphics("figures/toolbox/tool_Flowline_Points.png")
 ***
 
 #### 🛠️ Relative Elevation Model 
-This tool creates the `🗺️REM` raster using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#define-initial-floodplain-and-channel-extent). This tool uses `🗺️flowline_points` to remove the elevation trend from the stream reach. See [this section](#detrending-concept) for a detailed discussion on detrended DEMs. 
+This tool creates the `🗺️REM` raster using these instructions from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#define-initial-floodplain-and-channel-extent). This tool uses `🗺️flowline_points` to remove the elevation trend from the stream reach. See [this section](#REMing-concept) for a detailed discussion on REM DEMs. 
 
-**Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_07_DetrendDEM.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_07_DetrendDEM.py). 
+**Code** - This ArcGIS script tool calls the Python script [`FluvialGeomorph-toolbox/tools/_07_REMDEM.py`](https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_07_REMDEM.py). 
 
 **Parameters** - This tool contains the following parameters: 
 ```{r, echo=FALSE}
-params_table(params_df, "detrend_dem", "REM Tool Parameters.")
+params_table(params_df, "REM_dem", "REM Tool Parameters.")
 ```
 
 ```{r echo=FALSE, fig.cap=" REM Tool."}
-knitr::include_graphics("figures/toolbox/tool_Detrend_DEM.png")
+knitr::include_graphics("figures/toolbox/tool_REM_DEM.png")
 ```
 
 ***

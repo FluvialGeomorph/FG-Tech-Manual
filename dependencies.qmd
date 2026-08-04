@@ -402,7 +402,7 @@ Gradient analysis - critical for identifying valley breaks and channel confineme
 
 <div class="tooltip-box">
 <div class="tool-card">
-<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_DetrendDEM.py" target="_blank" style="text-decoration: none; color: inherit;">
+<a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_REMDEM.py" target="_blank" style="text-decoration: none; color: inherit;">
 <h4>REM</h4>
 <span class="package-badge">toolbox</span>
 </a>
@@ -969,7 +969,7 @@ tools <- tribble(
   "2", "Flow Direction", "ArcGIS Pro", "Calculate flow direction", "Hydro DEM", "Flow direction raster", "HydroDEM", "https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/flow-direction.htm",
   "2", "Flow Accumulation", "toolbox", "Calculate drainage area", "Flow direction", "Contributing area", "Flow Direction", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_03_ContributingArea.py",
   "2", "Slope", "ArcGIS Pro", "Calculate slope", "DEM", "Slope raster", "DEM", "https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/slope.htm",
-  "2", "REM", "toolbox", "Relative Elevation Model", "DEM, flowline", "REM raster", "HydroDEM", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_DetrendDEM.py",
+  "2", "REM", "toolbox", "Relative Elevation Model", "DEM, flowline", "REM raster", "HydroDEM", "https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/main/tools/_07_REMDEM.py",
   "2", "TPI", "ArcGIS Pro", "Topographic Position Index", "DEM", "TPI raster", "DEM", "https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/topographic-position-index.htm",
   
   "3", "Stream Network Creation", "ArcGIS Pro", "Threshold flow accumulation", "Flow accumulation", "Stream raster", "Flow Accumulation", "https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/raster-calculator.htm",
@@ -1044,7 +1044,7 @@ tools %>%
 ::: {.callout-note}
 Valley Bottom Workflow Focus
 This workflow emphasizes critical thinking before tool execution. Phase 1 includes LiDAR processing to create the DEM and field data import tools. Phase 2 generates the geomorphic datasets (Flow Direction, Flow Accumulation, Slope, REM, TPI) that are then combined in Phase 3 to delineate valley bottoms. Phase 4 analyzes channel confinement within the delineated valley.
-Key Change: DetrendDEM is now called REM (Relative Elevation Model) to better reflect its purpose of showing relative topographic position.
+Key Change: REMDEM is now called REM (Relative Elevation Model) to better reflect its purpose of showing relative topographic position.
 :::
 
 ## Key Considerations

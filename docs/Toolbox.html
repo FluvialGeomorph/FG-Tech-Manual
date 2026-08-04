@@ -841,8 +841,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="relative-elevation-model" class="level4">
 <h4 class="anchored" data-anchor-id="relative-elevation-model">🛠️ Relative Elevation Model</h4>
-<p>This tool creates the <code>🗺️REM</code> raster using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#define-initial-floodplain-and-channel-extent">user manual</a>. This tool uses <code>🗺️flowline_points</code> to remove the elevation trend from the stream reach. See <a href="concepts.html#detrending-concept">this section</a> for a detailed discussion on detrended DEMs.</p>
-<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_07_DetrendDEM.py"><code>FluvialGeomorph-toolbox/tools/_07_DetrendDEM.py</code></a>.</p>
+<p>This tool creates the <code>🗺️REM</code> raster using these instructions from the <a href="https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#define-initial-floodplain-and-channel-extent">user manual</a>. This tool uses <code>🗺️flowline_points</code> to remove the elevation trend from the stream reach. See <a href="concepts.html#REMing-concept">this section</a> for a detailed discussion on REM DEMs.</p>
+<p><strong>Code</strong> - This ArcGIS script tool calls the Python script <a href="https://github.com/FluvialGeomorph/FluvialGeomorph-toolbox/blob/master/tools/_07_REMDEM.py"><code>FluvialGeomorph-toolbox/tools/_07_REMDEM.py</code></a>.</p>
 <p><strong>Parameters</strong> - This tool contains the following parameters:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -890,7 +890,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: left;">buffer distance</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">Distance the <code>flowline_points</code> feature class will be buffered to define the extent of the output detrended DEM. Units are defined by the coordinate system of the DEM.</td>
+<td style="text-align: left;">Distance the <code>flowline_points</code> feature class will be buffered to define the extent of the output REM DEM. Units are defined by the coordinate system of the DEM.</td>
 <td style="text-align: left;">required</td>
 </tr>
 </tbody>
@@ -901,7 +901,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/toolbox/tool_Detrend_DEM.png" class="img-fluid figure-img" width="270"></p>
+<p><img src="figures/toolbox/tool_REM_DEM.png" class="img-fluid figure-img" width="270"></p>
 <figcaption>REM Tool.</figcaption>
 </figure>
 </div>
@@ -940,15 +940,15 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">detrend_dem</td>
+<td style="text-align: left;">REM_dem</td>
 <td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the detrended digital elevation model (DEM).</td>
+<td style="text-align: left;">Path to the REM digital elevation model (DEM).</td>
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">detrend_value</td>
+<td style="text-align: left;">REM_value</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">Detrended elevation value used to define the innundated area. All raster values below this value will be extracted to a polygon.</td>
+<td style="text-align: left;">REM elevation value used to define the innundated area. All raster values below this value will be extracted to a polygon.</td>
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="even">
@@ -1284,9 +1284,9 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">detrend_dem</td>
+<td style="text-align: left;">REM_dem</td>
 <td style="text-align: left;">Raster Dataset</td>
-<td style="text-align: left;">Path to the detrended digital elevation model (DEM).</td>
+<td style="text-align: left;">Path to the REM digital elevation model (DEM).</td>
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="even">
@@ -1554,7 +1554,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: left;">bankfull_elevation</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">The bankfull elevation (in detrended feet) that is used to calculate hydraulic geometry.</td>
+<td style="text-align: left;">The bankfull elevation (in REM feet) that is used to calculate hydraulic geometry.</td>
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="even">
@@ -2209,25 +2209,25 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td style="text-align: left;">from_elevation</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">The detrended elevation (in feet) to begin calculating Goodness of Fit (GOF) measures.</td>
+<td style="text-align: left;">The REM elevation (in feet) to begin calculating Goodness of Fit (GOF) measures.</td>
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">to_elevation</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">The detrended elevation (in feet) to end calculating Goodness of Fit (GOF) measures.</td>
+<td style="text-align: left;">The REM elevation (in feet) to end calculating Goodness of Fit (GOF) measures.</td>
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">by_elevation</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">The detrended elevation (in feet) to step by for calculating Goodness of Fit (GOF) measures.</td>
+<td style="text-align: left;">The REM elevation (in feet) to step by for calculating Goodness of Fit (GOF) measures.</td>
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">bf_estimate</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">The detrended bankfull elevation (in feet) that is used to calculate hydraulic geometry.</td>
+<td style="text-align: left;">The REM bankfull elevation (in feet) that is used to calculate hydraulic geometry.</td>
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="even">
@@ -2416,7 +2416,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: left;">bf_estimate</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">The detrended bankfull elevation (in feet) that is used to calculate hydraulic geometry.</td>
+<td style="text-align: left;">The REM bankfull elevation (in feet) that is used to calculate hydraulic geometry.</td>
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="even">
@@ -2611,7 +2611,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: left;">bf_estimate</td>
 <td style="text-align: left;">double</td>
-<td style="text-align: left;">The detrended bankfull elevation (in feet) that is used to calculate hydraulic geometry.</td>
+<td style="text-align: left;">The REM bankfull elevation (in feet) that is used to calculate hydraulic geometry.</td>
 <td style="text-align: left;">required</td>
 </tr>
 <tr class="even">

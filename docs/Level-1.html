@@ -566,7 +566,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#create-the-reach-geodatabase" id="toc-create-the-reach-geodatabase" class="nav-link" data-scroll-target="#create-the-reach-geodatabase">Create the Reach Geodatabase</a></li>
   <li><a href="#create-flowline-points" id="toc-create-flowline-points" class="nav-link" data-scroll-target="#create-flowline-points">Create Flowline Points</a></li>
   <li><a href="#define-initial-floodplain-and-channel-extent" id="toc-define-initial-floodplain-and-channel-extent" class="nav-link" data-scroll-target="#define-initial-floodplain-and-channel-extent">Define Initial Floodplain and Channel Extent</a></li>
-  <li><a href="#detrend-dem" id="toc-detrend-dem" class="nav-link" data-scroll-target="#detrend-dem">Detrend DEM</a></li>
+  <li><a href="#REM-dem" id="toc-REM-dem" class="nav-link" data-scroll-target="#REM-dem">REM DEM</a></li>
   <li><a href="#estimate-initial-channel-extent" id="toc-estimate-initial-channel-extent" class="nav-link" data-scroll-target="#estimate-initial-channel-extent">Estimate Initial Channel Extent</a></li>
   <li><a href="#create-the-initial-channel-mask-layer" id="toc-create-the-initial-channel-mask-layer" class="nav-link" data-scroll-target="#create-the-initial-channel-mask-layer">Create the Initial Channel Mask layer</a></li>
   <li><a href="#estimate-initial-floodplain-extent" id="toc-estimate-initial-floodplain-extent" class="nav-link" data-scroll-target="#estimate-initial-floodplain-extent">Estimate Initial Floodplain Extent</a></li>
@@ -873,13 +873,13 @@ To make LiDAR surveys collected before the <code>📁base event</code>(#units_of
 <h3 class="anchored" data-anchor-id="define-initial-floodplain-and-channel-extent">Define Initial Floodplain and Channel Extent</h3>
 <p>Define the initial floodplain and channel extent, for each reach and survey event.</p>
 </section>
-<section id="detrend-dem" class="level3">
-<h3 class="anchored" data-anchor-id="detrend-dem">Detrend DEM</h3>
-<p>Produce a relative elevation model (REM), which is a detrended DEM normalizing stream bank elevations for a specific reach.</p>
+<section id="REM-dem" class="level3">
+<h3 class="anchored" data-anchor-id="REM-dem">REM DEM</h3>
+<p>Produce a relative elevation model (REM), which is a REM DEM normalizing stream bank elevations for a specific reach.</p>
 <ul>
 <li>Inspect the reach to determine the width of the active floodplain. Use the measure tool to measure from the <code>🗺️flowline</code> outward to the widest extent of the active floodplain. This value will be used as the <code>🧮buffer_distance</code> value in the following step.<br>
 </li>
-<li>Use the <code>🛠️REM</code> tool to create a <code>🗺️REM</code> (detrended DEM) for the study reach. Set the <code>🧮buffer_distance</code> field to a distance wide enough to capture the reach’s entire active floodplain.</li>
+<li>Use the <code>🛠️REM</code> tool to create a <code>🗺️REM</code> (REM DEM) for the study reach. Set the <code>🧮buffer_distance</code> field to a distance wide enough to capture the reach’s entire active floodplain.</li>
 </ul>
 </section>
 <section id="estimate-initial-channel-extent" class="level3">
@@ -887,11 +887,11 @@ To make LiDAR surveys collected before the <code>📁base event</code>(#units_of
 <p>The purpose of this step is to use the <code>🗺️REM</code> to visually extract an initial channel extent polygon. The <code>🗺️REM</code> created in the last step can be used to iteratively explore different inundation extents derived from various water surface elevations.</p>
 <ul>
 <li>Add the <code>🗺️REM</code> raster to the map Table of Contents. Name this layer <code>🗺️Channel Extent</code>.</li>
-<li>On the Symbology tab of the <code>🗺️Channel Extent</code> layer, use the Classified renderer to classify the raster into 2 classes. Set the first class boundary to the detrended elevation that you would like to explore. Set the color of the first class (min value - detrended elevation) to blue and the color of the second class (detrended elevation - max value) to No Color.</li>
+<li>On the Symbology tab of the <code>🗺️Channel Extent</code> layer, use the Classified renderer to classify the raster into 2 classes. Set the first class boundary to the REM elevation that you would like to explore. Set the color of the first class (min value - REM elevation) to blue and the color of the second class (REM elevation - max value) to No Color.</li>
 <li>Set the transparency of the <code>🗺️Channel Extent</code> layer to <code>🧮50%</code>.</li>
-<li>Begin to delineate the channel extent by selecting a detrended elevation that inundates the channel up to at least the first terrace. The goal at this stage is to select a detrended elevation that captures the extent of the channel without “spilling” too much water into the floodplain. Once you discover which detrended elevation begins to allow water to access the floodplain, reduce the detrended elevation value slightly to keep the water in the channel. Try several detrended elevation values to help make the decision.</li>
-<li>When you have chosen a detrended elevation, use the <code>🛠️ Water Surface Extent</code> tool to extract an initial channel extent area polygon. This tool creates a new polygon feature class named <code>🗺️banks_raw_xxx</code>, where xxx is the detrended elevation selected.</li>
-<li>This feature class must be edited to select the channel area polygon(s). Open the attribute table for the <code>🗺️banks_raw_xxx</code> feature class and use advanced sorting to sort first by <code>📊gridcode</code> and then by <code>📊Shape_Area</code>. Polygons with <code>📊gridcode</code> = <code>🧮1</code> are polygons inundated at the detrended elevation. Typically, the polygons with the largest area represent the channel. Begin selecting <code>📊gridcode</code> = <code>🧮1</code> polygons with the largest area until the entire channel area is selected.</li>
+<li>Begin to delineate the channel extent by selecting a REM elevation that inundates the channel up to at least the first terrace. The goal at this stage is to select a REM elevation that captures the extent of the channel without “spilling” too much water into the floodplain. Once you discover which REM elevation begins to allow water to access the floodplain, reduce the REM elevation value slightly to keep the water in the channel. Try several REM elevation values to help make the decision.</li>
+<li>When you have chosen a REM elevation, use the <code>🛠️ Water Surface Extent</code> tool to extract an initial channel extent area polygon. This tool creates a new polygon feature class named <code>🗺️banks_raw_xxx</code>, where xxx is the REM elevation selected.</li>
+<li>This feature class must be edited to select the channel area polygon(s). Open the attribute table for the <code>🗺️banks_raw_xxx</code> feature class and use advanced sorting to sort first by <code>📊gridcode</code> and then by <code>📊Shape_Area</code>. Polygons with <code>📊gridcode</code> = <code>🧮1</code> are polygons inundated at the REM elevation. Typically, the polygons with the largest area represent the channel. Begin selecting <code>📊gridcode</code> = <code>🧮1</code> polygons with the largest area until the entire channel area is selected.</li>
 <li>Export these selected features to a new feature class named <code>🗺️initial_channel_extent</code>.</li>
 <li>Delete the <code>🗺️banks_raw_xxx</code> feature class created in this section.</li>
 </ul>
@@ -901,7 +901,7 @@ To make LiDAR surveys collected before the <code>📁base event</code>(#units_of
 <p>The purpose of this step is to create a layer that defines an area just beyond the initial channel extent.</p>
 <ul>
 <li>Add the <code>🗺️REM</code> feature class to the map Table of Contents. Name this layer <code>🗺️Channel Mask</code>.</li>
-<li>In the symbology of this layer, change the renderer from <code>📊stretched</code> to <code>📊classified</code>. Set the number of classes to 2. In the <code>📊classification</code> dialog, set the break value between the two classes to about one to two feet higher than the initial bankfull extent estimate. A couple of feet above the initial bankfull extent estimate should define the extent of the just the channel. For example, if the initial bankfull extent was estimated at 102 detrended feet, the initial bankfull height estimate would be 2 feet. One foot higher than the 2 foot initial bankfull height estimate would therefore be 103 detrended feet.</li>
+<li>In the symbology of this layer, change the renderer from <code>📊stretched</code> to <code>📊classified</code>. Set the number of classes to 2. In the <code>📊classification</code> dialog, set the break value between the two classes to about one to two feet higher than the initial bankfull extent estimate. A couple of feet above the initial bankfull extent estimate should define the extent of the just the channel. For example, if the initial bankfull extent was estimated at 102 REM feet, the initial bankfull height estimate would be 2 feet. One foot higher than the 2 foot initial bankfull height estimate would therefore be 103 REM feet.</li>
 <li>Set the transparency of the <code>🗺️Channel Mask</code> layer to <code>🧮50%</code>.</li>
 </ul>
 </section>
@@ -910,7 +910,7 @@ To make LiDAR surveys collected before the <code>📁base event</code>(#units_of
 <p>The purpose of this step is to create a layer that defines the an initial estimate of the floodplain inundation extent.</p>
 <ul>
 <li>Add the <code>🗺️REM</code>feature class to the map Table of Contents. Name this layer <code>🗺️Floodplain Mask</code>.</li>
-<li>In the symbology of this layer, change the renderer from <code>stretched</code> to <code>classified</code>. Set the number of classes to 2. In the <code>📊classification</code> dialog, set the break value between the two classes to four times the initial bankfull extent estimate. Four times the initial bankfull extent estimate should define the extent of the active floodplain. For example, if the initial bankfull extent was estimated at 102 detrended feet, the initial bankfull height estimate would be 2 feet. Four times the 2 foot initial bankfull height estimate would therefore be 108 detrended feet.</li>
+<li>In the symbology of this layer, change the renderer from <code>stretched</code> to <code>classified</code>. Set the number of classes to 2. In the <code>📊classification</code> dialog, set the break value between the two classes to four times the initial bankfull extent estimate. Four times the initial bankfull extent estimate should define the extent of the active floodplain. For example, if the initial bankfull extent was estimated at 102 REM feet, the initial bankfull height estimate would be 2 feet. Four times the 2 foot initial bankfull height estimate would therefore be 108 REM feet.</li>
 <li>Set the transparency of the <code>🗺️Floodplain Mask</code> layer to <code>🧮50%</code>.</li>
 </ul>
 <hr>

@@ -671,7 +671,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="calculate-cross-section-points" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-cross-section-points">Calculate Cross Section Points</h3>
-<p>The purpose of this step is to convert each riffle cross section into a set of evenly stationed points and assign DEM and detrended elevation values.</p>
+<p>The purpose of this step is to convert each riffle cross section into a set of evenly stationed points and assign DEM and REM elevation values.</p>
 <ul>
 <li>Use the <code>🛠️ XS Points</code>tool to calculate cross section station points for each cross section.</li>
 <li>The <code>📊station_distance</code> parameter should be set to approximately the resolution of the DEM. For example, if the DEM has a cell size of 1 foot (0.3048 meter), set the <code>📊station_distance</code> to that distance (using the linear units of the coordinate system used for the project’s vector data).</li>
@@ -711,7 +711,7 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 </section>
 <section id="estimate-bankfull" class="level2">
 <h2 class="anchored" data-anchor-id="estimate-bankfull">Estimate Bankfull</h2>
-<p>The purpose of this stage is to estimate the detrended bankfull elevation for the base event for each reach. This report conducts a sensitivity analysis using the regional curve estimates of channel dimensions across a range of elevation values to identify the detrended bankfull elevation value that best fits the regional curve estimate.</p>
+<p>The purpose of this stage is to estimate the REM bankfull elevation for the base event for each reach. This report conducts a sensitivity analysis using the regional curve estimates of channel dimensions across a range of elevation values to identify the REM bankfull elevation value that best fits the regional curve estimate.</p>
 <section id="run-the-estimate-bankfull-report" class="level3">
 <h3 class="anchored" data-anchor-id="run-the-estimate-bankfull-report">Run the Estimate Bankfull Report</h3>
 <p>The purpose of this step is to run the Estimate Bankfull report for each reach.</p>
@@ -727,11 +727,11 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 <li>For the <code>📊features_fc</code> parameter, enter the <code>🗺️features</code> feature class for the base event survey.</li>
 <li>For the <code>📊dem</code> parameter, enter the <code>🗺️hydroDEM</code> for the base event survey.</li>
 <li>For the <code>📊regions</code> parameter, select the regions to use for estimating the bankfull water surface elevation.</li>
-<li>For the <code>📊from_elevation</code> parameter, specify the lowest detrended elevation value to use for sensitivity analysis.</li>
-<li>For the <code>📊to_elevation</code> parameter, specify the highest detrended elevation value to use for sensitivity analysis.</li>
+<li>For the <code>📊from_elevation</code> parameter, specify the lowest REM elevation value to use for sensitivity analysis.</li>
+<li>For the <code>📊to_elevation</code> parameter, specify the highest REM elevation value to use for sensitivity analysis.</li>
 <li>For the <code>📊by_elevation</code> parameter, specify the value to increment the sequence between <code>📊from_elevation</code> and <code>📊to_elevation</code>.</li>
 <li>The three values (i.e., <code>📊from_elevation</code>, <code>📊to_elevation</code>, and <code>📊by_elevation</code>) define the sequence used for the sensitivity analysis.</li>
-<li>For the <code>📊bf_estimate</code> parameter, specify the detrended elevation value that represents the bankfull water surface elevation.</li>
+<li>For the <code>📊bf_estimate</code> parameter, specify the REM elevation value that represents the bankfull water surface elevation.</li>
 </ul>
 </section>
 <section id="perform-qa" class="level3">
@@ -745,11 +745,11 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 </section>
 <section id="determine-bankfull-elevation" class="level3">
 <h3 class="anchored" data-anchor-id="determine-bankfull-elevation">Determine Bankfull Elevation</h3>
-<p>The purpose of this step is to interpret the Estimate Bankfull Report to determine the final detrended bankfull elevation to be used for the rest of the analysis for each reach. The <code>🛠️L2 Estimate Bankfull</code>tool is intended to be run iteratively, testing the fit of a range of detrended bankfull elevations against different regional curves.</p>
+<p>The purpose of this step is to interpret the Estimate Bankfull Report to determine the final REM bankfull elevation to be used for the rest of the analysis for each reach. The <code>🛠️L2 Estimate Bankfull</code>tool is intended to be run iteratively, testing the fit of a range of REM bankfull elevations against different regional curves.</p>
 <ul>
-<li>From the initial 🛠️Estimate Bankfull Report, use the Bankfull Elevation Goodness of Fit sensitivity analysis graph to examine the effect of choice of detrended bankfull elevation on the error statistic.</li>
-<li>Identify the detrended bankfull elevation that minimizes error on the Bankfull Elevation Goodness of Fit sensitivity analysis graph.</li>
-<li>In the example figure below, the detrended bankfull elevation of 104 ft. minimizes error (y-axis Mean Average Error) for both area and depth. Although 102 ft. appears to be the detrended elevation that minimizes error for width, 104 ft. does a better job for area and depth. Using the logic of “best two out three”, a detrended bankfull elevation of 104 ft. could be chosen for this reach and will be used for later steps in this analysis. However, other criteria could be used depending on the goals of your study.</li>
+<li>From the initial 🛠️Estimate Bankfull Report, use the Bankfull Elevation Goodness of Fit sensitivity analysis graph to examine the effect of choice of REM bankfull elevation on the error statistic.</li>
+<li>Identify the REM bankfull elevation that minimizes error on the Bankfull Elevation Goodness of Fit sensitivity analysis graph.</li>
+<li>In the example figure below, the REM bankfull elevation of 104 ft. minimizes error (y-axis Mean Average Error) for both area and depth. Although 102 ft. appears to be the REM elevation that minimizes error for width, 104 ft. does a better job for area and depth. Using the logic of “best two out three”, a REM bankfull elevation of 104 ft. could be chosen for this reach and will be used for later steps in this analysis. However, other criteria could be used depending on the goals of your study.</li>
 <li>Rerun the report using the value chosen in the previous step.</li>
 </ul>
 <div class="cell">

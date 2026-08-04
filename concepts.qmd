@@ -114,12 +114,12 @@ D8, D16, D-inf. How streams accumulate flow from the upstream to downstream ends
 
 Modifying DEM to represent the flow of water through structures. Less resolute DEMs need more hydro modification. Inversely, more resolute DEMs need less hydro modification. The need for hydro modification is dependent on the type of structure. LiDAR collected at a high enough resolution can avoid hydro modification around bridges if the points collected can reach under the bridge on either side. Culverts and storm water structures interrupt visibility and prevent a full view of the flow of a stream and would require hydro modification.
 
-### Relative Elevation Model {#detrending-concept}
+### Relative Elevation Model {#REMing-concept}
 
 Normalization/Standardization of an Elevation Model to an index value of 100 as the lowest value also known as the locally determined lowest elevation of the streamline so that the REM can be thought of as the Bank Height Model. 
 
 -   "relative bank height"
--   figure: side-by-side DEM and detrend
+-   figure: side-by-side DEM and REM
 -   figure: side-by-side longitudinal profiles
 
 ### Hydraulic Modelling

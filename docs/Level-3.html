@@ -600,17 +600,17 @@ ul.task-list li input[type="checkbox"] {
 <p>The purpose of this stage is to define the valley trend line for the base event for each reach.</p>
 <section id="determine-final-floodplain-extent" class="level3">
 <h3 class="anchored" data-anchor-id="determine-final-floodplain-extent">Determine Final Floodplain Extent</h3>
-<p>The purpose of this step is to use the detrended bankfull elevation identified in L2 to delineate the active floodplain.</p>
+<p>The purpose of this step is to use the REM bankfull elevation identified in L2 to delineate the active floodplain.</p>
 <ul>
-<li><p>From the final Estimate Bankfull Report created in Level 2, use the detrended bankfull elevation identified. In the example from Level 2, this value was 104 ft.</p></li>
-<li><p><strong>Determine the bankfull depth: </strong> The detrending process used in FluvialGeomorph expresses stream elevations using a base index value of 100 ft. Therefore, a detrended bankfull elevation estimated to be 104 ft. means that at bankfull discharge, the water surface elevation is 4 ft. above the detrended stream base index value of 100 ft. for this reach:<br>
-<code>104 ft detrended bankfull elevation - 100 ft detrended stream base index = 4 ft bankfull depth</code></p></li>
+<li><p>From the final Estimate Bankfull Report created in Level 2, use the REM bankfull elevation identified. In the example from Level 2, this value was 104 ft.</p></li>
+<li><p><strong>Determine the bankfull depth: </strong> The REMing process used in FluvialGeomorph expresses stream elevations using a base index value of 100 ft. Therefore, a REM bankfull elevation estimated to be 104 ft. means that at bankfull discharge, the water surface elevation is 4 ft. above the REM stream base index value of 100 ft. for this reach:<br>
+<code>104 ft REM bankfull elevation - 100 ft REM stream base index = 4 ft bankfull depth</code></p></li>
 <li><p><strong>Determine flood prone height: </strong> Flood prone has been determined through empirical studies to be approximately two times the bankfull depth. For example, using the bankfull depth calculated in the last step, calculate the flood prone depth using the following formula:<br>
 <code>2 * 4 ft bankfull depth = 8 ft flood prone height</code></p></li>
-<li><p>Therefore, the flood prone detrended elevation would be 108 ft:<br>
-<code>100 ft detrended stream base index + 8 ft flood prone height = 108 ft detrended flood prone height</code></p></li>
-<li><p>With the detrended flood prone elevation for your reach determined in the last step, use the <code>🛠️ Water Surface Extent</code> tool to extract a flood prone area polygon. This tool creates a new polygon feature class named <code>🗺️banks_raw_xxx</code>, where xxx is the detrended elevation selected.</p></li>
-<li><p>This feature class must be edited to select the flood prone area polygon(s). Open the attribute table for the <code>🗺️banks_raw_xxx</code> feature class and use advanced sorting to sort first by <code>📊gridcode</code> and then by <code>📊Shape_Area</code>. Polygons with <code>📊gridcode</code> = <code>🧮1</code> are polygons inundated at the detrended elevation. Typically, the polygons with the largest area represent the channel. Begin selecting <code>📊gridcode</code> = <code>🧮1</code> polygons with the largest area until the entire flood prone area is selected.</p></li>
+<li><p>Therefore, the flood prone REM elevation would be 108 ft:<br>
+<code>100 ft REM stream base index + 8 ft flood prone height = 108 ft REM flood prone height</code></p></li>
+<li><p>With the REM flood prone elevation for your reach determined in the last step, use the <code>🛠️ Water Surface Extent</code> tool to extract a flood prone area polygon. This tool creates a new polygon feature class named <code>🗺️banks_raw_xxx</code>, where xxx is the REM elevation selected.</p></li>
+<li><p>This feature class must be edited to select the flood prone area polygon(s). Open the attribute table for the <code>🗺️banks_raw_xxx</code> feature class and use advanced sorting to sort first by <code>📊gridcode</code> and then by <code>📊Shape_Area</code>. Polygons with <code>📊gridcode</code> = <code>🧮1</code> are polygons inundated at the REM elevation. Typically, the polygons with the largest area represent the channel. Begin selecting <code>📊gridcode</code> = <code>🧮1</code> polygons with the largest area until the entire flood prone area is selected.</p></li>
 <li><p>Export these selected features to a new feature class named <code>flood_prone</code>.</p></li>
 <li><p>Delete the <code>🗺️banks_raw_xxx</code> feature class created in this section.</p></li>
 </ul>
@@ -748,7 +748,7 @@ ul.task-list li input[type="checkbox"] {
 <li>For the <code>📊banklines_fc</code> parameter, enter the <code>🗺️banklines</code> feature class created for the base event survey.<br>
 </li>
 <li>For the <code>📊features_fc</code> parameter, enter the <code>🗺️features</code> feature class for the base event survey.</li>
-<li>For the <code>📊bf_estimate</code> parameter, specify the detrended elevation value that represents the bankfull water surface elevation.</li>
+<li>For the <code>📊bf_estimate</code> parameter, specify the REM elevation value that represents the bankfull water surface elevation.</li>
 <li>For the <code>📊regions</code> parameter, select the regions to use for estimating the bankfull water surface elevation.</li>
 </ul>
 </section>

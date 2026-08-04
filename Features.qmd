@@ -131,11 +131,11 @@ The `🛠️Flowline Points` tool creates the `🗺️flowline_points` point fea
 dd_table(dd_df, "flowline_points", "Flowline Points Fields.")
 ```
 
-### Relative Elevation Model Raster {#detrend-raster}
-The `🛠️REM` tool creates the `🗺️REM` raster dataset using these instruction from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#detrend-dem). The `🗺️REM` raster is a relative elevation model where the downstream slope of the `🗺️0dem_hydro` has been removed. 
+### Relative Elevation Model Raster {#REM-raster}
+The `🛠️REM` tool creates the `🗺️REM` raster dataset using these instruction from the [user manual](https://fluvialgeomorph.github.io/FG-User-Manual/level-1-workflow.html#REM-dem). The `🗺️REM` raster is a relative elevation model where the downstream slope of the `🗺️0dem_hydro` has been removed. 
 
 ```{r, echo=FALSE}
-dd_table(dd_df, "detrend", "Hydro DEM Raster Pixel Values.")
+dd_table(dd_df, "REM", "Hydro DEM Raster Pixel Values.")
 ```
 <!--
 ### Channel Slope Raster {#channel-slope-raster}

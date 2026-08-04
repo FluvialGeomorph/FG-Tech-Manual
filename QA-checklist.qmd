@@ -111,8 +111,8 @@ Regions are defined in the `🗺️regions` fc. The regions included in the anal
 #### Adequate range of bankfull elevations
 Elevation values are tested in the sensitivity analysis. The range of elevations tested should be adequate to ensure that the best fit bankfull elevation is identified. If the range of elevations tested is too narrow, the analyst will need to rerun the analysis with a wider range of elevations.
 
-#### Detrended bankfull elevation set to a reasonable value
-Bankfull elevations are detrended to remove the effect of longitudinal slope. The detrended bankfull elevation should be set to a reasonable value. If the detrended bankfull elevation is set to an unreasonable value, the analyst will need to rerun the analysis with a more reasonable value.
+#### REM bankfull elevation set to a reasonable value
+Bankfull elevations are REM to remove the effect of longitudinal slope. The REM bankfull elevation should be set to a reasonable value. If the REM bankfull elevation is set to an unreasonable value, the analyst will need to rerun the analysis with a more reasonable value.
 
 #### Drainage Area values are reasonable
 Values for drainage area are derived from the `🗺️flowline` fc. The drainage area values should be reasonable. If the drainage area values are not reasonable, the analyst will need to check the `🗺️flowline` fc and rerun the analysis.
