@@ -23,19 +23,19 @@ The purpose of this step is to use the final bankfull elevation determined in th
 * Open the attribute table for the `🗺️ banks_raw_xxx` feature class and use advanced sorting to sort first by `📊 gridcode` and then by `📊 Shape_Area`. 
 * Polygons with `📊 gridcode` = `🧮 1` are polygons inundated at the REM elevation. 
 * Typically, the polygons with the largest area represent the channel. 
-* Begin by selecting `gridcode` = `🧮 1 polygons with the largest area until the entire bankfull area is selected. 
-* Export these selected features to a new feature class named `bankfull_area`. 
+* Begin by selecting `📊 gridcode` = `🧮 1` polygons with the largest area until the entire bankfull area is selected. 
+* Export these selected features to a new feature class named `🗺️ bankfull_area`. 
 * Delete the `🗺️ banks_raw_xxx` feature class. 
 
 
 ### Create Banklines
 The purpose of this step is to convert the `🗺️ bankfull_area` polygon into polylines and edit into a `🗺️ banklines` feature class for each reach. The `🗺️ banklines` feature class will have two records, one representing the left descending bankline and another the right descending bankline for the stream reach. 
 
-* Use the ESRI `🛠️Polygon To Line` tool to convert the `🗺️ bankfull_area` polygon feature class to a new polyline feature class named `🗺️ banklines`. 
+* Use the ESRI `🛠️ Polygon To Line` tool to convert the `🗺️ bankfull_area` polygon feature class to a new polyline feature class named `🗺️ banklines`. 
 * Add the following fields to the `🗺️ banklines` feature class:
-    * `📊ReachName`: `🧮 Text (50)` - The purpose of this field is to store the reach name. 
+    * `📊 ReachName`: `🧮 Text (50)` - The purpose of this field is to store the reach name. 
     * `📊 bank_id`: `🧮 Long Integer` - The purpose of this field is to uniquely identify each bank. 
-    * `📊 bank`: `🧮 Text (50)` - The purpose of this field is to designate which bank is the `🧮right descending` bank and which is the `🧮 left descending` bank. 
+    * `📊 bank`: `🧮 Text (50)` - The purpose of this field is to designate which bank is the `🧮 right descending` bank and which is the `🧮 left descending` bank. 
 * Start editing the `🗺️ banklines` feature class.
 * Use the ESRI `🛠️ Explode Multipart Feature` tool to explode any multipart line feature in the `🗺️  banklines` feature class. 
 * Add the `🗺️ flowline` feature class to the map. 
@@ -43,7 +43,7 @@ The purpose of this step is to convert the `🗺️ bankfull_area` polygon into 
 * The features in the `🗺️ banklines` feature class should not extend past the end of the `🗺️ flowline` feature.
 * Use the ESRI `🛠️ Split Tool` to trim any tributaries from the `🗺️ banklines` feature class.
 * The goal of this step is to have only two features, one representing the left descending bankline and another the right descending bankline. Delete all other line features. 
-* Ensure that the banklines are digitized in the upstream direction (like a `flowline` feature). Edit the `🗺️ banklines` feature class to ensure that each bankline is digitized beginning with the downstream end and digitized upstream. 
+* Ensure that the banklines are digitized in the upstream direction (like a `🗺️ flowline` feature class). Edit the `🗺️ banklines` feature class to ensure that each bankline is digitized beginning with the downstream end and digitized upstream. 
 * While editing, select a `🗺️ bankline` feature, choose to edit vertices. Ensure that the red endpoint is at the upstream end of each bankline. 
 * Use the `🛠️ Reverse Direction` command (aka flip) to ensure each bankline is digitized in the upstream direction. 
 * Check that each bankline is digitized in the upstream direction (red endpoint at the upstream end) before going on to the next step. 
@@ -64,7 +64,7 @@ The purpose of this step is to create a stream centerline. The centerline repres
 The purpose of this stage is to use the bankfull elevation determined in the last stage to calculate the final level 2 cross section dimensions for the base event for each reach. 
 
 ### Calculate Final Cross Section L2 Dimensions
-The purpose of this step is to calculate the final L2 dimensions for the regularly spaced and riffle cross section feature classes for each reach. Repeat the following steps for `🗺️ regular spaced cross section` feature class, the `🗺️ riffle_floodplain` feature class, and the `🗺️ riffle_channel` feature class. 
+The purpose of this step is to calculate the final L2 dimensions for the regularly spaced and riffle cross section feature classes for each reach. Repeat the following steps for `🗺️ XS` line feature class, the `🗺️ riffle_floodplain` feature class, and the `🗺️ riffle_channel` feature class. 
 
 **Determine the moving window size**    
 Many stream metrics are scale dependent, meaning these metrics are affected by the size of the moving window used in their calculation. To determine the appropriate size of the moving window for this reach, use the following steps:
@@ -87,7 +87,7 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 
 **Confirm the degree of smoothing**   
 
-* Use a chart to verify the choice of the smoothing `loess_span` parameter in the `🗺️ *_dims_L2`feature class. 
+* Use a chart to verify the choice of the smoothing `📊 loess_span` parameter in the `🗺️ *_dims_L2`feature class. 
 * Right-click on the `🗺️ *_dims_L2` feature class in the map table of contents and select "Create Chart", and select "Line". In the `📊 Date or Number` dropdown, choose the field `📊 POINT_M`. In the `📊 Aggregation` dropdown, choose `🧮 None`. In the `📊 Numeric field(s)` checklist, check the boxes next to `🧮 Z` and `🧮 Z_smooth`. Click the "Apply" button to view the chart.
 * Visually assess the degree of smoothing. The smoothing should be high enough to eliminate LiDAR elevation noise, but not so high as to eliminate meaningful channel elevation change. 
 * If the smoothing is not ideal, re-run the tool and adjust the `📊 loess_span` parameter.  
@@ -107,7 +107,7 @@ The purpose of this stage is to produce the Level 2 report for each reach.
 The purpose of this step is to run the L2 report for each reach. 
 
 * In the  `🧰 Reports` toolset, use the `🛠️ Level 2 Report` tool to produce the Level 2 Report. 
-* For the `📊 stream` parameter, use the value of the `📊 ReachName` field used in the `flowline` feature class. 
+* For the `📊 stream` parameter, use the value of the `📊 ReachName` field used in the `🗺️ flowline` feature class. 
 * For the `📊 flowline_fc` parameter, enter the `🗺️ flowline` feature class for the base event survey. 
 * For the `📊 xs_dims_fc` parameter, use the `🗺️ *_dims_L2` feature class calculated for the regular cross sections of the base event. 
 * The `📊 xs_points_*` parameters should be entered with the feature class for the most recent survey first (i.e., the base event) and then the previous surveys in reverse chronological order (e.g., 2016, 2010, 2006). 
@@ -116,8 +116,8 @@ The purpose of this step is to run the L2 report for each reach.
 * For the `📊 hyrodem` parameter, enter the `🗺️ hydroDEM` for the base event survey. 
 * For the `📊 banklines_fc` parameter, enter the `🗺️ banklines` feature class created for the base event survey.  
 * For the `📊 features_fc` parameter, enter the `🗺️ features` feature class for the base event survey. 
-* For the `📊 bf_estimate` parameter, specify the REM elevation value that represents the bankfull water surface elevation. 
-* For the `📊 regions` parameter, select the regions to use for estimating the bankfull water surface elevation. 
+* For the `📊 bf_estimate` parameter, specify the REM `🧮 elevation` value that represents the bankfull water surface elevation. 
+* For the `📊 regions` parameter, select the `🧮 regions` to use for estimating the bankfull water surface elevation. 
 
 
 ### Perform QA

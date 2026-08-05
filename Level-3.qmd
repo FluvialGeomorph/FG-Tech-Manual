@@ -25,7 +25,7 @@ The purpose of this step is to use the REM bankfull elevation identified in L2 t
 
 * With the REM flood prone elevation for your reach determined in the last step, use the `🛠️ Water Surface Extent` tool to extract a flood prone area polygon. This tool creates a new polygon feature class named `🗺️ banks_raw_xxx`, where xxx is the REM elevation selected. 
 * This feature class must be edited to select the flood prone area polygon(s). Open the attribute table for the `🗺️ banks_raw_xxx` feature class and use advanced sorting to sort first by `📊 gridcode` and then by `📊 Shape_Area`. Polygons with `📊 gridcode` = `🧮 1` are polygons inundated at the REM elevation. Typically, the polygons with the largest area represent the channel. Begin selecting `📊 gridcode` = `🧮 1` polygons with the largest area until the entire flood prone area is selected. 
-* Export these selected features to a new feature class named `flood_prone`. 
+* Export these selected features to a new feature class named `🗺️ floodplain_polygon`. 
 * Delete the `🗺️ banks_raw_xxx` feature class created in this section. 
 
 
@@ -42,7 +42,7 @@ The purpose of this step is to create a set of candidate `🗺️ valleyline` fe
 
 
 ### Choose Final Valleyline
-The purpose of this step is to choose from the candidate `🗺️valleyline` feature classes the one that best captures the overall valley trend line. 
+The purpose of this step is to choose from the candidate `🗺️ valleyline` feature classes the one that best captures the overall valley trend line. 
 
 * The goal of this step is to select from the candidate `🗺️ valleyline` feature classes the one that is the most smoothed, yet still fits primarily within the `🗺️ floodplain_polygon` feature class extent.
 * Add the `📊 flood_prone` polygon and all of the candidate `🗺️ valleyline` feature classes to the current map.
@@ -58,9 +58,9 @@ The purpose of this step is to choose from the candidate `🗺️valleyline` fea
 The purpose of this stage is to define meander loops and bends for the base event for each reach. 
 
 ### Define Loop Points
-The purpose of this step is to create a new feature class named `🗺️loop_points` and use it to identify the start and end stream meander loops and bends. 
+The purpose of this step is to create a new feature class named `🗺️ loop_points` and use it to identify the start and end stream meander loops and bends. 
 
-* Create a new point feature class named `🗺️loop_points`. Enable z and m values. The feature class should contain the following fields:
+* Create a new point feature class named `🗺️ loop_points`. Enable z and m values. The feature class should contain the following fields:
     * `📊 ReachName`: Text (50) - The purpose of this field is to store the reach name. 
     * `📊 loop`: Long Integer - The purpose of this field is to store the loop unique identifier for the point. 
     * `📊 bend`: Long Integer - The purpose of the field is to store the bend identifier for the point. 
@@ -73,10 +73,10 @@ The purpose of this step is to create a new feature class named `🗺️loop_poi
 * Begin numbering loops starting at the downstream end of the reach and increment the `📊 loop` integer values moving upstream. 
 * In FluvialGeomorph, the `🗺️ valleyline` is used segment the `🗺️ flowline` into loops. 
 * The beginning and end of loops are delineated where the `🗺️ valleyline` *definitively* crosses the `🗺️ flowline`. 
-* If the `🗺️ flowline` crosses the `🗺️ valleyline` and then crosses back over in a short distance, this is not considered a *definitive* crossing. A definitive crossing is one where the `flowline` approaches the `🗺️ valleyline`, crosses it, and then continues to move away from the `🗺️ valleyline` for a significant longitudinal distance. 
+* If the `🗺️ flowline` crosses the `🗺️ valleyline` and then crosses back over in a short distance, this is not considered a *definitive* crossing. A definitive crossing is one where the `🗺️ flowline` approaches the `🗺️ valleyline`, crosses it, and then continues to move away from the `🗺️ valleyline` for a significant longitudinal distance. 
 * Loops must alternate from one bank to the opposite bank. For example, if loop 1 is delineated along the right descending bank, then loop 2 is delineated along the left descending bank. 
 * Loops are composed of one or more bends (bends nest inside of loops). For example, loop 1 can have bends 1, 2, and 3 (i.e., loop 1, bend 1; loop 1, bend 2; loop 1, bend 3). 
-* Bend numbering restarts within each loop. The first `bend` value within a loop always begins with the value 1. 
+* Bend numbering restarts within each loop. The first `📊 bend` value within a loop always begins with the value `🧮 1`. 
 
 **Multiple Reaches: **   
 
@@ -93,8 +93,8 @@ The purpose of this step is to create a new feature class named `🗺️loop_poi
 The purpose of this step is to convert the `🗺️ banklines` to a set of `🗺️ bankline_points` and assign elevations and loop and bend locations to these features. 
 
 * Use the `🛠️ Bankline Points` tool to assign loops, bends, elevations and valley line positions to the `🗺️ bankline_points`. 
-* When the tool completes, check that this tools runs correctly by running the `🛠️Check Bankline Points` tool in the `🧰 Check` toolset. 
-* The check tool ensures that the `📊 loop`, `📊 bend`, `📊 position`, `📊 valley_POINT_X`, `📊 valley_POINT_Y`, and `📊 valley_POINT_M` fields are populated. Only `🗺️ bankline_points` features within loops and bends will have values in the `🧮 loop`, `🧮 bend`, and `🧮 position` fields. 
+* When the tool completes, check that this tools runs correctly by running the `🛠️ Check Bankline Points` tool in the `🧰 Check` toolset. 
+* The check tool ensures that the `📊 loop`, `📊 bend`, `📊 position`, `📊 valley_POINT_X`, `📊 valley_POINT_Y`, and `📊 valley_POINT_M` fields are populated. Only `🗺️ bankline_points` features within loops and bends will have values in the `📊 loop`, `📊 bend`, and `📊 position` fields. 
 * All records should have values in the `📊 valley_POINT_X`, `📊 valley_POINT_Y`, and `📊 valley_POINT_M` fields. 
 * Additionally, apply the following definition query to the `🗺️ bankline_points` feature class: "loop IS NOT NULL". Only `🗺️ bankline_points` features between `🗺️ loop_points` features should be visible. 
 
@@ -104,7 +104,7 @@ The purpose of this step is to assign loop and bend identifiers to regularly spa
 
 * Use the `🛠️ Assign Loops` tool to assign loops and bends to a cross section feature class. 
 * Set the value of the `📊 cross_section` parameter to the `🗺️ XS` line feature class. 
-* After the tool completes, check the `🗺️ XS` line feature class that the `📊loop` and `📊bend` fields are assigned the correct loop and bend values. 
+* After the tool completes, check the `🗺️ XS` line feature class that the `📊 loop` and `📊 bend` fields are assigned the correct loop and bend values. 
 * Repeat this step for both the `🗺️ riffle_channel` and `🗺️ riffle_floodplain` feature classes. 
 
 
@@ -143,8 +143,8 @@ The purpose of this step is to run the L2 report for each reach.
 * The `📊 survey_name_*` parameters are used to label the surveys in maps and graphs. 
 * The feature classes and labels used for the `📊 flowline_points_*`, `📊 xs_points_*`, and `📊 survey_name_*` parameters must be entered in the same order (e.g., 2016, 2010, 2006) in each set of numbered parameters. 
 * For the `📊 dem` parameter, enter the `🗺️ hydroDEM` for the base event survey. 
-* For the `📊 banklines_fc` parameter, enter the `🗺️banklines` feature class created for the base event survey.  
-* For the `📊 features_fc` parameter, enter the `🗺️features` feature class for the base event survey. 
+* For the `📊 banklines_fc` parameter, enter the `🗺️ banklines` feature class created for the base event survey.  
+* For the `📊 features_fc` parameter, enter the `🗺️ features` feature class for the base event survey. 
 * For the `📊 bf_estimate` parameter, specify the REM elevation value that represents the bankfull water surface elevation. 
 * For the `📊 regions` parameter, select the regions to use for estimating the bankfull water surface elevation. 
 

@@ -16,7 +16,7 @@ The purpose of this step is to identify riffle locations and map these cross sec
 
 A riffle is a shallow river landform where water flows in a steep, thin sheet [@luna_bergere_leopold_river_1957]. Riffles can be identified with the help of the `🗺️ channel_slope` raster calculated in Level 1, and confirmed with high resolution aerial imagery. In the `🗺️ channel_slope` raster, pools appear as relatively smooth areas of low slope due to the absence of LiDAR points (deep water absorbs laser pulses). Shallow water riffles appear as highly textured areas of relatively higher slope between pools due to the higher number of LiDAR points from the exposed bed material.
 
-* Create a new line feature class named `🗺️ riffle_floodplain`to store riffle cross sections. This feature class must use the same coordinate system as the vector datasets of the project. Add the following fields:
+* Create a new line feature class named `🗺️ riffle_floodplain` to store riffle cross sections. This feature class must use the same coordinate system as the vector datasets of the project. Add the following fields:
     * `📊 ReachName`: `🧮 Text (50)` - The purpose of this field is to store the reach name. 
     * `📊 Seq`: `🧮 long integer` - The purpose of this field is to uniquely identify each cross section. 
 
@@ -39,8 +39,8 @@ A riffle is a shallow river landform where water flows in a steep, thin sheet [@
 * Digitize riffle cross sections beginning with the left descending bank. While editing, use the "Reverse Direction" command (aka flip) to ensure riffles are digitized in the correct direction. 
 * A red vertex denotes the end of a line segment. Therefore, the red end vertex should be on the right descending bank. 
 * Check that each cross section is digitized in the correct direction (start at the left descending bank and end on the right descending bank) before going on to the next step. 
-* Ensure that riffle cross sections are digitized to the full width of the active floodplain. Edit each `🗺️ riffle_floodplain` feature class to ensure that it extends at least to the edge of the `🗺️ floodplain_polygon` layer, but no further. 
-* This ensures that each `🗺️ riffle_floodplain` feature covers the entire floodplain, but does not extend too far into the uplands.  
+* Ensure that riffle cross sections are digitized to the full width of the active floodplain. Edit each `🗺️ riffle_floodplain` feature class to ensure that it extends at least to the edge of the `🗺️ floodplain_polygon` feature class, but no further. 
+* This ensures that each `🗺️ riffle_floodplain` feature class covers the entire floodplain, but does not extend too far into the uplands.  
 * For a site with multiple reaches, riffle cross sections must be uniquely numbered across all reaches. The `📊 Seq` field values of riffle cross sections should not repeat within the reaches of a site. 
 * The downstream-most cross section in the site should be numbered starting with the `📊 Seq` field value of 1 and increase moving upstream. 
 * If necessary, use the `🛠️ XS Resequence` tool to set the starting `📊 Seq` value for each reach. 
@@ -57,10 +57,10 @@ The purpose of this step is to ensure that riffle cross section identifiers are 
 The purpose of this step is to calculate the watershed area for each riffle cross section. 
 
 * From the study area geodatabase, use the `🗺️ watershed_contributing_area` raster that covers the entire contributing watershed of the study area.    
-* Use the ESRI `🛠️ Clip Raster` tool to clip the `watershed_contributing_area` raster to `🗺️ stream_network_buffer` to speed tool run time. 
+* Use the ESRI `🛠️ Clip Raster` tool to clip the `🗺️ watershed_contributing_area` raster to `🗺️ stream_network_buffer` to speed tool run time. 
 * Add the `🗺️ contributing_area_buffer` raster to a map and symbolize with a “hot-cold” stretch renderer.
 * Add the `🗺️ flowline`and regular `🗺️ XS` features classes to the map. Place them on top of the `🗺️ contributing_area_buffer` raster. 
-* Determine the maximum distance from the intersection of each cross section and the `🗺️ flowline` to the nearest pixel of high flow in the `🗺️ contributing_area_buffer` raster. This value will be used for the `📊  snap_distance` in the next step. 
+* Determine the maximum distance from the intersection of each cross section and the `🗺️ flowline` to the nearest pixel of high flow in the `🗺️ contributing_area_buffer` raster. This value will be used for the `📊 snap_distance` in the next step. 
 * Use the `🛠️ XS Watershed Area` tool to calculate the watershed area for each cross section. 
 * For the `📊 flow_accum` parameter, use the `🧮 contributing_area_buffer` raster. 
 * For the `📊 snap_distance` parameter, use the distance you calculated in a previous step.
@@ -74,7 +74,7 @@ The purpose of this step is to calculate the river position for each riffle cros
 
 
 ### Create Riffle Channel
-The purpose of this step is to edit the lateral extent of the `🗺️ riffle_channel`feature class to just cover the initial channel extent. This allows a more detailed examination of the channel area. 
+The purpose of this step is to edit the lateral extent of the `🗺️ riffle_channel` feature class to just cover the initial channel extent. This allows a more detailed examination of the channel area. 
 
 * In the Catalog window, make a copy of the `🗺️ riffle_floodplain` feature class and name it `riffle_channel`.
 * Edit each `🗺️ riffle_channel` feature to ensure that it extends at least to the edge of the `🗺️ channel_polygon` layer, but no further. This ensures that each `🗺️ riffle_channel` feature covers the entire channel, but does not extend too far into the floodplain.
@@ -112,7 +112,7 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 **Confirm the degree of smoothing**   
 
 * Use a chart to verify the choice of the smoothing `📊 loess_span` parameter in the `🗺️ *_dims_L2` feature class. 
-* Right-click on the `🗺️ *_dims_L2` feature class in the map table of contents and select "Create Chart", and select "📊 Line". In the `📊 Date or Number` dropdown, choose the field `📊 POINT_M`. In the `📊 Aggregation` dropdown, choose `🧮 None`. In the `📊 Numeric field(s)` checklist, check the boxes next to `🧮 Z` and `🧮 Z_smooth`. Click the "Apply" button to view the chart.
+* Right-click on the `🗺️ *_dims_L2` feature class in the map table of contents and select "Create Chart", and select `🧮 Line`. In the `📊 Date or Number` dropdown, choose the field `📊 POINT_M`. In the `📊 Aggregation` dropdown, choose `🧮 None`. In the `📊 Numeric field(s)` checklist, check the boxes next to `🧮 Z` and `🧮 Z_smooth`. Click the "Apply" button to view the chart.
 * Visually assess the degree of smoothing. The smoothing should be high enough to eliminate LiDAR elevation noise, but not so high as to eliminate meaningful channel elevation change. 
 * If the smoothing is not ideal, re-run the tool and adjust the `📊 loess_span` parameter. 
 

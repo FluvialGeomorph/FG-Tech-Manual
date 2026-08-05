@@ -206,20 +206,20 @@ Table: Reach Geodatabases Required for a Site with 5 Reaches and 3 LiDAR Surveys
 ### Create Flowline Points
 Now converting the `🗺️ flowline` into a series of points along the reach is required. The `🛠️Flowline Points` tool takes the `🗺️ flowline` feature class, converts it to a route, calculates the distance to the mouth of the river for all vertices, and creates a `🗺️ flowline_points` feature class. 
 
-* Use the `🛠️ Flowline Points` tool to convert the `🗺️ flowline` feature class into a new feature class named `🗺️ flowline_points`. 
+* Use the `🛠️ Flowline Points` tool to convert the `🗺️ flowline` feature class into a new feature class named `🗺️ flowline_points` feature class. 
 * Set the `📊 station_distance` field to approximately `🧮 1 meter`. 
 * For a site with multiple reaches, set the `📊 km_to_mouth` parameter for the downstream-most reach to `🧮 0`. 
-* Set the `📊 km_to_mouth` parameter for each upstream reach to the upstream-most value (i.e., the highest `📊 km_to_mouth` value of the downstream reach's `🗺️ flowline_points` feature class of the downstream reach. For example, set the `📊 km_to_mouth` of the Reach-2 `🗺️ flowline_points` feature class to `🧮 1.2345` if the maximum value of Reach-1's `🗺️ flowline_points` feature class `📊 km_to_mouth` field is `🧮 1.2345`. 
+* Set the `📊 km_to_mouth` parameter for each upstream reach to the upstream-most value i.e., the highest `📊 km_to_mouth` value of the downstream reach's `🗺️ flowline_points` feature class of the downstream reach. For example, set the `📊 km_to_mouth` of the Reach-2 `🗺️ flowline_points` feature class to `🧮 1.2345` if the maximum value of Reach-1's `🗺️ flowline_points` feature class `📊 km_to_mouth` field is `🧮 1.2345`. 
 * The goal is that longitudinal stationing within a site containing multiple reaches should be sequential and unique throughout the site (i.e., lower station values at the bottom of the site and higher station values at the top of the site). This allows reach feature classes to be combined after reach-level analysis is complete. 
-* The `🗺️ calibration_points`, `📊 point_id_field`, and `📊 measure_field` parameters can be left blank when processing the `📁 base event`.
+* The `📊 calibration_points`, `📊 point_id_field`, and `📊 measure_field` parameters can be left blank when processing the `📁 base event`.
 
 **Multiple Surveys**   
 To make LiDAR surveys collected before the `📁 base event` directly comparable to the base event, the `🗺️ flowline` from each previous survey must be `📊 calibrated` to the base event. This adjusts any changes in flowline planform between survey events to be expressed in terms of the base event longitudinal stationing. 
 
-* If multiple LiDAR surveys exist for a project study area, the `🗺️ flowline_points` for any previous LiDAR survey must be calibrated using the `🗺️ flowline_points` of the base event. 
-* For example, if 2016 is the base event, when deriving the `🗺️flowline_points` for a LiDAR survey from 2010, the base event's `🗺️ flowline_points` (2016) must be used for the `🛠️ Flowline Points` tool's `📊 calibration_points` parameter value. 
+* If multiple LiDAR surveys exist for a project study area, the `🗺️ flowline_points` feature classfor any previous LiDAR survey must be calibrated using the `🗺️ flowline_points` feature classof the base event. 
+* For example, if 2016 is the base event, when deriving the `🗺️flowline_points` feature class for a LiDAR survey from 2010, the base event's `🗺️ flowline_points` feature class (2016) must be used for the `🛠️ Flowline Points` tool's `📊 calibration_points` parameter value. 
 * Set the `📊 point_id_field` and `📊 measure_field` parameters to the fields in the base event's `🗺️ flowline_points` feature class. 
-* Set the `📊 search_radius` parameter to the maximum distance between the `🗺️ flowline` of the current survey and the base event `🗺️ flowline`. 
+* Set the `📊 search_radius` parameter to the maximum distance between the `🗺️ flowline` of the current survey and the base event `🗺️ flowline` feature classes. 
 
 ***
 
@@ -235,9 +235,9 @@ Produce a relative elevation model (REM), which is a REM DEM normalizing stream 
 ### Estimate Initial Channel Extent 
 The purpose of this step is to use the `🗺️ REM` to visually extract an initial channel extent polygon. The `🗺️ REM` created in the last step can be used to iteratively explore different inundation extents derived from various water surface elevations.  
 
-* Add the `🗺️ REM` raster to the map Table of Contents. Name this layer `🗺️ Channel Extent`. 
-* On the Symbology tab of the `🗺️ Channel Extent` layer, use the Classified renderer to classify the raster into 2 classes. Set the first class boundary to the REM elevation that you would like to explore. Set the color of the first class (min value - REM elevation) to blue and the color of the second class (REM elevation - max value) to No Color. 
-* Set the transparency of the `🗺️ Channel Extent` layer to `🧮 50%`. 
+* Add the `🗺️ REM` raster to the map Table of Contents. Name this layer `🗺️ channel_polygon` feature class. 
+* On the Symbology tab of the `🗺️ channel_polygon` feature class, use the Classified renderer to classify the raster into 2 classes. Set the first class boundary to the REM elevation that you would like to explore. Set the color of the first class (min value - REM elevation) to blue and the color of the second class (REM elevation - max value) to No Color. 
+* Set the transparency of the `🗺️ channel_polygon` feature class to `🧮 50%`. 
 * Begin to delineate the channel extent by selecting a REM elevation that inundates the channel up to at least the first terrace. The goal at this stage is to select a REM elevation that captures the extent of the channel without "spilling" too much water into the floodplain. Once you discover which REM elevation begins to allow water to access the floodplain, reduce the REM elevation value slightly to keep the water in the channel. Try several REM elevation values to help make the decision. 
 * When you have chosen a REM elevation, use the `🛠️ Water Surface Extent` tool to extract an initial channel extent area polygon. This tool creates a new polygon feature class named `🗺️ banks_raw_xxx`, where xxx is the REM elevation selected. 
 * This feature class must be edited to select the channel area polygon(s). Open the attribute table for the `🗺️ banks_raw_xxx` feature class and use advanced sorting to sort first by `📊 gridcode` and then by `📊 Shape_Area`. Polygons with `📊 gridcode` = `🧮 1` are polygons inundated at the REM elevation. Typically, the polygons with the largest area represent the channel. Begin selecting `📊 gridcode` = `🧮 1` polygons with the largest area until the entire channel area is selected. 
@@ -247,16 +247,16 @@ The purpose of this step is to use the `🗺️ REM` to visually extract an init
 ### Create the Initial Channel Mask layer
 The purpose of this step is to create a layer that defines an area just beyond the initial channel extent.  
 
-* Add the `🗺️ REM` feature class to the map Table of Contents. Name this layer `🗺️ Channel Mask`. 
+* Add the `🗺️ REM` feature class to the map Table of Contents. Name this layer `🗺️ channel_polygon` feature class. 
 * In the symbology of this layer, change the renderer from `📊 stretched` to `📊 classified`. Set the number of classes to 2. In the `📊 classification` dialog, set the break value between the two classes to about one to two feet higher than the initial bankfull extent estimate. A couple of feet above the initial bankfull extent estimate should define the extent of the just the channel. For example, if the initial bankfull extent was estimated at 102 REM feet, the initial bankfull height estimate would be 2 feet. One foot higher than the 2 foot initial bankfull height estimate would therefore be 103 REM feet. 
-* Set the transparency of the `🗺️ Channel Mask` layer to `🧮 50%`. 
+* Set the transparency of the `🗺️ channel_polygon` feature class to `🧮 50%`. 
 
 ### Estimate Initial Floodplain Extent
 The purpose of this step is to create a layer that defines the an initial estimate of the floodplain inundation extent. 
 
-* Add the `🗺️ REM` feature class to the map Table of Contents. Name this layer `🗺️ Floodplain Mask`. 
-* In the symbology of this layer, change the renderer from `stretched` to `classified`. Set the number of classes to 2. In the `📊 classification` dialog, set the break value between the two classes to four times the initial bankfull extent estimate. Four times the initial bankfull extent estimate should define the extent of the active floodplain. For example, if the initial bankfull extent was estimated at 102 REM feet, the initial bankfull height estimate would be 2 feet. Four times the 2 foot initial bankfull height estimate would therefore be 108 REM feet. 
-* Set the transparency of the `🗺️ Floodplain Mask` layer to `🧮 50%`. 
+* Add the `🗺️ REM` feature class to the map Table of Contents. Name this layer `🗺️ floodplain_polygon` feature class. 
+* In the symbology of this layer, change the renderer from stretched to `🧮 classified`. Set the number of classes to 2. In the `📊 classification` dialog, set the break value between the two classes to four times the initial bankfull extent estimate. Four times the initial bankfull extent estimate should define the extent of the active floodplain. For example, if the initial bankfull extent was estimated at 102 REM feet, the initial bankfull height estimate would be 2 feet. Four times the 2 foot initial bankfull height estimate would therefore be 108 REM feet. 
+* Set the transparency of the `🗺️ floodplain_polygon` layer to `🧮 50%`. 
 
 ***
 
@@ -272,10 +272,10 @@ The purpose of this step is to create regularly spaced cross sections along each
 * Use the `🛠️XS Layout` tool to create a set of regularly spaced cross sections (referred to as transects in this tool). Use the values determined in the previous steps to set this tool's parameters. 
 * For a site with multiple reaches, regular cross sections must be uniquely numbered across all reaches. The `📊 Seq` field values of regular cross sections should not repeat within the reaches of a site. 
 * The downstream-most cross section in the site should be numbered starting with the `📊 Seq` field value of `🧮 1` and increase moving upstream. 
-* The `🛠️ XS Layout` tool automatically numbers regular cross sections `📊 Seq` values starting with the value `🧮1` at the downstream-most cross section.  
+* The `🛠️ XS Layout` tool automatically numbers regular cross sections `📊 Seq` values starting with the value `🧮 1` at the downstream-most cross section.  
 * Use the `🛠️ XS Resequence`tool to set the starting `📊 Seq` value for each reach.  
 * For all reaches other than the first reach (downstream-most) in a site, the cross sections must be re-sequenced using the `🛠️ XS Resequence` tool. 
-* Set the `📊 Seq` field value for each upstream reach to the upstream-most value (i.e., the highest `🧮 Seq` value of the downstream reach’s regular cross section feature class) of the downstream reach. 
+* Set the `📊 Seq` field value for each upstream reach to the upstream-most value (i.e., the highest `📊 Seq` value of the downstream reach’s regular cross section feature class) of the downstream reach. 
 * For example, set the `📊Seq` of the Reach-2 regular cross section feature class to 58 if the maximum value of Reach-1’s regular cross section feature class `📊 Seq` field is 57.
 
 ### Calculate Cross Section Watershed Area
@@ -285,7 +285,7 @@ The purpose of this step is to calculate the watershed area for each regularly s
 * Use the ERSI `🛠️ Clip Raster` tool to clip the `🗺️ watershed_contributing_area` raster to `🗺️ stream_network_buffer` to speed tool run time. 
 * Add the `🗺️ contributing_area_buffer` raster to a map and symbolize with a “hot-cold” stretch renderer.
 * Add the `🗺️ flowline` and regular cross section features classes to the map. Place them on top of the `🗺️  contributing_area_buffer` raster. 
-* Determine the maximum distance from the intersection of each cross section and the `🗺️ flowline` to the nearest pixel of high flow in the `🗺️ contributing_area_buffer` raster. This value will be used for the `📊  snap_distance` in the next step. 
+* Determine the maximum distance from the intersection of each cross section and the `🗺️ flowline` feature class to the nearest pixel of high flow in the `🗺️ contributing_area_buffer` raster. This value will be used for the `📊  snap_distance` in the next step. 
 * Use the `🛠️ XS Watershed Area` tool to calculate the watershed area for each cross section. 
 * For the `📊 flow_accum` parameter, use the `🗺️contributing_area_buffer` raster. 
 * For the `📊 snap_distance` parameter, use the distance you calculated in a previous step.
@@ -301,7 +301,7 @@ The purpose of this step is to convert each cross section into a set of evenly s
 
 * Use the `🛠️ XS Points` tool to calculate cross section station points for each cross section. 
 * The `📊 station_distance` parameter should be set to approximately the resolution of the DEM. For example, if the DEM has a cell size of 1 foot (0.3048 meter), set the `📊 station_distance` to that distance (using the linear units of the coordinate system used for the project's vector data). 
-* This tool creates a new feature class named `🗺️ cross section feature class name_points`. 
+* This tool creates a new feature class named `🗺️ XSpoints`. 
 
 
 ### Calculate Cross Section L1 Dimensions
@@ -311,7 +311,7 @@ The purpose of this step is to calculate the L1 dimensions for the regularly spa
 Many stream metrics are scale dependent, meaning these metrics are affected by the size of the moving window used in their calculation. To determine the appropriate size of the moving window for this reach, use the following steps:
 
 * Many stream metrics are typically calculated using a moving window size equal to two meander wavelengths (one upstream meander wavelength and one downstream meander wavelength). 
-* Using the initial `🗺️ Channel Mask` layer that you created earlier, estimate the typical bankfull width for the reach. 
+* Using the initial `🗺️ Channel_polygon` layer that you created earlier, estimate the typical bankfull width for the reach. 
 * Estimate the length of two meander wavelengths by multiplying the bankfull width estimated in the last step by `🧮 10` (e.g., 30ft bankfull width * 10 = 300ft, two meander wavelengths).  
 * Determine how many cross sections two meander wavelengths represent. For example, if regular cross sections are spaced 100ft apart, then two meander wavelengths would be 3 cross sections (i.e., 300ft / 100ft between cross sections). 
 
@@ -326,7 +326,7 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 **Confirm the degree of smoothing**   
 
 * Use a chart to verify the choice of the smoothing `📊 loess_span` parameter. 
-* Right-click on the `🗺️ *_dims_L1` feature class in the map Table of Contents and select "📊 Create Chart", and select "📊 Line". In the `📊 Date or Number` dropdown, choose the field `🧮 POINT_M`. In the `Aggregation` dropdown, choose `🧮 None`. In the `📊 Numeric field(s)` checklist, check the boxes next to `🧮 Z` and `🧮 Z_smooth`. Click the "Apply" button to view the chart.
+* Right-click on the `🗺️ *_dims_L1` feature class in the map Table of Contents and select "📊 Create Chart", and select `🧮 Line`. In the `📊 Date or Number` dropdown, choose the field `🧮 POINT_M`. In the `📊 Aggregation` dropdown, choose `🧮 None`. In the `📊 Numeric field(s)` checklist, check the boxes next to `🧮 Z` and `🧮 Z_smooth`. Click the "Apply" button to view the chart.
 * Visually assess the degree of smoothing. The smoothing should be high enough to eliminate LiDAR elevation noise, but not so high as to eliminate meaningful channel elevation change. 
 * If the smoothing is not ideal, re-run the tool and adjust the `📊 loess_span` parameter. 
 
@@ -378,13 +378,16 @@ The purpose of this step is to run the L1 report for each reach. The Level 1 Rep
 * The `📊 survey_name_*` parameters are used to label the surveys in maps and graphs. 
 * The feature classes and labels used for the `📊 flowline_points_*`, `📊 xs_points_*`, and `📊 survey_name_*` parameters must be entered in the same order (e.g., 2016, 2010, 2006) in each set of numbered parameters. 
 * For the `📊 features_fc` parameter, enter the `🗺️ features` feature class for the base event survey. 
-* For the `📊 dem` parameter, enter the `🗺️ hydro-DEM` for the base event survey. 
+* For the `📊 dem` parameter, enter the `🗺️ hydroDEM` for the base event survey. 
 
 
 ***
 
 
 ## Perform QA
+
+{{< badge evaluate >}}
+
 Use the QA Checklist to verify the reports have run correctly and identify any data mistakes that need to be corrected.
 
 * Follow the instructions in the QA Checklist Chapter, Level 1 Report, to verify that the reports have run correctly. 
@@ -393,7 +396,7 @@ Use the QA Checklist to verify the reports have run correctly and identify any d
 
 
 ***
-{{< badge evaluate >}}
+
 ## Determine Next Steps
 The purpose of this step is to determine what further steps need to be taken. 
 
