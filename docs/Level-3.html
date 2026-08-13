@@ -612,7 +612,7 @@ ul.task-list li input[type="checkbox"] {
 <code>100 ft REM stream base index + 8 ft flood prone height = 108 ft REM flood prone height</code></p></li>
 <li><p>With the REM flood prone elevation for your reach determined in the last step, use the <code>🛠️ Water Surface Extent</code> tool to extract a flood prone area polygon. This tool creates a new polygon feature class named <code>🗺️ banks_raw_xxx</code>, where xxx is the REM elevation selected.</p></li>
 <li><p>This feature class must be edited to select the flood prone area polygon(s). Open the attribute table for the <code>🗺️ banks_raw_xxx</code> feature class and use advanced sorting to sort first by <code>📊 gridcode</code> and then by <code>📊 Shape_Area</code>. Polygons with <code>📊 gridcode</code> = <code>🧮 1</code> are polygons inundated at the REM elevation. Typically, the polygons with the largest area represent the channel. Begin selecting <code>📊 gridcode</code> = <code>🧮 1</code> polygons with the largest area until the entire flood prone area is selected.</p></li>
-<li><p>Export these selected features to a new feature class named <code>flood_prone</code>.</p></li>
+<li><p>Export these selected features to a new feature class named <code>🗺️ floodplain_polygon</code>.</p></li>
 <li><p>Delete the <code>🗺️ banks_raw_xxx</code> feature class created in this section.</p></li>
 </ul>
 </section>
@@ -631,7 +631,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="choose-final-valleyline" class="level3">
 <h3 class="anchored" data-anchor-id="choose-final-valleyline">Choose Final Valleyline</h3>
-<p>The purpose of this step is to choose from the candidate <code>🗺️valleyline</code> feature classes the one that best captures the overall valley trend line.</p>
+<p>The purpose of this step is to choose from the candidate <code>🗺️ valleyline</code> feature classes the one that best captures the overall valley trend line.</p>
 <ul>
 <li>The goal of this step is to select from the candidate <code>🗺️ valleyline</code> feature classes the one that is the most smoothed, yet still fits primarily within the <code>🗺️ floodplain_polygon</code> feature class extent.</li>
 <li>Add the <code>📊 flood_prone</code> polygon and all of the candidate <code>🗺️ valleyline</code> feature classes to the current map.</li>
@@ -648,9 +648,9 @@ ul.task-list li input[type="checkbox"] {
 <p>The purpose of this stage is to define meander loops and bends for the base event for each reach.</p>
 <section id="define-loop-points" class="level3">
 <h3 class="anchored" data-anchor-id="define-loop-points">Define Loop Points</h3>
-<p>The purpose of this step is to create a new feature class named <code>🗺️loop_points</code> and use it to identify the start and end stream meander loops and bends.</p>
+<p>The purpose of this step is to create a new feature class named <code>🗺️ loop_points</code> and use it to identify the start and end stream meander loops and bends.</p>
 <ul>
-<li>Create a new point feature class named <code>🗺️loop_points</code>. Enable z and m values. The feature class should contain the following fields:
+<li>Create a new point feature class named <code>🗺️ loop_points</code>. Enable z and m values. The feature class should contain the following fields:
 <ul>
 <li><code>📊 ReachName</code>: Text (50) - The purpose of this field is to store the reach name.</li>
 <li><code>📊 loop</code>: Long Integer - The purpose of this field is to store the loop unique identifier for the point.</li>
@@ -665,10 +665,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Begin numbering loops starting at the downstream end of the reach and increment the <code>📊 loop</code> integer values moving upstream.</li>
 <li>In FluvialGeomorph, the <code>🗺️ valleyline</code> is used segment the <code>🗺️ flowline</code> into loops.</li>
 <li>The beginning and end of loops are delineated where the <code>🗺️ valleyline</code> <em>definitively</em> crosses the <code>🗺️ flowline</code>.</li>
-<li>If the <code>🗺️ flowline</code> crosses the <code>🗺️ valleyline</code> and then crosses back over in a short distance, this is not considered a <em>definitive</em> crossing. A definitive crossing is one where the <code>flowline</code> approaches the <code>🗺️ valleyline</code>, crosses it, and then continues to move away from the <code>🗺️ valleyline</code> for a significant longitudinal distance.</li>
+<li>If the <code>🗺️ flowline</code> crosses the <code>🗺️ valleyline</code> and then crosses back over in a short distance, this is not considered a <em>definitive</em> crossing. A definitive crossing is one where the <code>🗺️ flowline</code> approaches the <code>🗺️ valleyline</code>, crosses it, and then continues to move away from the <code>🗺️ valleyline</code> for a significant longitudinal distance.</li>
 <li>Loops must alternate from one bank to the opposite bank. For example, if loop 1 is delineated along the right descending bank, then loop 2 is delineated along the left descending bank.</li>
 <li>Loops are composed of one or more bends (bends nest inside of loops). For example, loop 1 can have bends 1, 2, and 3 (i.e., loop 1, bend 1; loop 1, bend 2; loop 1, bend 3).</li>
-<li>Bend numbering restarts within each loop. The first <code>bend</code> value within a loop always begins with the value 1.</li>
+<li>Bend numbering restarts within each loop. The first <code>📊 bend</code> value within a loop always begins with the value <code>🧮 1</code>.</li>
 </ul>
 <p><strong>Multiple Reaches: </strong></p>
 <ul>
@@ -689,8 +689,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The purpose of this step is to convert the <code>🗺️ banklines</code> to a set of <code>🗺️ bankline_points</code> and assign elevations and loop and bend locations to these features.</p>
 <ul>
 <li>Use the <code>🛠️ Bankline Points</code> tool to assign loops, bends, elevations and valley line positions to the <code>🗺️ bankline_points</code>.</li>
-<li>When the tool completes, check that this tools runs correctly by running the <code>🛠️Check Bankline Points</code> tool in the <code>🧰 Check</code> toolset.</li>
-<li>The check tool ensures that the <code>📊 loop</code>, <code>📊 bend</code>, <code>📊 position</code>, <code>📊 valley_POINT_X</code>, <code>📊 valley_POINT_Y</code>, and <code>📊 valley_POINT_M</code> fields are populated. Only <code>🗺️ bankline_points</code> features within loops and bends will have values in the <code>🧮 loop</code>, <code>🧮 bend</code>, and <code>🧮 position</code> fields.</li>
+<li>When the tool completes, check that this tools runs correctly by running the <code>🛠️ Check Bankline Points</code> tool in the <code>🧰 Check</code> toolset.</li>
+<li>The check tool ensures that the <code>📊 loop</code>, <code>📊 bend</code>, <code>📊 position</code>, <code>📊 valley_POINT_X</code>, <code>📊 valley_POINT_Y</code>, and <code>📊 valley_POINT_M</code> fields are populated. Only <code>🗺️ bankline_points</code> features within loops and bends will have values in the <code>📊 loop</code>, <code>📊 bend</code>, and <code>📊 position</code> fields.</li>
 <li>All records should have values in the <code>📊 valley_POINT_X</code>, <code>📊 valley_POINT_Y</code>, and <code>📊 valley_POINT_M</code> fields.</li>
 <li>Additionally, apply the following definition query to the <code>🗺️ bankline_points</code> feature class: “loop IS NOT NULL”. Only <code>🗺️ bankline_points</code> features between <code>🗺️ loop_points</code> features should be visible.</li>
 </ul>
@@ -701,7 +701,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Use the <code>🛠️ Assign Loops</code> tool to assign loops and bends to a cross section feature class.</li>
 <li>Set the value of the <code>📊 cross_section</code> parameter to the <code>🗺️ XS</code> line feature class.</li>
-<li>After the tool completes, check the <code>🗺️ XS</code> line feature class that the <code>📊loop</code> and <code>📊bend</code> fields are assigned the correct loop and bend values.</li>
+<li>After the tool completes, check the <code>🗺️ XS</code> line feature class that the <code>📊 loop</code> and <code>📊 bend</code> fields are assigned the correct loop and bend values.</li>
 <li>Repeat this step for both the <code>🗺️ riffle_channel</code> and <code>🗺️ riffle_floodplain</code> feature classes.</li>
 </ul>
 <hr>
@@ -746,9 +746,9 @@ ul.task-list li input[type="checkbox"] {
 <li>The <code>📊 survey_name_*</code> parameters are used to label the surveys in maps and graphs.</li>
 <li>The feature classes and labels used for the <code>📊 flowline_points_*</code>, <code>📊 xs_points_*</code>, and <code>📊 survey_name_*</code> parameters must be entered in the same order (e.g., 2016, 2010, 2006) in each set of numbered parameters.</li>
 <li>For the <code>📊 dem</code> parameter, enter the <code>🗺️ hydroDEM</code> for the base event survey.</li>
-<li>For the <code>📊 banklines_fc</code> parameter, enter the <code>🗺️banklines</code> feature class created for the base event survey.<br>
+<li>For the <code>📊 banklines_fc</code> parameter, enter the <code>🗺️ banklines</code> feature class created for the base event survey.<br>
 </li>
-<li>For the <code>📊 features_fc</code> parameter, enter the <code>🗺️features</code> feature class for the base event survey.</li>
+<li>For the <code>📊 features_fc</code> parameter, enter the <code>🗺️ features</code> feature class for the base event survey.</li>
 <li>For the <code>📊 bf_estimate</code> parameter, specify the REM elevation value that represents the bankfull water surface elevation.</li>
 <li>For the <code>📊 regions</code> parameter, select the regions to use for estimating the bankfull water surface elevation.</li>
 </ul>

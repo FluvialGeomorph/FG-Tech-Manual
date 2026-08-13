@@ -608,8 +608,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Open the attribute table for the <code>🗺️ banks_raw_xxx</code> feature class and use advanced sorting to sort first by <code>📊 gridcode</code> and then by <code>📊 Shape_Area</code>.</li>
 <li>Polygons with <code>📊 gridcode</code> = <code>🧮 1</code> are polygons inundated at the REM elevation.</li>
 <li>Typically, the polygons with the largest area represent the channel.</li>
-<li>Begin by selecting <code>gridcode</code> = `🧮 1 polygons with the largest area until the entire bankfull area is selected.</li>
-<li>Export these selected features to a new feature class named <code>bankfull_area</code>.</li>
+<li>Begin by selecting <code>📊 gridcode</code> = <code>🧮 1</code> polygons with the largest area until the entire bankfull area is selected.</li>
+<li>Export these selected features to a new feature class named <code>🗺️ bankfull_area</code>.</li>
 <li>Delete the <code>🗺️ banks_raw_xxx</code> feature class.</li>
 </ul>
 </section>
@@ -617,12 +617,12 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="create-banklines">Create Banklines</h3>
 <p>The purpose of this step is to convert the <code>🗺️ bankfull_area</code> polygon into polylines and edit into a <code>🗺️ banklines</code> feature class for each reach. The <code>🗺️ banklines</code> feature class will have two records, one representing the left descending bankline and another the right descending bankline for the stream reach.</p>
 <ul>
-<li>Use the ESRI <code>🛠️Polygon To Line</code> tool to convert the <code>🗺️ bankfull_area</code> polygon feature class to a new polyline feature class named <code>🗺️ banklines</code>.</li>
+<li>Use the ESRI <code>🛠️ Polygon To Line</code> tool to convert the <code>🗺️ bankfull_area</code> polygon feature class to a new polyline feature class named <code>🗺️ banklines</code>.</li>
 <li>Add the following fields to the <code>🗺️ banklines</code> feature class:
 <ul>
-<li><code>📊ReachName</code>: <code>🧮 Text (50)</code> - The purpose of this field is to store the reach name.</li>
+<li><code>📊 ReachName</code>: <code>🧮 Text (50)</code> - The purpose of this field is to store the reach name.</li>
 <li><code>📊 bank_id</code>: <code>🧮 Long Integer</code> - The purpose of this field is to uniquely identify each bank.</li>
-<li><code>📊 bank</code>: <code>🧮 Text (50)</code> - The purpose of this field is to designate which bank is the <code>🧮right descending</code> bank and which is the <code>🧮 left descending</code> bank.</li>
+<li><code>📊 bank</code>: <code>🧮 Text (50)</code> - The purpose of this field is to designate which bank is the <code>🧮 right descending</code> bank and which is the <code>🧮 left descending</code> bank.</li>
 </ul></li>
 <li>Start editing the <code>🗺️ banklines</code> feature class.</li>
 <li>Use the ESRI <code>🛠️ Explode Multipart Feature</code> tool to explode any multipart line feature in the <code>🗺️  banklines</code> feature class.</li>
@@ -631,7 +631,7 @@ ul.task-list li input[type="checkbox"] {
 <li>The features in the <code>🗺️ banklines</code> feature class should not extend past the end of the <code>🗺️ flowline</code> feature.</li>
 <li>Use the ESRI <code>🛠️ Split Tool</code> to trim any tributaries from the <code>🗺️ banklines</code> feature class.</li>
 <li>The goal of this step is to have only two features, one representing the left descending bankline and another the right descending bankline. Delete all other line features.</li>
-<li>Ensure that the banklines are digitized in the upstream direction (like a <code>flowline</code> feature). Edit the <code>🗺️ banklines</code> feature class to ensure that each bankline is digitized beginning with the downstream end and digitized upstream.</li>
+<li>Ensure that the banklines are digitized in the upstream direction (like a <code>🗺️ flowline</code> feature class). Edit the <code>🗺️ banklines</code> feature class to ensure that each bankline is digitized beginning with the downstream end and digitized upstream.</li>
 <li>While editing, select a <code>🗺️ bankline</code> feature, choose to edit vertices. Ensure that the red endpoint is at the upstream end of each bankline.</li>
 <li>Use the <code>🛠️ Reverse Direction</code> command (aka flip) to ensure each bankline is digitized in the upstream direction.</li>
 <li>Check that each bankline is digitized in the upstream direction (red endpoint at the upstream end) before going on to the next step.</li>
@@ -654,7 +654,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The purpose of this stage is to use the bankfull elevation determined in the last stage to calculate the final level 2 cross section dimensions for the base event for each reach.</p>
 <section id="calculate-final-cross-section-l2-dimensions" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-final-cross-section-l2-dimensions">Calculate Final Cross Section L2 Dimensions</h3>
-<p>The purpose of this step is to calculate the final L2 dimensions for the regularly spaced and riffle cross section feature classes for each reach. Repeat the following steps for <code>🗺️ regular spaced cross section</code> feature class, the <code>🗺️ riffle_floodplain</code> feature class, and the <code>🗺️ riffle_channel</code> feature class.</p>
+<p>The purpose of this step is to calculate the final L2 dimensions for the regularly spaced and riffle cross section feature classes for each reach. Repeat the following steps for <code>🗺️ XS</code> line feature class, the <code>🗺️ riffle_floodplain</code> feature class, and the <code>🗺️ riffle_channel</code> feature class.</p>
 <p><strong>Determine the moving window size</strong><br>
 Many stream metrics are scale dependent, meaning these metrics are affected by the size of the moving window used in their calculation. To determine the appropriate size of the moving window for this reach, use the following steps:</p>
 <ul>
@@ -677,7 +677,7 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 </ul>
 <p><strong>Confirm the degree of smoothing</strong></p>
 <ul>
-<li>Use a chart to verify the choice of the smoothing <code>loess_span</code> parameter in the <code>🗺️ *_dims_L2</code>feature class.</li>
+<li>Use a chart to verify the choice of the smoothing <code>📊 loess_span</code> parameter in the <code>🗺️ *_dims_L2</code>feature class.</li>
 <li>Right-click on the <code>🗺️ *_dims_L2</code> feature class in the map table of contents and select “Create Chart”, and select “Line”. In the <code>📊 Date or Number</code> dropdown, choose the field <code>📊 POINT_M</code>. In the <code>📊 Aggregation</code> dropdown, choose <code>🧮 None</code>. In the <code>📊 Numeric field(s)</code> checklist, check the boxes next to <code>🧮 Z</code> and <code>🧮 Z_smooth</code>. Click the “Apply” button to view the chart.</li>
 <li>Visually assess the degree of smoothing. The smoothing should be high enough to eliminate LiDAR elevation noise, but not so high as to eliminate meaningful channel elevation change.</li>
 <li>If the smoothing is not ideal, re-run the tool and adjust the <code>📊 loess_span</code> parameter.</li>
@@ -701,7 +701,7 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 <p>The purpose of this step is to run the L2 report for each reach.</p>
 <ul>
 <li>In the <code>🧰 Reports</code> toolset, use the <code>🛠️ Level 2 Report</code> tool to produce the Level 2 Report.</li>
-<li>For the <code>📊 stream</code> parameter, use the value of the <code>📊 ReachName</code> field used in the <code>flowline</code> feature class.</li>
+<li>For the <code>📊 stream</code> parameter, use the value of the <code>📊 ReachName</code> field used in the <code>🗺️ flowline</code> feature class.</li>
 <li>For the <code>📊 flowline_fc</code> parameter, enter the <code>🗺️ flowline</code> feature class for the base event survey.</li>
 <li>For the <code>📊 xs_dims_fc</code> parameter, use the <code>🗺️ *_dims_L2</code> feature class calculated for the regular cross sections of the base event.</li>
 <li>The <code>📊 xs_points_*</code> parameters should be entered with the feature class for the most recent survey first (i.e., the base event) and then the previous surveys in reverse chronological order (e.g., 2016, 2010, 2006).</li>
@@ -711,8 +711,8 @@ Many stream metrics are scale dependent, meaning these metrics are affected by t
 <li>For the <code>📊 banklines_fc</code> parameter, enter the <code>🗺️ banklines</code> feature class created for the base event survey.<br>
 </li>
 <li>For the <code>📊 features_fc</code> parameter, enter the <code>🗺️ features</code> feature class for the base event survey.</li>
-<li>For the <code>📊 bf_estimate</code> parameter, specify the REM elevation value that represents the bankfull water surface elevation.</li>
-<li>For the <code>📊 regions</code> parameter, select the regions to use for estimating the bankfull water surface elevation.</li>
+<li>For the <code>📊 bf_estimate</code> parameter, specify the REM <code>🧮 elevation</code> value that represents the bankfull water surface elevation.</li>
+<li>For the <code>📊 regions</code> parameter, select the <code>🧮 regions</code> to use for estimating the bankfull water surface elevation.</li>
 </ul>
 </section>
 <section id="perform-qa" class="level3">
